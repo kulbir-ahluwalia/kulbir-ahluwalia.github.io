@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>First post | Kulbir Singh Ahluwalia</title>
+    <link>https://kulbir-ahluwalia.github.io/tag/first-post/</link>
+      <atom:link href="https://kulbir-ahluwalia.github.io/tag/first-post/index.xml" rel="self" type="application/rss+xml" />
+    <description>First post</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Kulbir Singh Ahluwalia</copyright><lastBuildDate>Sat, 15 Jan 2022 16:32:18 -0600</lastBuildDate>
+    <image>
+      <url>https://kulbir-ahluwalia.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>First post</title>
+      <link>https://kulbir-ahluwalia.github.io/tag/first-post/</link>
+    </image>
+    
+    <item>
+      <title>Welcome to my website</title>
+      <link>https://kulbir-ahluwalia.github.io/post/welcome/</link>
+      <pubDate>Sat, 15 Jan 2022 16:32:18 -0600</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/post/welcome/</guid>
+      <description>&lt;p&gt;First Blog post
+We can add a formula using LaTeX: $y = x^2 + 3*\alpha$&lt;/p&gt;
+&lt;p&gt;The mass-energy equivalence is described by the famous equation
+\begin{equation}
+E=mc^2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;discovered in 1905 by Albert Einstein.
+In natural units ($c$ = 1), the formula expresses the identity&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+E=m
+\end{equation}&lt;/p&gt;
+&lt;!-- /home/kulbir/Desktop/kulbir-website-academic/static/images/Dr_Tony_Stark.jpg --&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;static/images/Dr_Tony_Stark.jpg&#34; alt=&#34;test_picture&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,12 +5,44 @@
     <link>https://kulbir-ahluwalia.github.io/publication/</link>
       <atom:link href="https://kulbir-ahluwalia.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Kulbir Singh Ahluwalia</copyright><lastBuildDate>Mon, 01 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Kulbir Singh Ahluwalia</copyright><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://kulbir-ahluwalia.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://kulbir-ahluwalia.github.io/media/icon_hu03b5c6d20bf75742293844fff411b1eb_3807_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
       <link>https://kulbir-ahluwalia.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains Using Synthetic Datasets</title>
+      <link>https://kulbir-ahluwalia.github.io/publication/rangwala-2021-deeppastl/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/publication/rangwala-2021-deeppastl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intermittent Deployment for Large-Scale Multi-Robot Forage Perception: Data Synthesis, Prediction, and Planning</title>
+      <link>https://kulbir-ahluwalia.github.io/publication/liu-2021-intermittent/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/publication/liu-2021-intermittent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reinforcement learning integrated with supervised learning for training of near infrared spectrum data for non-destructive testing of fruits (Conference Presentation)</title>
+      <link>https://kulbir-ahluwalia.github.io/publication/li-2020-reinforcement/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/publication/li-2020-reinforcement/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Smartphone optical sensors</title>
+      <link>https://kulbir-ahluwalia.github.io/publication/saini-2019-smartphone/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/publication/saini-2019-smartphone/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>An example conference paper</title>

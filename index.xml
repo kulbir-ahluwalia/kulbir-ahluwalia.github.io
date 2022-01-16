@@ -7,7 +7,7 @@
     <description>Kulbir Singh Ahluwalia</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Kulbir Singh Ahluwalia</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://kulbir-ahluwalia.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://kulbir-ahluwalia.github.io/media/icon_hu03b5c6d20bf75742293844fff411b1eb_3807_512x512_fill_lanczos_center_3.png</url>
       <title>Kulbir Singh Ahluwalia</title>
       <link>https://kulbir-ahluwalia.github.io/</link>
     </image>
@@ -67,10 +67,46 @@ E=m
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;static/images/Dr_Tony_Stark.jpg&#34; alt=&#34;test_picture&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://kulbir-ahluwalia.github.io/static_images/Dr_Tony_Stark.jpg&#34; alt=&#34;test_picture&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-test_picture&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://kulbir-ahluwalia.github.io/static_images/Dr_Tony_Stark.jpg&#34; alt=&#34;Test_picture&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Test_picture
+    &lt;/figcaption&gt;&lt;/figure&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains Using Synthetic Datasets</title>
+      <link>https://kulbir-ahluwalia.github.io/publication/rangwala-2021-deeppastl/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/publication/rangwala-2021-deeppastl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intermittent Deployment for Large-Scale Multi-Robot Forage Perception: Data Synthesis, Prediction, and Planning</title>
+      <link>https://kulbir-ahluwalia.github.io/publication/liu-2021-intermittent/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/publication/liu-2021-intermittent/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -148,6 +184,14 @@ E=m
 &lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Reinforcement learning integrated with supervised learning for training of near infrared spectrum data for non-destructive testing of fruits (Conference Presentation)</title>
+      <link>https://kulbir-ahluwalia.github.io/publication/li-2020-reinforcement/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/publication/li-2020-reinforcement/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -277,6 +321,14 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Smartphone optical sensors</title>
+      <link>https://kulbir-ahluwalia.github.io/publication/saini-2019-smartphone/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://kulbir-ahluwalia.github.io/publication/saini-2019-smartphone/</guid>
+      <description></description>
     </item>
     
     <item>

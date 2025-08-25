@@ -1,0 +1,37 @@
+# YAML Data Files Guidelines
+
+When editing YAML data files in the `_data/` directory:
+
+## Structure Requirements
+- **Authors**: Use the format defined in [_data/authors.yml](mdc:_data/authors.yml) with `first_name`, `last_name`, `website`, and `is_me` fields
+- **Publications**: Follow the schema in [_data/publications.yml](mdc:_data/publications.yml) with required fields like `title`, `venue`, `authors`, and optional fields like `paper`, `arxiv`, `video`, etc.
+- **Projects**: Use the format from [_data/projects.yml](mdc:_data/projects.yml) with `title`, `venue`, `description`, and optional `webpage` links
+
+## Content Guidelines
+- Always maintain consistent author references using the keys from [_data/authors.yml](mdc:_data/authors.yml)
+- Include proper venue formatting (conference/journal name, year)
+- Add descriptions that are informative but concise
+- Use markdown formatting in description fields when needed
+- Include all relevant links (paper, video, GitHub, project page, etc.)
+
+## Image References
+- Images should be stored in `images/` with publication-specific subdirectories
+- Use relative paths like `publications/project_name/image.jpg`
+- Provide both static images and optional mouseover videos/images
+- Ensure images are 1:1 aspect ratio, minimum 320px
+
+## Common Fields
+- `title`: Publication/project title
+- `venue`: Conference, journal, or context
+- `authors`: List of author keys from authors.yml
+- `description`: Detailed description (supports markdown)
+- `image`: Path to preview image
+- `paper`: Direct link to paper PDF
+- `arxiv`: ArXiv ID (just the ID, not full URL)
+- `video`: Link to video demonstration
+- `webpage`: Link to project page or GitHub
+- `awards`: Special recognition or awards
+description:
+globs:
+alwaysApply: false
+---

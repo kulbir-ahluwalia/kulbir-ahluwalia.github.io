@@ -1,0 +1,135 @@
+# hausdörfer:
+#   first_name: Oliver
+#   last_name: Hausdörfer
+#   website: oliver.hausdoerfer.de
+#   is_me: true
+# nergis:
+#   first_name: Nergishan
+#   last_name: İyisan
+#   website: https://www.ee.cit.tum.de/en/rmn/people/
+# chen:
+#   first_name: Chen
+#   last_name: Wang
+#   website: https://www.ee.cit.tum.de/en/rmn/people/
+
+
+# - Yuqi Li
+# - Kulbir Singh Ahluwalia
+# - Simarjeet S Saini
+# - Girish Chowdhary
+# - Julia Hockenmaier
+# - Pratap Tokekar
+# - Ryan Williams
+# - Jose Roberto Cuaran Valenzuela
+# - Kendall Koe
+# - Naveen Kumar Uppalapati
+# - Harnaik Singh Dhami
+# - Murtaza Rangwala
+# - Jun Liu
+
+Kulbir:
+  first_name: Kulbir
+  last_name: Ahluwalia
+  website: https://kulbir-singh-ahluwalia.com/
+  is_me: true
+
+#UIUC
+Jose:
+  first_name: Jose Roberto
+  last_name: Cuaran Valenzuela
+  website: 
+Kendall:
+  first_name: Kendall
+  last_name: Koe
+  website:
+Naveen:
+  first_name: Naveen Kumar
+  last_name: Uppalapati
+  website:
+Girish:
+  first_name: Girish
+  last_name: Chowdhary
+  website:
+Julia:
+  first_name: Julia
+  last_name: Hockenmaier
+  website:
+Rajarshi:
+  first_name: Rajarshi
+  last_name: Haldar
+  website:
+Peixin:
+  first_name: Peixin
+  last_name: Chang
+  website:
+Michael:
+  first_name: Michael
+  last_name: Vilsoet
+  website:
+#UMD
+Pratap:
+  first_name: Pratap
+  last_name: Tokekar
+  website:
+Ryan:
+  first_name: Ryan
+  last_name: Williams
+  website:
+Harnaik:
+  first_name: Harnaik Singh
+  last_name: Dhami
+  website:
+Murtaza:
+  first_name: Murtaza
+  last_name: Rangwala
+  website:
+Jun:
+  first_name: Jun
+  last_name: Liu
+  website:
+Ghajar:
+  first_name: Shayan
+  last_name: Ghajar
+  website:
+Tracy:
+  first_name: Benjamin
+  last_name: Tracy
+  website:
+
+#Waterloo
+Simarjeet:
+  first_name: Simarjeet S
+  last_name: Saini
+  website:
+Yuqi:
+  first_name: Yuqi
+  last_name: Li
+  website:
+Aneesh:
+  first_name: Aneesh
+  last_name: Sridhar
+  website:
+
+
+
+# PEC
+Garvit:
+  first_name: Garvit
+  last_name: Periwal
+  website:
+Akash:
+  first_name: Akash
+  last_name: Sharma
+  website:
+Sahil:
+  first_name: Sahil
+  last_name: Sihag
+  website:
+Yashmeet:
+  first_name: Yashmeet
+  last_name: Singh
+  website:
+Rohin:
+  first_name: Rohin
+  last_name: Kaushik
+  website:

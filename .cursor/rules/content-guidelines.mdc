@@ -1,0 +1,61 @@
+# Academic Content Guidelines
+
+## Publication Entry Standards
+
+### Required Fields
+- `title`: Use official publication title
+- `venue`: Conference/journal name and year (e.g., "ICRA, 2024" or "IEEE Transactions on Robotics, 2023")
+- `authors`: List of author keys from [_data/authors.yml](mdc:_data/authors.yml)
+
+### Optional Fields
+- `description`: Brief, informative summary (supports markdown)
+- `paper`: Direct URL to official paper
+- `arxiv`: ArXiv ID (numbers only, URL generated automatically)
+- `video`: Link to demonstration video
+- `project_page`: Link to dedicated project website
+- `github`: GitHub repository URL
+- `image`: Preview image path (relative to `images/`)
+- `awards`: Special recognition or honors
+
+### Author Management
+- Add new collaborators to [_data/authors.yml](mdc:_data/authors.yml) before referencing
+- Use consistent author keys across all publications
+- Mark yourself with `is_me: true` for highlighting
+- Include author websites when available
+
+## Project Documentation
+Follow the format in [_data/projects.yml](mdc:_data/projects.yml):
+- **Academic projects**: Include course context and technical details
+- **Personal projects**: Highlight key technologies and outcomes
+- **Awards/Recognition**: Mention prizes, rankings, or special recognition
+- **Video links**: Include demonstration videos when available
+
+## Image Standards
+- **Aspect ratio**: 1:1 (square format)
+- **Minimum size**: 320px width/height
+- **Organization**: Create subdirectories in `images/` by project/publication
+- **Formats**: Prefer JPG for photos, PNG for graphics/diagrams
+- **Mouseover effects**: Include both static image and video/alternate image when applicable
+
+## Writing Style
+- **Technical accuracy**: Use precise terminology for research areas
+- **Conciseness**: Keep descriptions informative but brief
+- **Markdown support**: Use markdown formatting in description fields
+- **External links**: Ensure all URLs are current and accessible
+- **Consistency**: Maintain consistent formatting across similar content types
+
+## Content Organization
+- **Chronological order**: List newest items first in data files
+- **Categorization**: Separate publications, projects, awards, and miscellaneous items
+- **Cross-references**: Link related projects and publications when appropriate
+- **Update frequency**: Keep CV file current with publication updates
+
+## Professional Standards
+- **Verification**: Double-check all URLs, dates, and affiliations
+- **Attribution**: Properly credit all collaborators and institutions
+- **Copyright**: Ensure proper permissions for images and content
+- **Professional tone**: Maintain academic writing standards throughout
+description:
+globs:
+alwaysApply: false
+---

@@ -1,0 +1,98 @@
+<div class="publication-block columns">
+  <div class="column is-2">
+    <div class="publication-image {% if publication.image_mouseover %}publication-mousecell{% endif %}">
+      {% if publication.image_mouseover contains "mp4" %}
+      <video poster="./images/{{ publication.image }}" autoplay preload playsinline class="" height="100%" loop muted width="100%">
+        <source src="./images/{{ publication.image_mouseover }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      {% endif %}
+      {% if publication.image_mouseover contains "png" or publication.image_mouseover contains "jpg" or publication.image_mouseover contains "jpeg"%}
+      <img alt="{{ publication.title }}" class="image2 {% if publication.image_border %}image-border{% endif %}" style="display: none;" onerror="this.style.display='none'" src="./images/{{ publication.image_mouseover }}" />
+      {% endif %}
+      <img alt="{{ publication.title }}" class="{% if publication.image_border %}image-border{% endif %}" onerror="this.style.display='none'" src="./images/{{ publication.image }}" />
+    </div>
+  </div>
+  <div class="column">
+    <div class="content">
+      {% if publication.project_page %}
+      {%assign title_link = publication.project_page %}
+      {%elsif publication.webpage%}
+      {%assign title_link = publication.webpage %}
+      {%elsif publication.paper%}
+      {%assign title_link = publication.paper %}
+      {%elsif publication.arxiv%}
+      {%assign title_link = "https://arxiv.org/abs/" | append: publication.arxiv %}
+      {%else%}
+      {%assign title_link =  '' %}
+      {%endif%}
+      <h3 class="publication-title"><a class="{% if title_link == '' %}disable-link{% endif %}" href="{{ title_link }}">{{ publication.title }}</a></h3>
+      <div class="publication-authors">
+        {%- for author_id in publication.authors -%}
+        {% assign author = site.data.authors[author_id] %}
+        <span class="author-block {% if author.is_me %}author-me{% endif %}">
+          {%- if author.is_me -%}
+            {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}
+          {%- else -%}
+          <a class="{% if author.website%}''{%- else -%}disable-link{% endif %}" href="{{ author.website}}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name
+          }}</a>
+            {%- endif -%}
+            {% if forloop.last == false %},{% endif %}
+        </span>
+        {%- endfor -%}
+      </div>
+      <div class="publication-venue">
+        <span>{{ publication.venue }}</span>
+        {% for award in publication.awards %}
+        <span class="publication-venue-emph">{{ award }}<span>
+            {% endfor %}
+      </div>
+      <p class="publication-description">{{ publication.description | markdownify | remove: '<p>' | remove: '</p>'}}</p>
+      <div class="publication-links buttons field has-addons">
+        {% if publication.project_page %}
+        <a class="external-link button is-small is-ghost" href="{{ publication.project_page }}">
+          <span class="icon"><i class="fas fa-globe-asia"></i></span>
+          <span>Project Page</span>
+        </a>
+        {% endif %}
+        {% if publication.paper %}
+        <a class="external-link button is-small is-ghost" href="{{ publication.paper }}">
+          <span class="icon"><i class="fa-regular fa-newspaper"></i></span>
+          <span>{% if publication.paper contains "ieee" %}IEEE{% else %}Paper{% endif %}</span>
+        </a>
+        {% endif %}
+        {% if publication.video %}
+        <a class="external-link button is-small is-ghost" href="{{ publication.video }}">
+          <span class="icon"><i class="fa-solid fa-film"></i></span>
+          <span>Video</span>
+        </a>
+        {% endif %}
+        {% if publication.pdf %}
+        <a class="external-link button is-small is-ghost"
+          href="{{ publication.pdf }}">
+          <span class="icon"><i class="fas fa-file-pdf"></i></span>
+          <span>{% if publication.id2 == "smartphoneOpticalSensors" %}Article PDF{% elsif publication.id2 == "plantPlacement_AIFARMS2023" %}Poster PDF{% else %}PDF{% endif %}</span>
+        </a>
+        {% endif %}
+        {% if publication.arxiv %}
+        <a class="external-link button is-small is-ghost" href="https://arxiv.org/abs/{{ publication.arxiv }}">
+          <span class="icon"><i class="ai ai-arxiv"></i></span>
+          <span>arXiv</span>
+        </a>
+        {% endif %}
+        {% if publication.webpage %}
+            <a class="external-link button is-small is-ghost" href="{{ publication.webpage }}">
+            <span class="icon"><i class="fas fa-globe-asia"></i></span>
+            <span>Webpage</span>
+            </a>
+            {% endif %}
+        {% if publication.github %}
+        <a class="external-link button is-small is-ghost" href="https://github.com/{{ publication.github }}">
+          <span class="icon"><i class="fa fab fa-github"></i></span>
+          <span>Code</span>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+# JavaScript Functionality Guidelines
+
+The site uses jQuery and vanilla JavaScript for interactive features.
+
+## Core Functionality in [js/index.js](mdc:js/index.js)
+
+### Publication Mouseover Effects
+- `.publication-mousecell` elements support image/video transitions
+- On mouseover: Hide `img`, show `video` and `.image2` elements
+- On mouseout: Show `img`, hide `video` and `.image2` elements
+- Touch support: `touchstart`/`touchmove` triggers show, `touchend` triggers hide
+
+### Navigation Features
+- **Burger menu**: Toggles `.is-active` class on navbar burger and menu
+- **Auto-close**: Clicking navbar items automatically closes mobile menu
+- **External links**: All links (except anchors) automatically open in new tabs
+
+### Event Handling
+- Uses `$(document).ready()` for jQuery initialization
+- Uses `document.addEventListener('DOMContentLoaded')` for vanilla JS
+- Proper event delegation for dynamic content
+
+## Dependencies
+- **jQuery 3.6.0**: Loaded from Google CDN
+- **Font Awesome 6.5.2**: For icons
+- **Academicons**: For academic-specific icons
+- **Google Fonts**: Google Sans and Noto Sans
+
+## Best Practices
+- Maintain separation between jQuery and vanilla JS code
+- Use proper event cleanup to prevent memory leaks
+- Ensure touch device compatibility for all interactive elements
+- Keep external link behavior consistent
+- Test mobile navigation thoroughly
+
+## Interactive Elements
+- Navbar burger menu toggle
+- Publication image/video hover effects
+- External link handling
+- Touch-friendly mobile interactions
+
+When modifying JavaScript, ensure compatibility with both desktop and mobile browsers, and maintain the existing jQuery/vanilla JS patterns.
+description:
+globs:
+alwaysApply: false
+---

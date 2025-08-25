@@ -1,0 +1,42 @@
+# Jekyll Academic Website Structure
+
+This is a Jekyll-powered academic personal website with the following key structure:
+
+## Core Configuration
+- Main config: [_config.yml](mdc:_config.yml) - Contains site settings, personal info, and social media links
+- Local development: Run `bundle exec jekyll serve --trace` for local testing
+- GitHub Pages deployment via GitHub Actions in [.github/workflows/cache_control.yml](mdc:.github/workflows/cache_control.yml)
+
+## Content Structure
+- **Main page**: [index.html](mdc:index.html) - Single-page layout with sections for About, Publications, Teaching, Projects, and Miscellaneous
+- **Data files** in `_data/` directory:
+  - [publications.yml](mdc:_data/publications.yml) - Academic publications
+  - [projects.yml](mdc:_data/projects.yml) - Personal and academic projects  
+  - [authors.yml](mdc:_data/authors.yml) - Collaborator information
+  - [misc.yaml](mdc:_data/misc.yaml) - Awards, certificates, achievements
+  - [hobbies.yml](mdc:_data/hobbies.yml) - Personal interests section
+  - [navigation.yml](mdc:_data/navigation.yml) - Navigation menu items
+
+## Styling & Assets
+- **CSS Framework**: Bulma CSS framework ([bulma.min.css](mdc:css/bulma.min.css))
+- **Custom styles**: [css/index.scss](mdc:css/index.scss) with SCSS imports from [_sass/_base.scss](mdc:_sass/_base.scss)
+- **JavaScript**: [js/index.js](mdc:js/index.js) - Handles navbar, mouseover effects, and external links
+- **Images**: Stored in `images/` with publication-specific subdirectories
+- **Files**: PDFs and documents in `files/` directory
+
+## Key Features
+- Responsive design with mobile navbar burger menu
+- Publication mouseover effects (image/video transitions)
+- External links open in new tabs automatically
+- Academic icons via Academicons and Font Awesome
+- Google Fonts integration (Google Sans, Noto Sans)
+
+## Content Management
+- All personal information is centralized in [_config.yml](mdc:_config.yml)
+- Publications, projects, and other content managed via YAML data files
+- Images should be 1:1 aspect ratio, minimum 320px as noted in [README.md](mdc:README.md)
+- Shared template [_includes/section.html](mdc:_includes/section.html) for consistent content rendering
+description:
+globs:
+alwaysApply: false
+---

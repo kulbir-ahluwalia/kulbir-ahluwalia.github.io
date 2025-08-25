@@ -1,0 +1,224 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head class="has-navbar-fixed-top">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>{{ site.name }}</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!--script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&family=Noto+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="{{ '/js/index.js' | relative_url }}"></script>
+  <link href="{{ '/css/bulma.min.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/index.css' | relative_url }}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--somehow bulma navbar doesn't take space on page, so I insert a div element-->
+  <div style="height: 3.25rem;"></div>
+
+  <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        {% for item in site.data.navigation %}
+        <a class="navbar-item" style="text-align:right" href='{{site.baseurl}}{{item.link}}{{item.anchor}}'>
+          {{ item.name }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero" id="about">
+    <div class="hero-body container is-max-desktop">
+      <div class="columns is-vcentered">
+        <div class="column is-4">
+          <div class="portrait">
+            <img src="{{ '/images/portrait_1740471515.jpg' | relative_url }}" />
+          </div>
+        </div>
+        <div class="column">
+          <h1 class="title">
+            <b>Hello, I'm {{ site.name }}</b>
+          </h1>
+          <div class="content has-text-justified">
+            {{ site.description | markdownify }}
+            <div class="buttons">
+              <!--a class="external-link button is-light"
+                href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
+                <span class="icon"><i class="ai ai-google-scholar"></i></span>
+                <span>Scholar</span>
+              </a-->
+              <a class="external-link button is-light" href="https://github.com/{{ site.github_username }}">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>GitHub</span>
+              </a>
+              <a class="external-link button is-light" href="https://x.com/{{ site.twitter_username }}">
+                <span class="icon"><i class="fa-brands fa-x-twitter"></i></span>
+                <span>X</span>
+              </a>
+              <a class="external-link button is-light" href="https://www.linkedin.com/in/{{ site.linkedin_name}}/">
+                <span class="icon"><i class="fab fa-linkedin-in"></i></span>
+                <span>LinkedIn</span>
+              </a>
+              <a class="external-link button is-light"
+                href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
+                <span class="icon"><i class="ai ai-google-scholar"></i></span>
+                <span>Scholar</span>
+              </a>
+              <a class="external-link button is-light" href="{{ '/files/CV_July2025/CV_6JULY_Ver1_8_2025_Kulbir_UIUC_PhD_CS.pdf' | relative_url }}">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>CV</span>
+              </a>
+              <a class="external-link button is-light" href="{{ '/files/CV_July2025/Resume_6JULY_Ver1_8_2025_Kulbir_UIUC_PhD_CS.pdf' | relative_url }}">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Resume</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hr">
+    <div class="container">
+      <hr>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="publications">Publications</h2>
+      {% for publication in site.data.publications %}
+        {% include section.html %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="teaching">Teaching</h2>
+      <div class="publication-block columns">
+        <div class="column">
+          <div class="content">
+            <h3 class="publication-title">Teaching Assistant - CS444: Deep Learning for Computer Vision</h3>
+            <div class="publication-venue">
+              <span>University of Illinois, Jan 2024 - May 2024, Jan 2025 - Present</span>
+            </div>
+            <p class="publication-description">
+              <strong>Instructor:</strong> Dr. Svetlana Lazebnik<br>
+              • Updated and verified starter code for assignments, and answered student questions during office hours and through
+              Campuswire.<br>
+              • Assessed student submissions via SpeedGrader on Canvas, and designed multimodal quiz questions, including single-
+              choice, multiple-choice, and matching formats.
+            </p>
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://slazebni.cs.illinois.edu/spring24/">
+                <span class="icon"><i class="fas fa-book-open"></i></span>
+                <span>Spring 2024</span>
+              </a>
+              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://slazebni.cs.illinois.edu/spring25/">
+                <span class="icon"><i class="fas fa-book-open"></i></span>
+                <span>Spring 2025</span>
+              </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="projects">Projects</h2>
+      {% for publication in site.data.projects %} 
+        {% include section.html %}
+      {% endfor %}
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="misc">Miscellaneous</h2>
+      {% for publication in site.data.misc %}
+        {% include section.html %}
+      {% endfor %}
+      </div>
+  </section>
+
+  <div class="hr">
+    <div class="container">
+      <hr>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      {{ site.data.hobbies | markdownify }}
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content footer-links has-text-centered">
+        <a href="mailto:{{ site.email }}">
+          <i class="fas fa-envelope" title="oliver.hausdoerfer@tum.de"></i>
+        </a>
+        <a class="external-link" href="https://github.com/{{ site.github_username }}">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="external-link" href="https://x.com/{{ site.twitter_username }}">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a class="external-link" href="https://www.linkedin.com/in/{{ site.linkedin_name }}/">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Site borrowed from <a href="https://keunhong.com/">this</a> and inspired by <a
+                href="https://vsimkus.github.io/academic-jekyll/">this</a>. Feel free to reuse <a
+                href="https://github.com/OliEfr/OliEfr.github.io">this site</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

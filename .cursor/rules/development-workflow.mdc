@@ -1,0 +1,60 @@
+# Development Workflow & Deployment
+
+## Local Development Setup
+1. **Install dependencies**: `bundle install` (requires Ruby and Bundler)
+2. **Start development server**: `bundle exec jekyll serve --trace`
+3. **Access locally**: Site runs on `http://localhost:4000`
+4. **Live reload**: Jekyll watches for file changes automatically
+
+## File Dependencies
+- **Gemfile**: Ruby dependencies managed via Bundler ([Gemfile](mdc:Gemfile))
+- **Jekyll config**: [_config.yml](mdc:_config.yml) requires server restart when modified
+- **GitHub Pages**: Uses `gem "github-pages"` for GitHub Pages compatibility
+
+## Deployment Pipeline
+Automated via GitHub Actions ([.github/workflows/cache_control.yml](mdc:.github/workflows/cache_control.yml)):
+1. **Trigger**: Push to `main` branch
+2. **Build**: `bundle exec jekyll build` generates `_site/` directory
+3. **Cache headers**: Adds no-cache headers for fresh content
+4. **Deploy**: Publishes to `gh-pages` branch via `peaceiris/actions-gh-pages@v3`
+
+## Content Updates Workflow
+1. **Personal info**: Update [_config.yml](mdc:_config.yml) and restart server
+2. **Publications**: Add entries to [_data/publications.yml](mdc:_data/publications.yml)
+3. **Projects**: Add entries to [_data/projects.yml](mdc:_data/projects.yml)
+4. **Authors**: Add collaborators to [_data/authors.yml](mdc:_data/authors.yml)
+5. **Images**: Upload to appropriate `images/` subdirectory
+6. **PDFs**: Upload papers/CV to `files/` directory
+
+## Asset Management
+- **Images**: 1:1 aspect ratio, minimum 320px, organized in subdirectories
+- **PDFs**: Store in `files/` directory, reference with relative paths
+- **CSS**: Compile SCSS automatically, framework uses Bulma
+- **JavaScript**: Minimal custom JS, mostly framework-based
+
+## Testing Checklist
+- [ ] Local development server runs without errors
+- [ ] All external links work correctly
+- [ ] Mobile navigation (burger menu) functions properly
+- [ ] Publication mouseover effects work on both desktop and mobile
+- [ ] Social media links point to correct profiles
+- [ ] CV link points to latest file in `files/` directory
+- [ ] All images load and display properly
+- [ ] Typography and styling render correctly
+
+## Maintenance Tasks
+- Update CV file in `files/` directory when needed
+- Add new publications with proper author attribution
+- Keep author information current in [_data/authors.yml](mdc:_data/authors.yml)
+- Monitor GitHub Actions for deployment issues
+- Update dependencies in [Gemfile](mdc:Gemfile) periodically
+
+## Common Issues
+- **Config changes**: Restart `bundle exec jekyll serve` after modifying [_config.yml](mdc:_config.yml)
+- **Image paths**: Use relative paths from site root, not from current file
+- **YAML syntax**: Validate YAML files if build fails
+- **Dependencies**: Run `bundle update` if gem conflicts occur
+description:
+globs:
+alwaysApply: false
+---

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159856695-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-159856695-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>CS498GC: Mobile Robotics - Logistics</title>
+    <link rel="icon"  href="resources/favicon.ico" />
+    <link rel="shortcut icon"  href="resources/favicon.ico" />
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+	    <div class="container">
+      <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+
+      <div class="collapse navbar-collapse" id="navbarToggle">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="logistics.html">Logistics</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="syllabus.html">Syllabus</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="assignments.html">Assignments</a>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron header-plain">
+        <h1>Course Logistics</h1>
+      </div>
+
+      <div class="container-fluid">
+        <h2>Course Information</h2>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Lecture Schedule</h5>
+                <ul>
+                  <li><strong>Time:</strong> Wednesday & Friday, 3:30-4:45 PM</li>
+                  <li><strong>Location:</strong> 0216 Siebel Center for Computer Science</li>
+                  <li><strong>Format:</strong> In-person lectures</li>
+                  <li><strong>Semester:</strong> Fall 2025</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Course Credits</h5>
+                <ul>
+                  <li><strong>Credit Hours:</strong> 3 (undergraduate) or 4 (graduate)</li>
+                  <li><strong>Graduate/Undergraduate:</strong> Both</li>
+                  <li><strong>Area:</strong> Technical Elective</li>
+                  <li><strong>Course Number:</strong> CS 498GC</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Communication</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Course Platforms</h5>
+            <ul>
+              <li><strong>Canvas:</strong> Course materials, lecture recordings, grades - <a href="https://canvas.illinois.edu/courses/62828">Link</a></li>
+              <li><strong>Campuswire:</strong> Q&A forum for course-related discussions - <a href="https://campuswire.com/p/GE08A84BD">Link (Code: 6646)</a></li>
+              <li><strong>Gradescope:</strong> Assignment submission and autograding</li>
+              <li><strong>Email:</strong> For personal matters only (use Campuswire for course questions)</li>
+            </ul>
+            <div class="alert alert-info">
+              <strong>Note:</strong> Please use Campuswire for all technical questions. Public posts for general questions, private posts for questions with student code.
+            </div>
+          </div>
+        </div>
+
+        <h2>Grading</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Grade Distribution (1000 points total)</h5>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Points</th>
+                  <th>Percentage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Coding Exercises (3 total)</td>
+                  <td>500</td>
+                  <td>50%</td>
+                </tr>
+                <tr>
+                  <td>Problem Sets (3 total)</td>
+                  <td>300</td>
+                  <td>30%</td>
+                </tr>
+                <tr>
+                  <td>Quiz 1</td>
+                  <td>50</td>
+                  <td>5%</td>
+                </tr>
+                <tr>
+                  <td>Quiz 2</td>
+                  <td>75</td>
+                  <td>7.5%</td>
+                </tr>
+                <tr>
+                  <td>Quiz 3</td>
+                  <td>75</td>
+                  <td>7.5%</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><em>Graduate students: Additional project worth 100 points for 4th credit</em></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h5 class="card-title mt-4">Grading Scale</h5>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Grade</th>
+                  <th>Points Range</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>A+</td><td>940-1000</td></tr>
+                <tr><td>A</td><td>900-939</td></tr>
+                <tr><td>A-</td><td>870-899</td></tr>
+                <tr><td>B+</td><td>840-869</td></tr>
+                <tr><td>B</td><td>800-839</td></tr>
+                <tr><td>B-</td><td>770-799</td></tr>
+                <tr><td>C+, C, C-</td><td>700-769</td></tr>
+                <tr><td>D+, D, D-</td><td>600-699</td></tr>
+                <tr><td>F</td><td>0-599</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2>Assignment Policies</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Submission Guidelines</h5>
+            <ul>
+              <li>All assignments must be submitted via Gradescope</li>
+              <li>Code must be properly documented and follow Python PEP 8 style guidelines</li>
+              <li>One and only one deliverable can be turned in late by 2 days</li>
+              <li>For every other deliverable, and past the 2 days for the first late deliverable, 20% penalty per day</li>
+              <li>Assignments must be submitted via Gradescope before the deadline</li>
+            </ul>
+
+            <h5 class="card-title mt-4">Collaboration Policy</h5>
+            <ul>
+              <li>Discussion of concepts with classmates is encouraged</li>
+              <li>All code must be written individually</li>
+              <li>Copying code from other students or online sources is strictly prohibited</li>
+              <li>You must cite any external resources used</li>
+              <li>Violations will be reported to the academic integrity board</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Technical Requirements</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Software Setup</h5>
+            <p>Students will need to set up the following software environment:</p>
+            <ul>
+              <li><strong>Operating System:</strong> Ubuntu 22.04 LTS (recommended) or compatible Linux distribution</li>
+              <li><strong>ROS2:</strong> Humble Hawksbill (latest LTS version)</li>
+              <li><strong>Python:</strong> 3.10 or higher</li>
+              <li><strong>Required Python packages:</strong> numpy, matplotlib, scipy, rclpy, tf2_ros</li>
+              <li><strong>Development tools:</strong> Git, VS Code or preferred IDE</li>
+            </ul>
+            
+            <div class="alert alert-warning">
+              <strong>Important:</strong> Virtual machines or WSL2 can be used, but native Linux installation is recommended for best performance.
+            </div>
+
+            <h5 class="card-title mt-4">Hardware Requirements</h5>
+            <ul>
+              <li>Minimum 8GB RAM (16GB recommended)</li>
+              <li>At least 20GB free disk space</li>
+              <li>Dual-core processor (quad-core recommended)</li>
+              <li>Internet connection for downloading packages and submitting assignments</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Academic Integrity</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <p>
+              Academic integrity is essential to this course. Please review the University's 
+              <a href="https://studentcode.illinois.edu/article1/part4/1-401/">Student Code</a> 
+              regarding academic integrity. All work submitted must be your own. Violations of academic 
+              integrity will result in a failing grade for the assignment and may result in a failing grade 
+              for the course and further disciplinary action.
+            </p>
+            
+            <h5>What is allowed:</h5>
+            <ul>
+              <li>Discussing general concepts and approaches with classmates</li>
+              <li>Using course materials and documented external resources</li>
+              <li>Seeking help from instructors and TAs</li>
+              <li>Collaborating on the final project (if done in groups)</li>
+            </ul>
+            
+            <h5>What is NOT allowed:</h5>
+            <ul>
+              <li>Sharing or copying code without proper attribution</li>
+              <li>Using material from fellow students or internet without proper attribution</li>
+              <li>Submitting work from previous semesters</li>
+              <li>Posting assignment solutions online</li>
+              <li>Violating the terms of any licensing agreement</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Resources and Support</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Getting Help</h5>
+            <ul>
+              <li><strong>Office Hours:</strong> Instructor by appointment, TA hours TBD at CSL 157</li>
+              <li><strong>Campuswire:</strong> 24/7 Q&A forum monitored by course staff</li>
+              <li><strong>Study Groups:</strong> Encouraged for conceptual discussions</li>
+              <li><strong>ROS2 Documentation:</strong> Official tutorials and API references</li>
+            </ul>
+
+            <h5 class="card-title mt-4">Accommodations</h5>
+            <p>
+              Students with disabilities who require accommodations should contact the instructor and the 
+              <a href="https://www.disability.illinois.edu/">Division of Disability Resources and Educational Services (DRES)</a> 
+              as soon as possible.
+            </p>
+
+            <h5 class="card-title mt-4">Mental Health Resources</h5>
+            <p>
+              If you are experiencing stress or personal difficulties, the 
+              <a href="https://counselingcenter.illinois.edu/">Counseling Center</a> 
+              provides free and confidential support services.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer mt-5">
+      <div class="container text-center">
+        <span class="text-muted">CS498GC Mobile Robotics - Fall 2025 - University of Illinois at Urbana-Champaign</span>
+      </div>
+    </footer>
+
+  </body>
+</html>

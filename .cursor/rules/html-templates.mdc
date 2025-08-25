@@ -1,0 +1,61 @@
+# HTML and Liquid Template Guidelines
+
+This site uses Jekyll's Liquid templating with a single-page layout.
+
+## Main Template Structure
+[index.html](mdc:index.html) contains the complete page layout with these sections:
+
+### HTML Head
+- Meta tags for responsive design and SEO
+- External CDN resources (Google Fonts, Font Awesome, Academicons)
+- Local assets: [js/index.js](mdc:js/index.js), [css/bulma.min.css](mdc:css/bulma.min.css), compiled CSS
+- Site title uses `{{ site.name }}` variable
+
+### Navigation
+- Fixed-top Bulma navbar with burger menu for mobile
+- Navigation items from [_data/navigation.yml](mdc:_data/navigation.yml)
+- Uses `{% for item in site.data.navigation %}` loop
+
+### Content Sections
+1. **Hero/About**: Profile image and bio from `{{ site.description }}`
+2. **Publications**: Loops through [_data/publications.yml](mdc:_data/publications.yml)
+3. **Teaching**: Hardcoded teaching assistant information
+4. **Projects**: Loops through [_data/projects.yml](mdc:_data/projects.yml)
+5. **Miscellaneous**: Loops through [_data/misc.yaml](mdc:_data/misc.yaml)
+6. **Hobbies**: Content from [_data/hobbies.yml](mdc:_data/hobbies.yml)
+
+### Shared Template
+[_includes/section.html](mdc:_includes/section.html) handles rendering for publications, projects, and misc items:
+- Conditional link logic based on available fields (`project_page`, `webpage`, `paper`, `arxiv`)
+- Author rendering with highlighting for `author.is_me`
+- Button generation for various link types (Paper, Video, GitHub, etc.)
+
+## Liquid Template Patterns
+
+### Data Access
+- `site.data.filename` - Access YAML data files
+- `site.variable` - Access [_config.yml](mdc:_config.yml) variables
+- `publication.field` - Access item properties in loops
+
+### Control Structures
+- `{% for item in collection %}...{% endfor %}` - Loop through data
+- `{% if condition %}...{% endif %}` - Conditional rendering
+- `{% assign variable = value %}` - Variable assignment
+
+### Filters
+- `| relative_url` - Make URLs relative to site base
+- `| markdownify` - Convert markdown to HTML
+- `| remove: '<p>'` - Remove unwanted HTML tags
+
+## Best Practices
+- Keep personal info in [_config.yml](mdc:_config.yml) variables
+- Use data files for content that changes frequently
+- Maintain consistent URL patterns and link structures
+- Ensure responsive design with Bulma classes
+- Test all external links and social media integrations
+
+When editing templates, preserve the existing Liquid logic and ensure proper data binding from YAML files.
+description:
+globs:
+alwaysApply: false
+---

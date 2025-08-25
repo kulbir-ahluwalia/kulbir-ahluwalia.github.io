@@ -1,0 +1,175 @@
+# - id: lego
+#   title: "Robotic Manipulator Builds Lego"
+#   description: "A Franka Emika FR3 robotic manipulator builds lego structures."
+#   video: https://drive.google.com/file/d/1N1CvrnQH8WayqLru4apPA0yI7BwdBI1Q/view?usp=sharing
+#   image: lego_before.jpg
+#   venue: Student Project, 2024
+#   image_mouseover: lego_after.mp4
+#   authors:
+#     - lefort
+#     - naimer
+#     - tahir
+#     - dong
+#     - hausdörfer
+#     - schuck
+# - venue: Project, 2024
+#   title: Analyzing contributions to robotic conferences
+#   description:
+#   webpage: https://oliver.hausdoerfer.de/robotics_conferences_analyzed
+#   image: Analyzing_robotics_conferences.png
+#   image_border: true
+#   authors:
+#     - hausdörfer
+# - id: tufast
+#   venue: Project, 2021
+#   title: TUfast TU Dresden
+#   description: Teaching and studying tool for TU Dresden with 3500 users. Awarded with the german [Digital Changemaker Award](https://www.stifterverband.org/digitalchangemaker-accelerator).
+#   webpage: https://tu-fast.de/
+#   image: TUfast.png
+#   image_border: true
+#   authors:
+#   - hausdörfer
+#   - guderian
+#   - kluge
+#   - fugi
+
+
+
+- title: "Enhancing Stereo Depth Maps through RGBD-Conditioned Generative Models"
+  venue: "Aug-Dec 2024"
+
+- title: "Active Semantic Mapping with Mobile Manipulator for Precision Agriculture"
+  venue: "Jan-May 2024"
+
+- title: "Turning Zero Shot into Few Shot via Self-prompting"
+  venue: "Aug-Dec 2023"
+
+- title: "Implemented Linear, Logistic, Polynomial regression, SVM, Convolutional, and Attention based models"
+  venue: "Apr-May 2023"
+
+- title: "VAE and GAN implementation"
+  description: "Implemented VAE & GAN for digit generation task."
+  venue: "March 2023"
+
+- title: "RESNet implementation"
+  description: "Implemented RESNet for classification task on MNIST dataset."
+  venue: "Feb 2023"
+
+- title: "Neural transition-based dependency parser"
+  webpage: "https://github.com/kulbir-ahluwalia/Neural_transition_based_dependency_parser"
+  venue: "Dec 2022"
+
+- title: "Machine translation with RNN and Transformers"
+  webpage: "https://github.com/kulbir-ahluwalia/Machine_translation_with_RNN_and_Transformers"
+  venue: "Nov 2022"
+
+- title: "Text classification with CNN and RNN"
+  webpage: "https://github.com/kulbir-ahluwalia/Text_classification_with_CNN_RNN"
+  venue: "Oct 2022"
+
+- title: "SLAM from 2D LiDAR data using split and merge line extraction algorithm"
+  webpage: "https://github.com/kulbir-ahluwalia/SLAM_using_2D_LiDAR_points"
+  venue: "Dec 2021"
+
+- title: "State estimation using Extended Kalman Filter for GPS+IMU+Encoder sensor fusion"
+  webpage: "https://github.com/kulbir-ahluwalia/Extended_Kalman_Filter_for_GPS_INS_sensor_fusion"
+  venue: "Nov 2021"
+
+- title: "Processed data from RTK-GPS, IMU and encoders to plot trajectory of a field robot"
+  webpage: "https://github.com/kulbir-ahluwalia/RTKGPS_IMU_Encoders_Plot_trajectory_using_ROS"
+  venue: "Sep 2021"
+
+- title: "Autonomous Vaccine Delivery Robot"
+  webpage: "https://drive.google.com/drive/folders/1rdmeapw3x31Y8ErJVZA07-d7b3ryTlUZ?usp=sharing"
+  venue: "May 2021"
+  description: "Designed an autonomous robot capable of navigating and localizing itself in a test arena using QR codes and arrows. It uses a RGB camera, IMU, optical encoders, and an ultrasonic sensor to detect, retrieve and transport user-specified blocks. [Featured video](https://www.youtube.com/watch?v=6NENfHeagUE&t=1s), [Robot videos](https://www.youtube.com/playlist?list=PLSaHroqSzd_VdedShiwm2QUasq5oexQ2L), [Featured post](https://mage.umd.edu/news/story/mage-professor-tackles-challenges-with-creative-coursework)"
+
+- title: "Image segmentation using superpixels"
+  webpage: "https://github.com/kulbir-ahluwalia/image-segmentation-using-superpixels"
+  venue: "Dec 2020"
+  description: "Built a segmentation network using SLIC superpixels as input. A pretrained VGG16 network had its last layers replaced by fully connected layers to classify superpixels. (Accuracy 98%)"
+
+- title: "Persistent-Monitoring using Multi-Robot (UAV-UGV) Coordination"
+  webpage: "https://drive.google.com/file/d/12TumNg-2mQlhINt-zy9sNu30cRg4n2r-/view?usp=sharing"
+  venue: "Dec 2020"
+
+- title: "Optimized a GestureGAN for resource constrained settings"
+  webpage: "https://drive.google.com/file/d/1AweCTHWJ8q-QFP4Damkxzy-qiaBunwBh/view?usp=sharing"
+  venue: "Dec 2020"
+  description: "Used MobileNet to optimize cross-view image generation with a 5.7X reduction in parameters."
+
+- title: "Self-adjusting roadmaps"
+  webpage: "https://github.com/kulbir-ahluwalia/self-adjusting-roadmaps"
+  venue: "May 2020"
+  description: "Navigation in unknown environments using LD-PRM."
+
+- title: "Estimated the motion of a car using Visual odometry"
+  webpage: "https://github.com/kulbir-ahluwalia/Visual_Odometry_ENPM673_Perception"
+  venue: "May 2020"
+
+- title: "Color segmentation using Gaussian mixture models & Expectation maximization"
+  webpage: "https://github.com/kulbir-ahluwalia/Buoy_segmentation"
+  venue: "April 2020"
+
+- title: "Image Classification using CNN"
+  webpage: "https://github.com/kulbir-ahluwalia/ImageClassification"
+  venue: "May 2020"
+
+- title: "AR-Tag detection"
+  webpage: "https://github.com/kulbir-ahluwalia/ENPM_673_Perception"
+  venue: "March 2020"
+  description: "Superimposed an image and virtual cube on an AR tag."
+
+- title: "Tracked moving objects using Lucas-Kanade Tracker"
+  webpage: "https://github.com/kulbir-ahluwalia/Lucas_Kanade_Tracker"
+  venue: "April 2020"
+
+- title: "Baxter transporting cubes in Gazebo"
+  webpage: "https://github.com/kulbir-ahluwalia/Baxter_ROS_kinetic_transporting_cubes"
+  venue: "April 2020"
+  description: "Simulated a Baxter robot transporting cubes between tables in Gazebo using ROS Kinetic. Waypoints were generated using Rviz and obstacles were avoided in the custom-designed Gazebo world."
+
+- title: "Implemented A star algorithm for Path Planning on Turtlebot 3"
+  webpage: "https://github.com/kulbir-ahluwalia/Implementing_A_star_on_Turtlebot3"
+  venue: "May 2020"
+  description: "Implemented the A* algorithm in a configuration space with obstacles. The Turtlebot 3 obeys non-holonomic constraints with 8 combinations of two user-defined RPMs."
+
+- title: "Path planning for point and rigid robot using Djikstra's Algorithm"
+  webpage: "https://github.com/kulbir-ahluwalia/Dijkstra_Project_2_ENPM_661"
+  venue: "April 2020"
+
+- title: "Lane detection and Turn prediction for self driving car"
+  webpage: "https://github.com/kulbir-ahluwalia/ENPM_673_Perception"
+  venue: "March 2020"
+  description: "Developed an algorithm using hough transform and histogram of lanes. Also implemented homography and warp perspective functions from scratch for overlays."
+
+- title: "Agile Robotics for Industrial Automation Competition (ARIAC) 2019"
+  webpage: "https://drive.google.com/drive/folders/1t-sGh60o9W79BdqMked3BNomsTYB6heL?usp=sharing"
+  venue: "May 2020"
+  description: "Developed an industrial system with UR 10 robotic arms, conveyor belts, and AGVs. The system picked parts from a conveyor, disposed faulty items, assembled orders, and delivered them using AGVs."
+
+- title: "Designed a PID controller for Turtlebot 3"
+  webpage: "https://github.com/kulbir-ahluwalia/Turtlebot_3_PID"
+  venue: "April 2020"
+
+- title: "Modelled a UR 5 arm with Parallel Gripper in Rviz"
+  webpage: "https://github.com/kulbir-ahluwalia/662-Final-Project-UR-5-arm"
+  venue: "Sep-Dec 2019"
+  description: "Simulated a 7 DOF UR5 arm using Moveit and Rviz. Calculated DH parameters and computed forward kinematics manually, verified via Peter Corke's Robotics toolbox. [Simulation videos](https://youtube.com/playlist?list=PLSaHroqSzd_WR5xg_QvIdhWTvgah-BKno)"
+
+- title: "Designed a LQR and LQG controller"
+  description: "Developed controllers for two inverted pendulums on a moving cart."
+  venue: "Dec 2019"
+
+- title: "Teleoperated gesture controlled robotic arm"
+  webpage: "https://github.com/kulbir-ahluwalia/Gesture-controlled-mobile-robotic-arm"
+  venue: "Aug 2018-May 2019"
+  description: "Engineered a prototype to transport objects between rooms via web-based remote access with live video and gesture control. The robot featured on-board power, a custom LED light source for low-light navigation, smart device control, and a speaker for prerecorded messages."
+
+- title: "Pick n place transporter bot"
+  venue: "Aug-Dec 2016"
+  description: "Awarded First Prize in IIT Roorkee and placed 6th out of 400 teams at IIT Bombay. [Video 1](https://www.youtube.com/watch?v=ZeP9iDCopPI&list=PLSaHroqSzd_X2l_eohCaYrCOuesbWF8-a) [Video 2](https://www.youtube.com/watch?v=ITYzE8p39-Y)"
+
+- title: "Smart Garden"
+  venue: "March 2017"
+  description: "Won First Prize in the Texas Instruments Hardware Hackathon."

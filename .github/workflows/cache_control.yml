@@ -1,0 +1,53 @@
+name: Add Cache Control Headers
+
+on:
+  push:
+    branches:
+      - main
+
+# Add explicit permissions for the workflow
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  add_headers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+          bundler-cache: true
+          
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-cache-${{ hashFiles('**/Gemfile.lock') }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-gem-cache-
+        
+      - name: Install dependencies
+        run: bundle install
+        
+      - name: Build site
+        run: bundle exec jekyll build
+        
+      - name: Add cache control headers
+        run: |
+          echo 'Cache-Control: no-cache, no-store, must-revalidate' > _site/_headers
+          echo 'Pragma: no-cache' >> _site/_headers
+          echo 'Expires: 0' >> _site/_headers
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          force_orphan: true 

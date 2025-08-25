@@ -1,0 +1,196 @@
+# - id2: agnathax
+#   title: Deep reinforcement learning for investigating stretch feedback during swimming of the lamprey
+#   description: Lampreys can locomote using only based on local sensory feedback loops. Similar neural network designs show favorable properties for robot learning.
+#   image: agnathax_before.png
+#   image_border: true
+#   image_mouseover: agnathax_after.mp4
+#   venue: Bioinspiration & Biomimetics
+#   awards: Journal paper (masters' thesis)
+#   paper: https://iopscience.iop.org/article/10.1088/1748-3190/adb8b1
+#   authors:
+#   - hausdörfer
+#   - gupta
+#   - ijspeert
+#   - renj
+# - id2: comCompression
+#   title: Communication Compression for Tensor Parallel LLM Inference
+#   arxiv: "2411.09510" # Required as string, as liquid ignores trailing zeros https://stackoverflow.com/questions/37862167/trailing-zeros-in-jekyll-liquid
+#   description: Inter-GPU communication compression for Large Language Models leads to up to 2x reduction of time-to-first-token with negligible model performance degradation.
+#   image: comComp_before.png
+#   image_border: true
+#   venue: NeurIPS, 2024
+#   awards: Conference (workshop)
+#   authors:
+#   - palmus
+#   - le
+#   - hausdörfer
+#   - verma
+# - id2: latentActionPriors
+#   title: Latent Action Priors From a Single Gait Cycle Demonstration for Online Imitation Learning
+#   project_page: https://sites.google.com/view/latent-action-priors
+#   arxiv: 2410.03246
+#   description: A single gait cycle of expert demonstration significantly improves achieved reward and visual appearance of the learned gait in locomotion tasks - even for transfer tasks.
+#   image: lap_before.jpg
+#   image_mouseover: lap_after.mp4
+#   venue: CoRL, 2024
+#   awards: Conference (workshop)
+#   authors:
+#   - hausdörfer
+#   - vonRohr
+#   - lefort
+#   - schoellig
+# - id2: mechanobiology
+#   title: "Mechanoactivation of Single Stem Cells in Microgels Using a 3D-Printed Stimulation Device"
+#   venue: Small Methods, 2024
+#   description: "3D-printed chip for mechanoactivation at single-cell level to study intracellular calcium signaling and translocation."
+#   paper: https://onlinelibrary.wiley.com/doi/10.1002/smtd.202400272
+#   image: mechanobiology_before.jpg
+#   image_mouseover: cells_after.mp4
+#   authors:
+#     - nergis
+#     - hausdörfer
+#     - chen
+#     - hiendl
+#     - pharder
+#     - wolfrum
+#     - özkale
+#   awards:
+#     - "Journal Paper"
+
+
+
+- id2: activeSemanticMapping_ICRA2025
+  title: "Active Semantic Mapping with Mobile Manipulator in Horticultural Environments"
+  venue: <a href="https://2025.ieee-icra.org/">International Conference on Robotics and Automation (ICRA 2025)</a>
+  awards: "Conference paper"
+  arxiv: "2412.10515"
+  image: publications/active_semantic_mapping/supplementary_video_mobile_manipulator_robot_screenshot_aruco_marker_2024-08-29_02-30.png
+  image_border: false
+  # description: "We introduce an efficient and scalable approach for active semantic mapping in horticultural environments, employing a mobile robot manipulator equipped with an RGB-D camera."
+  description: "We introduce an efficient active semantic mapping approach for horticultural robotics, using a mobile manipulator with an RGB-D camera. Probabilistic semantic octomaps are used to detect target regions of interest such as fruits, generate candidate viewpoints, and compute information gain for next-best-view planning. An efficient ray-casting strategy and a novel information gain function accounting for semantics and occlusions is introduced for efficient target-focused map exploration."
+  github: jrcuaranv/nbv_planning
+  project_page: "https://kendallkoe.com/Active_Semantic_Mapping/"
+  # image_mouseover: publications/active_semantic_mapping/active_sem_mapping_gif.gif
+  authors:
+    - Jose
+    - Kulbir
+    - Kendall
+    - Naveen
+    - Girish
+
+
+
+
+
+- id2: plantPlacement_AIFARMS2023
+  title: "Plant Placement using Natural Language Grounding"
+  venue: "AIFARMS Conference (Fall 2023)"
+  awards: "Conference Poster"
+  pdf: "https://github.com/kulbir-ahluwalia/kulbir-ahluwalia.github.io/blob/main/files/V3_AIFARMS-KSA_Poster-2023.pdf"
+  image: "publications/plant_placement_farmbot/final_thumbnail.png"
+  # description: "This poster presents a text-enabled FarmBot system that enables users to control robotic gardening via natural language. Leveraging a custom Python wrapper built on the FarmBot REST API, natural language commands are grounded using the robot state and converted into executable code with a fine-tuned CodeT5 model. Valid plant placement configurations are generated using a unique synthetic dataset derived from uniformly sampled spatial commands with natural language defined spatial constraints."
+
+  description: "This poster presents a text-enabled FarmBot system that enables users to control a robotic gardening FarmBot system via natural language. Using a custom Python wrapper built on the FarmBot REST API, natural language commands are grounded using real-time robot state and translated into executable code with a fine-tuned CodeT5 model. The system generates valid plant placement configurations that satisfy natural language defined spatial constraints."
+  authors:
+    - Kulbir
+    - Michael
+    - Rajarshi
+    - Peixin
+    - Julia
+    - Girish
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- id2: deeppaSTL
+  title: "DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains Using Synthetic Datasets"
+  description: "DeepPaSTL aims to accurately forecast long-term pasture growth, tackling the challenge of estimating pasture biomass without relying on extensive site-specific data or frequent field measurements. This approach enables predicting pasture evolution without monitoring fields regularly, using past observed pasture heights as input. DeepPaSTL introduces a bi-directional ConvLSTM encoder–decoder to learn the spatio-temporal pasture growth dynamics purely from spatial height measurements."
+  venue: "Published in Agronomy 2021 (Special Issue AI and Agricultural Robots)"
+  awards: "Conference Paper"
+  image: publications/deeppastl/deeppastl_training.png
+  paper: "https://doi.org/10.3390/agronomy11112245"
+  pdf: "files/agronomy-11-02245-with-cover.pdf"
+  # arxiv: ""
+  authors:
+    - Murtaza
+    - Jun
+    - Kulbir
+    - Ghajar
+    - Harnaik
+    - Tracy
+    - Pratap
+    - Ryan
+
+- id2: intermittentDeployment
+  title: "Intermittent Deployment for Large-Scale Multi-Robot Forage Perception: Data Synthesis, Prediction, and Planning"
+  description: "Targets large-scale pasture monitoring for precision agriculture, deploying a team of robots to track grassland growth for optimal rotational grazing and land productivity, addressing the lack of timely growth data in current practice. Proposes an integrated pipeline combining synthetic data generation, deep neural network-based spatiotemporal prediction, and an intermittent multi-robot deployment strategy to periodically survey evolving pastureland at low cost.​"
+  venue: "IEEE Transactions on Automation Science and Engineering, 2021"
+  image: publications/intermittent_deployment_jun_liu/intermittent_deployment_jun_liu_flowchart.jpg
+  awards: "Journal Paper"
+  arxiv: "2112.09203"
+  paper: "https://ieeexplore.ieee.org/document/9923747"
+  pdf: "files/IEEE_PDF_Intermittent_Deployment_for_Large-Scale_Multi-Robot_Forage_Perception_Data_Synthesis_Prediction_and_Planning.pdf"
+  authors:
+    - Jun
+    - Murtaza
+    - Kulbir
+    - Ghajar
+    - Harnaik
+    - Tracy
+    - Pratap
+    - Ryan
+
+
+
+
+- id2: activeSemanticMapping_ICRA40
+  title: "Active Semantic Mapping with Mobile Manipulator in Horticultural Environments"
+  description: "An abstract accepted at the 40th Anniversary of the IEEE Conference on Robotics and Automation (ICRA@40), 2024."
+  venue: "ICRA@40, 2024"
+  image: publications/icra_at_40/icra_at_40_ts_plusplus.jpeg
+  awards: "Abstract"
+  authors:
+    - Jose
+    - Kulbir
+    - Kendall
+    - Girish
+
+- id2: smartphoneOpticalSensors
+  title: "Smartphone Optical Sensors"
+  description: "An article featuring the multispectral Fundus Eye camera prototype, as presented in Optics and Photonics News."
+  venue: "Optics and Photonics News, 2019"
+  awards: "Featured Article"
+  image: publications/multispectral_camera_retina/edited_fundus_camera.jpg
+  paper: "https://doi.org/10.1364/OPN.30.2.000034"
+  pdf: "files/Smartphone_Optical_Sensors_Research_Article.pdf"
+  authors:
+    - Simarjeet
+    - Aneesh
+    - Kulbir
+
+- id2: rlForFruitNDT
+  title: "Reinforcement Learning Integrated with Supervised Learning for Training of Near Infrared Spectrum Data for Non-Destructive Testing of Fruits"
+  description: "A conference presentation on combining reinforcement and supervised learning for non-destructive testing of fruits using near infrared spectrum data."
+  venue: "Sensing for Agriculture and Food Quality and Safety XII, 2020"
+  awards: "Conference Presentation"
+  paper: "https://doi.org/10.1117/12.2557416"
+  authors:
+    - Yuqi
+    - Kulbir
+    - Simarjeet

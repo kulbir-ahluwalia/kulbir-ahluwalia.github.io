@@ -1,0 +1,45 @@
+# CSS/SCSS Styling Guidelines
+
+This site uses Bulma CSS framework with custom SCSS overrides.
+
+## Architecture
+- **Base framework**: Bulma CSS ([css/bulma.min.css](mdc:css/bulma.min.css))
+- **Custom styles**: [css/index.scss](mdc:css/index.scss) - Main stylesheet that imports base styles
+- **SCSS partials**: [_sass/_base.scss](mdc:_sass/_base.scss) - Contains base font family definition
+
+## Key CSS Classes
+- `.publication-block` - Container for publication entries
+- `.publication-title` - Publication titles (110% font size, weight 600)
+- `.publication-authors` - Author listings with special `.author-me` highlighting
+- `.publication-venue` - Conference/journal venue styling
+- `.publication-description` - Description text
+- `.publication-links` - Button containers for links
+- `.portrait` - Profile image container with 2% border radius and transform scale
+- `.navbar-burger` - Mobile navigation hamburger menu
+
+## Typography
+- **Primary font**: "Noto Sans", sans-serif (defined in [_sass/_base.scss](mdc:_sass/_base.scss))
+- **Title font**: 'Google Sans', weight 700 for `.title` class
+- **Academic icons**: Academicons and Font Awesome integration
+
+## Responsive Design
+- Mobile-first approach with Bulma's responsive utilities
+- Navbar transforms to burger menu on mobile
+- Portrait image adjustments for smaller screens
+- Uses `@media screen and (max-width: 750px)` for mobile breakpoints
+
+## Color Scheme
+- Primary text: #000 (black)
+- Venue text: #555 (gray)
+- Awards: firebrick color
+- Light theme with subtle contrasts
+
+## Custom Features
+- Mouseover effects for publication images/videos
+- External link styling with icons
+- Disabled link styles for items without URLs
+- Fixed navbar with proper spacing compensation
+description:
+globs:
+alwaysApply: false
+---

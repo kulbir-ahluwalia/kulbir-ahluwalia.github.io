@@ -1,0 +1,22 @@
+# Navbar
+main:
+  - title: "About"
+    section: about
+
+  - title: "Teaching"
+    section: teaching
+    
+  - title: "Projects"
+    section: projects
+
+  - title: "Publications"
+    section: publications
+
+  - title: "CV"
+    link: /files/CV_July2025/CV_6JULY_Ver1_8_2025_Kulbir_UIUC_PhD_CS.pdf
+
+  - title: "Resume"
+    link: /files/CV_July2025/Resume_6JULY_Ver1_8_2025_Kulbir_UIUC_PhD_CS.pdf
+
+  - title: "Contact"
+    section: contact

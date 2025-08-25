@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159856695-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-159856695-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>CS498GC: Mobile Robotics - Assignments</title>
+    <link rel="icon"  href="resources/favicon.ico" />
+    <link rel="shortcut icon"  href="resources/favicon.ico" />
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+	    <div class="container">
+      <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+
+      <div class="collapse navbar-collapse" id="navbarToggle">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="logistics.html">Logistics</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="syllabus.html">Syllabus</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="assignments.html">Assignments</a>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron header-plain">
+        <h1>Assignments</h1>
+      </div>
+
+      <div class="container-fluid">
+        <div class="alert alert-warning">
+          <strong>Important:</strong> All assignments must be submitted via Gradescope. Late submissions will be penalized 10% per day. 
+          Each student has 3 late days to use throughout the semester.
+        </div>
+
+        <h2>Coding Exercises (45% of grade)</h2>
+        <p>
+          Coding exercises are hands-on programming assignments where you will implement key algorithms for mobile robotics using ROS2. 
+          These assignments involve processing real sensor data and implementing state estimation algorithms.
+        </p>
+
+        <div class="row">
+          <div class="col-md-12 mb-4">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4>Coding Exercise 1: Wheel Odometry and ROS2 Basics</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Release Date:</strong> September 16, 2025</p>
+                <p><strong>Due Date:</strong> September 30, 2025 (11:59 PM)</p>
+                <p><strong>Weight:</strong> 15% of total grade</p>
+                
+                <h5>Objectives:</h5>
+                <ul>
+                  <li>Implement wheel odometry computation from encoder data</li>
+                  <li>Create ROS2 nodes for publishing odometry messages</li>
+                  <li>Handle coordinate transformations using tf2</li>
+                  <li>Visualize robot trajectory in RViz2</li>
+                </ul>
+                
+                <h5>Deliverables:</h5>
+                <ul>
+                  <li>Python implementation of odometry node</li>
+                  <li>Output trajectory files for autograding</li>
+                  <li>Brief report explaining your approach</li>
+                </ul>
+                
+                <div class="mt-3">
+                  <a href="#" class="btn btn-outline-primary disabled">Assignment PDF (Coming Soon)</a>
+                  <a href="#" class="btn btn-outline-secondary disabled">Starter Code (Coming Soon)</a>
+                  <a href="#" class="btn btn-outline-info disabled">ROS Bag Data (Coming Soon)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-4">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4>Coding Exercise 2: IMU and GPS Integration</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Release Date:</strong> October 7, 2025</p>
+                <p><strong>Due Date:</strong> October 28, 2025 (11:59 PM)</p>
+                <p><strong>Weight:</strong> 15% of total grade</p>
+                
+                <h5>Objectives:</h5>
+                <ul>
+                  <li>Process IMU data (accelerometer and gyroscope)</li>
+                  <li>Convert GPS coordinates to local frame</li>
+                  <li>Implement complementary filter for attitude estimation</li>
+                  <li>Fuse GPS and IMU for improved localization</li>
+                </ul>
+                
+                <h5>Deliverables:</h5>
+                <ul>
+                  <li>ROS2 package with IMU and GPS processing nodes</li>
+                  <li>Fused position and orientation estimates</li>
+                  <li>Performance analysis comparing different sensors</li>
+                </ul>
+                
+                <div class="mt-3">
+                  <a href="#" class="btn btn-outline-primary disabled">Assignment PDF (Coming Soon)</a>
+                  <a href="#" class="btn btn-outline-secondary disabled">Starter Code (Coming Soon)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-4">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4>Coding Exercise 3: Extended Kalman Filter</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Release Date:</strong> November 4, 2025</p>
+                <p><strong>Due Date:</strong> November 18, 2025 (11:59 PM)</p>
+                <p><strong>Weight:</strong> 15% of total grade</p>
+                
+                <h5>Objectives:</h5>
+                <ul>
+                  <li>Implement Extended Kalman Filter for sensor fusion</li>
+                  <li>Define system and measurement models</li>
+                  <li>Tune process and measurement noise covariances</li>
+                  <li>Compare EKF performance with individual sensors</li>
+                </ul>
+                
+                <h5>Deliverables:</h5>
+                <ul>
+                  <li>Complete EKF implementation in ROS2</li>
+                  <li>Tuned parameters with justification</li>
+                  <li>Comparison plots and error analysis</li>
+                </ul>
+                
+                <div class="mt-3">
+                  <a href="#" class="btn btn-outline-primary disabled">Assignment PDF (Coming Soon)</a>
+                  <a href="#" class="btn btn-outline-secondary disabled">Starter Code (Coming Soon)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="mt-5">Problem Sets (30% of grade)</h2>
+        <p>
+          Problem sets focus on the mathematical foundations and theoretical aspects of mobile robotics. 
+          These assignments help develop understanding of the algorithms before implementation.
+        </p>
+
+        <div class="row">
+          <div class="col-md-12 mb-4">
+            <div class="card">
+              <div class="card-header bg-success text-white">
+                <h4>Problem Set 1: Kinematics and Transformations</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Release Date:</strong> September 9, 2025</p>
+                <p><strong>Due Date:</strong> September 23, 2025 (11:59 PM)</p>
+                <p><strong>Weight:</strong> 10% of total grade</p>
+                
+                <h5>Topics:</h5>
+                <ul>
+                  <li>Homogeneous transformations</li>
+                  <li>Robot kinematics derivation</li>
+                  <li>Quaternion operations</li>
+                  <li>Coordinate frame conversions</li>
+                </ul>
+                
+                <div class="mt-3">
+                  <a href="#" class="btn btn-outline-success disabled">Problem Set PDF (Coming Soon)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-4">
+            <div class="card">
+              <div class="card-header bg-success text-white">
+                <h4>Problem Set 2: Probabilistic Robotics</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Release Date:</strong> September 23, 2025</p>
+                <p><strong>Due Date:</strong> October 14, 2025 (11:59 PM)</p>
+                <p><strong>Weight:</strong> 10% of total grade</p>
+                
+                <h5>Topics:</h5>
+                <ul>
+                  <li>Bayes filter derivation</li>
+                  <li>Motion and sensor models</li>
+                  <li>Gaussian propagation</li>
+                  <li>Information theory in robotics</li>
+                </ul>
+                
+                <div class="mt-3">
+                  <a href="#" class="btn btn-outline-success disabled">Problem Set PDF (Coming Soon)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-4">
+            <div class="card">
+              <div class="card-header bg-success text-white">
+                <h4>Problem Set 3: Filtering and Estimation</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Release Date:</strong> October 14, 2025</p>
+                <p><strong>Due Date:</strong> November 11, 2025 (11:59 PM)</p>
+                <p><strong>Weight:</strong> 10% of total grade</p>
+                
+                <h5>Topics:</h5>
+                <ul>
+                  <li>Kalman filter derivation</li>
+                  <li>EKF linearization</li>
+                  <li>Particle filter theory</li>
+                  <li>SLAM problem formulation</li>
+                </ul>
+                
+                <div class="mt-3">
+                  <a href="#" class="btn btn-outline-success disabled">Problem Set PDF (Coming Soon)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="mt-5">Final Project (20% of grade)</h2>
+        <div class="card mb-4">
+          <div class="card-header bg-dark text-white">
+            <h4>Final Project: Advanced Mobile Robot System</h4>
+          </div>
+          <div class="card-body">
+            <p><strong>Release Date:</strong> November 11, 2025</p>
+            <p><strong>Checkpoint Due:</strong> December 2, 2025</p>
+            <p><strong>Final Submission:</strong> December 11, 2025</p>
+            <p><strong>Presentations:</strong> December 9-11, 2025</p>
+            <p><strong>Weight:</strong> 20% of total grade (25% for 4-credit students)</p>
+            
+            <h5>Project Options:</h5>
+            <ol>
+              <li><strong>Visual-Inertial Odometry:</strong> Implement VIO using camera and IMU data</li>
+              <li><strong>Multi-Robot Localization:</strong> Coordinate multiple robots for collaborative mapping</li>
+              <li><strong>Learning-Based Navigation:</strong> Apply deep learning to navigation problems</li>
+              <li><strong>SLAM Implementation:</strong> Implement a complete SLAM system from scratch</li>
+              <li><strong>Custom Project:</strong> Propose your own project (requires approval)</li>
+            </ol>
+            
+            <h5>Requirements:</h5>
+            <ul>
+              <li>Can be done individually or in groups of 2-3</li>
+              <li>Must use ROS2 and real/simulated sensor data</li>
+              <li>Include comprehensive evaluation and comparison</li>
+              <li>Final presentation and demonstration required</li>
+              <li>4-credit students must include additional research component</li>
+            </ul>
+            
+            <h5>Deliverables:</h5>
+            <ul>
+              <li>Project proposal (1 page)</li>
+              <li>Midpoint checkpoint with preliminary results</li>
+              <li>Final code repository with documentation</li>
+              <li>Technical report (6-8 pages)</li>
+              <li>15-minute presentation</li>
+            </ul>
+            
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-dark disabled">Project Guidelines (Coming Soon)</a>
+              <a href="#" class="btn btn-outline-dark disabled">Project Ideas (Coming Soon)</a>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="mt-5">Resources</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">ROS2 Setup Guide</h5>
+                <p>Step-by-step instructions for setting up your ROS2 development environment.</p>
+                <a href="#" class="btn btn-sm btn-outline-info disabled">Coming Soon</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Python Style Guide</h5>
+                <p>Coding standards and best practices for assignments.</p>
+                <a href="#" class="btn btn-sm btn-outline-info disabled">Coming Soon</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Debugging Tips</h5>
+                <p>Common issues and solutions for ROS2 development.</p>
+                <a href="#" class="btn btn-sm btn-outline-info disabled">Coming Soon</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Sample Data</h5>
+                <p>Example sensor data for testing your implementations.</p>
+                <a href="#" class="btn btn-sm btn-outline-info disabled">Coming Soon</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer mt-5">
+      <div class="container text-center">
+        <span class="text-muted">CS498GC Mobile Robotics - Fall 2025 - University of Illinois at Urbana-Champaign</span>
+      </div>
+    </footer>
+
+  </body>
+</html>

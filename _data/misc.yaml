@@ -1,0 +1,126 @@
+# - venue: Summer School, 2024
+#   title: Winning robot competition at the ETH Robotics Summer School
+#   description: Building a robot for autonomous outdoor exploration and artifact detection
+#   image: misc/ETH_RSS2024_before.png
+#   webpage: https://robotics-summerschool.ethz.ch/
+#   image_mouseover: misc/ETH_RSS2024_after.png
+
+# - venue: Conference Poster, 2024
+#   title: AIFarms Research Poster
+#   description: Conference poster showcasing research on AI applications in agricultural farming
+#   webpage: /files/V3_AIFARMS-KSA_Poster-2023.pdf
+
+
+
+  # Add image if you have a preview thumbnail
+  # image: misc/AIFarms_poster_thumbnail.png
+
+# - venue: Conference, 2024
+#   title: Young scientist award at KIRO 2024
+#   description: KIRO2024 was the first german AI-in-robotics conference
+#   webpage: https://www.elektronikforschung.de/robotik
+#   image: misc/KIRO2024_before.png
+#   image_mouseover: misc/KIRO2024_after.png
+# - venue: Hackathon, 2023
+#   title: Winning the SICK Solution Hackathon
+#   description:
+#   webpage: https://www.mirmi.tum.de/en/mirmi/news/article/tum-student-oliver-hausdoerfer-gewinnt-sick-solution-hackathon/
+#   image: misc/Sick_Hackathon_2024_before.png
+#   image_mouseover: misc/Sick_Hackathon_2024_after.png
+# - venue: Hackathon, 2021 
+#   title: Winning the start.ING Hackathon
+#   webpage: https://www.rolandberger.com/en/Join/Events/start.ing/index.html
+#   description:
+# - venue: Hackathon, 2019
+#   title: Winning the bonding Engineering Competition
+#   description:
+# - venue: Hackathon, 2019 
+#   title: Winning the Fiction2Science Hackathon Nr. 2
+#   description:
+# - venue: Hackathon, 2019
+#   title: Winning the Fiction2Science Hackathon Nr. 1
+#   description:
+
+
+
+# item:
+# - certificate_url: https://drive.google.com/file/d/1ckSiJ7QYkr3LPH2cGyAMaCiRa5WQUGU3/view?usp=sharing 
+#   date_end: "2019-05-20"
+#   date_start: "2018-08-20"
+#   description: "First prize in final year MAJOR PROJECT in the B.Tech. Examination of Electrical Engineering, 2015-19 titled Teleoperated Gesture controlled Robotic arm."
+#   organization: Punjab Engineering College
+#   organization_url: https://pec.ac.in/
+#   title: First prize in B.Tech. Major Project
+#   url: "https://github.com/kulbir-ahluwalia/Gesture-controlled-mobile-robotic-arm"
+
+
+# - certificate_url: https://ninjasfiles.s3.amazonaws.com/certificate222025167e68f91e0375b62c0529b3f1098f48.pdf
+#   date_end: "2019-07-20"
+#   date_start: "2019-05-20"
+#   description: ""
+#   organization: Coding Ninjas
+#   organization_url: https://www.codingninjas.com/
+#   title: Programming in Python
+#   url: ""
+
+# - certificate_url: https://certificate.codingninjas.com/view/b3646fcb22a30a11
+#   date_end: "2022-02-20"
+#   date_start: "2021-10-20"
+#   description: ""
+#   organization: Coding Ninjas
+#   organization_url: https://www.codingninjas.com/
+#   title: Data Structures & Algorithms in Python
+#   url: ""
+
+
+# - certificate_url: 
+#   date_end: "2019-05-20"
+#   date_start: "2018-08-20"
+#   description: "Received Certificate of Appreciation for contributions to IEEE PEC (2017,2018)."
+#   organization: IEEE PEC
+#   organization_url: https://pec.ac.in/ieee
+#   title: 
+#   url: ""
+
+
+# - certificate_url: https://drive.google.com/file/d/1gToL2hyfBqhH2roJO5uWVdo0Yt2RCgtM/view?usp=sharing 
+#   date_end: ""
+#   date_start: "2011-07-25"
+#   description: "Awarded with the National Bal Shree Award in Creative Scientific Innovations by the Ministry of Human Resource Development, Govt. of India.  It consisted of a series of scientific hands-on tests and interviews at city, zonal and national level."
+#   organization: National Bal Bhavan, New Delhi, India
+#   organization_url: http://nationalbalbhavan.nic.in/bal-shree/balshree-honour.html
+#   title: 
+#   url: ""
+
+- venue: Punjab Engineering College
+  title: First prize in B.Tech. Major Project, 2019
+  description: "First prize in final year MAJOR PROJECT in the B.Tech. Examination of Electrical Engineering, 2015-19 titled Teleoperated Gesture controlled Robotic arm."
+#   organization_url: https://pec.ac.in/
+  video: "https://github.com/kulbir-ahluwalia/Gesture-controlled-mobile-robotic-arm"
+  webpage: https://drive.google.com/file/d/1ckSiJ7QYkr3LPH2cGyAMaCiRa5WQUGU3/view?usp=sharing
+  authors:
+    - Kulbir
+    - Akash
+    - Garvit
+
+- venue: IEEE, Punjab Engineering College
+  title: Certificate of Appreciation, (2017,2018)
+  description: "Received certificate of appreciation for contributions to IEEE PEC (2017,2018)."
+  webpage: https://pec.ac.in/ieee
+
+
+- venue: Coding Ninjas
+  title: Programming in Python, 2019
+  description: ""
+  webpage: https://ninjasfiles.s3.amazonaws.com/certificate222025167e68f91e0375b62c0529b3f1098f48.pdf
+
+- venue: Coding Ninjas
+  title: Data Structures & Algorithms in Python, 2022
+  description: ""
+  webpage: https://certificate.codingninjas.com/view/b3646fcb22a30a11
+
+- venue: National Bal Bhavan, New Delhi, India
+  title: National Bal Shree Award, 2011
+  description: "Awarded with the National Bal Shree Award in Creative Scientific Innovations by the Ministry of Human Resource Development, Govt. of India.  It consisted of a series of scientific hands-on tests and interviews at city, zonal and national level."
+  webpage: https://drive.google.com/file/d/1gToL2hyfBqhH2roJO5uWVdo0Yt2RCgtM/view?usp=sharing
+  website: http://nationalbalbhavan.nic.in/bal-shree/balshree-honour.html 

@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159856695-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-159856695-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization,setup,installation">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>ROS2 Setup - CS498GC: Mobile Robotics</title>
+    <link rel="icon"  href="resources/favicon.ico" />
+    <link rel="shortcut icon"  href="resources/favicon.ico" />
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+	    <div class="container">
+      <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+
+      <div class="collapse navbar-collapse" id="navbarToggle">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logistics.html">Logistics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="syllabus.html">Syllabus</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="assignments.html">Assignments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="setup.html">ROS2 Setup</a>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron header-plain">
+        <h1>ROS2 Setup</h1>
+        <h3>Development Environment Configuration for CS498GC</h3>
+        <p class="lead">Complete setup guide for Ubuntu 22.04, ROS2 Humble, and mobile robotics development tools required for course assignments.</p>
+      </div>
+
+      <div class="container-fluid">
+        
+        <div class="alert alert-warning" role="alert">
+          <strong>⚠️ Important:</strong> This setup is required for all coding exercises and Assignment 4. Please complete setup before the first coding assignment deadline.
+        </div>
+
+        <div class="alert alert-info" role="alert">
+          <strong>💡 Tip:</strong> If you're using a Mac or Windows machine, we recommend setting up a virtual machine or using dual-boot with Ubuntu 22.04 LTS.
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 col-md-12 col-sm-12">
+            
+            <h2>🖥️ Step 1: Ubuntu 22.04 LTS Installation</h2>
+            
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Option A: Native Installation (Recommended)</h5>
+                <p>Install Ubuntu 22.04 LTS as your primary OS or dual-boot system.</p>
+                <ul>
+                  <li>Download Ubuntu 22.04 LTS from <a href="https://ubuntu.com/download/desktop" target="_blank">ubuntu.com</a></li>
+                  <li>Create a bootable USB drive using tools like Rufus or Etcher</li>
+                  <li>Install Ubuntu with at least 50GB of free disk space</li>
+                  <li>Ensure your system has at least 8GB RAM for optimal performance</li>
+                </ul>
+                <a href="https://ubuntu.com/tutorials/install-ubuntu-desktop" target="_blank" class="btn btn-sm btn-primary">Ubuntu Installation Tutorial</a>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Option B: Virtual Machine</h5>
+                <p>Run Ubuntu 22.04 in a virtual machine using VirtualBox, VMware, or Parallels.</p>
+                <ul>
+                  <li>Allocate at least 4GB RAM and 50GB storage to the VM</li>
+                  <li>Enable hardware acceleration if available</li>
+                  <li>Install VirtualBox Guest Additions for better performance</li>
+                </ul>
+                <div class="alert alert-secondary">
+                  <strong>Note:</strong> VM performance may be slower, especially for Gazebo simulation.
+                </div>
+              </div>
+            </div>
+
+            <h2>🤖 Step 2: ROS2 Humble Installation</h2>
+            
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Official ROS2 Humble Installation</h5>
+                <p>Follow these commands to install ROS2 Humble on Ubuntu 22.04:</p>
+                
+                <div class="bg-dark text-light p-3 mb-3" style="font-family: 'Courier New', monospace;">
+                  <small>
+# Ensure system is up to date<br>
+sudo apt update && sudo apt upgrade -y<br><br>
+
+# Install required tools<br>
+sudo apt install curl gnupg lsb-release -y<br><br>
+
+# Add ROS2 GPG key<br>
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | sudo apt-key add -<br><br>
+
+# Add ROS2 repository<br>
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null<br><br>
+
+# Update package index<br>
+sudo apt update<br><br>
+
+# Install ROS2 Humble Desktop<br>
+sudo apt install ros-humble-desktop -y<br><br>
+
+# Install additional development tools<br>
+sudo apt install python3-pip python3-colcon-common-extensions -y
+                  </small>
+                </div>
+                
+                <a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html" target="_blank" class="btn btn-sm btn-success">Official ROS2 Installation Guide</a>
+              </div>
+            </div>
+
+            <h2>⚙️ Step 3: Environment Setup</h2>
+            
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Configure ROS2 Environment</h5>
+                <p>Set up your shell environment to automatically source ROS2:</p>
+                
+                <div class="bg-dark text-light p-3 mb-3" style="font-family: 'Courier New', monospace;">
+                  <small>
+# Add ROS2 setup to your bashrc<br>
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc<br><br>
+
+# Source the current session<br>
+source ~/.bashrc<br><br>
+
+# Verify installation<br>
+ros2 --version<br><br>
+
+# Test with a simple example<br>
+ros2 run demo_nodes_cpp talker
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <h2>🛠️ Step 4: Mobile Robotics Packages</h2>
+            
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Install Required Packages for Course</h5>
+                <p>Install additional packages needed for mobile robotics development:</p>
+                
+                <div class="bg-dark text-light p-3 mb-3" style="font-family: 'Courier New', monospace;">
+                  <small>
+# Navigation and SLAM packages<br>
+sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup -y<br><br>
+
+# Gazebo simulation<br>
+sudo apt install ros-humble-gazebo-* -y<br><br>
+
+# TF2 and geometry packages<br>
+sudo apt install ros-humble-tf2-tools ros-humble-tf-transformations -y<br><br>
+
+# Robot state publisher and joint state publisher<br>
+sudo apt install ros-humble-robot-state-publisher ros-humble-joint-state-publisher -y<br><br>
+
+# Visualization tools<br>
+sudo apt install ros-humble-rviz2 ros-humble-rqt* -y<br><br>
+
+# Python dependencies<br>
+pip3 install numpy scipy matplotlib transforms3d
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <h2>🎯 Step 5: Assignment 4 Specific Setup</h2>
+            
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Husky and UR3 Robot Packages</h5>
+                <p>Install packages required for the mobile manipulator assignment:</p>
+                
+                <div class="bg-dark text-light p-3 mb-3" style="font-family: 'Courier New', monospace;">
+                  <small>
+# Install Husky robot packages<br>
+sudo apt install ros-humble-husky-* -y<br><br>
+
+# Install Universal Robots packages<br>
+sudo apt install ros-humble-ur* -y<br><br>
+
+# Install MoveIt2 for manipulation<br>
+sudo apt install ros-humble-moveit -y<br><br>
+
+# Verify Husky installation<br>
+ros2 launch husky_gazebo husky_playpen.launch.py
+                  </small>
+                </div>
+                
+                <div class="alert alert-success">
+                  <strong>✅ Success:</strong> If Gazebo opens with a Husky robot, your installation is working correctly!
+                </div>
+              </div>
+            </div>
+
+            <h2>🧪 Step 6: Testing Your Setup</h2>
+            
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Verify Everything Works</h5>
+                <p>Run these commands to test your complete setup:</p>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>Test ROS2 Core</h6>
+                    <div class="bg-dark text-light p-2 mb-2" style="font-family: 'Courier New', monospace; font-size: 0.8em;">
+# Terminal 1<br>
+ros2 run demo_nodes_cpp talker<br><br>
+
+# Terminal 2<br>
+ros2 run demo_nodes_py listener
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <h6>Test Gazebo Simulation</h6>
+                    <div class="bg-dark text-light p-2 mb-2" style="font-family: 'Courier New', monospace; font-size: 0.8em;">
+# Launch Gazebo<br>
+gazebo --verbose<br><br>
+
+# Test RViz2<br>
+rviz2
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                  <strong>💡 Expected Results:</strong>
+                  <ul class="mb-0">
+                    <li>Talker/listener should show message exchange</li>
+                    <li>Gazebo should open with an empty world</li>
+                    <li>RViz2 should open with default visualization</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2>❓ Troubleshooting</h2>
+            
+            <div class="accordion" id="troubleshootingAccordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
+                      ROS2 command not found
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse" data-parent="#troubleshootingAccordion">
+                  <div class="card-body">
+                    Make sure you've sourced the ROS2 setup: <code>source /opt/ros/humble/setup.bash</code>
+                    <br>Add it to your ~/.bashrc for automatic sourcing.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo">
+                      Gazebo won't start or crashes
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" data-parent="#troubleshootingAccordion">
+                  <div class="card-body">
+                    Try: <code>export GAZEBO_MODEL_PATH=/usr/share/gazebo-11/models</code>
+                    <br>For VM users: Ensure 3D acceleration is enabled.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree">
+                      Package not found errors
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" data-parent="#troubleshootingAccordion">
+                  <div class="card-body">
+                    Run: <code>sudo apt update && rosdep update</code>
+                    <br>Then reinstall the missing package: <code>sudo apt install ros-humble-[package-name]</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">📋 Setup Checklist</h5>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="ubuntu">
+                  <label class="form-check-label" for="ubuntu">Ubuntu 22.04 LTS installed</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="ros2">
+                  <label class="form-check-label" for="ros2">ROS2 Humble installed</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="env">
+                  <label class="form-check-label" for="env">Environment configured</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="packages">
+                  <label class="form-check-label" for="packages">Mobile robotics packages</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="husky">
+                  <label class="form-check-label" for="husky">Husky & UR3 packages</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="test">
+                  <label class="form-check-label" for="test">Setup tested and working</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">🔗 Useful Links</h5>
+                <ul class="list-unstyled">
+                  <li><a href="https://docs.ros.org/en/humble/" target="_blank">ROS2 Humble Documentation</a></li>
+                  <li><a href="https://ubuntu.com/download/desktop" target="_blank">Ubuntu 22.04 Download</a></li>
+                  <li><a href="https://gazebosim.org/docs" target="_blank">Gazebo Documentation</a></li>
+                  <li><a href="https://moveit.ros.org/" target="_blank">MoveIt2 Documentation</a></li>
+                  <li><a href="https://github.com/husky/husky" target="_blank">Husky Robot Repository</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">💾 System Requirements</h5>
+                <ul class="list-unstyled">
+                  <li><strong>OS:</strong> Ubuntu 22.04 LTS</li>
+                  <li><strong>RAM:</strong> 8GB minimum (16GB recommended)</li>
+                  <li><strong>Storage:</strong> 50GB free space</li>
+                  <li><strong>GPU:</strong> Dedicated GPU recommended for Gazebo</li>
+                  <li><strong>Network:</strong> Stable internet for package downloads</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">🆘 Need Help?</h5>
+                <p>If you encounter issues during setup:</p>
+                <ul class="list-unstyled">
+                  <li>📧 Email TA: ksa5@illinois.edu</li>
+                  <li>💬 Post on Campuswire</li>
+                  <li>🕐 Attend office hours</li>
+                  <li>📖 Check ROS2 documentation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="footer mt-5">
+      <div class="container text-center">
+        <span class="text-muted">CS498GC Mobile Robotics - Fall 2025 - University of Illinois at Urbana-Champaign</span>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -6,6 +6,9 @@ main:
   - title: "Teaching"
     section: teaching
     
+  - title: "Experience"
+    section: experience
+    
   - title: "Projects"
     section: projects
 

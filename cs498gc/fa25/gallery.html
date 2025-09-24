@@ -11,54 +11,12 @@
     </script>
 
     <meta charset="utf-8">
-    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization,gallery">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization,gallery,robot videos">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <style>
-      .gallery-item {
-        margin-bottom: 30px;
-      }
-      .gallery-item video, .gallery-item img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      }
-      .gallery-item h5 {
-        margin-top: 15px;
-        color: #333;
-      }
-      .gallery-item p {
-        color: #666;
-        font-style: italic;
-      }
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 20px;
-      }
-      .video-thumbnail {
-        position: relative;
-        cursor: pointer;
-      }
-      .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0,0,0,0.7);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        font-size: 20px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/modern-style.css">
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -66,323 +24,147 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <title>Gallery - CS498GC: Mobile Robotics</title>
-    <link rel="icon"  href="resources/favicon.ico" />
-    <link rel="shortcut icon"  href="resources/favicon.ico" />
+    <link rel="icon" href="resources/favicon.ico" />
+    <link rel="shortcut icon" href="resources/favicon.ico" />
 
   </head>
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-	    <div class="container">
-      <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarToggle">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="logistics.html">Logistics</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="syllabus.html">Syllabus</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="assignments.html">Assignments</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="setup.html">ROS2 Setup</a>
-            </li>
-          </ul>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="logistics.html">Logistics</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="syllabus.html">Syllabus</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="assignments.html">Assignments</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="presentations.html">Presentations</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="setup.html">Setup</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+            </ul>
+        </div>
       </div>
     </nav>
 
     <main role="main" class="container">
-      <div class="jumbotron header-plain">
-        <h1>Mobile Robotics Gallery</h1>
-        <h3>CS498GC - Fall 2025</h3>
-        <p class="lead">Explore the fascinating world of mobile robotics through our curated collection of videos and images showcasing cutting-edge research, field demonstrations, and practical applications in agricultural and autonomous systems.</p>
-      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Mobile Robotics Gallery</h1>
+          <p class="lead">Showcase of cutting-edge mobile robotics systems and demonstrations</p>
 
-      <div class="container-fluid">
-        <h2 class="text-center mb-4">🚜 State-of-the-Art Agricultural Robots</h2>
-        <p class="lead text-center mb-5">Cutting-edge autonomous systems revolutionizing precision agriculture through advanced mobile robotics, computer vision, and AI-driven decision making.</p>
-        
-        <div class="gallery-grid">
-          
-          <!-- TerraPreta: Gigaton-Scale Carbon Sequestration -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/TerraPreta - Robotic, Gigaton-Scale, Soil Carbon Sequestration [saCxFalSPM0].webp">
-                <source src="../../../media/TerraPreta - Robotic, Gigaton-Scale, Soil Carbon Sequestration [saCxFalSPM0].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
+          <div class="row">
+            <div class="col-md-12 mb-5">
+              <div class="card">
+                <div class="card-header bg-success text-white">
+                  <h3>🌱 Agricultural Robotics</h3>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h4>TerraMax - Autonomous Agricultural Robot</h4>
+                      <p class="text-muted mb-3">
+                        <strong>Source:</strong> <a href="https://www.earthsense.co/" target="_blank">EarthSense</a> | 
+                        <strong>Website:</strong> <a href="https://www.earthsense.co/terramax" target="_blank">TerraMax Product Page</a>
+                      </p>
+                      
+                      <p>
+                        TerraMax represents the cutting edge of autonomous agricultural robotics, designed to revolutionize precision farming through advanced sensor fusion and autonomous navigation capabilities. This system demonstrates real-world applications of mobile robotics concepts covered in CS498GC.
+                      </p>
+
+                      <h5>Key Technologies Demonstrated:</h5>
+                      <ul>
+                        <li><strong>Autonomous Navigation:</strong> GPS-based path planning and obstacle avoidance</li>
+                        <li><strong>Sensor Fusion:</strong> Multi-modal sensor integration for crop monitoring</li>
+                        <li><strong>Computer Vision:</strong> Plant detection and health assessment</li>
+                        <li><strong>Precision Agriculture:</strong> Targeted intervention and data collection</li>
+                        <li><strong>Robotic Mobility:</strong> All-terrain autonomous operation</li>
+                      </ul>
+
+                      <h5>Course Relevance:</h5>
+                      <ul>
+                        <li>Modules 1-2: Coordinate transformations in agricultural mapping</li>
+                        <li>Module 4: Sensor fusion for crop monitoring</li>
+                        <li>Module 6: Localization in outdoor environments</li>
+                        <li>Module 7: SLAM applications in precision agriculture</li>
+                      </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" 
+                                src="https://www.youtube.com/embed/JFgk1L3mVnE" 
+                                title="TerraMax Agricultural Robot Demo"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                      </div>
+                      
+                      <div class="mt-3 p-3 bg-light rounded">
+                        <h6>📚 Learn More</h6>
+                        <p class="small mb-2">
+                          <strong>Company:</strong> EarthSense<br>
+                          <strong>Technology:</strong> Autonomous Agricultural Robotics<br>
+                          <strong>Application:</strong> Precision Farming & Crop Monitoring
+                        </p>
+                        <a href="https://www.earthsense.co/terramax" class="btn btn-sm btn-outline-success" target="_blank">
+                          Visit TerraMax Page →
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h5>TerraPreta: Gigaton-Scale Carbon Sequestration</h5>
-            <p>Revolutionary autonomous system for large-scale soil carbon storage - demonstrating mobile robotics applications in climate change mitigation and sustainable agriculture.</p>
           </div>
 
-          <!-- TerraSentia: Autonomous Driving Multiple Runs -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <img src="../../../media/TerraSentia： Autonomous Driving - Multiple Runs [efz5XCj7p4w].webp" alt="TerraSentia Multiple Autonomous Runs">
-            </div>
-            <h5>TerraSentia: Repeated Autonomous Field Operations</h5>
-            <p>Multiple autonomous navigation runs showcasing reliability and consistency in agricultural mobile robotics - key requirements for commercial deployment.</p>
+          <div class="alert alert-info mt-4">
+            <h5>🎯 Educational Purpose</h5>
+            <p class="mb-0">
+              This gallery showcases real-world applications of mobile robotics technologies to help students understand the practical implementation of concepts learned in CS498GC. All content is used for educational purposes with proper attribution to the original creators.
+            </p>
           </div>
 
-          <!-- Work Hard, Play Hard -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/Work hard, play hard [FI5J9k3Suzk].webp">
-                <source src="../../../media/Work hard, play hard [FI5J9k3Suzk].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Agricultural Robotics Team Culture</h5>
-            <p>Behind-the-scenes look at the human element in developing state-of-the-art agricultural mobile robots - showcasing the interdisciplinary nature of modern robotics.</p>
+          <div class="alert alert-secondary mt-3">
+            <h5>📝 Attribution & Citations</h5>
+            <p class="mb-0">
+              All videos and content in this gallery are the property of their respective owners and are used here for educational purposes only. Please visit the original sources to learn more about these innovative robotics companies and their products.
+            </p>
           </div>
 
         </div>
-        
-        <hr class="my-5">
-        <h2 class="text-center mb-4">🤖 Mobile Robotics Applications & Research</h2>
-        <p class="lead text-center mb-5">Diverse applications of mobile robotics spanning agricultural automation, humanoid systems, and advanced locomotion research.</p>
-        
-        <div class="gallery-grid">
-          
-          <!-- EarthSense Company Overview -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/EarthSense： Enabling Sustainable, Profitable Orchards, Vineyards, and Plantations [1CN3ZjOrtVQ].webp">
-                <source src="../../../media/EarthSense： Enabling Sustainable, Profitable Orchards, Vineyards, and Plantations [1CN3ZjOrtVQ].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>EarthSense: Sustainable Agriculture Technology</h5>
-            <p>Autonomous robots enabling precision agriculture in orchards, vineyards, and plantations - core applications of mobile robotics in agricultural sustainability.</p>
-          </div>
-
-          <!-- TerraPreta Autonomous Cover Crop Planting -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/TerraPreta  - Better cover crops with in-season autonomous cover crop planting [oqZMu3dS5co].webp">
-                <source src="../../../media/TerraPreta  - Better cover crops with in-season autonomous cover crop planting [oqZMu3dS5co].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>TerraPreta: Autonomous Cover Crop Planting</h5>
-            <p>In-season autonomous navigation and planting demonstrates real-world mobile robot path planning and agricultural task execution.</p>
-          </div>
-
-          <!-- Terra AI Multi-Robot Platform -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/Terra AI - Multi-robot, Multi-crop Autonomy and Precision Farming Platform [69sToqfcaFs].webp">
-                <source src="../../../media/Terra AI - Multi-robot, Multi-crop Autonomy and Precision Farming Platform [69sToqfcaFs].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Terra AI: Multi-Robot Coordination</h5>
-            <p>Advanced multi-robot systems showcasing collaborative mobile robotics, sensor fusion, and distributed autonomous decision-making.</p>
-          </div>
-
-          <!-- TerraSentia System Highlights -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/TerraSentia System Highlights [GK5ncp82je4].webp">
-                <source src="../../../media/TerraSentia System Highlights [GK5ncp82je4].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>TerraSentia: Mobile Robot Platform</h5>
-            <p>Comprehensive overview of a field-proven mobile robot demonstrating navigation, sensing, and data collection in challenging environments.</p>
-          </div>
-
-          <!-- Corn Stem Width Measurement -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/Corn Stem Width with TerraSentia [NvzPuI2PRTk].webp">
-                <source src="../../../media/Corn Stem Width with TerraSentia [NvzPuI2PRTk].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Precision Plant Measurement</h5>
-            <p>Computer vision and mobile robotics combined for automated phenotyping - practical applications of sensor fusion and perception algorithms.</p>
-          </div>
-
-          <!-- Soybean Pod Count -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/Soybean Pod Count with TerraSentia [Khgr7JwTphM].webp">
-                <source src="../../../media/Soybean Pod Count with TerraSentia [Khgr7JwTphM].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Automated Crop Monitoring</h5>
-            <p>Mobile robot performing autonomous crop assessment using computer vision - showcasing real-time perception and data processing capabilities.</p>
-          </div>
-
-          <!-- Corn Ear Height Measurement -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/Corn Ear Height - from Field to Phenotype in 48 hours! [aAy1tqm32ko].webp">
-                <source src="../../../media/Corn Ear Height - from Field to Phenotype in 48 hours! [aAy1tqm32ko].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Rapid Field-to-Data Pipeline</h5>
-            <p>End-to-end mobile robotics workflow: from field data collection to automated analysis - demonstrating complete autonomous systems integration.</p>
-          </div>
-
-          <!-- TerraSentia Early Season Navigation -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video poster="../../../media/TerraSentia - Early Season Autonomous Navigation [DwkARZHeN9E].webp">
-                <source src="../../../media/TerraSentia - Early Season Autonomous Navigation [DwkARZHeN9E].mp4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Early Season Field Navigation</h5>
-            <p>Challenging navigation scenarios in agricultural environments - key concepts in mobile robot localization and obstacle avoidance.</p>
-          </div>
-
-          <!-- Tesla Optimus Robot -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video>
-                <source src="../../../media/Tesla_OPTIMUS_robot_having_fun.MP4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Tesla Optimus: Humanoid Robotics</h5>
-            <p>Advanced bipedal locomotion and manipulation - showcasing the intersection of mobile robotics with humanoid systems and AI.</p>
-          </div>
-
-          <!-- Unitree Quadruped -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video>
-                <source src="../../../media/Unitree_quadruped_on_stairs_250kg_weights_balanced_foot_placement_and_stair_dyanmic_balance_joint_control.MP4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Unitree: Dynamic Locomotion</h5>
-            <p>Quadruped robot demonstrating advanced balance control and dynamic stability - core principles in mobile robot dynamics and control.</p>
-          </div>
-
-          <!-- Carbon Dioxide Spraying Robot -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video>
-                <source src="../../../media/carbon_dioxide_spraying_unitree_robot_orchard.MP4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Agricultural Task Automation</h5>
-            <p>Mobile robot performing precision spraying tasks in orchards - practical application of navigation, manipulation, and sensor-guided control.</p>
-          </div>
-
-          <!-- Tomato Sorting Robot -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video>
-                <source src="../../../media/tomato_sorting_robot.MP4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Automated Food Processing</h5>
-            <p>Robot manipulation and computer vision for food sorting - demonstrating precision control and real-time decision making in mobile systems.</p>
-          </div>
-
-          <!-- Humanoid Robot with Wheel Feet -->
-          <div class="gallery-item">
-            <div class="video-thumbnail">
-              <video>
-                <source src="../../../media/humanoid_robot_with_flippable_wheel_feet.MP4" type="video/mp4">
-              </video>
-              <button class="play-button" onclick="playVideo(this)">▶</button>
-            </div>
-            <h5>Hybrid Locomotion System</h5>
-            <p>Innovative mobile robot design combining wheeled and legged locomotion - exploring novel approaches to mobile platform design.</p>
-          </div>
-
-          <!-- Autonomous Military Vehicles -->
-          <div class="gallery-item">
-            <img src="../../../media/Autonomous_minitank_from_chinese_parade.png" alt="Autonomous Military Vehicles">
-            <h5>Military Mobile Robotics</h5>
-            <p>Autonomous ground vehicles demonstrating large-scale mobile robot deployment and coordination in challenging operational environments.</p>
-          </div>
-
-          <!-- Multi-Robot Military Formation -->
-          <div class="gallery-item">
-            <img src="../../../media/robot_dogs_uavs_minitanks_chinese_parade.png" alt="Multi-Robot Military Formation">
-            <h5>Multi-Platform Robot Coordination</h5>
-            <p>Coordinated deployment of ground robots, UAVs, and vehicles - showcasing advanced multi-robot systems and swarm intelligence.</p>
-          </div>
-
-          <!-- Course Field Trip -->
-          <div class="gallery-item">
-            <img src="../../../media/Kendall_Jose_Kulbir_Corn_Soy_trip_Rice_Farm.jpeg" alt="Course Field Trip">
-            <h5>CS498GC Field Experience</h5>
-            <p>Course participants exploring real agricultural environments where mobile robotics applications are deployed - bridging theory with practice.</p>
-          </div>
-
-          <!-- Research Equipment -->
-          <div class="gallery-item">
-            <img src="../../../media/IMG_4402.png" alt="Research Equipment">
-            <h5>Mobile Robotics Research Setup</h5>
-            <p>Laboratory equipment and testing environments used in mobile robotics research - essential tools for algorithm development and validation.</p>
-          </div>
-
-        </div>
-        
       </div>
-
     </main>
 
-    <footer class="footer mt-5">
-      <div class="container text-center">
-        <span class="text-muted">CS498GC Mobile Robotics - Fall 2025 - University of Illinois at Urbana-Champaign</span>
+    <footer class="navbar navbar-dark mt-5">
+      <div class="container">
+        <span style="color: white;">© 2025 CS498GC Mobile Robotics - University of Illinois at Urbana-Champaign</span>
+        <br>
+        <small style="color: #ccc;">Thanks to Professor <a href="https://slazebni.cs.illinois.edu" style="color: #ffc107;">Svetlana Lazebnik</a>, Professor <a href="https://yunzhuli.github.io" style="color: #ffc107;">Yunzhi Li</a> and Professor <a href="https://www.cs.utexas.edu/~yukez/cs391r_fall2021/index.html" style="color: #ffc107;">Yuke Zhu</a> for their course website templates and <a href="http://daslab.illinois.edu/index.html#team" style="color: #ffc107;">Jose Cuaran</a> and <a href="https://kendallkoe.com" style="color: #ffc107;">Kendall Koe</a> for course setup.</small>
       </div>
     </footer>
-
-    <script>
-      function playVideo(button) {
-        const video = button.parentElement.querySelector('video');
-        const thumbnail = button.parentElement;
-        
-        if (video.paused) {
-          video.play();
-          button.style.display = 'none';
-          video.controls = true;
-          
-          video.addEventListener('pause', function() {
-            button.style.display = 'block';
-            video.controls = false;
-          }, { once: false });
-        }
-      }
-
-      // Auto-hide play button when video is playing
-      document.querySelectorAll('video').forEach(video => {
-        video.addEventListener('play', function() {
-          const button = this.parentElement.querySelector('.play-button');
-          button.style.display = 'none';
-          this.controls = true;
-        });
-        
-        video.addEventListener('ended', function() {
-          const button = this.parentElement.querySelector('.play-button');
-          button.style.display = 'block';
-          this.controls = false;
-        });
-      });
-    </script>
 
   </body>
 </html>

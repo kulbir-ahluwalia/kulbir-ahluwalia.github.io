@@ -1,0 +1,340 @@
+/* CS498GC Mobile Robotics - Modern Style */
+/* Adapted from UT Austin design with UIUC colors */
+
+:root {
+  --uiuc-navy: #13294B;
+  --uiuc-orange: #BF5700;  /* UT Austin burnt orange - same as Prof. Yuke Zhu's site */
+  --light-gray: #f7f6f1;
+  --text-dark: #333;
+  --border-light: #ddd;
+}
+
+/* Typography */
+strong {
+  font-weight: 550;
+}
+
+body {
+  padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--uiuc-orange);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--uiuc-navy);
+  text-decoration: underline;
+}
+
+h2 {
+  color: var(--uiuc-navy);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  color: var(--uiuc-navy);
+  margin-bottom: 1.0rem;
+  font-weight: 600;
+}
+
+h5 {
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Layout Sections */
+.content {
+  padding-top: 40px;
+}
+
+.section {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.logistics {
+  padding-bottom: 30px;
+}
+
+.bg-highlight {
+  background-color: var(--light-gray);
+  padding: 30px 0;
+}
+
+.bg-no-highlight {
+  padding: 30px 0;
+}
+
+/* Navigation */
+.navbar-dark {
+  background-color: #BF5700 !important;  /* UT Austin burnt orange - matching Prof. Yuke Zhu's site */
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255,.9) !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+/* Staff Section */
+.staff {
+  display: inline-block;
+  text-align: left;
+  margin: 10px 20px 30px 0px;
+}
+
+.staff-photo img {
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 10px;
+  padding: 3px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.staff-photo img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.staff a:link,
+.staff a:visited {
+  color: var(--uiuc-orange);
+  font-weight: 500;
+}
+
+.staff a:hover,
+.staff a:active {
+  color: var(--uiuc-navy);
+}
+
+/* Schedule Table */
+.schedule-header th {
+  padding: 12px;
+  border-top: none;
+  border-bottom: 2px solid var(--uiuc-navy);
+  background-color: var(--light-gray);
+  color: var(--uiuc-navy);
+  font-weight: 600;
+}
+
+.schedule-row {
+  border: none;
+}
+
+.schedule-row td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.schedule-row:hover {
+  background-color: #f9f9f9;
+}
+
+.holiday-row {
+  background-color: #eef4ff;
+}
+
+.chapter-row {
+  background-color: #fff9ed;
+}
+
+.chapter-row td {
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 600;
+  color: var(--uiuc-navy);
+}
+
+/* Labels and Badges */
+.label {
+  display: inline-block;
+  padding: .25em .6em;
+  font-weight: 500;
+  font-size: 85%;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+}
+
+.label-lecture {
+  background-color: #6c757d;
+}
+
+.label-tutorial {
+  background-color: var(--uiuc-orange);
+}
+
+.label-assignment {
+  background-color: #28a745;
+}
+
+.label-quiz {
+  background-color: #dc3545;
+}
+
+.label-project {
+  background-color: var(--uiuc-navy);
+}
+
+/* Cards */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.card-header {
+  background-color: var(--uiuc-navy);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.alert-info {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border-left: 4px solid var(--uiuc-navy);
+}
+
+.alert-warning {
+  background-color: #fff3e0;
+  color: #e65100;
+  border-left: 4px solid var(--uiuc-orange);
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding: 20px 0;
+  background-color: #BF5700;  /* UT Austin burnt orange - matching navbar */
+  color: white;
+  text-align: center;
+}
+
+/* Lists */
+li {
+  margin: 10px 0;
+}
+
+.topic-cell ul {
+  font-size: 90%;
+  padding-left: 20px;
+}
+
+.topic-cell li {
+  margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  .staff-photo img {
+    height: 120px;
+    width: 120px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  h4 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Quick Info Cards */
+.info-card {
+  background: white;
+  border-left: 4px solid var(--uiuc-orange);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+}
+
+.info-card h5 {
+  color: var(--uiuc-navy);
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--uiuc-navy);
+  border-color: var(--uiuc-navy);
+}
+
+.btn-primary:hover {
+  background-color: var(--uiuc-orange);
+  border-color: var(--uiuc-orange);
+}
+
+.btn-outline-primary {
+  color: var(--uiuc-navy);
+  border-color: var(--uiuc-navy);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--uiuc-navy);
+  border-color: var(--uiuc-navy);
+}
+
+/* Module Cards for Syllabus */
+.module-card {
+  margin-bottom: 30px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.module-card .card-header {
+  background: linear-gradient(135deg, var(--uiuc-navy) 0%, #1e3c72 100%);
+  padding: 1rem 1.5rem;
+}
+
+.module-card .card-header h4 {
+  color: white;
+  margin-bottom: 0;
+}

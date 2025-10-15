@@ -135,12 +135,23 @@
                 </div>
                 <div class="card-body">
                   <p><strong>Platform:</strong> Windows/MacOS</p>
+
+                  <h6>For Apple Silicon (M1/M2/M3/M4) Macs:</h6>
+                  <ul>
+                    <li><strong>UTM (Universal Turing Machine)</strong> - Recommended for ARM64</li>
+                    <ul>
+                      <li><a href="https://mac.getutm.app/">UTM Download</a></li>
+                      <li>Use Ubuntu 22.04 ARM64 image</li>
+                      <li>Better performance than VirtualBox on Apple Silicon</li>
+                    </ul>
+                  </ul>
+
+                  <h6>For Intel Macs/Windows:</h6>
                   <ul>
                     <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Download</a></li>
                     <li><strong>Specifications:</strong> 8GB RAM, 6 cores, 50GB storage minimum</li>
-                    <li><strong>Apple Silicon:</strong> Use Ubuntu 22.04 Server ARM64 image</li>
                   </ul>
-                  
+
                   <div class="alert alert-warning">
                     <strong>Performance Note:</strong> Add <code>export LIBGL_ALWAYS_SOFTWARE=true</code> for software rendering
                   </div>
@@ -178,6 +189,103 @@
                     <li><a href="https://aws.amazon.com/blogs/robotics/tag/ros-2/">AWS RoboMaker</a></li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h3>⚠️ Special Considerations for Apple Silicon (ARM64)</h3>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-warning">
+                <h5>Critical Information for M1/M2/M3/M4 Mac Users</h5>
+                <p><strong>Gazebo Classic (Version 11) does not support ARM64 architecture.</strong> This significantly impacts TurtleBot3 and other simulations.</p>
+              </div>
+
+              <h4>Architecture Compatibility Quick Reference</h4>
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th>Component</th>
+                    <th>Intel/AMD (x86_64)</th>
+                    <th>Apple Silicon (ARM64)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ROS2 Humble</td>
+                    <td class="table-success">✅ Full Support</td>
+                    <td class="table-success">✅ Full Support</td>
+                  </tr>
+                  <tr>
+                    <td>Gazebo Classic</td>
+                    <td class="table-success">✅ apt install</td>
+                    <td class="table-danger">❌ Not Available</td>
+                  </tr>
+                  <tr>
+                    <td>Gazebo Fortress</td>
+                    <td class="table-success">✅ Full Support</td>
+                    <td class="table-success">✅ Full Support (Recommended)</td>
+                  </tr>
+                  <tr>
+                    <td>TurtleBot3 Sim</td>
+                    <td class="table-success">✅ apt install</td>
+                    <td class="table-warning">⚠️ Build from source</td>
+                  </tr>
+                  <tr>
+                    <td>GPU Acceleration (UTM)</td>
+                    <td class="table-success">✅ Available</td>
+                    <td class="table-danger">❌ Not Available</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4>Recommended Solutions for ARM64</h4>
+              <ol>
+                <li>
+                  <strong>Best Option:</strong> Use Gazebo Fortress (new Gazebo) with ROS2 Humble
+                  <pre class="bg-dark text-light p-2 rounded"><code>sudo apt install gz-fortress ros-humble-ros-gz-bridge</code></pre>
+                </li>
+                <li>
+                  <strong>Docker with ARM64 Images:</strong>
+                  <ul>
+                    <li><a href="https://j3soon.github.io/ros2-essentials/">ROS2 Essentials Docker Guide</a></li>
+                    <li>Use <code>arm64v8/ros:humble</code> base image</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>UTM Virtualization (Limited):</strong>
+                  <ul>
+                    <li>⚠️ No GPU acceleration for 3D graphics</li>
+                    <li>Requires: <code>export LIBGL_ALWAYS_SOFTWARE=true</code></li>
+                    <li><a href="https://mac.getutm.app/">UTM Download</a></li>
+                  </ul>
+                </li>
+              </ol>
+
+              <h4>TurtleBot3 on ARM64 - Known Issues</h4>
+              <div class="alert alert-info">
+                <strong>Student Report (Chahit Jain, Sept 2025):</strong><br>
+                When trying to install TurtleBot3 simulation on Apple M3:
+                <ul>
+                  <li><code>sudo apt install ros-humble-turtlebot3-gazebo</code> → <strong>E: Unable to locate package</strong></li>
+                  <li>Building from source fails due to <code>libgazebo-dev</code> not available for ARM64</li>
+                  <li>Even with OSRF repository added, Gazebo Classic has no ARM64 binaries</li>
+                </ul>
+                <strong>Solution:</strong> Use Gazebo Fortress or provided bag files for assignments.
+              </div>
+
+              <h4>For Coding Exercise 1 (ARM64 Users)</h4>
+              <ul>
+                <li>Option 1: Use pre-recorded bag files provided on course website</li>
+                <li>Option 2: Create mock joint state publishers (sample code in Piazza)</li>
+                <li>Option 3: Use campus lab computers (x86_64) remotely via SSH</li>
+                <li>Option 4: Pair program with students who have x86_64 hardware</li>
+              </ul>
+
+              <div class="alert alert-success">
+                <strong>Instructor Note:</strong> For easiest setup, use a 2-year-old Windows laptop with NVIDIA GPU. Alternative evaluation methods available for ARM64 users - contact TAs during office hours.
               </div>
             </div>
           </div>

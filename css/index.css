@@ -1,0 +1,37 @@
+body { font-family: "Noto Sans", sans-serif; }
+
+.title { font-family: 'Google Sans'; font-weight: 700; }
+
+.anchor { scroll-margin-top: 80px; }
+
+.portrait { border-radius: 2%; overflow: hidden; }
+.portrait img { transform: scale(1.2); }
+
+.conference_analyzed { position: relative; max-width: 100%; left: -7em; }
+
+@media screen and (max-width: 750px) { .conference_analyzed { max-width: 100%; left: 0em; } }
+.footer .footer-links a { font-size: 25px; color: #000; }
+
+@media screen and (min-width: 1024px) { .navbar-end { float: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } }
+.disable-link { text-decoration: none !important; cursor: default !important; pointer-events: none; }
+
+.publication-block .publication-title { width: fit-content; margin: 0 !important; font-weight: 600; font-size: 110% !important; text-align: justify; }
+.publication-block .publication-title a { color: #000; }
+.publication-block .publication-title-with-link { width: fit-content; margin: 0 !important; font-weight: 600; font-size: 110% !important; }
+.publication-block .publication-venue { color: #555; width: fit-content; margin-top: 0; }
+.publication-block .publication-venue-emph { font-style: normal; font-size: 80%; font-weight: 500; color: firebrick; padding-left: 0.25em; }
+.publication-block .publication-awards { color: firebrick; width: fit-content; font-weight: bolder; }
+.publication-block .publication-authors { text-align: justify; }
+.publication-block .publication-authors .author-me { color: #000; font-weight: 600; }
+.publication-block .publication-authors a { color: #000 !important; }
+.publication-block .publication-authors a:hover { text-decoration: underline; }
+.publication-block .publication-image { border-radius: 2%; width: 100%; height: 100%; overflow: hidden; font-size: 0; }
+.publication-block .publication-image img { width: 100%; }
+.publication-block .publication-image .image-border { border: 1px solid #707070; border-radius: 2%; }
+.publication-block .publication-mousecell { position: relative; font-size: 0; }
+.publication-block .publication-mousecell { width: 100%; height: 100%; display: inline-block; overflow: hidden; }
+.publication-block .publication-mousecell video { display: none; }
+.publication-block .publication-description { color: #333; margin: 0.5em 0; text-align: justify; }
+.publication-block .publication-links { margin: 0 !important; margin-top: 0.5em !important; }
+
+@media screen and (min-width: 1024px) { .blogpost { max-width: 900px !important; } }

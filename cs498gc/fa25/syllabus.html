@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159856695-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-159856695-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/modern-style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>CS498GC: Mobile Robotics - Syllabus</title>
+    <link rel="icon"  href="resources/favicon.ico" />
+    <link rel="shortcut icon"  href="resources/favicon.ico" />
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+	    <div class="container">
+      <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+
+      <div class="collapse navbar-collapse" id="navbarToggle">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="logistics.html">Logistics</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="syllabus.html">Syllabus</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="policies.html">Policies</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="assignments.html">Assignments</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="presentations.html">Presentations</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="setup.html">Setup</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+          </ul>
+      </div>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron header-plain">
+        <h1>Course Syllabus</h1>
+      </div>
+
+      <div class="container-fluid">
+        <div class="alert alert-info">
+          <strong>Note:</strong> This schedule is tentative and subject to change. Check Canvas for the most up-to-date information.
+        </div>
+
+        <h2>Weekly Schedule</h2>
+        <div class="table-responsive mb-5">
+          <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>Week</th>
+                <th>Dates</th>
+                <th>Wednesday</th>
+                <th>Friday</th>
+                <th>Assignments/Quizzes</th>
+                <th>Files</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Aug 27, 29</td>
+                <td>Welcome</td>
+                <td>Mobile robotics</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Sept 3, 5</td>
+                <td>Mobile robotics and linear algebra</td>
+                <td>Coordinate frames</td>
+                <td><span class="badge badge-info">Assignment 4 Part A Released</span><br><span class="badge badge-info">PS1 Released (Wed Sep 3, 11:00 PM)</span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Sept 10, 12</td>
+                <td>ROS, and launch assignment 4</td>
+                <td>Quaternions</td>
+                <td></td>
+                <td><a href="/files/cs498gc/fa25/presentations/ros2_humble_tutorial.pdf" target="_blank" class="btn btn-sm btn-outline-primary">📚 ROS2 Tutorial</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Sept 17, 19</td>
+                <td>Dynamics of wheeled robots</td>
+                <td>Dynamics of aerial robots</td>
+                <td><span class="badge badge-danger">PS1 Due (Fri Sep 19, 11:00 PM)</span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Sept 24, 26</td>
+                <td>Control</td>
+                <td>Control</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Oct 1, 3</td>
+                <td>Ded reckoning and GPS</td>
+                <td>Ded reckoning and GPS</td>
+                <td><span class="badge badge-info">CE1 Released (Thu Sep 25)</span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Oct 8, 10</td>
+                <td>Kalman Filters</td>
+                <td>GPS-INS sensor fusion: EKF formulation / <strong>Quiz 1</strong></td>
+                <td><span class="badge badge-info">PS2 Released (Sun Oct 5)</span><br><span class="badge badge-danger">CE1 Due (Tue Oct 28)</span><br><span class="badge badge-warning">Quiz 1 (Fri Oct 15)</span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Oct 15, 17</td>
+                <td>Coding exercise 2 Introduction and Final Project Discussion</td>
+                <td>LiDAR and Cameras</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Oct 22, 24</td>
+                <td>LiDAR and Cameras</td>
+                <td>Foundations of machine vision</td>
+                <td><span class="badge badge-info">CE2 Released (Thu Oct 16)</span><br><span class="badge badge-danger">PS2 Due (Tue Oct 21)</span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Oct 29, 31</td>
+                <td>Foundations of machine vision</td>
+                <td>SLAM</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Nov 5, 7</td>
+                <td>SLAM</td>
+                <td>SLAM / <strong>Quiz 2</strong></td>
+                <td><span class="badge badge-info">PS3 Released (Sun Nov 2)</span><br><span class="badge badge-danger">CE2 Due (Thu Nov 6)</span><br><span class="badge badge-warning">Quiz 2 (Fri Nov 7)</span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Nov 12, 14</td>
+                <td>SLAM</td>
+                <td>Guest lecture</td>
+                <td><span class="badge badge-info">CE3 Released (Thu Nov 13)</span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Nov 19, 21</td>
+                <td>Coding exercise 3 introduction</td>
+                <td>Quiz</td>
+                <td><span class="badge badge-danger">PS3 Due (Tue Nov 18)</span><br><span class="badge badge-danger">Assignment 4 Part A Due (Fri Nov 21)</span><br><span class="badge badge-info">Assignment 4 Part B Released (Mon Nov 24)</span></td>
+                <td></td>
+              </tr>
+              <tr class="table-secondary">
+                <td>14</td>
+                <td>Nov 26, 28</td>
+                <td>Fall Break</td>
+                <td><em>Fall Break - Thanksgiving</em></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Dec 3, 5</td>
+                <td>In-class presentations by graduate students</td>
+                <td>In-class presentations by graduate students / <strong>Quiz 3</strong></td>
+                <td><span class="badge badge-warning">Quiz 3 (Fri Dec 5)</span></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>Dec 10, 12</td>
+                <td>In-class presentations by graduate students</td>
+                <td>Last Day of Class</td>
+                <td><span class="badge badge-danger">CE3 Due (Thu Dec 4)</span><br><span class="badge badge-danger">Assignment 4 Part B Due (Thu Dec 4)</span></td>
+                <td></td>
+              </tr>
+              <tr class="table-info">
+                <td colspan="4"><strong>Finals Week</strong></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Course Modules and Schedule</h2>
+        
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 1: Introduction to Mobile Robotics (5 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>What is a mobile robot</li>
+              <li>What makes mobile robotics challenging and exciting</li>
+              <li>Applications of mobile robotics</li>
+              <li>In what ways is robot programming different?</li>
+              <li>Introduction to Robot Operating System (ROS2)</li>
+            </ul>
+            <p><strong>Dates:</strong> Week 1-2 (August 26 - September 6)</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 1.5: Fundamental Mathematical Principles (3.75 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Mathematical notation, norms, vector spaces</li>
+              <li>Basics of ordinary differential equations and difference equations</li>
+              <li>Review of Matrix theory</li>
+            </ul>
+            <p><strong>Dates:</strong> Week 2-3 (September 4-13)</p>
+            <p class="text-danger"><strong>Assignment:</strong> Problem Set 1 out (September 3) - Due September 19</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 2: Dynamics of Mobile Robots (5 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Coordinate transformations with Euler angles</li>
+              <li>The space of rotation matrices SO(2) and SO(3)</li>
+              <li>Quaternions as a way of representing and working with rotations</li>
+              <li>General 6 DOF Kinematic and Dynamics equations with quaternions</li>
+              <li>Holonomic dynamics: Case study - Aerial Multirotor robots (drones)</li>
+              <li>Nonholonomic dynamics: Case study - Independent all-wheel drive wheeled robots</li>
+              <li>Advanced applications: walking robots</li>
+            </ul>
+            <p><strong>Coding Exercise:</strong> Writing programs for coordinate transformation. Creating simulations of mobile robots using ROS and Gazebo.</p>
+            <p><strong>Dates:</strong> Week 3-4 (September 11-20)</p>
+            <p class="text-danger"><strong>Assignment:</strong> Coding Exercise 1 out (September 26) - Due October 28</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 3: Principles of Robot Motion Control (3.75 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Introduction to robot control: feedback control</li>
+              <li>PID controllers</li>
+              <li>Limitations of linear control for mobile robots</li>
+              <li>Nonlinear control</li>
+              <li>Introduction to Model Predictive Control and variants</li>
+              <li>Case study: Waypoint navigation for aerial drones</li>
+              <li>Case study: Motion control of a wheeled robot</li>
+              <li>Vignette: Model Reference Adaptive Control of quadrotors</li>
+            </ul>
+            <p><strong>Coding Exercise:</strong> Motion control of a wheeled robot</p>
+            <p><strong>Dates:</strong> Week 5-6 (September 23 - October 4)</p>
+            <p class="text-danger"><strong>Assignment:</strong> Problem Set 1 due (September 19), Problem Set 2 out (October 5) - Due October 21</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 4: Mobile Manipulation (3.75 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Introduction to mobile manipulation</li>
+              <li>Kinematics of manipulators on mobile bases</li>
+              <li>Workspace analysis and reachability</li>
+              <li>Coordinated motion planning for base and arm</li>
+              <li>Force control and compliance</li>
+              <li>Grasping and manipulation strategies</li>
+              <li>Case study: Agricultural robots with manipulators</li>
+              <li>Case study: Warehouse automation and pick-and-place</li>
+            </ul>
+            <p><strong>Assignment 4 Component:</strong> Mobile manipulation concepts incorporated in simulation project</p>
+            <p><strong>Dates:</strong> Week 7 (October 7-11)</p>
+            <p class="text-warning"><strong>Quiz 1:</strong> October 15 (Friday)</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 5: Multi-Sensor Proprioceptive Sensor Fusion (3.75 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Dead-reckoning: Intuition and foundations</li>
+              <li>GNSS: Global frame localization - Mathematics of GPS and satellite navigation</li>
+              <li>Inertial sensor systems and mathematical models</li>
+              <li>Kalman Filtering and Bayesian data fusion</li>
+              <li>Bayes principle and the Chapman-Kolmogorov Equation</li>
+              <li>Optimal filtering problem with Gaussian noise and linear dynamics (Kalman Filters)</li>
+              <li>Extended Kalman filters, using point-based linearization for nonlinear dynamics</li>
+              <li>Vignette: Particle filters and unscented Kalman filter</li>
+              <li>GPS-INS sensor fusion with Extended Kalman Filters</li>
+              <li>Process and noise models</li>
+              <li>Filter formulation</li>
+            </ul>
+            <p><strong>Coding Exercise:</strong> Develop software for GPS-INS fusion with EKF given data</p>
+            <p><strong>Dates:</strong> Week 8-9 (October 14-25)</p>
+            <p class="text-danger"><strong>Assignment:</strong> Coding Exercise 2 out (October 16) - Due November 6</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 6: Symbolic Exteroceptive Perception (5 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Active exteroceptive sensors: Sonar</li>
+              <li>Active exteroceptive sensors: LiDAR</li>
+              <li>Passive exteroceptive sensors: Camera as a sensor</li>
+              <li>Stereo camera and RGB-D cameras</li>
+              <li>Machine vision foundations for robotics</li>
+              <li>Image formation and encoding</li>
+              <li>The pinhole camera model and camera calibration</li>
+              <li>Basic image processing</li>
+              <li>Convolutional filters</li>
+              <li>Edge detection, line detection, SURF, SIFT, and other heuristic features</li>
+              <li>Vignette: Deep learning as a way of image processing for robotics</li>
+            </ul>
+            <p><strong>Dates:</strong> Week 9-10 (October 21 - November 1)</p>
+            <p class="text-danger"><strong>Assignment:</strong> Problem Set 3 out (November 2) - Due November 18</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 7: Localization and Mapping (6.25 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>What is SLAM, Why SLAM?</li>
+              <li>The need for path planning</li>
+              <li>Topological and Metric maps</li>
+              <li>Localization</li>
+              <li>Probabilistic map-based localization</li>
+              <li>Landmark-based localization</li>
+              <li>Position beacon systems</li>
+              <li>Route-based localization (graph maps)</li>
+              <li>Map building</li>
+              <li>SLAM</li>
+              <li>Extended Kalman Filter (EKF) SLAM</li>
+              <li>Visual SLAM with single camera</li>
+              <li>Discussion of open/advanced problems in SLAM</li>
+            </ul>
+            <p><strong>Coding Exercise:</strong> EKF-SLAM with LIDAR in ROS</p>
+            <p><strong>Dates:</strong> Week 11-13 (November 4-22)</p>
+            <p class="text-warning"><strong>Quiz 2:</strong> November 7 (Friday)</p>
+            <p class="text-danger"><strong>Assignment:</strong> Coding Exercise 3 out (November 13) - Due December 4</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4>Module 8: Frontiers in Mobile Robotics (5 hours)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Traversability and waypoint-free navigation</li>
+              <li>Foundation models for robotics</li>
+              <li>Mobile manipulation</li>
+              <li>Graduate student presentations</li>
+              <li>What courses can you take from here in your journey as a roboticist</li>
+            </ul>
+            <p><strong>Dates:</strong> Week 14-15 (December 2-11)</p>
+            <p class="text-warning"><strong>Quiz 3:</strong> December 5 (Friday)</p>
+            <p class="text-danger"><strong>Final Project Presentations:</strong> December 9-11</p>
+          </div>
+        </div>
+
+        <h2>Important Dates Summary</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th>Date</th>
+                <th>Event</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>August 27 (Wed)</td><td>First Day of Class</td></tr>
+              <tr><td>September 3 (Wed)</td><td>Assignment 4 Part A Released + Problem Set 1 Released (11:00 PM)</td></tr>
+              <tr><td>September 19 (Fri)</td><td>Problem Set 1 Due (11:00 PM)</td></tr>
+              <tr><td>September 26 (Thu)</td><td>Coding Exercise 1 Released (8:00 AM)</td></tr>
+              <tr><td>October 5 (Sun)</td><td>Problem Set 2 Released (8:00 AM)</td></tr>
+              <tr><td>October 15 (Fri)</td><td>Quiz 1 (Canvas)</td></tr>
+              <tr><td>October 28 (Tue)</td><td>Coding Exercise 1 Due (11:00 PM)</td></tr>
+              <tr><td>October 16 (Thu)</td><td>Coding Exercise 2 Released (8:00 AM)</td></tr>
+              <tr><td>October 21 (Tue)</td><td>Problem Set 2 Due (11:00 PM)</td></tr>
+              <tr><td>November 2 (Sun)</td><td>Problem Set 3 Released (8:00 AM)</td></tr>
+              <tr><td>November 6 (Thu)</td><td>Coding Exercise 2 Due (11:00 PM)</td></tr>
+              <tr><td>November 7 (Fri)</td><td>Quiz 2 (Canvas)</td></tr>
+              <tr><td>November 13 (Thu)</td><td>Coding Exercise 3 Released (8:00 AM)</td></tr>
+              <tr><td>November 18 (Tue)</td><td>Problem Set 3 Due (11:00 PM)</td></tr>
+              <tr><td>November 21 (Fri)</td><td>Assignment 4 Part A Due (11:00 PM)</td></tr>
+              <tr><td>November 24 (Mon)</td><td>Assignment 4 Part B Released</td></tr>
+              <tr><td>November 26-28</td><td>Thanksgiving Break - No Classes</td></tr>
+              <tr><td>December 4 (Thu)</td><td>Coding Exercise 3 Due (11:00 PM)</td></tr>
+              <tr><td>December 4 (Thu)</td><td>Assignment 4 Part B Due (11:00 PM)</td></tr>
+              <tr><td>December 5 (Fri)</td><td>Quiz 3 (Canvas)</td></tr>
+              <tr><td>December 12 (Fri)</td><td>Last Day of Class</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Required Textbooks</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5>Primary Text:</h5>
+            <ul>
+              <li>Siegwart et al., <em>Autonomous Mobile Robots</em> (available electronically in UIUC library)</li>
+            </ul>
+            
+            <h5>Additional Reading (Optional):</h5>
+            <ul>
+              <li>Murphy, <em>Introduction to AI for Robotics</em></li>
+              <li>Kuipers, <em>Quaternions and Rotation Sequences</em> (available electronically in UIUC library)</li>
+              <li>Farrell, <em>Aided Navigation, GPS with High-rate Sensors</em></li>
+              <li>Kelly, <em>Mobile Robotics: Mathematics, Models, and Methods</em></li>
+              <li>Dudek and Jenkin, <em>Computational Principles of Mobile Robotics</em></li>
+              <li>Thrun et al., <em>Probabilistic Robotics</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Learning Outcomes</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <p>By the end of this course, students will be able to:</p>
+            <ul>
+              <li>Identify what makes mobile robotics challenging and exciting</li>
+              <li>Provide a taxonomy of different types of mobile robotic systems and methods of locomotion</li>
+              <li>Construct dynamic models of holonomic and nonholonomic mobile robots</li>
+              <li>Explain the workings of different sensor systems and construct their mathematical models</li>
+              <li>Create sensor fusion algorithms and software through Bayesian filtering</li>
+              <li>Derive Kalman Filters from scratch and construct approximation or sampling-based filters for nonlinear systems</li>
+              <li>Construct Kalman filtering-based GPS-INS algorithms and architectures</li>
+              <li>Describe basic architectures and principles of SLAM algorithms</li>
+              <li>Create motion control algorithms for aerial and wheeled ground robots</li>
+              <li>Create basic path planning algorithms using PRM, RRT, RRT*, and MDPs</li>
+              <li>Design and implement robot software with ROS2 middleware and Python</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer mt-5">
+      <div class="container text-center">
+        <span class="text-muted">CS498GC Mobile Robotics - Fall 2025 - University of Illinois at Urbana-Champaign</span>
+        <br>
+        <small style="color: #ccc;">Thanks to Professor <a href="https://slazebni.cs.illinois.edu" style="color: #ffc107;">Svetlana Lazebnik</a>, Professor <a href="https://yunzhuli.github.io" style="color: #ffc107;">Yunzhi Li</a> and Professor <a href="https://www.cs.utexas.edu/~yukez/cs391r_fall2021/index.html" style="color: #ffc107;">Yuke Zhu</a> for their course website templates and <a href="http://daslab.illinois.edu/index.html#team" style="color: #ffc107;">Jose Cuaran</a> and <a href="https://kendallkoe.com" style="color: #ffc107;">Kendall Koe</a> for course setup.</small>
+      </div>
+    </footer>
+
+  </body>
+</html>

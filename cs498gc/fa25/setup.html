@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159856695-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-159856695-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/modern-style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>ROS2 Setup - CS498GC: Mobile Robotics</title>
+    <link rel="icon" href="resources/favicon.ico" />
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="logistics.html">Logistics</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="syllabus.html">Syllabus</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="assignments.html">Assignments</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="presentations.html">Presentations</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="setup.html">Setup</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>ROS 2 Humble Installation Guide</h1>
+          
+          <div class="alert alert-info">
+            <h5>Course Requirements</h5>
+            <p><strong>Tutorial Session:</strong> September 10, Wednesday<br>
+            <strong>Required OS:</strong> Ubuntu 22.04 LTS with ROS 2 Humble<br>
+            <strong>Verification Tool:</strong> <code>ros2 doctor --report</code></p>
+          </div>
+
+          <h2>Core Documentation</h2>
+          <ul>
+            <li><a href="https://docs.ros.org/en/humble/">Official ROS 2 Humble Documentation</a></li>
+            <li><a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html">Ubuntu Installation Guide</a></li>
+            <li><a href="https://docs.ros.org/en/humble/How-To-Guides/Installation-Troubleshooting.html">Troubleshooting Guide</a></li>
+            <li><a href="https://github.com/ubuntu-robotics/ros2_cheats_sheet">Command Reference Cheat Sheet</a></li>
+          </ul>
+
+          <h2>Course Presentations</h2>
+          <div class="alert alert-primary">
+            <h5>📚 ROS2 Tutorial Materials</h5>
+            <ul>
+              <li><a href="/files/cs498gc/fa25/presentations/ros2_humble_tutorial.pdf" target="_blank"><strong>ROS2 Humble Complete Guide</strong></a> - September 10, 2025 class presentation covering:</li>
+              <ul>
+                <li>Installation & Setup troubleshooting (Python version conflicts)</li>
+                <li>Real TurtleBot3 message examples with live data</li>
+                <li>Complete architecture overview with visual diagrams</li>
+                <li>Comprehensive command reference and practical examples</li>
+              </ul>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                  <h4>Option 1: Dual Boot (Recommended)</h4>
+                </div>
+                <div class="card-body">
+                  <h5>Windows + Ubuntu 22.04</h5>
+                  <ul>
+                    <li><a href="https://youtu.be/GXxTxBPKecQ?feature=shared">Video Guide</a></li>
+                    <li><strong>Requirements:</strong> 100GB+ partition, UEFI/BIOS access</li>
+                    <li><strong>Tool:</strong> Balena Etcher for USB creation</li>
+                  </ul>
+                  
+                  <h5>macOS + Ubuntu 22.04</h5>
+                  <ul>
+                    <li><strong>Intel Mac:</strong> <a href="https://youtu.be/qjfBP4UYx9c?feature=shared">Setup Guide</a></li>
+                    <li><strong>Apple Silicon:</strong> <a href="https://youtu.be/aXh_d1OixRI?feature=shared">ARM Guide</a></li>
+                  </ul>
+                  
+                  <h5>Multi-Boot PC Setup</h5>
+                  <p>Configure Ubuntu 18.04/20.04/22.04 alongside Windows. Remote access via Illinois VPN + AnyDesk supported.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                  <h4>Option 2: Virtual Machine</h4>
+                </div>
+                <div class="card-body">
+                  <p><strong>Platform:</strong> Windows/MacOS</p>
+
+                  <h6>For Apple Silicon (M1/M2/M3/M4) Macs:</h6>
+                  <ul>
+                    <li><strong>UTM (Universal Turing Machine)</strong> - Recommended for ARM64</li>
+                    <ul>
+                      <li><a href="https://mac.getutm.app/">UTM Download</a></li>
+                      <li>Use Ubuntu 22.04 ARM64 image</li>
+                      <li>Better performance than VirtualBox on Apple Silicon</li>
+                    </ul>
+                  </ul>
+
+                  <h6>For Intel Macs/Windows:</h6>
+                  <ul>
+                    <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Download</a></li>
+                    <li><strong>Specifications:</strong> 8GB RAM, 6 cores, 50GB storage minimum</li>
+                  </ul>
+
+                  <div class="alert alert-warning">
+                    <strong>Performance Note:</strong> Add <code>export LIBGL_ALWAYS_SOFTWARE=true</code> for software rendering
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                  <h4>Option 3: WSL2 (Windows)</h4>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li><a href="https://youtu.be/F3n0SMAFheM?feature=shared">Setup Tutorial</a></li>
+                    <li><a href="https://github.com/microsoft/wslg">GUI Support (WSLg)</a></li>
+                    <li><a href="https://tom-howard.github.io/com2009/ros/wsl-ros/install/">Academic Guide</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header bg-info text-white">
+                  <h4>Option 4: Docker</h4>
+                </div>
+                <div class="card-body">
+                  <p><strong>Platform-Independent Solution</strong></p>
+                  <ul>
+                    <li><a href="https://foxglove.dev/blog/installing-ros2-on-macos-with-docker">macOS Guide</a></li>
+                    <li><a href="https://medium.com/@arohanaday/how-i-set-up-ros-2-on-my-macbook-using-docker-without-losing-my-sanity-fe6e55857cc2">Detailed Setup</a></li>
+                    <li><a href="https://aws.amazon.com/blogs/robotics/tag/ros-2/">AWS RoboMaker</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h3>⚠️ Special Considerations for Apple Silicon (ARM64)</h3>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-warning">
+                <h5>Critical Information for M1/M2/M3/M4 Mac Users</h5>
+                <p><strong>Gazebo Classic (Version 11) does not support ARM64 architecture.</strong> This significantly impacts TurtleBot3 and other simulations.</p>
+              </div>
+
+              <h4>Architecture Compatibility Quick Reference</h4>
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th>Component</th>
+                    <th>Intel/AMD (x86_64)</th>
+                    <th>Apple Silicon (ARM64)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ROS2 Humble</td>
+                    <td class="table-success">✅ Full Support</td>
+                    <td class="table-success">✅ Full Support</td>
+                  </tr>
+                  <tr>
+                    <td>Gazebo Classic</td>
+                    <td class="table-success">✅ apt install</td>
+                    <td class="table-danger">❌ Not Available</td>
+                  </tr>
+                  <tr>
+                    <td>Gazebo Fortress</td>
+                    <td class="table-success">✅ Full Support</td>
+                    <td class="table-success">✅ Full Support (Recommended)</td>
+                  </tr>
+                  <tr>
+                    <td>TurtleBot3 Sim</td>
+                    <td class="table-success">✅ apt install</td>
+                    <td class="table-warning">⚠️ Build from source</td>
+                  </tr>
+                  <tr>
+                    <td>GPU Acceleration (UTM)</td>
+                    <td class="table-success">✅ Available</td>
+                    <td class="table-danger">❌ Not Available</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4>Recommended Solutions for ARM64</h4>
+              <ol>
+                <li>
+                  <strong>Best Option:</strong> Use Gazebo Fortress (new Gazebo) with ROS2 Humble
+                  <pre class="bg-dark text-light p-2 rounded"><code>sudo apt install gz-fortress ros-humble-ros-gz-bridge</code></pre>
+                </li>
+                <li>
+                  <strong>Docker with ARM64 Images:</strong>
+                  <ul>
+                    <li><a href="https://j3soon.github.io/ros2-essentials/">ROS2 Essentials Docker Guide</a></li>
+                    <li>Use <code>arm64v8/ros:humble</code> base image</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>UTM Virtualization (Limited):</strong>
+                  <ul>
+                    <li>⚠️ No GPU acceleration for 3D graphics</li>
+                    <li>Requires: <code>export LIBGL_ALWAYS_SOFTWARE=true</code></li>
+                    <li><a href="https://mac.getutm.app/">UTM Download</a></li>
+                  </ul>
+                </li>
+              </ol>
+
+              <h4>TurtleBot3 on ARM64 - Known Issues</h4>
+              <div class="alert alert-info">
+                <strong>Student Report (Chahit Jain, Sept 2025):</strong><br>
+                When trying to install TurtleBot3 simulation on Apple M3:
+                <ul>
+                  <li><code>sudo apt install ros-humble-turtlebot3-gazebo</code> → <strong>E: Unable to locate package</strong></li>
+                  <li>Building from source fails due to <code>libgazebo-dev</code> not available for ARM64</li>
+                  <li>Even with OSRF repository added, Gazebo Classic has no ARM64 binaries</li>
+                </ul>
+                <strong>Solution:</strong> Use Gazebo Fortress or provided bag files for assignments.
+              </div>
+
+              <h4>For Coding Exercise 1 (ARM64 Users)</h4>
+              <ul>
+                <li>Option 1: Use pre-recorded bag files provided on course website</li>
+                <li>Option 2: Create mock joint state publishers (sample code in Piazza)</li>
+                <li>Option 3: Use campus lab computers (x86_64) remotely via SSH</li>
+                <li>Option 4: Pair program with students who have x86_64 hardware</li>
+              </ul>
+
+              <div class="alert alert-success">
+                <strong>Instructor Note:</strong> For easiest setup, use a 2-year-old Windows laptop with NVIDIA GPU. Alternative evaluation methods available for ARM64 users - contact TAs during office hours.
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-light">
+            <div class="card-header">
+              <h3>Installation Verification</h3>
+            </div>
+            <div class="card-body">
+              <p>Run these commands in a new terminal to verify your ROS2 Humble installation:</p>
+              
+              <div class="bg-dark text-light p-3 rounded">
+                <code>
+# Source ROS2 environment<br>
+source /opt/ros/humble/setup.bash<br><br>
+# Quick health check<br>
+ros2 doctor<br><br>
+# Comprehensive diagnostic report<br>
+ros2 doctor --report
+                </code>
+              </div>
+              
+              <div class="alert alert-success mt-3">
+                <strong>Success Indicator:</strong> You should see "All systems go!" or similar positive diagnostics output.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer mt-5">
+      <div class="container text-center">
+        <span class="text-muted">CS498GC Mobile Robotics - Fall 2025 - University of Illinois at Urbana-Champaign</span>
+        <br>
+        <small style="color: #ccc;">Thanks to Professor <a href="https://slazebni.cs.illinois.edu" style="color: #ffc107;">Svetlana Lazebnik</a>, Professor <a href="https://yunzhuli.github.io" style="color: #ffc107;">Yunzhi Li</a> and Professor <a href="https://www.cs.utexas.edu/~yukez/cs391r_fall2021/index.html" style="color: #ffc107;">Yuke Zhu</a> for their course website templates and <a href="http://daslab.illinois.edu/index.html#team" style="color: #ffc107;">Jose Cuaran</a> and <a href="https://kendallkoe.com" style="color: #ffc107;">Kendall Koe</a> for course setup.</small>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CLAUDE.md | Kulbir Singh Ahluwalia</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="CLAUDE.md" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’m Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois, Urbana-Champaign (UIUC). I am committed to developing autonomous robotic systems that address real-world challenges. My research explores natural language grounding for mobile field robot navigation in dynamic environments under the guidance of Girish Chowdhary and Julia Hockenmaier. During my Master’s in Robotics from the University of Maryland, I was fortunate to work with Pratap Tokekar and Ryan Williams on Pasture Monitoring in Simulated Environments. Besides working on my research, I enjoy working out, meditating and fine-tuning my solar-powered setup." />
+<meta property="og:description" content="I’m Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois, Urbana-Champaign (UIUC). I am committed to developing autonomous robotic systems that address real-world challenges. My research explores natural language grounding for mobile field robot navigation in dynamic environments under the guidance of Girish Chowdhary and Julia Hockenmaier. During my Master’s in Robotics from the University of Maryland, I was fortunate to work with Pratap Tokekar and Ryan Williams on Pasture Monitoring in Simulated Environments. Besides working on my research, I enjoy working out, meditating and fine-tuning my solar-powered setup." />
+<link rel="canonical" href="https://kulbir-singh-ahluwalia.com//CLAUDE.html" />
+<meta property="og:url" content="https://kulbir-singh-ahluwalia.com//CLAUDE.html" />
+<meta property="og:site_name" content="Kulbir Singh Ahluwalia" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CLAUDE.md" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"I’m Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois, Urbana-Champaign (UIUC). I am committed to developing autonomous robotic systems that address real-world challenges. My research explores natural language grounding for mobile field robot navigation in dynamic environments under the guidance of Girish Chowdhary and Julia Hockenmaier. During my Master’s in Robotics from the University of Maryland, I was fortunate to work with Pratap Tokekar and Ryan Williams on Pasture Monitoring in Simulated Environments. Besides working on my research, I enjoy working out, meditating and fine-tuning my solar-powered setup.","headline":"CLAUDE.md","url":"https://kulbir-singh-ahluwalia.com//CLAUDE.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://kulbir-singh-ahluwalia.com//feed.xml" title="Kulbir Singh Ahluwalia" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Kulbir Singh Ahluwalia</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CLAUDE.html">CLAUDE.md</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">CLAUDE.md</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="claudemd">CLAUDE.md</h1>
+
+<p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
+
+<h2 id="repository-overview">Repository Overview</h2>
+
+<p>This is Kulbir Singh Ahluwalia’s personal academic website and CS498GC Mobile Robotics course website, built with Jekyll and hosted on GitHub Pages at kulbir-singh-ahluwalia.com.</p>
+
+<h2 id="development-commands">Development Commands</h2>
+
+<h3 id="local-development">Local Development</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install dependencies</span>
+bundle <span class="nb">install</span>
+
+<span class="c"># Serve locally with live reload (default port 4000)</span>
+bundle <span class="nb">exec </span>jekyll serve <span class="nt">--trace</span>
+
+<span class="c"># Build site for production</span>
+bundle <span class="nb">exec </span>jekyll build
+</code></pre></div></div>
+
+<h3 id="testing">Testing</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run RSpec tests (if configured)</span>
+bundle <span class="nb">exec </span>rspec
+</code></pre></div></div>
+
+<h2 id="architecture--key-components">Architecture &amp; Key Components</h2>
+
+<h3 id="jekyll-data-driven-architecture">Jekyll Data-Driven Architecture</h3>
+<p>The site uses a data-driven approach where content is stored in YAML files under <code class="language-plaintext highlighter-rouge">_data/</code> and rendered through Jekyll templates:</p>
+
+<ul>
+  <li><strong>Publications</strong>: <code class="language-plaintext highlighter-rouge">_data/publications.yml</code> - Academic papers with authors, links, and images</li>
+  <li><strong>Projects</strong>: <code class="language-plaintext highlighter-rouge">_data/projects.yml</code> - Research projects and descriptions</li>
+  <li><strong>Navigation</strong>: <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code> - Site navigation structure</li>
+  <li><strong>Misc Content</strong>: <code class="language-plaintext highlighter-rouge">_data/misc.yaml</code> - Awards, certificates, achievements</li>
+  <li><strong>Authors</strong>: <code class="language-plaintext highlighter-rouge">_data/authors.yml</code> - Collaborator information</li>
+</ul>
+
+<h3 id="styling-architecture">Styling Architecture</h3>
+<ul>
+  <li><strong>Bulma CSS Framework</strong>: Primary styling framework (<code class="language-plaintext highlighter-rouge">css/bulma.min.css</code>)</li>
+  <li><strong>Custom SCSS</strong>: Site-specific styles in <code class="language-plaintext highlighter-rouge">css/index.scss</code> importing from <code class="language-plaintext highlighter-rouge">_sass/_base.scss</code></li>
+  <li><strong>Responsive Design</strong>: Mobile-first approach with navbar burger menu handled in <code class="language-plaintext highlighter-rouge">js/index.js</code></li>
+</ul>
+
+<h3 id="deployment-pipeline">Deployment Pipeline</h3>
+<p>GitHub Actions workflow (<code class="language-plaintext highlighter-rouge">.github/workflows/cache_control.yml</code>) handles automated deployment:</p>
+<ol>
+  <li>Builds Jekyll site on push to main branch</li>
+  <li>Adds cache control headers for proper browser caching</li>
+  <li>Deploys to gh-pages branch</li>
+  <li>Uses Ruby 3.1 with bundler caching for performance</li>
+</ol>
+
+<h3 id="course-website-structure">Course Website Structure</h3>
+<p>The CS498GC course content is organized under <code class="language-plaintext highlighter-rouge">cs498gc/fa25/</code> with:</p>
+<ul>
+  <li>Separate syllabus, assignments, and logistics pages</li>
+  <li>Independent CSS and image assets for course materials</li>
+  <li>Gallery and setup instructions for course projects</li>
+</ul>
+
+<h2 id="content-guidelines">Content Guidelines</h2>
+
+<h3 id="adding-publications">Adding Publications</h3>
+<p>Update <code class="language-plaintext highlighter-rouge">_data/publications.yml</code> with proper structure including authors array, publication venue, links, and image paths. Images should be 1:1 aspect ratio, minimum 320px.</p>
+
+<h3 id="modifying-site-content">Modifying Site Content</h3>
+<ul>
+  <li>Personal information: Update <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
+  <li>Section content: Modify corresponding YAML files in <code class="language-plaintext highlighter-rouge">_data/</code></li>
+  <li>Styling changes: Edit <code class="language-plaintext highlighter-rouge">css/index.scss</code> or <code class="language-plaintext highlighter-rouge">_sass/_base.scss</code></li>
+  <li>JavaScript functionality: Update <code class="language-plaintext highlighter-rouge">js/index.js</code></li>
+</ul>
+
+<h3 id="image-handling">Image Handling</h3>
+<ul>
+  <li>Publication images: Store in <code class="language-plaintext highlighter-rouge">images/[publication-name]/</code></li>
+  <li>General images: Place in <code class="language-plaintext highlighter-rouge">images/</code> root</li>
+  <li>Course images: Use <code class="language-plaintext highlighter-rouge">cs498gc/fa25/images/</code></li>
+</ul>
+
+<h2 id="important-implementation-details">Important Implementation Details</h2>
+
+<h3 id="publication-mouseover-effects">Publication Mouseover Effects</h3>
+<p>The site implements custom mouseover effects for publications that transition between static images and videos/GIFs. This is handled in <code class="language-plaintext highlighter-rouge">js/index.js</code> and requires proper image/video file naming conventions.</p>
+
+<h3 id="external-link-handling">External Link Handling</h3>
+<p>All external links automatically open in new tabs via JavaScript in <code class="language-plaintext highlighter-rouge">js/index.js</code>. This applies to links with href starting with “http” but not containing the site’s domain.</p>
+
+<h3 id="responsive-navigation">Responsive Navigation</h3>
+<p>The mobile navigation burger menu is implemented using Bulma’s navbar component with custom JavaScript handling for toggle functionality.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Kulbir Singh Ahluwalia</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Kulbir Singh Ahluwalia</li><li><a class="u-email" href="mailto:ksa5@illinois.edu">ksa5@illinois.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/kulbir-ahluwalia"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">kulbir-ahluwalia</span></a></li><li><a href="https://www.twitter.com/Kulbir_Singh_"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Kulbir_Singh_</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>I’m Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois, Urbana-Champaign ([UIUC](https://illinois.edu/)).  I am committed to developing autonomous robotic systems that address real-world challenges.  My research explores natural language grounding for mobile field robot navigation in dynamic environments under the guidance of Girish Chowdhary and Julia Hockenmaier.   During my Master’s in Robotics from the University of Maryland, I was fortunate to work with Pratap Tokekar and Ryan Williams on Pasture Monitoring in Simulated Environments.  Besides working on my research, I enjoy working out, meditating and fine-tuning my solar-powered setup.  </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

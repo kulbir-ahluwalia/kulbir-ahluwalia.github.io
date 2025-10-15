@@ -1,0 +1,9 @@
+name: jekyll-website
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ruby=3.2.*
+  - git
+  - nodejs=18.*
+  - pip 

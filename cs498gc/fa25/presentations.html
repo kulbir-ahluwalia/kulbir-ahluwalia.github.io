@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159856695-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-159856695-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization,SLAM,presentations">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/modern-style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>CS498GC: Student Presentations</title>
+    <link rel="icon" href="resources/favicon.ico" />
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+
+    <style>
+      .presentation-table {
+        margin-top: 2rem;
+      }
+      .presentation-table th {
+        background-color: #13294B;
+        color: white;
+        font-weight: 600;
+        border: none;
+      }
+      .presentation-table td {
+        vertical-align: middle;
+      }
+      .paper-title {
+        font-weight: 500;
+        color: #13294B;
+      }
+      .paper-link {
+        color: #BF5700;
+        text-decoration: none;
+      }
+      .paper-link:hover {
+        color: #13294B;
+        text-decoration: underline;
+      }
+      .assigned-paper {
+        background-color: #f7f6f1;
+      }
+      .tbd {
+        color: #999;
+        font-style: italic;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="logistics.html">Logistics</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="syllabus.html">Syllabus</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="assignments.html">Assignments</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="presentations.html">Presentations</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="setup.html">Setup</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+      <div class="container">
+        <div class="section">
+          <h2>Graduate Student Presentations</h2>
+          
+          <div class="alert alert-primary" role="alert">
+            <strong>For CS498GC 4-credit students:</strong> You'll give a <strong>15-minute presentation + 5-minute Q&A</strong> on an assigned, state-of-the-art <strong>SLAM</strong> paper.
+            <br><br>
+            <strong><em>Please check your assigned SLAM paper and date in the table below.</em></strong>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-warning">
+              <h5 class="mb-0"><strong>TL;DR - Key Requirements</strong></h5>
+            </div>
+            <div class="card-body">
+              <ul class="mb-0">
+                <li><strong>Slides due exactly 1 week before</strong> your presentation date (see deadlines below)</li>
+                <li><strong>Mandatory TA office hours for slides feedback:</strong> attend <strong>one week prior</strong> to your talk</li>
+                <li><strong>Talk length:</strong> <strong>15 minutes</strong> + <strong>5 minutes Q&A</strong> (strict timing; 4 talks/day)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+              <h5 class="mb-0">Deadlines at a Glance</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-sm mb-0">
+                  <thead>
+                    <tr>
+                      <th>Presentation Date</th>
+                      <th>Slides Due (1 week prior)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>Fri, Nov 21</strong></td><td><strong>Thu, Nov 14</strong></td></tr>
+                    <tr><td><strong>Wed, Dec 3</strong></td><td><strong>Tue, Nov 26</strong></td></tr>
+                    <tr><td><strong>Fri, Dec 5</strong></td><td><strong>Thu, Nov 28</strong></td></tr>
+                    <tr><td><strong>Wed, Dec 10</strong></td><td><strong>Tue, Dec 3</strong></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <small class="text-muted">Find your exact assignment (paper, date, deadline) in the table below.</small>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0">What We Want You to Learn (and Show)</h5>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Methodology & architecture</strong> — explain the system diagram and motivate each design choice</li>
+                <li><strong>Novelty</strong> — what's truly new and why it matters</li>
+                <li><strong>Limitations</strong> — be specific and evidence-based (failure cases, assumptions, compute/data constraints)</li>
+                <li><strong>Improvements</strong> — concrete ideas to address those limitations</li>
+              </ul>
+              
+              <div class="alert alert-light border-left border-success mt-3">
+                <strong>Prof. Girish's suggested questions for a compelling talk:</strong>
+                <ol class="mb-0">
+                  <li><strong>Why is it important?</strong></li>
+                  <li><strong>Why is it hard?</strong></li>
+                  <li><strong>How is it novel?</strong></li>
+                  <li><strong>Why does it work?</strong></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+              <h5 class="mb-0">Suggested Slide Outline (Target: 15 minutes)</h5>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>Problem & motivation</strong> (tie explicitly to mobile robotics/SLAM)</li>
+                <li><strong>Definitions / background</strong> (only what's needed to follow the method)</li>
+                <li><strong>System diagram & architecture</strong> (reasoning for each component/choice)</li>
+                <li><strong>Method details:</strong> inputs/outputs, <em>training objectives/losses</em> (write the equations), and <strong>why each term exists</strong></li>
+                <li><strong>Results:</strong> metrics, baselines, ablations; 2–3 key takeaways</li>
+                <li><strong>Limitations</strong> (and how you'd test/mitigate them)</li>
+                <li><strong>Data:</strong> collection/filtration; domain gaps and implications</li>
+                <li><strong>Connection to CS498GC:</strong> how this advances mobile robotics/SLAM</li>
+              </ul>
+              
+              <div class="alert alert-info mt-3">
+                <strong>Format Tips:</strong>
+                <ul class="mb-0">
+                  <li>Prefer <strong>visual slides</strong> (figures, flow charts, brief bullets)</li>
+                  <li>Aim for <strong>≤ 4–8 short lines</strong> per slide</li>
+                  <li>Put rich explanations in <strong>Speaker Notes</strong></li>
+                  <li><strong>Practice at least twice</strong> (timed) - timing is strict with 4 talks per day</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header bg-warning">
+                  <h5 class="mb-0">Required TA Check-in</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="mb-2">
+                    <li>Attend TA office hours <strong>exactly one week before</strong> your talk</li>
+                    <li><strong>Time:</strong> Wed 1:30-2:30 PM @ SC 4407</li>
+                    <li><strong>TA Email:</strong> ksa5@illinois.edu</li>
+                    <li>Review slides and get feedback before final presentation</li>
+                  </ul>
+                  <small><a href="logistics.html">See Logistics page for more details</a></small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header bg-secondary text-white">
+                  <h5 class="mb-0">Grading Breakdown</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="mb-0">
+                    <li><strong>Slides submitted on time (1 week prior)</strong> — <strong>40%</strong></li>
+                    <li><strong>In-class presentation</strong> (clarity, depth, timing, Q&A) — <strong>50%</strong></li>
+                    <li><strong>TA office hour check-in (1 week prior)</strong> — <strong>10%</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="mt-4">Student Assignments</h4>
+          <div class="table-responsive presentation-table">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Student Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Paper Title</th>
+                  <th scope="col">Paper Link</th>
+                  <th scope="col">Submission Deadline</th>
+                  <th scope="col">Presentation Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="assigned-paper">
+                  <th scope="row">1</th>
+                  <td>Aryan Chauhan</td>
+                  <td><a href="mailto:aryanc5@illinois.edu">aryanc5@illinois.edu</a></td>
+                  <td class="paper-title">MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors</td>
+                  <td><a href="https://edexheim.github.io/mast3r-slam/" target="_blank" class="paper-link">CVPR 2025</a></td>
+                  <td><strong>Nov 14</strong></td>
+                  <td><strong>Nov 21 (Fri)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">2</th>
+                  <td>Wenzhou Ding</td>
+                  <td><a href="mailto:wding8@illinois.edu">wding8@illinois.edu</a></td>
+                  <td class="paper-title">Splat, Track & Map: 3D Gaussians for Dense RGB-D SLAM</td>
+                  <td><a href="https://spla-tam.github.io/" target="_blank" class="paper-link">CVPR 2024</a></td>
+                  <td><strong>Nov 14</strong></td>
+                  <td><strong>Nov 21 (Fri)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">3</th>
+                  <td>Karteek Gandiboyina</td>
+                  <td><a href="mailto:mkg7@illinois.edu">mkg7@illinois.edu</a></td>
+                  <td class="paper-title">cuVSLAM: CUDA Accelerated Visual Odometry and Mapping</td>
+                  <td><a href="https://www.arxiv.org/pdf/2506.04359" target="_blank" class="paper-link">NVIDIA arXiv Preprint</a></td>
+                  <td><strong>Nov 14</strong></td>
+                  <td><strong>Nov 21 (Fri)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">4</th>
+                  <td>Het Patel</td>
+                  <td><a href="mailto:hcp4@illinois.edu">hcp4@illinois.edu</a></td>
+                  <td class="paper-title">Open-Vocabulary Online Semantic Mapping for SLAM</td>
+                  <td><a href="https://arxiv.org/pdf/2411.15043" target="_blank" class="paper-link">arXiv Preprint 2024</a></td>
+                  <td><strong>Nov 14</strong></td>
+                  <td><strong>Nov 21 (Fri)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">5</th>
+                  <td>Ruben Hernandez</td>
+                  <td><a href="mailto:rubenjh2@illinois.edu">rubenjh2@illinois.edu</a></td>
+                  <td class="paper-title">VSS-SLAM: Voxelized Surfel Splatting for Geometrically Accurate SLAM</td>
+                  <td><a href="#" target="_blank" class="paper-link">ICRA 2025</a></td>
+                  <td><strong>Nov 26</strong></td>
+                  <td><strong>Dec 3 (Wed)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">6</th>
+                  <td>Yangkun Liu</td>
+                  <td><a href="mailto:yangkun2@illinois.edu">yangkun2@illinois.edu</a></td>
+                  <td class="paper-title">SCE-LIO: An Enhanced Lidar Inertial Odometry by Constructing Submap Constraints</td>
+                  <td><a href="https://ieeexplore.ieee.org/document/10700605" target="_blank" class="paper-link">IEEE RAL</a></td>
+                  <td><strong>Nov 26</strong></td>
+                  <td><strong>Dec 3 (Wed)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">7</th>
+                  <td>Sai Shiva Satwik Mallajosyula</td>
+                  <td><a href="mailto:ssm27@illinois.edu">ssm27@illinois.edu</a></td>
+                  <td class="paper-title">DGS-SLAM: A Visual Dense SLAM Based on Gaussian Splatting in Dynamic Environments</td>
+                  <td><a href="https://arxiv.org/abs/2411.10722" target="_blank" class="paper-link">ICRA 2025</a></td>
+                  <td><strong>Nov 26</strong></td>
+                  <td><strong>Dec 3 (Wed)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">8</th>
+                  <td>Nadeem Mohammed</td>
+                  <td><a href="mailto:nadeemm2@illinois.edu">nadeemm2@illinois.edu</a></td>
+                  <td class="paper-title">FMCW-LIO: A Doppler LiDAR-Inertial Odometry</td>
+                  <td><a href="https://ieeexplore.ieee.org/document/10518074/" target="_blank" class="paper-link">IEEE RAL</a></td>
+                  <td><strong>Nov 26</strong></td>
+                  <td><strong>Dec 3 (Wed)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">9</th>
+                  <td>Keisuke Ogawa</td>
+                  <td><a href="mailto:ogawa3@illinois.edu">ogawa3@illinois.edu</a></td>
+                  <td class="paper-title">WildGS-SLAM: Monocular Gaussian Splatting SLAM in Dynamic Environments</td>
+                  <td><a href="https://wildgs-slam.github.io" target="_blank" class="paper-link">CVPR 2025</a></td>
+                  <td><strong>Nov 28</strong></td>
+                  <td><strong>Dec 5 (Fri)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">10</th>
+                  <td>Tianyu Ren</td>
+                  <td><a href="mailto:tianyur2@illinois.edu">tianyur2@illinois.edu</a></td>
+                  <td class="paper-title">DRAWER: Interactive 3D Scene Generation from a Single Image</td>
+                  <td><a href="https://xiahongchi.github.io/DRAWER/" target="_blank" class="paper-link">CVPR 2025</a></td>
+                  <td><strong>Nov 28</strong></td>
+                  <td><strong>Dec 5 (Fri)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">11</th>
+                  <td>William Schafer</td>
+                  <td><a href="mailto:wes6@illinois.edu">wes6@illinois.edu</a></td>
+                  <td class="paper-title">GS-SLAM: Dense Visual SLAM with 3D Gaussian Splatting</td>
+                  <td><a href="https://gs-slam.github.io/" target="_blank" class="paper-link">CVPR 2024</a></td>
+                  <td><strong>Nov 28</strong></td>
+                  <td><strong>Dec 5 (Fri)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">12</th>
+                  <td>Yingxue Wang</td>
+                  <td><a href="mailto:yingxue3@illinois.edu">yingxue3@illinois.edu</a></td>
+                  <td class="paper-title">RTG-SLAM: Real-time 3D Reconstruction at Scale using Gaussian Splatting</td>
+                  <td><a href="https://dl.acm.org/doi/10.1145/3641519.3657455" target="_blank" class="paper-link">ACM SIGGRAPH 2024</a></td>
+                  <td><strong>Nov 28</strong></td>
+                  <td><strong>Dec 5 (Fri)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">13</th>
+                  <td>Tongmiao Xu</td>
+                  <td><a href="mailto:tx21@illinois.edu">tx21@illinois.edu</a></td>
+                  <td class="paper-title">Wheat3DGS: In-field 3D Reconstruction, Instance Segmentation and Phenotyping of Wheat Heads with Gaussian Splatting</td>
+                  <td><a href="https://zdwww.github.io/wheat3dgs/" target="_blank" class="paper-link">arXiv Preprint 2024</a></td>
+                  <td><strong>Dec 3</strong></td>
+                  <td><strong>Dec 10 (Wed)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">14</th>
+                  <td>Hariprasad Yuvaraj</td>
+                  <td><a href="mailto:yuvaraj5@illinois.edu">yuvaraj5@illinois.edu</a></td>
+                  <td class="paper-title">Adaptive Mobile Manipulation for Articulated Objects In the Open World</td>
+                  <td><a href="https://door-open.github.io/" target="_blank" class="paper-link">arXiv Preprint 2024</a></td>
+                  <td><strong>Dec 3</strong></td>
+                  <td><strong>Dec 10 (Wed)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">15</th>
+                  <td>Xiayu Zhao</td>
+                  <td><a href="mailto:xiayuz3@illinois.edu">xiayuz3@illinois.edu</a></td>
+                  <td class="paper-title">DynaVINS++: Robust Visual-Inertial State Estimator in Dynamic Environments</td>
+                  <td><a href="https://arxiv.org/abs/2410.15373" target="_blank" class="paper-link">IEEE RAL</a></td>
+                  <td><strong>Dec 3</strong></td>
+                  <td><strong>Dec 10 (Wed)</strong></td>
+                </tr>
+                <tr class="assigned-paper">
+                  <th scope="row">16</th>
+                  <td>Krishna Teja Kolla</td>
+                  <td><a href="mailto:vkolla2@illinois.edu">vkolla2@illinois.edu</a></td>
+                  <td class="paper-title">Multimodal Spatial Language Maps for Robot Navigation and Manipulation</td>
+                  <td><a href="https://mslmaps.github.io/" target="_blank" class="paper-link">IJRR 2025</a></td>
+                  <td><strong>Dec 3</strong></td>
+                  <td><strong>Dec 10 (Wed)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+              <h5 class="mb-0">Paper Categories Summary</h5>
+            </div>
+            <div class="card-body">
+              <p>All graduate students have been assigned state-of-the-art papers from <strong>CVPR 2025</strong>, <strong>SIGGRAPH 2024</strong>, <strong>ICRA 2025</strong>, and <strong>IJRR 2025</strong>, covering:</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul>
+                    <li><strong>Visual SLAM:</strong> VSS-SLAM, DGS-SLAM, DynaVINS++</li>
+                    <li><strong>Neural SLAM & 3D Gaussian Splatting:</strong> WildGS-SLAM, GS-SLAM, RTG-SLAM</li>
+                    <li><strong>LiDAR SLAM:</strong> SCE-LIO, FMCW-LIO</li>
+                    <li><strong>Semantic SLAM:</strong> Open-Vocabulary Online Semantic Mapping</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li><strong>Multimodal Language Navigation:</strong> Spatial Language Maps</li>
+                    <li><strong>Robotic Applications:</strong> DRAWER, Adaptive Mobile Manipulation</li>
+                    <li><strong>Specialized Applications:</strong> Wheat3DGS, cuVSLAM</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="mt-4">Presentation Schedule Summary</h4>
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header"><strong>November 21 (Friday) - Before Thanksgiving</strong></div>
+                <div class="card-body">
+                  <p><strong>4 Presentations:</strong></p>
+                  <ul class="mb-0">
+                    <li>Aryan Chauhan - MASt3R-SLAM</li>
+                    <li>Wenzhou Ding - Splat, Track & Map</li>
+                    <li>Karteek Gandiboyina - cuVSLAM</li>
+                    <li>Het Patel - Open-Vocabulary Online Semantic Mapping</li>
+                  </ul>
+                  <small class="text-muted">Submission deadline: Nov 14</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header"><strong>December 3 (Wednesday)</strong></div>
+                <div class="card-body">
+                  <p><strong>4 Presentations:</strong></p>
+                  <ul class="mb-0">
+                    <li>Ruben Hernandez - VSS-SLAM</li>
+                    <li>Yangkun Liu - SCE-LIO</li>
+                    <li>Sai Shiva Satwik - DGS-SLAM</li>
+                    <li>Nadeem Mohammed - FMCW-LIO</li>
+                  </ul>
+                  <small class="text-muted">Submission deadline: Nov 26</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header"><strong>December 5 (Friday) + Quiz 3</strong></div>
+                <div class="card-body">
+                  <p><strong>4 Presentations:</strong></p>
+                  <ul class="mb-0">
+                    <li>Keisuke Ogawa - WildGS-SLAM</li>
+                    <li>Tianyu Ren - DRAWER</li>
+                    <li>William Schafer - GS-SLAM</li>
+                    <li>Yingxue Wang - RTG-SLAM</li>
+                  </ul>
+                  <small class="text-muted">Submission deadline: Nov 28</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header"><strong>December 10 (Wednesday) - Last Day of Instruction</strong></div>
+                <div class="card-body">
+                  <p><strong>4 Presentations:</strong></p>
+                  <ul class="mb-0">
+                    <li>Tongmiao Xu - Wheat3DGS</li>
+                    <li>Hariprasad Yuvaraj - Adaptive Mobile Manipulation</li>
+                    <li>Xiayu Zhao - DynaVINS++</li>
+                    <li>Krishna Teja Kolla - Multimodal Spatial Language Maps</li>
+                  </ul>
+                  <small class="text-muted">Submission deadline: Dec 3</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-dark text-white">
+              <h5 class="mb-0">Quick Links & Resources</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <ul>
+                    <li><strong>Presentations Table:</strong> papers, dates, deadlines (above)</li>
+                    <li><strong><a href="syllabus.html">Syllabus & weekly schedule</a></strong> (presentation weeks noted)</li>
+                    <li><strong><a href="policies.html">Policies</a></strong> (integrity, AI-assistant use, late policy)</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li><strong><a href="logistics.html">Logistics</a></strong> (meeting times, platforms, grade distribution)</li>
+                    <li><strong>TA Office Hours:</strong> Wed 1:30-2:30 PM @ SC 4407</li>
+                    <li><strong>Questions:</strong> Use Campuswire or email ksa5@illinois.edu</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="mb-0"><small class="text-muted">If you have conflicts or accessibility needs, please reach out early via Campuswire or email.</small></p>
+            </div>
+          </div>
+
+          <div class="alert alert-success mt-4" role="alert">
+            <strong>All papers and presentation dates assigned!</strong> Start reading your assigned paper early with focus on methodology, loss functions, and novel contributions. Remember to attend TA office hours 1 week before your presentation for slide feedback.
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center mt-5 mb-3">
+      <hr>
+      <p>&copy; 2025 CS498GC Mobile Robotics. University of Illinois at Urbana-Champaign.</p>
+    </footer>
+
+  </body>
+</html>

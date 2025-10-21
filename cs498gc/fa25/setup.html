@@ -296,7 +296,7 @@
             </div>
             <div class="card-body">
               <p>Run these commands in a new terminal to verify your ROS2 Humble installation:</p>
-              
+
               <div class="bg-dark text-light p-3 rounded">
                 <code>
 # Source ROS2 environment<br>
@@ -307,10 +307,282 @@ ros2 doctor<br><br>
 ros2 doctor --report
                 </code>
               </div>
-              
+
               <div class="alert alert-success mt-3">
                 <strong>Success Indicator:</strong> You should see "All systems go!" or similar positive diagnostics output.
               </div>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-danger mb-4">⚠️ Critical Debugging Guide for Coding Exercise 1</h2>
+
+          <div class="alert alert-danger">
+            <h4>📍 The Three Fatal Errors (95% of Student Failures)</h4>
+            <p>Before submitting your code, check for these common mistakes that cause immediate failure:</p>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h4>Fatal Error #1: Using math.radians() on Gyro Data</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-danger">❌ WRONG (Instant Failure)</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_Gy(self, msg):
+    self.gyro_yaw = msg.data
+
+def timer_callback(self):
+    # This will cause huge errors!
+    self.theta += dt * math.radians(self.gyro_yaw)</code></pre>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="text-success">✅ CORRECT</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_Gy(self, msg):
+    self.gyro_yaw = msg.data  # Already in rad/s!
+
+def timer_callback(self):
+    # Gyro data is already in rad/s
+    self.theta += dt * self.gyro_yaw</code></pre>
+                </div>
+              </div>
+              <div class="alert alert-warning mt-3">
+                <strong>Remember:</strong> The gyroscope data from /Gyro_yaw is ALREADY in radians per second (rad/s). Using math.radians() converts it again, making values ~57x smaller than they should be!
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h4>Fatal Error #2: Wrong Update Order</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-danger">❌ WRONG Order</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python"># Updates position with OLD theta
+self.x += dt * v * math.cos(self.theta)
+self.y += dt * v * math.sin(self.theta)
+# Then updates theta (too late!)
+self.theta += dt * self.gyro_yaw</code></pre>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="text-success">✅ CORRECT Order</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python"># FIRST update theta
+self.theta += dt * self.gyro_yaw
+# THEN use new theta for position
+self.x += dt * v * math.cos(self.theta)
+self.y += dt * v * math.sin(self.theta)</code></pre>
+                </div>
+              </div>
+              <p class="mt-3"><strong>Critical:</strong> You MUST update theta BEFORE updating x,y position!</p>
+            </div>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h4>Fatal Error #3: GPS Addition Instead of Replacement (Part 2)</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-danger">❌ WRONG (Causes Drift)</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_GPS(self, msg):
+    gps_x, gps_y = lonlat2xyz(msg.latitude,
+                               msg.longitude,
+                               self.lat0, self.lon0)
+    # Adding causes accumulation!
+    self.x += gps_x
+    self.y += gps_y</code></pre>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="text-success">✅ CORRECT</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_GPS(self, msg):
+    # GPS gives absolute position
+    self.x, self.y = lonlat2xyz(msg.latitude,
+                                msg.longitude,
+                                self.lat0, self.lon0)
+    # Direct replacement, no addition!</code></pre>
+                </div>
+              </div>
+              <p class="mt-3"><strong>Remember:</strong> GPS provides absolute position in the world frame. You must REPLACE position, not add to it!</p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-warning">
+              <h4>🔧 Non-Negotiable Constants</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Required Values:</h5>
+                  <ul>
+                    <li><strong>dt = 0.1</strong> seconds (NEVER calculate from timestamps)</li>
+                    <li><strong>L = 0.3</strong> meters (robot wheelbase)</li>
+                    <li><strong>First GPS = origin</strong> (store as lat0, lon0)</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>Correct Implementation:</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def __init__(self):
+    super().__init__()
+    # Initialize at origin
+    self.x = 0.0
+    self.y = 0.0
+    self.theta = 0.0
+
+    # Constants - DO NOT CHANGE
+    self.dt = 0.1  # Fixed timestep
+    self.L = 0.3   # Wheelbase</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 bg-light">
+            <div class="card-header bg-info text-white">
+              <h4>🚀 Quick Launch Script</h4>
+            </div>
+            <div class="card-body">
+              <h5>Save this as launch_coding_ex1.sh:</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code>#!/bin/bash
+# Terminal 1: Play bag file
+gnome-terminal -- bash -c "source /opt/ros/humble/setup.bash; \
+ros2 bag play ~/Desktop/CS498GC_MobileRobotics_Fall2025/2022_CS498_mobile_robotics/Assignments/2022_coding_ex1_CS498/solar_house/solar_house.db3 --loop; exec bash"
+
+# Terminal 2: Run your node
+gnome-terminal -- bash -c "source /opt/ros/humble/setup.bash; \
+cd ~/Desktop/CS498GC_MobileRobotics_Fall2025/2022_CS498_mobile_robotics/'ROS2 files'/mobile_robotics; \
+source install/setup.bash; \
+ros2 run mobile_robotics coding_ex1_part1; exec bash"
+
+# Terminal 3: Monitor output
+gnome-terminal -- bash -c "cd ~/Desktop/CS498GC_MobileRobotics_Fall2025/2022_CS498_mobile_robotics/'ROS2 files'/mobile_robotics; \
+tail -f results_part1.txt; exec bash"
+
+echo "Launched all terminals for Coding Exercise 1!"</code></pre>
+              <p class="mt-3">Make it executable: <code>chmod +x launch_coding_ex1.sh</code></p>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-primary mb-4">📚 Assignment 4 - Mobile Manipulator Setup</h2>
+
+          <div class="alert alert-info">
+            <h4>Assignment 4 Overview</h4>
+            <ul>
+              <li><strong>Part A (25 points):</strong> Released Sept 5, Due Nov 21 - Deploy and teleoperate Husky + UR3 in Gazebo</li>
+              <li><strong>Part B (75 points):</strong> Released Nov 24, Due Dec 4 - Implement SLAM, sensor fusion, and path planning</li>
+              <li><strong>System:</strong> 13-DOF mobile manipulator (Husky base + UR3 arm + parallel gripper)</li>
+            </ul>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+              <h4>OS Compatibility Matrix</h4>
+            </div>
+            <div class="card-body">
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th>Ubuntu Version</th>
+                    <th>ROS Version</th>
+                    <th>Recommended For</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>20.04 LTS</td>
+                    <td>ROS1 Noetic</td>
+                    <td>Legacy systems</td>
+                    <td>Stable, well-documented</td>
+                  </tr>
+                  <tr class="table-success">
+                    <td><strong>22.04 LTS</strong></td>
+                    <td><strong>ROS2 Humble</strong></td>
+                    <td><strong>Primary choice</strong></td>
+                    <td><strong>Course standard</strong></td>
+                  </tr>
+                  <tr>
+                    <td>24.04 LTS</td>
+                    <td>ROS2 Jazzy</td>
+                    <td>RTX 50-series GPUs</td>
+                    <td>For driver issues</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-warning">
+              <h4>Common Hardware Issues & Solutions</h4>
+            </div>
+            <div class="card-body">
+              <h5>NVIDIA Driver Issues (RTX 50-series)</h5>
+              <ul>
+                <li>If screen freezes: Press Ctrl+Alt+F3 to switch to TTY</li>
+                <li>Consider Ubuntu 24.04 + ROS2 Jazzy for newer GPUs</li>
+                <li>Recovery: <code>sudo apt-get install --reinstall nvidia-driver-535</code></li>
+              </ul>
+
+              <h5>Apple Silicon (M1/M2/M3/M4)</h5>
+              <ul>
+                <li>Use UTM with Ubuntu 22.04 ARM64</li>
+                <li>Expect software rendering (no GPU acceleration)</li>
+                <li>Docker ARM64 images available as alternative</li>
+              </ul>
+
+              <h5>Virtual Machine Performance</h5>
+              <ul>
+                <li>Allocate minimum 8GB RAM, 6 CPU cores</li>
+                <li>Enable virtualization in BIOS/UEFI</li>
+                <li>Add to ~/.bashrc: <code>export LIBGL_ALWAYS_SOFTWARE=true</code></li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-success mb-4">📖 Additional Resources</h2>
+
+          <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+              <h4>Course Materials</h4>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><a href="https://canvas.illinois.edu/courses/62828/files/folder/Book%20PDFs" target="_blank"><strong>Mobile Robotics Textbooks</strong></a> - Essential PDFs for the course</li>
+                <li><strong>Office Hours:</strong> In-person at SC 4407 (check Campuswire for Zoom sessions)</li>
+                <li><strong>Gradescope:</strong> Course ID: 1102297, Entry Code: KDP5G8</li>
+                <li><strong>GitHub TA Username:</strong> kulbir-ahluwalia (add to private repos)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+              <h4>Debugging Checklist</h4>
+            </div>
+            <div class="card-body">
+              <h5>Before asking for help, verify:</h5>
+              <ul class="list-group">
+                <li class="list-group-item">☐ Bag file playing (see topic messages)</li>
+                <li class="list-group-item">☐ Input topics showing Hz values (~10 Hz for gyro)</li>
+                <li class="list-group-item">☐ /odom topic publishing at ~10 Hz</li>
+                <li class="list-group-item">☐ Node running without Python errors</li>
+                <li class="list-group-item">☐ RViz2 Fixed Frame set to 'odom' (not 'map')</li>
+                <li class="list-group-item">☐ Path display added with buffer 10000</li>
+                <li class="list-group-item">☐ Output file showing changing x,y values</li>
+                <li class="list-group-item">☐ No math.radians() on gyro data</li>
+                <li class="list-group-item">☐ Theta updated BEFORE position</li>
+                <li class="list-group-item">☐ GPS replaces (not adds to) position</li>
+              </ul>
             </div>
           </div>
 

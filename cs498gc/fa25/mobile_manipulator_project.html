@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Manipulator Mars Project | CS498GC Fall 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --illinois-orange: #E84A27;
+            --illinois-blue: #13294B;
+            --mars-red: #C1440E;
+            --mars-orange: #FFA500;
+            --space-dark: #0B0E17;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--space-dark) 0%, var(--illinois-blue) 100%);
+            color: #fff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(19, 41, 75, 0.9), rgba(232, 74, 39, 0.7)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23C1440E" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,138.7C672,149,768,203,864,213.3C960,224,1056,192,1152,160C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat center;
+            background-size: cover;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, var(--mars-orange) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, var(--mars-red) 0%, transparent 50%);
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--mars-orange), var(--illinois-orange), var(--mars-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mars-icon {
+            font-size: 4rem;
+            color: var(--mars-red);
+            animation: rotate 60s linear infinite;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--mars-orange), var(--illinois-orange), var(--mars-red));
+            border-radius: 20px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.4;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(232, 74, 39, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--mars-orange), var(--illinois-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-mars {
+            background: linear-gradient(45deg, var(--mars-red), var(--illinois-orange));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-mars:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(232, 74, 39, 0.4);
+            color: white;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--mars-orange), var(--illinois-orange));
+        }
+
+        .timeline-item {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .code-block {
+            background: rgba(11, 14, 23, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Fira Code', monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .code-block code {
+            color: #00ff00;
+        }
+
+        .nav-pills .nav-link {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin: 0 5px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills .nav-link.active {
+            background: linear-gradient(45deg, var(--mars-red), var(--illinois-orange));
+        }
+
+        .nav-pills .nav-link:hover {
+            background: rgba(232, 74, 39, 0.3);
+        }
+
+        .student-showcase {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .resource-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .resource-item:hover {
+            border-color: var(--mars-orange);
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
+        }
+
+        .alert-mars {
+            background: rgba(193, 68, 14, 0.2);
+            border: 1px solid var(--mars-red);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="index.html" class="btn btn-mars">
+            <i class="fas fa-arrow-left"></i> Back to Course
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <i class="fas fa-rocket mars-icon"></i>
+            <h1 class="hero-title">Mobile Manipulator Mars Exploration Project</h1>
+            <p class="hero-subtitle">CS498GC Fall 2025 | Assignment 4 Extra Credit</p>
+            <p class="lead mt-4">Transform your Husky + UR3 robot into a Mars explorer!</p>
+            <div class="mt-4">
+                <a href="/files/cs498gc/fa25/assignments/assignment4_extra_credit_guide.pdf" class="btn-mars">
+                    <i class="fas fa-file-pdf"></i> Extra Credit Guide
+                </a>
+                <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator" class="btn-mars" target="_blank">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+
+        <!-- Alert Section -->
+        <div class="alert-mars">
+            <h4><i class="fas fa-exclamation-triangle"></i> Important Deadlines</h4>
+            <ul class="mb-0">
+                <li><strong>Part 1:</strong> November 21, 2025 @ 11:00 PM (25 points)</li>
+                <li><strong>Part 2:</strong> December 9, 2025 @ 11:00 PM (75 points)</li>
+                <li><strong>Early Submission Bonus:</strong> November 7, 2025 @ 11:59 PM (+10 points)</li>
+            </ul>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-pills justify-content-center mb-5" id="projectTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="overview-tab" data-bs-toggle="pill" data-bs-target="#overview" type="button">
+                    <i class="fas fa-globe-americas"></i> Overview
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="gazebo-tab" data-bs-toggle="pill" data-bs-target="#gazebo" type="button">
+                    <i class="fas fa-cube"></i> Mars Gazebo
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="setup-tab" data-bs-toggle="pill" data-bs-target="#setup" type="button">
+                    <i class="fas fa-cog"></i> Setup Guide
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="demos-tab" data-bs-toggle="pill" data-bs-target="#demos" type="button">
+                    <i class="fas fa-video"></i> Demo Videos
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="showcase-tab" data-bs-toggle="pill" data-bs-target="#showcase" type="button">
+                    <i class="fas fa-trophy"></i> Showcase
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="projectTabContent">
+
+            <!-- Overview Tab -->
+            <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                <h2 class="text-center mb-4">🚀 Mission Overview</h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-card">
+                            <i class="fas fa-robot feature-icon"></i>
+                            <h3>Your Robot Platform</h3>
+                            <p>Command a Husky mobile base equipped with a UR3 manipulator arm and precision gripper. This configuration mirrors real Mars rover designs!</p>
+                            <ul>
+                                <li>4-wheel differential drive system</li>
+                                <li>6-DOF UR3 manipulator arm</li>
+                                <li>Robotiq gripper for sample collection</li>
+                                <li>Simulated LiDAR and IMU sensors</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-card">
+                            <i class="fas fa-planet-ringed feature-icon"></i>
+                            <h3>Mars Environment</h3>
+                            <p>Navigate realistic Martian terrain using actual NASA/JPL elevation data and surface textures from Mars orbital imagery.</p>
+                            <ul>
+                                <li>Jezero Crater terrain models</li>
+                                <li>Realistic physics simulation</li>
+                                <li>Day/night cycle with dust effects</li>
+                                <li>Rock and sample collection targets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mt-4">
+                    <h3>🎯 Learning Objectives</h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Mobile Navigation</h5>
+                            <ul>
+                                <li>Autonomous path planning</li>
+                                <li>Obstacle avoidance</li>
+                                <li>SLAM in unknown terrain</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Manipulation Skills</h5>
+                            <ul>
+                                <li>MoveIt2 motion planning</li>
+                                <li>Pick and place operations</li>
+                                <li>Visual servoing</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>System Integration</h5>
+                            <ul>
+                                <li>ROS2 architecture design</li>
+                                <li>Sensor fusion techniques</li>
+                                <li>Real-time control systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mars Gazebo Tab -->
+            <div class="tab-pane fade" id="gazebo" role="tabpanel">
+                <h2 class="text-center mb-4">🪐 Mars Gazebo Worlds</h2>
+
+                <div class="feature-card">
+                    <h3>Available Mars Environments</h3>
+
+                    <div class="resource-grid">
+                        <div class="resource-item">
+                            <h4>🏔️ Jezero Crater</h4>
+                            <p>Ancient river delta with diverse geological features. Perfect for navigation challenges.</p>
+                            <code>ros2 launch mars_worlds jezero_crater.launch.py</code>
+                        </div>
+                        <div class="resource-item">
+                            <h4>🏜️ Olympus Mons Base</h4>
+                            <p>Explore the largest volcano in the solar system. Extreme terrain for advanced users.</p>
+                            <code>ros2 launch mars_worlds olympus_mons.launch.py</code>
+                        </div>
+                        <div class="resource-item">
+                            <h4>🏕️ Mars Base Alpha</h4>
+                            <p>Simulated research station with sample collection zones and charging stations.</p>
+                            <code>ros2 launch mars_worlds base_alpha.launch.py</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mt-4">
+                    <h3>Installing Mars Terrain Packages</h3>
+                    <div class="code-block">
+                        <code>
+# Clone the Mars worlds repository<br>
+cd ~/ros2_ws/src<br>
+git clone https://github.com/nasa-jpl/mars_gazebo_terrains.git<br>
+<br>
+# Install dependencies<br>
+sudo apt-get update<br>
+sudo apt-get install ros-${ROS_DISTRO}-gazebo-ros-pkgs<br>
+sudo apt-get install ros-${ROS_DISTRO}-gazebo-msgs<br>
+<br>
+# Download Mars texture packs (2GB)<br>
+cd mars_gazebo_terrains<br>
+./scripts/download_textures.sh<br>
+<br>
+# Build the workspace<br>
+cd ~/ros2_ws<br>
+colcon build --packages-select mars_gazebo_terrains<br>
+source install/setup.bash
+                        </code>
+                    </div>
+                </div>
+
+                <div class="feature-card mt-4">
+                    <h3>Custom World Configuration</h3>
+                    <p>Create your own Mars exploration scenario by modifying world files:</p>
+                    <div class="code-block">
+                        <code>
+&lt;?xml version="1.0"?&gt;<br>
+&lt;sdf version="1.6"&gt;<br>
+  &lt;world name="mars_exploration"&gt;<br>
+    &lt;!-- Mars sky and lighting --&gt;<br>
+    &lt;include&gt;<br>
+      &lt;uri&gt;model://mars_sky&lt;/uri&gt;<br>
+    &lt;/include&gt;<br>
+    <br>
+    &lt;!-- Jezero Crater terrain --&gt;<br>
+    &lt;include&gt;<br>
+      &lt;uri&gt;model://jezero_crater_terrain&lt;/uri&gt;<br>
+      &lt;pose&gt;0 0 0 0 0 0&lt;/pose&gt;<br>
+    &lt;/include&gt;<br>
+    <br>
+    &lt;!-- Add rock samples for collection --&gt;<br>
+    &lt;include&gt;<br>
+      &lt;uri&gt;model://mars_rock_sample&lt;/uri&gt;<br>
+      &lt;pose&gt;5 5 0.5 0 0 0&lt;/pose&gt;<br>
+      &lt;name&gt;sample_01&lt;/name&gt;<br>
+    &lt;/include&gt;<br>
+  &lt;/world&gt;<br>
+&lt;/sdf&gt;
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setup Guide Tab -->
+            <div class="tab-pane fade" id="setup" role="tabpanel">
+                <h2 class="text-center mb-4">⚙️ Complete Setup Guide</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Step 1: Environment Setup</h4>
+                            <p>Configure ROS2 Jazzy/Humble with Gazebo Harmonic</p>
+                            <div class="code-block">
+                                <code>
+source /opt/ros/jazzy/setup.bash<br>
+cd ~/ros2_ws<br>
+colcon build --packages-select husky_ur3_simulation
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Step 2: Launch Simulation</h4>
+                            <p>Start the complete Mars exploration environment</p>
+                            <div class="code-block">
+                                <code>
+ros2 launch husky_ur3_mars mars_exploration.launch.py
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Step 3: Controllers</h4>
+                            <p>Initialize robot controllers and teleoperation</p>
+                            <div class="code-block">
+                                <code>
+ros2 launch husky_ur3_simulation controllers.launch.py<br>
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Step 4: Mission Control</h4>
+                            <p>Start autonomous navigation and manipulation</p>
+                            <div class="code-block">
+                                <code>
+ros2 launch mars_mission mission_control.launch.py
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mt-4">
+                    <h3>🔧 Troubleshooting Common Issues</h3>
+                    <div class="accordion" id="troubleshootAccordion">
+                        <div class="accordion-item bg-dark">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#issue1">
+                                    Robot not moving (diff_drive_controller issue)
+                                </button>
+                            </h2>
+                            <div id="issue1" class="accordion-collapse collapse show">
+                                <div class="accordion-body text-white">
+                                    Add <code>command_interface: "velocity"</code> to your controllers.yaml file
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-dark">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#issue2">
+                                    GPU/Qt5 errors on UTM/Virtual Machine
+                                </button>
+                            </h2>
+                            <div id="issue2" class="accordion-collapse collapse">
+                                <div class="accordion-body text-white">
+                                    Set <code>export LIBGL_ALWAYS_SOFTWARE=1</code> before launching Gazebo
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-dark">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#issue3">
+                                    Transform timeout errors
+                                </button>
+                            </h2>
+                            <div id="issue3" class="accordion-collapse collapse">
+                                <div class="accordion-body text-white">
+                                    Increase timeout in launch files: <code>timeout=5.0</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Videos Tab -->
+            <div class="tab-pane fade" id="demos" role="tabpanel">
+                <h2 class="text-center mb-4">🎥 Demo Videos & Resources</h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-card">
+                            <h3>📹 Main Demo Recording</h3>
+                            <p>Complete walkthrough of Assignment 4 with Mars terrain navigation</p>
+                            <a href="#" class="btn-mars w-100 text-center">
+                                <i class="fas fa-play"></i> Watch Demo (45 min)
+                            </a>
+                            <ul class="mt-3">
+                                <li>Mobile base navigation in crater</li>
+                                <li>Sample collection with manipulator</li>
+                                <li>Autonomous exploration demo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-card">
+                            <h3>🤖 Husky Robot Features</h3>
+                            <p>Detailed overview of robot capabilities and sensors</p>
+                            <a href="#" class="btn-mars w-100 text-center">
+                                <i class="fas fa-play"></i> Robot Overview (15 min)
+                            </a>
+                            <ul class="mt-3">
+                                <li>Sensor suite configuration</li>
+                                <li>Gripper control demonstration</li>
+                                <li>SLAM visualization in RViz2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mt-4">
+                    <h3>📚 Assignment Resources</h3>
+                    <div class="resource-grid">
+                        <div class="resource-item">
+                            <h4>📄 Slide Deck</h4>
+                            <p>Assignment 4 Part 1 presentation (VER1.16)</p>
+                            <a href="/files/cs498gc/fa25/presentations/assignment4_part1_demo_main_VER1.16_PDF_ASSIGNMENT4.pdf" class="btn-mars btn-sm">
+                                View Slides
+                            </a>
+                        </div>
+                        <div class="resource-item">
+                            <h4>🔧 Bash Scripts</h4>
+                            <p>Automated launch scripts for 8 terminal setup</p>
+                            <a href="/files/cs498gc/fa25/assignments/bash_scripts/example_bash_script_for_consistent_ros_launch.sh" class="btn-mars btn-sm">
+                                Download Script
+                            </a>
+                        </div>
+                        <div class="resource-item">
+                            <h4>📖 Extra Credit Guide</h4>
+                            <p>Complete 9-page PDF with all requirements</p>
+                            <a href="/files/cs498gc/fa25/assignments/assignment4_extra_credit_guide.pdf" class="btn-mars btn-sm">
+                                View Guide
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mt-4">
+                    <h3>🎮 Gripper Control Commands</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Open Gripper</h4>
+                            <div class="code-block">
+                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 0.0}'</code>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Close Gripper</h4>
+                            <div class="code-block">
+                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 1.05}'</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Showcase Tab -->
+            <div class="tab-pane fade" id="showcase" role="tabpanel">
+                <h2 class="text-center mb-4">🏆 Student Mars Mission Showcase</h2>
+
+                <div class="alert-mars">
+                    <h4>Submit Your Mars Mission!</h4>
+                    <p>Successfully completed the Mars exploration challenge? Share your achievement!</p>
+                    <ul>
+                        <li>Record a 2-minute highlight video of your best Mars navigation</li>
+                        <li>Include autonomous sample collection sequence</li>
+                        <li>Submit via Gradescope with hashtag #MarsCS498GC</li>
+                    </ul>
+                </div>
+
+                <div class="student-showcase">
+                    <h3>🌟 Hall of Fame - Fall 2025</h3>
+                    <p class="text-center">Outstanding Mars exploration implementations will be featured here!</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h5>🥇 Best Navigation</h5>
+                                <p class="text-muted">Awaiting submissions...</p>
+                                <small>Criteria: Fastest crater traversal with obstacle avoidance</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h5>🥈 Best Manipulation</h5>
+                                <p class="text-muted">Awaiting submissions...</p>
+                                <small>Criteria: Most samples collected in 30 seconds</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <h5>🥉 Most Creative</h5>
+                                <p class="text-muted">Awaiting submissions...</p>
+                                <small>Criteria: Innovative approach to Mars exploration</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card mt-4">
+                    <h3>📊 Leaderboard Metrics</h3>
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Current Record</th>
+                                <th>Holder</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fastest Crater Crossing</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Most Samples Collected</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Longest Autonomous Run</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Most Accurate SLAM Map</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="feature-card mt-4">
+                    <h3>🚀 Challenge Yourself!</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Beginner Challenges</h4>
+                            <ul>
+                                <li>Navigate to 3 waypoints autonomously</li>
+                                <li>Pick up and place a single rock sample</li>
+                                <li>Create a 2D map of the crater</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Advanced Challenges</h4>
+                            <ul>
+                                <li>Implement visual SLAM with loop closure</li>
+                                <li>Autonomous sample sorting by size</li>
+                                <li>Multi-robot coordination demo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="text-center mt-5 pb-4">
+            <p class="text-muted">
+                CS498GC Mobile Robotics | Fall 2025 | University of Illinois at Urbana-Champaign<br>
+                Professor Girish Chowdhary | TA: Kulbir Singh Ahluwalia
+            </p>
+            <div class="mt-3">
+                <a href="https://campuswire.com" class="btn-mars btn-sm">
+                    <i class="fas fa-comments"></i> Campuswire
+                </a>
+                <a href="https://gradescope.com" class="btn-mars btn-sm">
+                    <i class="fas fa-graduation-cap"></i> Gradescope (KDP5G8)
+                </a>
+                <a href="index.html" class="btn-mars btn-sm">
+                    <i class="fas fa-home"></i> Course Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom animations -->
+    <script>
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-section');
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

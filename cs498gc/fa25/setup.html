@@ -549,6 +549,169 @@ echo "Launched all terminals for Coding Exercise 1!"</code></pre>
 
           <hr class="my-5">
 
+          <h2 class="text-primary mb-4">🎮 ROS2 Control Tutorial - Essential for Assignment 4</h2>
+
+          <div class="alert alert-success">
+            <strong>Credit:</strong> This excellent resource was discovered by Mirielle Tan, who successfully used it to complete Assignment 4 Part 1!
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+              <h4>Understanding ROS2 Control Framework</h4>
+            </div>
+            <div class="card-body">
+              <p>ROS2 Control is a framework for robots that acts as a middleman between robot hardware and software. It's essential for controlling the Husky+UR3 mobile manipulator in Assignment 4.</p>
+
+              <h5>Key Components:</h5>
+              <ul>
+                <li><strong>Controller Manager:</strong> Manages multiple controllers (loads, unloads, coordinates execution)</li>
+                <li><strong>Resource Manager:</strong> Manages hardware interfaces and communication with actual hardware</li>
+                <li><strong>Hardware Interfaces:</strong>
+                  <ul>
+                    <li><strong>Command Interfaces:</strong> Write to hardware (position, velocity, effort commands)</li>
+                    <li><strong>State Interfaces:</strong> Read from hardware (current position, velocity, effort)</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h5>Common Controllers for Assignment 4:</h5>
+              <ul>
+                <li><strong>Joint Trajectory Controller:</strong> For arm movements (takes trajectory goals)</li>
+                <li><strong>Diff Drive Controller:</strong> For mobile base (takes cmd_vel commands)</li>
+                <li><strong>Gripper Action Controller:</strong> For gripper control</li>
+                <li><strong>Joint State Broadcaster:</strong> Publishes joint states to /joint_states topic</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+              <h4>Quick Start Commands</h4>
+            </div>
+            <div class="card-body">
+              <h5>Install ROS2 Control Packages:</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code>sudo apt-get install ros-${ROS_DISTRO}-ros2-control \
+                     ros-${ROS_DISTRO}-ros2-controllers \
+                     ros-${ROS_DISTRO}-gripper-controllers \
+                     ros-${ROS_DISTRO}-gazebo-ros2-control</code></pre>
+
+              <h5>Essential Controller Commands:</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># List active controllers
+ros2 control list_controllers
+
+# List hardware interfaces
+ros2 control list_hardware_interfaces
+
+# Load and activate a controller
+ros2 control load_controller --set-state active arm_controller
+
+# Move the arm (example)
+ros2 topic pub --once /arm_controller/joint_trajectory \
+  trajectory_msgs/msg/JointTrajectory \
+  "{joint_names: ['shoulder_pan_joint', 'shoulder_lift_joint', ...],
+    points: [{positions: [0.0, -1.57, 0.0, ...],
+    time_from_start: {sec: 3}}]}"</code></pre>
+
+              <h5>Gripper Control (Robotiq):</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Open gripper
+ros2 topic pub /gripper_controller/command std_msgs/msg/Float64 "{data: 0.0}" --once
+
+# Close gripper
+ros2 topic pub /gripper_controller/command std_msgs/msg/Float64 "{data: 0.7}" --once</code></pre>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-warning">
+              <h4>YAML Configuration Example</h4>
+            </div>
+            <div class="card-body">
+              <p>Create a <code>controllers.yaml</code> file to configure your controllers:</p>
+              <pre class="bg-dark text-light p-3 rounded"><code>controller_manager:
+  ros__parameters:
+    update_rate: 10
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    base_controller:
+      type: diff_drive_controller/DiffDriveController
+      command_interface: "velocity"  # CRITICAL LINE often missing!
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position</code></pre>
+            </div>
+          </div>
+
+          <div class="alert alert-info">
+            <strong>📚 Full Tutorial:</strong> For the complete step-by-step guide including URDF modifications, launch files, and Python/C++ examples, see:
+            <a href="https://automaticaddison.com/how-to-control-a-robotic-arm-using-ros-2-control-and-gazebo/" target="_blank" class="alert-link">
+              How to Control a Robotic Arm Using ROS 2 Control and Gazebo
+            </a>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-danger mb-4">🚀 Mars World Setup for Assignment 4 Part 2</h2>
+
+          <div class="alert alert-warning">
+            <strong>Assignment 4 Part 2:</strong> Implement SLAM with your mobile manipulator in a Mars environment! Due December 9, 2025.
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-danger text-white">
+              <h4>Mars Environment Features</h4>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Realistic Mars terrain with NASA/JPL resources</li>
+                <li>Custom Mars world for Husky+UR3 navigation</li>
+                <li>SLAM challenges with Martian obstacles</li>
+                <li>Optional: Fun race track on Mars surface!</li>
+                <li>Inspired by MASt3R-SLAM (CVPR 2025)</li>
+              </ul>
+
+              <h5>Setup Guide:</h5>
+              <p>Complete Mars world setup instructions available:
+                <a href="mars_gazebo_tutorial.md" class="btn btn-danger btn-sm">
+                  View Mars Tutorial
+                </a>
+              </p>
+
+              <h5>Part 2 Requirements:</h5>
+              <ul>
+                <li><strong>Sensor Fusion (15 pts):</strong> EKF implementation</li>
+                <li><strong>Path Planning & Control (15 pts):</strong> Navigate Mars terrain</li>
+                <li><strong>SLAM Implementation (10 pts):</strong> 2D mapping with laser scanner</li>
+                <li><strong>Mars Bonus (+10 pts):</strong> Complete tasks in Mars environment</li>
+                <li><strong>Documentation (10 pts):</strong> RSS format technical report</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="alert alert-success">
+            <strong>Reference Paper:</strong> MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors
+            <br>
+            <a href="https://edexheim.github.io/mast3r-slam/" target="_blank">Project Page</a> |
+            <a href="https://github.com/naver/mast3r" target="_blank">MASt3R Foundation Model</a>
+          </div>
+
+          <hr class="my-5">
+
           <h2 class="text-success mb-4">📖 Additional Resources</h2>
 
           <div class="card mb-4">

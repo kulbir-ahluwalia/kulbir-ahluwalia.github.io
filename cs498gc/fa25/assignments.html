@@ -406,31 +406,41 @@ ros2 doctor --report
                   
                   <div class="col-md-6">
                     <div class="card mb-3">
-                      <div class="card-header bg-light">
-                        <strong>Part B: Advanced Implementation & Integration</strong>
+                      <div class="card-header bg-danger text-white">
+                        <strong>Part 2: SLAM Implementation & Mars Challenge</strong>
                       </div>
                       <div class="card-body">
-                        <p><strong>Release Date:</strong> November 24, 2025 (Monday)</p>
-                        <p><strong>Due Date:</strong> December 4, 2025 (Thursday, 11:00 PM)</p>
-                        <p><strong>Weight:</strong> 50 points</p>
-                        
-                        <h6>Objectives:</h6>
+                        <p><strong>Release Date:</strong> November 12, 2025 (Live Demo)</p>
+                        <p><strong>Due Date:</strong> December 9, 2025 (Monday, 11:00 PM)</p>
+                        <p><strong>Weight:</strong> 75 points (+10 Mars bonus)</p>
+
+                        <h6>Core Requirements:</h6>
                         <ul>
-                          <li>Implement sensor fusion algorithms from Module 5</li>
-                          <li>Add IMU, GPS, and wheel encoder simulation</li>
-                          <li>Implement EKF for state estimation</li>
-                          <li>Create path planning and control algorithms</li>
-                          <li>Integrate SLAM capabilities from Module 7</li>
+                          <li><strong>Sensor Fusion (15 pts):</strong> EKF implementation for state estimation</li>
+                          <li><strong>Path Planning (15 pts):</strong> A*/RRT* with obstacle avoidance</li>
+                          <li><strong>SLAM (10 pts):</strong> 2D mapping with laser scanner</li>
+                          <li><strong>Integration (25 pts):</strong> Complete autonomous demo</li>
+                          <li><strong>Report (10 pts):</strong> RSS format technical paper</li>
                         </ul>
-                        
-                        <h6>Deliverables:</h6>
+
+                        <h6>Mars Environment Bonus (+10 pts):</h6>
                         <ul>
-                          <li>Complete ROS2 package with all implementations</li>
-                          <li>Gazebo world with navigation challenges</li>
-                          <li>Technical report (8-10 pages) with results</li>
-                          <li>Video demonstration of full system</li>
-                          <li>GitHub repository with documentation</li>
+                          <li>Complete tasks in Mars terrain</li>
+                          <li>Navigate reduced traction surface</li>
+                          <li>Optional: Race track challenge!</li>
                         </ul>
+
+                        <h6>Key Resources:</h6>
+                        <ul>
+                          <li><a href="assignment4_part2_slam.md" class="text-danger">📝 Full Part 2 Requirements</a></li>
+                          <li><a href="mars_gazebo_tutorial.md" class="text-danger">🚀 Mars World Setup</a></li>
+                          <li><a href="https://edexheim.github.io/mast3r-slam/" target="_blank">📖 MASt3R-SLAM Paper</a></li>
+                          <li><a href="setup.html#ros2-control" class="text-primary">🎮 ROS2 Control Tutorial</a></li>
+                        </ul>
+
+                        <div class="alert alert-success mt-2">
+                          <strong>Inspiration:</strong> MASt3R-SLAM (CVPR 2025) - Real-time dense SLAM with 3D reconstruction
+                        </div>
                       </div>
                     </div>
                   </div>

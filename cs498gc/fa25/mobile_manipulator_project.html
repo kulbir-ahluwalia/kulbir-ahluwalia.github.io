@@ -43,6 +43,8 @@
                         radial-gradient(circle at 80% 80%, var(--mars-red) 0%, transparent 50%);
             opacity: 0.3;
             animation: float 20s ease-in-out infinite;
+            pointer-events: none;  /* Allow clicks to pass through overlay */
+            z-index: -1;          /* Push overlay behind content */
         }
 
         @keyframes float {

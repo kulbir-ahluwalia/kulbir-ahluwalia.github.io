@@ -15,7 +15,7 @@ strong {
 }
 
 body {
-  padding-top: 80px;
+  padding-top: 120px;  /* Increased to accommodate multi-line navbar */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text-dark);
   line-height: 1.6;
@@ -52,7 +52,7 @@ h5 {
 
 /* Layout Sections */
 .content {
-  padding-top: 40px;
+  padding-top: 0px;  /* Removed - body already has padding-top */
 }
 
 .section {
@@ -77,16 +77,20 @@ h5 {
 .navbar-dark {
   background-color: #BF5700 !important;  /* UT Austin burnt orange - matching Prof. Yuke Zhu's site */
   box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  padding-top: 0.3rem;  /* Reduced vertical padding */
+  padding-bottom: 0.3rem;
 }
 
 .navbar-brand {
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.1rem;  /* Reduced for more compact navbar */
 }
 
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255,255,255,.9) !important;
   transition: color 0.3s ease;
+  font-size: 0.9rem;  /* Reduced font size for compact navbar */
+  padding: 0.4rem 0.6rem;  /* Reduced padding for more items to fit */
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
@@ -269,7 +273,7 @@ li {
 /* Responsive */
 @media (max-width: 768px) {
   body {
-    padding-top: 60px;
+    padding-top: 100px;  /* Increased for mobile navbar */
   }
   
   .staff-photo img {

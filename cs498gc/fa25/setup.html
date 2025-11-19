@@ -55,10 +55,25 @@
                 <a class="nav-link" href="assignments.html">Assignments</a>
               </li>
               <li class="nav-item active">
+                <a class="nav-link" href="extra_credit.html">⭐ Extra Credit</a>
+              </li>
+              <li class="nav-item active">
                 <a class="nav-link" href="presentations.html">Presentations</a>
               </li>
               <li class="nav-item active">
+                <a class="nav-link" href="mobile_manipulator_project.html">🚀 Mars Project</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="mars_gazebo_tutorial.html">🔴 Mars SLAM</a>
+              </li>
+              <li class="nav-item active">
                 <a class="nav-link" href="setup.html">Setup</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="announcements.html">📢 Announcements</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="resources.html">Resources</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="gallery.html">Gallery</a>
@@ -727,6 +742,129 @@ arm_controller:
               </ul>
             </div>
           </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-primary mb-4">📚 Git & GitHub Reference Guide</h2>
+
+          <div class="alert alert-info">
+            <strong>Essential for CS498GC:</strong> All assignments require GitHub submission. Master these commands for efficient version control!
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+              <h4>GitHub Education Cheat Sheet</h4>
+            </div>
+            <div class="card-body">
+              <p>Quick reference for common Git operations used throughout the course:</p>
+
+              <ul>
+                <li><strong>Repository Setup:</strong> Clone, fork, and initialize repositories</li>
+                <li><strong>Version Control:</strong> Add, commit, push, and pull changes</li>
+                <li><strong>Branching:</strong> Create and merge branches for feature development</li>
+                <li><strong>Collaboration:</strong> Pull requests and code reviews</li>
+                <li><strong>Troubleshooting:</strong> Common Git issues and solutions</li>
+              </ul>
+
+              <div class="text-center mt-3">
+                <a href="https://education.github.com/git-cheat-sheet-education.pdf"
+                   class="btn btn-primary btn-lg" target="_blank">
+                  📥 Download Git Cheat Sheet (PDF)
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+              <h4>Quick Git Commands for CS498GC</h4>
+            </div>
+            <div class="card-body">
+              <h5>Initial Setup (Do Once)</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Configure your identity
+git config --global user.name "Your Name"
+git config --global user.email "your.email@illinois.edu"
+
+# Clone course repository
+git clone https://github.com/yourusername/CS498GC_assignments.git
+cd CS498GC_assignments</code></pre>
+
+              <h5 class="mt-4">Daily Workflow</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Check status
+git status
+
+# Stage your changes
+git add coding_ex1_part1.py coding_ex1_part2.py
+
+# Commit with descriptive message
+git commit -m "feat: Implement wheel odometry with gyro fusion"
+
+# Push to GitHub
+git push origin main</code></pre>
+
+              <h5 class="mt-4">For Gradescope Submissions</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Create submission branch
+git checkout -b assignment4-submission
+
+# Tag your final version
+git tag -a v1.0 -m "Assignment 4 Final Submission"
+git push origin v1.0
+
+# Add TA as collaborator
+# Add username: kulbir-ahluwalia to your private repository</code></pre>
+            </div>
+          </div>
+
+          <div class="alert alert-warning">
+            <h5>⚠️ Common Git Mistakes to Avoid</h5>
+            <ul>
+              <li><strong>Don't commit large files</strong> (rosbags, videos > 100MB) - use Git LFS</li>
+              <li><strong>Don't commit build artifacts</strong> (build/, install/, log/ folders)</li>
+              <li><strong>Always use .gitignore</strong> for ROS2 projects</li>
+              <li><strong>Never force push</strong> to main/master branch unless absolutely necessary</li>
+              <li><strong>Write clear commit messages</strong> - future you will thank present you!</li>
+            </ul>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+              <h4>ROS2 .gitignore Template</h4>
+            </div>
+            <div class="card-body">
+              <p>Use this .gitignore for your ROS2 workspace:</p>
+              <pre class="bg-dark text-light p-3 rounded"><code># ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Results
+*.txt
+*.csv
+*.db3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db</code></pre>
+              <a href="https://github.com/github/gitignore/blob/main/ROS.gitignore" class="btn btn-sm btn-info" target="_blank">
+                View Complete ROS .gitignore Template
+              </a>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-success mb-4">✅ Final Verification</h2>
 
           <div class="card mb-4">
             <div class="card-header bg-info text-white">

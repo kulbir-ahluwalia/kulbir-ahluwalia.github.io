@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159856695-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-159856695-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,announcements,campuswire,updates">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/modern-style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>CS498GC: Course Announcements</title>
+    <link rel="icon"  href="resources/favicon.ico" />
+    <link rel="shortcut icon"  href="resources/favicon.ico" />
+
+    <style>
+      .announcement-card {
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+      .announcement-card:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .category-badge {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        margin-right: 0.5rem;
+      }
+      .search-box {
+        margin-bottom: 2rem;
+      }
+      .filter-btn {
+        margin: 0.25rem;
+      }
+      .filter-btn.active {
+        background-color: #13294B;
+        color: white;
+      }
+      .announcement-date {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .critical-announcement {
+        border-left: 4px solid #dc3545;
+      }
+      .setup-announcement {
+        border-left: 4px solid #28a745;
+      }
+      .exercise-announcement {
+        border-left: 4px solid #007bff;
+      }
+      .general-announcement {
+        border-left: 4px solid #ffc107;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="logistics.html">Logistics</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="syllabus.html">Syllabus</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="assignments.html">Assignments</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="extra_credit.html">⭐ Extra Credit</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="presentations.html">Presentations</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="mobile_manipulator_project.html">🚀 Mars Project</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="mars_gazebo_tutorial.html">🔴 Mars SLAM</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="setup.html">Setup</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="announcements.html">📢 Announcements</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="resources.html">Resources</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron header-plain">
+        <h1>📢 Course Announcements & Campuswire Archive</h1>
+      </div>
+
+      <div class="container-fluid">
+
+        <!-- Master Pinned Post Alert -->
+        <div class="alert alert-danger">
+          <h4>📌 MASTER PINNED POST - IMPORTANT COURSE RESOURCES</h4>
+          <p><strong>Essential Links & Resources for CS498GC Fall 2025:</strong></p>
+          <ul>
+            <li><strong>Campuswire</strong>: <a href="https://campuswire.com/p/GE08A84BD" target="_blank">https://campuswire.com/p/GE08A84BD</a> (Entry Code: 6646)</li>
+            <li><strong>Gradescope</strong>: <a href="https://www.gradescope.com/courses/1102297" target="_blank">https://www.gradescope.com/courses/1102297</a> (Entry Code: KDP5G8)</li>
+            <li><strong>Canvas</strong>: <a href="https://canvas.illinois.edu/courses/62828" target="_blank">https://canvas.illinois.edu/courses/62828</a></li>
+            <li><strong>Course Website</strong>: <a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/" target="_blank">https://kulbir-singh-ahluwalia.com/cs498gc/fa25/</a></li>
+            <li><strong>GitHub Repository</strong>: <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator" target="_blank">Husky UR3 Simulator</a></li>
+          </ul>
+          <p class="mb-0"><strong>Office Hours</strong>: Wednesdays 1:30-3:00 PM @ SC 4407 | <strong>TA Email</strong>: ksa5@illinois.edu</p>
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="search-box">
+          <div class="row">
+            <div class="col-md-8">
+              <input type="text" class="form-control" id="searchInput" placeholder="Search announcements...">
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-primary" onclick="searchAnnouncements()">Search</button>
+              <button class="btn btn-secondary" onclick="clearSearch()">Clear</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="mb-4">
+          <h5>Filter by Category:</h5>
+          <button class="filter-btn btn btn-outline-primary active" onclick="filterCategory('all')">All Posts</button>
+          <button class="filter-btn btn btn-outline-warning" onclick="filterCategory('general')">General Announcements</button>
+          <button class="filter-btn btn btn-outline-info" onclick="filterCategory('exercise')">Coding Exercises</button>
+          <button class="filter-btn btn btn-outline-success" onclick="filterCategory('setup')">Setup Guides</button>
+          <button class="filter-btn btn btn-outline-danger" onclick="filterCategory('assignment')">Assignment 4</button>
+        </div>
+
+        <!-- Latest Updates Section -->
+        <div class="card mb-4">
+          <div class="card-header bg-info text-white">
+            <h4 class="mb-0">🔥 Latest Updates (November 2025)</h4>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Nov 21:</strong> Quiz 2 Online on Canvas (24-hour window)</li>
+              <li><strong>Nov 19:</strong> Assignment 4 Part 2 MARS SLAM Documentation Released</li>
+              <li><strong>Nov 14:</strong> Extra Credit Opportunities Available (RTAB-Map & SAMWISE)</li>
+              <li><strong>Nov 11:</strong> Coding Exercise 2 Grades Released on Gradescope</li>
+              <li><strong>Dec 9:</strong> Final deadline for all extra credit submissions</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Critical Debugging Hints -->
+        <div class="card mb-4 critical-announcement">
+          <div class="card-header bg-danger text-white">
+            <h4 class="mb-0">⚠️ Critical Debugging Hints - MUST READ</h4>
+          </div>
+          <div class="card-body">
+            <h5>Coding Exercise 1 - Most Common Errors (90% of failures)</h5>
+            <ol>
+              <li><strong>DO NOT use math.radians() on gyro data!</strong> The gyroscope data is already in rad/s</li>
+              <li><strong>Update theta BEFORE x,y</strong> in your odometry calculations</li>
+              <li><strong>GPS should REPLACE position, not ADD to it</strong></li>
+              <li><strong>Use fixed dt = 0.1</strong>, don't calculate from timestamps</li>
+            </ol>
+            <div class="alert alert-warning">
+              <strong>Quick Fix:</strong> If your theta is growing to huge values, you're probably using math.radians() on the gyro. Remove it!
+            </div>
+          </div>
+        </div>
+
+        <!-- Announcements by Category -->
+        <h3 class="mt-4">📚 All Announcements</h3>
+
+        <!-- General Announcements -->
+        <h4 class="mt-4 text-warning">General Announcements</h4>
+
+        <div class="announcement-card card general-announcement" data-category="general">
+          <div class="card-header">
+            <strong>Welcome to CS498GC: Mobile Robotics for CS!</strong>
+            <span class="badge badge-warning category-badge float-right">General</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p>Welcome to the course! This announcement contains important information about course platforms, syllabus, and getting started.</p>
+            <ul>
+              <li>Join Campuswire with entry code: 6646</li>
+              <li>Join Gradescope with entry code: KDP5G8</li>
+              <li>Check Canvas for weekly modules</li>
+              <li>Review the course website for all materials</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="announcement-card card general-announcement" data-category="general">
+          <div class="card-header">
+            <strong>Mobile Robotics Book PDFs</strong>
+            <span class="badge badge-warning category-badge float-right">Resources</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p>Course textbook resources are available on Canvas. Please download:</p>
+            <ul>
+              <li>"Robotics, Vision and Control" by Peter Corke</li>
+              <li>"Introduction to Autonomous Mobile Robots" by Siegwart & Nourbakhsh</li>
+              <li>Additional reference materials in Canvas Files section</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Coding Exercise Announcements -->
+        <h4 class="mt-4 text-info">Coding Exercises</h4>
+
+        <div class="announcement-card card exercise-announcement" data-category="exercise">
+          <div class="card-header">
+            <strong>🔴 ODOMETRY - Debugging Hints</strong>
+            <span class="badge badge-danger category-badge float-right">Critical</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <div class="alert alert-danger">
+              <strong>MOST COMMON ERROR (causes 50 point loss):</strong>
+            </div>
+            <pre class="bg-dark text-light p-3 rounded"><code># ❌ WRONG - This will fail the autograder
+w = (vr - vl) / self.l_wheels
+self.theta += w * dt
+
+# ✅ CORRECT - Use gyroscope directly
+self.theta += dt * self.gyro_yaw  # NO math.radians()!</code></pre>
+            <p><strong>Remember:</strong> The gyroscope data from /Gyro_yaw is already in rad/s. Do NOT convert it!</p>
+          </div>
+        </div>
+
+        <div class="announcement-card card exercise-announcement" data-category="exercise">
+          <div class="card-header">
+            <strong>🔴 GPS - Debugging Hints</strong>
+            <span class="badge badge-danger category-badge float-right">Critical</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p><strong>GPS Fusion Logic - Replace, Don't Add!</strong></p>
+            <pre class="bg-dark text-light p-3 rounded"><code># ❌ WRONG - Adding GPS to odometry
+self.x += gps_x_displacement
+self.y += gps_y_displacement
+
+# ✅ CORRECT - GPS replaces position
+if self.lat0 is not None and self.lon0 is not None:
+    self.x, self.y = lonlat2xyz(self.latitude, self.longitude,
+                                self.lat0, self.lon0)</code></pre>
+          </div>
+        </div>
+
+        <div class="announcement-card card exercise-announcement" data-category="exercise">
+          <div class="card-header">
+            <strong>Coding Exercise 1: 6 Hour Extension</strong>
+            <span class="badge badge-info category-badge float-right">Extension</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p>Due to popular request, Coding Exercise 1 deadline has been extended by 6 hours.</p>
+            <ul>
+              <li>New deadline: [Date] at 11:00 PM CST</li>
+              <li>No further extensions will be granted</li>
+              <li>Use office hours for help</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="announcement-card card exercise-announcement" data-category="exercise">
+          <div class="card-header">
+            <strong>CE1: Bash Script for Automated Testing</strong>
+            <span class="badge badge-info category-badge float-right">Tool</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p>Use this bash script to automatically launch all required terminals for testing:</p>
+            <pre class="bg-dark text-light p-3 rounded"><code>#!/bin/bash
+# Launch script for Coding Exercise 1
+gnome-terminal -- bash -c "source /opt/ros/humble/setup.bash; \
+  ros2 bag play solar_house.db3 --loop; bash"
+gnome-terminal -- bash -c "source install/setup.bash; \
+  ros2 run mobile_robotics coding_ex1_part1; bash"
+gnome-terminal -- bash -c "tail -f results_part1.txt; bash"</code></pre>
+          </div>
+        </div>
+
+        <!-- Setup Guide Announcements -->
+        <h4 class="mt-4 text-success">Setup Guides</h4>
+
+        <div class="announcement-card card setup-announcement" data-category="setup">
+          <div class="card-header">
+            <strong>ROS 2 Humble Installation Guide</strong>
+            <span class="badge badge-success category-badge float-right">Setup</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p>Complete installation instructions for ROS2 Humble on Ubuntu 22.04:</p>
+            <ol>
+              <li>Add ROS2 repository keys</li>
+              <li>Install ros-humble-desktop-full</li>
+              <li>Setup environment variables</li>
+              <li>Install colcon build tools</li>
+            </ol>
+            <p><a href="setup.html" class="btn btn-sm btn-success">View Full Guide</a></p>
+          </div>
+        </div>
+
+        <div class="announcement-card card setup-announcement" data-category="setup">
+          <div class="card-header">
+            <strong>RViz2 Visualization - Hints</strong>
+            <span class="badge badge-success category-badge float-right">Troubleshooting</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p>Common RViz2 issues and solutions:</p>
+            <ul>
+              <li><strong>No trajectory visible:</strong> Set "Keep" parameter to 10,000</li>
+              <li><strong>Frame errors:</strong> Check TF tree with <code>ros2 run tf2_tools view_frames</code></li>
+              <li><strong>Topics not appearing:</strong> Verify with <code>ros2 topic list</code></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Assignment 4 Announcements -->
+        <h4 class="mt-4 text-danger">Assignment 4</h4>
+
+        <div class="announcement-card card assignment-announcement" data-category="assignment">
+          <div class="card-header">
+            <strong>📢 Assignment 4 – OS Options & Setup Guidance</strong>
+            <span class="badge badge-danger category-badge float-right">Assignment 4</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p>Operating system compatibility for Assignment 4:</p>
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>OS</th>
+                  <th>ROS Version</th>
+                  <th>Supported</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ubuntu 20.04</td>
+                  <td>ROS1 Noetic</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Ubuntu 22.04</td>
+                  <td>ROS2 Humble</td>
+                  <td>✅</td>
+                </tr>
+                <tr>
+                  <td>Ubuntu 24.04</td>
+                  <td>ROS2 Jazzy</td>
+                  <td>✅</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="announcement-card card assignment-announcement" data-category="assignment">
+          <div class="card-header">
+            <strong>Assignment 4 Part 1: Mobile Manipulator Setup</strong>
+            <span class="badge badge-danger category-badge float-right">Assignment 4</span>
+          </div>
+          <div class="card-body">
+            <p class="announcement-date">Posted: October 2025</p>
+            <p>Detailed setup instructions for the Husky + UR3 + Robotis Gripper system:</p>
+            <ul>
+              <li>13 DOF total (6 base + 6 arm + 1 gripper)</li>
+              <li>Gazebo simulation environment</li>
+              <li>MoveIt2 integration for motion planning</li>
+              <li>Teleoperation and autonomous modes</li>
+            </ul>
+            <p><a href="mobile_manipulator_project.html" class="btn btn-sm btn-danger">View Full Setup</a></p>
+          </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="card mt-5">
+          <div class="card-header bg-dark text-white">
+            <h4 class="mb-0">🔗 Quick Links & Resources</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <h5>Course Platforms</h5>
+                <ul>
+                  <li><a href="https://campuswire.com/p/GE08A84BD" target="_blank">Campuswire (Entry: 6646)</a></li>
+                  <li><a href="https://www.gradescope.com/courses/1102297" target="_blank">Gradescope (Entry: KDP5G8)</a></li>
+                  <li><a href="https://canvas.illinois.edu/courses/62828" target="_blank">Canvas</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5>Important Deadlines</h5>
+                <ul>
+                  <li>Quiz 2: November 21 (Canvas)</li>
+                  <li>Coding Exercise 2: December 2</li>
+                  <li>Quiz 3: December 8 (Canvas)</li>
+                  <li>Coding Exercise 3: December 9</li>
+                  <li>Extra Credit: December 9</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="container text-center">
+        <hr>
+        <p>&copy; 2025 CS498GC Mobile Robotics. University of Illinois at Urbana-Champaign.</p>
+        <p><small>Last updated: November 19, 2025 | Archive contains 14 Campuswire posts</small></p>
+      </div>
+    </footer>
+
+    <script>
+      function filterCategory(category) {
+        const cards = document.querySelectorAll('.announcement-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        cards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      function searchAnnouncements() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.querySelectorAll('.announcement-card');
+
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(searchTerm)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      function clearSearch() {
+        document.getElementById('searchInput').value = '';
+        const cards = document.querySelectorAll('.announcement-card');
+        cards.forEach(card => card.style.display = 'block');
+      }
+    </script>
+
+  </body>
+</html>

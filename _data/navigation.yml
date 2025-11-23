@@ -1,25 +1,27 @@
-# Navbar
-main:
-  - title: "About"
-    section: about
+# Navigation items
+- name: "About"
+  anchor: "#about"
 
-  - title: "Teaching"
-    section: teaching
-    
-  - title: "Experience"
-    section: experience
-    
-  - title: "Projects"
-    section: projects
+- name: "Research"
+  anchor: "#research"
 
-  - title: "Publications"
-    section: publications
+- name: "Publications"
+  anchor: "#publications"
 
-  - title: "CV"
-    link: /files/CV_Resume_Sep2025/CV_29sep_9PM_Ver1_16_2025_Kulbir.pdf
+- name: "Teaching"
+  anchor: "#teaching"
 
-  - title: "Resume"
-    link: /files/CV_Resume_Sep2025/29sep_9PM_RESUME_Ver1_16_2025_Kulbir.pdf
+- name: "Experience"
+  anchor: "#experience"
 
-  - title: "Contact"
-    section: contact
+- name: "Projects"
+  anchor: "#projects"
+
+- name: "Misc"
+  anchor: "#misc"
+
+- name: "CV"
+  link: "/files/CV_Resume_Sep2025/CV_29sep_9PM_Ver1_16_2025_Kulbir.pdf"
+
+- name: "Resume"
+  link: "/files/CV_Resume_Sep2025/29sep_9PM_RESUME_Ver1_16_2025_Kulbir.pdf"

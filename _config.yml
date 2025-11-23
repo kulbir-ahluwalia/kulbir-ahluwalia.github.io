@@ -23,12 +23,14 @@ name: Kulbir Singh Ahluwalia
 position: PhD Candidate
 email: ksa5@illinois.edu
 description: >-
-description: >-
-  I’m Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois, Urbana-Champaign ([UIUC](https://illinois.edu/)). 
-  I am committed to developing autonomous robotic systems that address real-world challenges. 
-  My research explores natural language grounding for mobile field robot navigation in dynamic environments under the guidance of Girish Chowdhary and Julia Hockenmaier.  
-  During my Master’s in Robotics from the University of Maryland, I was fortunate to work with Pratap Tokekar and Ryan Williams on Pasture Monitoring in Simulated Environments. 
-  Besides working on my research, I enjoy working out, meditating and fine-tuning my solar-powered setup.  
+  I'm Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois, Urbana-Champaign ([UIUC](https://illinois.edu/)),
+  focusing on natural language grounding for agricultural robots to advance this critical field. I am fortunate to be mentored by
+  [Prof. Girish Chowdhary](http://daslab.illinois.edu) and [Prof. Julia Hockenmaier](https://hmr-lab.github.io).
+  My academic foundation includes a Master of Engineering in Robotics from the University of Maryland, where I gained expertise in robotic systems and physics simulations.
+  Recently, during my summer internship at EarthSense, Inc., I contributed to developing a natural language-conditioned waypoint generation pipeline.
+  My technical skills include Robot Operating System (ROS) and implementing SOTA NLP and CV pipelines for Mobile Manipulators.
+  My long-term life goal is scaling up Physical AI for advancing humanity.
+  I also co-developed the [CS-498-GC Mobile Robotics course](https://kulbir-singh-ahluwalia.com/cs498gc/fa25/) with Prof. Chowdhary.  
 
 
 

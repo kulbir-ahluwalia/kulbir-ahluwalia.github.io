@@ -2,20 +2,20 @@
 - name: "About"
   anchor: "#about"
 
-- name: "Research"
-  anchor: "#research"
-
 - name: "Publications"
   anchor: "#publications"
+
+- name: "Projects"
+  anchor: "#projects"
+
+- name: "Research"
+  anchor: "#research"
 
 - name: "Teaching"
   anchor: "#teaching"
 
 - name: "Experience"
   anchor: "#experience"
-
-- name: "Projects"
-  anchor: "#projects"
 
 - name: "Misc"
   anchor: "#misc"

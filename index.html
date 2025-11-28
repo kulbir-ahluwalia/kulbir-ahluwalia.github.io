@@ -107,11 +107,34 @@ layout: null
     </div>
   </section>
 
+  <div class="hr">
+    <div class="container">
+      <hr>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="publications">Publications</h2>
+      {% for publication in site.data.publications %}
+        {% include section.html %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="projects">Projects</h2>
+      {% for publication in site.data.projects %}
+        {% include section.html %}
+      {% endfor %}
+    </div>
+  </section>
+
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 anchor" id="research">Research Affiliations</h2>
       <div class="content">
-        <p>I am fortunate to be mentored by distinguished faculty in the intersection of robotics, natural language processing, and agricultural technology:</p>
+        <p>I am fortunate to be mentored by distinguished faculty at the intersection of robotics, natural language processing, and agricultural technology:</p>
         <div class="columns is-multiline">
           <div class="column is-half">
             <div class="box">
@@ -152,20 +175,6 @@ layout: null
           <strong>Research Focus:</strong> Natural Language Grounding for Agricultural Robots - Advancing Physical AI for Humanity
         </p>
       </div>
-    </div>
-  </section>
-
-  <div class="hr">
-    <div class="container">
-      <hr>
-    </div>
-  </div>
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 anchor" id="publications">Publications</h2>
-      {% for publication in site.data.publications %}
-        {% include section.html %}
-      {% endfor %}
     </div>
   </section>
 
@@ -286,16 +295,6 @@ layout: null
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 anchor" id="projects">Projects</h2>
-      {% for publication in site.data.projects %} 
-        {% include section.html %}
-      {% endfor %}
-    </div>
-  </section>
-
 
   <section class="section">
     <div class="container is-max-desktop">

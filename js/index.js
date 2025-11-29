@@ -17,15 +17,17 @@ function filterPublications(mode) {
 
     items.forEach(item => {
         if (mode === 'all') {
-            item.style.display = 'block';
+            item.style.setProperty('display', 'block', 'important');
         } else if (mode === 'selected') {
             // Show only featured/selected publications (first 3)
             const index = Array.from(items).indexOf(item);
-            item.style.display = index < 3 ? 'block' : 'none';
+            item.style.setProperty('display', index < 3 ? 'block' : 'none', 'important');
         } else if (mode === 'topic') {
-            item.style.display = 'block';
+            item.style.setProperty('display', 'block', 'important');
         }
     });
+
+    console.log(`Filter mode: ${mode}`);
 }
 
 function filterByTopic(topic) {
@@ -49,14 +51,21 @@ function filterByTopic(topic) {
         }
     });
 
+    // Filter publications by topic
+    let visibleCount = 0;
     items.forEach(item => {
-        const topics = item.dataset.topics || '';
-        if (topics.includes(topic)) {
-            item.style.display = 'block';
+        const topicsStr = (item.dataset.topics || '').trim();
+        const topicsArray = topicsStr.split(/\s+/);
+
+        if (topicsArray.includes(topic)) {
+            item.style.setProperty('display', 'block', 'important');
+            visibleCount++;
         } else {
-            item.style.display = 'none';
+            item.style.setProperty('display', 'none', 'important');
         }
     });
+
+    console.log(`Filtered by ${topic}: ${visibleCount} publications visible`);
 
     // Smooth scroll to publications section
     const pubSection = document.getElementById('publications');

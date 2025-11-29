@@ -1,0 +1,471 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{soul}
+\usepackage[x11names]{xcolor}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{202F}{\,}
+
+\setlist{nolistsep}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=DeepSkyBlue2,
+    pdftitle={Sharelatex Example},
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage[ includefoot]{geometry}
+ \geometry{
+ a4paper,
+ total={297mm,210mm},
+ left=1.0cm,
+ top=1.0cm,
+ right=1.0cm,
+ bottom=1.0cm
+ }
+ 
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{Kulbir Singh Ahluwalia} % Your name
+
+
+\address{
+\textbf{\href{https://kulbir-singh-ahluwalia.com}{Website}} \\
+\textbf{\href{https://scholar.google.com/citations?user=rXq-2HYAAAAJ&hl=en&authuser=1}{Google Scholar}} \\
+\textbf{\href{https://github.com/kulbir-ahluwalia}{GitHub}} \\
+\textbf{\href{https://www.linkedin.com/in/kulbir-ahluwalia/}{LinkedIn}} \\
+\textbf{\href{https://orcid.org/0009-0009-6793-8566}{ORCID}}
+ }
+
+\address{Urbana, Illinois, USA \\  ksa5@illinois.edu}
+
+\begin{document}
+
+\begin{rSection}{Education}
+    \textbf{Ph.D. in Computer Science}, University of Illinois at Urbana-Champaign, USA (June 2022 - Present, Expected May 2027), GPA: 3.91/4 \\
+    \textbf{Advisors:} Dr. Girish Chowdhary \& Dr. Julia Hockenmaier \\
+    \textbf{M.Eng. in Robotics}, University of Maryland, College Park, USA (Aug 2019 - May 2021), GPA: 3.88/4 \\
+    \textbf{B.Tech. in Electrical Engineering}, Punjab Engineering College, India (Aug 2015 - May 2019), GPA: 8.12/10
+\end{rSection}
+
+\begin{rSection}{Research Papers}
+    \begin{itemize}[noitemsep]
+        \item \textbf{Ahluwalia, K.S.*}; Gummadi, S.; Cuaran, J.; McGuire, M.; Hockenmaier, J.; Chowdhary, G. \ul{Learning Natural Language Conditioned Waypoint Generation in 2D Image Space for Agricultural Mobile Robots}. (Submitting to RSS 2026, Dec 8, 2025) \textit{*First Author}
+        \item Cuaran, J.; \textbf{Ahluwalia, K.S.}; Koe, K.; Uppalapati, N.K.; Chowdhary, G. \ul{Active Semantic Mapping with Mobile Manipulator in Horticultural Environments}. (Accepted to ICRA 2025) 
+        \href{https://kendallkoe.com/ICRA_UIE/ } {[Project Website]} 
+        \href{https://arxiv.org/pdf/2501.19395 } {[arXiv PDF]} \href{https://arxiv.org/abs/2501.19395 } {[arXiv]} 
+        \item Rangwala, M.; Liu, J.; \textbf{Ahluwalia, K.S.}; Ghajar, S.; Dhami, H.S.; Tracy, B.F.; Tokekar, P.; Williams, R.K. \ul{DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains Using Synthetic Datasets}. Agronomy 2021, 11, 2245. (published in Agronomy as part of the Special Issue AI and Agricultural Robots) \href{https://doi.org/10.3390/agronomy11112245} {[Link to published paper]} \href{https://drive.google.com/file/d/1chm-GREu_F6giMr692lVPtRuJYVM_UcB/view?usp=sharing}{[PDF]}
+        \item Liu, J.; Rangwala, M.; \textbf{Ahluwalia, K.S.}; Ghajar, S.; Dhami, H.S.; Tracy, B.F.; Tokekar, P.; Williams, R.K.  ``\ul{Intermittent Deployment for Large-Scale Multi-Robot Forage Perception: Data Synthesis, Prediction, and Planning}'', 2021. \href{https://arxiv.org/abs/2112.09203}{[arXiv]} \href{https://arxiv.org/pdf/2112.09203.pdf}{[PDF]}
+        (published at IEEE TASE, Transactions on Automation Science and Engineering)
+    \end{itemize}
+\end{rSection}
+
+
+
+% 
+% Artificial Intelligence Intern
+% Artificial Intelligence Intern
+% EarthSense, Inc. · Part-timeEarthSense, Inc. · Part-time
+% May 2025 - Present · 3 mosMay 2025 to Present · 3 mos
+% Champaign, Illinois, United States · On-siteChampaign, Illinois, United States · On-site
+% 
+% 
+% 
+
+
+
+
+
+
+
+\begin{rSection}{Work Experience}
+
+    \textbf{AI Intern, Earthsense Inc., Urbana, IL, USA} \hfill \textit{May 2025 - Aug 2025}
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Developed OmniBot, a 7-stage VLM-based pipeline for natural language conditioned waypoint generation in 2D image space, achieving 90\% success rate in field trials across palm plantations, solar farms, and vineyards.
+        \item Deployed 6 open-source VLMs (Molmo-7B, Gemma-3-27B, Qwen-2.5-VL-72B, Qwen3-30B, Llama4-Scout, Spatial-VLM) on Jetson AGX Orin, achieving 3.8-5.6 FPS for real-time robot navigation.
+        \item Created automated labeling pipeline using Florence2, DINO-X, and Grounded SAM2, reducing dataset preparation from 6 weeks to 1 day for 10K+ navigation images.
+        \item Reduced agricultural robot deployment time from 3 months to 1-2 weeks through NL-conditioned navigation.
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    \textbf{Teaching Assistant, CS498GC: Mobile Robotics, UIUC} \hfill \textit{Aug 2025 - Dec 2025}
+    \\ \textbf{Instructor:} Dr. Girish Chowdhary
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Co-developed ROS2-based curriculum covering odometry, Extended Kalman Filter sensor fusion, SLAM, and mobile manipulation with 13-DOF Husky-UR3 simulation.
+        \item Built comprehensive autograding infrastructure for coding exercises on Gradescope with physics-based verification.
+        \item Created 44 Campuswire posts with debugging guides identifying top failure patterns (80\% of student errors).
+        \item Developed cross-platform launcher scripts for macOS/Linux supporting Apple Silicon and NVIDIA GPUs.
+        \item Designed Assignment 4: Mobile Manipulator project integrating Husky base + UR3 arm + parallel gripper in Gazebo.
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    \textbf{Teaching Assistant, CS519: Scientific Visualization, UIUC} \hfill \textit{May 2025 - Aug 2025}
+    \\ \textbf{Instructor:} Dr. Eric Shaffer
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Created multimodal exam questions with integrated Python/matplotlib visualizations for assessing scientific visualization concepts.
+        \item Assisted students with implementation of ray marching, transfer functions, and interactive widget development.
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    \textbf{Teaching Assistant, CS444: Deep Learning for Computer Vision, UIUC} \hfill \textit{Jan 2024 - May 2024, Jan 2025 - May 2025}
+    \\ \textbf{Instructor:} Dr. Svetlana Lazebnik
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Updated assignment starter code and assessed student submissions using Canvas.
+        \item Provided support during in-person office hours and via Campuswire, addressing student queries.
+        \item Designed multimodal (Reasoning LLM/VLM proof) quiz questions in single-choice, multiple-choice, and matching formats.
+    \end{itemize}
+
+\end{rSection}
+
+
+
+
+
+
+
+
+
+
+% %%%%%%
+% \begin{rSection}{Work Experience}
+%     \textbf{Earthsense Inc., Urbana, IL, USA} \hfill \textit{May 2025-Present}
+%     \\ \textbf{AI Intern}
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Developing natural language conditioned waypoint generation pipeline for 2D/3D planners to aid robots in outdoor navigation.
+%         \item Implemented automatic labeling pipeline for large outdoor robot navigation datasets using SAM2.1 and SigLIP2.
+%         \item Deployed open-source Visual Language Models such as Molmo-7B-demo, Gemma-3-27B and Qwen-2.5-VL-72B for robot reasoning and open world natural language instruction conditioned waypoint generation.
+%     \end{itemize}
+    
+%     \textbf{Teaching Assistant, CS444, UIUC} \hfill \textit{[Jan 2024 - May 2024], [Jan 2025 - May 2025]}
+%     \\ \textbf{Course:} CS444 - Deep Learning for Computer Vision
+%     \\ \textbf{Instructor:} \textbf{Dr. Svetlana Lazebnik}
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Updated assignment starter code, answered student questions during in-person office hours and campuswire, and assessed submissions using Canvas.
+%         \item Designed multimodal quiz questions, including single-choice, multiple-choice, and matching formats.
+%     \end{itemize}
+% \end{rSection}
+
+\begin{rSection}{Research Experience}
+    \textbf{University of Illinois, Distributed Autonomous Systems Lab} \hfill \textit{Aug 2022-present}
+    \\ Graduate Research Assistant
+    \\ \textbf{Mentors: Dr. Girish Chowdhary \& Dr. Julia Hockenmaier}
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Investigated 3D semantic representations for robot environment mapping and relocalization after failure.
+        \item Categorized recovery action sequences for various failure cases and constructed topological maps for visual language navigation.
+    \end{itemize}
+    
+    \textbf{University of Illinois, Distributed Autonomous Systems Lab} \hfill \textit{May 2021-Sep 2023}
+    \\ Graduate Research Assistant
+    \\ \textbf{Mentors: Dr. Girish Chowdhary \& Dr. Julia Hockenmaier}
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Fine-tuned CodeT5 for natural language grounding and code generation.
+        \item Created datasets for grounding natural language commands and analyzed location data distributions.
+        \item Developed a Python package for the farmbot agricultural robot.
+    \end{itemize}
+    
+    \textbf{University of Maryland, Robotics Algorithms \& Autonomous Systems Lab} \hfill \textit{Jul 2020-Aug 2021}
+    \\ Independent Study
+    \\ \textbf{Mentor: Dr. Pratap Tokekar}
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Processed point clouds from LiDAR-mounted quadcopters for pasture simulation.
+        \item Automated gazebo world construction for grass pastures with unique plant poses.
+    \end{itemize}
+    
+    \textbf{University of Waterloo, Ontario, Canada} \hfill \textit{Mar-Jul 2018}
+    \\ Visiting Scholar
+    \\ \textbf{Mentor: Dr. Simarjeet Saini}
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Developed an orange sweetness detector using scaled conjugate gradient backpropagation.
+        \item Designed, programmed and 3D printed low-cost photonic devices, including a urea-in-milk detector and a fundus eye camera.
+    \end{itemize}
+    
+    \textbf{Indian Institute of Technology, Roorkee} \hfill \textit{Jun-Jul 2016}
+    \\ Research Intern
+    \\ \textbf{Mentor: Dr. Dharmendra Singh}
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Investigated the effect of radio wave absorbers on Radar Cross Section using Ansys HFSS.
+    \end{itemize}
+\end{rSection}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{rSection}{Work Experience}
+%     \textbf{Earthsense Inc., Urbana, IL, USA} \hfill \textit{May 2025-Present}
+%     \\ \textbf{Position:} AI Intern
+%     \\ \textbf{Contact:} Michael McGuire, Lead Computer Vision Engineer, Earthsense, Urbana, IL, USA
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Generate natural language conditioned waypoints for 2D planners and 3D semantic representations for assisting robots with outdoor navigation failures in challenging dynamic environments like indoor, general outdoor navigation, agricultural fields including corn, soy fields and greenhouses, outdoor high tunnels with variable lighting, dynamic occlusions and semi-rigid obstacles, visually non-traversible but actually traversible obstacles like leaves, small branches and visually transparent but physically untraversible objects such as plastic or glass walls.
+        
+%         \item Deploy automatic labelling pipeline for large outdoor robot navigation datasets. Used SAM2.1 and Siglip to grounding open world natural language phrases and generate corresponding grounded masks. (used D3fields, Text2Region and SAM-WISE). Also, use closed source as well as open source thinking and tool calling Visual Language models to auto label, ground phrases, reasoning in image space, videos and other 3D scene representations such as voxels, octomaps, gaussian splats, 4D version of point clouds, semantic gaussian splats.
+        
+%         \item Deploy open source Visual Language Models and Visual Language Action Models for skid steer 4 wheeled field robot navigation.
+%     \end{itemize}
+    
+%     \textbf{Teaching Assistant, CS444, UIUC} \hfill \textit{[Jan 2024 - May 2024], [Jan 2025 - May 2025]}
+%     \\ \textbf{Course:} CS444 - Deep Learning for Computer Vision
+%     \\ \textbf{Instructor:} \textbf{Dr. Svetlana Lazebnik}
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Updated and verified starter code for assignments, and answered student questions during office hours and through Campuswire.
+        
+%         \item Assessed student submissions via SpeedGrader on Canvas, and designed multimodal quiz questions, including single-choice, multiple-choice, and matching formats.
+%     \end{itemize}
+% \end{rSection}
+
+% \begin{rSection}{Research Experience}
+%     \textbf{University of Illinois, Distributed Autonomous Systems Lab, Hockenmaier Lab} \hfill \textit{Aug 2022-present}
+%     \\ Graduate Research Assistant
+%     \\ \textbf{Mentors: Dr Girish Chowdhary \& Dr Julia Hockenmaier}
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Working on use of 3D, dynamic, semantic representations for objects and grounded 3D voxel value maps for the robot's environment. Goal is to relocalize the robot after a failure case for remote robot recovery.
+        
+%         \item Categorized and collected manual recovery action sequences for majority of failure cases arising from visual occlusions, sensor noise, incorrect state estimation, planning or unexpected mechanical failure cases.
+        
+%         \item Constructed topological maps from Rosbags for Visual language navigation and grounding using IMU, GPS location, front and rear RGB camera images.
+%     \end{itemize}
+    
+%     \textbf{University of Illinois, Distributed Autonomous Systems Lab} \hfill \textit{May 2021-Sep 2023}
+%     \\ Plant Placement in Simulations using NL Grounding,
+%     \\ Graduate Research Assistant
+%     \\ \textbf{Mentors: Dr Girish Chowdhary \& Dr Julia Hockenmaier} 
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Fine-tuned CodeT5 to learn the mapping from (NL, Env State) to (Code). Generated code includes arguments that satisfy the relative spatial references, physical and natural language constraints.
+        
+%         \item Generated additional dataset for grounding natural language commands that require the use of robot state for plant placement task using multiple references.
+        
+%         \item Analyzed the distribution of generated location data for relative spatial description commands.
+        
+%         \item Built a python package and wrapper to interface with the agricultural robot known as the farmbot.
+%     \end{itemize}
+    
+%     \textbf{University of Maryland, Robotics Algorithms \& Autonomous Systems Lab} \hfill \textit{Jul 2020-Aug 2021}
+%     \\ Independent study , \textbf{Mentor: Dr Pratap Tokekar} 
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Processed point clouds of the pasture obtained from the gazebo simulation for selected days of a year using LiDAR mounted on the hector quadcopter controlled using an autonomous navigation script.
+        
+%         \item Automated the task of constructing gazebo worlds for grass pastures where each plant has a unique pose and is scaled to match real world height data of a location. 
+%     \end{itemize}
+    
+%     \textbf{University of Waterloo, Ontario, Canada} \hfill \textit{Mar-Jul 2018}
+%     \\ Visiting Scholar , \textbf{Mentor: Dr Simarjeet Saini}
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Developed an orange sweetness detector which used scaled conjugate gradient backpropagation in MATLAB to non-destructively predict sweetness of oranges with an accuracy of 70\%. Discrete cosine transform was used to reduce dimensions of input matrix and prevent memory overflow.
+        
+%         \item Designed prototypes in Solidworks, which were 3D printed using the Ultimaker 3. Developed low-cost photonic devices like Urea in milk detector and the Fundus eye camera. The Fundus eye camera used Raspberry Pi3 to capture images and videos of the retina of a model eye to aid in diagnosis of diseases.
+%     \end{itemize}
+    
+%     \textbf{Indian Institute of Technology, Roorkee} \hfill \textit{Jun-Jul 2016}
+%     \\ Research Intern,
+%     \\ \textbf{Mentor: Dr Dharmendra Singh}
+%     \vspace{-0.2cm}
+%     \begin{itemize}[noitemsep,nolistsep]
+%         \item Varied the thickness of radio wave absorbers such as nickel ferrite on a UAV model and its individual parts like cylindrical body, spherical nose and cuboidal wings and detected its effect on the Radar Cross Section in Ansys HFSS.
+%     \end{itemize}
+% \end{rSection}
+
+
+
+% \newpage
+\begin{rSection}{Research Articles and Abstracts}
+\begin{itemize}[noitemsep]
+
+    \item Cuaran, Jose; Ahluwalia, Kulbir Singh; Koe, Kendall; Chowdhary, Girish. ``\ul{Active Semantic Mapping with Mobile Manipulator in Horticultural Environments}'', 2024, Accepted at 40th Anniversary of the IEEE Conference on Robotics and Automation (ICRA@40)
+    
+    % \item Jose Cuaran, Kulbir Singh Ahluwalia, Kendall Koe, Girish Chowdhary, \ul{Active Semantic Mapping with Mobile Manipulator in Horticultural Environments},  \\
+    % (Accepted at 40th Anniversary of the IEEE Conference on Robotics and Automation ICRA@40)). \\
+    % Current Status: Accepted. \\
+    % Submission Number: 440.
+
+    
+    \item The multispectral Fundus Eye camera prototype was featured in the Optics and Photonics News (OPN) in February 2019 in ``Saini, Simarjeet Singh, Aneesh Sridhar, and Kulbir Ahluwalia. ``\ul{Smartphone optical sensors}." Optics and Photonics News 30, no. 2 (2019): 34-41.''
+    \href{https://doi.org/10.1364/OPN.30.2.000034}{[Link to article]} \href{https://drive.google.com/file/d/13tBo4hi6o6TkS_Gl4OcwjkOrUnuKTecq/view?usp=sharing}{[PDF]} 
+    % \\Link: \url{https://doi.org/10.1364/OPN.30.2.000034}
+\end{itemize}
+\end{rSection}
+
+\begin{rSection}{Conference Presentation}
+\begin{itemize}[noitemsep]
+    \item Yuqi Li, Kulbir S. Ahluwalia, and Simarjeet S. Saini. ``\ul{Reinforcement learning integrated with supervised learning for training of near infrared spectrum data for non-destructive testing of fruits}." In Sensing for Agriculture and Food Quality and Safety XII, vol. 11421, p. 114210J. International Society for Optics and Photonics, 2020. \href{https://doi.org/10.1117/12.2557416}{[Link to conference presentation]}
+\end{itemize}
+\end{rSection}
+
+
+
+
+
+
+\begin{rSection}{Technical Skills}
+    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{5ex}} l }
+        Languages \ & Python, C++, MATLAB \\
+        VLMs/LLMs \ & Qwen-2.5-VL-72B, Molmo-7B, Gemma-3, Llama4-Scout, Spatial-VLM, Florence2, DINO-X \\
+        Libraries \ & PyTorch, HuggingFace Transformers, vLLM, NumPy, OpenCV, SciPy, Grounded SAM2 \\
+        Robotics \ & ROS2 (Humble, Jazzy), Gazebo, RViz2, MoveIt2, ros2\_control, Nav2 \\
+        Other \ & CUDA, Linux, Docker, Git, Jetson AGX Orin, LaTeX, Blender, Solidworks
+    \end{tabular}
+\end{rSection}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{rSection}{Projects}
+    \begin{itemize}[noitemsep]
+
+        \item {\bf 13-DOF Mobile Manipulator Simulation (Fall 2025):}
+            \begin{itemize}
+                \item Integrated Husky mobile base (6-DOF SE(3)) + UR3 arm (6-DOF) + parallel jaw gripper (1-DOF) in Gazebo.
+                \item Implemented ros2\_control with velocity command interfaces for base navigation and arm manipulation.
+                \item Created GPU-optimized and software-rendering launch configurations for NVIDIA and Apple Silicon.
+            \end{itemize}
+
+        \item {\bf EKF Sensor Fusion Implementation (Fall 2025):}
+            \begin{itemize}
+                \item Implemented 16-state Extended Kalman Filter fusing GPS, IMU, and wheel encoders for robot localization.
+                \item Achieved robust state estimation with gyroscope-based heading updates at 10Hz.
+                \item Developed autograder with physics-based verification for student submissions.
+            \end{itemize}
+
+        \item \href{https://hanlinmai.web.illinois.edu/assets/3D_vision_poster.pdf}{Enhancing Stereo Depth Maps through RGBD-Conditioned Generative Models} (Aug-Dec 2024):
+            \begin{itemize}
+                \item Conditional diffusion model fusing RGB and noisy depth for metric maps.
+                \item Fine-tuned Stable Diffusion V2 (similar to Marigold Training Pipeline) using SimSense simulation.
+                \item Outperforms Marigold/Depth-Anything-V2 on IRS, VKITTI, NYUv2 by up to 46\% Abs Rel.
+            \end{itemize}
+    
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/SLAM_using_2D_LiDAR_points}{SLAM from 2D LiDAR data using split and merge line extraction algorithm}} 
+        
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Extended_Kalman_Filter_for_GPS_INS_sensor_fusion}{State estimation using Extended Kalman Filter for GPS$+$IMU$+$Encoder sensor fusion}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/RTKGPS_IMU_Encoders_Plot_trajectory_using_ROS}{Processed data from RTK-GPS, IMU and encoders to plot trajectory of a field robot}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Autonomous_Vaccine_Delivery_Robot}{Autonomous Vaccine Delivery Robot}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/image-segmentation-using-superpixels}{Image segmentation using superpixels}}  
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Persistent-Monitoring-using-Multi-Robot-UAV-UGV-Coordination}{Persistent-Monitoring using Multi-Robot (UAV-UGV) Coordination}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Optimized-GestureGAN-for-resource-constrained-settings}{Optimized a GestureGAN for resource constrained settings}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/self-adjusting-roadmaps}{Self-adjusting roadmaps}} - Navigation in unknown environments using LD-PRM.  
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Visual_Odometry_ENPM673_Perception}{Estimated the motion of a car using Visual odometry}} 
+    \end{itemize}
+\end{rSection}
+
+
+%  CS598WY: Haptics and Tactile Sensing,
+\begin{rSection}{Coursework}
+    \textbf{Graduate (UIUC): } Mobile Robotics (CS498GC), 3D Vision (CS598SHW), Deep Learning for Robotic Manipulation (CS598YL), Advanced NLP (CS546), Machine Learning (CS446), Deep Learning for Computer Vision (CS444), Natural Language Processing (CS447), Autonomous Systems and Robots.
+    
+    \textbf{Graduate (UMD): }Autonomous robotics, Decision making for robotics, Visual Learning and recognition, Planning for Autonomous Robots, Perception for Autonomous Robots, Control of Robotic systems, Robot modelling, Robot programming, Building Robot software systems.
+    
+    \textbf{Undergraduate (PEC): }Neural networks and fuzzy systems, Advanced control systems, Microprocessors and interfacing, Power electronics, Mechatronics, Engineering analysis and design, Manufacturing, Biomedical engineering, Electromagnetic theory, Python Programming.
+\end{rSection}
+
+\begin{rSection}{Leadership and Teaching experience}
+    \begin{itemize}[noitemsep]
+        \item Served as \textbf{Technology Head for Hardware domain} for IEEE PEC Student branch. Conducted workshops on making a \href{https://docs.google.com/presentation/d/1S5m1-T_FwgWlozkAPxEApmysL8GTYTOgqf74s8e22AQ/edit?usp=sharing}{``Pick n Place Transporter Robot”} and \href{https://docs.google.com/presentation/d/1Lp63CP2ys-AARjI1SNoRbv4Ltul11msakgCspnLZ9P0/edit?usp=sharing}{``Using the Raspberry Pi”} to share our team’s experiences and techniques with our juniors in PEC.
+        \item Taught Math and Science to government high school students as part of ``PUNARKRITI Welfare Society" (Jan-Apr 2016) and ``Junior Einstein" (Dec 2018) social welfare organizations.
+    \end{itemize}
+\end{rSection}
+
+\begin{rSection}{Other Achievements and Awards} 
+    \begin{itemize}[noitemsep]
+        \item First prize in MAJOR PROJECT in the B.Tech. Examination of Electrical Engineering, 2015-19 for ``Teleoperated Gesture controlled Robotic arm". [May 2019]
+        \item Received Certificate of Appreciation for contributions to IEEE PEC. [Aug 2017, Aug 2018]
+        \item Awarded with the \textbf{National Bal Shree Award in Creative Scientific Innovations} by the Ministry of Human Resource Development, Govt. of India conferred by the President of India.
+    \end{itemize}
+\end{rSection}
+
+\begin{rSection}{Additional Projects}
+    \begin{itemize}[noitemsep]
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/ENPM_673_Perception}{AR-Tag detection }}- superimposed an image and virtual cube on an AR tag. 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Lucas_Kanade_Tracker}{Tracked moving objects using Lucas-Kanade Tracker}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Baxter_ROS_kinetic_transporting_cubes}{Baxter transporting cubes in Gazebo} } 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Implementing_A_star_on_Turtlebot3}{Implemented A star algorithm for Path Planning on Turtlebot 3}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Dijkstra_Project_2_ENPM_661}{Path planning for point and rigid robot using Djikstra's Algorithm}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/ENPM_673_Perception}{Lane detection and Turn prediction for self driving car}} 
+        \item {\bf \href{https://drive.google.com/drive/folders/1t-sGh60o9W79BdqMked3BNomsTYB6heL?usp=sharing }{Agile Robotics for Industrial Automation Competition (ARIAC) 2019}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Turtlebot_3_PID}{Designed a PID controller for Turtlebot 3}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/662-Final-Project-UR-5-arm}{Modelled a UR 5 arm with Parallel Gripper in Rviz}} 
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Gesture-controlled-mobile-robotic-arm}{Teleoperated gesture controlled robotic arm}} 
+        \item {\bf \href{https://drive.google.com/drive/folders/1rdmeapw3x31Y8ErJVZA07-d7b3ryTlUZ?usp=sharing }{Pick n place transporter bot}} 
+        \item {\bf \href{https://drive.google.com/drive/folders/1t-sGh60o9W79BdqMked3BNomsTYB6heL?usp=sharing }{Smart Garden}} 
+    \end{itemize}
+\end{rSection}
+
+
+
+\end{document}

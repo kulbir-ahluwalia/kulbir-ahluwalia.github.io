@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{soul}
+\usepackage[x11names]{xcolor}
+
+\setlist{nolistsep}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=DeepSkyBlue2,
+    pdftitle={Kulbir Singh Ahluwalia's Resume},
+}
+
+\usepackage[includefoot]{geometry}
+\geometry{
+    a4paper,
+    total={210mm,297mm},
+    left=6mm,
+    top=6mm,
+    right=7mm,
+    bottom=1mm
+}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{Kulbir Singh Ahluwalia} % Your name
+
+
+\address{
+\textbf{\href{https://kulbir-singh-ahluwalia.com}{Website}} \\
+\textbf{\href{https://scholar.google.com/citations?user=rXq-2HYAAAAJ&hl=en&authuser=1}{Google Scholar}} \\
+\textbf{\href{https://github.com/kulbir-ahluwalia}{GitHub}} \\
+\textbf{\href{https://www.linkedin.com/in/kulbir-ahluwalia/}{LinkedIn}} \\
+\textbf{\href{https://orcid.org/0009-0009-6793-8566}{ORCID}}
+ }
+
+\begin{document}
+\vspace{-0.2cm}
+\begin{rSection}{Summary}
+PhD candidate in Computer Science at UIUC (expected May 2027), researching Vision-Language Models for embodied AI and robot navigation. First-author RSS 2026 submission on VLM-based waypoint generation achieving 90\% field success rate. Deployed 6 open-source VLMs at Earthsense for agricultural robot navigation. Expertise in ROS2, sensor fusion (EKF), mobile manipulation, and physical AI systems. Seeking Summer 2026 robotics/AI internship.
+\end{rSection}
+
+\begin{rSection}{Education}
+    \textbf{Ph.D. in Computer Science}, University of Illinois at Urbana-Champaign, USA (June 2022 - Present, Expected May 2027), GPA: 3.91/4 \\
+    \textbf{Advisors:} Dr. Girish Chowdhary \& Dr. Julia Hockenmaier \\
+    \textbf{M.Eng. in Robotics}, University of Maryland, College Park, USA (Aug 2019 - May 2021), GPA: 3.88/4 \\
+    \textbf{B.Tech. in Electrical Engineering}, Punjab Engineering College, India (Aug 2015 - May 2019), GPA: 8.12/10
+\end{rSection}
+
+\begin{rSection}{Research Papers}
+    \begin{itemize}[noitemsep]
+        \item \textbf{Ahluwalia, K.S.*}; Gummadi, S.; Cuaran, J.; McGuire, M.; Hockenmaier, J.; Chowdhary, G. \ul{Learning Natural Language Conditioned Waypoint Generation in 2D Image Space for Agricultural Mobile Robots}. (Submitting to RSS 2026) \textit{*First Author}
+        \item Cuaran, J.; \textbf{Ahluwalia, K.S.}; Koe, K.; Uppalapati, N.K.; Chowdhary, G. \ul{Active Semantic Mapping with Mobile Manipulator in Horticultural Environments}. (Accepted to ICRA 2025) 
+        \href{https://kendallkoe.com/ICRA_UIE/ } {[Project Website]} 
+        \href{https://arxiv.org/pdf/2501.19395 } {[arXiv PDF]} \href{https://arxiv.org/abs/2501.19395 } {[arXiv]} 
+        \item Rangwala, M.; Liu, J.; \textbf{Ahluwalia, K.S.}; Ghajar, S.; Dhami, H.S.; Tracy, B.F.; Tokekar, P.; Williams, R.K. \ul{DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains Using Synthetic Datasets}. Agronomy 2021, 11, 2245. (published in Agronomy as part of the Special Issue AI and Agricultural Robots) \href{https://doi.org/10.3390/agronomy11112245} {[Link to published paper]} \href{https://drive.google.com/file/d/1chm-GREu_F6giMr692lVPtRuJYVM_UcB/view?usp=sharing}{[PDF]}
+        \item Liu, J.; Rangwala, M.; \textbf{Ahluwalia, K.S.}; Ghajar, S.; Dhami, H.S.; Tracy, B.F.; Tokekar, P.; Williams, R.K.  ``\ul{Intermittent Deployment for Large-Scale Multi-Robot Forage Perception: Data Synthesis, Prediction, and Planning}'', 2021. \href{https://arxiv.org/abs/2112.09203}{[arXiv]} \href{https://arxiv.org/pdf/2112.09203.pdf}{[PDF]}
+        (published at IEEE TASE, Transactions on Automation Science and Engineering)
+    \end{itemize}
+\end{rSection}
+
+\begin{rSection}{Experience}
+    \textbf{AI Intern, Earthsense Inc., Urbana, IL, USA} \hfill \textit{May 2025 - Aug 2025}
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Developed OmniBot, a 7-stage VLM-based pipeline for NL-conditioned waypoint generation, achieving 90\% success rate in field trials.
+        \item Deployed 6 VLMs (Molmo-7B, Qwen-2.5-VL-72B, Gemma-3, Llama4-Scout) on Jetson AGX Orin at 3.8-5.6 FPS.
+        \item Created auto-labeling pipeline with Florence2, DINO-X, Grounded SAM2, reducing prep time from 6 weeks to 1 day.
+    \end{itemize}
+
+    \textbf{Teaching Assistant, CS498GC: Mobile Robotics, UIUC} \hfill \textit{Aug 2025 - Dec 2025}
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Co-developed ROS2 curriculum: odometry, EKF sensor fusion, SLAM, mobile manipulation with 13-DOF Husky-UR3.
+        \item Built autograding infrastructure and created 44 debugging guides addressing 80\% of student failure patterns.
+    \end{itemize}
+
+    \textbf{Graduate Research Assistant, UIUC} \hfill \textit{Aug 2022 - Present}
+    \\ \textbf{Advisors:} Dr. Girish Chowdhary \& Dr. Julia Hockenmaier
+    \vspace{-0.2cm}
+    \begin{itemize}[noitemsep,nolistsep]
+        \item Researching 3D semantic representations for robot environment mapping and relocalization after failures.
+        \item Constructed topological maps for visual-language navigation using IMU, GPS, and RGB camera data.
+    \end{itemize}
+\end{rSection}
+
+\vspace{-0.2cm}
+
+\begin{rSection}{Technical Skills}
+\vspace{-0.1cm}
+    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{5ex}} l }
+        Languages \ & Python, C++, MATLAB \\
+        VLMs/LLMs \ & Qwen-2.5-VL-72B, Molmo-7B, Gemma-3, Llama4-Scout, Spatial-VLM, Florence2, DINO-X \\
+        Libraries \ & PyTorch, HuggingFace Transformers, vLLM, NumPy, OpenCV, SciPy, Grounded SAM2 \\
+        Robotics \ & ROS2 (Humble, Jazzy), Gazebo, RViz2, MoveIt2, ros2\_control, Nav2 \\
+        Other \ & CUDA, Linux, Docker, Git, Jetson AGX Orin, LaTeX, Blender
+    \end{tabular}
+\end{rSection}
+
+\vspace{-0.2cm}
+\begin{rSection}{Projects}
+\vspace{-0.1cm}
+    \begin{itemize}[noitemsep]
+        \item {\bf 13-DOF Mobile Manipulator Simulation (Fall 2025)} - Husky base + UR3 arm + gripper in Gazebo with ros2\_control
+
+        \item {\bf EKF Sensor Fusion (Fall 2025)} - 16-state EKF fusing GPS, IMU, wheel encoders for robot localization
+
+        \item \href{https://hanlinmai.web.illinois.edu/assets/3D_vision_poster.pdf}{\bf Stereo Depth Enhancement (2024)} - Diffusion model outperforming Marigold/Depth-Anything-V2 by 46\%
+
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/SLAM_using_2D_LiDAR_points}{SLAM from 2D LiDAR}} - Split and merge line extraction algorithm
+
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Extended_Kalman_Filter_for_GPS_INS_sensor_fusion}{EKF for GPS+IMU+Encoder Fusion}} - State estimation for field robots
+
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Persistent-Monitoring-using-Multi-Robot-UAV-UGV-Coordination}{Multi-Robot Coordination}} - Persistent monitoring with UAV-UGV teams
+
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Autonomous_Vaccine_Delivery_Robot}{Autonomous Vaccine Delivery Robot}} - End-to-end autonomous navigation
+
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/self-adjusting-roadmaps}{Self-adjusting Roadmaps}} - Navigation in unknown environments using LD-PRM
+
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Visual_Odometry_ENPM673_Perception}{Visual Odometry}} - Motion estimation from camera sequences
+
+        \item {\bf \href{https://github.com/kulbir-ahluwalia/Gesture-controlled-mobile-robotic-arm}{Teleoperated Robotic Arm}} - Gesture-controlled manipulation
+    \end{itemize}
+\end{rSection}
+
+\end{document}

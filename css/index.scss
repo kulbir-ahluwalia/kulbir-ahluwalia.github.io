@@ -161,3 +161,35 @@
     max-width: 900px !important;
   }
 }
+
+// Publication filtering styles
+.publication-filters {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1.5rem;
+
+    .filter-link, .topic-link {
+        color: #4a4a4a;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #3273dc;
+            text-decoration: underline;
+        }
+
+        &.is-active {
+            color: #3273dc;
+            font-weight: 600;
+        }
+    }
+
+    .research-topics {
+        margin-top: 0.5rem;
+        line-height: 1.8;
+    }
+}
+
+.publication-item {
+    transition: opacity 0.3s ease;
+}

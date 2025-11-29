@@ -1,3 +1,69 @@
+// Publication filtering functions
+function filterPublications(mode) {
+    const items = document.querySelectorAll('.publication-item');
+    const filterLinks = document.querySelectorAll('.filter-link');
+    const topicLinks = document.querySelectorAll('.topic-link');
+
+    // Update active filter link
+    filterLinks.forEach(link => {
+        link.classList.remove('is-active');
+        if (link.dataset.filter === mode) {
+            link.classList.add('is-active');
+        }
+    });
+
+    // Reset topic links
+    topicLinks.forEach(link => link.classList.remove('is-active'));
+
+    items.forEach(item => {
+        if (mode === 'all') {
+            item.style.display = 'block';
+        } else if (mode === 'selected') {
+            // Show only featured/selected publications (first 3)
+            const index = Array.from(items).indexOf(item);
+            item.style.display = index < 3 ? 'block' : 'none';
+        } else if (mode === 'topic') {
+            item.style.display = 'block';
+        }
+    });
+}
+
+function filterByTopic(topic) {
+    const items = document.querySelectorAll('.publication-item');
+    const topicLinks = document.querySelectorAll('.topic-link');
+    const filterLinks = document.querySelectorAll('.filter-link');
+
+    // Update active topic link
+    topicLinks.forEach(link => {
+        link.classList.remove('is-active');
+        if (link.dataset.topic === topic) {
+            link.classList.add('is-active');
+        }
+    });
+
+    // Update filter links (activate "show by topic")
+    filterLinks.forEach(link => {
+        link.classList.remove('is-active');
+        if (link.dataset.filter === 'topic') {
+            link.classList.add('is-active');
+        }
+    });
+
+    items.forEach(item => {
+        const topics = item.dataset.topics || '';
+        if (topics.includes(topic)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+
+    // Smooth scroll to publications section
+    const pubSection = document.getElementById('publications');
+    if (pubSection) {
+        pubSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
 
 $(document).ready(function() {
     $('.publication-mousecell').mouseover(function() {

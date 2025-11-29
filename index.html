@@ -119,8 +119,32 @@ layout: null
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 anchor" id="publications">Publications</h2>
+
+      <!-- Research Topic Filter Controls -->
+      <div class="publication-filters mb-5">
+        <p class="mb-3">
+          <span class="has-text-weight-semibold">View: </span>
+          <a href="#" class="filter-link is-active" data-filter="all" onclick="filterPublications('all'); return false;">show all</a> /
+          <a href="#" class="filter-link" data-filter="selected" onclick="filterPublications('selected'); return false;">show selected</a> /
+          <a href="#" class="filter-link" data-filter="topic" onclick="filterPublications('topic'); return false;">show by topic</a>
+        </p>
+        <p class="research-topics">
+          <span class="has-text-weight-semibold">Research Topics: </span>
+          <a href="#" class="topic-link" data-topic="mobile_robotics" onclick="filterByTopic('mobile_robotics'); return false;">Mobile Robotics</a> /
+          <a href="#" class="topic-link" data-topic="computer_vision" onclick="filterByTopic('computer_vision'); return false;">Computer Vision</a> /
+          <a href="#" class="topic-link" data-topic="deep_learning" onclick="filterByTopic('deep_learning'); return false;">Deep Learning</a> /
+          <a href="#" class="topic-link" data-topic="machine_learning" onclick="filterByTopic('machine_learning'); return false;">Machine Learning</a> /
+          <a href="#" class="topic-link" data-topic="nlp" onclick="filterByTopic('nlp'); return false;">NLP</a> /
+          <a href="#" class="topic-link" data-topic="path_planning" onclick="filterByTopic('path_planning'); return false;">Path Planning</a> /
+          <a href="#" class="topic-link" data-topic="decision_making" onclick="filterByTopic('decision_making'); return false;">Decision Making</a> /
+          <a href="#" class="topic-link" data-topic="3d_vision" onclick="filterByTopic('3d_vision'); return false;">3D Vision</a>
+        </p>
+      </div>
+
       {% for publication in site.data.publications %}
+        <div class="publication-item" data-topics="{% for topic in publication.topics %}{{ topic }} {% endfor %}">
         {% include section.html %}
+        </div>
       {% endfor %}
     </div>
   </section>

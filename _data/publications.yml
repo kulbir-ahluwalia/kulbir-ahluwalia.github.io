@@ -66,11 +66,14 @@
   arxiv: "2412.10515"
   image: publications/active_semantic_mapping/supplementary_video_mobile_manipulator_robot_screenshot_aruco_marker_2024-08-29_02-30.png
   image_border: false
-  # description: "We introduce an efficient and scalable approach for active semantic mapping in horticultural environments, employing a mobile robot manipulator equipped with an RGB-D camera."
   description: "We introduce an efficient active semantic mapping approach for horticultural robotics, using a mobile manipulator with an RGB-D camera. Probabilistic semantic octomaps are used to detect target regions of interest such as fruits, generate candidate viewpoints, and compute information gain for next-best-view planning. An efficient ray-casting strategy and a novel information gain function accounting for semantics and occlusions is introduced for efficient target-focused map exploration."
   github: jrcuaranv/nbv_planning
   project_page: "https://kendallkoe.com/Active_Semantic_Mapping/"
-  # image_mouseover: publications/active_semantic_mapping/active_sem_mapping_gif.gif
+  topics:
+    - mobile_robotics
+    - computer_vision
+    - path_planning
+    - 3d_vision
   authors:
     - Jose
     - Kulbir
@@ -88,9 +91,11 @@
   awards: "Conference Poster"
   pdf: "https://github.com/kulbir-ahluwalia/kulbir-ahluwalia.github.io/blob/main/files/V3_AIFARMS-KSA_Poster-2023.pdf"
   image: "publications/plant_placement_farmbot/final_thumbnail.png"
-  # description: "This poster presents a text-enabled FarmBot system that enables users to control robotic gardening via natural language. Leveraging a custom Python wrapper built on the FarmBot REST API, natural language commands are grounded using the robot state and converted into executable code with a fine-tuned CodeT5 model. Valid plant placement configurations are generated using a unique synthetic dataset derived from uniformly sampled spatial commands with natural language defined spatial constraints."
-
   description: "This poster presents a text-enabled FarmBot system that enables users to control a robotic gardening FarmBot system via natural language. Using a custom Python wrapper built on the FarmBot REST API, natural language commands are grounded using real-time robot state and translated into executable code with a fine-tuned CodeT5 model. The system generates valid plant placement configurations that satisfy natural language defined spatial constraints."
+  topics:
+    - nlp
+    - mobile_robotics
+    - machine_learning
   authors:
     - Kulbir
     - Michael
@@ -126,7 +131,10 @@
   image: publications/deeppastl/deeppastl_training.png
   paper: "https://doi.org/10.3390/agronomy11112245"
   pdf: "files/agronomy-11-02245-with-cover.pdf"
-  # arxiv: ""
+  topics:
+    - deep_learning
+    - machine_learning
+    - computer_vision
   authors:
     - Murtaza
     - Jun
@@ -146,6 +154,11 @@
   arxiv: "2112.09203"
   paper: "https://ieeexplore.ieee.org/document/9923747"
   pdf: "files/IEEE_PDF_Intermittent_Deployment_for_Large-Scale_Multi-Robot_Forage_Perception_Data_Synthesis_Prediction_and_Planning.pdf"
+  topics:
+    - mobile_robotics
+    - path_planning
+    - decision_making
+    - machine_learning
   authors:
     - Jun
     - Murtaza
@@ -165,6 +178,10 @@
   venue: "ICRA@40, 2024"
   image: publications/icra_at_40/icra_at_40_ts_plusplus.jpeg
   awards: "Abstract"
+  topics:
+    - mobile_robotics
+    - computer_vision
+    - 3d_vision
   authors:
     - Jose
     - Kulbir
@@ -179,6 +196,8 @@
   image: publications/multispectral_camera_retina/edited_fundus_camera.jpg
   paper: "https://doi.org/10.1364/OPN.30.2.000034"
   pdf: "files/Smartphone_Optical_Sensors_Research_Article.pdf"
+  topics:
+    - computer_vision
   authors:
     - Simarjeet
     - Aneesh
@@ -190,6 +209,9 @@
   venue: "Sensing for Agriculture and Food Quality and Safety XII, 2020"
   awards: "Conference Presentation"
   paper: "https://doi.org/10.1117/12.2557416"
+  topics:
+    - machine_learning
+    - deep_learning
   authors:
     - Yuqi
     - Kulbir

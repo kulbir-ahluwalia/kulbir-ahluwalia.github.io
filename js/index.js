@@ -74,6 +74,82 @@ function filterByTopic(topic) {
     }
 }
 
+// Project filtering functions
+function filterProjects(mode) {
+    const items = document.querySelectorAll('.project-item');
+    const filterLinks = document.querySelectorAll('.project-filter-link');
+    const topicLinks = document.querySelectorAll('.project-topic-link');
+
+    // Update active filter link
+    filterLinks.forEach(link => {
+        link.classList.remove('is-active');
+        if (link.dataset.filter === mode) {
+            link.classList.add('is-active');
+        }
+    });
+
+    // Reset topic links
+    topicLinks.forEach(link => link.classList.remove('is-active'));
+
+    items.forEach(item => {
+        if (mode === 'all') {
+            item.style.setProperty('display', 'block', 'important');
+        } else if (mode === 'selected') {
+            // Show only featured/selected projects (first 5)
+            const index = Array.from(items).indexOf(item);
+            item.style.setProperty('display', index < 5 ? 'block' : 'none', 'important');
+        } else if (mode === 'topic') {
+            item.style.setProperty('display', 'block', 'important');
+        }
+    });
+
+    console.log(`Project filter mode: ${mode}`);
+}
+
+function filterProjectByTopic(topic) {
+    const items = document.querySelectorAll('.project-item');
+    const topicLinks = document.querySelectorAll('.project-topic-link');
+    const filterLinks = document.querySelectorAll('.project-filter-link');
+
+    // Update active topic link
+    topicLinks.forEach(link => {
+        link.classList.remove('is-active');
+        if (link.dataset.topic === topic) {
+            link.classList.add('is-active');
+        }
+    });
+
+    // Update filter links (activate "show by topic")
+    filterLinks.forEach(link => {
+        link.classList.remove('is-active');
+        if (link.dataset.filter === 'topic') {
+            link.classList.add('is-active');
+        }
+    });
+
+    // Filter projects by topic
+    let visibleCount = 0;
+    items.forEach(item => {
+        const topicsStr = (item.dataset.topics || '').trim();
+        const topicsArray = topicsStr.split(/\s+/);
+
+        if (topicsArray.includes(topic)) {
+            item.style.setProperty('display', 'block', 'important');
+            visibleCount++;
+        } else {
+            item.style.setProperty('display', 'none', 'important');
+        }
+    });
+
+    console.log(`Filtered projects by ${topic}: ${visibleCount} projects visible`);
+
+    // Smooth scroll to projects section
+    const projSection = document.getElementById('projects');
+    if (projSection) {
+        projSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 $(document).ready(function() {
     $('.publication-mousecell').mouseover(function() {
         $(this).find('video').css('display', 'inline-block');

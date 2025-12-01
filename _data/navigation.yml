@@ -5,17 +5,17 @@
 - name: "Publications"
   anchor: "#publications"
 
-- name: "Projects"
-  anchor: "#projects"
-
-- name: "Research"
-  anchor: "#research"
-
 - name: "Teaching"
   anchor: "#teaching"
 
 - name: "Experience"
   anchor: "#experience"
+
+- name: "Projects"
+  anchor: "#projects"
+
+- name: "Research"
+  anchor: "#research"
 
 - name: "Misc"
   anchor: "#misc"

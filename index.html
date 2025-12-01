@@ -151,63 +151,6 @@ layout: null
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 anchor" id="projects">Projects</h2>
-      {% for publication in site.data.projects %}
-        {% include section.html %}
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 anchor" id="research">Research Affiliations</h2>
-      <div class="content">
-        <p>I am fortunate to be mentored by distinguished faculty at the intersection of robotics, natural language processing, and agricultural technology:</p>
-        <div class="columns is-multiline">
-          <div class="column is-half">
-            <div class="box">
-              <h4 class="subtitle is-5"><strong>DASLAB - Distributed Autonomous Systems Laboratory</strong></h4>
-              <p><strong>Director:</strong> Prof. Girish Chowdhary</p>
-              <p>Focus: Agricultural robotics, field robots, autonomous systems, and machine learning for agriculture</p>
-              <div class="buttons">
-                <a class="external-link button is-small is-primary is-light" href="http://daslab.illinois.edu">
-                  <span class="icon"><i class="fas fa-external-link-alt"></i></span>
-                  <span>Lab Website</span>
-                </a>
-                <a class="external-link button is-small is-info is-light" href="https://siebelschool.illinois.edu/about/people/all-faculty/girishc">
-                  <span class="icon"><i class="fas fa-user"></i></span>
-                  <span>Prof. Chowdhary</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="column is-half">
-            <div class="box">
-              <h4 class="subtitle is-5"><strong>HMR Lab - Hockenmaier Research Group</strong></h4>
-              <p><strong>Director:</strong> Prof. Julia Hockenmaier</p>
-              <p>Focus: Natural language processing, computational linguistics, vision and language, semantic parsing</p>
-              <div class="buttons">
-                <a class="external-link button is-small is-primary is-light" href="https://hmr-lab.github.io">
-                  <span class="icon"><i class="fas fa-external-link-alt"></i></span>
-                  <span>Lab Website</span>
-                </a>
-                <a class="external-link button is-small is-info is-light" href="https://siebelschool.illinois.edu/about/people/all-faculty/juliahmr">
-                  <span class="icon"><i class="fas fa-user"></i></span>
-                  <span>Prof. Hockenmaier</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="has-text-centered mt-4">
-          <strong>Research Focus:</strong> Natural Language Grounding for Agricultural Robots - Advancing Physical AI for Humanity
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
       <h2 class="title is-3 anchor" id="teaching">Teaching</h2>
       <div class="publication-block columns">
         <div class="column">
@@ -320,6 +263,86 @@ layout: null
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="projects">Projects</h2>
+
+      <!-- Project Topic Filter Controls -->
+      <div class="project-filters mb-5">
+        <p class="mb-3">
+          <span class="has-text-weight-semibold">View: </span>
+          <a href="#" class="project-filter-link is-active" data-filter="all" onclick="filterProjects('all'); return false;">show all</a> /
+          <a href="#" class="project-filter-link" data-filter="selected" onclick="filterProjects('selected'); return false;">show selected</a> /
+          <a href="#" class="project-filter-link" data-filter="topic" onclick="filterProjects('topic'); return false;">show by topic</a>
+        </p>
+        <p class="project-topics">
+          <span class="has-text-weight-semibold">Topics: </span>
+          <a href="#" class="project-topic-link" data-topic="mobile_robotics" onclick="filterProjectByTopic('mobile_robotics'); return false;">Mobile Robotics</a> /
+          <a href="#" class="project-topic-link" data-topic="computer_vision" onclick="filterProjectByTopic('computer_vision'); return false;">Computer Vision</a> /
+          <a href="#" class="project-topic-link" data-topic="deep_learning" onclick="filterProjectByTopic('deep_learning'); return false;">Deep Learning</a> /
+          <a href="#" class="project-topic-link" data-topic="machine_learning" onclick="filterProjectByTopic('machine_learning'); return false;">Machine Learning</a> /
+          <a href="#" class="project-topic-link" data-topic="nlp" onclick="filterProjectByTopic('nlp'); return false;">NLP</a> /
+          <a href="#" class="project-topic-link" data-topic="path_planning" onclick="filterProjectByTopic('path_planning'); return false;">Path Planning</a> /
+          <a href="#" class="project-topic-link" data-topic="3d_vision" onclick="filterProjectByTopic('3d_vision'); return false;">3D Vision</a>
+        </p>
+      </div>
+
+      {% for publication in site.data.projects %}
+        <div class="project-item" data-topics="{% for topic in publication.topics %}{{ topic }} {% endfor %}">
+        {% include section.html %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="research">Research Affiliations</h2>
+      <div class="content">
+        <p>I am fortunate to be mentored by distinguished faculty at the intersection of robotics, natural language processing, and agricultural technology:</p>
+        <div class="columns is-multiline">
+          <div class="column is-half">
+            <div class="box">
+              <h4 class="subtitle is-5"><strong>DASLAB - Distributed Autonomous Systems Laboratory</strong></h4>
+              <p><strong>Director:</strong> Prof. Girish Chowdhary</p>
+              <p>Focus: Agricultural robotics, field robots, autonomous systems, and machine learning for agriculture</p>
+              <div class="buttons">
+                <a class="external-link button is-small is-primary is-light" href="http://daslab.illinois.edu">
+                  <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                  <span>Lab Website</span>
+                </a>
+                <a class="external-link button is-small is-info is-light" href="https://siebelschool.illinois.edu/about/people/all-faculty/girishc">
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span>Prof. Chowdhary</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box">
+              <h4 class="subtitle is-5"><strong>HMR Lab - Hockenmaier Research Group</strong></h4>
+              <p><strong>Director:</strong> Prof. Julia Hockenmaier</p>
+              <p>Focus: Natural language processing, computational linguistics, vision and language, semantic parsing</p>
+              <div class="buttons">
+                <a class="external-link button is-small is-primary is-light" href="https://hmr-lab.github.io">
+                  <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                  <span>Lab Website</span>
+                </a>
+                <a class="external-link button is-small is-info is-light" href="https://siebelschool.illinois.edu/about/people/all-faculty/juliahmr">
+                  <span class="icon"><i class="fas fa-user"></i></span>
+                  <span>Prof. Hockenmaier</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="has-text-centered mt-4">
+          <strong>Research Focus:</strong> Natural Language Grounding for Agricultural Robots - Advancing Physical AI for Humanity
+        </p>
       </div>
     </div>
   </section>

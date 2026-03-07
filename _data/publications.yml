@@ -59,6 +59,21 @@
 
 
 
+- id2: waypointGen_CSLSC2026
+  title: "WaypointGen: Natural Language to 2D Navigation Waypoints Generation using LLMs"
+  venue: "Coordinated Science Laboratory Student Conference (CSL SC 2026)"
+  awards: "Accepted Poster"
+  pdf: "files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf"
+  description: "We introduce WaypointGen, a 14-step pipeline that grounds natural language instructions to 2D navigation waypoints. We utilize a QWEN 3 LLM-based filtering approach with pre-defined templates to extract relevant geometric constraints. The method employs SLIC in Birds-Eye-View (BEV) and Model Predictive Path Integral (MPPI) for trajectory selection, demonstrating enhanced navigation capabilities for mobile manipulators in dynamic environments."
+  topics:
+    - mobile_robotics
+    - nlp
+    - path_planning
+    - deep_learning
+  authors:
+    - Kulbir
+    - Chahit
+
 - id2: activeSemanticMapping_ICRA2025
   title: "Active Semantic Mapping with Mobile Manipulator in Horticultural Environments"
   venue: <a href="https://2025.ieee-icra.org/">International Conference on Robotics and Automation (ICRA 2025)</a>

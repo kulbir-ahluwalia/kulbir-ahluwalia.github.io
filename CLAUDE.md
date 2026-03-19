@@ -4,80 +4,74 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is Kulbir Singh Ahluwalia's personal academic website and CS498GC Mobile Robotics course website, built with Jekyll and hosted on GitHub Pages at kulbir-singh-ahluwalia.com.
+Kulbir Singh Ahluwalia's personal academic website and CS498GC Mobile Robotics course website, built with Jekyll and hosted on GitHub Pages at kulbir-singh-ahluwalia.com.
 
 ## Development Commands
 
-### Local Development
 ```bash
-# Install dependencies
-bundle install
-
-# Serve locally with live reload (default port 4000)
-bundle exec jekyll serve --trace
-
-# Build site for production
-bundle exec jekyll build
+bundle install                          # Install dependencies
+bundle exec jekyll serve --trace        # Serve locally on port 4000 (live reload)
+bundle exec jekyll build                # Build for production
 ```
 
-### Testing
-```bash
-# Run RSpec tests (if configured)
-bundle exec rspec
-```
+**Note:** Changes to `_config.yml` require restarting the server — Jekyll does not hot-reload config.
 
-## Architecture & Key Components
+## Architecture
 
-### Jekyll Data-Driven Architecture
-The site uses a data-driven approach where content is stored in YAML files under `_data/` and rendered through Jekyll templates:
+### Single-Page Design
 
-- **Publications**: `_data/publications.yml` - Academic papers with authors, links, and images
-- **Projects**: `_data/projects.yml` - Research projects and descriptions  
-- **Navigation**: `_data/navigation.yml` - Site navigation structure
-- **Misc Content**: `_data/misc.yaml` - Awards, certificates, achievements
-- **Authors**: `_data/authors.yml` - Collaborator information
+The main site is a **single `index.html`** file (layout: null) with no `_layouts/` directory. All sections (about, publications, teaching, experience, projects, research, misc) are inline within this one file, navigated via anchor links.
 
-### Styling Architecture
-- **Bulma CSS Framework**: Primary styling framework (`css/bulma.min.css`)
-- **Custom SCSS**: Site-specific styles in `css/index.scss` importing from `_sass/_base.scss`
-- **Responsive Design**: Mobile-first approach with navbar burger menu handled in `js/index.js`
+The only include template is `_includes/section.html`, which renders both publications and projects from their YAML data files using the same markup pattern.
 
-### Deployment Pipeline
-GitHub Actions workflow (`.github/workflows/cache_control.yml`) handles automated deployment:
-1. Builds Jekyll site on push to main branch
-2. Adds cache control headers for proper browser caching
-3. Deploys to gh-pages branch
-4. Uses Ruby 3.1 with bundler caching for performance
+### Data-Driven Content (`_data/`)
 
-### Course Website Structure
-The CS498GC course content is organized under `cs498gc/fa25/` with:
-- Separate syllabus, assignments, and logistics pages
-- Independent CSS and image assets for course materials
-- Gallery and setup instructions for course projects
+| File | Purpose |
+|------|---------|
+| `publications.yml` | Academic papers with authors, links, images, topics |
+| `projects.yml` | Research projects (same rendering pattern as publications) |
+| `authors.yml` | Collaborator database (`first_name`, `last_name`, `website`, `is_me` boolean) |
+| `navigation.yml` | Site nav menu (name + anchor/link) |
+| `misc.yaml` | Awards, certificates |
+| `hobbies.yml` | Personal interests (markdown) |
 
-## Content Guidelines
+### Publication/Project YAML Fields
 
-### Adding Publications
-Update `_data/publications.yml` with proper structure including authors array, publication venue, links, and image paths. Images should be 1:1 aspect ratio, minimum 320px.
+Required: `id2`, `title`, `venue`, `description`, `authors`, `topics`
 
-### Modifying Site Content
-- Personal information: Update `_config.yml`
-- Section content: Modify corresponding YAML files in `_data/`
-- Styling changes: Edit `css/index.scss` or `_sass/_base.scss`
-- JavaScript functionality: Update `js/index.js`
+Optional fields: `image`, `image_mouseover` (video for hover effect), `image_border`, `awards`, `pdf`, `paper`, `arxiv` (just the ID, e.g. `"2412.10515"`), `github` (e.g. `"username/repo"`), `project_page`, `webpage`, `video`
 
-### Image Handling
-- Publication images: Store in `images/[publication-name]/`
-- General images: Place in `images/` root
-- Course images: Use `cs498gc/fa25/images/`
+**Title link priority** in `section.html`: `project_page` > `webpage` > `paper` > `arxiv` > no link
 
-## Important Implementation Details
+**Topics** (used for filtering): `mobile_robotics`, `computer_vision`, `deep_learning`, `machine_learning`, `nlp`, `path_planning`, `decision_making`, `3d_vision`
 
-### Publication Mouseover Effects
-The site implements custom mouseover effects for publications that transition between static images and videos/GIFs. This is handled in `js/index.js` and requires proper image/video file naming conventions.
+### Topic Filtering System (`js/index.js`)
 
-### External Link Handling
-All external links automatically open in new tabs via JavaScript in `js/index.js`. This applies to links with href starting with "http" but not containing the site's domain.
+Publications and projects use a `data-topics` HTML attribute (space-separated topic strings). JavaScript functions `filterPublications(mode)` and `filterProjects(mode)` support three modes: `'all'`, `'selected'` (first 3 pubs / first 5 projects), and `'topic'`. The `filterByTopic(topic)` function matches against the parsed `data-topics` attribute.
 
-### Responsive Navigation
-The mobile navigation burger menu is implemented using Bulma's navbar component with custom JavaScript handling for toggle functionality.
+### Mouseover Effects
+
+`.publication-mousecell` elements support image-to-video transitions on hover. jQuery-based: on mouseover, hides the static `img` and shows `video` + `.image2`. Touch events are also handled.
+
+### Styling Stack
+
+- **Framework:** Bulma CSS (`css/bulma.min.css`)
+- **Custom SCSS:** `css/index.scss` imports `_sass/_base.scss`
+- **Fonts:** Google Sans (titles, weight 700), Noto Sans (body)
+- **Icons:** Font Awesome 6.5.2, Academicons
+- Key classes: `.publication-block`, `.author-me`, `.portrait`, `.publication-mousecell`
+
+### Deployment
+
+Two GitHub Actions workflows in `.github/workflows/`:
+
+1. **`cache_control.yml`** — Builds Jekyll (Ruby 3.1), adds cache control headers, deploys to gh-pages branch via `peaceiris/actions-gh-pages` with `force_orphan: true`
+2. **`claude.yml`** — Claude Code assistant triggered by `@claude` mentions in issues/PRs/discussions
+
+### Course Website
+
+CS498GC course content lives under `cs498gc/fa25/` with its own HTML pages, CSS, and images — independent from the main site.
+
+### Cursor Rules
+
+Additional development guidance exists in `.cursor/rules/` (7 files covering Jekyll structure, YAML data, JS functionality, CSS styling, HTML templates, content guidelines, and dev workflow).

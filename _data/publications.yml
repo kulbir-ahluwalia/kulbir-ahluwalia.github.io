@@ -59,13 +59,29 @@
 
 
 
+- id2: waypointGenPlusPlus
+  title: "WaypointGen++"
+  venue: "Under Review"
+  awards: "Ongoing Project"
+  image: "publications/waypointgen_cslsc2026/image.jpeg"
+  description: "Follow-up to WaypointGen. Ongoing project extending VLM-based navigation waypoint generation. (Under Review)"
+  topics:
+    - mobile_robotics
+    - nlp
+    - path_planning
+    - deep_learning
+    - computer_vision
+  authors:
+    - Kulbir
+    - Chahit
+
 - id2: waypointGen_CSLSC2026
-  title: "WaypointGen: Natural Language to 2D Navigation Waypoints Generation using LLMs"
+  title: "WaypointGen: Natural Language to 2D Navigation Waypoints Generation using VLMs"
   venue: "Coordinated Science Laboratory Student Conference (CSL SC 2026)"
   awards: "Accepted Poster"
   image: "publications/waypointgen_cslsc2026/image.jpeg"
   pdf: "files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf"
-  description: "We introduce WaypointGen, a 14-step pipeline that grounds natural language instructions to 2D navigation waypoints. We utilize a QWEN 3 LLM-based filtering approach with pre-defined templates to extract relevant geometric constraints. The method employs SLIC in Birds-Eye-View (BEV) and Model Predictive Path Integral (MPPI) for trajectory selection, demonstrating enhanced navigation capabilities for mobile manipulators in dynamic environments."
+  description: "We introduce WaypointGen, a 14-step pipeline that grounds natural language instructions to 2D navigation waypoints. We utilize a QWEN 3 VLM-based filtering approach with pre-defined templates to extract relevant geometric constraints. The method employs SLIC in Birds-Eye-View (BEV) and Model Predictive Path Integral (MPPI) for trajectory selection, demonstrating enhanced navigation capabilities for mobile manipulators in dynamic environments."
   topics:
     - mobile_robotics
     - nlp

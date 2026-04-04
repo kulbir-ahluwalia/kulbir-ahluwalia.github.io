@@ -217,7 +217,7 @@
 - title: "Tracked moving objects using Lucas-Kanade Tracker"
   webpage: "https://github.com/kulbir-ahluwalia/Lucas_Kanade_Tracker"
   venue: "April 2020"
-  image: projects/placeholder_computer_vision.svg
+  image: projects/lucas_kanade/bolt_tracking.jpg
   description: "Implemented the Lucas-Kanade optical flow tracker for real-time object tracking across video frames."
   topics:
     - computer_vision
@@ -233,7 +233,7 @@
 - title: "Implemented A star algorithm for Path Planning on Turtlebot 3"
   webpage: "https://github.com/kulbir-ahluwalia/Implementing_A_star_on_Turtlebot3"
   venue: "May 2020"
-  image: projects/placeholder_path_planning.svg
+  image: projects/astar/astar_exploration.png
   description: "Implemented the A* algorithm in a configuration space with obstacles. The Turtlebot 3 obeys non-holonomic constraints with 8 combinations of two user-defined RPMs."
   topics:
     - path_planning

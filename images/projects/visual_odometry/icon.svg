@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#E67E22"/>
+  <text x="160" y="130" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial, sans-serif" font-size="100" font-weight="bold">VO</text>
+  <!-- Trajectory path -->
+  <path d="M 80 220 Q 120 190 160 200 Q 200 210 240 195" fill="none" stroke="white" stroke-width="3" stroke-dasharray="8,4"/>
+  <circle cx="80" cy="220" r="5" fill="white"/>
+  <circle cx="160" cy="200" r="5" fill="white"/>
+  <polygon points="235,190 248,195 237,202" fill="white"/>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="16">Visual Odometry</text>
+</svg>

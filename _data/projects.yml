@@ -118,11 +118,11 @@
   topics:
     - mobile_robotics
 
-- title: "State estimation using Extended Kalman Filter for GPS+IMU+Encoder sensor fusion"
+- title: "State estimation using Extended Kalman Filter for GPS+Encoder sensor fusion"
   webpage: "https://github.com/kulbir-ahluwalia/Extended_Kalman_Filter_for_GPS_INS_sensor_fusion"
   venue: "Nov 2021"
   image: projects/placeholder_mobile_robotics.svg
-  description: "Fused GPS, IMU, and wheel encoder data using an Extended Kalman Filter for robust state estimation on a field robot."
+  description: "Fused GPS and wheel encoder data using an Extended Kalman Filter for robust state estimation on a mobile robot."
   topics:
     - mobile_robotics
 
@@ -147,7 +147,7 @@
   webpage: "https://github.com/kulbir-ahluwalia/image-segmentation-using-superpixels"
   venue: "Dec 2020"
   image: projects/superpixel_segmentation.png
-  description: "Built a segmentation network using SLIC superpixels as input. A pretrained VGG16 network had its last layers replaced by fully connected layers to classify superpixels. (Accuracy 98%)"
+  description: "Built a segmentation pipeline using SLIC superpixels with VGG16 feature extraction for superpixel classification."
   topics:
     - computer_vision
     - deep_learning
@@ -226,7 +226,7 @@
   webpage: "https://github.com/kulbir-ahluwalia/Baxter_ROS_kinetic_transporting_cubes"
   venue: "April 2020"
   image: projects/baxter/youtube_baxter.jpg
-  description: "Simulated a Baxter robot transporting cubes between tables in Gazebo using ROS Kinetic. Waypoints were generated using Rviz and obstacles were avoided in the custom-designed Gazebo world."
+  description: "Simulated a Baxter robot transporting cubes between tables in Gazebo using ROS Kinetic. Used inverse kinematics for pick-and-place in a custom Gazebo world."
   topics:
     - mobile_robotics
 
@@ -251,7 +251,7 @@
   webpage: "https://github.com/kulbir-ahluwalia/ENPM_673_Perception"
   venue: "March 2020"
   image: projects/placeholder_computer_vision.svg
-  description: "Developed an algorithm using hough transform and histogram of lanes. Also implemented homography and warp perspective functions from scratch for overlays."
+  description: "Developed lane detection using histogram-based sliding window analysis and polynomial curve fitting. Implemented bird's-eye-view perspective transform for lane visualization."
   topics:
     - computer_vision
     - mobile_robotics

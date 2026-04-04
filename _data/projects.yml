@@ -191,7 +191,7 @@
 - title: "Color segmentation using Gaussian mixture models & Expectation maximization"
   webpage: "https://github.com/kulbir-ahluwalia/Buoy_segmentation"
   venue: "April 2020"
-  image: projects/placeholder_computer_vision.svg
+  image: projects/buoy_gmm/gaussian_green.jpg
   description: "Segmented colored buoys in underwater imagery using GMMs trained via Expectation Maximization for robust color-based detection."
   topics:
     - computer_vision
@@ -209,7 +209,7 @@
 - title: "AR-Tag detection"
   webpage: "https://github.com/kulbir-ahluwalia/ENPM_673_Perception"
   venue: "March 2020"
-  image: projects/placeholder_computer_vision.svg
+  image: projects/ar_tag/ar_tag_cubes.png
   description: "Superimposed an image and virtual cube on an AR tag."
   topics:
     - computer_vision
@@ -275,8 +275,8 @@
 - title: "Modelled a UR 5 arm with Parallel Gripper in Rviz"
   webpage: "https://github.com/kulbir-ahluwalia/662-Final-Project-UR-5-arm"
   venue: "Sep-Dec 2019"
-  image: projects/placeholder_mobile_robotics.svg
-  description: "Simulated a 7 DOF UR5 arm using Moveit and Rviz. Calculated DH parameters and computed forward kinematics manually, verified via Peter Corke's Robotics toolbox. [Simulation videos](https://youtube.com/playlist?list=PLSaHroqSzd_WR5xg_QvIdhWTvgah-BKno)"
+  image: projects/ur5_arm/ur5_pose.png
+  description: "Simulated a 6 DOF UR5 arm using Moveit and Rviz. Calculated DH parameters and computed forward kinematics manually, verified via Peter Corke's Robotics toolbox. [Simulation videos](https://youtube.com/playlist?list=PLSaHroqSzd_WR5xg_QvIdhWTvgah-BKno)"
   topics:
     - mobile_robotics
 

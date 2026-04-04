@@ -137,7 +137,7 @@
 - title: "Autonomous Vaccine Delivery Robot"
   webpage: "https://drive.google.com/drive/folders/1rdmeapw3x31Y8ErJVZA07-d7b3ryTlUZ?usp=sharing"
   venue: "May 2021"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/vaccine_delivery/youtube_thumbnail.jpg
   description: "Designed an autonomous robot capable of navigating and localizing itself in a test arena using QR codes and arrows. It uses a RGB camera, IMU, optical encoders, and an ultrasonic sensor to detect, retrieve and transport user-specified blocks. [Featured video](https://www.youtube.com/watch?v=6NENfHeagUE&t=1s), [Robot videos](https://www.youtube.com/playlist?list=PLSaHroqSzd_VdedShiwm2QUasq5oexQ2L), [Featured post](https://mage.umd.edu/news/story/mage-professor-tackles-challenges-with-creative-coursework)"
   topics:
     - mobile_robotics
@@ -267,7 +267,7 @@
 - title: "Designed a PID controller for Turtlebot 3"
   webpage: "https://github.com/kulbir-ahluwalia/Turtlebot_3_PID"
   venue: "April 2020"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/pid_turtlebot/youtube_thumbnail.jpg
   description: "Designed and tuned a PID controller for trajectory tracking on a Turtlebot 3 in simulation."
   topics:
     - mobile_robotics
@@ -290,7 +290,7 @@
 - title: "Teleoperated gesture controlled robotic arm"
   webpage: "https://github.com/kulbir-ahluwalia/Gesture-controlled-mobile-robotic-arm"
   venue: "Aug 2018-May 2019"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/gesture_arm/poster_slide.png
   description: "Engineered a prototype to transport objects between rooms via web-based remote access with live video and gesture control. The robot featured on-board power, a custom LED light source for low-light navigation, smart device control, and a speaker for prerecorded messages."
   topics:
     - mobile_robotics

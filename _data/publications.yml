@@ -74,6 +74,12 @@
   authors:
     - Kulbir
     - Chahit
+    - Jose
+    - Shreya
+    - MichaelMcGuire
+    - Arun
+    - Julia
+    - Girish
 
 - id2: waypointGen_CSLSC2026
   title: "WaypointGen: Natural Language to 2D Navigation Waypoints Generation using VLMs"

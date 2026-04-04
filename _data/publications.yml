@@ -65,6 +65,9 @@
   awards: "In Preparation for IEEE RAL"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
   description: "Follow-up to WaypointGen. Extending VLM-based navigation waypoint generation for mobile manipulators in outdoor environments. (In Preparation for IEEE RAL)"
+  shared_first_authors:
+    - Kulbir
+    - Chahit
   topics:
     - mobile_robotics
     - nlp
@@ -88,6 +91,9 @@
   image: "publications/waypointgen_cslsc2026/image.jpeg"
   pdf: "files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf"
   description: "We introduce WaypointGen, a 14-step pipeline that grounds natural language instructions to 2D navigation waypoints. We utilize a QWEN 3 VLM-based filtering approach with pre-defined templates to extract relevant geometric constraints. The method employs SLIC in Birds-Eye-View (BEV) and Model Predictive Path Integral (MPPI) for trajectory selection, demonstrating enhanced navigation capabilities for mobile manipulators in dynamic environments."
+  shared_first_authors:
+    - Kulbir
+    - Chahit
   topics:
     - mobile_robotics
     - nlp

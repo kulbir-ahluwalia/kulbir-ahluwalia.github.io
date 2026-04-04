@@ -30,12 +30,18 @@
       <div class="publication-authors">
         {%- for author_id in publication.authors -%}
         {% assign author = site.data.authors[author_id] %}
+        {% assign is_shared_first = false %}
+        {% if publication.shared_first_authors %}
+          {% for sfa in publication.shared_first_authors %}
+            {% if sfa == author_id %}{% assign is_shared_first = true %}{% endif %}
+          {% endfor %}
+        {% endif %}
         <span class="author-block {% if author.is_me %}author-me{% endif %}">
           {%- if author.is_me -%}
-            {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}
+            {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}{% if is_shared_first %}*{% endif %}
           {%- else -%}
           <a class="{% if author.website%}''{%- else -%}disable-link{% endif %}" href="{{ author.website}}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name
-          }}</a>
+          }}</a>{% if is_shared_first %}*{% endif %}
             {%- endif -%}
             {% if forloop.last == false %},{% endif %}
         </span>

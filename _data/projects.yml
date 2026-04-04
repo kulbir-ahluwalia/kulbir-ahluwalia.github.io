@@ -225,7 +225,7 @@
 - title: "Baxter transporting cubes in Gazebo"
   webpage: "https://github.com/kulbir-ahluwalia/Baxter_ROS_kinetic_transporting_cubes"
   venue: "April 2020"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/baxter/youtube_baxter.jpg
   description: "Simulated a Baxter robot transporting cubes between tables in Gazebo using ROS Kinetic. Waypoints were generated using Rviz and obstacles were avoided in the custom-designed Gazebo world."
   topics:
     - mobile_robotics

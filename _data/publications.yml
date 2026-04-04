@@ -61,10 +61,10 @@
 
 - id2: waypointGenPlusPlus
   title: "WaypointGen++"
-  venue: "Under Review"
-  awards: "Ongoing Project"
+  venue: "In Preparation for IEEE RAL"
+  awards: "In Preparation for IEEE RAL"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
-  description: "Follow-up to WaypointGen. Ongoing project extending VLM-based navigation waypoint generation. (Under Review)"
+  description: "Follow-up to WaypointGen. Extending VLM-based navigation waypoint generation for mobile manipulators in outdoor environments. (In Preparation for IEEE RAL)"
   topics:
     - mobile_robotics
     - nlp

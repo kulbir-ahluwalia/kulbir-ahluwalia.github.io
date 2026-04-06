@@ -21,6 +21,9 @@
   anchor: "#misc"
 
 - name: "CV"
+  link: "/cv.html"
+
+- name: "CV (PDF)"
   link: "/files/CV_Resume_Feb2026/Kulbir_CV_16Feb.pdf"
 
 - name: "Resume"

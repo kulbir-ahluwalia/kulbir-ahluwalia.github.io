@@ -1,0 +1,19 @@
+body { margin-top: 1em; font-family: "Noto Sans", sans-serif; }
+
+.portrait-column { padding: 0; }
+
+.portrait-image { border-radius: 50%; max-width: 7em; }
+
+.author-me { font-weight: 600; }
+
+h2 { margin-top: 0.5em !important; margin-bottom: 0.3em !important; }
+
+.columns { margin-bottom: 0 !important; }
+
+.skills-list { display: flex; flex-wrap: wrap; gap: 0.4em; list-style: none; padding: 0; margin: 0.3em 0 0.8em 0; }
+
+.skills-list li { background: #f0f0f0; padding: 0.2em 0.6em; border-radius: 4px; font-size: 90%; }
+
+.section-note { font-size: 85%; color: #666; margin-top: -0.2em; margin-bottom: 0.5em; }
+
+@media print { html, body { height: auto; font-size: 9pt; } }

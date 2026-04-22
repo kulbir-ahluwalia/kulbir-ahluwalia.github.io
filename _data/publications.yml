@@ -59,6 +59,28 @@
 
 
 
+- id2: activeSemanticMapping_ICRA2025
+  title: "Active Semantic Mapping with Mobile Manipulator in Horticultural Environments"
+  venue: <a href="https://2025.ieee-icra.org/">International Conference on Robotics and Automation (ICRA 2025)</a>
+  awards: "Conference paper"
+  arxiv: "2412.10515"
+  image: publications/active_semantic_mapping/supplementary_video_mobile_manipulator_robot_screenshot_aruco_marker_2024-08-29_02-30.png
+  image_border: false
+  description: "We introduce an efficient active semantic mapping approach for horticultural robotics, using a mobile manipulator with an RGB-D camera. Probabilistic semantic octomaps are used to detect target regions of interest such as fruits, generate candidate viewpoints, and compute information gain for next-best-view planning. An efficient ray-casting strategy and a novel information gain function accounting for semantics and occlusions is introduced for efficient target-focused map exploration."
+  github: jrcuaranv/nbv_planning
+  project_page: "https://kendallkoe.com/Active_Semantic_Mapping/"
+  topics:
+    - mobile_robotics
+    - computer_vision
+    - path_planning
+    - 3d_vision
+  authors:
+    - Jose
+    - Kulbir
+    - Kendall
+    - Naveen
+    - Girish
+
 - id2: waypointGenPlusPlus
   title: "WaypointGen++"
   venue: "In Preparation for IEEE RAL"
@@ -107,28 +129,6 @@
     - MichaelMcGuire
     - Arun
     - Julia
-    - Girish
-
-- id2: activeSemanticMapping_ICRA2025
-  title: "Active Semantic Mapping with Mobile Manipulator in Horticultural Environments"
-  venue: <a href="https://2025.ieee-icra.org/">International Conference on Robotics and Automation (ICRA 2025)</a>
-  awards: "Conference paper"
-  arxiv: "2412.10515"
-  image: publications/active_semantic_mapping/supplementary_video_mobile_manipulator_robot_screenshot_aruco_marker_2024-08-29_02-30.png
-  image_border: false
-  description: "We introduce an efficient active semantic mapping approach for horticultural robotics, using a mobile manipulator with an RGB-D camera. Probabilistic semantic octomaps are used to detect target regions of interest such as fruits, generate candidate viewpoints, and compute information gain for next-best-view planning. An efficient ray-casting strategy and a novel information gain function accounting for semantics and occlusions is introduced for efficient target-focused map exploration."
-  github: jrcuaranv/nbv_planning
-  project_page: "https://kendallkoe.com/Active_Semantic_Mapping/"
-  topics:
-    - mobile_robotics
-    - computer_vision
-    - path_planning
-    - 3d_vision
-  authors:
-    - Jose
-    - Kulbir
-    - Kendall
-    - Naveen
     - Girish
 
 

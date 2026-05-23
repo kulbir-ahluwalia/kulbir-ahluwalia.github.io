@@ -12,7 +12,7 @@
   content: "Began preparing <strong>WaypointGen++</strong> for submission to <strong>IEEE Robotics and Automation Letters (RA-L)</strong>, extending our VLM-based waypoint generation pipeline to outdoor mobile manipulators."
 
 - date: "Oct 2025"
-  content: 'Released <strong><a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a two-part Mobile Manipulator Exploration &amp; SLAM challenge for CS498GC Fall 2025: students operated a Husky + UR3 + Robotiq gripper in a Mars Gazebo world. <strong>Part 1</strong> (25 pts) covered robot setup and navigation; <strong>Part 2</strong> (75 pts) extended to full SLAM with an optional Mars dust-storm bonus.'
+  content: 'Released <strong><a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a two-part Mobile Manipulator Exploration &amp; SLAM challenge for CS498GC Fall 2025: students operated a Husky + UR3 + Robotiq gripper in a Mars Gazebo world. <strong>Part 1</strong> (25 pts) covered robot setup and navigation; <strong>Part 2</strong> (75 pts) extended to full SLAM with MoveIt 2 + RViz 2 waypoint following, 3D and 4D reconstruction of Thanksgiving-themed dynamic turkeys, and an optional Mars dust-storm bonus.'
 
 - date: "May 2025"
   content: 'Our paper <strong>Active Semantic Mapping with Mobile Manipulator in Horticultural Environments</strong> was presented at <a href="https://2025.ieee-icra.org/"><strong>ICRA 2025</strong></a>. <a href="https://arxiv.org/abs/2412.10515">arXiv:2412.10515</a> &middot; <a href="https://kendallkoe.com/Active_Semantic_Mapping/">project page</a>'

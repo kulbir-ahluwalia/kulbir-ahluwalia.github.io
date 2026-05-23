@@ -173,6 +173,26 @@ layout: null
       <hr>
     </div>
   </div>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="news">News</h2>
+      <div class="content">
+        {% for item in site.data.news %}
+          <p class="news-item">
+            <strong>[{{ item.date }}]</strong> {{ item.content }}
+          </p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <div class="hr">
+    <div class="container">
+      <hr>
+    </div>
+  </div>
+
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 anchor" id="publications">Publications</h2>

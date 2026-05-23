@@ -2,6 +2,9 @@
 - name: "About"
   anchor: "#about"
 
+- name: "News"
+  anchor: "#news"
+
 - name: "Publications"
   anchor: "#publications"
 

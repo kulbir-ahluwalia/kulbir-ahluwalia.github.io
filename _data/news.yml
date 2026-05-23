@@ -9,28 +9,13 @@
   content: 'Our poster <strong>WaypointGen: Natural Language to 2D Navigation Waypoints Generation using VLMs</strong> was accepted at the <strong>CSL Student Conference (CSL SC 2026)</strong> at UIUC. <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf">[poster PDF]</a>'
 
 - date: "Mar 2026"
-  content: "<strong>WaypointGen++</strong> is in preparation for submission to <strong>IEEE Robotics and Automation Letters (RA-L)</strong>, extending our VLM-based waypoint generation pipeline to outdoor mobile manipulators."
-
-- date: "Jan 2026"
-  content: "Returning as Teaching Assistant for <strong>CS444: Deep Learning for Computer Vision</strong> (Spring 2026) at UIUC with Dr. Svetlana Lazebnik."
-
-- date: "Aug 2025"
-  content: 'Co-developing and TA-ing the new <strong>CS498GC: Mobile Robotics for CS</strong> course (Fall 2025) at UIUC with <a href="http://daslab.illinois.edu">Prof. Girish Chowdhary</a>. Course site: <a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/">cs498gc/fa25</a>.'
+  content: "Began preparing <strong>WaypointGen++</strong> for submission to <strong>IEEE Robotics and Automation Letters (RA-L)</strong>, extending our VLM-based waypoint generation pipeline to outdoor mobile manipulators."
 
 - date: "May 2025"
   content: 'Our paper <strong>Active Semantic Mapping with Mobile Manipulator in Horticultural Environments</strong> was presented at <a href="https://2025.ieee-icra.org/"><strong>ICRA 2025</strong></a>. <a href="https://arxiv.org/abs/2412.10515">arXiv:2412.10515</a> &middot; <a href="https://kendallkoe.com/Active_Semantic_Mapping/">project page</a>'
 
 - date: "May 2025"
-  content: "Nominated for the <strong>CS Department TA Award at UIUC</strong> by Prof. Svetlana Lazebnik for the Spring 2025 CS444 cycle."
-
-- date: "May 2025"
   content: "Joined <strong>Earthsense Inc.</strong> as an <strong>AI Intern</strong> for Summer 2025 in Urbana, IL, deploying VLMs (Molmo-7B, Gemma-3-27B, Qwen-2.5-VL-72B, Llama4-Scout, SpatialVLM) for natural-language-conditioned navigation on outdoor agricultural robots."
-
-- date: "May 2025"
-  content: "Also serving as Teaching Assistant for <strong>CS519: Scientific Visualization</strong> (Summer 2025) at UIUC with Dr. Eric Shaffer."
-
-- date: "Jan 2024"
-  content: "Started as Teaching Assistant for <strong>CS444: Deep Learning for Computer Vision</strong> at UIUC with Dr. Svetlana Lazebnik. (Continued Spring 2025 and Spring 2026.)"
 
 - date: "Fall 2023"
   content: 'Presented the poster <strong>Plant Placement using Natural Language Grounding</strong> at the <strong>AIFARMS Annual Conference</strong>. <a href="https://github.com/kulbir-ahluwalia/kulbir-ahluwalia.github.io/blob/main/files/V3_AIFARMS-KSA_Poster-2023.pdf">[poster PDF]</a>'

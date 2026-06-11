@@ -37,48 +37,50 @@
 
 - title: "Enhancing Stereo Depth Maps through RGBD-Conditioned Generative Models"
   venue: "Aug-Dec 2024"
-  image: projects/placeholder_3d_vision.svg
-  description: "Fine-tuned Stable Diffusion V2 for monocular depth estimation, achieving 46% improvement over Marigold and Depth-Anything-V2 benchmarks."
+  image: projects/depth_maps_diffusion/icon.svg
+  description: "Fine-tuned Stable Diffusion V2 for RGB+D-conditioned monocular depth estimation. Achieves 46% Abs Rel improvement over Marigold and Depth-Anything-V2 on IRS, VKITTI, and NYUv2 benchmarks. (CS598SHW / 3D vision project)"
   topics:
     - deep_learning
     - computer_vision
     - 3d_vision
 
-- title: "Active Semantic Mapping with Mobile Manipulator for Precision Agriculture"
-  venue: "Jan-May 2024"
+- title: "Contributions to Active Semantic Mapping (ICRA 2025)"
+  venue: "Jan-May 2024 (field deployment & code)"
   image: publications/active_semantic_mapping/active_sem_mapping_gif.gif
-  description: "Probabilistic semantic octomaps for detecting target regions, generating candidate viewpoints, and computing information gain for next-best-view planning on a mobile manipulator."
+  description: "Core contributions to the ICRA 2025 paper: probabilistic semantic octomaps, next-best-view planning with information gain, and field deployment on mobile manipulator in horticultural environments (with J. Cuaran, K. Koe, N. Uppalapati, G. Chowdhary)."
   topics:
     - mobile_robotics
     - computer_vision
+    - 3d_vision
 
 - title: "Turning Zero Shot into Few Shot via Self-prompting"
   venue: "Aug-Dec 2023"
-  image: projects/placeholder_deep_learning.svg
+  image: projects/zero_shot_few_shot/icon.svg
   description: "Explored self-prompting strategies to convert zero-shot language model capabilities into effective few-shot performance without manual prompt engineering."
   topics:
     - deep_learning
     - machine_learning
+    - nlp
 
-- title: "Implemented Linear, Logistic, Polynomial regression, SVM, Convolutional, and Attention based models"
+- title: "CS446 ML Foundations: regression to transformers from scratch"
   venue: "Apr-May 2023"
-  image: projects/placeholder_machine_learning.svg
-  description: "Built a comprehensive suite of classical and deep learning models from scratch, including SVMs, CNNs, and Attention mechanisms for classification and regression tasks."
+  image: projects/ml_models_cs446/icon.svg
+  description: "Built a comprehensive suite of classical and deep learning models from scratch, including SVMs, CNNs, and Attention mechanisms for classification and regression tasks (CS446)."
   topics:
     - machine_learning
     - deep_learning
 
 - title: "VAE and GAN implementation"
-  description: "Implemented VAE & GAN for digit generation task."
+  description: "Implemented Variational Autoencoder and Generative Adversarial Network from scratch in PyTorch for MNIST digit generation. Compared FID scores, mode collapse, and KL-divergence behavior."
   venue: "March 2023"
-  image: projects/placeholder_deep_learning.svg
+  image: projects/vae_gan/icon.svg
   topics:
     - deep_learning
 
-- title: "RESNet implementation"
-  description: "Implemented RESNet for classification task on MNIST dataset."
+- title: "ResNet implementation"
+  description: "Implemented ResNet-18/50 residual blocks from scratch (without torchvision.models) for image classification on CIFAR-10 / MNIST. Validated identity mapping + bottleneck variants."
   venue: "Feb 2023"
-  image: projects/placeholder_deep_learning.svg
+  image: projects/resnet/icon.svg
   topics:
     - deep_learning
     - computer_vision
@@ -86,7 +88,7 @@
 - title: "Neural transition-based dependency parser"
   webpage: "https://github.com/kulbir-ahluwalia/Neural_transition_based_dependency_parser"
   venue: "Dec 2022"
-  image: projects/placeholder_nlp.svg
+  image: projects/dependency_parser/icon.svg
   description: "Built a neural transition-based dependency parser using feed-forward networks for syntactic analysis of natural language sentences."
   topics:
     - nlp
@@ -95,7 +97,7 @@
 - title: "Machine translation with RNN and Transformers"
   webpage: "https://github.com/kulbir-ahluwalia/Machine_translation_with_RNN_and_Transformers"
   venue: "Nov 2022"
-  image: projects/placeholder_nlp.svg
+  image: projects/machine_translation/icon.svg
   description: "Implemented sequence-to-sequence machine translation using both RNN encoder-decoders and Transformer architectures."
   topics:
     - nlp
@@ -104,7 +106,7 @@
 - title: "Text classification with CNN and RNN"
   webpage: "https://github.com/kulbir-ahluwalia/Text_classification_with_CNN_RNN"
   venue: "Oct 2022"
-  image: projects/placeholder_nlp.svg
+  image: projects/text_classification/icon.svg
   description: "Compared CNN and RNN architectures for text classification, exploring the trade-offs between local feature extraction and sequential modeling."
   topics:
     - nlp
@@ -113,7 +115,7 @@
 - title: "SLAM from 2D LiDAR data using split and merge line extraction algorithm"
   webpage: "https://github.com/kulbir-ahluwalia/SLAM_using_2D_LiDAR_points"
   venue: "Dec 2021"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/slam_lidar/icon.svg
   description: "Implemented simultaneous localization and mapping from 2D LiDAR scans using split-and-merge line extraction for feature-based SLAM."
   topics:
     - mobile_robotics
@@ -121,15 +123,15 @@
 - title: "State estimation using Extended Kalman Filter for GPS+Encoder sensor fusion"
   webpage: "https://github.com/kulbir-ahluwalia/Extended_Kalman_Filter_for_GPS_INS_sensor_fusion"
   venue: "Nov 2021"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/ekf_fusion/icon.svg
   description: "Fused GPS and wheel encoder data using an Extended Kalman Filter for robust state estimation on a mobile robot."
   topics:
     - mobile_robotics
 
-- title: "Processed data from RTK-GPS, IMU and encoders to plot trajectory of a field robot"
+- title: "Field-robot trajectory reconstruction from RTK-GPS, IMU, and encoders (ROS)"
   webpage: "https://github.com/kulbir-ahluwalia/RTKGPS_IMU_Encoders_Plot_trajectory_using_ROS"
   venue: "Sep 2021"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/rtk_gps/icon.svg
   description: "Processed and visualized multi-sensor trajectory data from RTK-GPS, IMU, and encoders using ROS for field robot navigation."
   topics:
     - mobile_robotics
@@ -155,7 +157,7 @@
 - title: "Persistent-Monitoring using Multi-Robot (UAV-UGV) Coordination"
   webpage: "https://drive.google.com/file/d/12TumNg-2mQlhINt-zy9sNu30cRg4n2r-/view?usp=sharing"
   venue: "Dec 2020"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/uav_ugv/icon.svg
   description: "Coordinated UAV-UGV teams for persistent monitoring of large-scale environments with optimized deployment schedules."
   topics:
     - mobile_robotics
@@ -164,7 +166,7 @@
 - title: "Optimized a GestureGAN for resource constrained settings"
   webpage: "https://drive.google.com/file/d/1AweCTHWJ8q-QFP4Damkxzy-qiaBunwBh/view?usp=sharing"
   venue: "Dec 2020"
-  image: projects/placeholder_deep_learning.svg
+  image: projects/gesturegan/icon.svg
   description: "Used MobileNet to optimize cross-view image generation with a 5.7X reduction in parameters."
   topics:
     - deep_learning
@@ -174,15 +176,15 @@
   webpage: "https://github.com/kulbir-ahluwalia/self-adjusting-roadmaps"
   venue: "May 2020"
   image: projects/self_adjusting_roadmaps.gif
-  description: "Navigation in unknown environments using LD-PRM."
+  description: "Implemented Lifelong Dynamic PRM (LD-PRM) for path planning in unknown environments where obstacles are discovered incrementally. The roadmap restructures itself as the planner gathers occupancy evidence from a simulated mobile robot."
   topics:
     - path_planning
     - mobile_robotics
 
-- title: "Estimated the motion of a car using Visual odometry"
+- title: "Monocular visual odometry for car ego-motion estimation"
   webpage: "https://github.com/kulbir-ahluwalia/Visual_Odometry_ENPM673_Perception"
   venue: "May 2020"
-  image: projects/placeholder_computer_vision.svg
+  image: projects/visual_odometry/icon.svg
   description: "Estimated camera ego-motion from sequential video frames using feature matching and essential matrix decomposition for visual odometry."
   topics:
     - computer_vision
@@ -200,7 +202,7 @@
 - title: "Image Classification using CNN"
   webpage: "https://github.com/kulbir-ahluwalia/ImageClassification"
   venue: "May 2020"
-  image: projects/placeholder_deep_learning.svg
+  image: projects/image_classification/icon.svg
   description: "Built a CNN for binary image classification (cat vs dog) with data augmentation and transfer learning."
   topics:
     - deep_learning
@@ -230,7 +232,7 @@
   topics:
     - mobile_robotics
 
-- title: "Implemented A star algorithm for Path Planning on Turtlebot 3"
+- title: "Implemented A* algorithm for Path Planning on Turtlebot 3"
   webpage: "https://github.com/kulbir-ahluwalia/Implementing_A_star_on_Turtlebot3"
   venue: "May 2020"
   image: projects/astar/astar_exploration.png
@@ -239,7 +241,7 @@
     - path_planning
     - mobile_robotics
 
-- title: "Path planning for point and rigid robot using Djikstra's Algorithm"
+- title: "Path planning for point and rigid robot using Dijkstra's Algorithm"
   webpage: "https://github.com/kulbir-ahluwalia/Dijkstra_Project_2_ENPM_661"
   venue: "April 2020"
   image: projects/placeholder_path_planning.svg
@@ -250,7 +252,7 @@
 - title: "Lane detection and Turn prediction for self driving car"
   webpage: "https://github.com/kulbir-ahluwalia/ENPM_673_Perception"
   venue: "March 2020"
-  image: projects/placeholder_computer_vision.svg
+  image: projects/lane_detection/icon.svg
   description: "Developed lane detection using histogram-based sliding window analysis and polynomial curve fitting. Implemented bird's-eye-view perspective transform for lane visualization."
   topics:
     - computer_vision
@@ -259,10 +261,11 @@
 - title: "Agile Robotics for Industrial Automation Competition (ARIAC) 2019"
   webpage: "https://drive.google.com/drive/folders/1t-sGh60o9W79BdqMked3BNomsTYB6heL?usp=sharing"
   venue: "May 2020"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/ariac/icon.svg
   description: "Developed an industrial system with UR 10 robotic arms, conveyor belts, and AGVs. The system picked parts from a conveyor, disposed faulty items, assembled orders, and delivered them using AGVs."
   topics:
     - mobile_robotics
+    - path_planning
 
 - title: "Designed a PID controller for Turtlebot 3"
   webpage: "https://github.com/kulbir-ahluwalia/Turtlebot_3_PID"
@@ -272,7 +275,7 @@
   topics:
     - mobile_robotics
 
-- title: "Modelled a UR 5 arm with Parallel Gripper in Rviz"
+- title: "Modeled a UR 5 arm with Parallel Gripper in Rviz"
   webpage: "https://github.com/kulbir-ahluwalia/662-Final-Project-UR-5-arm"
   venue: "Sep-Dec 2019"
   image: projects/ur5_arm/ur5_pose.png
@@ -281,9 +284,9 @@
     - mobile_robotics
 
 - title: "Designed a LQR and LQG controller"
-  description: "Developed controllers for two inverted pendulums on a moving cart."
+  description: "Designed Linear-Quadratic Regulator (LQR) and Linear-Quadratic-Gaussian (LQG) controllers for a double-inverted-pendulum-on-cart system in MATLAB Simulink. Verified controllability + observability ranks, tuned Q/R weight matrices."
   venue: "Dec 2019"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/lqr_lqg/icon.svg
   topics:
     - mobile_robotics
 
@@ -298,14 +301,15 @@
 
 - title: "Pick n place transporter bot"
   venue: "Aug-Dec 2016"
-  image: projects/placeholder_mobile_robotics.svg
+  image: projects/pick_place_bot/icon.svg
   description: "Awarded First Prize in IIT Roorkee and placed 6th out of 400 teams at IIT Bombay. [Video 1](https://www.youtube.com/watch?v=ZeP9iDCopPI&list=PLSaHroqSzd_X2l_eohCaYrCOuesbWF8-a) [Video 2](https://www.youtube.com/watch?v=ITYzE8p39-Y)"
   topics:
     - mobile_robotics
+    - computer_vision
 
 - title: "Smart Garden"
   venue: "March 2017"
-  image: projects/placeholder_mobile_robotics.svg
-  description: "Won First Prize in the Texas Instruments Hardware Hackathon."
+  image: projects/smart_garden/icon.svg
+  description: "Won First Prize in the Texas Instruments Hardware Hackathon. IoT-enabled garden monitoring and automation system (sensors, control loop)."
   topics:
-    - mobile_robotics
+    - machine_learning

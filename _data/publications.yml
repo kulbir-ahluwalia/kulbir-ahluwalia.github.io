@@ -61,8 +61,8 @@
 
 - id2: waypointGenPlusPlus
   title: "WaypointGen++"
-  venue: "In Preparation for IEEE RAL"
-  awards: "In Preparation for IEEE RAL"
+  venue: "IEEE Robotics and Automation Letters (RA-L)"
+  awards: "Journal Paper (In Preparation, 2026)"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
   description: "Follow-up to WaypointGen. Extending VLM-based navigation waypoint generation for mobile manipulators in outdoor environments. (In Preparation for IEEE RAL)"
   shared_first_authors:
@@ -177,7 +177,7 @@
   title: "DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains Using Synthetic Datasets"
   description: "DeepPaSTL aims to accurately forecast long-term pasture growth, tackling the challenge of estimating pasture biomass without relying on extensive site-specific data or frequent field measurements. This approach enables predicting pasture evolution without monitoring fields regularly, using past observed pasture heights as input. DeepPaSTL introduces a bi-directional ConvLSTM encoder–decoder to learn the spatio-temporal pasture growth dynamics purely from spatial height measurements."
   venue: "Published in Agronomy 2021 (Special Issue AI and Agricultural Robots)"
-  awards: "Conference Paper"
+  awards: "Journal Paper"
   image: publications/deeppastl/deeppastl_training.png
   paper: "https://doi.org/10.3390/agronomy11112245"
   pdf: "files/agronomy-11-02245-with-cover.pdf"

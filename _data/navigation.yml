@@ -23,6 +23,9 @@
 - name: "Misc"
   anchor: "#misc"
 
+- name: "Contact"
+  anchor: "#contact"
+
 - name: "CV"
   link: "/cv.html"
 

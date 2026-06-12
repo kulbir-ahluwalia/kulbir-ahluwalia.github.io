@@ -66,16 +66,7 @@ layout: null
     ]
   }
   </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!--script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
-  </script-->
+  {% include head-extras.html %}
   <link
     href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&family=Noto+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
@@ -91,6 +82,16 @@ layout: null
 
   <!--somehow bulma navbar doesn't take space on page, so I insert a div element-->
   <div style="height: 3.25rem;"></div>
+
+  {% if site.data.announcement.enabled %}
+  <div id="announcement-bar" class="has-background-info-light" data-announce-id="{{ site.data.announcement.id }}">
+    <span>{{ site.data.announcement.text }}</span>
+    {% if site.data.announcement.link %}
+    <a href="{{ site.data.announcement.link | relative_url }}">{{ site.data.announcement.link_text }}</a>
+    {% endif %}
+    <button id="announcement-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+  {% endif %}
 
   <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -523,6 +524,58 @@ layout: null
     </div>
   </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 anchor" id="contact">Contact</h2>
+      <div class="columns">
+        <div class="column is-7">
+          <!-- Formspree: replace FORMSPREE_ID_PLACEHOLDER with your form ID (see FEATURES-2026-06-12.md) -->
+          <form action="https://formspree.io/f/FORMSPREE_ID_PLACEHOLDER" method="POST">
+            <div class="field">
+              <label class="label" for="contact-name">Name</label>
+              <div class="control">
+                <input class="input" id="contact-name" type="text" name="name" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="contact-email">Email</label>
+              <div class="control">
+                <input class="input" id="contact-email" type="email" name="_replyto" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label" for="contact-message">Message</label>
+              <div class="control">
+                <textarea class="textarea" id="contact-message" name="message" required></textarea>
+              </div>
+            </div>
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="field">
+              <div class="control">
+                <button class="button is-light" type="submit">Send message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="column is-5">
+          <h3 class="title is-5">Newsletter</h3>
+          <p class="content">Occasional updates on research, robotics, and teaching.</p>
+          <!-- Buttondown: replace BUTTONDOWN_USER_PLACEHOLDER with your Buttondown username (see FEATURES-2026-06-12.md) -->
+          <form action="https://buttondown.email/api/emails/embed-subscribe/BUTTONDOWN_USER_PLACEHOLDER" method="post" target="popupwindow">
+            <div class="field has-addons">
+              <div class="control is-expanded">
+                <input class="input" type="email" name="email" placeholder="you@example.com" required>
+              </div>
+              <div class="control">
+                <button class="button is-light" type="submit">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <footer class="footer">
     <div class="container">
@@ -546,6 +599,9 @@ layout: null
         <a class="external-link" href="https://orcid.org/0009-0009-6793-8566">
           <i class="fab fa-orcid" style="color: #A6CE39;"></i>
         </a>
+        <a class="external-link" href="https://github.com/sponsors/kulbir-ahluwalia" title="Sponsor my work">
+          <i class="fas fa-heart" style="color: #bf3989;"></i>
+        </a>
       </div>
       <div class="columns is-centered has-text-centered">
         <div class="column is-8">
@@ -560,6 +616,36 @@ layout: null
       </div>
     </div>
   </footer>
+
+  {% if site.data.popup.enabled %}
+  <div class="modal" id="promo-modal"
+       data-popup-id="{{ site.data.popup.id }}"
+       data-delay-ms="{{ site.data.popup.delay_ms }}"
+       data-cooldown-days="{{ site.data.popup.cooldown_days }}">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">{{ site.data.popup.title }}</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p>{{ site.data.popup.body }}</p>
+      </section>
+      <footer class="modal-card-foot">
+        <a class="button is-light" href="{{ site.data.popup.cta_link }}">{{ site.data.popup.cta_text }}</a>
+      </footer>
+    </div>
+  </div>
+  {% endif %}
+
+  <div id="mobile-info-bar">
+    <a class="button is-light is-small" href="mailto:{{ site.email }}">
+      <span class="icon"><i class="fas fa-envelope"></i></span><span>Email</span>
+    </a>
+    <a class="button is-light is-small" href="{{ '/files/CV_Resume_June2026/Kulbir_CV_June2026.pdf' | relative_url }}">
+      <span class="icon"><i class="fas fa-file"></i></span><span>CV</span>
+    </a>
+  </div>
 
 </body>
 </html>

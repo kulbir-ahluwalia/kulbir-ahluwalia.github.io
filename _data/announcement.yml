@@ -1,0 +1,7 @@
+# Dismissible announcement bar (rendered in index.html, logic in js/index.js).
+# Bump `id` to re-show the bar to visitors who dismissed an older one.
+enabled: true
+text: "Now: Compute Chipset PM Intern in San Diego - open to Fall 2026 collaborations."
+link: "/cv.html"
+link_text: "CV"
+id: "2026-06-announce"

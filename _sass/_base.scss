@@ -2,3 +2,56 @@
 body {
   font-family: "Noto Sans", sans-serif;
 }
+
+/* --- Announcement bar (config: _data/announcement.yml, logic: js/index.js) --- */
+#announcement-bar {
+  display: none; /* shown by JS when not dismissed */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.5rem 2.75rem 0.5rem 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+#announcement-bar a {
+  font-weight: 600;
+}
+
+#announcement-close {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* --- Mobile sticky info bar (markup in index.html) --- */
+#mobile-info-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #mobile-info-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    background: #fff;
+    border-top: 1px solid #dbdbdb;
+    z-index: 30;
+  }
+
+  body {
+    padding-bottom: 3.25rem;
+  }
+}

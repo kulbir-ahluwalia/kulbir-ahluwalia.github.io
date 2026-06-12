@@ -1,0 +1,25 @@
+{%- comment -%}
+Single site-wide injection point for analytics and global head scripts.
+Config lives in _data/analytics.yml. See FEATURES-2026-06-12.md.
+{%- endcomment -%}
+{%- assign analytics = site.data.analytics -%}
+{%- if analytics.enabled and analytics.provider == "ga4" -%}
+<!-- BEGIN site-analytics (GA4) -->
+<script>
+  (function () {
+    var respectDnt = {{ analytics.respect_dnt | default: true }};
+    var dnt = (navigator.doNotTrack == "1" || window.doNotTrack == "1");
+    if (respectDnt && dnt) { return; }
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id={{ analytics.ga4_id }}";
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", "{{ analytics.ga4_id }}");
+  })();
+</script>
+<!-- END site-analytics (GA4) -->
+{%- endif -%}

@@ -52,6 +52,7 @@ orcid_id: "0009-0009-6793-8566"
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 
 sass:

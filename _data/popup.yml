@@ -1,0 +1,10 @@
+# Promotional pop-up modal (rendered in index.html, logic in js/index.js).
+# Shows once per `cooldown_days` per visitor; change `id` to reset the cooldown.
+enabled: true
+title: "Working on something agentic?"
+body: "I am a PhD researcher in physical AI - happy to chat about robotics, VLMs, and edge inference."
+cta_text: "Get in touch"
+cta_link: "#contact"
+id: "intro-2026-06"
+delay_ms: 8000
+cooldown_days: 30

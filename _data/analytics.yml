@@ -1,0 +1,7 @@
+# Site analytics configuration (rendered by _includes/head-extras.html)
+# To go live: create a GA4 property at analytics.google.com, paste the
+# measurement ID below, and set enabled: true. See FEATURES-2026-06-12.md.
+enabled: false
+provider: ga4
+ga4_id: "G-PLACEHOLDER"
+respect_dnt: true

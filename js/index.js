@@ -213,3 +213,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+// --- Announcement bar + promo modal (added 2026-06-12, config in _data/) ---
+document.addEventListener('DOMContentLoaded', () => {
+    var bar = document.getElementById('announcement-bar');
+    if (bar) {
+        var announceId = bar.dataset.announceId;
+        if (localStorage.getItem('announce-dismissed') !== announceId) {
+            bar.style.display = 'flex';
+        }
+        var closeBtn = document.getElementById('announcement-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                localStorage.setItem('announce-dismissed', announceId);
+                bar.style.display = 'none';
+            });
+        }
+    }
+
+    var modal = document.getElementById('promo-modal');
+    if (modal) {
+        var popupId = modal.dataset.popupId;
+        var delayMs = parseInt(modal.dataset.delayMs || '8000', 10);
+        var cooldownDays = parseInt(modal.dataset.cooldownDays || '30', 10);
+        var storageKey = 'promo-last-shown-' + popupId;
+        var last = parseInt(localStorage.getItem(storageKey) || '0', 10);
+        var elapsedDays = (Date.now() - last) / 86400000;
+        var hide = function () { modal.classList.remove('is-active'); };
+        if (!last || elapsedDays >= cooldownDays) {
+            setTimeout(function () {
+                modal.classList.add('is-active');
+                localStorage.setItem(storageKey, String(Date.now()));
+            }, delayMs);
+        }
+        modal.querySelector('.delete').addEventListener('click', hide);
+        modal.querySelector('.modal-background').addEventListener('click', hide);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+    }
+});

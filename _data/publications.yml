@@ -90,7 +90,7 @@
   awards: "Conference Poster"
   image: "publications/waypointgen_cslsc2026/image.jpeg"
   pdf: "files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf"
-  description: "We introduce WaypointGen, a 14-step pipeline that grounds natural language instructions to 2D navigation waypoints. We utilize a QWEN 3 VLM-based filtering approach with pre-defined templates to extract relevant geometric constraints. The method employs SLIC in Birds-Eye-View (BEV) and Model Predictive Path Integral (MPPI) for trajectory selection, demonstrating enhanced navigation capabilities for mobile manipulators in dynamic environments."
+  description: "We present WaypointGen, a map-free, language-conditioned 2D path planner that grounds natural language navigation commands to bird's-eye-view (BEV) waypoints. It parses region-of-interest constraints from NL commands via open-vocabulary grounding (DINO-X detection, SAM3 instance masks, and Describe Anything Model captions), then uses a Qwen3-MoE-30B-A3B VLM to select target ROIs and choose among Model Predictive Path Integral (MPPI) trajectory candidates in BEV space, with a Qwen3-235B VLM as an LLM judge for weak supervision. A semi-supervised labeling pipeline seeded with a small set of human annotations and in-context learning generates the dataset across agricultural environments (palm, solar, greenhouse, corn/soybean, citrus, and TreeScope)."
   shared_first_authors:
     - Kulbir
     - Chahit

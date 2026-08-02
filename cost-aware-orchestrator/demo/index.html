@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cost-Aware Agentic Inference Across Heterogeneous Accelerators &mdash; measured results</title>
+<meta name="description" content="Poster companion page. Measured-only, provenance-tagged results for agentic LLM inference on a Qualcomm Dragonwing IQ9 (QCS9075 Hexagon NPU) versus GPU and edge devices.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#16181d; --muted:#5b6270; --line:#e2e5ea; --card:#f7f8fa;
+    --accent:#0b6fc4; --good:#0f7a45; --warn:#a35b00; --bad:#b3261e; --code:#eef1f5;
+    --shadow:0 1px 2px rgba(0,0,0,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1115; --fg:#e6e8ec; --muted:#a0a7b4; --line:#2a2f39; --card:#161a21;
+      --accent:#5aa9ee; --good:#4cc38a; --warn:#e0a458; --bad:#f2736a; --code:#1b2029;
+      --shadow:0 1px 2px rgba(0,0,0,.4);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    padding:0 0 3rem;
+  }
+  .wrap{max-width:52rem;margin:0 auto;padding:0 1.05rem}
+  header{border-bottom:1px solid var(--line);padding:1.6rem 0 1.2rem;margin-bottom:1.4rem}
+  h1{font-size:1.42rem;line-height:1.28;margin:0 0 .45rem;letter-spacing:-.01em}
+  h2{font-size:1.12rem;margin:2.1rem 0 .55rem;padding-top:.5rem;border-top:1px solid var(--line);letter-spacing:-.005em}
+  h3{font-size:.98rem;margin:1.3rem 0 .4rem}
+  p{margin:.55rem 0}
+  .sub{color:var(--muted);font-size:.92rem;margin:.15rem 0}
+  .lede{font-size:1.02rem}
+  code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86em;
+    background:var(--code);padding:.1em .34em;border-radius:4px}
+  a{color:var(--accent)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:.85rem .95rem;margin:1rem 0;box-shadow:var(--shadow)}
+  .card h3{margin-top:0}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0;
+    border:1px solid var(--line);border-radius:10px}
+  table{border-collapse:collapse;width:100%;min-width:31rem;font-size:.9rem}
+  th,td{padding:.5rem .6rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--card);font-weight:650;white-space:nowrap}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  .win{color:var(--good);font-weight:700}
+  .lose{color:var(--bad);font-weight:700}
+  .tie{color:var(--muted);font-weight:700}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.03em;
+    padding:.12em .45em;border-radius:4px;border:1px solid currentColor;white-space:nowrap}
+  .t-m{color:var(--good)} .t-e{color:var(--accent)} .t-d{color:var(--warn)} .t-n{color:var(--bad)}
+  ul{margin:.5rem 0 .5rem 1.15rem;padding:0} li{margin:.3rem 0}
+  .rule{border-left:3px solid var(--bad);padding-left:.8rem}
+  .rule.ok{border-left-color:var(--good)}
+  footer{margin-top:2.4rem;border-top:1px solid var(--line);padding-top:1rem;
+    color:var(--muted);font-size:.84rem}
+  .kv{font-size:.86rem;color:var(--muted)}
+  @media (max-width:29rem){
+    h1{font-size:1.24rem} body{font-size:15px} table{font-size:.84rem;min-width:27rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Cost-Aware Agentic Inference Across Heterogeneous Accelerators</h1>
+  <p class="sub">Poster companion page &mdash; Kulbir Singh Ahluwalia, PhD Candidate, Computer Science,
+     University of Illinois Urbana-Champaign. Qualcomm intern showcase.</p>
+  <p class="sub">Central device under test: <strong>Qualcomm Dragonwing IQ-9075 EVK (QCS9075,
+     Hexagon HTP NPU)</strong>, compared against discrete-GPU, unified-memory and Jetson-class hardware.</p>
+</header>
+
+<p class="lede"><strong>Everything on this page is measured, and every number says how it was
+obtained.</strong> Where a number does not exist, this page names the gap rather than filling it
+&mdash; see <a href="#notmeasured">what is NOT measured</a>. Modelled, projected and cost-model
+figures that appear elsewhere in this project are deliberately excluded here.</p>
+
+<div class="card">
+  <h3>Provenance legend &mdash; every figure below carries one</h3>
+  <p><span class="tag t-m">measured</span> a device rail or benchmark-harness output, with a file on
+  disk.<br>
+  <span class="tag t-e">measured-external</span> an instrument <em>outside</em> the device (a DC
+  meter), used where no software rail exists.<br>
+  <span class="tag t-d">derived</span> arithmetic on measured inputs only &mdash; never a
+  measurement itself.<br>
+  <span class="tag t-n">NOT MEASURED</span> the value does not exist; it stays a named gap and
+  never becomes a number.</p>
+</div>
+
+<div class="card rule">
+  <h3>The power-boundary law</h3>
+  <p>A watt figure is meaningless without the boundary it was taken at. These are not
+  interchangeable, and <strong>energy-per-token must never be ranked across them:</strong></p>
+  <ul>
+    <li><code>whole_device</code> &mdash; everything the wall or barrel jack supplies (IQ9: 18.3 W).</li>
+    <li><code>gpu_rail</code> &mdash; accelerator only; excludes host CPU, host DRAM and PSU loss
+        (RTX 5090: 286 W).</li>
+    <li><code>module_rail</code> &mdash; Jetson module via <code>tegrastats</code>; excludes the
+        carrier board. Jetson never reports through <code>nvidia-smi</code>.</li>
+    <li><code>unavailable</code> &mdash; no current channel exists in hardware. The QCS9075 is in
+        this class: it exposes thermals, devfreq, cpufreq and <code>perf</code>, and <strong>no
+        power rail at all</strong>.</li>
+  </ul>
+  <p>Comparing an 18.3 W whole-device number against a 286 W GPU-rail number as if they were the
+  same quantity is the single error this project guards against hardest.</p>
+</div>
+
+<h2 id="taskshape">1. The same 4B model, four task shapes &mdash; the NPU wins two, ties one, loses one</h2>
+
+<p>Identical model (<strong>Qwen3-4B W4A16</strong>), identical prompts, end-to-end wall-clock
+latency per task. This is the result the poster is built around: <em>which accelerator is right
+depends on the shape of the task, not on a single throughput number.</em></p>
+
+<div class="scroll">
+<table>
+  <thead>
+    <tr><th>Task shape</th><th class="n">IQ9 (QCS9075 HTP)</th><th class="n">RTX 5090</th>
+        <th>Outcome</th><th>Provenance</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>JSON-mode structured output</td><td class="n">1.6 s</td><td class="n">8.7 s</td>
+        <td class="win">IQ9 wins &mdash; 5.4&times;</td><td><span class="tag t-m">measured</span></td></tr>
+    <tr><td>Tool-use / function calling</td><td class="n">2.3 s</td><td class="n">7.6 s</td>
+        <td class="win">IQ9 wins &mdash; 3.3&times;</td><td><span class="tag t-m">measured</span></td></tr>
+    <tr><td>Code generation</td><td class="n">12.4 s</td><td class="n">12.2 s</td>
+        <td class="tie">tie</td><td><span class="tag t-m">measured</span></td></tr>
+    <tr><td>GSM8K multi-step reasoning</td><td class="n">27.2 s</td><td class="n">10.8 s</td>
+        <td class="lose">IQ9 loses &mdash; 2.5&times;</td><td><span class="tag t-m">measured</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Accuracy did not collapse to buy that latency.</strong> On JSON-mode the IQ9 scored
+<strong>1.00</strong> against the RTX 5090's <strong>0.92</strong> &mdash; the edge NPU was the
+<em>more</em> accurate of the two on its winning shape. On GSM8K it scored <strong>0.75</strong>
+against <strong>0.80</strong>: a real but modest deficit on the shape it also loses on latency.
+<span class="tag t-m">measured</span></p>
+
+<div class="card">
+  <h3>Why the split falls this way</h3>
+  <p>Short, structured, prefill-dominated work (JSON, tool calls) plays to the Hexagon NPU's fast
+  prefill and low fixed overhead. Long autoregressive generation (chain-of-thought arithmetic) is
+  decode-bound, and decode is where a 286 W discrete GPU's memory bandwidth is simply larger. The
+  practical consequence is a routing rule, not a winner: <strong>send the agentic glue to the NPU
+  and the long reasoning to the GPU.</strong></p>
+</div>
+
+<h2 id="ladder">2. The IQ9 model ladder &mdash; 4B and 8B both run on the Hexagon NPU</h2>
+
+<div class="scroll">
+<table>
+  <thead>
+    <tr><th>Model (W4A16)</th><th class="n">Decode</th><th class="n">TTFT</th>
+        <th class="n">Prefill</th><th>Provenance</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Qwen3-4B</td><td class="n">18.3 tok/s</td><td class="n">187.9 ms</td>
+        <td class="n">1208 tok/s</td><td><span class="tag t-m">measured</span></td></tr>
+    <tr><td>Qwen3-8B</td><td class="n">11.2 tok/s</td><td class="n">0.1 s</td>
+        <td class="n">&mdash;</td><td><span class="tag t-m">measured</span>, reproduced 3&times;</td></tr>
+    <tr><td>Qwen3-8B, thinking mode</td><td class="n">10.9 tok/s</td><td class="n">0.1 s</td>
+        <td class="n">&mdash;</td><td><span class="tag t-m">measured</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<ul>
+  <li>The 8B result <strong>exceeds Qualcomm's own published card for this device</strong>
+      (10.52 tok/s). <span class="tag t-m">measured</span></li>
+  <li>4B is <strong>1.64&times;</strong> faster at decode than 8B, at essentially the same TTFT.
+      So 4B-vs-8B on this board is a <strong>quality-for-latency</strong> choice, not a capability
+      wall. <span class="tag t-d">derived</span></li>
+</ul>
+
+<div class="card rule ok">
+  <h3>A correction we publish rather than bury</h3>
+  <p>An earlier internal conclusion &mdash; <em>&ldquo;8B does not fit the Hexagon NPU; 4B is the
+  ceiling&rdquo;</em> &mdash; was <strong>wrong, and is retracted.</strong> The failures were a
+  <em>serving-path and board-state</em> artifact, not a hardware capacity limit: one code path
+  cannot load the 8B and kills its own server process while doing so, while the direct inference
+  path loads and runs it normally on a freshly booted, idle NPU. Three independent clean-boot runs
+  confirm the 8B works.</p>
+  <p>The general lesson is the one this whole project is organised around: <strong>a claim about a
+  live system is not confirmed until the experiment that would falsify it has actually run.</strong>
+  The original conclusion had been double-checked by two reviewers on correct arithmetic &mdash; and
+  was still wrong, because nobody had rebooted the board and tried again.</p>
+</div>
+
+<h2 id="power">3. Power: the honest win is the envelope, not the energy</h2>
+
+<div class="scroll">
+<table>
+  <thead>
+    <tr><th>Device</th><th class="n">Power</th><th>Boundary</th><th>How obtained</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>IQ9 (QCS9075)</strong></td><td class="n"><strong>18.3 W</strong></td>
+        <td><code>whole_device</code></td>
+        <td>DC meter on the barrel jack: 35.1 V &times; 0.52 A
+            <span class="tag t-e">measured-external</span></td></tr>
+    <tr><td>RTX 5090</td><td class="n">286 W</td><td><code>gpu_rail</code></td>
+        <td><code>nvidia-smi</code> <span class="tag t-m">measured</span></td></tr>
+    <tr><td>GB10 (DGX Spark class)</td><td class="n">~52 W</td><td><code>gpu_rail</code></td>
+        <td><code>nvidia-smi</code> <span class="tag t-m">measured</span></td></tr>
+    <tr><td>GB10, whole system</td><td class="n">120&ndash;140 W</td><td><code>whole_device</code></td>
+        <td>vendor nameplate &mdash; <strong>no wall-plug reading exists</strong>; not a measurement</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="card rule">
+  <h3>What the IQ9 does NOT win: energy per token</h3>
+  <p><strong>IQ9: 0.97 tok/J. GB10 leads at roughly 1.48 tok/J.</strong>
+  <span class="tag t-d">derived</span> &mdash; and note these two sit at
+  <em>different power boundaries</em>, so even that comparison is indicative rather than a
+  ranking. An earlier &ldquo;IQ9 is the energy leader at 1.48 tok/J&rdquo; claim came from an
+  optimistic ~12 W power proxy; once the board was metered at 18.3 W the figure fell to 0.97 and
+  <strong>the energy-leadership claim was withdrawn.</strong></p>
+</div>
+
+<div class="card rule ok">
+  <h3>What the IQ9 does win, and it is boundary-independent</h3>
+  <p><strong>18.3 W whole-device is the only figure in this fleet under a 25 W battery-viable
+  envelope.</strong> That is not a ratio that can be flattered by choosing a boundary &mdash; it is
+  an absolute draw at the most inclusive boundary there is, measured with an external meter. The
+  comparison devices are at 52 W (accelerator rail alone), 120&ndash;140 W and 286 W. For any
+  deployment gated on a battery, a fanless enclosure or a thermal budget, this is the
+  determining number, and per-token energy is not.</p>
+</div>
+
+<h2 id="roofline">4. The performance model predicts the hardware to 1.1%</h2>
+
+<p>A roofline model of decode throughput on the Hexagon NPU, given the model's W4A16 weight
+footprint per token:</p>
+
+<div class="card">
+  <p style="font-size:1.05rem;margin:.2rem 0"><strong>predicted 18.5 tok/s &nbsp;vs&nbsp;
+  measured 18.3 tok/s &nbsp;&rarr;&nbsp; 1.1% residual</strong></p>
+  <p class="kv">Qwen3-4B W4A16 on QCS9075 Hexagon HTP <span class="tag t-m">measured</span> +
+  <span class="tag t-d">derived</span></p>
+</div>
+
+<p><strong>Stated as a self-check, not as an independent validation</strong> &mdash; and the reason
+is worth reading, because it is the kind of thing usually left out. The model's memory-bandwidth
+input for the NPU (~37 GB/s) is itself <em>back-derived</em> from the decode throughput it then
+goes on to predict. The QCS9075 exposes no bandwidth counter, so no independent copy-benchmark
+number exists to feed in. The 1.1% therefore demonstrates that the roofline formulation is
+<em>self-consistent</em> and that decode on this device is bandwidth-bound as expected; it does not
+independently confirm the bandwidth figure. Calling it a validation would be circular, so this page
+does not.</p>
+
+<h2 id="notmeasured">5. What is NOT measured</h2>
+
+<p>This section is a feature of the page, not an embarrassment. Anything below could have been
+filled with a plausible number; none of it was.</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Gap</th><th>Status</th><th>What is therefore NOT claimed</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Qualcomm Cloud AI 100 (AIC100) accelerator</strong></td>
+      <td><span class="tag t-n">NOT MEASURED</span> &mdash; <strong>zero</strong> benchmark data;
+          the device is not reachable from the benchmarking host</td>
+      <td>No throughput, no latency, no power, no cost, and no position in any comparison. The
+          accelerator class it belongs to is named on the poster and left <em>empty</em>.</td>
+    </tr>
+    <tr>
+      <td><strong>Jetson AGX Orin 64 GB</strong></td>
+      <td><span class="tag t-n">NOT MEASURED</span> &mdash; power is readable via
+          <code>tegrastats</code> but <strong>was never sampled</strong>; power boundary is null</td>
+      <td><strong>No performance-per-watt and no energy-per-token figure of any kind.</strong> The
+          device stays eligible for latency-only comparison and is excluded from every energy or
+          cost ranking by construction.</td>
+    </tr>
+    <tr>
+      <td>Cluster GPU wattage (datacentre A100 / H100 / H200 / GH200)</td>
+      <td><span class="tag t-n">NOT MEASURED</span> &mdash; never power-sampled</td>
+      <td>No cluster energy or energy-cost figure appears anywhere on this page.</td>
+    </tr>
+    <tr>
+      <td>Hardware acquisition price, and any cloud per-task price</td>
+      <td><span class="tag t-n">NOT MEASURED</span> &mdash; no purchase record and no price quote
+          exists on disk for any unit</td>
+      <td>No payback period, no total-cost-of-ownership verdict, and no &ldquo;the board costs
+          $X&rdquo; claim. Where such analysis exists in the project it is an explicitly labelled
+          <em>parameter sweep</em>, never a result.</td>
+    </tr>
+    <tr>
+      <td>The 24-hour fleet aggregate (task count, device-hours, kWh, electricity cost)</td>
+      <td><strong>ILLUSTRATIVE &mdash; cost model, NOT measured.</strong> The instrumented ledger
+          that would have produced it is empty, and its rows price out at a single flat electricity
+          rate across three different geographic sites, which proves they came from registry
+          constants</td>
+      <td>Deliberately absent from this page. An instrumented replacement campaign is the single
+          highest-value experiment on the project's list.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="retracted">6. Claims previously made that this work has withdrawn</h2>
+
+<p>Published here on purpose. A results page that never retracts anything is not being audited.</p>
+
+<ul>
+  <li><strong>&ldquo;8B does not fit the NPU / 4B is the ceiling&rdquo;</strong> &rarr; withdrawn.
+      8B W4A16 runs at 11.2 tok/s on a fresh-boot idle NPU (section 2).</li>
+  <li><strong>&ldquo;IQ9 draws ~12 W&rdquo;</strong> &rarr; withdrawn. Metered at
+      <strong>18.3 W</strong>; the 12 W figure was a proxy, not an instrument reading.</li>
+  <li><strong>&ldquo;IQ9 leads energy efficiency at 1.48 tok/J&rdquo;</strong> &rarr; withdrawn.
+      It is 0.97 tok/J once metered; GB10 leads.</li>
+  <li><strong>&ldquo;IQ9 wins latency by ~1000&times;&rdquo;</strong> &rarr; withdrawn. That
+      compared a 4B model against a 35B model &mdash; not the same workload. The honest
+      like-for-like result is the mixed one in section 1.</li>
+  <li><strong>The 24-hour aggregate as a &ldquo;measured&rdquo; anchor</strong> &rarr; withdrawn;
+      relabelled illustrative (section 5).</li>
+</ul>
+
+<h2 id="method">7. How the numbers were taken</h2>
+
+<ul>
+  <li><strong>Valid rows, never exit codes.</strong> A benchmark cell that returns success while
+      producing no usable output is counted as a failure. Aggregates are computed over valid
+      samples, never over run counts or file counts.</li>
+  <li><strong>The extractor is verified before any aggregate is trusted.</strong> Several apparent
+      &ldquo;model failures&rdquo; in this project turned out to be response-parsing bugs &mdash;
+      including one where a correct answer scored zero because the parser matched the echoed prompt
+      instead of the reply. Heuristic adopted: <em>two different models producing identical extreme
+      scores indicates the instrument, not the models.</em></li>
+  <li><strong>Latency is measured streamed and per request</strong>, with time-to-first-token and
+      per-token latency reported separately, because on agentic workloads TTFT is dominated by
+      prefill of the tool schemas rather than by the user prompt.</li>
+  <li><strong>Tool-calling correctness is scored on separate axes</strong> &mdash; the right
+      function name and the right arguments are never collapsed into one number. Calling the right
+      tool with the wrong arguments is a wrong action, not a partial success.</li>
+  <li><strong>Thermals were tracked throughout</strong> (the NPU dies expose per-die thermal zones);
+      at this duty cycle the board peaked in the high-40s &deg;C, so none of the above is a
+      thermally throttled reading.</li>
+</ul>
+
+<footer>
+  <p><strong>Poster companion page.</strong> Contents are limited to results with a file on disk
+  and a stated provenance class. No confidential, unreleased or third-party-restricted material
+  appears here.</p>
+  <p>Kulbir Singh Ahluwalia &middot; University of Illinois Urbana-Champaign &middot;
+     <a href="mailto:ksa5@illinois.edu">ksa5@illinois.edu</a></p>
+  <p class="kv">Page generated 2026-07-31T04:25:00Z. Static, self-contained, no trackers, no
+     external requests, no cookies.</p>
+</footer>
+
+</div>
+</body>
+</html>

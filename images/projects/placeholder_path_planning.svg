@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" rx="8" fill="#1a202c"/>
+  <rect x="20" y="20" width="360" height="260" rx="6" fill="#1a3a2a" opacity="0.5"/>
+  <!-- Grid -->
+  <line x1="60" y1="50" x2="60" y2="230" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="110" y1="50" x2="110" y2="230" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="160" y1="50" x2="160" y2="230" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="210" y1="50" x2="210" y2="230" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="260" y1="50" x2="260" y2="230" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="310" y1="50" x2="310" y2="230" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="50" x2="340" y2="50" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="95" x2="340" y2="95" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="140" x2="340" y2="140" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="185" x2="340" y2="185" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <line x1="60" y1="230" x2="340" y2="230" stroke="#2d3748" stroke-width="1" opacity="0.3"/>
+  <!-- Obstacles -->
+  <rect x="160" y="50" width="50" height="90" rx="4" fill="#e53e3e" opacity="0.3"/>
+  <rect x="260" y="95" width="50" height="90" rx="4" fill="#e53e3e" opacity="0.3"/>
+  <rect x="110" y="140" width="50" height="90" rx="4" fill="#e53e3e" opacity="0.3"/>
+  <!-- Path -->
+  <path d="M80,210 Q120,210 130,180 Q140,140 170,140 Q210,140 230,130 Q250,120 250,95 Q250,70 280,70 Q310,70 320,90" fill="none" stroke="#48bb78" stroke-width="3" stroke-dasharray="8,4"/>
+  <!-- Start point -->
+  <circle cx="80" cy="210" r="8" fill="#48bb78"/>
+  <text x="80" y="214" text-anchor="middle" fill="#1a202c" font-family="sans-serif" font-size="10" font-weight="bold">S</text>
+  <!-- End point -->
+  <circle cx="320" cy="90" r="8" fill="#f6e05e"/>
+  <text x="320" y="94" text-anchor="middle" fill="#1a202c" font-family="sans-serif" font-size="10" font-weight="bold">G</text>
+  <!-- Label -->
+  <text x="200" y="265" text-anchor="middle" fill="#a0aec0" font-family="sans-serif" font-size="16" font-weight="600">Path Planning</text>
+</svg>

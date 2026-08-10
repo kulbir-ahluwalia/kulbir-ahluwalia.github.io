@@ -1,0 +1,74 @@
+﻿.interactive-wrapper {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 130px);
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    top: 60px;
+    left: 0;
+}
+
+    
+
+.interactive {
+    cursor:pointer;
+}
+
+    .interactive.LowerThird {
+        margin-top: auto;
+        height: calc((100% - 70px) / 3);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
+        background-color: rgba(32,32,32,0.8);
+    }
+
+    .interactive.LeftThird {
+        width: calc(100% / 4);
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        pointer-events: auto;
+        margin-left: 16px;
+        padding: 8px;
+        border-radius: 8px;
+        gap: 16px;
+        background-color: rgba(32,32,32,0.8);
+        border-radius: 8px;
+        height:fit-content;
+        overflow:hidden;
+    }
+
+.card_interactive {
+    color:white;
+    width:100%;
+}
+
+    .card_interactive > p {
+        text-align:center;
+    }
+
+.banner_interactive {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap:16px;
+    position:relative;
+    height:100%;
+    width:100%;
+}
+
+    .banner_interactive > img {
+        max-height: calc(100% - 16px);
+        object-fit: cover;
+    }
+
+.banner_interactive > p {
+    color:white;
+    margin:0;
+}
+

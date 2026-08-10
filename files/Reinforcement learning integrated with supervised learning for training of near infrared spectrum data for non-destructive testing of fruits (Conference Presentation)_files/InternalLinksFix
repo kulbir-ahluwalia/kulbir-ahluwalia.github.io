@@ -1,0 +1,1 @@
+$(document).ready(function(){$("a.internal-link").attr("href",function(n,t){if(typeof t!="undefined")return t.startsWith("#")?location.pathname+t:t});$('#divARTICLECONTENTTop a[href^="#"]').click(function(){return document.location.hash="",document.location.hash=this.hash,!1})})

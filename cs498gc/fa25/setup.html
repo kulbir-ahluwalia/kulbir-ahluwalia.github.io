@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- BEGIN site-analytics placeholder: dead Universal Analytics tag removed 2026-06-12.
+         Paste the GA4 snippet here once a G- measurement ID exists
+         (canonical copy: _includes/head-extras.html). -->
+    <!-- END site-analytics placeholder -->
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/modern-style.css">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>ROS2 Setup - CS498GC: Mobile Robotics</title>
+    <link rel="icon" href="resources/favicon.ico" />
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="logistics.html">Logistics</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="syllabus.html">Syllabus</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="assignments.html">Assignments</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="extra_credit.html">⭐ Extra Credit</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="presentations.html">Presentations</a>
+              </li>
+              
+              <li class="nav-item">
+                        <a class="nav-link" href="slaming_mars.html">🚀 SLAM-ing Mars 🔴</a>
+                    </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="setup.html">Setup</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="announcements.html">📢 Announcements</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="resources.html">Resources</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>ROS 2 Humble Installation Guide</h1>
+          
+          <div class="alert alert-info">
+            <h5>Course Requirements</h5>
+            <p><strong>Tutorial Session:</strong> September 10, Wednesday<br>
+            <strong>Required OS:</strong> Ubuntu 22.04 LTS with ROS 2 Humble<br>
+            <strong>Verification Tool:</strong> <code>ros2 doctor --report</code></p>
+          </div>
+
+          <h2>Core Documentation</h2>
+          <ul>
+            <li><a href="https://docs.ros.org/en/humble/">Official ROS 2 Humble Documentation</a></li>
+            <li><a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html">Ubuntu Installation Guide</a></li>
+            <li><a href="https://docs.ros.org/en/humble/How-To-Guides/Installation-Troubleshooting.html">Troubleshooting Guide</a></li>
+            <li><a href="https://github.com/ubuntu-robotics/ros2_cheats_sheet">Command Reference Cheat Sheet</a></li>
+          </ul>
+
+          <h2>Course Presentations</h2>
+          <div class="alert alert-primary">
+            <h5>📚 ROS2 Tutorial Materials</h5>
+            <ul>
+              <li><a href="/files/cs498gc/fa25/presentations/ros2_humble_tutorial.pdf" target="_blank"><strong>ROS2 Humble Complete Guide</strong></a> - September 10, 2025 class presentation covering:</li>
+              <ul>
+                <li>Installation & Setup troubleshooting (Python version conflicts)</li>
+                <li>Real TurtleBot3 message examples with live data</li>
+                <li>Complete architecture overview with visual diagrams</li>
+                <li>Comprehensive command reference and practical examples</li>
+              </ul>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                  <h4>Option 1: Dual Boot (Recommended)</h4>
+                </div>
+                <div class="card-body">
+                  <h5>Windows + Ubuntu 22.04</h5>
+                  <ul>
+                    <li><a href="https://youtu.be/GXxTxBPKecQ?feature=shared">Video Guide</a></li>
+                    <li><strong>Requirements:</strong> 100GB+ partition, UEFI/BIOS access</li>
+                    <li><strong>Tool:</strong> Balena Etcher for USB creation</li>
+                  </ul>
+                  
+                  <h5>macOS + Ubuntu 22.04</h5>
+                  <ul>
+                    <li><strong>Intel Mac:</strong> <a href="https://youtu.be/qjfBP4UYx9c?feature=shared">Setup Guide</a></li>
+                    <li><strong>Apple Silicon:</strong> <a href="https://youtu.be/aXh_d1OixRI?feature=shared">ARM Guide</a></li>
+                  </ul>
+                  
+                  <h5>Multi-Boot PC Setup</h5>
+                  <p>Configure Ubuntu 18.04/20.04/22.04 alongside Windows. Remote access via Illinois VPN + AnyDesk supported.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                  <h4>Option 2: Virtual Machine</h4>
+                </div>
+                <div class="card-body">
+                  <p><strong>Platform:</strong> Windows/MacOS</p>
+
+                  <h6>For Apple Silicon (M1/M2/M3/M4) Macs:</h6>
+                  <ul>
+                    <li><strong>UTM (Universal Turing Machine)</strong> - Recommended for ARM64</li>
+                    <ul>
+                      <li><a href="https://mac.getutm.app/">UTM Download</a></li>
+                      <li>Use Ubuntu 22.04 ARM64 image</li>
+                      <li>Better performance than VirtualBox on Apple Silicon</li>
+                    </ul>
+                  </ul>
+
+                  <h6>For Intel Macs/Windows:</h6>
+                  <ul>
+                    <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox Download</a></li>
+                    <li><strong>Specifications:</strong> 8GB RAM, 6 cores, 50GB storage minimum</li>
+                  </ul>
+
+                  <div class="alert alert-warning">
+                    <strong>Performance Note:</strong> Add <code>export LIBGL_ALWAYS_SOFTWARE=true</code> for software rendering
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                  <h4>Option 3: WSL2 (Windows)</h4>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li><a href="https://youtu.be/F3n0SMAFheM?feature=shared">Setup Tutorial</a></li>
+                    <li><a href="https://github.com/microsoft/wslg">GUI Support (WSLg)</a></li>
+                    <li><a href="https://tom-howard.github.io/com2009/ros/wsl-ros/install/">Academic Guide</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-header bg-info text-white">
+                  <h4>Option 4: Docker</h4>
+                </div>
+                <div class="card-body">
+                  <p><strong>Platform-Independent Solution</strong></p>
+                  <ul>
+                    <li><a href="https://foxglove.dev/blog/installing-ros2-on-macos-with-docker">macOS Guide</a></li>
+                    <li><a href="https://medium.com/@arohanaday/how-i-set-up-ros-2-on-my-macbook-using-docker-without-losing-my-sanity-fe6e55857cc2">Detailed Setup</a></li>
+                    <li><a href="https://aws.amazon.com/blogs/robotics/tag/ros-2/">AWS RoboMaker</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h3>⚠️ Special Considerations for Apple Silicon (ARM64)</h3>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-warning">
+                <h5>Critical Information for M1/M2/M3/M4 Mac Users</h5>
+                <p><strong>Gazebo Classic (Version 11) does not support ARM64 architecture.</strong> This significantly impacts TurtleBot3 and other simulations.</p>
+              </div>
+
+              <h4>Architecture Compatibility Quick Reference</h4>
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th>Component</th>
+                    <th>Intel/AMD (x86_64)</th>
+                    <th>Apple Silicon (ARM64)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ROS2 Humble</td>
+                    <td class="table-success">✅ Full Support</td>
+                    <td class="table-success">✅ Full Support</td>
+                  </tr>
+                  <tr>
+                    <td>Gazebo Classic</td>
+                    <td class="table-success">✅ apt install</td>
+                    <td class="table-danger">❌ Not Available</td>
+                  </tr>
+                  <tr>
+                    <td>Gazebo Fortress</td>
+                    <td class="table-success">✅ Full Support</td>
+                    <td class="table-success">✅ Full Support (Recommended)</td>
+                  </tr>
+                  <tr>
+                    <td>TurtleBot3 Sim</td>
+                    <td class="table-success">✅ apt install</td>
+                    <td class="table-warning">⚠️ Build from source</td>
+                  </tr>
+                  <tr>
+                    <td>GPU Acceleration (UTM)</td>
+                    <td class="table-success">✅ Available</td>
+                    <td class="table-danger">❌ Not Available</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4>Recommended Solutions for ARM64</h4>
+              <ol>
+                <li>
+                  <strong>Best Option:</strong> Use Gazebo Fortress (new Gazebo) with ROS2 Humble
+                  <pre class="bg-dark text-light p-2 rounded"><code>sudo apt install gz-fortress ros-humble-ros-gz-bridge</code></pre>
+                </li>
+                <li>
+                  <strong>Docker with ARM64 Images:</strong>
+                  <ul>
+                    <li><a href="https://j3soon.github.io/ros2-essentials/">ROS2 Essentials Docker Guide</a></li>
+                    <li>Use <code>arm64v8/ros:humble</code> base image</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>UTM Virtualization (Limited):</strong>
+                  <ul>
+                    <li>⚠️ No GPU acceleration for 3D graphics</li>
+                    <li>Requires: <code>export LIBGL_ALWAYS_SOFTWARE=true</code></li>
+                    <li><a href="https://mac.getutm.app/">UTM Download</a></li>
+                  </ul>
+                </li>
+              </ol>
+
+              <h4>TurtleBot3 on ARM64 - Known Issues</h4>
+              <div class="alert alert-info">
+                <strong>Student Report (Chahit Jain, Sept 2025):</strong><br>
+                When trying to install TurtleBot3 simulation on Apple M3:
+                <ul>
+                  <li><code>sudo apt install ros-humble-turtlebot3-gazebo</code> → <strong>E: Unable to locate package</strong></li>
+                  <li>Building from source fails due to <code>libgazebo-dev</code> not available for ARM64</li>
+                  <li>Even with OSRF repository added, Gazebo Classic has no ARM64 binaries</li>
+                </ul>
+                <strong>Solution:</strong> Use Gazebo Fortress or provided bag files for assignments.
+              </div>
+
+              <h4>For Coding Exercise 1 (ARM64 Users)</h4>
+              <ul>
+                <li>Option 1: Use pre-recorded bag files provided on course website</li>
+                <li>Option 2: Create mock joint state publishers (sample code in Piazza)</li>
+                <li>Option 3: Use campus lab computers (x86_64) remotely via SSH</li>
+                <li>Option 4: Pair program with students who have x86_64 hardware</li>
+              </ul>
+
+              <div class="alert alert-success">
+                <strong>Instructor Note:</strong> For easiest setup, use a 2-year-old Windows laptop with NVIDIA GPU. Alternative evaluation methods available for ARM64 users - contact TAs during office hours.
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-light">
+            <div class="card-header">
+              <h3>Installation Verification</h3>
+            </div>
+            <div class="card-body">
+              <p>Run these commands in a new terminal to verify your ROS2 Humble installation:</p>
+
+              <div class="bg-dark text-light p-3 rounded">
+                <code>
+# Source ROS2 environment<br>
+source /opt/ros/humble/setup.bash<br><br>
+# Quick health check<br>
+ros2 doctor<br><br>
+# Comprehensive diagnostic report<br>
+ros2 doctor --report
+                </code>
+              </div>
+
+              <div class="alert alert-success mt-3">
+                <strong>Success Indicator:</strong> You should see "All systems go!" or similar positive diagnostics output.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-danger mb-4">⚠️ Critical Debugging Guide for Coding Exercise 1</h2>
+
+          <div class="alert alert-danger">
+            <h4>📍 The Three Fatal Errors (95% of Student Failures)</h4>
+            <p>Before submitting your code, check for these common mistakes that cause immediate failure:</p>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h4>Fatal Error #1: Using math.radians() on Gyro Data</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-danger">❌ WRONG (Instant Failure)</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_Gy(self, msg):
+    self.gyro_yaw = msg.data
+
+def timer_callback(self):
+    # This will cause huge errors!
+    self.theta += dt * math.radians(self.gyro_yaw)</code></pre>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="text-success">✅ CORRECT</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_Gy(self, msg):
+    self.gyro_yaw = msg.data  # Already in rad/s!
+
+def timer_callback(self):
+    # Gyro data is already in rad/s
+    self.theta += dt * self.gyro_yaw</code></pre>
+                </div>
+              </div>
+              <div class="alert alert-warning mt-3">
+                <strong>Remember:</strong> The gyroscope data from /Gyro_yaw is ALREADY in radians per second (rad/s). Using math.radians() converts it again, making values ~57x smaller than they should be!
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h4>Fatal Error #2: Wrong Update Order</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-danger">❌ WRONG Order</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python"># Updates position with OLD theta
+self.x += dt * v * math.cos(self.theta)
+self.y += dt * v * math.sin(self.theta)
+# Then updates theta (too late!)
+self.theta += dt * self.gyro_yaw</code></pre>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="text-success">✅ CORRECT Order</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python"># FIRST update theta
+self.theta += dt * self.gyro_yaw
+# THEN use new theta for position
+self.x += dt * v * math.cos(self.theta)
+self.y += dt * v * math.sin(self.theta)</code></pre>
+                </div>
+              </div>
+              <p class="mt-3"><strong>Critical:</strong> You MUST update theta BEFORE updating x,y position!</p>
+            </div>
+          </div>
+
+          <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+              <h4>Fatal Error #3: GPS Addition Instead of Replacement (Part 2)</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-danger">❌ WRONG (Causes Drift)</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_GPS(self, msg):
+    gps_x, gps_y = lonlat2xyz(msg.latitude,
+                               msg.longitude,
+                               self.lat0, self.lon0)
+    # Adding causes accumulation!
+    self.x += gps_x
+    self.y += gps_y</code></pre>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="text-success">✅ CORRECT</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_GPS(self, msg):
+    # GPS gives absolute position
+    self.x, self.y = lonlat2xyz(msg.latitude,
+                                msg.longitude,
+                                self.lat0, self.lon0)
+    # Direct replacement, no addition!</code></pre>
+                </div>
+              </div>
+              <p class="mt-3"><strong>Remember:</strong> GPS provides absolute position in the world frame. You must REPLACE position, not add to it!</p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-warning">
+              <h4>🔧 Non-Negotiable Constants</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Required Values:</h5>
+                  <ul>
+                    <li><strong>dt = 0.1</strong> seconds (NEVER calculate from timestamps)</li>
+                    <li><strong>L = 0.3</strong> meters (robot wheelbase)</li>
+                    <li><strong>First GPS = origin</strong> (store as lat0, lon0)</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>Correct Implementation:</h5>
+                  <pre class="bg-dark text-light p-2 rounded"><code class="python">def __init__(self):
+    super().__init__()
+    # Initialize at origin
+    self.x = 0.0
+    self.y = 0.0
+    self.theta = 0.0
+
+    # Constants - DO NOT CHANGE
+    self.dt = 0.1  # Fixed timestep
+    self.L = 0.3   # Wheelbase</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4 bg-light">
+            <div class="card-header bg-info text-white">
+              <h4>🚀 Quick Launch Script</h4>
+            </div>
+            <div class="card-body">
+              <h5>Save this as launch_coding_ex1.sh:</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code>#!/bin/bash
+# Terminal 1: Play bag file
+gnome-terminal -- bash -c "source /opt/ros/humble/setup.bash; \
+ros2 bag play ~/Desktop/CS498GC_MobileRobotics_Fall2025/2022_CS498_mobile_robotics/Assignments/2022_coding_ex1_CS498/solar_house/solar_house.db3 --loop; exec bash"
+
+# Terminal 2: Run your node
+gnome-terminal -- bash -c "source /opt/ros/humble/setup.bash; \
+cd ~/Desktop/CS498GC_MobileRobotics_Fall2025/2022_CS498_mobile_robotics/'ROS2 files'/mobile_robotics; \
+source install/setup.bash; \
+ros2 run mobile_robotics coding_ex1_part1; exec bash"
+
+# Terminal 3: Monitor output
+gnome-terminal -- bash -c "cd ~/Desktop/CS498GC_MobileRobotics_Fall2025/2022_CS498_mobile_robotics/'ROS2 files'/mobile_robotics; \
+tail -f results_part1.txt; exec bash"
+
+echo "Launched all terminals for Coding Exercise 1!"</code></pre>
+              <p class="mt-3">Make it executable: <code>chmod +x launch_coding_ex1.sh</code></p>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-primary mb-4">📚 Assignment 4 - Mobile Manipulator Setup</h2>
+
+          <div class="alert alert-info">
+            <h4>Assignment 4 Overview</h4>
+            <ul>
+              <li><strong>Part A (25 points):</strong> Released Sept 5, Due Nov 21 - Deploy and teleoperate Husky + UR3 in Gazebo</li>
+              <li><strong>Part B (75 points):</strong> Released Nov 24, Due Dec 4 - Implement SLAM, sensor fusion, and path planning</li>
+              <li><strong>System:</strong> 13-DOF mobile manipulator (Husky base + UR3 arm + parallel gripper)</li>
+            </ul>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+              <h4>OS Compatibility Matrix</h4>
+            </div>
+            <div class="card-body">
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th>Ubuntu Version</th>
+                    <th>ROS Version</th>
+                    <th>Recommended For</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>20.04 LTS</td>
+                    <td>ROS1 Noetic</td>
+                    <td>Legacy systems</td>
+                    <td>Stable, well-documented</td>
+                  </tr>
+                  <tr class="table-success">
+                    <td><strong>22.04 LTS</strong></td>
+                    <td><strong>ROS2 Humble</strong></td>
+                    <td><strong>Primary choice</strong></td>
+                    <td><strong>Course standard</strong></td>
+                  </tr>
+                  <tr>
+                    <td>24.04 LTS</td>
+                    <td>ROS2 Jazzy</td>
+                    <td>RTX 50-series GPUs</td>
+                    <td>For driver issues</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-warning">
+              <h4>Common Hardware Issues & Solutions</h4>
+            </div>
+            <div class="card-body">
+              <h5>NVIDIA Driver Issues (RTX 50-series)</h5>
+              <ul>
+                <li>If screen freezes: Press Ctrl+Alt+F3 to switch to TTY</li>
+                <li>Consider Ubuntu 24.04 + ROS2 Jazzy for newer GPUs</li>
+                <li>Recovery: <code>sudo apt-get install --reinstall nvidia-driver-535</code></li>
+              </ul>
+
+              <h5>Apple Silicon (M1/M2/M3/M4)</h5>
+              <ul>
+                <li>Use UTM with Ubuntu 22.04 ARM64</li>
+                <li>Expect software rendering (no GPU acceleration)</li>
+                <li>Docker ARM64 images available as alternative</li>
+              </ul>
+
+              <h5>Virtual Machine Performance</h5>
+              <ul>
+                <li>Allocate minimum 8GB RAM, 6 CPU cores</li>
+                <li>Enable virtualization in BIOS/UEFI</li>
+                <li>Add to ~/.bashrc: <code>export LIBGL_ALWAYS_SOFTWARE=true</code></li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-primary mb-4">🎮 ROS2 Control Tutorial - Essential for Assignment 4</h2>
+
+          <div class="alert alert-success">
+            <strong>Credit:</strong> This excellent resource was discovered by Mirielle Tan, who successfully used it to complete Assignment 4 Part 1!
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+              <h4>Understanding ROS2 Control Framework</h4>
+            </div>
+            <div class="card-body">
+              <p>ROS2 Control is a framework for robots that acts as a middleman between robot hardware and software. It's essential for controlling the Husky+UR3 mobile manipulator in Assignment 4.</p>
+
+              <h5>Key Components:</h5>
+              <ul>
+                <li><strong>Controller Manager:</strong> Manages multiple controllers (loads, unloads, coordinates execution)</li>
+                <li><strong>Resource Manager:</strong> Manages hardware interfaces and communication with actual hardware</li>
+                <li><strong>Hardware Interfaces:</strong>
+                  <ul>
+                    <li><strong>Command Interfaces:</strong> Write to hardware (position, velocity, effort commands)</li>
+                    <li><strong>State Interfaces:</strong> Read from hardware (current position, velocity, effort)</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h5>Common Controllers for Assignment 4:</h5>
+              <ul>
+                <li><strong>Joint Trajectory Controller:</strong> For arm movements (takes trajectory goals)</li>
+                <li><strong>Diff Drive Controller:</strong> For mobile base (takes cmd_vel commands)</li>
+                <li><strong>Gripper Action Controller:</strong> For gripper control</li>
+                <li><strong>Joint State Broadcaster:</strong> Publishes joint states to /joint_states topic</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+              <h4>Quick Start Commands</h4>
+            </div>
+            <div class="card-body">
+              <h5>Install ROS2 Control Packages:</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code>sudo apt-get install ros-${ROS_DISTRO}-ros2-control \
+                     ros-${ROS_DISTRO}-ros2-controllers \
+                     ros-${ROS_DISTRO}-gripper-controllers \
+                     ros-${ROS_DISTRO}-gazebo-ros2-control</code></pre>
+
+              <h5>Essential Controller Commands:</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># List active controllers
+ros2 control list_controllers
+
+# List hardware interfaces
+ros2 control list_hardware_interfaces
+
+# Load and activate a controller
+ros2 control load_controller --set-state active arm_controller
+
+# Move the arm (example)
+ros2 topic pub --once /arm_controller/joint_trajectory \
+  trajectory_msgs/msg/JointTrajectory \
+  "{joint_names: ['shoulder_pan_joint', 'shoulder_lift_joint', ...],
+    points: [{positions: [0.0, -1.57, 0.0, ...],
+    time_from_start: {sec: 3}}]}"</code></pre>
+
+              <h5>Gripper Control (Robotiq):</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Open gripper
+ros2 topic pub /gripper_controller/command std_msgs/msg/Float64 "{data: 0.0}" --once
+
+# Close gripper
+ros2 topic pub /gripper_controller/command std_msgs/msg/Float64 "{data: 0.7}" --once</code></pre>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-warning">
+              <h4>YAML Configuration Example</h4>
+            </div>
+            <div class="card-body">
+              <p>Create a <code>controllers.yaml</code> file to configure your controllers:</p>
+              <pre class="bg-dark text-light p-3 rounded"><code>controller_manager:
+  ros__parameters:
+    update_rate: 10
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    base_controller:
+      type: diff_drive_controller/DiffDriveController
+      command_interface: "velocity"  # CRITICAL LINE often missing!
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position</code></pre>
+            </div>
+          </div>
+
+          <div class="alert alert-info">
+            <strong>📚 Full Tutorial:</strong> For the complete step-by-step guide including URDF modifications, launch files, and Python/C++ examples, see:
+            <a href="https://automaticaddison.com/how-to-control-a-robotic-arm-using-ros-2-control-and-gazebo/" target="_blank" class="alert-link">
+              How to Control a Robotic Arm Using ROS 2 Control and Gazebo
+            </a>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-danger mb-4">🚀 Mars World Setup for Assignment 4 Part 2</h2>
+
+          <div class="alert alert-warning">
+            <strong>Assignment 4 Part 2:</strong> Implement SLAM with your mobile manipulator in a Mars environment! Due December 9, 2025.
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-danger text-white">
+              <h4>Mars Environment Features</h4>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Realistic Mars terrain with NASA/JPL resources</li>
+                <li>Custom Mars world for Husky+UR3 navigation</li>
+                <li>SLAM challenges with Martian obstacles</li>
+                <li>Optional: Fun race track on Mars surface!</li>
+                <li>Inspired by MASt3R-SLAM (CVPR 2025)</li>
+              </ul>
+
+              <h5>Setup Guide:</h5>
+              <p>Complete Mars world setup instructions available:
+                <a href="mars_gazebo_tutorial.md" class="btn btn-danger btn-sm">
+                  View Mars Tutorial
+                </a>
+              </p>
+
+              <h5>Part 2 Requirements:</h5>
+              <ul>
+                <li><strong>Sensor Fusion (15 pts):</strong> EKF implementation</li>
+                <li><strong>Path Planning & Control (15 pts):</strong> Navigate Mars terrain</li>
+                <li><strong>SLAM Implementation (10 pts):</strong> 2D mapping with laser scanner</li>
+                <li><strong>Mars Bonus (+10 pts):</strong> Complete tasks in Mars environment</li>
+                <li><strong>Documentation (10 pts):</strong> RSS format technical report</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="alert alert-success">
+            <strong>Reference Paper:</strong> MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors
+            <br>
+            <a href="https://edexheim.github.io/mast3r-slam/" target="_blank">Project Page</a> |
+            <a href="https://github.com/naver/mast3r" target="_blank">MASt3R Foundation Model</a>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-success mb-4">📖 Additional Resources</h2>
+
+          <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+              <h4>Course Materials</h4>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><a href="https://canvas.illinois.edu/courses/62828/files/folder/Book%20PDFs" target="_blank"><strong>Mobile Robotics Textbooks</strong></a> - Essential PDFs for the course</li>
+                <li><strong>Office Hours:</strong> In-person at SC 4407 (check Campuswire for Zoom sessions)</li>
+                <li><strong>Gradescope:</strong> Course ID: 1102297, Entry Code: KDP5G8</li>
+                <li><strong>GitHub TA Username:</strong> kulbir-ahluwalia (add to private repos)</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-primary mb-4">📚 Git & GitHub Reference Guide</h2>
+
+          <div class="alert alert-info">
+            <strong>Essential for CS498GC:</strong> All assignments require GitHub submission. Master these commands for efficient version control!
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+              <h4>GitHub Education Cheat Sheet</h4>
+            </div>
+            <div class="card-body">
+              <p>Quick reference for common Git operations used throughout the course:</p>
+
+              <ul>
+                <li><strong>Repository Setup:</strong> Clone, fork, and initialize repositories</li>
+                <li><strong>Version Control:</strong> Add, commit, push, and pull changes</li>
+                <li><strong>Branching:</strong> Create and merge branches for feature development</li>
+                <li><strong>Collaboration:</strong> Pull requests and code reviews</li>
+                <li><strong>Troubleshooting:</strong> Common Git issues and solutions</li>
+              </ul>
+
+              <div class="text-center mt-3">
+                <a href="https://education.github.com/git-cheat-sheet-education.pdf"
+                   class="btn btn-primary btn-lg" target="_blank">
+                  📥 Download Git Cheat Sheet (PDF)
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+              <h4>Quick Git Commands for CS498GC</h4>
+            </div>
+            <div class="card-body">
+              <h5>Initial Setup (Do Once)</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Configure your identity
+git config --global user.name "Your Name"
+git config --global user.email "your.email@illinois.edu"
+
+# Clone course repository
+git clone https://github.com/yourusername/CS498GC_assignments.git
+cd CS498GC_assignments</code></pre>
+
+              <h5 class="mt-4">Daily Workflow</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Check status
+git status
+
+# Stage your changes
+git add coding_ex1_part1.py coding_ex1_part2.py
+
+# Commit with descriptive message
+git commit -m "feat: Implement wheel odometry with gyro fusion"
+
+# Push to GitHub
+git push origin main</code></pre>
+
+              <h5 class="mt-4">For Gradescope Submissions</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Create submission branch
+git checkout -b assignment4-submission
+
+# Tag your final version
+git tag -a v1.0 -m "Assignment 4 Final Submission"
+git push origin v1.0
+
+# Add TA as collaborator
+# Add username: kulbir-ahluwalia to your private repository</code></pre>
+            </div>
+          </div>
+
+          <div class="alert alert-warning">
+            <h5>⚠️ Common Git Mistakes to Avoid</h5>
+            <ul>
+              <li><strong>Don't commit large files</strong> (rosbags, videos > 100MB) - use Git LFS</li>
+              <li><strong>Don't commit build artifacts</strong> (build/, install/, log/ folders)</li>
+              <li><strong>Always use .gitignore</strong> for ROS2 projects</li>
+              <li><strong>Never force push</strong> to main/master branch unless absolutely necessary</li>
+              <li><strong>Write clear commit messages</strong> - future you will thank present you!</li>
+            </ul>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+              <h4>ROS2 .gitignore Template</h4>
+            </div>
+            <div class="card-body">
+              <p>Use this .gitignore for your ROS2 workspace:</p>
+              <pre class="bg-dark text-light p-3 rounded"><code># ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Results
+*.txt
+*.csv
+*.db3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db</code></pre>
+              <a href="https://github.com/github/gitignore/blob/main/ROS.gitignore" class="btn btn-sm btn-info" target="_blank">
+                View Complete ROS .gitignore Template
+              </a>
+            </div>
+          </div>
+
+          <hr class="my-5">
+
+          <h2 class="text-success mb-4">✅ Final Verification</h2>
+
+          <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+              <h4>Debugging Checklist</h4>
+            </div>
+            <div class="card-body">
+              <h5>Before asking for help, verify:</h5>
+              <ul class="list-group">
+                <li class="list-group-item">☐ Bag file playing (see topic messages)</li>
+                <li class="list-group-item">☐ Input topics showing Hz values (~10 Hz for gyro)</li>
+                <li class="list-group-item">☐ /odom topic publishing at ~10 Hz</li>
+                <li class="list-group-item">☐ Node running without Python errors</li>
+                <li class="list-group-item">☐ RViz2 Fixed Frame set to 'odom' (not 'map')</li>
+                <li class="list-group-item">☐ Path display added with buffer 10000</li>
+                <li class="list-group-item">☐ Output file showing changing x,y values</li>
+                <li class="list-group-item">☐ No math.radians() on gyro data</li>
+                <li class="list-group-item">☐ Theta updated BEFORE position</li>
+                <li class="list-group-item">☐ GPS replaces (not adds to) position</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer mt-5">
+      <div class="container text-center">
+        <span class="text-muted">CS498GC Mobile Robotics - Fall 2025 - University of Illinois at Urbana-Champaign</span>
+        <br>
+        <small style="color: #ccc;">Thanks to Professor <a href="https://slazebni.cs.illinois.edu" style="color: #ffc107;">Svetlana Lazebnik</a>, Professor <a href="https://yunzhuli.github.io" style="color: #ffc107;">Yunzhi Li</a> and Professor <a href="https://www.cs.utexas.edu/~yukez/cs391r_fall2021/index.html" style="color: #ffc107;">Yuke Zhu</a> for their course website templates and <a href="http://daslab.illinois.edu/index.html#team" style="color: #ffc107;">Jose Cuaran</a> and <a href="https://kendallkoe.com" style="color: #ffc107;">Kendall Koe</a> for course setup.</small>
+      </div>
+    </footer>
+
+  </body>
+</html>

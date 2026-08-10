@@ -1,0 +1,70 @@
+#animated-nav .wrapper{
+  position: absolute;
+  bottom: 74px;
+  right: 26.5%;
+  /*transform: translateX(-50%);*/
+  display: flex;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 0px;
+  background: #242526;
+  transition: all 0.3s ease;
+  z-index:249;
+}
+
+
+    #animated-nav .wrapper > ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+        #animated-nav .wrapper > ul.hidden {
+            display: none;
+        }
+
+        #animated-nav .wrapper > ul > li:first-child {
+            justify-content: space-between;
+        }
+
+        #animated-nav .wrapper > ul > li > ul > li > a {
+            white-space:nowrap;
+        }
+
+#settings-playspeed-menu > li > ul {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+}
+
+    #settings-playspeed-menu > li > ul > li {
+        width: 33%;
+    }
+
+    #animated-nav .wrapper > ul > li > ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+   
+
+#animated-nav .wrapper.hidden{
+  display: none;
+}
+
+.wrapper ul{
+  width: 300px;
+  list-style: none;
+  padding: 0px 10px;
+  transition: all 0.3s ease;
+}
+.wrapper ul.setting-drop,
+.wrapper ul.help-drop{
+  display: none;
+}
+.wrapper .arrow{
+  cursor: pointer;
+}
+.wrapper .arrow span{
+  margin-right: 15px;
+}
+

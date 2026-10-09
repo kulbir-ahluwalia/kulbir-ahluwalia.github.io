@@ -655,6 +655,64 @@
                 </div>
             </div>
 
+            <h3 class="mt-2" id="ta-demos-oct2026">October 2026 re-runs</h3>
+            <p class="mb-4">The TA re-ran the pipeline in October 2026 on an x86 laptop (MSI, Ubuntu 24.04, ROS 2 Jazzy, Gazebo Harmonic 8.15, software rendering on a virtual display) and ran an RTAB-Map extra-credit lane on the DGX Spark. Each caption names the machine. These are TA reference runs, not student submissions.</p>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, MSI x86 + RTX 5080, Oct 2026</span>
+                        <h4>Part 1 (Part A): Husky + UR3 in an empty world</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="504"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_part1_msi_x86_rtx5080_husky_ur3_gazebo.png"
+                               aria-label="TA reference run on an MSI x86 laptop, Part 1: the Husky and UR3 drive, turn, and move the arm in Gazebo Harmonic">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_part1_msi_x86_rtx5080_husky_ur3_gazebo.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part1_msi_x86_rtx5080_husky_ur3_gazebo.png" width="960" height="504" loading="lazy" alt="TA reference run on an MSI x86 laptop, Part 1: the Husky and UR3 in Gazebo Harmonic">
+                        </video>
+                        <p class="mt-2 mb-0">Gazebo view of the Part 1 demo sequence: 5 s forward at 0.5 m/s and 5 s rotating at 0.7 rad/s on <code>/cmd_vel</code>, then the UR3 moves to two poses while the gripper closes and opens. Recorded October 9, 2026 on the MSI laptop (x86_64, RTX 5080 GPU; Gazebo rendered in software).</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, MSI x86 + RTX 5080, Oct 2026</span>
+                        <h4>Part 2 (Part B): Mars waypoints, Gazebo + RViz</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="1440" height="432"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_part2_msi_x86_rtx5080_waypoints_gazebo_rviz.png"
+                               aria-label="TA reference run on an MSI x86 laptop, Part 2: Gazebo view of the Husky in the Mars world next to the RViz SLAM map with the planned paths">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_part2_msi_x86_rtx5080_waypoints_gazebo_rviz.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_msi_x86_rtx5080_waypoints_gazebo_rviz.png" width="1440" height="432" loading="lazy" alt="TA reference run on an MSI x86 laptop, Part 2: Gazebo view next to the RViz SLAM map">
+                        </video>
+                        <p class="mt-2 mb-1">Left: Gazebo. Right: the SLAM Toolbox map in RViz with the robot's path. A custom A* + DWA planner drives 13 goals and then part of a second lap: 15/15 waypoints reached, Gazebo ground-truth error mean 0.256 m (max 0.395 m), 387.3 s rosbag. Video at 4x speed. Recorded October 9, 2026 on the MSI laptop.</p>
+                        <p class="small mb-0">This run used a Mars world built for the re-run (Mars gravity, rocks and blocks), not <code>mars_thanksgiving.world</code>, and did not use Nav2.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, DGX Spark ARM64, Oct 2026</span>
+                        <h4>Extra credit: RTAB-Map RGB-D SLAM with loop closures</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="612"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_x1_gb10_rviz_loop_closure_laps.png"
+                               aria-label="TA reference run on the DGX Spark: RViz view of RTAB-Map building a 2D grid while the Husky drives three laps">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_x1_gb10_rviz_loop_closure_laps.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_x1_gb10_rviz_loop_closure_laps.png" width="960" height="612" loading="lazy" alt="TA reference run on the DGX Spark: RViz view of the RTAB-Map grid after three laps">
+                        </video>
+                        <p class="mt-2 mb-1">RViz during the RTAB-Map mapping run: three laps of an 8-point loop (75.16 m driven). Blue: the RTAB-Map pose graph. Red points: RTAB-Map's grid-obstacle cloud. 64 revisit loop closures; trajectory error against Gazebo ground truth 0.271 m RMSE versus 0.725 m for wheel odometry. Video at 8x speed (first 250 s of the session). Recorded October 9, 2026 on the DGX Spark (GB10, ARM64).</p>
+                        <p class="small mb-0">The run used a textured copy of the Mars world (same rocks and gravity, with regolith textures), because the assignment worlds are almost textureless.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, DGX Spark ARM64, Oct 2026</span>
+                        <h4>Extra credit: RTAB-Map 3D point cloud</h4>
+                        <a href="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_x1_gb10_cloud_orbit.gif"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_x1_gb10_cloud_orbit.gif" width="512" height="384" loading="lazy" alt="Orbit around the RTAB-Map RGB point cloud of the textured Mars world, a ring of terrain around the driven loop with rocks along it"></a>
+                        <p class="mt-2 mb-0">Orbit around the RGB point cloud exported from the same RTAB-Map run (425,593 points, 3 cm voxels). Recorded October 9, 2026 on the DGX Spark (GB10, ARM64).</p>
+                    </div>
+                </div>
+            </div>
+
             <h4>Key numbers</h4>
             <div class="table-responsive">
                 <table class="table table-mars mb-4">

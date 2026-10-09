@@ -241,13 +241,27 @@ document.addEventListener('DOMContentLoaded', () => {
         var elapsedDays = (Date.now() - last) / 86400000;
         var hide = function () { modal.classList.remove('is-active'); };
         if (!last || elapsedDays >= cooldownDays) {
-            setTimeout(function () {
+            // Non-blocking corner card: appears only after the delay AND once the visitor has
+            // scrolled past the first screen, so it never covers the page on load.
+            var delayDone = false, scrolled = false, shown = false;
+            var maybeShow = function () {
+                if (shown || !delayDone || !scrolled) return;
+                shown = true;
                 modal.classList.add('is-active');
                 localStorage.setItem(storageKey, String(Date.now()));
-            }, delayMs);
+            };
+            setTimeout(function () { delayDone = true; maybeShow(); }, delayMs);
+            var onScroll = function () {
+                if (window.scrollY > window.innerHeight * 0.6) {
+                    scrolled = true;
+                    window.removeEventListener('scroll', onScroll);
+                    maybeShow();
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
         }
-        modal.querySelector('.delete').addEventListener('click', hide);
-        modal.querySelector('.modal-background').addEventListener('click', hide);
+        var closeEl = modal.querySelector('.delete');
+        if (closeEl) closeEl.addEventListener('click', hide);
         document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
     }
 });

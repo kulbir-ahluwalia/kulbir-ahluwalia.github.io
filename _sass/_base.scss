@@ -55,3 +55,39 @@ body {
     padding-bottom: 3.25rem;
   }
 }
+
+/* Promo corner card (non-blocking replacement for the old full-screen modal) */
+.promo-corner-card {
+  display: none;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+  max-width: 20rem;
+  padding: 1rem 2rem 1rem 1rem;
+  box-shadow: 0 4px 16px rgba(10, 10, 10, 0.2);
+}
+.promo-corner-card.is-active {
+  display: block;
+}
+.promo-corner-card .promo-corner-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.promo-corner-card .promo-corner-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.promo-corner-card .promo-corner-body {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .promo-corner-card {
+    left: 1rem;
+    right: 1rem;
+    bottom: 4rem;
+    max-width: none;
+  }
+}

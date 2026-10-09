@@ -10,8 +10,8 @@
     <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,SLAM,Mars,Gazebo,Assignment 4">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🚀 SLAM-ing Mars 🔴 | CS498GC Fall 2025</title>
-    <link rel="icon" href="resources/favicon.ico" />
-    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -220,6 +220,7 @@
         .code-block code {
             color: #00ff00;
             font-size: 0.9rem;
+            white-space: pre;
         }
 
         /* Alerts */
@@ -439,6 +440,56 @@
                 margin-left: 20px;
             }
         }
+
+        /* TA reference runs (Fall 2025 archive) */
+        .ta-runs {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .ta-video,
+        .ta-still {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background: #000;
+        }
+
+        .ta-badge {
+            background: var(--mars-orange);
+            color: var(--space-dark);
+            font-weight: 600;
+            white-space: normal;
+        }
+
+        .ta-stat {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--mars-orange);
+        }
+
+        .handout-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--space-dark);
+            background: #ffc107;
+            border-radius: 6px;
+            padding: 2px 8px;
+            margin-bottom: 6px;
+        }
+
+        /* keep in-page anchor targets clear of the fixed navbar */
+        #ta-demos,
+        #part-b-rubric {
+            scroll-margin-top: 90px;
+        }
     </style>
 </head>
 <body>
@@ -490,6 +541,9 @@
             <i class="fas fa-rocket mars-icon"></i>
             <h1 class="hero-title">🚀 SLAM-ing Mars 🔴</h1>
             <p class="hero-subtitle">Mobile Manipulator Exploration & SLAM Challenge | CS498GC Fall 2025</p>
+            <div class="alert-info-mars" id="fall-2025-archive">
+                <strong>Fall 2025 archive.</strong> This page is kept as a record of Assignment 4 from CS498GC Fall 2025. Part 2 (Part B on this page) became optional extra credit on December 7, 2025, and the final rubric was v11 (a 175-point extra-credit rubric due December 15, 2025, with up to +35 bonus points; it recommends the Mars Thanksgiving World). The original Fall 2025 instructions below, including the Part B due date, points and rubric, predate v11 and are kept as they were announced, together with <a href="#ta-demos">TA reference runs</a>.
+            </div>
             <div class="alert-warning-mars">
                 <strong>🔥 Assignment 4 Complete Guide!</strong> Navigate the Red Planet with Husky + UR3 + Robotis Gripper
             </div>
@@ -500,11 +554,11 @@
                 <a href="/files/cs498gc/fa25/presentations/assignment4_part1_demo_main_VER1.16_PDF_ASSIGNMENT4.pdf" class="btn-mars" target="_blank" download>
                     <i class="fas fa-file-pdf"></i> Assignment 4 Demo
                 </a>
-                <a href="https://github.com/kulbir-ahluwalia/mars_gazebo_worlds" class="btn-mars" target="_blank">
-                    <i class="fas fa-globe-mars"></i> Mars Worlds
+                <a href="/cs498gc/fa25/mars_gazebo_tutorial.html" class="btn-mars">
+                    <i class="fas fa-globe-mars"></i> Mars Worlds Tutorial
                 </a>
                 <a href="https://uofi.box.com/v/cs498GCFALL2025HW4part2" class="btn-mars" target="_blank">
-                    <i class="fas fa-chalkboard-teacher"></i> Part 2 Slide Deck
+                    <i class="fas fa-chalkboard-teacher"></i> Part B Slide Deck
                 </a>
             </div>
         </div>
@@ -515,13 +569,139 @@
 
         <!-- Alert Section -->
         <div class="alert-mars">
-            <h4><i class="fas fa-exclamation-triangle"></i> Important Deadlines</h4>
+            <h4><i class="fas fa-exclamation-triangle"></i> Important Deadlines (Fall 2025)</h4>
             <ul class="mb-0">
-                <li><strong>Part 1:</strong> November 21, 2025 @ 11:00 PM (25 points)</li>
-                <li><strong>Part 2:</strong> December 9, 2025 @ 11:00 PM (75 points)</li>
-                <li><strong>Early Submission Bonus:</strong> November 7, 2025 @ 11:59 PM (+10 points)</li>
+                <li><strong>Part A:</strong> Due Friday, November 21, 2025 @ 11:00 PM (25 points; Gradescope assignment opened Wednesday, October 29, 2025)</li>
+                <li><strong>Part B:</strong> Due Tuesday, December 9, 2025 @ 11:00 PM (75 points + 10 Mars Challenge bonus; opened on Gradescope Wednesday, October 29, 2025). <em>Made optional extra credit on December 7, 2025.</em> <em>(original Fall 2025 figures, superseded by rubric v11: a 175-point extra-credit rubric due December 15, 2025, with up to +35 bonus points)</em></li>
+                <li><strong>Early Submission Bonus (Part A):</strong> +20 points if Part A is submitted before November 9, 2025; +10 points if Part A is submitted before November 14, 2025</li>
             </ul>
         </div>
+
+        <!-- TA Reference Runs: kept outside the tab panes so it is visible without clicking -->
+        <section class="ta-runs" id="ta-demos" aria-labelledby="ta-demos-title">
+            <h2 class="section-header mt-0" id="ta-demos-title">TA Reference Runs</h2>
+            <p><span class="badge ta-badge fs-6">TA reference runs, not student submissions</span></p>
+            <p>The TA recorded these runs to show what complete Assignment 4 runs look like. They are not student submissions, and no individual student results are published on this page.</p>
+            <p class="mb-4"><strong>Platform:</strong> NVIDIA DGX Spark (GB10, ARM64, 128 GB unified memory), ROS 2 Jazzy, Gazebo Harmonic 8.11 (<code>gz sim</code>), run fully headless (Xvfb virtual display, <code>gz sim -g</code> GUI client, <code>ffmpeg</code> x11grab capture). Recorded July 14, 2026.</p>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, not a student submission</span>
+                        <h4>Part 1 (Part A): Husky + UR3 setup and base drive</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="720"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_part1_husky_ur3_teleop_gripper.jpg"
+                               aria-label="TA reference run, Part 1: the Husky and UR3 drive forward, then turn in place, in Gazebo Harmonic">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_part1_husky_ur3_teleop_gripper.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part1_husky_ur3_teleop_gripper.gif" width="640" height="480" loading="lazy" alt="TA reference run, Part 1: the Husky and UR3 drive forward, then turn in place, in Gazebo Harmonic">
+                        </video>
+                        <p class="mt-2 mb-1">Clearpath Husky A200 base + UR3 arm + RH-P12-RN gripper in Gazebo Harmonic, empty world. Scripted base drive: 15 s forward at 0.4 m/s, then an 8 s in-place turn at 0.6 rad/s (video at 2x speed, cropped to the robot).</p>
+                        <p class="small mb-0">The same script also sends a UR3 joint trajectory and opens and closes the gripper twice; that motion is too small to see at this camera distance. <a href="../../images/cs498gc/a4_ta_demos/a4_part1_husky_ur3_teleop_gripper.gif">GIF version</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, not a student submission</span>
+                        <h4>Part 2 (Part B): SLAM on Mars, Gazebo view</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="540"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.jpg"
+                               aria-label="TA reference run, Part 2: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.gif" width="640" height="360" loading="lazy" alt="TA reference run, Part 2: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
+                        </video>
+                        <p class="mt-2 mb-1">The Husky + UR3 drives away from the camera and loops among the rocks of the Mars world (<code>mars.sdf</code>), video at 10x speed. The drive is a scripted loop meant to revisit earlier ground: six legs of 40 s forward at 0.35 m/s, each followed by a 10.5 s turn at 0.5 rad/s (about 5.25 rad, roughly 300 degrees, per commanded turn, so the path is not a square; about 5 min in total). The SLAM log of this run records no loop closure. EKF sensor fusion and SLAM Toolbox (online async) ran alongside; Nav2 was launched but did not activate in this run.</p>
+                        <p class="small mb-0">The occupancy map is not visible in this view; the next two panels show it. <a href="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.gif">GIF version (first 90 s)</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, not a student submission</span>
+                        <h4>Part 2 (Part B): SLAM Toolbox map growing</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="928"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.jpg"
+                               aria-label="TA reference run, Part 2: the SLAM Toolbox occupancy grid grows from the first scan to the final map">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.gif" width="600" height="580" loading="lazy" alt="TA reference run, Part 2: the SLAM Toolbox occupancy grid grows from the first scan to the final map">
+                        </video>
+                        <p class="mt-2 mb-1">Occupancy grid from the same Part 2 run, rendered from the <code>/map</code> messages in its rosbag (179 map updates): it grows from the first scan patch to the final map (white: free space, black: obstacle edges, gray: unknown). The final map is held for 2 s at the end.</p>
+                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.gif">GIF version (2x speed)</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, not a student submission</span>
+                        <h4>Part 2 (Part B): saved occupancy map</h4>
+                        <a href="../../images/cs498gc/a4_ta_demos/a4_part2_slam_map_mars.png"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_slam_map_mars.png" width="978" height="950" loading="lazy" alt="Final 2D occupancy map of the Mars world from the Part 2 TA reference run"></a>
+                        <p class="mt-2 mb-0">Final SLAM Toolbox map, saved with the Nav2 map saver (<code>map_saver_cli</code>) at the end of the Part 2 run: 978 x 950 cells at 0.05 m per cell, about 48.9 m x 47.5 m (white: free, black: obstacles, gray: unknown).</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">TA reference run, not a student submission</span>
+                        <h4>Mars world with the MUSt3R node (mock mode)</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="540"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_part2_mars_world_exploration.jpg"
+                               aria-label="TA reference run: the Husky and UR3 drive out among the rocks of the Mars world and come back toward the camera">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_part2_mars_world_exploration.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_mars_world_exploration.gif" width="640" height="360" loading="lazy" alt="TA reference run: the Husky and UR3 drive out among the rocks of the Mars world and come back toward the camera">
+                        </video>
+                        <p class="mt-2 mb-1">A second Mars-world run (<code>mars.sdf</code>) with SLAM Toolbox and the MUSt3R node: about 4 min of scripted exploration, video at 8x speed. The Husky + UR3 drives out among the rocks and comes back toward the camera.</p>
+                        <p class="small mb-0">The MUSt3R node ran in mock mode because PyTorch was not available on that machine, so this run produced no 3D reconstruction. Its outputs are a 2D SLAM Toolbox map and a 252.6 s rosbag. <a href="../../images/cs498gc/a4_ta_demos/a4_part2_mars_world_exploration.gif">GIF version (final approach, 7x speed)</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Key numbers</h4>
+            <div class="table-responsive">
+                <table class="table table-mars mb-4">
+                    <thead>
+                        <tr>
+                            <th>Run</th>
+                            <th>What ran</th>
+                            <th>Key numbers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Part 1 (Part A)</td>
+                            <td>Husky A200 + UR3 + RH-P12-RN gripper, empty world</td>
+                            <td>All 4 controllers (joint_state_broadcaster, diff_drive_controller, arm_controller, gripper_controller) reported active about 11 s after the run script started waiting for them. Rosbag from an earlier take made with an earlier revision of the demo script (it sent base commands on <code>/diff_drive_controller/cmd_vel_unstamped</code> and its video shows no base motion): 114.25 s, 691,975 messages.</td>
+                        </tr>
+                        <tr>
+                            <td>Part 2 (Part B)</td>
+                            <td>Mars world; EKF sensor fusion + SLAM Toolbox (online async); the base followed a scripted six-leg loop on <code>/platform/cmd_vel</code> (no loop closure was logged). The custom A*/DWA planner node started but did not drive the robot, and Nav2's lifecycle manager crashed at startup, so the Nav2 servers never activated (only the Nav2 map saver was used).</td>
+                            <td>Rosbag 354.3 s, 784,147 messages (179 <code>/map</code> updates, 10,369 <code>/scan</code> messages). Occupancy map saved at 0.05 m per cell.</td>
+                        </tr>
+                        <tr>
+                            <td>Mars + MUSt3R</td>
+                            <td>Mars world; SLAM Toolbox + MUSt3R node (mock mode)</td>
+                            <td>Rosbag 252.6 s; 2D SLAM Toolbox map saved; no 3D reconstruction.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Commands used in these runs</h4>
+            <p class="mb-2">These are the exact launch commands from the TA run scripts. The paths are the TA workspace on the DGX Spark; before the Part 2 launch, the Part 2 script adds the workspace <code>models/</code> and <code>worlds/</code> folders to <code>GZ_SIM_RESOURCE_PATH</code>.</p>
+            <div class="code-block">
+                <code># Part 1 (Part A): Husky + UR3 + gripper simulation, headless server
+ros2 launch husky_ur3_gazebo simulation.launch.py world:=empty.sdf rviz:=false headless:=true
+
+# Part 2 (Part B): Mars world, SLAM Toolbox, Nav2 (launched, but it did not activate in this run), map saver
+ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf rviz:=false headless:=true
+ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true slam_params_file:=/home/kulbir-dgx-x1/assignment4_ws/src/husky_ur3_manipulation/config/slam_params.yaml
+ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
+ros2 run nav2_map_server map_saver_cli -f /home/kulbir-dgx-x1/assignment4_ws/deliverables_20260714/part2/part2_slam_map_20260714_053801 --ros-args -p save_map_timeout:=10.0 -p use_sim_time:=true</code>
+            </div>
+
+            <div class="alert-info-mars mb-0">
+                <strong>Where the ROS 2 packages come from:</strong> <code>husky_ur3_gazebo</code>, <code>husky_ur3_description</code>, the <code>mars.sdf</code> world and the custom <code>ekf_sensor_fusion</code> and <code>path_planner</code> nodes (package <code>husky_ur3_manipulation</code>) come from the TA's ROS 2 Jazzy workspaces, a port of the course simulator. The public course fork, <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator" target="_blank">kulbir-ahluwalia/husky_ur3_simulator</a>, is the ROS 1 Noetic version (branch <code>noetic-devel</code>): its packages are catkin packages with ROS 1 launch files, so the ROS 2 commands above do not run from it.
+            </div>
+        </section>
 
         <!-- Quick Start Section -->
         <div class="alert alert-info-mars text-center mt-4">
@@ -661,24 +841,24 @@
 
                     <div class="resource-grid">
                         <div class="resource-item">
-                            <h4>🏔️ Jezero Crater</h4>
-                            <p>Ancient river delta with diverse geological features. Perfect for navigation challenges.</p>
+                            <h4>🏔️ Mars Terrain (Husky + UR3)</h4>
+                            <p>Mars-themed Gazebo Harmonic world (flat ground with rock-like obstacles) for the Husky+UR3 mobile manipulator.</p>
                             <div class="code-block">
-                                <code>ros2 launch mars_worlds jezero_crater.launch.py</code>
+                                <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code>
                             </div>
                         </div>
                         <div class="resource-item">
-                            <h4>🏜️ Olympus Mons Base</h4>
-                            <p>Explore the largest volcano in the solar system. Extreme terrain for advanced users.</p>
+                            <h4>🏜️ Dual-Robot Mapping</h4>
+                            <p>Mapping launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
                             <div class="code-block">
-                                <code>ros2 launch mars_worlds olympus_mons.launch.py</code>
+                                <code>ros2 launch mars_robots mapping.launch.py</code>
                             </div>
                         </div>
                         <div class="resource-item">
-                            <h4>🏕️ Mars Base Alpha</h4>
-                            <p>Simulated research station with sample collection zones and charging stations.</p>
+                            <h4>🏕️ Dual-Robot Navigation</h4>
+                            <p>Navigation launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
                             <div class="code-block">
-                                <code>ros2 launch mars_worlds base_alpha.launch.py</code>
+                                <code>ros2 launch mars_robots navigation.launch.py</code>
                             </div>
                         </div>
                     </div>
@@ -687,19 +867,20 @@
                 <div class="feature-card mt-4">
                     <h3>Installing Mars Terrain Packages</h3>
                     <div class="code-block">
-                        <code># Clone the Mars worlds repository
+                        <code># Clone the Mars worlds + dual-robot SLAM explorer repository
+# (fork of itsyashk/ros2-dual-robot-slam-explorer; rubric v11 marks it not recommended
+#  because of missing mesh paths - use the Mars Thanksgiving World instead)
 cd ~/ros2_ws/src
-git clone https://github.com/kulbir-ahluwalia/mars_gazebo_worlds.git
+git clone https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer.git
 git clone https://github.com/LRCJ/GazeboMarsRover2.git
 
 # Install dependencies
 sudo apt-get update
-sudo apt-get install ros-${ROS_DISTRO}-gazebo-ros-pkgs
-sudo apt-get install ros-${ROS_DISTRO}-gazebo-msgs
+sudo apt install ros-${ROS_DISTRO}-ros-gz
 
 # Build the workspace
 cd ~/ros2_ws
-colcon build --packages-select mars_gazebo_worlds
+colcon build
 source install/setup.bash</code>
                     </div>
                 </div>
@@ -707,6 +888,8 @@ source install/setup.bash</code>
                 <div class="feature-card mt-4">
                     <h3>Custom World Configuration</h3>
                     <p>Create your own Mars exploration scenario by modifying world files:</p>
+                    <span class="handout-label">Fall 2025 handout text (not a runnable example)</span>
+                    <p class="small mb-0">The models this world includes (<code>mars_sky</code>, <code>jezero_crater_terrain</code>, <code>mars_rock_sample</code>) are not in any of the repositories linked on this page.</p>
                     <div class="code-block">
                         <code>&lt;?xml version="1.0"?&gt;
 &lt;sdf version="1.6"&gt;
@@ -741,8 +924,7 @@ source install/setup.bash</code>
                 <div class="alert-info-mars">
                     <h5>Prerequisites</h5>
                     <ul class="mb-0">
-                        <li>ROS2 Jazzy or Humble installed</li>
-                        <li>Gazebo 11 or newer</li>
+                        <li>Ubuntu 22.04 + ROS 2 Humble + Gazebo Fortress, or Ubuntu 24.04 + ROS 2 Jazzy + Gazebo Harmonic (TA reference implementation)</li>
                         <li>NVIDIA GPU recommended (GTX 1060 or better)</li>
                         <li>16GB RAM minimum</li>
                     </ul>
@@ -755,8 +937,7 @@ source install/setup.bash</code>
                             <p>Configure ROS2 Jazzy/Humble with Gazebo Harmonic</p>
                             <div class="code-block">
                                 <code>source /opt/ros/jazzy/setup.bash
-cd ~/assignment4_ws
-mkdir -p src</code>
+mkdir -p ~/assignment4_ws/src && cd ~/assignment4_ws</code>
                             </div>
                         </div>
                     </div>
@@ -767,9 +948,11 @@ mkdir -p src</code>
                             <p>Get Husky UR3 simulator and Mars worlds</p>
                             <div class="code-block">
                                 <code>cd ~/assignment4_ws/src
-git clone https://github.com/kulbir-ahluwalia/husky_ur3_simulation.git
-git clone https://github.com/kulbir-ahluwalia/mars_gazebo_worlds.git</code>
+git clone https://github.com/kulbir-ahluwalia/husky_ur3_simulator.git
+# optional, not recommended in rubric v11 (missing meshes; fork of itsyashk/ros2-dual-robot-slam-explorer)
+git clone https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer.git</code>
                             </div>
+                            <p class="small mb-0"><code>husky_ur3_simulator</code> is the ROS 1 Noetic reference (branch <code>noetic-devel</code>): it holds catkin packages with ROS 1 launch files, not ROS 2 packages. The ROS 2 Jazzy setup used for the TA runs, including the launch commands in Step 5, is described in the <a href="#ta-demos">TA reference runs</a> section.</p>
                         </div>
                     </div>
 
@@ -779,6 +962,8 @@ git clone https://github.com/kulbir-ahluwalia/mars_gazebo_worlds.git</code>
                             <p>Install required ROS2 packages</p>
                             <div class="code-block">
                                 <code>cd ~/assignment4_ws
+sudo rosdep init 2>/dev/null || true
+rosdep update
 rosdep install --from-paths src --ignore-src -r -y
 pip3 install transforms3d</code>
                             </div>
@@ -790,7 +975,7 @@ pip3 install transforms3d</code>
                             <h4>Step 4: Build Workspace</h4>
                             <p>Compile all packages</p>
                             <div class="code-block">
-                                <code>colcon build --packages-select husky_ur3_simulation mars_gazebo_worlds
+                                <code>colcon build
 source install/setup.bash</code>
                             </div>
                         </div>
@@ -802,10 +987,10 @@ source install/setup.bash</code>
                             <p>Start the complete simulation</p>
                             <div class="code-block">
                                 <code># Launch Mars world with Husky robot
-ros2 launch mars_gazebo_worlds mars_husky_slam.launch.py
+ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf
 
 # In a new terminal, launch SLAM
-ros2 launch mars_gazebo_worlds mars_slam.launch.py
+ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true
 
 # Start teleoperation (optional)
 ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
@@ -832,28 +1017,24 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
             <div class="tab-pane fade" id="slam" role="tabpanel">
                 <h2 class="section-header">🎯 SLAM Tasks & Requirements</h2>
 
-                <div class="feature-card">
+                <div class="feature-card" id="part-b-rubric">
                     <i class="fas fa-tasks feature-icon"></i>
-                    <h3>Assignment 4 Part 2: Mars SLAM Challenge (75 points)</h3>
-                    <ol>
-                        <li><strong>Basic Navigation (15 pts):</strong> Navigate through Mars crater field</li>
-                        <li><strong>Sample Collection (15 pts):</strong> Use manipulator to collect Mars rocks</li>
-                        <li><strong>Map Generation (15 pts):</strong> Create complete 2D/3D map of environment</li>
-                        <li><strong>Loop Closure (10 pts):</strong> Demonstrate successful loop closure in Mars terrain</li>
-                        <li><strong>Obstacle Avoidance (10 pts):</strong> Navigate around Mars boulders autonomously</li>
-                        <li><strong>Technical Report (10 pts):</strong> Document SLAM performance on Mars</li>
-                    </ol>
+                    <h3>Assignment 4 Part B: Mars SLAM Challenge (75 points)</h3>
+                    <p>Part B covered sensor fusion (EKF), path planning with obstacle avoidance, 2D SLAM, full-system integration, and a technical report. The Fall 2025 pages listed two different per-item point splits for this part and no rubric file from that time survives, so only the Gradescope total is given here.</p>
+                    <p class="mb-0"><strong>Total: 75 points</strong> (Gradescope), plus the Mars Challenge bonus (+10 points) below. <em>(Superseded by rubric v11: a 175-point extra-credit rubric due December 15, 2025, with up to +35 bonus points.)</em></p>
                 </div>
 
                 <div class="feature-card mt-4">
                     <i class="fas fa-star feature-icon"></i>
                     <h3>🌟 Bonus Challenge: Mars Dust Storm (10 extra points)</h3>
                     <p>Complete SLAM during a simulated Mars dust storm with reduced visibility!</p>
+                    <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
                     <div class="code-block">
                         <code># Enable dust storm mode
 ros2 param set /mars_environment enable_dust_storm true
 ros2 param set /mars_environment dust_density 0.7</code>
                     </div>
+                    <p class="small mb-0">The TA reference runs did not include a dust-storm run.</p>
                 </div>
 
                 <div class="feature-card mt-4">
@@ -896,6 +1077,7 @@ ros2 param set /mars_environment dust_density 0.7</code>
                             </tbody>
                         </table>
                     </div>
+                    <p class="mb-0"><small>Part B is graded out of 75 points (rubric above); the Points column in this table is not additional to that total.</small></p>
                 </div>
 
                 <div class="alert-mars mt-4">
@@ -958,7 +1140,7 @@ ros2 param set /mars_environment dust_density 0.7</code>
                                 <div class="code-block mt-3">
                                     <code>export LIBGL_ALWAYS_SOFTWARE=1
 export MESA_GL_VERSION_OVERRIDE=3.3
-ros2 launch husky_ur3_simulation gazebo_sim.launch.py</code>
+ros2 launch husky_ur3_gazebo simulation.launch.py</code>
                                 </div>
                             </div>
                         </div>
@@ -974,7 +1156,8 @@ ros2 launch husky_ur3_simulation gazebo_sim.launch.py</code>
                             <div class="accordion-body">
                                 <strong>Problem:</strong> Reduced traction on sandy Mars surface<br>
                                 <strong>Solution:</strong> Adjust wheel odometry covariance and use IMU fusion
-                                <div class="code-block mt-3">
+                                <div class="mt-3"><span class="handout-label">Fall 2025 handout text (not a runnable command)</span></div>
+                                <div class="code-block mt-1">
                                     <code># Increase odometry uncertainty
 ros2 param set /husky_controller odom_covariance_xy 0.1
 ros2 param set /ekf_filter imu_weight 0.8</code>
@@ -993,7 +1176,8 @@ ros2 param set /ekf_filter imu_weight 0.8</code>
                             <div class="accordion-body">
                                 <strong>Problem:</strong> UR3 arm overshoots in 38% gravity<br>
                                 <strong>Solution:</strong> Adjust PID gains for Mars gravity
-                                <div class="code-block mt-3">
+                                <div class="mt-3"><span class="handout-label">Fall 2025 handout text (not a runnable command)</span></div>
+                                <div class="code-block mt-1">
                                     <code># Mars gravity compensation
 ros2 param set /ur3_controller gravity_compensation 3.71
 ros2 param set /ur3_controller pid_p 0.6</code>
@@ -1011,12 +1195,10 @@ ros2 param set /ur3_controller pid_p 0.6</code>
                         <div id="issue5" class="accordion-collapse collapse" data-bs-parent="#troubleshootAccordion">
                             <div class="accordion-body">
                                 <strong>Problem:</strong> Feature detection difficult in monochrome Mars environment<br>
-                                <strong>Solution:</strong> Tune visual feature detectors for Mars
+                                <strong>Solution:</strong> Tune visual feature detectors for Mars. We did not verify whether RTAB-Map picks up <code>Vis/*</code> changes made at runtime with <code>ros2 param set</code>, so the safe route is to pass them as launch arguments and restart the node:
                                 <div class="code-block mt-3">
-                                    <code># Adjust RTAB-Map parameters for Mars
-ros2 param set /rtabmap Vis/FeatureType 6  # ORB features
-ros2 param set /rtabmap Vis/MaxFeatures 2000
-ros2 param set /rtabmap RGBD/OptimizeMaxError 0.5</code>
+                                    <code># Pass RTAB-Map Vis/* parameters at launch, then restart the node after any change
+ros2 launch rtabmap_launch rtabmap.launch.py args:="--Vis/MinInliers 10 --Vis/FeatureType 6 --Vis/MaxFeatures 2000"</code>
                                 </div>
                             </div>
                         </div>
@@ -1049,12 +1231,13 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="feature-card">
-                            <h3>📹 Video Tutorials</h3>
+                            <h3>📹 TA Reference Run Videos</h3>
+                            <p class="small">TA reference runs, not student submissions. They are at the top of this page.</p>
                             <ul>
-                                <li><a href="#">Complete Assignment 4 Walkthrough (45 min)</a></li>
-                                <li><a href="#">Husky Robot Setup Guide (15 min)</a></li>
-                                <li><a href="#">Mars SLAM Demo (20 min)</a></li>
-                                <li><a href="#">Gripper Control Tutorial (10 min)</a></li>
+                                <li><a href="#ta-demos">Part 1 (Part A): Husky + UR3 setup and scripted base drive</a></li>
+                                <li><a href="#ta-demos">Part 2 (Part B): SLAM on Mars, Gazebo view</a></li>
+                                <li><a href="#ta-demos">Part 2 (Part B): SLAM Toolbox map growing and the saved map</a></li>
+                                <li><a href="#ta-demos">Mars world with the MUSt3R node (mock mode, 2D map only)</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1062,7 +1245,7 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                         <div class="feature-card">
                             <h3>📄 Documentation</h3>
                             <ul>
-                                <li><a href="/files/cs498gc/fa25/assignments/mars_slam_rubric.pdf">Mars SLAM Grading Rubric</a></li>
+                                <li><a href="#part-b-rubric">Mars SLAM Grading Rubric (see the Part B rubric card in the SLAM Tasks tab)</a></li>
                                 <li><a href="/files/cs498gc/fa25/assignments/assignment4_extra_credit_guide.pdf">Extra Credit Guide (9 pages)</a></li>
                                 <li><a href="/files/cs498gc/fa25/presentations/assignment4_part1_demo_main_VER1.16_PDF_ASSIGNMENT4.pdf">Assignment 4 Slides</a></li>
                             </ul>
@@ -1076,13 +1259,13 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                         <div class="col-md-6">
                             <h4>Open Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 0.0}'</code>
+                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.0]}"</code>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <h4>Close Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 1.05}'</code>
+                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [-0.04]}"</code>
                             </div>
                         </div>
                     </div>
@@ -1127,8 +1310,8 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                     <div class="resource-item">
                         <h4>🔗 GitHub Repositories</h4>
                         <ul>
-                            <li><a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulation">Husky UR3 Simulator</a></li>
-                            <li><a href="https://github.com/kulbir-ahluwalia/mars_gazebo_worlds">Mars Gazebo Worlds</a></li>
+                            <li><a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">Husky UR3 Simulator (course fork, ROS 1 Noetic)</a></li>
+                            <li><a href="https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer">Mars worlds + dual-robot SLAM explorer</a> (fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>; not recommended in rubric v11, missing meshes)</li>
                             <li><a href="https://github.com/LRCJ/GazeboMarsRover2">Mars Rover Models</a></li>
                         </ul>
                     </div>
@@ -1140,83 +1323,11 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                 <h2 class="section-header">🏆 Student Mars Mission Showcase</h2>
 
                 <div class="alert-mars">
-                    <h4>Submit Your Mars Mission!</h4>
-                    <p>Successfully completed the Mars exploration challenge? Share your achievement!</p>
-                    <ul>
-                        <li>Record a 2-minute highlight video of your best Mars navigation</li>
-                        <li>Include autonomous sample collection sequence</li>
-                        <li>Submit via Gradescope with hashtag #MarsCS498GC</li>
-                    </ul>
+                    <h4>Fall 2025 showcase (archive)</h4>
+                    <p>During Fall 2025, students were invited to record a 2-minute highlight video of their best Mars navigation, including the autonomous sample collection sequence, and to submit it through Gradescope with the hashtag #MarsCS498GC.</p>
+                    <p class="mb-0">Individual student submissions and results are not published on this page. To see what complete runs look like, watch the <a href="#ta-demos">TA reference runs</a> at the top of this page (TA reference runs, not student submissions).</p>
                 </div>
 
-                <div class="student-showcase">
-                    <h3>🌟 Hall of Fame - Fall 2025</h3>
-                    <p class="text-center">Outstanding Mars exploration implementations will be featured here!</p>
-
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <div class="feature-card">
-                                <h5>🥇 Best Navigation</h5>
-                                <p class="text-muted">Awaiting submissions...</p>
-                                <small>Criteria: Fastest crater traversal with obstacle avoidance</small>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="feature-card">
-                                <h5>🥈 Best Manipulation</h5>
-                                <p class="text-muted">Awaiting submissions...</p>
-                                <small>Criteria: Most samples collected in 30 seconds</small>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="feature-card">
-                                <h5>🥉 Most Creative</h5>
-                                <p class="text-muted">Awaiting submissions...</p>
-                                <small>Criteria: Innovative approach to Mars exploration</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-card mt-4">
-                    <h3>📊 Leaderboard Metrics</h3>
-                    <table class="table table-mars">
-                        <thead>
-                            <tr>
-                                <th>Metric</th>
-                                <th>Current Record</th>
-                                <th>Holder</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Fastest Crater Crossing</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Most Samples Collected</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Longest Autonomous Run</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Most Accurate SLAM Map</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
 
                 <div class="feature-card mt-4">
                     <h3>🚀 Challenge Yourself!</h3>
@@ -1312,6 +1423,21 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
             card.style.transition = 'all 0.6s ease';
             observer.observe(card);
         });
+
+        // Open the tab that holds an in-page link target (for example #part-b-rubric in the SLAM Tasks tab)
+        function showTabForHash() {
+            if (!location.hash || location.hash.length < 2) return;
+            const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (!target) return;
+            const pane = target.closest('.tab-pane');
+            if (!pane || typeof bootstrap === 'undefined') return;
+            const trigger = document.querySelector('[data-bs-target="#' + pane.id + '"]');
+            if (!trigger) return;
+            bootstrap.Tab.getOrCreateInstance(trigger).show();
+            setTimeout(() => target.scrollIntoView(), 200);
+        }
+        window.addEventListener('hashchange', showTabForHash);
+        showTabForHash();
     </script>
 </body>
 </html>

@@ -10,13 +10,12 @@ layout: null
   <title>Kulbir Singh Ahluwalia - CV</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link href="css/fontawesome.all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
   <link href="css/bulma.min.css" rel="stylesheet">
   <link href="css/cv.css" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="js/fontawesome.all.min.js"></script>
   {% include head-extras.html %}
 </head>
 
@@ -73,33 +72,33 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>University of Illinois at Urbana-Champaign</b><br />
-            Ph.D. in Computer Science (GPA: 3.91/4.0). Advised by
+            <b>University of Illinois Urbana-Champaign</b><br />
+            Ph.D. in Computer Science (GPA: 3.91/4). Advised by
             <a href="http://daslab.illinois.edu">Prof. Girish Chowdhary</a> and
             <a href="https://hmr-lab.github.io">Prof. Julia Hockenmaier</a>.
           </div>
           <div class="column is-one-fifths has-text-right">
-            Fall 2022 - Present
+            Jun 2022 - Present
           </div>
         </div>
 
         <div class="columns">
           <div class="column is-four-fifths">
             <b>University of Maryland, College Park</b><br />
-            M.Eng. in Robotics. Advisors: Prof. Pratap Tokekar, Prof. Ryan Williams.
+            M.Eng. in Robotics (GPA: 3.88/4). Research mentor: Prof. Pratap Tokekar (RAAS Lab, independent study).
           </div>
           <div class="column is-one-fifths has-text-right">
-            2019 - 2021
+            Aug 2019 - May 2021
           </div>
         </div>
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>Thapar University, India</b><br />
-            B.Tech in Mechanical Engineering.
+            <b>Punjab Engineering College, India</b><br />
+            B.Tech. in Electrical Engineering (GPA: 8.12/10).
           </div>
           <div class="column is-one-fifths has-text-right">
-            2013 - 2017
+            Aug 2015 - May 2019
           </div>
         </div>
 
@@ -108,12 +107,28 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>Earthsense Inc.</b><br />
-            AI Intern. Deployed 6 Vision-Language Models (3B - 72B params) for autonomous navigation.
-            Built end-to-end ML pipelines. Deployed Grounded SAM2 for scalable data-generation workflows.
+            <b>Qualcomm Technologies, Inc.</b><br />
+            Product Management Intern, Compute Chipset (Snapdragon X Elite / X2 Elite AI-PC platforms).
+            Role scope: market and competitive analysis of on-device AI, generative AI, and VLM features; product requirements and roadmap inputs;
+            technical evaluation of VLM workloads on the Hexagon NPU (proposed: a VLM competitive study on the NPU); cross-functional work with silicon and software teams (AIMET, AI Hub Models).
           </div>
           <div class="column is-one-fifths has-text-right">
-            Summer 2025
+            Jun 8 - Aug 21, 2026
+            <br />
+            San Diego, CA
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>Earthsense Inc.</b><br />
+            AI Intern (Supervisor: Michael McGuire, Lead CV Engineer). Developed a natural-language-conditioned waypoint generation pipeline
+            for outdoor robot navigation, built a Grounded SAM2 auto-labeling pipeline for large outdoor navigation datasets, and deployed
+            six open-source Vision-Language Models (3B - 72B params) for image-space reasoning and natural-language-conditioned question
+            answering on 4-wheeled skid-steer robots.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            May 2025 - Aug 2025
             <br />
             Urbana, IL
           </div>
@@ -121,38 +136,12 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>University of Illinois at Urbana-Champaign</b><br />
+            <b>University of Illinois Urbana-Champaign</b><br />
             Graduate Research Assistant in the <a href="http://daslab.illinois.edu/">Distributed Autonomous Systems Lab (DASLAB)</a>.
             Research on natural language-conditioned navigation for mobile manipulators using VLMs.
           </div>
           <div class="column is-one-fifths has-text-right">
             Aug 2022 - Present
-            <br />
-            Urbana, IL
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-four-fifths">
-            <b>University of Illinois at Urbana-Champaign</b><br />
-            Teaching Assistant / Co-developer for <a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/">CS498GC: Mobile Robotics for CS</a>
-            (Prof. Girish Chowdhary). Designed assignments on ROS2, MoveIt2, SLAM, and mobile manipulators.
-          </div>
-          <div class="column is-one-fifths has-text-right">
-            Fall 2025
-            <br />
-            Urbana, IL
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-four-fifths">
-            <b>University of Illinois at Urbana-Champaign</b><br />
-            Teaching Assistant for CS444: Deep Learning for Computer Vision (Prof. Svetlana Lazebnik).
-            Nominated for TA award by Prof. Lazebnik.
-          </div>
-          <div class="column is-one-fifths has-text-right">
-            Spring 2025
             <br />
             Urbana, IL
           </div>
@@ -183,29 +172,64 @@ layout: null
         <!-- Publications -->
         <h2>Publications</h2>
 
+        <!-- STATUS-NEEDS-KULBIR-CONFIRMATION -->
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>WaypointGen++</b>
+            <b>TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions &amp; Grounded Constraint Phrases for Mobile Manipulator Navigation</b>
             <div class="publication-authors">
-              <span class="author-block author-me">K. Ahluwalia*,</span>
-              <span class="author-block">C. Jain*,</span>
+              <span class="author-block author-me">K. Ahluwalia,</span>
+              <span class="author-block">C. Jain,</span>
+              <span class="author-block">G. S. Kahlon,</span>
               <span class="author-block"><a href="https://jrcuaranv.github.io">J. Cuaran</a>,</span>
-              <span class="author-block">S. Gummadi,</span>
-              <span class="author-block">M. McGuire,</span>
-              <span class="author-block">A. Sivakumar,</span>
+              <span class="author-block"><a href="https://slazebni.cs.illinois.edu/">S. Lazebnik</a>,</span>
+              <span class="author-block"><a href="http://daslab.illinois.edu">G. Chowdhary</a>,</span>
+              <span class="author-block"><a href="https://hmr-lab.github.io">J. Hockenmaier</a></span>
+            </div>
+            Map-free, language-conditioned planner that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            IEEE T-RO (in preparation)
+          </div>
+        </div>
+
+        <!-- STATUS-NEEDS-KULBIR-CONFIRMATION -->
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>WaypointGen: Language-Grounded Waypoint-Based Navigation for Agricultural Mobile Manipulators</b>
+            <div class="publication-authors">
+              <span class="author-block author-me">K. Ahluwalia,</span>
+              <span class="author-block">C. Jain,</span>
+              <span class="author-block"><a href="https://jrcuaranv.github.io">J. Cuaran</a>,</span>
+              <span class="author-block">G. S. Kahlon,</span>
+              <span class="author-block"><a href="https://slazebni.cs.illinois.edu/">S. Lazebnik</a>,</span>
               <span class="author-block"><a href="https://hmr-lab.github.io">J. Hockenmaier</a>,</span>
               <span class="author-block"><a href="http://daslab.illinois.edu">G. Chowdhary</a></span>
             </div>
-            Extending VLM-based navigation waypoint generation for mobile manipulators in outdoor environments.
+            Natural-language orchard commands to 2D waypoints over a four-level spatial hierarchy, using bird's-eye-view projection, open-vocabulary perception, and multi-round VLM inference.
           </div>
           <div class="column is-one-fifths has-text-right">
-            In Prep, IEEE RAL, 2026
+            CoRL 2026 submission (desk-rejected: page limit)
           </div>
         </div>
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf"><b>WaypointGen: Natural Language to 2D Navigation Waypoints Generation using VLMs</b></a>
+            <!-- STATUS-NEEDS-KULBIR-CONFIRMATION: workshop upload and author list unconfirmed -->
+            <b>WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation</b>
+            <div class="publication-authors">
+              <span class="author-block author-me">K. Ahluwalia,</span>
+              <span class="author-block">et al. (author list to be finalized)</span>
+            </div>
+            Modular pipeline in which a vision-language model picks among MPPI trajectory candidates after open-vocabulary grounding of target and avoidance regions in a local bird's-eye view.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            <a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop</a> (manuscript)
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf"><b>WaypointGen: Learning Grounded Waypoint based Navigation for Mobile Manipulators</b></a>
             <div class="publication-authors">
               <span class="author-block author-me">K. Ahluwalia*,</span>
               <span class="author-block">C. Jain*,</span>
@@ -242,12 +266,12 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>Plant Placement using Natural Language Grounding</b>
+            <a href="files/V3_AIFARMS-KSA_Poster-2023.pdf"><b>Plant Placement using Natural Language Grounding</b></a>
             <div class="publication-authors">
               <span class="author-block author-me">K. Ahluwalia,</span>
-              <span class="author-block">M. McGuire,</span>
-              <span class="author-block">R. Das,</span>
-              <span class="author-block">P. Zhang,</span>
+              <span class="author-block">M. Vilsoet,</span>
+              <span class="author-block">R. Haldar,</span>
+              <span class="author-block">P. Chang,</span>
               <span class="author-block"><a href="https://hmr-lab.github.io">J. Hockenmaier</a>,</span>
               <span class="author-block"><a href="http://daslab.illinois.edu">G. Chowdhary</a></span>
             </div>
@@ -263,18 +287,18 @@ layout: null
             <a href="https://ieeexplore.ieee.org/document/9923747"><b>Intermittent Deployment for Large-Scale Multi-Robot Forage Perception</b></a>
             <div class="publication-authors">
               <span class="author-block">J. Liu,</span>
-              <span class="author-block">M. Maqbool,</span>
+              <span class="author-block">M. Rangwala,</span>
               <span class="author-block author-me">K. Ahluwalia,</span>
               <span class="author-block">S. Ghajar,</span>
-              <span class="author-block">H. Singh,</span>
-              <span class="author-block">T. Wilson,</span>
+              <span class="author-block">H. Dhami,</span>
               <span class="author-block">P. Tokekar,</span>
+              <span class="author-block">B. Tracy,</span>
               <span class="author-block">R. Williams</span>
             </div>
             Integrated pipeline for large-scale pasture monitoring with synthetic data generation, spatiotemporal prediction, and multi-robot deployment.
           </div>
           <div class="column is-one-fifths has-text-right">
-            IEEE TASE, 2021
+            IEEE T-ASE, 2024
           </div>
         </div>
 
@@ -282,14 +306,14 @@ layout: null
           <div class="column is-four-fifths">
             <a href="https://doi.org/10.3390/agronomy11112245"><b>DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains</b></a>
             <div class="publication-authors">
-              <span class="author-block">M. Maqbool,</span>
+              <span class="author-block">M. Rangwala,</span>
               <span class="author-block">J. Liu,</span>
               <span class="author-block author-me">K. Ahluwalia,</span>
               <span class="author-block">S. Ghajar,</span>
-              <span class="author-block">H. Singh,</span>
-              <span class="author-block">T. Wilson,</span>
+              <span class="author-block">H. S. Dhami,</span>
+              <span class="author-block">B. F. Tracy,</span>
               <span class="author-block">P. Tokekar,</span>
-              <span class="author-block">R. Williams</span>
+              <span class="author-block">R. K. Williams</span>
             </div>
             Bi-directional ConvLSTM encoder-decoder for spatiotemporal pasture growth forecasting from spatial height measurements.
           </div>
@@ -303,7 +327,7 @@ layout: null
             <a href="https://doi.org/10.1364/OPN.30.2.000034"><b>Smartphone Optical Sensors</b></a>
             <div class="publication-authors">
               <span class="author-block">S. Saini,</span>
-              <span class="author-block">A. Gupta,</span>
+              <span class="author-block">A. Sridhar,</span>
               <span class="author-block author-me">K. Ahluwalia</span>
             </div>
             Multispectral fundus eye camera prototype featured in Optics and Photonics News.
@@ -317,7 +341,7 @@ layout: null
           <div class="column is-four-fifths">
             <a href="https://doi.org/10.1117/12.2557416"><b>Reinforcement Learning for Near Infrared Spectrum Data for Non-Destructive Testing of Fruits</b></a>
             <div class="publication-authors">
-              <span class="author-block">Y. Song,</span>
+              <span class="author-block">Y. Li,</span>
               <span class="author-block author-me">K. Ahluwalia,</span>
               <span class="author-block">S. Saini</span>
             </div>
@@ -333,8 +357,19 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>CS498GC: Mobile Robotics for CS</b> - Co-developer and TA<br />
-            Designed assignments on ROS2, MoveIt2, SLAM, mobile manipulators. Course website:
+            <b>CS 440/ECE 448: Artificial Intelligence</b> - Teaching Assistant (Prof. Margaret Fleck)<br />
+            Course page: <a href="https://courses.grainger.illinois.edu/cs440/fa2026/">courses.grainger.illinois.edu/cs440/fa2026/</a>
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            Fall 2026
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>CS498GC: Mobile Robotics for Computer Scientists</b> - Teaching Assistant and curriculum co-developer (Prof. Girish Chowdhary)<br />
+            Co-developed the graduate course curriculum (ROS 2, sensor fusion, SLAM, mobile manipulation); authored and maintain the public
+            course website and assignments. Course website:
             <a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/">kulbir-singh-ahluwalia.com/cs498gc/fa25/</a>
           </div>
           <div class="column is-one-fifths has-text-right">
@@ -344,11 +379,23 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>CS444: Deep Learning for Computer Vision</b> - Teaching Assistant<br />
-            Nominated for TA award by Prof. Svetlana Lazebnik.
+            <b>CS444: Deep Learning for Computer Vision</b> - Teaching Assistant (Prof. Svetlana Lazebnik)<br />
+            Updated assignment starter code, assessed student submissions, held office hours, answered questions on Campuswire,
+            and designed multimodal quiz questions.
           </div>
           <div class="column is-one-fifths has-text-right">
-            Spring 2025
+            Spring 2024, 2025, 2026
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <!-- STATUS-NEEDS-KULBIR-CONFIRMATION: instructor name taken from the homepage CS519 entry; the CV does not name the instructor -->
+            <b>CS519: Scientific Visualization</b> - Teaching Assistant (Dr. Eric Shaffer)<br />
+            Communicated data-visualization concepts to a multidisciplinary student audience and guided project work.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            Summer 2025
           </div>
         </div>
 
@@ -357,10 +404,36 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>TA Award Nomination</b> - CS Department, UIUC (by Prof. Svetlana Lazebnik)
+            <b>National Bal Shree Award</b> for Creative Scientific Innovations - Ministry of Human Resource Development, Government of India
           </div>
           <div class="column is-one-fifths has-text-right">
-            Spring 2025
+            
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>First Prize, B.Tech. Major Project</b> - Teleoperated gesture-controlled robotic arm, Punjab Engineering College
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            2019
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>First Prize, Texas Instruments Hardware Hackathon</b> - "Smart Garden" autonomous system
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>First Prize, Autonomous Pick-n-Place Transporter Bot</b> - IIT Roorkee; 6th of 400 teams at IIT Bombay Techfest
+          </div>
+          <div class="column is-one-fifths has-text-right">
           </div>
         </div>
 

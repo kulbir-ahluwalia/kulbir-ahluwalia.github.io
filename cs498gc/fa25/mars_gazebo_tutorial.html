@@ -10,8 +10,8 @@
     <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,SLAM,Mars,Gazebo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS498GC: Mars Gazebo Tutorial - SLAM on Mars | Fall 2025</title>
-    <link rel="icon" href="resources/favicon.ico" />
-    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -480,25 +480,27 @@
         <h3 class="mt-4">Step 1: Install Mars World Package</h3>
         <div class="code-block">
             <code># Clone the Mars world repository
+# (fork of itsyashk/ros2-dual-robot-slam-explorer; the final rubric v11 marks it not recommended
+#  because of missing mesh paths - use the Mars Thanksgiving World instead)
 cd ~/assignment4_ws/src
-git clone https://github.com/kulbir-ahluwalia/mars_gazebo_worlds.git
+git clone https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer.git
 
 # Install dependencies
 cd ~/assignment4_ws
 rosdep install --from-paths src --ignore-src -r -y
 
 # Build the workspace
-colcon build --packages-select mars_gazebo_worlds
+colcon build
 source install/setup.bash</code>
         </div>
 
         <h3 class="mt-4">Step 2: Launch Mars Environment</h3>
         <div class="code-block">
             <code># Launch Mars world with Husky robot
-ros2 launch mars_gazebo_worlds mars_husky_slam.launch.py
+ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf
 
 # In a new terminal, launch SLAM
-ros2 launch mars_gazebo_worlds mars_slam.launch.py
+ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true
 
 # Start teleoperation (optional)
 ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
@@ -668,8 +670,8 @@ ros2 param set /rtabmap RGBD/OptimizeMaxError 0.5</code>
             <div class="resource-item">
                 <h4>📄 Documentation</h4>
                 <ul>
-                    <li><a href="files/cs498gc/fa25/assignments/mars_slam_rubric.pdf">Mars SLAM Grading Rubric</a></li>
-                    <li><a href="https://github.com/kulbir-ahluwalia/mars_gazebo_worlds">Mars Gazebo Worlds Repository</a></li>
+                    <li><a href="slaming_mars.html#part-b-rubric">Mars SLAM Grading Rubric (original Fall 2025 version; superseded by rubric v11)</a></li>
+                    <li><a href="https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer">Mars Gazebo Worlds Repository</a> (fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>; not recommended in rubric v11, missing meshes)</li>
                     <li><a href="mobile_manipulator_project.html">Full Assignment 4 Details</a></li>
                 </ul>
             </div>

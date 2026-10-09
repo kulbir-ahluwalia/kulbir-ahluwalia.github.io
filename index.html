@@ -11,8 +11,8 @@ layout: null
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- SEO metadata -->
-  <meta name="description" content="Kulbir Singh Ahluwalia - PhD Candidate in Computer Science at UIUC (advised by Prof. Girish Chowdhary & Prof. Julia Hockenmaier). Research: WaypointGen (VLM-grounded navigation for mobile manipulators), efficient on-device AI, physical AI / agricultural robotics (DASLAB/AIFARMS). Current: Product Management Intern, Compute Chipset (Snapdragon X Elite AI-PC), Qualcomm (June-Aug 2026, San Diego). Prior: EarthSense AI Intern (deployed 6 VLMs 3B-72B on Jetson for outdoor robots); ICRA 2025 author; CS498GC co-developer. UMD MEng Robotics.">
-  <meta name="keywords" content="Kulbir Ahluwalia, 3D perception, SLAM, sensor fusion, EKF, semantic octomap, RGB-D, diffusion depth, vision-language models, Grounded SAM2, Qwen, Molmo, mobile manipulator, autonomous robots, UIUC PhD, ICRA 2025">
+  <meta name="description" content="Kulbir Singh Ahluwalia - PhD candidate in Computer Science at UIUC, advised by Prof. Girish Chowdhary and Prof. Julia Hockenmaier. Research: language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen) and edge AI. Fall 2026: TA for CS 440/ECE 448 Artificial Intelligence; CS498GC SLAM-ing Mars TA reference runs now online. Past: Qualcomm Compute Chipset Product Management Intern (Summer 2026), EarthSense AI Intern (Summer 2025).">
+  <meta name="keywords" content="Kulbir Ahluwalia, WaypointGen, language-grounded navigation, agricultural robots, edge AI, 3D perception, SLAM, sensor fusion, EKF, semantic octomap, RGB-D, diffusion depth, vision-language models, Grounded SAM2, Qwen, Molmo, mobile manipulator, autonomous robots, UIUC PhD, ICRA 2025">
   <meta name="author" content="Kulbir Singh Ahluwalia">
   <link rel="canonical" href="https://kulbir-singh-ahluwalia.com/">
 
@@ -20,14 +20,14 @@ layout: null
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://kulbir-singh-ahluwalia.com/">
   <meta property="og:title" content="Kulbir Singh Ahluwalia - 3D Perception, SLAM, VLMs | PhD Candidate, UIUC">
-  <meta property="og:description" content="PhD Candidate researching 3D perception, SLAM, sensor fusion, and vision-language models for autonomous mobile robots. ICRA 2025 author.">
+  <meta property="og:description" content="PhD candidate at UIUC working on language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen) and edge AI. ICRA 2025 author.">
   <meta property="og:image" content="https://kulbir-singh-ahluwalia.com/images/portrait_1740471515.jpg">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://kulbir-singh-ahluwalia.com/">
   <meta name="twitter:title" content="Kulbir Singh Ahluwalia - 3D Perception, SLAM, VLMs | PhD Candidate, UIUC">
-  <meta name="twitter:description" content="PhD Candidate researching 3D perception, SLAM, sensor fusion, and vision-language models for autonomous mobile robots. ICRA 2025 author.">
+  <meta name="twitter:description" content="PhD candidate at UIUC working on language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen) and edge AI. ICRA 2025 author.">
   <meta name="twitter:image" content="https://kulbir-singh-ahluwalia.com/images/portrait_1740471515.jpg">
 
   <!-- JSON-LD Person schema for richer Google results -->
@@ -233,17 +233,44 @@ layout: null
       <div class="publication-block columns">
         <div class="column">
           <div class="content">
+            <h3 class="publication-title">Teaching Assistant - CS 440/ECE 448: Artificial Intelligence</h3>
+            <div class="publication-venue">
+              <span>University of Illinois, Aug 2026 - Present</span>
+            </div>
+            <p class="publication-description">
+              <strong>Instructor:</strong> Prof. Margaret Fleck<br>
+              • Grading Moodle quizzes and testing the machine-problem autograders.
+            </p>
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://courses.grainger.illinois.edu/cs440/fa2026/">
+                <span class="icon"><i class="fas fa-book-open"></i></span>
+                <span>Fall 2026 Course Page</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-block columns">
+        <div class="column">
+          <div class="content">
             <h3 class="publication-title">Teaching Assistant - CS498GC: Mobile Robotics for CS</h3>
             <div class="publication-venue">
-              <span>University of Illinois, Aug 2025 - Present</span>
+              <span>University of Illinois, Aug 2025 - Dec 2025</span>
             </div>
             <p class="publication-description">
               <strong>Co-developed with Prof. Girish Chowdhary</strong><br>
-              • Co-developed course curriculum focusing on mobile robotics, ROS2, sensor fusion, and SLAM algorithms.<br>
-              • Managing coding exercises and problem sets involving Extended Kalman Filtering and odometry implementation.<br>
-              • Conducting office hours and helping students with ROS2 development and debugging.<br>
-              • Maintaining course website and autograding infrastructure on Gradescope.<br>
-              • <strong>Special Topic Fall 2025:</strong> <a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/slaming_mars.html">SLAM-ing on Mars</a>
+              • Co-developed the course curriculum on mobile robotics, ROS2, sensor fusion, and SLAM algorithms.<br>
+              • Managed coding exercises and problem sets on Extended Kalman Filtering and odometry implementation.<br>
+              • Held office hours and helped students with ROS2 development and debugging.<br>
+              • Built and maintained the course website; maintained the autograding infrastructure on Gradescope.<br>
+              • <strong>Special Topic Fall 2025:</strong> <a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/slaming_mars.html">SLAM-ing on Mars</a><br>
+              • <strong>Teaching highlight:</strong> <a href="{{ '/cs498gc/fa25/slaming_mars.html#ta-demos' | relative_url }}">SLAM-ing Mars TA reference runs</a> (Husky + UR3 in the Mars Gazebo world, mapped with SLAM Toolbox; clip below at 10x speed).
+            </p>
+            <p>
+              <a href="{{ '/cs498gc/fa25/slaming_mars.html#ta-demos' | relative_url }}">
+                <img src="{{ '/images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.gif' | relative_url }}" alt="SLAM-ing Mars TA reference run: a Husky + UR3 drives away from the camera into the Mars-world rock field in Gazebo during the Part 2 SLAM run (10x speed)" width="320" height="180" loading="lazy" style="max-width: 100%; height: auto; border-radius: 4px;">
+              </a>
             </p>
             <div class="publication-links buttons field has-addons">
               <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://kulbir-ahluwalia.github.io/cs498gc/fa25/">
@@ -264,7 +291,7 @@ layout: null
           <div class="content">
             <h3 class="publication-title">Teaching Assistant - CS444: Deep Learning for Computer Vision</h3>
             <div class="publication-venue">
-              <span>University of Illinois, Jan 2024 - May 2024, Jan 2025 - May 2025</span>
+              <span>University of Illinois, Jan 2024 - May 2024, Jan 2025 - May 2025, Jan 2026 - May 2026</span>
             </div>
             <p class="publication-description">
               <strong>Instructor:</strong> Dr. Svetlana Lazebnik<br>
@@ -281,6 +308,10 @@ layout: null
               <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://slazebni.cs.illinois.edu/spring25/">
                 <span class="icon"><i class="fas fa-book-open"></i></span>
                 <span>Spring 2025</span>
+              </a>
+              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://slazebni.cs.illinois.edu/spring26/">
+                <span class="icon"><i class="fas fa-book-open"></i></span>
+                <span>Spring 2026</span>
               </a>
               </div>
           </div>
@@ -321,6 +352,31 @@ layout: null
       <div class="publication-block columns">
         <div class="column">
           <div class="content">
+            <h3 class="publication-title">Product Management Intern - Qualcomm Technologies, Inc. (Compute Chipset)</h3>
+            <div class="publication-venue">
+              <span>San Diego, CA, USA | June 8 - Aug 21, 2026 (full-time, on-site)</span>
+            </div>
+            <p class="publication-description">
+              <strong>Team:</strong> Compute Chipset Product Management (Snapdragon X Elite / X2 Elite AI-PC platforms)<br>
+              <strong>Role scope:</strong><br>
+              • Market and competitive analysis of on-device AI, generative AI, and vision-language model (VLM) features for AI-PC platforms.<br>
+              • Turning customer, partner, and engineering feedback into product requirements and roadmap inputs.<br>
+              • Technical evaluation of VLM and multimodal inference workloads on Snapdragon silicon (power, thermal, latency, memory, and accuracy trade-offs on the Hexagon NPU); proposed contribution: a VLM competitive study on the NPU.<br>
+              • Cross-functional work with silicon, software (AIMET quantization, AI Hub Models), systems, marketing, and business development teams, including internal briefings on edge AI deployment trends.
+            </p>
+            <div class="publication-links buttons field has-addons">
+              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://www.qualcomm.com/">
+                <span class="icon"><i class="fas fa-building"></i></span>
+                <span>Company Website</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-block columns">
+        <div class="column">
+          <div class="content">
             <h3 class="publication-title">AI Intern - Earthsense Inc.</h3>
             <div class="publication-venue">
               <span>Urbana, IL, USA | May 2025 - Aug 2025</span>
@@ -334,33 +390,7 @@ layout: null
               • Enhanced ROS-based systems for real-world agricultural applications, directly supporting the advancement of Physical AI.
             </p>
             <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://www.earthsense.com/">
-                <span class="icon"><i class="fas fa-building"></i></span>
-                <span>Company Website</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NEW: Qualcomm entry per current internship + lead feedback context -->
-      <div class="publication-block columns">
-        <div class="column">
-          <div class="content">
-            <h3 class="publication-title">Product Management Intern - Qualcomm Technologies, Inc. (Compute Chipset)</h3>
-            <div class="publication-venue">
-              <span>San Diego, CA, USA | June 8 - Aug 21, 2026 (10 weeks, full-time, on-site)</span>
-            </div>
-            <p class="publication-description">
-              <strong>Team:</strong> Compute Chipset PM under Sr. Director Mandar Deshpande (req 3078866, Snapdragon X Elite / X2 Elite AI-PC silicon)<br>
-              • Conduct market and competitive analysis for on-device AI / generative AI / VLM features on custom silicon (positioning vs Apple M-series, Intel Lunar Lake, AMD Ryzen AI).<br>
-              • Synthesize customer, partner, and engineering feedback into prioritized product requirements documents and roadmap recommendations.<br>
-              • Support technical evaluation and characterization of VLM, multimodal inference, and generative AI workloads on prototype/production Snapdragon X silicon (power, thermal, latency, memory, accuracy, battery trade-offs on Hexagon NPU).<br>
-              • Contribute to cross-functional coordination across silicon design, software optimization (AIMET quantization, AI Hub Models), systems, marketing, and business development.<br>
-              • Prepare internal briefings on edge AI deployment trends for AI-PC / Copilot+ PC platforms. Proposed contributions include VLM competitive study on NPU, on-device real-time VQA demo, and model-quantization PRD (reusing EarthSense methodology).
-            </p>
-            <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://www.qualcomm.com/">
+              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://www.earthsense.co/">
                 <span class="icon"><i class="fas fa-building"></i></span>
                 <span>Company Website</span>
               </a>
@@ -618,24 +648,15 @@ layout: null
   </footer>
 
   {% if site.data.popup.enabled %}
-  <div class="modal" id="promo-modal"
+  <aside class="promo-corner-card box" id="promo-modal" role="complementary" aria-label="{{ site.data.popup.title }}"
        data-popup-id="{{ site.data.popup.id }}"
        data-delay-ms="{{ site.data.popup.delay_ms }}"
        data-cooldown-days="{{ site.data.popup.cooldown_days }}">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">{{ site.data.popup.title }}</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <p>{{ site.data.popup.body }}</p>
-      </section>
-      <footer class="modal-card-foot">
-        <a class="button is-light" href="{{ site.data.popup.cta_link }}">{{ site.data.popup.cta_text }}</a>
-      </footer>
-    </div>
-  </div>
+    <button class="delete is-small promo-corner-close" aria-label="close"></button>
+    <p class="promo-corner-title">{{ site.data.popup.title }}</p>
+    <p class="promo-corner-body">{{ site.data.popup.body }}</p>
+    <a class="button is-light is-small" href="{{ site.data.popup.cta_link }}">{{ site.data.popup.cta_text }}</a>
+  </aside>
   {% endif %}
 
   <div id="mobile-info-bar">

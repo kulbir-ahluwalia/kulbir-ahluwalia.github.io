@@ -59,15 +59,40 @@
 
 
 
-- id2: waypointGenPlusPlus
-  title: "WaypointGen++"
-  venue: "IEEE Robotics and Automation Letters (RA-L)"
-  awards: "Journal Paper (In Preparation, 2026)"
+# The first 3 entries are the "show selected" set (js/index.js shows the first 3 publications).
+# STATUS-NEEDS-KULBIR-CONFIRMATION marks a paper status Kulbir must confirm before shipping.
+# 2026-10-09: statuses rewritten to what the paper repos support; thumbnails swapped to figures from the
+# WaypointGen line itself (the Sept 2026 learned-decoder figures are in neither manuscript).
+
+# STATUS-NEEDS-KULBIR-CONFIRMATION (T-RO: latest plan 2026-10-07 says not submitted; no manuscript ID)
+- id2: tap_TRO2026
+  title: "TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions & Grounded Constraint Phrases for Mobile Manipulator Navigation"
+  venue: "IEEE Transactions on Robotics (T-RO), in preparation"
+  awards: "Journal Paper (In Preparation)"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
-  description: "Follow-up to WaypointGen. Extending VLM-based navigation waypoint generation for mobile manipulators in outdoor environments. (In Preparation for IEEE RAL)"
-  shared_first_authors:
+  description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth. On a 200-pair citrus benchmark: 99.0% structural pass, 37.5% geometric fidelity, and 59.2% LLM-judged constraint satisfaction (422/713)."
+  topics:
+    - mobile_robotics
+    - nlp
+    - path_planning
+    - deep_learning
+    - computer_vision
+  authors:
     - Kulbir
     - Chahit
+    - Gurmanat
+    - Jose
+    - Svetlana
+    - Girish
+    - Julia
+
+# STATUS-NEEDS-KULBIR-CONFIRMATION (CoRL 2026 #1411: desk-rejected 2026-06-20; confirm public wording)
+- id2: waypointGen_CoRL2026
+  title: "WaypointGen: Language-Grounded Waypoint-Based Navigation for Agricultural Mobile Manipulators"
+  venue: "Submitted to the Conference on Robot Learning (CoRL 2026)"
+  awards: "Conference Paper (Desk-Rejected: Page Limit)"
+  image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
+  description: "WaypointGen turns natural-language orchard commands into 2D waypoints over a four-level hierarchy (orchard, row, segment, tree), using bird's-eye-view projection, open-vocabulary perception, and multi-round VLM inference. On 200 citrus command pairs it reaches a 99% structural pass rate, while region containment falls to 6% at the single-tree level."
   topics:
     - mobile_robotics
     - nlp
@@ -78,14 +103,31 @@
     - Kulbir
     - Chahit
     - Jose
-    - Shreya
-    - MichaelMcGuire
-    - Arun
+    - Gurmanat
+    - Svetlana
     - Julia
     - Girish
 
+# STATUS-NEEDS-KULBIR-CONFIRMATION (workshop: upload of this paper unconfirmed; ws.tex lists Anonymous Author(s),
+# so only Kulbir is listed plus an 'et al.' note until the real author list is confirmed)
+- id2: waypointGen_CoRL2026_CompositionalWorkshop
+  title: "WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation"
+  venue: '<a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop on Compositional Generalization for Real-World Robot Learning</a>'
+  awards: "Workshop Paper (Manuscript, Non-Archival Venue)"
+  image: "publications/waypointgen_cslsc2026/image.jpeg"
+  description: "Modular pipeline for language-commanded navigation of agricultural mobile manipulators: a local bird's-eye view from RGB-D, open-vocabulary target and avoidance masks, code-based command checks, and a vision-language model that picks among MPPI trajectory candidates. Offline studies on 349 palm-plantation targets score the candidates, not the model's choice."
+  topics:
+    - mobile_robotics
+    - nlp
+    - path_planning
+    - deep_learning
+    - computer_vision
+  authors:
+    - Kulbir
+  authors_note: "et al. (author list to be finalized)"
+
 - id2: waypointGen_CSLSC2026
-  title: "WaypointGen: Natural Language to 2D Navigation Waypoints Generation using VLMs"
+  title: "WaypointGen: Learning Grounded Waypoint based Navigation for Mobile Manipulators"
   venue: "Coordinated Science Laboratory Student Conference (CSL SC 2026)"
   awards: "Conference Poster"
   image: "publications/waypointgen_cslsc2026/image.jpeg"
@@ -139,7 +181,7 @@
   title: "Plant Placement using Natural Language Grounding"
   venue: "AIFARMS Conference (Fall 2023)"
   awards: "Conference Poster"
-  pdf: "https://github.com/kulbir-ahluwalia/kulbir-ahluwalia.github.io/blob/main/files/V3_AIFARMS-KSA_Poster-2023.pdf"
+  pdf: "files/V3_AIFARMS-KSA_Poster-2023.pdf"
   image: "publications/plant_placement_farmbot/final_thumbnail.png"
   description: "This poster presents a text-enabled FarmBot system that enables users to control a robotic gardening FarmBot system via natural language. Using a custom Python wrapper built on the FarmBot REST API, natural language commands are grounded using real-time robot state and translated into executable code with a fine-tuned CodeT5 model. The system generates valid plant placement configurations that satisfy natural language defined spatial constraints."
   topics:
@@ -198,11 +240,12 @@
 - id2: intermittentDeployment
   title: "Intermittent Deployment for Large-Scale Multi-Robot Forage Perception: Data Synthesis, Prediction, and Planning"
   description: "Targets large-scale pasture monitoring for precision agriculture, deploying a team of robots to track grassland growth for optimal rotational grazing and land productivity, addressing the lack of timely growth data in current practice. Proposes an integrated pipeline combining synthetic data generation, deep neural network-based spatiotemporal prediction, and an intermittent multi-robot deployment strategy to periodically survey evolving pastureland at low cost.​"
-  venue: "IEEE Transactions on Automation Science and Engineering, 2021"
+  venue: "IEEE Transactions on Automation Science and Engineering, vol. 21, no. 1, pp. 27-47, 2024"
   image: publications/intermittent_deployment_jun_liu/intermittent_deployment_jun_liu_flowchart.jpg
   awards: "Journal Paper"
   arxiv: "2112.09203"
   paper: "https://ieeexplore.ieee.org/document/9923747"
+  # The site file below holds the CC BY 4.0 arXiv preprint (2112.09203v1), not the IEEE Xplore version.
   pdf: "files/IEEE_PDF_Intermittent_Deployment_for_Large-Scale_Multi-Robot_Forage_Perception_Data_Synthesis_Prediction_and_Planning.pdf"
   topics:
     - mobile_robotics
@@ -215,8 +258,8 @@
     - Kulbir
     - Ghajar
     - Harnaik
-    - Tracy
     - Pratap
+    - Tracy
     - Ryan
 
 

@@ -1,15 +1,38 @@
 # News items (newest first). Each entry: `date` (display string) and `content` (HTML allowed).
 # To add a new item, prepend it to the top of this list.
 # Preview locally: cd kulbir-ahluwalia.github.io && bundle exec jekyll serve --trace
+# STATUS-NEEDS-KULBIR-CONFIRMATION marks a paper status Kulbir must confirm before shipping.
+# 2026-10-09: statuses rewritten to what the paper repos support (CoRL 2026 #1411 desk-rejected 2026-06-20;
+# T-RO not submitted; workshop upload unconfirmed). No item may say "under review" until confirmed.
+
+- date: "Oct 2026"
+  content: 'Posted TA reference runs for the CS498GC <a href="/cs498gc/fa25/slaming_mars.html#ta-demos"><strong>SLAM-ing Mars</strong></a> assignment: a Husky + UR3 driving through the Mars Gazebo world and the SLAM Toolbox occupancy map it builds.'
+
+- date: "Oct 2026"
+  content: 'Wrote our workshop paper <strong>WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation</strong> for the <a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop on Compositional Generalization for Real-World Robot Learning</a> (non-archival).'
+
+- date: "Aug 2026"
+  content: 'Joined the course staff of <a href="https://courses.grainger.illinois.edu/cs440/fa2026/"><strong>CS 440/ECE 448: Artificial Intelligence</strong></a> as a Teaching Assistant with Prof. Margaret Fleck.'
+
+- date: "Aug 2026"
+  content: "Completed my summer internship as a <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong> in San Diego, California (June 8 - Aug 21, 2026)."
+
+# STATUS-NEEDS-KULBIR-CONFIRMATION (T-RO: latest plan 2026-10-07 says not submitted)
+- date: "2026"
+  content: 'Writing our journal paper <strong>TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions &amp; Grounded Constraint Phrases for Mobile Manipulator Navigation</strong> for the <strong>IEEE Transactions on Robotics (T-RO)</strong>.'
+
+# STATUS-NEEDS-KULBIR-CONFIRMATION (CoRL 2026 #1411 desk-rejected 2026-06-20; confirm public wording)
+- date: "May 2026"
+  content: 'Submitted <strong>WaypointGen: Language-Grounded Waypoint-Based Navigation for Agricultural Mobile Manipulators</strong> to the <strong>Conference on Robot Learning (CoRL 2026)</strong>. It was desk-rejected for exceeding the page limit.'
 
 - date: "May 2026"
-  content: "Upcoming <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong>. I will be in San Diego, California this summer!"
+  content: "Accepted a Summer 2026 internship offer as a <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong> in San Diego, California."
 
 - date: "Apr 2026"
-  content: 'Our poster <strong>WaypointGen: Natural Language to 2D Navigation Waypoints Generation using VLMs</strong> was accepted at the <strong>CSL Student Conference (CSL SC 2026)</strong> at UIUC. <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf">[poster PDF]</a>'
+  content: 'Our poster <strong>WaypointGen: Learning Grounded Waypoint based Navigation for Mobile Manipulators</strong> was accepted at the <strong>CSL Student Conference (CSL SC 2026)</strong> at UIUC. <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf">[poster PDF]</a>'
 
 - date: "Mar 2026"
-  content: "Began preparing <strong>WaypointGen++</strong> for submission to <strong>IEEE Robotics and Automation Letters (RA-L)</strong>, extending our VLM-based waypoint generation pipeline to outdoor mobile manipulators."
+  content: "Began <strong>WaypointGen++</strong>, the extended journal version of WaypointGen for outdoor mobile manipulators."
 
 - date: "Oct 2025"
   content: 'Released <strong><a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a two-part Mobile Manipulator Exploration &amp; SLAM challenge for CS498GC Fall 2025: students operated a Husky + UR3 + Robotiq gripper in a Mars Gazebo world. <strong>Part 1</strong> (25 pts) covered robot setup and navigation; <strong>Part 2</strong> (75 pts) extended to full SLAM with MoveIt 2 + RViz 2 waypoint following, 3D and 4D reconstruction of Thanksgiving-themed dynamic turkeys, and an optional Mars dust-storm bonus.'
@@ -21,7 +44,7 @@
   content: "Joined <strong>Earthsense Inc.</strong> as an <strong>AI Intern</strong> for Summer 2025 in Urbana, IL, deploying VLMs (Molmo-7B, Gemma-3-27B, Qwen-2.5-VL-72B, Llama4-Scout, SpatialVLM) for natural-language-conditioned navigation on outdoor agricultural robots."
 
 - date: "Fall 2023"
-  content: 'Presented the poster <strong>Plant Placement using Natural Language Grounding</strong> at the <strong>AIFARMS Annual Conference</strong>. <a href="https://github.com/kulbir-ahluwalia/kulbir-ahluwalia.github.io/blob/main/files/V3_AIFARMS-KSA_Poster-2023.pdf">[poster PDF]</a>'
+  content: 'Presented the poster <strong>Plant Placement using Natural Language Grounding</strong> at the <strong>AIFARMS Annual Conference</strong>. <a href="files/V3_AIFARMS-KSA_Poster-2023.pdf">[poster PDF]</a>'
 
-- date: "Aug 2022"
+- date: "Jun 2022"
   content: 'Started my <strong>Ph.D. in Computer Science at UIUC</strong>, advised by <a href="http://daslab.illinois.edu">Prof. Girish Chowdhary</a> (DASLAB) and <a href="https://hmr-lab.github.io">Prof. Julia Hockenmaier</a> (HMR Lab).'

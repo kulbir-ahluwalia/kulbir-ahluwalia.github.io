@@ -122,6 +122,11 @@ exclude:
   # 2026-10-10: unlinked folders with student names (FERPA) or private-course screenshots
   - files/cs498gc/fa25/PDFs_assignments_demo_slides/
   - files/pinned-campuswire-posts/
+  # 2026-10-10: superseded concise quiz guide that lists a wrong NetID as the TA contact (the corrected full guide is linked instead)
+  - files/cs498gc/fa25/assignments/extra_credit_submission_guide.pdf
+  # 2026-10-10: unlinked Markdown and LaTeX sources of the extra-credit guide (they contain the course entry code; the PDF is the linked version)
+  - files/cs498gc/fa25/assignments/assignment4-mobile-manipulator-gradescope-pdf/assignment4_extra_credit_guide.md
+  - files/cs498gc/fa25/assignments/assignment4-mobile-manipulator-gradescope-pdf/assignment4_extra_credit_guide.tex
   # 2026-10-10: git-lfs pointer stubs (GitHub Pages serves the 130-byte pointer, not the PDF) and old CV LaTeX sources
   - files/intermittent_deployment_paper.pdf
   - files/agronomy-11-02245-v3.pdf

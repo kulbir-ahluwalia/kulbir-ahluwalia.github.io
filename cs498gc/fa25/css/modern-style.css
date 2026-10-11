@@ -244,6 +244,18 @@ h5 {
   border-radius: 8px 8px 0 0 !important;
 }
 
+/* Headings inside card headers take the header text color (white on navy and on
+   colored bg-* headers); light headers get navy text. */
+.card-header h1, .card-header h2, .card-header h3,
+.card-header h4, .card-header h5, .card-header h6 {
+  color: inherit;
+}
+
+.card-header.bg-light,
+.card-header.bg-warning {
+  color: var(--uiuc-navy);
+}
+
 .card-body {
   padding: 1.5rem;
 }
@@ -270,9 +282,24 @@ h5 {
 footer {
   margin-top: 60px;
   padding: 20px 0;
-  background-color: #BF5700;  /* UT Austin burnt orange - matching navbar */
+  background-color: #BF5700;  /* burnt orange - matching navbar */
   color: white;
   text-align: center;
+}
+
+/* Footer text and links: white on the orange footer (contrast about 4.6:1). */
+footer .text-muted,
+footer span,
+footer small,
+footer small[style],
+footer p {
+  color: #ffffff !important;
+}
+
+footer a,
+footer a[style] {
+  color: #ffffff !important;
+  text-decoration: underline;
 }
 
 /* Lists */

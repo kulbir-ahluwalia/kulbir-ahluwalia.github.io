@@ -10,7 +10,7 @@ Course or paper files served from the website.
 
 ## Immediate contents
 **Files:**
-- `VSS-SLAM_Voxelized_Surfel_Splatting_for_Geometally_Accurate_SLAM-2.pdf`
+- (none; the IEEE Xplore VSS-SLAM PDF was removed on 2026-10-10 because it was downloaded under the UIUC licence; presentations.html links the paper on IEEE Xplore instead)
 
 ## Inherited invariants
 - Never use the em dash character (U+2014). Use " - " (space-hyphen-space).

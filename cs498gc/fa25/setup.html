@@ -19,7 +19,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>ROS2 Setup - CS498GC: Mobile Robotics</title>
+    <title>ROS2 Setup - CS498GC: Mobile Robotics (Fall 2025 archive)</title>
+    <meta name="description" content="Archive of the CS 498 GC Mobile Robotics (Fall 2025) ROS 2 Humble setup guide at the University of Illinois Urbana-Champaign.">
     <link rel="icon" href="/images/favicon.ico" />
     <link rel="shortcut icon" href="/images/favicon.ico" />
 
@@ -81,6 +82,8 @@
       <div class="row">
         <div class="col-md-12">
           <h1>ROS 2 Humble Installation Guide</h1>
+
+          <div class="alert alert-secondary mt-3" role="note"><strong>Fall 2025 archive.</strong> CS498GC Mobile Robotics ran in Fall 2025 (Prof. Girish Chowdhary; TA Kulbir Singh Ahluwalia). Deadlines, office hours and course links on this page are from that semester and are kept as a reference.</div>
           
           <div class="alert alert-info">
             <h5>Course Requirements</h5>
@@ -275,7 +278,7 @@
 
               <h4>TurtleBot3 on ARM64 - Known Issues</h4>
               <div class="alert alert-info">
-                <strong>Student Report (Chahit Jain, Sept 2025):</strong><br>
+                <strong>Student report (Sept 2025):</strong><br>
                 When trying to install TurtleBot3 simulation on Apple M3:
                 <ul>
                   <li><code>sudo apt install ros-humble-turtlebot3-gazebo</code> → <strong>E: Unable to locate package</strong></li>
@@ -696,7 +699,7 @@ arm_controller:
 
               <h5>Setup Guide:</h5>
               <p>Complete Mars world setup instructions available:
-                <a href="mars_gazebo_tutorial.md" class="btn btn-danger btn-sm">
+                <a href="mars_gazebo_tutorial.html" class="btn btn-danger btn-sm">
                   View Mars Tutorial
                 </a>
               </p>
@@ -729,9 +732,9 @@ arm_controller:
             </div>
             <div class="card-body">
               <ul>
-                <li><a href="https://canvas.illinois.edu/courses/62828/files/folder/Book%20PDFs" target="_blank"><strong>Mobile Robotics Textbooks</strong></a> - Essential PDFs for the course</li>
-                <li><strong>Office Hours:</strong> In-person at SC 4407 (check Campuswire for Zoom sessions)</li>
-                <li><strong>Gradescope:</strong> Course ID: 1102297, Entry Code: KDP5G8</li>
+                <li><a href="https://canvas.illinois.edu/courses/62828/files/folder/Book%20PDFs" target="_blank"><strong>Mobile Robotics Textbooks</strong></a> - Essential PDFs for the course (UIUC login required)</li>
+                <li><strong>Office Hours (Fall 2025):</strong> In-person at SC 4407</li>
+                <li><strong>Gradescope:</strong> assignments were submitted on the Fall 2025 course page (login required)</li>
                 <li><strong>GitHub TA Username:</strong> kulbir-ahluwalia (add to private repos)</li>
               </ul>
             </div>
@@ -780,8 +783,9 @@ git config --global user.name "Your Name"
 git config --global user.email "your.email@illinois.edu"
 
 # Clone course repository
-git clone https://github.com/yourusername/CS498GC_assignments.git
-cd CS498GC_assignments</code></pre>
+# replace with your own repository
+git clone https://github.com/&lt;your-github-username&gt;/&lt;your-repo&gt;.git
+cd &lt;your-repo&gt;</code></pre>
 
               <h5 class="mt-4">Daily Workflow</h5>
               <pre class="bg-dark text-light p-3 rounded"><code># Check status

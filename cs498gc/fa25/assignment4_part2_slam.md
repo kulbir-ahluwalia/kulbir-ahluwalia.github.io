@@ -1,4 +1,9 @@
+---
+published: false
+---
 # Assignment 4 Part 2: Mobile Manipulation with SLAM
+
+> Fall 2025 archive: this page is kept as a record of the original Part 2 handout. It is not published on the site; the archived Assignment 4 page is slaming_mars.html.
 
 ## Overview
 
@@ -6,7 +11,7 @@ Building upon your successful Part 1 mobile manipulator implementation, Part 2 c
 
 ## Due Date
 
-**December 9, 2025 @ 11:00 PM** (75 points)
+**December 9, 2025 @ 11:00 PM** (75 points; original Fall 2025 date. Part 2 became optional extra credit on December 7, 2025, and rubric v11 superseded these figures.)
 
 ## Learning Objectives
 
@@ -155,7 +160,7 @@ Submit to Gradescope by **December 9, 2025 @ 11:00 PM**:
 ### Tutorials
 
 - [ROS2 Control Tutorial](https://automaticaddison.com/how-to-control-a-robotic-arm-using-ros-2-control-and-gazebo/)
-- [Nav2 Documentation](https://navigation.ros.org/)
+- [Nav2 Documentation](https://docs.nav2.org/)
 - [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox)
 
 ### Office Hours
@@ -166,10 +171,7 @@ Submit to Gradescope by **December 9, 2025 @ 11:00 PM**:
 
 ### Example Code
 
-Starter code available at:
-```bash
-git clone https://github.com/kulbir-ahluwalia/cs498gc_assignment4_part2
-```
+Starter code was distributed to enrolled students in Fall 2025 (the repository is not public).
 
 ## Common Issues & Solutions
 

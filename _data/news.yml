@@ -28,7 +28,7 @@
   content: "Began <strong>WaypointGen++</strong>, the extended journal version of WaypointGen for outdoor mobile manipulators (now our T-RO manuscript <strong>TaP</strong>)."
 
 - date: "Oct 2025"
-  content: 'Released <strong><a href="/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a two-part Mobile Manipulator Exploration &amp; SLAM assignment for CS498GC Fall 2025 in which students operated a Husky + UR3 + Robotiq gripper in a Mars Gazebo world. <strong>Part 1</strong> (25 pts) covered robot setup and navigation; <strong>Part 2</strong> (75 pts as announced, made optional extra credit on Dec 7, 2025) covered SLAM on Mars, with an optional Mars dust-storm bonus.'
+  content: 'Released <strong><a href="/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a two-part Mobile Manipulator Exploration &amp; SLAM assignment for CS498GC Fall 2025 in which students operated a Husky + UR3 + Robotis gripper in a Mars Gazebo world. <strong>Part 1</strong> (25 pts) covered robot setup and navigation; <strong>Part 2</strong> (75 pts as announced, made optional extra credit on Dec 7, 2025) covered SLAM on Mars, with an optional Mars dust-storm bonus.'
 
 - date: "May 2025"
   content: 'Our paper <strong>Active Semantic Mapping with Mobile Manipulator in Horticultural Environments</strong> was presented at <a href="https://2025.ieee-icra.org/"><strong>ICRA 2025</strong></a>. <a href="https://arxiv.org/abs/2412.10515">arXiv:2412.10515</a> &middot; <a href="https://kendallkoe.com/Active_Semantic_Mapping/">project page</a>'

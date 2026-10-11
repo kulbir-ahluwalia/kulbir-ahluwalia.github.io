@@ -38,7 +38,7 @@
 - title: "Enhancing Stereo Depth Maps through RGBD-Conditioned Generative Models"
   venue: "Aug-Dec 2024"
   image: projects/depth_maps_diffusion/icon.svg
-  description: "Fine-tuned Stable Diffusion V2 for RGB+D-conditioned monocular depth estimation. Achieves 46% Abs Rel improvement over Marigold and Depth-Anything-V2 on IRS, VKITTI, and NYUv2 benchmarks. (CS598SHW / 3D vision project)"
+  description: "Fine-tuned Stable Diffusion V2 for RGB+D-conditioned monocular depth estimation. Achieves up to 46% Abs Rel improvement over Marigold and Depth-Anything-V2 on IRS, VKITTI, and NYUv2 benchmarks. (CS598SHW / 3D vision project)"
   topics:
     - deep_learning
     - computer_vision
@@ -86,7 +86,6 @@
     - computer_vision
 
 - title: "Neural transition-based dependency parser"
-  webpage: "https://github.com/kulbir-ahluwalia/Neural_transition_based_dependency_parser"
   venue: "Dec 2022"
   image: projects/dependency_parser/icon.svg
   description: "Built a neural transition-based dependency parser using feed-forward networks for syntactic analysis of natural language sentences."
@@ -95,7 +94,6 @@
     - deep_learning
 
 - title: "Machine translation with RNN and Transformers"
-  webpage: "https://github.com/kulbir-ahluwalia/Machine_translation_with_RNN_and_Transformers"
   venue: "Nov 2022"
   image: projects/machine_translation/icon.svg
   description: "Implemented sequence-to-sequence machine translation using both RNN encoder-decoders and Transformer architectures."
@@ -104,7 +102,6 @@
     - deep_learning
 
 - title: "Text classification with CNN and RNN"
-  webpage: "https://github.com/kulbir-ahluwalia/Text_classification_with_CNN_RNN"
   venue: "Oct 2022"
   image: projects/text_classification/icon.svg
   description: "Compared CNN and RNN architectures for text classification, exploring the trade-offs between local feature extraction and sequential modeling."
@@ -113,7 +110,6 @@
     - deep_learning
 
 - title: "SLAM from 2D LiDAR data using split and merge line extraction algorithm"
-  webpage: "https://github.com/kulbir-ahluwalia/SLAM_using_2D_LiDAR_points"
   venue: "Dec 2021"
   image: projects/slam_lidar/icon.svg
   description: "Implemented simultaneous localization and mapping from 2D LiDAR scans using split-and-merge line extraction for feature-based SLAM."
@@ -121,7 +117,6 @@
     - mobile_robotics
 
 - title: "State estimation using Extended Kalman Filter for GPS+Encoder sensor fusion"
-  webpage: "https://github.com/kulbir-ahluwalia/Extended_Kalman_Filter_for_GPS_INS_sensor_fusion"
   venue: "Nov 2021"
   image: projects/ekf_fusion/icon.svg
   description: "Fused GPS and wheel encoder data using an Extended Kalman Filter for robust state estimation on a mobile robot."
@@ -129,7 +124,6 @@
     - mobile_robotics
 
 - title: "Field-robot trajectory reconstruction from RTK-GPS, IMU, and encoders (ROS)"
-  webpage: "https://github.com/kulbir-ahluwalia/RTKGPS_IMU_Encoders_Plot_trajectory_using_ROS"
   venue: "Sep 2021"
   image: projects/rtk_gps/icon.svg
   description: "Processed and visualized multi-sensor trajectory data from RTK-GPS, IMU, and encoders using ROS for field robot navigation."

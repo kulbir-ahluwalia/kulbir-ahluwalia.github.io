@@ -11,7 +11,7 @@ layout: null
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <!-- SEO metadata -->
-  <meta name="description" content="Kulbir Singh Ahluwalia - PhD candidate in Computer Science at UIUC, advised by Prof. Girish Chowdhary and Prof. Julia Hockenmaier. Research: language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen) and edge AI. Fall 2026: TA for CS 440/ECE 448 Artificial Intelligence; CS498GC SLAM-ing Mars TA reference runs now online. Past: Qualcomm Compute Chipset Product Management Intern (Summer 2026), EarthSense AI Intern (Summer 2025).">
+  <meta name="description" content="Kulbir Singh Ahluwalia - PhD candidate in Computer Science at UIUC, advised by Prof. Girish Chowdhary and Prof. Julia Hockenmaier. Research: language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen) and edge AI. Fall 2026: TA for CS 440/ECE 448 Artificial Intelligence. Past: Qualcomm Compute Chipset Product Management Intern (June - Aug 2026), EarthSense AI Intern (Summer 2025).">
   <meta name="keywords" content="Kulbir Ahluwalia, WaypointGen, language-grounded navigation, agricultural robots, edge AI, 3D perception, SLAM, sensor fusion, EKF, semantic octomap, RGB-D, diffusion depth, vision-language models, Grounded SAM2, Qwen, Molmo, mobile manipulator, autonomous robots, UIUC PhD, ICRA 2025">
   <meta name="author" content="Kulbir Singh Ahluwalia">
   <link rel="canonical" href="https://kulbir-singh-ahluwalia.com/">
@@ -118,15 +118,15 @@ layout: null
       <div class="columns is-vcentered">
         <div class="column is-4">
           <div class="portrait">
-            <img src="{{ '/images/portrait_1740471515.jpg' | relative_url }}" />
+            <img src="{{ '/images/portrait_1740471515_600w.jpg' | relative_url }}" alt="Kulbir Singh Ahluwalia with a mobile manipulator in a field" width="600" height="765" />
           </div>
         </div>
         <div class="column">
           <h1 class="title">
             <b>Hello, I'm {{ site.name }}</b>
           </h1>
-          <div class="content has-text-justified">
-            {{ site.description | markdownify }}
+          <div class="content has-text-justified-tablet has-text-left-mobile">
+            {{ site.bio | markdownify }}
             <div class="buttons">
               <!--a class="external-link button is-light"
                 href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
@@ -254,7 +254,7 @@ layout: null
       <div class="publication-block columns">
         <div class="column">
           <div class="content">
-            <h3 class="publication-title">Teaching Assistant - CS498GC: Mobile Robotics for CS</h3>
+            <h3 class="publication-title">Teaching Assistant - CS498GC: Mobile Robotics for Computer Scientists</h3>
             <div class="publication-venue">
               <span>University of Illinois, Aug 2025 - Dec 2025</span>
             </div>
@@ -264,7 +264,7 @@ layout: null
               • Managed coding exercises and problem sets on Extended Kalman Filtering and odometry implementation.<br>
               • Held office hours and helped students with ROS2 development and debugging.<br>
               • Built and maintained the course website; maintained the autograding infrastructure on Gradescope.<br>
-              • <strong>Special Topic Fall 2025:</strong> <a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/slaming_mars.html">SLAM-ing on Mars</a><br>
+              • <strong>Special Topic Fall 2025:</strong> <a href="{{ '/cs498gc/fa25/slaming_mars.html' | relative_url }}">SLAM-ing on Mars</a><br>
               • <strong>Teaching highlight:</strong> <a href="{{ '/cs498gc/fa25/slaming_mars.html#ta-demos' | relative_url }}">SLAM-ing Mars TA reference runs</a> (Husky + UR3 in the Mars Gazebo world, mapped with SLAM Toolbox; clip below at 10x speed).
             </p>
             <p>
@@ -273,7 +273,7 @@ layout: null
               </a>
             </p>
             <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://kulbir-ahluwalia.github.io/cs498gc/fa25/">
+              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="{{ '/cs498gc/fa25/' | relative_url }}">
                 <span class="icon"><i class="fas fa-book-open"></i></span>
                 <span>Fall 2025 Course Website</span>
               </a>
@@ -297,8 +297,8 @@ layout: null
               <strong>Instructor:</strong> Dr. Svetlana Lazebnik<br>
               • Updated and verified starter code for assignments, and answered student questions during office hours and through
               Campuswire.<br>
-              • Assessed student submissions via SpeedGrader on Canvas, and designed multimodal quiz questions, including single-
-              choice, multiple-choice, and matching formats.
+              • Assessed student submissions via SpeedGrader on Canvas, and designed multimodal quiz questions, including single-choice,
+              multiple-choice, and matching formats.
             </p>
             <div class="publication-links buttons field has-addons">
               <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://slazebni.cs.illinois.edu/spring24/">
@@ -331,9 +331,9 @@ layout: null
               • Assisted students with implementation of advanced visualization algorithms including ray marching, transfer functions, and interactive widget development.
             </p>
             <div class="publication-links buttons field has-addons">
-              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://courses.grainger.illinois.edu/cs519/">
+              <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://courses.grainger.illinois.edu/cs519/su2025/">
                 <span class="icon"><i class="fas fa-book-open"></i></span>
-                <span>Course Page</span>
+                <span>Summer 2025 Course Page</span>
               </a>
               <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://siebelschool.illinois.edu/about/people/faculty/shaffer1">
                 <span class="icon"><i class="fas fa-user"></i></span>
@@ -354,15 +354,14 @@ layout: null
           <div class="content">
             <h3 class="publication-title">Product Management Intern - Qualcomm Technologies, Inc. (Compute Chipset)</h3>
             <div class="publication-venue">
-              <span>San Diego, CA, USA | June 8 - Aug 21, 2026 (full-time, on-site)</span>
+              <span>San Diego, CA, USA | June 8 - Aug 21, 2026 (on-site)</span>
             </div>
             <p class="publication-description">
               <strong>Team:</strong> Compute Chipset Product Management (Snapdragon X Elite / X2 Elite AI-PC platforms)<br>
-              <strong>Role scope:</strong><br>
-              • Market and competitive analysis of on-device AI, generative AI, and vision-language model (VLM) features for AI-PC platforms.<br>
-              • Turning customer, partner, and engineering feedback into product requirements and roadmap inputs.<br>
-              • Technical evaluation of VLM and multimodal inference workloads on Snapdragon silicon (power, thermal, latency, memory, and accuracy trade-offs on the Hexagon NPU); proposed contribution: a VLM competitive study on the NPU.<br>
-              • Cross-functional work with silicon, software (AIMET quantization, AI Hub Models), systems, marketing, and business development teams, including internal briefings on edge AI deployment trends.
+              • Conducted market and competitive analysis of on-device AI, generative AI, and vision-language model (VLM) features for AI-PC platforms.<br>
+              • Synthesized feedback into product requirements and roadmap inputs.<br>
+              • Evaluated VLM workloads on Snapdragon silicon for power, thermal, and latency on the Hexagon NPU.<br>
+              • Worked with engineering teams on AIMET and AI Hub Models, and prepared internal briefings on edge AI trends.
             </p>
             <div class="publication-links buttons field has-addons">
               <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://www.qualcomm.com/">
@@ -557,51 +556,8 @@ layout: null
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 anchor" id="contact">Contact</h2>
-      <div class="columns">
-        <div class="column is-7">
-          <!-- Formspree: replace FORMSPREE_ID_PLACEHOLDER with your form ID (see FEATURES-2026-06-12.md) -->
-          <form action="https://formspree.io/f/FORMSPREE_ID_PLACEHOLDER" method="POST">
-            <div class="field">
-              <label class="label" for="contact-name">Name</label>
-              <div class="control">
-                <input class="input" id="contact-name" type="text" name="name" required>
-              </div>
-            </div>
-            <div class="field">
-              <label class="label" for="contact-email">Email</label>
-              <div class="control">
-                <input class="input" id="contact-email" type="email" name="_replyto" required>
-              </div>
-            </div>
-            <div class="field">
-              <label class="label" for="contact-message">Message</label>
-              <div class="control">
-                <textarea class="textarea" id="contact-message" name="message" required></textarea>
-              </div>
-            </div>
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-            <div class="field">
-              <div class="control">
-                <button class="button is-light" type="submit">Send message</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="column is-5">
-          <h3 class="title is-5">Newsletter</h3>
-          <p class="content">Occasional updates on research, robotics, and teaching.</p>
-          <!-- Buttondown: replace BUTTONDOWN_USER_PLACEHOLDER with your Buttondown username (see FEATURES-2026-06-12.md) -->
-          <form action="https://buttondown.email/api/emails/embed-subscribe/BUTTONDOWN_USER_PLACEHOLDER" method="post" target="popupwindow">
-            <div class="field has-addons">
-              <div class="control is-expanded">
-                <input class="input" type="email" name="email" placeholder="you@example.com" required>
-              </div>
-              <div class="control">
-                <button class="button is-light" type="submit">Subscribe</button>
-              </div>
-            </div>
-          </form>
-        </div>
+      <div class="content">
+        <p>The quickest way to reach me is email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>. You can also find me on <a href="https://www.linkedin.com/in/{{ site.linkedin_name }}/">LinkedIn</a>.</p>
       </div>
     </div>
   </section>
@@ -610,27 +566,24 @@ layout: null
   <footer class="footer">
     <div class="container">
       <div class="content footer-links has-text-centered">
-        <a href="mailto:{{ site.email }}">
-          <i class="fas fa-envelope" title="ksa5@illinois.edu"></i>
+        <a href="mailto:{{ site.email }}" aria-label="Email">
+          <i class="fas fa-envelope" title="ksa5@illinois.edu" aria-hidden="true"></i>
         </a>
-        <a class="external-link" href="https://github.com/{{ site.github_username }}">
-          <i class="fab fa-github"></i>
+        <a class="external-link" href="https://github.com/{{ site.github_username }}" aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
         </a>
-        <a class="external-link" href="https://x.com/{{ site.twitter_username }}">
-          <i class="fa-brands fa-x-twitter"></i>
+        <a class="external-link" href="https://x.com/{{ site.twitter_username }}" aria-label="X">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
         </a>
-        <a class="external-link" href="https://www.linkedin.com/in/{{ site.linkedin_name }}/">
-          <i class="fab fa-linkedin-in"></i>
+        <a class="external-link" href="https://www.linkedin.com/in/{{ site.linkedin_name }}/" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
         </a>
 
-        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
-          <i class="ai ai-google-scholar"></i>
+        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}" aria-label="Google Scholar">
+          <i class="ai ai-google-scholar" aria-hidden="true"></i>
         </a>
-        <a class="external-link" href="https://orcid.org/0009-0009-6793-8566">
-          <i class="fab fa-orcid" style="color: #A6CE39;"></i>
-        </a>
-        <a class="external-link" href="https://github.com/sponsors/kulbir-ahluwalia" title="Sponsor my work">
-          <i class="fas fa-heart" style="color: #bf3989;"></i>
+        <a class="external-link" href="https://orcid.org/0009-0009-6793-8566" aria-label="ORCID">
+          <i class="fab fa-orcid" style="color: #A6CE39;" aria-hidden="true"></i>
         </a>
       </div>
       <div class="columns is-centered has-text-centered">

@@ -35,6 +35,7 @@
 .footer .footer-links a {
     font-size: 25px;
     color: #000;
+    margin: 0 0.4rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -162,13 +163,13 @@
   }
 }
 
-// Publication filtering styles
-.publication-filters {
+// Publication and project filtering styles
+.publication-filters, .project-filters {
     padding: 1rem 0;
     border-bottom: 1px solid #eee;
     margin-bottom: 1.5rem;
 
-    .filter-link, .topic-link {
+    .filter-link, .topic-link, .project-filter-link, .project-topic-link {
         color: #4a4a4a;
         text-decoration: none;
         transition: color 0.2s ease;
@@ -184,7 +185,7 @@
         }
     }
 
-    .research-topics {
+    .research-topics, .project-topics {
         margin-top: 0.5rem;
         line-height: 1.8;
     }
@@ -192,4 +193,21 @@
 
 .publication-item {
     transition: opacity 0.3s ease;
+}
+
+// Phones: justified text leaves wide gaps between words at narrow widths, and full-width
+// square thumbnails turn the Publications/Projects lists into screens of giant icons.
+// !important is needed because Bulma's .has-text-justified helper is !important.
+@media screen and (max-width: 768px) {
+    .has-text-justified,
+    .publication-block .publication-title,
+    .publication-block .publication-authors,
+    .publication-block .publication-description {
+        text-align: left !important;
+    }
+
+    .publication-block .column.is-2 .publication-image {
+        max-width: 180px;
+        height: auto;
+    }
 }

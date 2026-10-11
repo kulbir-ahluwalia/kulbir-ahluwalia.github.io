@@ -8,6 +8,9 @@ layout: null
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <title>Kulbir Singh Ahluwalia - CV</title>
+  <meta name="description" content="CV of Kulbir Singh Ahluwalia, Ph.D. candidate in Computer Science at UIUC advised by Prof. Girish Chowdhary and Prof. Julia Hockenmaier: education, employment, publications, teaching, and awards.">
+  <link rel="canonical" href="https://kulbir-singh-ahluwalia.com/cv.html">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -15,7 +18,6 @@ layout: null
   <link href="css/bulma.min.css" rel="stylesheet">
   <link href="css/cv.css" rel="stylesheet">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   {% include head-extras.html %}
 </head>
 
@@ -60,6 +62,17 @@ layout: null
             <a href="mailto:ksa5@illinois.edu">
               <i class="fas fa-envelope"></i>
               ksa5@illinois.edu
+            </a>
+          </p>
+          <p class="cv-pdf-links">
+            <a href="files/CV_Resume_July2026/Kulbir_CV_July2026.pdf">
+              <i class="fas fa-file-pdf"></i>
+              CV (PDF)
+            </a>
+            &middot;
+            <a href="files/CV_Resume_July2026/Kulbir_Resume_July2026.pdf">
+              <i class="fas fa-file-pdf"></i>
+              Resume (PDF)
             </a>
           </p>
         </div>
@@ -107,10 +120,24 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
+            <b>University of Illinois Urbana-Champaign</b><br />
+            Graduate Research Assistant in the <a href="http://daslab.illinois.edu/">Distributed Autonomous Systems Lab (DASLAB)</a>.
+            Research on natural language-conditioned navigation for mobile manipulators using VLMs.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            Aug 2022 - Present
+            <br />
+            Urbana, IL
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
             <b>Qualcomm Technologies, Inc.</b><br />
             Product Management Intern, Compute Chipset (Snapdragon X Elite / X2 Elite AI-PC platforms).
-            Role scope: market and competitive analysis of on-device AI, generative AI, and VLM features; product requirements and roadmap inputs;
-            technical evaluation of VLM workloads on the Hexagon NPU (proposed: a VLM competitive study on the NPU); cross-functional work with silicon and software teams (AIMET, AI Hub Models).
+            Worked on market and competitive analysis of on-device AI, generative AI, and VLM features; synthesized feedback into product
+            requirements and roadmap inputs; evaluated VLM workloads on the Hexagon NPU (power, thermal, latency); and collaborated cross-functionally
+            with silicon and software teams (AIMET, AI Hub Models).
           </div>
           <div class="column is-one-fifths has-text-right">
             Jun 8 - Aug 21, 2026
@@ -123,25 +150,12 @@ layout: null
           <div class="column is-four-fifths">
             <b>Earthsense Inc.</b><br />
             AI Intern (Supervisor: Michael McGuire, Lead CV Engineer). Developed a natural-language-conditioned waypoint generation pipeline
-            for outdoor robot navigation, built a Grounded SAM2 auto-labeling pipeline for large outdoor navigation datasets, and deployed
+            for outdoor robot navigation, built a Grounded SAM2 auto-labeling pipeline for large outdoor navigation datasets, and deployed and benchmarked
             six open-source Vision-Language Models (3B - 72B params) for image-space reasoning and natural-language-conditioned question
             answering on 4-wheeled skid-steer robots.
           </div>
           <div class="column is-one-fifths has-text-right">
             May 2025 - Aug 2025
-            <br />
-            Urbana, IL
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-four-fifths">
-            <b>University of Illinois Urbana-Champaign</b><br />
-            Graduate Research Assistant in the <a href="http://daslab.illinois.edu/">Distributed Autonomous Systems Lab (DASLAB)</a>.
-            Research on natural language-conditioned navigation for mobile manipulators using VLMs.
-          </div>
-          <div class="column is-one-fifths has-text-right">
-            Aug 2022 - Present
             <br />
             Urbana, IL
           </div>
@@ -153,7 +167,7 @@ layout: null
           <li>Python</li>
           <li>C++</li>
           <li>PyTorch</li>
-          <li>JAX</li>
+          <li>MATLAB</li>
           <li>CUDA</li>
           <li>Docker</li>
           <li>Linux</li>
@@ -166,7 +180,7 @@ layout: null
           <li>LaTeX</li>
         </ul>
         <p class="section-note">
-          <b>Methods:</b> EKF, GMM/EM, Bayesian State Estimation, MPPI, SLIC, VLMs/VLAs, Diffusion Models (DiT, DDPM), U-Nets
+          <b>Methods:</b> EKF, GMM/EM, MPPI, SLIC superpixels, VLMs, Diffusion Models (Stable Diffusion fine-tuning)
         </p>
 
         <!-- Publications -->
@@ -218,7 +232,7 @@ layout: null
               <span class="author-block"><a href="https://hmr-lab.github.io">J. Hockenmaier</a>,</span>
               <span class="author-block"><a href="http://daslab.illinois.edu">G. Chowdhary</a></span>
             </div>
-            A 14-step pipeline grounding natural language instructions to 2D navigation waypoints using QWEN 3 VLM, SLIC in BEV, and MPPI trajectory selection.
+            A 14-step pipeline grounding natural language commands to 2D navigation waypoints using Qwen-3-VL filtering, SLIC superpixel decomposition in BEV, and MPPI trajectory selection.
           </div>
           <div class="column is-one-fifths has-text-right">
             CSL SC, 2026
@@ -232,13 +246,49 @@ layout: null
               <span class="author-block"><a href="https://jrcuaranv.github.io">J. Cuaran</a>,</span>
               <span class="author-block author-me">K. Ahluwalia,</span>
               <span class="author-block"><a href="https://kendallkoe.com">K. Koe</a>,</span>
-              <span class="author-block"><a href="https://naveenuppalapati.com">N. Uppalapati</a>,</span>
+              <span class="author-block">N. Uppalapati,</span>
               <span class="author-block"><a href="http://daslab.illinois.edu">G. Chowdhary</a></span>
             </div>
             Efficient active semantic mapping using probabilistic semantic octomaps, next-best-view planning, and ray-casting for target-focused exploration.
           </div>
           <div class="column is-one-fifths has-text-right">
             ICRA, 2025
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>Active Semantic Mapping with Mobile Manipulator in Horticultural Environments</b> (abstract)
+            <div class="publication-authors">
+              <span class="author-block"><a href="https://jrcuaranv.github.io">J. Cuaran</a>,</span>
+              <span class="author-block author-me">K. Ahluwalia,</span>
+              <span class="author-block"><a href="https://kendallkoe.com">K. Koe</a>,</span>
+              <span class="author-block"><a href="http://daslab.illinois.edu">G. Chowdhary</a></span>
+            </div>
+            Abstract accepted at the 40th Anniversary of the IEEE Conference on Robotics and Automation (ICRA@40).
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            ICRA@40, 2024
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <a href="https://ieeexplore.ieee.org/document/9923747"><b>Intermittent Deployment for Large-Scale Multi-Robot Forage Perception: Data Synthesis, Prediction, and Planning</b></a>
+            <div class="publication-authors">
+              <span class="author-block">J. Liu,</span>
+              <span class="author-block">M. Rangwala,</span>
+              <span class="author-block author-me">K. Ahluwalia,</span>
+              <span class="author-block">S. Ghajar,</span>
+              <span class="author-block">H. Dhami,</span>
+              <span class="author-block">P. Tokekar,</span>
+              <span class="author-block">B. Tracy,</span>
+              <span class="author-block">R. Williams</span>
+            </div>
+            Integrated pipeline for large-scale pasture monitoring with synthetic data generation, spatiotemporal prediction, and multi-robot deployment.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            IEEE T-ASE, 2024
           </div>
         </div>
 
@@ -262,27 +312,7 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <a href="https://ieeexplore.ieee.org/document/9923747"><b>Intermittent Deployment for Large-Scale Multi-Robot Forage Perception</b></a>
-            <div class="publication-authors">
-              <span class="author-block">J. Liu,</span>
-              <span class="author-block">M. Rangwala,</span>
-              <span class="author-block author-me">K. Ahluwalia,</span>
-              <span class="author-block">S. Ghajar,</span>
-              <span class="author-block">H. Dhami,</span>
-              <span class="author-block">P. Tokekar,</span>
-              <span class="author-block">B. Tracy,</span>
-              <span class="author-block">R. Williams</span>
-            </div>
-            Integrated pipeline for large-scale pasture monitoring with synthetic data generation, spatiotemporal prediction, and multi-robot deployment.
-          </div>
-          <div class="column is-one-fifths has-text-right">
-            IEEE T-ASE, 2024
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-four-fifths">
-            <a href="https://doi.org/10.3390/agronomy11112245"><b>DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains</b></a>
+            <a href="https://doi.org/10.3390/agronomy11112245"><b>DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains Using Synthetic Datasets</b></a>
             <div class="publication-authors">
               <span class="author-block">M. Rangwala,</span>
               <span class="author-block">J. Liu,</span>
@@ -302,6 +332,21 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
+            <a href="https://doi.org/10.1117/12.2557416"><b>Reinforcement Learning Integrated with Supervised Learning for Training of Near Infrared Spectrum Data for Non-Destructive Testing of Fruits</b></a>
+            <div class="publication-authors">
+              <span class="author-block">Y. Li,</span>
+              <span class="author-block author-me">K. Ahluwalia,</span>
+              <span class="author-block">S. Saini</span>
+            </div>
+            Combining reinforcement and supervised learning for NIR-based non-destructive fruit quality testing.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            SPIE, 2020
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
             <a href="https://doi.org/10.1364/OPN.30.2.000034"><b>Smartphone Optical Sensors</b></a>
             <div class="publication-authors">
               <span class="author-block">S. Saini,</span>
@@ -312,21 +357,6 @@ layout: null
           </div>
           <div class="column is-one-fifths has-text-right">
             OPN, 2019
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-four-fifths">
-            <a href="https://doi.org/10.1117/12.2557416"><b>Reinforcement Learning for Near Infrared Spectrum Data for Non-Destructive Testing of Fruits</b></a>
-            <div class="publication-authors">
-              <span class="author-block">Y. Li,</span>
-              <span class="author-block author-me">K. Ahluwalia,</span>
-              <span class="author-block">S. Saini</span>
-            </div>
-            Combining reinforcement and supervised learning for NIR-based non-destructive fruit quality testing.
-          </div>
-          <div class="column is-one-fifths has-text-right">
-            SPIE, 2020
           </div>
         </div>
 
@@ -345,9 +375,20 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
+            <b>CS444: Deep Learning for Computer Vision</b> - Teaching Assistant (Prof. Svetlana Lazebnik)<br />
+            Updated assignment starter code, assessed student submissions, held office hours, answered questions on Campuswire,
+            and designed multimodal quiz questions.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            Spring 2026, 2025, 2024
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
             <b>CS498GC: Mobile Robotics for Computer Scientists</b> - Teaching Assistant and curriculum co-developer (Prof. Girish Chowdhary)<br />
-            Co-developed the graduate course curriculum (ROS 2, sensor fusion, SLAM, mobile manipulation); authored and maintain the public
-            course website and assignments. Course website:
+            Co-developed the graduate course curriculum (ROS 2, sensor fusion, SLAM, mobile manipulation); authored the public
+            course website and assignments (now an archive). Course website:
             <a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/">kulbir-singh-ahluwalia.com/cs498gc/fa25/</a>
           </div>
           <div class="column is-one-fifths has-text-right">
@@ -357,18 +398,6 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>CS444: Deep Learning for Computer Vision</b> - Teaching Assistant (Prof. Svetlana Lazebnik)<br />
-            Updated assignment starter code, assessed student submissions, held office hours, answered questions on Campuswire,
-            and designed multimodal quiz questions.
-          </div>
-          <div class="column is-one-fifths has-text-right">
-            Spring 2024, 2025, 2026
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-four-fifths">
-            <!-- STATUS-NEEDS-KULBIR-CONFIRMATION: instructor name taken from the homepage CS519 entry; the CV does not name the instructor -->
             <b>CS519: Scientific Visualization</b> - Teaching Assistant (Dr. Eric Shaffer)<br />
             Communicated data-visualization concepts to a multidisciplinary student audience and guided project work.
           </div>
@@ -377,41 +406,50 @@ layout: null
           </div>
         </div>
 
-        <!-- Awards -->
+        <!-- Awards (wording follows the July 2026 CV) -->
         <h2>Awards</h2>
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>National Bal Shree Award</b> for Creative Scientific Innovations - Ministry of Human Resource Development, Government of India
+            <b>First Prize, B.Tech. Major Project</b> - Electrical Engineering, Punjab Engineering College, for "Teleoperated Gesture-controlled Robotic Arm"
           </div>
           <div class="column is-one-fifths has-text-right">
-            
+            May 2019
           </div>
         </div>
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>First Prize, B.Tech. Major Project</b> - Teleoperated gesture-controlled robotic arm, Punjab Engineering College
+            <b>Certificate of Appreciation</b> - for contributions to IEEE PEC (Punjab Engineering College Student Branch)
           </div>
           <div class="column is-one-fifths has-text-right">
-            2019
+            Aug 2017, Aug 2018
           </div>
         </div>
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>First Prize, Texas Instruments Hardware Hackathon</b> - "Smart Garden" autonomous system
+            <b>Smart Garden</b> - First Prize, Texas Instruments Hardware Hackathon
           </div>
           <div class="column is-one-fifths has-text-right">
-            
+            2017
           </div>
         </div>
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>First Prize, Autonomous Pick-n-Place Transporter Bot</b> - IIT Roorkee; 6th of 400 teams at IIT Bombay Techfest
+            <b>Pick n Place transporter bot</b> - First Prize, IIT Roorkee; 6th of 400 teams, IIT Bombay Techfest
           </div>
           <div class="column is-one-fifths has-text-right">
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>National Bal Shree Award</b> in Creative Scientific Innovations - Ministry of Human Resource Development, Government of India
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            2011
           </div>
         </div>
 

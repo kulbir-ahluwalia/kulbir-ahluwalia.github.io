@@ -91,3 +91,21 @@ body {
     max-width: none;
   }
 }
+
+/* Announcement bar: keep the link on one line; on phones put the text on its own row. */
+#announcement-bar a {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  #announcement-bar {
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    padding-left: 0.75rem;
+  }
+
+  #announcement-bar span {
+    flex: 1 1 100%;
+  }
+}

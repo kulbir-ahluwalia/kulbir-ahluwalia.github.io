@@ -89,7 +89,7 @@
   title: "WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation"
   venue: '<a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop on Compositional Generalization for Real-World Robot Learning</a>'
   awards: "Workshop Paper (Non-Archival Venue)"
-  image: "publications/waypointgen_cslsc2026/image.jpeg"
+  # No thumbnail yet: the CSL SC 2026 poster entry below already shows the WaypointGen figure.
   description: "Modular pipeline for language-commanded navigation of agricultural mobile manipulators: a local bird's-eye view from RGB-D, open-vocabulary target and avoidance masks, code-based command checks, and a vision-language model that picks among MPPI trajectory candidates. Offline studies on 349 palm-plantation targets score the candidates, not the model's choice."
   topics:
     - mobile_robotics

@@ -22,15 +22,19 @@ title: Kulbir Singh Ahluwalia
 name: Kulbir Singh Ahluwalia
 position: PhD Candidate
 email: ksa5@illinois.edu
+# Plain-text summary: jekyll-feed prints it as the Atom <subtitle>, so no Markdown here.
 description: >-
+  Ph.D. candidate in Computer Science at UIUC working on language-grounded navigation for agricultural and outdoor robots and edge AI.
+# Markdown bio rendered in the About section of index.html ({{ site.bio | markdownify }}).
+bio: >-
   I'm Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois Urbana-Champaign ([UIUC](https://illinois.edu/)),
   advised by [Prof. Girish Chowdhary](http://daslab.illinois.edu) and [Prof. Julia Hockenmaier](https://hmr-lab.github.io).
   My research is on language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen),
   and on running these models efficiently on edge AI hardware.
-  In Summer 2026 I was a Compute Chipset Product Management Intern at Qualcomm in San Diego, and in Summer 2025 I was an AI Intern at EarthSense, Inc.,
+  From June to August 2026 I was a Compute Chipset Product Management Intern at Qualcomm in San Diego, and in Summer 2025 I was an AI Intern at EarthSense, Inc.,
   where I contributed to a natural language-conditioned waypoint generation pipeline for outdoor robots.
   In Fall 2026 I am a Teaching Assistant for [CS 440/ECE 448: Artificial Intelligence](https://courses.grainger.illinois.edu/cs440/fa2026/) with Prof. Margaret Fleck,
-  and I co-developed the [CS 498 GC Mobile Robotics course](https://kulbir-singh-ahluwalia.com/cs498gc/fa25/) with Prof. Chowdhary.
+  and in Fall 2025 I co-developed the [CS 498 GC Mobile Robotics course](/cs498gc/fa25/) with Prof. Chowdhary.
   Before UIUC, I earned a Master of Engineering in Robotics from the University of Maryland, College Park.
   My long-term goal is scaling up Physical AI for advancing humanity.
 
@@ -43,7 +47,7 @@ description: >-
 
     
 baseurl: ""
-url: "https://kulbir-singh-ahluwalia.com/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://kulbir-singh-ahluwalia.com" # no trailing slash (sitemap/feed append paths); the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Kulbir_Singh_
 github_username: kulbir-ahluwalia
 linkedin_name: kulbir-ahluwalia
@@ -52,6 +56,25 @@ orcid_id: "0009-0009-6793-8566"
 
 # Build settings
 theme: minima
+# 2026-10-10: superseded CV/resume versions stay reachable for old links but are no longer advertised in sitemap.xml.
+defaults:
+  - scope:
+      path: "files/CV_Resume_Nov2025"
+    values:
+      sitemap: false
+  - scope:
+      path: "files/CV_Resume_Feb2026"
+    values:
+      sitemap: false
+  - scope:
+      path: "files/CV_Resume_April2026"
+    values:
+      sitemap: false
+  - scope:
+      path: "files/CV_Resume_June2026"
+    values:
+      sitemap: false
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -89,3 +112,22 @@ exclude:
   - temp.txt
   - environment.yml
   - index.markdown.bak
+  # 2026-10-10: unlinked internal notes, rebuild triggers and test scaffolding (were served as public pages)
+  - FEATURES-2026-06-12.md
+  - purge_cache.txt
+  - trigger_rebuild.txt
+  - rebuild_trigger_1740541993.txt
+  - spec/
+  - .rspec
+  # 2026-10-10: unlinked folders with student names (FERPA) or private-course screenshots
+  - files/cs498gc/fa25/PDFs_assignments_demo_slides/
+  - files/pinned-campuswire-posts/
+  # 2026-10-10: git-lfs pointer stubs (GitHub Pages serves the 130-byte pointer, not the PDF) and old CV LaTeX sources
+  - files/intermittent_deployment_paper.pdf
+  - files/agronomy-11-02245-v3.pdf
+  - files/CV_July2025/
+  - files/CV_Resume_Sep2025/
+  - files/CV_Resume_TEX_PDFs_Kulbir_Summer_2026_interns/
+  # 2026-10-10: saved third-party publisher page (the paper is linked by DOI instead)
+  - "files/Reinforcement learning integrated with supervised learning for training of near infrared spectrum data for non-destructive testing of fruits (Conference Presentation).html"
+  - "files/Reinforcement learning integrated with supervised learning for training of near infrared spectrum data for non-destructive testing of fruits (Conference Presentation)_files/"

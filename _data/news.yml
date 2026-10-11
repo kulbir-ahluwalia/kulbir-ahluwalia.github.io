@@ -15,8 +15,8 @@
 - date: "Aug 2026"
   content: "Completed my summer internship as a <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong> in San Diego, California (June 8 - Aug 21, 2026)."
 
-- date: "2026"
-  content: 'Writing our journal paper <strong>TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions &amp; Grounded Constraint Phrases for Mobile Manipulator Navigation</strong> for the <strong>IEEE Transactions on Robotics (T-RO)</strong>.'
+- date: "Jun 2026"
+  content: 'Started writing our journal paper <strong>TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions &amp; Grounded Constraint Phrases for Mobile Manipulator Navigation</strong> for the <strong>IEEE Transactions on Robotics (T-RO)</strong> (manuscript in preparation).'
 
 - date: "May 2026"
   content: "Accepted a Summer 2026 internship offer as a <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong> in San Diego, California."
@@ -25,10 +25,10 @@
   content: 'Our poster <strong>WaypointGen: Learning Grounded Waypoint based Navigation for Mobile Manipulators</strong> was accepted at the <strong>CSL Student Conference (CSL SC 2026)</strong> at UIUC. <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf">[poster PDF]</a>'
 
 - date: "Mar 2026"
-  content: "Began <strong>WaypointGen++</strong>, the extended journal version of WaypointGen for outdoor mobile manipulators."
+  content: "Began <strong>WaypointGen++</strong>, the extended journal version of WaypointGen for outdoor mobile manipulators (now our T-RO manuscript <strong>TaP</strong>)."
 
 - date: "Oct 2025"
-  content: 'Released <strong><a href="https://kulbir-singh-ahluwalia.com/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a two-part Mobile Manipulator Exploration &amp; SLAM challenge for CS498GC Fall 2025: students operated a Husky + UR3 + Robotiq gripper in a Mars Gazebo world. <strong>Part 1</strong> (25 pts) covered robot setup and navigation; <strong>Part 2</strong> (75 pts) extended to full SLAM with MoveIt 2 + RViz 2 waypoint following, 3D and 4D reconstruction of Thanksgiving-themed dynamic turkeys, and an optional Mars dust-storm bonus.'
+  content: 'Released <strong><a href="/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a two-part Mobile Manipulator Exploration &amp; SLAM assignment for CS498GC Fall 2025 in which students operated a Husky + UR3 + Robotiq gripper in a Mars Gazebo world. <strong>Part 1</strong> (25 pts) covered robot setup and navigation; <strong>Part 2</strong> (75 pts as announced, made optional extra credit on Dec 7, 2025) covered SLAM on Mars, with an optional Mars dust-storm bonus.'
 
 - date: "May 2025"
   content: 'Our paper <strong>Active Semantic Mapping with Mobile Manipulator in Horticultural Environments</strong> was presented at <a href="https://2025.ieee-icra.org/"><strong>ICRA 2025</strong></a>. <a href="https://arxiv.org/abs/2412.10515">arXiv:2412.10515</a> &middot; <a href="https://kendallkoe.com/Active_Semantic_Mapping/">project page</a>'

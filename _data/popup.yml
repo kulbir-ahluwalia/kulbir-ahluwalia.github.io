@@ -4,7 +4,7 @@ enabled: true
 title: "Working on something agentic?"
 body: "I am a PhD researcher in physical AI - happy to chat about robotics, VLMs, and edge inference."
 cta_text: "Get in touch"
-# mailto instead of "#contact": the contact form still posts to the Formspree placeholder in index.html.
+# mailto: the Contact section is a plain email line (the placeholder forms were removed 2026-10-10).
 cta_link: "mailto:ksa5@illinois.edu"
 id: "intro-2026-06"
 delay_ms: 8000

@@ -1,9 +1,7 @@
 # News items (newest first). Each entry: `date` (display string) and `content` (HTML allowed).
 # To add a new item, prepend it to the top of this list.
 # Preview locally: cd kulbir-ahluwalia.github.io && bundle exec jekyll serve --trace
-# STATUS-NEEDS-KULBIR-CONFIRMATION marks a paper status Kulbir must confirm before shipping.
-# 2026-10-09: statuses rewritten to what the paper repos support (CoRL 2026 #1411 desk-rejected 2026-06-20;
-# T-RO not submitted; workshop upload unconfirmed). No item may say "under review" until confirmed.
+# 2026-10-10: paper statuses confirmed by Kulbir (see _data/publications.yml).
 
 - date: "Oct 2026"
   content: 'Posted TA reference runs for the CS498GC <a href="/cs498gc/fa25/slaming_mars.html#ta-demos"><strong>SLAM-ing Mars</strong></a> assignment: a Husky + UR3 driving through the Mars Gazebo world and the SLAM Toolbox occupancy map it builds.'
@@ -17,13 +15,8 @@
 - date: "Aug 2026"
   content: "Completed my summer internship as a <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong> in San Diego, California (June 8 - Aug 21, 2026)."
 
-# STATUS-NEEDS-KULBIR-CONFIRMATION (T-RO: latest plan 2026-10-07 says not submitted)
 - date: "2026"
   content: 'Writing our journal paper <strong>TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions &amp; Grounded Constraint Phrases for Mobile Manipulator Navigation</strong> for the <strong>IEEE Transactions on Robotics (T-RO)</strong>.'
-
-# STATUS-NEEDS-KULBIR-CONFIRMATION (CoRL 2026 #1411 desk-rejected 2026-06-20; confirm public wording)
-- date: "May 2026"
-  content: 'Submitted <strong>WaypointGen: Language-Grounded Waypoint-Based Navigation for Agricultural Mobile Manipulators</strong> to the <strong>Conference on Robot Learning (CoRL 2026)</strong>. It was desk-rejected for exceeding the page limit.'
 
 - date: "May 2026"
   content: "Accepted a Summer 2026 internship offer as a <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong> in San Diego, California."

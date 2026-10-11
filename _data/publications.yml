@@ -60,15 +60,13 @@
 
 
 # The first 3 entries are the "show selected" set (js/index.js shows the first 3 publications).
-# STATUS-NEEDS-KULBIR-CONFIRMATION marks a paper status Kulbir must confirm before shipping.
-# 2026-10-09: statuses rewritten to what the paper repos support; thumbnails swapped to figures from the
-# WaypointGen line itself (the Sept 2026 learned-decoder figures are in neither manuscript).
+# 2026-10-10: paper statuses confirmed by Kulbir: the T-RO manuscript is in preparation and the workshop
+# paper is listed without a review status. Thumbnails come from the WaypointGen line itself.
 
-# STATUS-NEEDS-KULBIR-CONFIRMATION (T-RO: latest plan 2026-10-07 says not submitted; no manuscript ID)
 - id2: tap_TRO2026
   title: "TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions & Grounded Constraint Phrases for Mobile Manipulator Navigation"
-  venue: "IEEE Transactions on Robotics (T-RO), in preparation"
-  awards: "Journal Paper (In Preparation)"
+  venue: "IEEE Transactions on Robotics (T-RO), manuscript in preparation"
+  awards: "Journal Paper (Manuscript in Preparation)"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
   description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth. On a 200-pair citrus benchmark: 99.0% structural pass, 37.5% geometric fidelity, and 59.2% LLM-judged constraint satisfaction (422/713)."
   topics:
@@ -86,34 +84,11 @@
     - Girish
     - Julia
 
-# STATUS-NEEDS-KULBIR-CONFIRMATION (CoRL 2026 #1411: desk-rejected 2026-06-20; confirm public wording)
-- id2: waypointGen_CoRL2026
-  title: "WaypointGen: Language-Grounded Waypoint-Based Navigation for Agricultural Mobile Manipulators"
-  venue: "Submitted to the Conference on Robot Learning (CoRL 2026)"
-  awards: "Conference Paper (Desk-Rejected: Page Limit)"
-  image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
-  description: "WaypointGen turns natural-language orchard commands into 2D waypoints over a four-level hierarchy (orchard, row, segment, tree), using bird's-eye-view projection, open-vocabulary perception, and multi-round VLM inference. On 200 citrus command pairs it reaches a 99% structural pass rate, while region containment falls to 6% at the single-tree level."
-  topics:
-    - mobile_robotics
-    - nlp
-    - path_planning
-    - deep_learning
-    - computer_vision
-  authors:
-    - Kulbir
-    - Chahit
-    - Jose
-    - Gurmanat
-    - Svetlana
-    - Julia
-    - Girish
-
-# STATUS-NEEDS-KULBIR-CONFIRMATION (workshop: upload of this paper unconfirmed; ws.tex lists Anonymous Author(s),
-# so only Kulbir is listed plus an 'et al.' note until the real author list is confirmed)
+# Workshop paper: only Kulbir is listed, plus an 'et al.' note, until the author list is final.
 - id2: waypointGen_CoRL2026_CompositionalWorkshop
   title: "WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation"
   venue: '<a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop on Compositional Generalization for Real-World Robot Learning</a>'
-  awards: "Workshop Paper (Manuscript, Non-Archival Venue)"
+  awards: "Workshop Paper (Non-Archival Venue)"
   image: "publications/waypointgen_cslsc2026/image.jpeg"
   description: "Modular pipeline for language-commanded navigation of agricultural mobile manipulators: a local bird's-eye view from RGB-D, open-vocabulary target and avoidance masks, code-based command checks, and a vision-language model that picks among MPPI trajectory candidates. Offline studies on 349 palm-plantation targets score the candidates, not the model's choice."
   topics:

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#8E44AD"/>
+  <text x="160" y="120" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial, sans-serif" font-size="80" font-weight="bold">GPS</text>
+  <!-- Satellite signal waves -->
+  <path d="M 130 180 Q 160 165 190 180" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2.5"/>
+  <path d="M 115 195 Q 160 175 205 195" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <path d="M 100 210 Q 160 185 220 210" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <!-- Pin marker -->
+  <circle cx="160" cy="230" r="8" fill="white"/>
+  <polygon points="152,230 160,252 168,230" fill="white"/>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="16">RTK-GPS Trajectory</text>
+</svg>

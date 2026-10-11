@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#8E44AD"/>
+  <!-- Robot arm -->
+  <!-- Base -->
+  <rect x="140" y="225" width="40" height="15" rx="3" fill="white"/>
+  <!-- Lower arm segment -->
+  <rect x="153" y="170" width="14" height="60" rx="4" fill="none" stroke="white" stroke-width="3"/>
+  <!-- Joint -->
+  <circle cx="160" cy="170" r="8" fill="white"/>
+  <!-- Upper arm segment (angled) -->
+  <line x1="160" y1="170" x2="210" y2="120" stroke="white" stroke-width="12" stroke-linecap="round"/>
+  <!-- Elbow joint -->
+  <circle cx="210" cy="120" r="8" fill="white"/>
+  <!-- Forearm -->
+  <line x1="210" y1="120" x2="240" y2="85" stroke="white" stroke-width="10" stroke-linecap="round"/>
+  <!-- Gripper -->
+  <line x1="235" y1="80" x2="225" y2="65" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <line x1="245" y1="80" x2="255" y2="65" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <!-- Object being held -->
+  <rect x="228" y="55" width="24" height="16" rx="3" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="160" y="265" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Baxter</text>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="14">Pick-and-Place</text>
+</svg>

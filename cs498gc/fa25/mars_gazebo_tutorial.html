@@ -9,7 +9,8 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,SLAM,Mars,Gazebo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS498GC: Mars Gazebo Tutorial - SLAM on Mars | Fall 2025</title>
+    <title>CS498GC: Mars Gazebo Tutorial - SLAM on Mars | Fall 2025 archive</title>
+    <meta name="description" content="Archive of the CS 498 GC Mobile Robotics (Fall 2025) Mars Gazebo tutorial for Assignment 4 Part 2 at the University of Illinois Urbana-Champaign.">
     <link rel="icon" href="/images/favicon.ico" />
     <link rel="shortcut icon" href="/images/favicon.ico" />
 
@@ -198,6 +199,30 @@
         .code-block code {
             color: #00ff00;
             font-size: 0.9rem;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            display: block;
+        }
+
+        .handout-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--space-dark);
+            background: #ffc107;
+            border-radius: 6px;
+            padding: 2px 8px;
+            margin-bottom: 6px;
+        }
+
+        .navbar .nav-link {
+            white-space: nowrap;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.45rem !important;
+        }
+
+        .accordion-mars .accordion-button::after {
+            filter: invert(1) brightness(1.6);
         }
 
         /* Alerts */
@@ -358,7 +383,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">CS498GC - Fall 2025</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle">
@@ -415,7 +440,7 @@
             <h1 class="hero-title">🚀 SLAM on Mars: Gazebo Tutorial</h1>
             <p class="hero-subtitle">Navigate the Red Planet with Husky + UR3 + Robotis Gripper</p>
             <div class="alert-warning-mars">
-                <strong>🔥 NEW!</strong> Experience SLAM in authentic Mars terrain with NASA-inspired Gazebo worlds!
+                <strong>Fall 2025 archive.</strong> Tutorial from Assignment 4 of CS498GC Fall 2025.
             </div>
         </div>
     </section>
@@ -424,22 +449,20 @@
     <div class="container my-5">
 
         <h2 class="section-header">🌌 Assignment 4 Part 2: Mars SLAM Challenge</h2>
-        <p class="lead">Get ready to roll on Mars! This tutorial guides you through implementing SLAM on the Red Planet using our mobile manipulator in realistic Mars environments.</p>
+        <p class="lead">This tutorial guided students through implementing SLAM on the Red Planet with the course mobile manipulator in Mars-themed Gazebo worlds.</p>
 
         <!-- Environment Features and Robot Configuration -->
         <div class="row mt-5">
             <div class="col-md-6">
                 <div class="feature-card">
-                    <i class="fas fa-planet-ringed feature-icon"></i>
+                    <i class="fas fa-globe feature-icon"></i>
                     <h3>🔴 Mars Environment Features</h3>
                     <ul>
-                        <li><strong>Authentic Mars Terrain:</strong> Rocky, uneven surfaces</li>
-                        <li><strong>Reduced Gravity:</strong> 38% of Earth's gravity</li>
-                        <li><strong>Dust Storms:</strong> Dynamic visibility challenges</li>
-                        <li><strong>Craters & Obstacles:</strong> Natural Mars formations</li>
-                        <li><strong>Red/Orange Atmosphere:</strong> Realistic Mars coloring</li>
-                        <li><strong>NASA-Inspired:</strong> Based on real Mars rover data</li>
+                        <li><strong>Mars gravity:</strong> about 38% of Earth's (3.71 m/s&sup2; in the repo world)</li>
+                        <li><strong>Obstacles:</strong> rock-like blocks for navigation and SLAM</li>
                     </ul>
+                    <span class="handout-label">Fall 2025 handout text</span>
+                    <p class="small mb-0">The Fall 2025 handout also listed dust storms, uneven terrain and NASA rover data. None of these are in the linked worlds.</p>
                 </div>
             </div>
 
@@ -471,13 +494,14 @@
             <h5>Prerequisites</h5>
             <ul class="mb-0">
                 <li>ROS2 Jazzy or Humble installed</li>
-                <li>Gazebo 11 or newer</li>
+                <li>Gazebo Classic 11 (ROS 2 Humble) for the dual-robot repo; the TA reference runs used Gazebo Harmonic on ROS 2 Jazzy</li>
                 <li>NVIDIA GPU recommended (GTX 1060 or better)</li>
                 <li>16GB RAM minimum</li>
             </ul>
         </div>
 
         <h3 class="mt-4">Step 1: Install Mars World Package</h3>
+        <span class="handout-label">Fall 2025 handout text (not runnable as written)</span>
         <div class="code-block">
             <code># Clone the Mars world repository
 # (fork of itsyashk/ros2-dual-robot-slam-explorer; the final rubric v11 marks it not recommended
@@ -496,22 +520,23 @@ source install/setup.bash</code>
 
         <h3 class="mt-4">Step 2: Launch Mars Environment</h3>
         <div class="code-block">
-            <code># Launch Mars world with Husky robot
-ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf
+            <code># Launch files in the linked dual-robot repo (they do not run as is; see below)
+ros2 launch mars_simulation two_robots_sim.launch.py
 
-# In a new terminal, launch SLAM
-ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true
+# In a new terminal, start SLAM Toolbox with the repo's parameters
+ros2 launch mars_robots mapping.launch.py
 
 # Start teleoperation (optional)
 ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
         </div>
+        <p class="small">These steps do not run from the linked repository: its <code>mars_simulation</code> folder is not a ROS 2 package (no <code>package.xml</code>), the launch file refers to a <code>mars_robot.urdf</code> the repository does not contain (it ships only <code>mars_robot.urdf.xacro</code>), and it uses Gazebo Classic (<code>gazebo_ros</code>), which has no ROS 2 Jazzy release. Rubric v11 recommended the Mars Thanksgiving World, which was shared with enrolled students and is not public. <span class="handout-label">TA reference setup</span> The TA reference runs used <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code> from the TA&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version. See the <a href="slaming_mars.html#ta-demos">SLAM-ing Mars page</a>.</p>
 
         <!-- SLAM Tasks -->
         <h2 class="section-header">🎯 SLAM Tasks on Mars</h2>
 
         <div class="feature-card">
             <i class="fas fa-tasks feature-icon"></i>
-            <h3>Required Tasks (75 points)</h3>
+            <h3>Required Tasks (75 points; tutorial split, see the <a href="slaming_mars.html#part-b-rubric">Part B rubric</a> for the graded items)</h3>
             <ol>
                 <li><strong>Basic Navigation (15 pts):</strong> Navigate through Mars crater field</li>
                 <li><strong>Sample Collection (15 pts):</strong> Use manipulator to collect Mars rocks</li>
@@ -526,6 +551,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
             <i class="fas fa-star feature-icon"></i>
             <h3>🌟 Bonus Challenge: Mars Dust Storm (10 extra points)</h3>
             <p>Complete SLAM during a simulated Mars dust storm with reduced visibility!</p>
+            <span class="handout-label">Fall 2025 handout text (not a runnable command: no <code>/mars_environment</code> node exists in the linked repositories)</span>
             <div class="code-block">
                 <code># Enable dust storm mode
 ros2 param set /mars_environment enable_dust_storm true
@@ -536,6 +562,7 @@ ros2 param set /mars_environment dust_density 0.7</code>
         <!-- Performance Metrics -->
         <h2 class="section-header">📊 Performance Metrics</h2>
 
+        <span class="handout-label">Fall 2025 handout text (illustrative targets, not the graded rubric)</span>
         <div class="table-responsive">
             <table class="table table-mars">
                 <thead>
@@ -578,6 +605,7 @@ ros2 param set /mars_environment dust_density 0.7</code>
         <!-- Common Challenges -->
         <h2 class="section-header">🚨 Common Challenges & Solutions</h2>
 
+        <span class="handout-label">Fall 2025 handout text: the node and parameter names below were not checked against the simulator</span>
         <div class="accordion accordion-mars" id="marsAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -629,7 +657,7 @@ ros2 param set /ur3_controller pid_p 0.6</code>
                         <strong>Solution:</strong> Tune visual feature detectors for Mars
                         <div class="code-block mt-3">
                             <code># Adjust RTAB-Map parameters for Mars
-ros2 param set /rtabmap Vis/FeatureType 6  # ORB features
+ros2 param set /rtabmap Vis/FeatureType 6  # GFTT/BRIEF features (type 6)
 ros2 param set /rtabmap Vis/MaxFeatures 2000
 ros2 param set /rtabmap RGBD/OptimizeMaxError 0.5</code>
                         </div>
@@ -687,8 +715,8 @@ ros2 param set /rtabmap RGBD/OptimizeMaxError 0.5</code>
 
         <div class="alert-warning-mars mt-4">
             <h5>🚀 Student Testimonial</h5>
-            <p><em>"Even I could not sleep last night because I was so excited SLAMing on MARS!!"</em> - Enthusiastic CS498GC Student</p>
-            <p class="mb-0"><strong>Get ready to roll on the Red Planet!</strong> 🔴</p>
+            <p><em>"I couldn't sleep last night because I was so excited SLAMing on MARS!!"</em> - a CS498GC student</p>
+            <p class="mb-0">Fall 2025 archive.</p>
         </div>
 
     </div>

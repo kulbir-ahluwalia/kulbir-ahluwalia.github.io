@@ -1,3 +1,6 @@
+---
+published: false
+---
 # Mars Gazebo Worlds - Technical Tutorial
 ## CS498GC Mobile Robotics - Fall 2025
 ### Complete Setup Guide for Mars Exploration with Husky + UR3
@@ -54,11 +57,11 @@ sudo apt-get install htop nvidia-smi
 cd ~/ros2_ws/src
 
 # Clone the Mars terrain packages
-git clone https://github.com/nasa-jpl/mars_gazebo_terrains.git
+# (repository not found; Fall 2025 handout text) git clone https://github.com/nasa-jpl/mars_gazebo_terrains.git
 git clone https://github.com/ros-simulation/gazebo_ros_demos.git
 
 # Clone NASA Mars assets
-git clone https://github.com/nasa/mars-rover-simulation.git
+# (repository not found; Fall 2025 handout text) git clone https://github.com/nasa/mars-rover-simulation.git
 ```
 
 ### Step 2: Download High-Resolution Terrain Data

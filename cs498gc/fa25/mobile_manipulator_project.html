@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Manipulator Mars Project | CS498GC Fall 2025</title>
+    <title>Mobile Manipulator Mars Project | CS498GC Fall 2025 (archive)</title>
+    <meta name="description" content="Archive of the CS 498 GC Mobile Robotics (Fall 2025) Assignment 4 mobile manipulator project (Husky + UR3 on Mars in Gazebo) at the University of Illinois Urbana-Champaign.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -260,6 +261,10 @@
             color: var(--mars-orange);
         }
 
+        .accordion-button::after {
+            filter: invert(1) brightness(1.6);
+        }
+
         .handout-label {
             display: inline-block;
             font-size: 0.85rem;
@@ -270,6 +275,7 @@
             padding: 2px 8px;
             margin-bottom: 6px;
         }
+        .timeline-content a, .resource-item a { color: var(--mars-orange); }
     </style>
 </head>
 <body>
@@ -286,7 +292,7 @@
             <i class="fas fa-rocket mars-icon"></i>
             <h1 class="hero-title">Mobile Manipulator Mars Exploration Project</h1>
             <p class="hero-subtitle">CS498GC Fall 2025 | Assignment 4 Extra Credit</p>
-            <p class="lead mt-4">Transform your Husky + UR3 robot into a Mars explorer!</p>
+            <p class="lead mt-4"><strong>Fall 2025 archive.</strong> This page is kept as a record of the Assignment 4 mobile manipulator project from CS498GC Fall 2025, together with <a href="slaming_mars.html#ta-demos" style="color: #FFA500;">TA reference runs</a>.</p>
             <div class="mt-4">
                 <a href="/files/cs498gc/fa25/assignments/assignment4_extra_credit_guide.pdf" class="btn-mars" target="_blank" download>
                     <i class="fas fa-file-pdf"></i> Extra Credit Guide
@@ -295,7 +301,7 @@
                     <i class="fas fa-file-pdf"></i> Assignment 4 Demo Slides
                 </a>
                 <a href="https://github.com/LRCJ/GazeboMarsRover2" class="btn-mars" target="_blank">
-                    <i class="fas fa-globe-mars"></i> Mars Gazebo Worlds
+                    <i class="fas fa-globe"></i> GazeboMarsRover2 (ROS 1)
                 </a>
             </div>
         </div>
@@ -309,15 +315,15 @@
             <h4><i class="fas fa-exclamation-triangle"></i> Important Deadlines (Fall 2025)</h4>
             <ul class="mb-0">
                 <li><strong>Part 1:</strong> November 21, 2025 @ 11:00 PM (25 points)</li>
-                <li><strong>Part 2:</strong> December 9, 2025 @ 11:00 PM (75 points). <em>Made optional extra credit on December 7, 2025.</em> <em>(original Fall 2025 figures, superseded by rubric v11: a 175-point extra-credit rubric due December 15, 2025, with up to +35 bonus points)</em></li>
-                <li><strong>Early Submission Bonus (Part 1):</strong> +20 points if Part 1 is submitted before November 9, 2025; +10 points if Part 1 is submitted before November 14, 2025</li>
+                <li><strong>Part 2:</strong> December 9, 2025 @ 11:00 PM (75 points). <em>Made optional extra credit on December 7, 2025.</em> <em>(original Fall 2025 figures, superseded by rubric v11 of December 8, 2025: optional extra credit with up to +35 bonus points; the two v11 builds list 175 points due Dec 15 and 75 points due Dec 10)</em></li>
+                <li><strong>Early Submission Bonus (Part 1):</strong> +20 points if Part 1 is submitted before November 9, 2025; +10 points if Part 1 is submitted before November 14, 2025 <em>(as posted in the November 2025 extra-credit guide; the first rubric v11 build (175 points) listed early-submission tiers of Gold +25 before November 7 and Silver +20 before November 9)</em></li>
             </ul>
         </div>
 
         <!-- Quick Start Section -->
         <div class="alert alert-info text-center mt-4">
             <h4><i class="fas fa-rocket"></i> Quick Start</h4>
-            <p class="mb-2">Get started with Mars exploration in 3 steps:</p>
+            <p class="mb-2">Fall 2025 quick start in 3 steps:</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
                 <span class="badge bg-primary">1️⃣ Clone Husky UR3</span>
                 <span class="badge bg-primary">2️⃣ Install Mars Worlds</span>
@@ -366,26 +372,26 @@
                         <div class="feature-card">
                             <i class="fas fa-robot feature-icon"></i>
                             <h3>Your Robot Platform</h3>
-                            <p>Command a Husky mobile base equipped with a UR3 manipulator arm and precision gripper. This configuration mirrors real Mars rover designs!</p>
+                            <p>Command a Husky mobile base equipped with a UR3 manipulator arm and a gripper.</p>
                             <ul>
                                 <li>4-wheel differential drive system</li>
                                 <li>6-DOF UR3 manipulator arm</li>
-                                <li>Robotiq gripper for sample collection</li>
+                                <li>Robotis RH-P12-RN gripper</li>
                                 <li>Simulated LiDAR and IMU sensors</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="feature-card">
-                            <i class="fas fa-planet-ringed feature-icon"></i>
+                            <i class="fas fa-globe feature-icon"></i>
                             <h3>Mars Environment</h3>
-                            <p>Navigate realistic Martian terrain using actual NASA/JPL elevation data and surface textures from Mars orbital imagery.</p>
+                            <p>Mars-themed Gazebo worlds with rock obstacles; the TA reference runs used a flat Mars-themed Gazebo Harmonic world with rock-like obstacles (see the Mars Gazebo tab).</p>
                             <ul>
-                                <li>Jezero Crater terrain models</li>
-                                <li>Realistic physics simulation</li>
-                                <li>Day/night cycle with dust effects</li>
-                                <li>Rock and sample collection targets</li>
+                                <li>Mars-themed Gazebo world</li>
+                                <li>Rock-like obstacles for navigation and SLAM</li>
                             </ul>
+                            <span class="handout-label">Fall 2025 handout text</span>
+                            <p class="small mb-0">The Fall 2025 handout also described Jezero Crater terrain from NASA/JPL elevation data and a day/night cycle with dust effects. Those terrain models are not in any repository linked from these pages.</p>
                         </div>
                     </div>
                 </div>
@@ -432,6 +438,8 @@
                         <div class="resource-item">
                             <h4>🏔️ Mars Terrain (Husky + UR3)</h4>
                             <p>Mars-themed Gazebo Harmonic world (flat ground with rock-like obstacles) for the Husky+UR3 mobile manipulator.</p>
+                            <span class="handout-label">TA reference setup (not public)</span>
+                            <p class="small mb-2"><code>husky_ur3_gazebo</code> and <code>mars.sdf</code> come from the TA&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version.</p>
                             <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code>
                         </div>
                         <div class="resource-item">
@@ -450,13 +458,13 @@
                 <div class="feature-card mt-4">
                     <h3>Installing Mars Terrain Packages</h3>
                     <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                    <p class="small mb-2">GazeboMarsRover2 is a Mars rover model package: it has no <code>mars_gazebo_terrains</code> package, no <code>download_textures.sh</code> script and no HiRISE terrain data, so the steps after the clone fail. The Mars world used in the TA reference runs is described on the <a href="slaming_mars.html#ta-demos">SLAM-ing Mars page</a>.</p>
+                    <p class="small mb-2">GazeboMarsRover2 is a ROS 1 (catkin) Mars rover package for Gazebo Classic (package <code>mars_rover_2</code>), last updated May 2021, with a simple Mars terrain world (<code>urdf/MarsTerrain.world</code>). It has no <code>mars_gazebo_terrains</code> package and no <code>download_textures.sh</code> script. Its README links a HiRISE-derived terrain mesh that is hosted outside the repository, so the ROS 2 steps after the clone fail. The Mars world used in the TA reference runs is described on the <a href="slaming_mars.html#ta-demos">SLAM-ing Mars page</a>.</p>
                     <div class="code-block">
                         <code>
 # Clone the Mars worlds repository<br>
 cd ~/ros2_ws/src<br>
 git clone https://github.com/LRCJ/GazeboMarsRover2.git<br>
-# This repository includes real NASA HiRISE Mars terrain data<br>
+# (its README links a HiRISE-derived terrain mesh hosted outside the repository)<br>
 <br>
 # Install dependencies<br>
 sudo apt-get update<br>
@@ -480,30 +488,28 @@ source install/setup.bash
                     <span class="handout-label">Fall 2025 handout text (not a runnable example)</span>
                     <p class="small mb-0">The models this world includes (<code>mars_sky</code>, <code>jezero_crater_terrain</code>, <code>mars_rock_sample</code>) are not in any of the repositories linked from these pages.</p>
                     <div class="code-block">
-                        <code>
-&lt;?xml version="1.0"?&gt;<br>
-&lt;sdf version="1.6"&gt;<br>
-  &lt;world name="mars_exploration"&gt;<br>
-    &lt;!-- Mars sky and lighting --&gt;<br>
-    &lt;include&gt;<br>
-      &lt;uri&gt;model://mars_sky&lt;/uri&gt;<br>
-    &lt;/include&gt;<br>
-    <br>
-    &lt;!-- Jezero Crater terrain --&gt;<br>
-    &lt;include&gt;<br>
-      &lt;uri&gt;model://jezero_crater_terrain&lt;/uri&gt;<br>
-      &lt;pose&gt;0 0 0 0 0 0&lt;/pose&gt;<br>
-    &lt;/include&gt;<br>
-    <br>
-    &lt;!-- Add rock samples for collection --&gt;<br>
-    &lt;include&gt;<br>
-      &lt;uri&gt;model://mars_rock_sample&lt;/uri&gt;<br>
-      &lt;pose&gt;5 5 0.5 0 0 0&lt;/pose&gt;<br>
-      &lt;name&gt;sample_01&lt;/name&gt;<br>
-    &lt;/include&gt;<br>
-  &lt;/world&gt;<br>
-&lt;/sdf&gt;
-                        </code>
+                        <code style="white-space: pre-wrap; display: block;">&lt;?xml version="1.0"?&gt;
+&lt;sdf version="1.6"&gt;
+  &lt;world name="mars_exploration"&gt;
+    &lt;!-- Mars sky and lighting --&gt;
+    &lt;include&gt;
+      &lt;uri&gt;model://mars_sky&lt;/uri&gt;
+    &lt;/include&gt;
+    
+    &lt;!-- Jezero Crater terrain --&gt;
+    &lt;include&gt;
+      &lt;uri&gt;model://jezero_crater_terrain&lt;/uri&gt;
+      &lt;pose&gt;0 0 0 0 0 0&lt;/pose&gt;
+    &lt;/include&gt;
+    
+    &lt;!-- Add rock samples for collection --&gt;
+    &lt;include&gt;
+      &lt;uri&gt;model://mars_rock_sample&lt;/uri&gt;
+      &lt;pose&gt;5 5 0.5 0 0 0&lt;/pose&gt;
+      &lt;name&gt;sample_01&lt;/name&gt;
+    &lt;/include&gt;
+  &lt;/world&gt;
+&lt;/sdf&gt;</code>
                     </div>
                 </div>
             </div>
@@ -517,6 +523,8 @@ source install/setup.bash
                         <div class="timeline-content">
                             <h4>Step 1: Environment Setup</h4>
                             <p>Configure ROS2 Jazzy/Humble with Gazebo Harmonic</p>
+                            <span class="handout-label">TA reference setup (not public)</span>
+                            <p class="small mb-2"><code>husky_ur3_gazebo</code> and <code>mars.sdf</code> come from the TA&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version.</p>
                             <div class="code-block">
                                 <code>
 source /opt/ros/jazzy/setup.bash<br>
@@ -545,6 +553,8 @@ ros2 launch husky_ur3_mars mars_exploration.launch.py
                         <div class="timeline-content">
                             <h4>Step 3: Controllers</h4>
                             <p>Initialize robot controllers and teleoperation</p>
+                            <span class="handout-label">TA reference setup (not public)</span>
+                            <p class="small mb-2"><code>husky_ur3_gazebo</code> and <code>mars.sdf</code> come from the TA&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version.</p>
                             <div class="code-block">
                                 <code>
 ros2 launch husky_ur3_gazebo simulation.launch.py<br>
@@ -620,13 +630,13 @@ ros2 launch mars_mission mission_control.launch.py
                     <div class="col-md-6">
                         <div class="feature-card">
                             <h3>📹 TA Reference Runs</h3>
-                            <p>Recorded TA runs of Assignment 4 in Gazebo Harmonic (ROS 2 Jazzy). TA reference runs, not student submissions.</p>
+                            <p>Recorded TA runs of Assignment 4 in Gazebo Harmonic (ROS 2 Jazzy): NVIDIA DGX Spark, July 14, 2026, and MSI x86 laptop, October 9, 2026. TA reference runs, not student submissions.</p>
                             <a href="slaming_mars.html#ta-demos" class="btn-mars w-100 text-center">
                                 <i class="fas fa-play"></i> Watch TA Reference Runs
                             </a>
                             <ul class="mt-3">
                                 <li>Part 1: Husky + UR3 setup and scripted base drive</li>
-                                <li>Part 2: scripted square-loop drive in the Mars world with EKF sensor fusion and SLAM Toolbox</li>
+                                <li>Part 2: scripted six-leg loop in the Mars world with EKF sensor fusion and SLAM Toolbox</li>
                                 <li>Part 2: SLAM Toolbox map growing and the saved occupancy map</li>
                             </ul>
                         </div>
@@ -686,8 +696,9 @@ ros2 launch mars_mission mission_control.launch.py
                         <div class="col-md-6">
                             <h4>Close Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [-0.04]}"</code>
+                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [1.0]}"</code>
                             </div>
+                            <p class="small mt-2 mb-0">Values used in the TA reference runs (RH-P12-RN gripper): 0.0 open, 1.0 closed.</p>
                         </div>
                     </div>
                 </div>
@@ -730,7 +741,7 @@ ros2 launch mars_mission mission_control.launch.py
 
         <!-- Footer Section -->
         <div class="text-center mt-5 pb-4">
-            <p class="text-muted">
+            <p style="color: rgba(255,255,255,0.75);">
                 CS498GC Mobile Robotics | Fall 2025 | University of Illinois at Urbana-Champaign<br>
                 Professor Girish Chowdhary | TA: Kulbir Singh Ahluwalia
             </p>
@@ -739,7 +750,7 @@ ros2 launch mars_mission mission_control.launch.py
                     <i class="fas fa-comments"></i> Campuswire
                 </a>
                 <a href="https://gradescope.com" class="btn-mars btn-sm">
-                    <i class="fas fa-graduation-cap"></i> Gradescope (KDP5G8)
+                    <i class="fas fa-graduation-cap"></i> Gradescope
                 </a>
                 <a href="index.html" class="btn-mars btn-sm">
                     <i class="fas fa-home"></i> Course Home

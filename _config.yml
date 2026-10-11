@@ -74,6 +74,10 @@ defaults:
       path: "files/CV_Resume_June2026"
     values:
       sitemap: false
+  - scope:
+      path: "files/CV_Resume_July2026"
+    values:
+      sitemap: false
 
 plugins:
   - jekyll-feed

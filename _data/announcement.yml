@@ -1,7 +1,8 @@
 # Dismissible announcement bar (rendered in index.html, logic in js/index.js).
 # Bump `id` to re-show the bar to visitors who dismissed an older one.
+# 2026-10-10: paper statuses confirmed by Kulbir (see _data/publications.yml).
 enabled: true
-text: "Now: Compute Chipset PM Intern in San Diego - open to Fall 2026 collaborations."
-link: "/cv.html"
-link_text: "CV"
-id: "2026-06-announce"
+text: "The CS498GC SLAM-ing Mars TA reference runs are now online, and new WaypointGen manuscripts are listed under Publications."
+link: "/cs498gc/fa25/slaming_mars.html#ta-demos"
+link_text: "Watch the runs"
+id: "2026-10-announce"

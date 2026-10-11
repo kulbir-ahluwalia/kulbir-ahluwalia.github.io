@@ -23,14 +23,16 @@ name: Kulbir Singh Ahluwalia
 position: PhD Candidate
 email: ksa5@illinois.edu
 description: >-
-  I'm Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois, Urbana-Champaign ([UIUC](https://illinois.edu/)),
-  focusing on natural language grounding for agricultural robots to advance this critical field. I am fortunate to be mentored by
-  [Prof. Girish Chowdhary](http://daslab.illinois.edu) and [Prof. Julia Hockenmaier](https://hmr-lab.github.io).
-  My academic foundation includes a Master of Engineering in Robotics from the University of Maryland, where I gained expertise in robotic systems and physics simulations.
-  Recently, during my summer internship at EarthSense, Inc., I contributed to developing a natural language-conditioned waypoint generation pipeline.
-  My technical skills include Robot Operating System (ROS) and implementing SOTA NLP and CV pipelines for Mobile Manipulators.
-  I also co-developed the [CS-498-GC Mobile Robotics course](https://kulbir-singh-ahluwalia.com/cs498gc/fa25/) with Prof. Chowdhary.
-  My long-term life goal is scaling up Physical AI for advancing humanity.  
+  I'm Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois Urbana-Champaign ([UIUC](https://illinois.edu/)),
+  advised by [Prof. Girish Chowdhary](http://daslab.illinois.edu) and [Prof. Julia Hockenmaier](https://hmr-lab.github.io).
+  My research is on language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen),
+  and on running these models efficiently on edge AI hardware.
+  In Summer 2026 I was a Compute Chipset Product Management Intern at Qualcomm in San Diego, and in Summer 2025 I was an AI Intern at EarthSense, Inc.,
+  where I contributed to a natural language-conditioned waypoint generation pipeline for outdoor robots.
+  In Fall 2026 I am a Teaching Assistant for [CS 440/ECE 448: Artificial Intelligence](https://courses.grainger.illinois.edu/cs440/fa2026/) with Prof. Margaret Fleck,
+  and I co-developed the [CS 498 GC Mobile Robotics course](https://kulbir-singh-ahluwalia.com/cs498gc/fa25/) with Prof. Chowdhary.
+  Before UIUC, I earned a Master of Engineering in Robotics from the University of Maryland, College Park.
+  My long-term goal is scaling up Physical AI for advancing humanity.
 
 
 
@@ -78,3 +80,12 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  # repo notes and tooling that must not be published (they rendered as public pages)
+  - CLAUDE.md
+  - "*/CLAUDE.md"
+  - "*/AGENTS.md"
+  - README.md
+  - update_nav.py
+  - temp.txt
+  - environment.yml
+  - index.markdown.bak

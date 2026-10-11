@@ -251,6 +251,25 @@
             left: 20px;
             z-index: 1000;
         }
+
+        /* Fall 2025 archive: class-level stats and handout labels */
+        .ta-stat {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--mars-orange);
+        }
+
+        .handout-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--space-dark);
+            background: #ffc107;
+            border-radius: 6px;
+            padding: 2px 8px;
+            margin-bottom: 6px;
+        }
     </style>
 </head>
 <body>
@@ -287,11 +306,11 @@
 
         <!-- Alert Section -->
         <div class="alert-mars">
-            <h4><i class="fas fa-exclamation-triangle"></i> Important Deadlines</h4>
+            <h4><i class="fas fa-exclamation-triangle"></i> Important Deadlines (Fall 2025)</h4>
             <ul class="mb-0">
                 <li><strong>Part 1:</strong> November 21, 2025 @ 11:00 PM (25 points)</li>
-                <li><strong>Part 2:</strong> December 9, 2025 @ 11:00 PM (75 points)</li>
-                <li><strong>Early Submission Bonus:</strong> November 7, 2025 @ 11:59 PM (+10 points)</li>
+                <li><strong>Part 2:</strong> December 9, 2025 @ 11:00 PM (75 points). <em>Made optional extra credit on December 7, 2025.</em> <em>(original Fall 2025 figures, superseded by rubric v11: a 175-point extra-credit rubric due December 15, 2025, with up to +35 bonus points)</em></li>
+                <li><strong>Early Submission Bonus (Part 1):</strong> +20 points if Part 1 is submitted before November 9, 2025; +10 points if Part 1 is submitted before November 14, 2025</li>
             </ul>
         </div>
 
@@ -411,25 +430,27 @@
 
                     <div class="resource-grid">
                         <div class="resource-item">
-                            <h4>🏔️ Jezero Crater</h4>
-                            <p>Ancient river delta with diverse geological features. Perfect for navigation challenges.</p>
-                            <code>ros2 launch mars_worlds jezero_crater.launch.py</code>
+                            <h4>🏔️ Mars Terrain (Husky + UR3)</h4>
+                            <p>Mars-themed Gazebo Harmonic world (flat ground with rock-like obstacles) for the Husky+UR3 mobile manipulator.</p>
+                            <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code>
                         </div>
                         <div class="resource-item">
-                            <h4>🏜️ Olympus Mons Base</h4>
-                            <p>Explore the largest volcano in the solar system. Extreme terrain for advanced users.</p>
-                            <code>ros2 launch mars_worlds olympus_mons.launch.py</code>
+                            <h4>🏜️ Dual-Robot Mapping</h4>
+                            <p>Mapping launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
+                            <code>ros2 launch mars_robots mapping.launch.py</code>
                         </div>
                         <div class="resource-item">
-                            <h4>🏕️ Mars Base Alpha</h4>
-                            <p>Simulated research station with sample collection zones and charging stations.</p>
-                            <code>ros2 launch mars_worlds base_alpha.launch.py</code>
+                            <h4>🏕️ Dual-Robot Navigation</h4>
+                            <p>Navigation launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
+                            <code>ros2 launch mars_robots navigation.launch.py</code>
                         </div>
                     </div>
                 </div>
 
                 <div class="feature-card mt-4">
                     <h3>Installing Mars Terrain Packages</h3>
+                    <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
+                    <p class="small mb-2">GazeboMarsRover2 is a Mars rover model package: it has no <code>mars_gazebo_terrains</code> package, no <code>download_textures.sh</code> script and no HiRISE terrain data, so the steps after the clone fail. The Mars world used in the TA reference runs is described on the <a href="slaming_mars.html#ta-demos">SLAM-ing Mars page</a>.</p>
                     <div class="code-block">
                         <code>
 # Clone the Mars worlds repository<br>
@@ -439,8 +460,7 @@ git clone https://github.com/LRCJ/GazeboMarsRover2.git<br>
 <br>
 # Install dependencies<br>
 sudo apt-get update<br>
-sudo apt-get install ros-${ROS_DISTRO}-gazebo-ros-pkgs<br>
-sudo apt-get install ros-${ROS_DISTRO}-gazebo-msgs<br>
+sudo apt install ros-${ROS_DISTRO}-ros-gz<br>
 <br>
 # Download Mars texture packs (2GB)<br>
 cd mars_gazebo_terrains<br>
@@ -457,6 +477,8 @@ source install/setup.bash
                 <div class="feature-card mt-4">
                     <h3>Custom World Configuration</h3>
                     <p>Create your own Mars exploration scenario by modifying world files:</p>
+                    <span class="handout-label">Fall 2025 handout text (not a runnable example)</span>
+                    <p class="small mb-0">The models this world includes (<code>mars_sky</code>, <code>jezero_crater_terrain</code>, <code>mars_rock_sample</code>) are not in any of the repositories linked from these pages.</p>
                     <div class="code-block">
                         <code>
 &lt;?xml version="1.0"?&gt;<br>
@@ -499,7 +521,7 @@ source install/setup.bash
                                 <code>
 source /opt/ros/jazzy/setup.bash<br>
 cd ~/ros2_ws<br>
-colcon build --packages-select husky_ur3_simulation
+colcon build --packages-select husky_ur3_gazebo husky_ur3_description
                                 </code>
                             </div>
                         </div>
@@ -509,6 +531,8 @@ colcon build --packages-select husky_ur3_simulation
                         <div class="timeline-content">
                             <h4>Step 2: Launch Simulation</h4>
                             <p>Start the complete Mars exploration environment</p>
+                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
+                            <p class="small mb-0">There is no <code>husky_ur3_mars</code> package in the repositories linked from these pages. The TA reference runs used <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code> (see the <a href="slaming_mars.html#ta-demos">TA reference runs</a>).</p>
                             <div class="code-block">
                                 <code>
 ros2 launch husky_ur3_mars mars_exploration.launch.py
@@ -523,7 +547,7 @@ ros2 launch husky_ur3_mars mars_exploration.launch.py
                             <p>Initialize robot controllers and teleoperation</p>
                             <div class="code-block">
                                 <code>
-ros2 launch husky_ur3_simulation controllers.launch.py<br>
+ros2 launch husky_ur3_gazebo simulation.launch.py<br>
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
                                 </code>
                             </div>
@@ -534,6 +558,8 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
                         <div class="timeline-content">
                             <h4>Step 4: Mission Control</h4>
                             <p>Start autonomous navigation and manipulation</p>
+                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
+                            <p class="small mb-0">There is no <code>mars_mission</code> package in the repositories linked from these pages.</p>
                             <div class="code-block">
                                 <code>
 ros2 launch mars_mission mission_control.launch.py
@@ -593,29 +619,29 @@ ros2 launch mars_mission mission_control.launch.py
                 <div class="row">
                     <div class="col-md-6">
                         <div class="feature-card">
-                            <h3>📹 Main Demo Recording</h3>
-                            <p>Complete walkthrough of Assignment 4 with Mars terrain navigation</p>
-                            <a href="#" class="btn-mars w-100 text-center">
-                                <i class="fas fa-play"></i> Watch Demo (45 min)
+                            <h3>📹 TA Reference Runs</h3>
+                            <p>Recorded TA runs of Assignment 4 in Gazebo Harmonic (ROS 2 Jazzy). TA reference runs, not student submissions.</p>
+                            <a href="slaming_mars.html#ta-demos" class="btn-mars w-100 text-center">
+                                <i class="fas fa-play"></i> Watch TA Reference Runs
                             </a>
                             <ul class="mt-3">
-                                <li>Mobile base navigation in crater</li>
-                                <li>Sample collection with manipulator</li>
-                                <li>Autonomous exploration demo</li>
+                                <li>Part 1: Husky + UR3 setup and scripted base drive</li>
+                                <li>Part 2: scripted square-loop drive in the Mars world with EKF sensor fusion and SLAM Toolbox</li>
+                                <li>Part 2: SLAM Toolbox map growing and the saved occupancy map</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="feature-card">
                             <h3>🤖 Husky Robot Features</h3>
-                            <p>Detailed overview of robot capabilities and sensors</p>
-                            <a href="#" class="btn-mars w-100 text-center">
-                                <i class="fas fa-play"></i> Robot Overview (15 min)
+                            <p>The Husky + UR3 + gripper robot used in the TA reference runs</p>
+                            <a href="slaming_mars.html#ta-demos" class="btn-mars w-100 text-center">
+                                <i class="fas fa-play"></i> TA Reference Runs (Husky + UR3)
                             </a>
                             <ul class="mt-3">
-                                <li>Sensor suite configuration</li>
-                                <li>Gripper control demonstration</li>
-                                <li>SLAM visualization in RViz2</li>
+                                <li>Clearpath Husky A200 base + UR3 arm + RH-P12-RN gripper</li>
+                                <li>Sensors in the TA model: ZED-2 stereo pair + depth camera, Hokuyo-class <code>gpu_lidar</code> (810 rays, 270 deg field of view, 25 m range)</li>
+                                <li>Gripper commands: see Gripper Control Commands below</li>
                             </ul>
                         </div>
                     </div>
@@ -654,13 +680,13 @@ ros2 launch mars_mission mission_control.launch.py
                         <div class="col-md-6">
                             <h4>Open Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 0.0}'</code>
+                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.0]}"</code>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <h4>Close Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 1.05}'</code>
+                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [-0.04]}"</code>
                             </div>
                         </div>
                     </div>
@@ -672,83 +698,11 @@ ros2 launch mars_mission mission_control.launch.py
                 <h2 class="text-center mb-4">🏆 Student Mars Mission Showcase</h2>
 
                 <div class="alert-mars">
-                    <h4>Submit Your Mars Mission!</h4>
-                    <p>Successfully completed the Mars exploration challenge? Share your achievement!</p>
-                    <ul>
-                        <li>Record a 2-minute highlight video of your best Mars navigation</li>
-                        <li>Include autonomous sample collection sequence</li>
-                        <li>Submit via Gradescope with hashtag #MarsCS498GC</li>
-                    </ul>
+                    <h4>Fall 2025 showcase (archive)</h4>
+                    <p>During Fall 2025, students were invited to record a 2-minute highlight video of their best Mars navigation, including the autonomous sample collection sequence, and to submit it through Gradescope with the hashtag #MarsCS498GC.</p>
+                    <p class="mb-0">Individual student submissions and results are not published on this page. To see what complete runs look like, watch the <a href="slaming_mars.html#ta-demos">TA reference runs</a> on the SLAM-ing Mars page (TA reference runs, not student submissions).</p>
                 </div>
 
-                <div class="student-showcase">
-                    <h3>🌟 Hall of Fame - Fall 2025</h3>
-                    <p class="text-center">Outstanding Mars exploration implementations will be featured here!</p>
-
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <div class="feature-card">
-                                <h5>🥇 Best Navigation</h5>
-                                <p class="text-muted">Awaiting submissions...</p>
-                                <small>Criteria: Fastest crater traversal with obstacle avoidance</small>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="feature-card">
-                                <h5>🥈 Best Manipulation</h5>
-                                <p class="text-muted">Awaiting submissions...</p>
-                                <small>Criteria: Most samples collected in 30 seconds</small>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="feature-card">
-                                <h5>🥉 Most Creative</h5>
-                                <p class="text-muted">Awaiting submissions...</p>
-                                <small>Criteria: Innovative approach to Mars exploration</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-card mt-4">
-                    <h3>📊 Leaderboard Metrics</h3>
-                    <table class="table table-dark table-striped">
-                        <thead>
-                            <tr>
-                                <th>Metric</th>
-                                <th>Current Record</th>
-                                <th>Holder</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Fastest Crater Crossing</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Most Samples Collected</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Longest Autonomous Run</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Most Accurate SLAM Map</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
 
                 <div class="feature-card mt-4">
                     <h3>🚀 Challenge Yourself!</h3>

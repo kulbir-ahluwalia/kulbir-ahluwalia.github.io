@@ -12,7 +12,6 @@ CS498GC Mobile Robotics Fall 2025 course materials directory. Contains all assig
 files/cs498gc/fa25/
 ├── assignments/                              # Assignment PDFs and supporting materials
 │   ├── assignment4-mobile-manipulator-gradescope-pdf/  # A4 Gradescope submission materials
-│   │   └── images-frank-xu-nov12-dominick-braico-campuswire-pinned-posts-markdown/
 │   ├── assignment4_extra_credit_guide.pdf    # (216K) Extra credit instructions
 │   ├── extra_credit_submission_guide.pdf     # (231K) Submission guidelines
 │   └── problem_set2.zip                      # (313K) Problem Set 2 materials

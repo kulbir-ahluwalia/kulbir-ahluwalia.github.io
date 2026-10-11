@@ -10,7 +10,9 @@
       {% if publication.image_mouseover contains "png" or publication.image_mouseover contains "jpg" or publication.image_mouseover contains "jpeg"%}
       <img alt="{{ publication.title }}" class="image2 {% if publication.image_border %}image-border{% endif %}" style="display: none;" onerror="this.style.display='none'" src="./images/{{ publication.image_mouseover }}" />
       {% endif %}
+      {% if publication.image and publication.image != "" %}
       <img alt="{{ publication.title }}" class="{% if publication.image_border %}image-border{% endif %}" onerror="this.style.display='none'" src="./images/{{ publication.image }}" />
+      {% endif %}
     </div>
   </div>
   <div class="column">
@@ -46,6 +48,7 @@
             {% if forloop.last == false %},{% endif %}
         </span>
         {%- endfor -%}
+        {% if publication.authors_note %}<span class="author-block">, {{ publication.authors_note }}</span>{% endif %}
       </div>
       <div class="publication-venue">
         <span>{{ publication.venue }}</span>

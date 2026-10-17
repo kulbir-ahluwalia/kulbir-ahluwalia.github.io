@@ -123,6 +123,8 @@ exclude:
   - rebuild_trigger_1740541993.txt
   - spec/
   - .rspec
+  # 2026-10-17: content-check tooling (claims linter, link checker, screenshots); not site content
+  - scripts/
   # 2026-10-10: unlinked folders with student names (FERPA) or private-course screenshots
   - files/cs498gc/fa25/PDFs_assignments_demo_slides/
   - files/pinned-campuswire-posts/

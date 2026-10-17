@@ -75,3 +75,18 @@ CS498GC course content lives under `cs498gc/fa25/` with its own HTML pages, CSS,
 ### Cursor Rules
 
 Additional development guidance exists in `.cursor/rules/` (7 files covering Jekyll structure, YAML data, JS functionality, CSS styling, HTML templates, content guidelines, and dev workflow).
+
+## Content checks
+
+Guardrails against overclaiming and broken links. Run them before pushing any content change:
+
+```bash
+python3 scripts/check_claims.py                      # status claims, "PhD candidate", award words
+bundle exec jekyll build && python3 scripts/check_site.py _site --src .   # links, assets, #anchors, YAML
+python3 scripts/screenshot.py _site /tmp/shots       # desktop + mobile PNGs of / and /cv.html
+```
+
+- `check_claims.py` fails (R1) when a paper whose venue/awards/status says "in preparation", "under review" or "submitted" is described anywhere as accepted, published, to appear, in proceedings or presented at; and (R2) on "PhD candidate" anywhere until `CANDIDACY_CONFIRMED = True` at the top of the script (UIUC candidacy starts after passing the preliminary exam). It warns (R3) on award-type words and (R4) on news items that claim "accepted"/"presented" without a link. Put `claims-ok` on a line to accept a deliberate finding.
+- When a decision arrives, change the paper's status in `_data/publications.yml` in the same commit as the news item, or the check fails.
+- Hooks: `git config core.hooksPath .githooks` once per clone (pre-commit runs the claims check and YAML parse); `.claude/settings.json` re-runs the claims check after every Edit/Write of a content file; `.github/workflows/content_checks.yml` runs the build and both checks on every push and PR (it does not deploy).
+- `scripts/` must stay in `exclude:` in `_config.yml` so the tooling is not published.

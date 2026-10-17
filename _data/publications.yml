@@ -70,7 +70,7 @@
   venue: "IEEE Transactions on Robotics (T-RO), manuscript in preparation"
   awards: "Journal Paper (Manuscript in Preparation)"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
-  description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth. On a 200-pair citrus benchmark: 99.0% structural pass, 37.5% geometric fidelity, and 59.2% LLM-judged constraint satisfaction (422/713)."
+  description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth. On a 200-pair citrus benchmark: 99.0% structural pass and 37.5% geometric fidelity (waypoints inside the ground-truth region)."
   topics:
     - mobile_robotics
     - nlp

@@ -1,6 +1,6 @@
 # kulbir-singh-ahluwalia.com
 
-Source for the personal academic website of Kulbir Singh Ahluwalia (Ph.D. candidate in Computer Science, UIUC), served at https://kulbir-singh-ahluwalia.com/.
+Source for the personal academic website of Kulbir Singh Ahluwalia (Ph.D. student in Computer Science, UIUC), served at https://kulbir-singh-ahluwalia.com/.
 
 It also hosts the archived course website for CS 498 GC Mobile Robotics, Fall 2025, under `cs498gc/fa25/`.
 

@@ -1,8 +1,9 @@
 # Dismissible announcement bar (rendered in index.html, logic in js/index.js).
 # Bump `id` to re-show the bar to visitors who dismissed an older one.
 # 2026-10-10: paper statuses confirmed by Kulbir (see _data/publications.yml).
+# 2026-10-17: workshop paper submitted, under review; T-RO manuscript in preparation.
 enabled: true
-text: "The CS498GC SLAM-ing Mars TA reference runs are now online, and our CoRL 2026 workshop paper and T-RO manuscript in preparation are listed under Publications."
+text: "The CS498GC SLAM-ing Mars TA reference runs are now online, and our CoRL 2026 workshop paper (under review) and T-RO manuscript (in preparation) are listed under Publications."
 link: "/cs498gc/fa25/slaming_mars.html#ta-demos"
 link_text: "Watch the runs"
 id: "2026-10-announce-b"

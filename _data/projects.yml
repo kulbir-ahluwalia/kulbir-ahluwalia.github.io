@@ -45,9 +45,9 @@
     - 3d_vision
 
 - title: "Contributions to Active Semantic Mapping (ICRA 2025)"
-  venue: "Jan-May 2024 (field deployment & code)"
+  venue: "Jan-May 2024"
   image: publications/active_semantic_mapping/active_sem_mapping_gif.gif
-  description: "Core contributions to the ICRA 2025 paper: probabilistic semantic octomaps, next-best-view planning with information gain, and field deployment on mobile manipulator in horticultural environments (with J. Cuaran, K. Koe, N. Uppalapati, G. Chowdhary)."
+  description: "Co-authored the ICRA 2025 paper with J. Cuaran (first author), K. Koe, N. Uppalapati and G. Chowdhary: probabilistic semantic octomaps for detecting target regions, generating candidate viewpoints, and computing information gain for next-best-view planning on a mobile manipulator."
   topics:
     - mobile_robotics
     - computer_vision
@@ -62,7 +62,7 @@
     - machine_learning
     - nlp
 
-- title: "CS446 ML Foundations: regression to transformers from scratch"
+- title: "Implemented Linear, Logistic, Polynomial regression, SVM, Convolutional, and Attention based models"
   venue: "Apr-May 2023"
   image: projects/ml_models_cs446/icon.svg
   description: "Built a comprehensive suite of classical and deep learning models from scratch, including SVMs, CNNs, and Attention mechanisms for classification and regression tasks (CS446)."
@@ -71,14 +71,14 @@
     - deep_learning
 
 - title: "VAE and GAN implementation"
-  description: "Implemented Variational Autoencoder and Generative Adversarial Network from scratch in PyTorch for MNIST digit generation. Compared FID scores, mode collapse, and KL-divergence behavior."
+  description: "Implemented VAE & GAN for a digit generation task."
   venue: "March 2023"
   image: projects/vae_gan/icon.svg
   topics:
     - deep_learning
 
 - title: "ResNet implementation"
-  description: "Implemented ResNet-18/50 residual blocks from scratch (without torchvision.models) for image classification on CIFAR-10 / MNIST. Validated identity mapping + bottleneck variants."
+  description: "Implemented ResNet for a classification task on the MNIST dataset."
   venue: "Feb 2023"
   image: projects/resnet/icon.svg
   topics:
@@ -170,12 +170,12 @@
   webpage: "https://github.com/kulbir-ahluwalia/self-adjusting-roadmaps"
   venue: "May 2020"
   image: projects/self_adjusting_roadmaps.gif
-  description: "Implemented Lifelong Dynamic PRM (LD-PRM) for path planning in unknown environments where obstacles are discovered incrementally. The roadmap restructures itself as the planner gathers occupancy evidence from a simulated mobile robot."
+  description: "Navigation in unknown environments using LD-PRM."
   topics:
     - path_planning
     - mobile_robotics
 
-- title: "Monocular visual odometry for car ego-motion estimation"
+- title: "Estimated the motion of a car using Visual Odometry"
   webpage: "https://github.com/kulbir-ahluwalia/Visual_Odometry_ENPM673_Perception"
   venue: "May 2020"
   image: projects/visual_odometry/icon.svg
@@ -278,7 +278,7 @@
     - mobile_robotics
 
 - title: "Designed a LQR and LQG controller"
-  description: "Designed Linear-Quadratic Regulator (LQR) and Linear-Quadratic-Gaussian (LQG) controllers for a double-inverted-pendulum-on-cart system in MATLAB Simulink. Verified controllability + observability ranks, tuned Q/R weight matrices."
+  description: "Developed controllers for two inverted pendulums on a moving cart."
   venue: "Dec 2019"
   image: projects/lqr_lqg/icon.svg
   topics:
@@ -304,6 +304,6 @@
 - title: "Smart Garden"
   venue: "March 2017"
   image: projects/smart_garden/icon.svg
-  description: "Won First Prize in the Texas Instruments Hardware Hackathon. IoT-enabled garden monitoring and automation system (sensors, control loop)."
+  description: "Won First Prize in the Texas Instruments Hardware Hackathon."
   topics:
     - machine_learning

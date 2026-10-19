@@ -486,6 +486,12 @@
             .ta-runs .table-mars tr,
             .ta-runs .table-mars td { display: block; width: 100%; }
             .ta-runs .table-mars td:first-child { font-weight: 700; padding-top: 12px; }
+            .ta-runs .table-mars.ref-metrics thead { display: table-header-group; }
+            .ta-runs .table-mars.ref-metrics tr { display: table-row; }
+            .ta-runs .table-mars.ref-metrics td { display: table-cell; width: auto; }
+            .ta-runs .table-mars.ref-metrics td:first-child { padding-top: 0.25rem; }
+            .ta-runs .table-mars.ref-metrics th,
+            .ta-runs .table-mars.ref-metrics td { white-space: nowrap; font-size: 0.85rem; }
         }
 
         .handout-label {
@@ -624,17 +630,37 @@
         <section class="ta-runs" id="ta-demos" aria-labelledby="ta-demos-title">
             <h2 class="section-header mt-0" id="ta-demos-title">Reference Solution</h2>
             <p>Reference runs recorded by the course staff to show what complete Assignment 4 solutions look like. They are not student submissions, and no individual student results are published on this page.</p>
-            <p class="mb-4 small"><strong>Software:</strong> ROS 2 Jazzy, Gazebo Harmonic (<code>gz sim</code>), SLAM Toolbox, RTAB-Map. All runs are scripted, recorded without a desktop session, and sped up where the caption says so.</p>
+            <p class="mb-4 small"><strong>Software:</strong> ROS 2 Jazzy, Gazebo Harmonic (<code>gz sim</code>), SLAM Toolbox; for the 3D extra credit, VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R. All runs are scripted, recorded without a desktop session, and sped up where the caption says so.</p>
 
             <nav class="ref-jump mb-4" aria-label="Reference solution sections">
+                <a href="#ref-thanksgiving">Mars Thanksgiving</a>
                 <a href="#ref-part-a">Part A</a>
                 <a href="#ref-part-b">Part B: SLAM</a>
+                <a href="#ref-part-b-bonus">Part B bonus</a>
                 <a href="#ref-ec-3d">Extra credit: 3D</a>
                 <a href="#ref-results">Key results</a>
                 <a href="#ref-commands">Commands</a>
             </nav>
 
-            <!-- REF-THANKSGIVING -->
+            <h3 class="ref-subhead" id="ref-thanksgiving">Mars Thanksgiving world</h3>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Mars Thanksgiving world</span>
+                        <h4>Mars Thanksgiving world v3: the base, the dinner and two moving turkeys</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="540"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_v3_hero_thanksgiving.jpg"
+                               aria-label="Mars Thanksgiving world in Gazebo: a crane shot over a landed booster, a stainless upper stage, a hovering spaceship, a landing pad and a Happy Thanksgiving from Mars sign, then an orbit of a dinner table where Perseverance, Curiosity and a third rover sit on rock seats while one turkey flies above the table and another runs underneath it">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_v3_hero_thanksgiving.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_hero_thanksgiving.jpg" width="960" height="540" loading="lazy" alt="Mars Thanksgiving world in Gazebo: a crane shot over a landed booster, a stainless upper stage, a hovering spaceship, a landing pad and a Happy Thanksgiving from Mars sign, then an orbit of a dinner table where Perseverance, Curiosity and a third rover sit on rock seats while one turkey flies above the table and another runs underneath it">
+                        </video>
+                        <p class="mt-2 mb-1">A 20 s crane shot passes every fun object of the Mars base, then crossfades (0.5 s) into a 30 s orbit of the dinner table: 49.5 s in all, and one second of video is one second of simulated motion. Gazebo Harmonic, Mars gravity 3.711 m/s&sup2;. Perseverance and Curiosity sit at the two ends of a 1.50 m x 0.80 m table on 0.30 m rock seats; a third rover sits at a long side on a 0.35 m seat, across from an empty chair.</p>
+                        <p class="mb-1">Both turkeys move. One flies counter-clockwise <em>above</em> the table on an ellipse with 0.58 m and 0.28 m semi-axes, its body 1.32 to 1.48 m high as it bobs &plusmn;8 cm; it averages 0.40 m/s and laps every 9.67 s. The other runs clockwise <em>under</em> the table, between the legs, on an ellipse with 0.38 m and 0.08 m semi-axes and a 1.2 cm hop three times a second; it averages 0.33 m/s and laps every 5.03 s. Both paths are closed-form functions of simulation time, so the turkeys move the same way in every run and their ground-truth trajectories are known exactly; the 4D extra credit is scored against them.</p>
+                        <p class="mb-1">Fun obstacles, all original models without logos or brand names: a Merlin-style engine on its display gantry (3.70 m tall), a quarter-scale landed first-stage booster (10.55 m) and a quarter-scale stainless upper stage on its landing mount (14.18 m), an Expanse-style corvette hovering on its drive plume over a 12.6 m landing pad, a landed Expanse-style pinnace with its airlock open, a tank farm, cargo crates, and the 5.79 m Happy Thanksgiving from Mars sign that the robot tour drives under.</p>
+                        <p class="small mb-0">Rover models: NASA's Mars 2020 Perseverance Gazebo model; Curiosity from <a href="https://bitbucket.org/theconstructcore/curiosity_mars_rover" target="_blank">theconstructcore/curiosity_mars_rover</a>; the third rover from <a href="https://github.com/theunknowninfinite/Modeling-and-Simulation-of-Martian-Rover" target="_blank">theunknowninfinite/Modeling-and-Simulation-of-Martian-Rover</a>. Web video 960 x 540, 30 fps.</p>
+                    </div>
+                </div>
+            </div>
 
             <h3 class="ref-subhead" id="ref-part-a">Part A: Husky + UR3 mobile manipulator</h3>
             <div class="row">
@@ -658,7 +684,24 @@
                 <div class="col-12 mb-4">
                     <div class="resource-item h-100">
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
-                        <h4>Waypoint mission with live SLAM: Gazebo and RViz</h4>
+                        <h4>Waypoint mission on the Mars Thanksgiving world: RViz (left) and Gazebo (right)</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="1280" height="720"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_v3_nav_rviz_left_gazebo_right.jpg"
+                               aria-label="Split-screen recording: RViz on the left shows the growing SLAM map, the planned path and numbered waypoints turning green as they are reached; Gazebo on the right follows the Husky and UR3 past rockets, a landing pad and a Happy Thanksgiving from Mars sign to the dinner table, with a status bar along the bottom">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_v3_nav_rviz_left_gazebo_right.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_nav_rviz_left_gazebo_right.jpg" width="1280" height="720" loading="lazy" alt="Split-screen recording: RViz on the left shows the growing SLAM map, the planned path and numbered waypoints turning green as they are reached; Gazebo on the right follows the Husky and UR3 past rockets, a landing pad and a Happy Thanksgiving from Mars sign to the dinner table, with a status bar along the bottom">
+                        </video>
+                        <p class="mt-2 mb-1">Left: RViz with the live SLAM Toolbox map, the laser scan (red), the A* path (bright green), the trail the robot has driven (cyan) and the numbered waypoints (amber: pending, orange: current, green: reached). Right: the Gazebo Sim GUI with a chase camera. Bottom: a HUD with the current waypoint, the distance to the goal, the speeds and the ground-truth arrival error, drawn from telemetry logged at 20 Hz during the run. Video 86.0 s at 2.5x simulation time.</p>
+                        <p class="mb-1">A Clearpath Husky A200 with a UR3 arm runs the Part B stack: EKF fusion of wheel odometry and IMU, SLAM Toolbox (online async), and the course's custom A* global planner with a DWA local planner (0.85 m inflation). After a mapping spin in place (ground truth turned 6.98 rad, 400&deg;), it drives 11 waypoints past the engine exhibit, the cargo crates, the landing pad, the upper stage, the tank farm, the booster and under the welcome sign, then turns to face the dinner table (heading error 0.002 rad) and the UR3 waves.</p>
+                        <p class="mb-1">All 11 waypoints were reached: when the planner reported arrival, the Gazebo ground-truth position was 0.307 m from the goal on average (max 0.354 m, min 0.236 m; the planner stops within 0.35 m on its SLAM pose, and within 0.75 m counts as reached). The robot drove 68.5 m (ground truth) in 212.9 s of simulation time, mapping spin included.</p>
+                        <p class="small mb-0">Waypoint 11 sits 0.5 m west of its spot in the world's waypoint file, because that spot lies exactly at the planner's 0.85 m inflation radius and has no path. Both turkeys keep moving during the run (their driver updates both poses 50 times per simulated second); at this video scale only the flying turkey is easy to see. Web video 1280 x 720, 30 fps.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
+                        <h4>Waypoint mission in the Mars world with live SLAM: Gazebo and RViz</h4>
                         <video class="ta-video" controls muted loop playsinline preload="none" width="1440" height="432"
                                poster="../../images/cs498gc/a4_ta_demos/a4_ref_part2_waypoints_gazebo_rviz.png"
                                aria-label="Reference solution, Part B: Gazebo view of the Husky in the Mars world next to the RViz SLAM map with the planned paths">
@@ -670,7 +713,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-4 mb-4">
                     <div class="resource-item h-100">
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>Exploration loop in the Mars world</h4>
@@ -685,7 +728,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-4 mb-4">
                     <div class="resource-item h-100">
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>SLAM Toolbox map growing</h4>
@@ -700,7 +743,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-4 mb-4">
                     <div class="resource-item h-100">
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>Saved occupancy map</h4>
@@ -710,31 +753,105 @@
                 </div>
             </div>
 
+            <h3 class="ref-subhead" id="ref-part-b-bonus">Part B bonus: dust storm and race lap</h3>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Part B bonus</span>
+                        <h4>Mars Challenge bonus: SLAM in a dust storm</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="1280" height="720"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_bonus_dust_storm.jpg"
+                               aria-label="Side-by-side recording of the same robot route in clear air (left) and in a Mars dust storm (right): robot camera views on top, live SLAM maps below, and a strip of metrics along the bottom">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_bonus_dust_storm.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_bonus_dust_storm.jpg" width="1280" height="720" loading="lazy" alt="Side-by-side recording of the same robot route in clear air (left) and in a Mars dust storm (right): robot camera views on top, live SLAM maps below, and a strip of metrics along the bottom">
+                        </video>
+                        <p class="mt-2 mb-1">The same scripted two-lap route around a rock (69.2 m) driven twice in the Part B Mars world: clear on the left, dust storm on the right. Top row: the robot camera as seen; bottom row: the live SLAM Toolbox map with the ground-truth path (green), the SLAM pose estimate (blue, dashed) and the lidar returns that SLAM used (orange). Video 37.0 s, about 4x simulation time.</p>
+                        <p class="mb-1">SLAM pose error grows from 0.060 m RMSE when clear to 0.636 m in the storm (maximum 1.47 m). The storm map holds 8.37 m&sup2; of phantom obstacles (occupied cells more than 0.25 m from any rock); only 37.3 % of its occupied cells lie within 0.25 m of a real rock (100 % when clear), and SLAM makes 58 map-to-odom corrections larger than 10 cm or 2&deg;, against 28 when clear. The camera's RMS contrast drops from 0.112 to 0.047.</p>
+                        <p class="small mb-0">Storm model: Gazebo particle emitters upwind; lidar extinction of 0.06 per metre in both directions (visibility 65 m), dust backscatter returns and range noise; camera haze computed from the depth image, plus sensor noise. Gazebo Harmonic does not render the world's fog, so the visible haze comes from this camera model. The route is driven on the simulator's ground-truth pose, so SLAM only estimates the pose and never steers; one storm strength and one random seed. Web video 1280 x 720, 24 fps.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Part B bonus</span>
+                        <h4>Mars Challenge bonus: timed race lap</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="1280" height="720"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_bonus_race_lap.jpg"
+                               aria-label="Race lap recording: Gazebo view of the Husky and UR3 driving around a dinner table on Mars, with a lap timer reading 27.00 s, a table of gate splits and a top-down map of the course">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_bonus_race_lap.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_bonus_race_lap.jpg" width="1280" height="720" loading="lazy" alt="Race lap recording: Gazebo view of the Husky and UR3 driving around a dinner table on Mars, with a lap timer reading 27.00 s, a table of gate splits and a top-down map of the course">
+                        </video>
+                        <p class="mt-2 mb-1">A timed lap of an 8-gate course around the Thanksgiving table, in a race copy of the earlier Mars Thanksgiving world (Mars gravity 3.711 m/s&sup2;, ground friction 0.8, dust particles off). The Husky + UR3 steers on its SLAM Toolbox pose. Lap time 27.00 s of simulated time; 8 of 8 gates passed inside their radius on ground truth; 0 contacts; minimum footprint clearance 0.374 m; 12.05 m driven at 0.447 m/s on average.</p>
+                        <p class="mb-1">The speed command is capped at 0.6 m/s; the ground-truth speed briefly reaches 0.676 m/s. The SLAM pose stays within 0.10 m RMSE of ground truth, while wheel odometry drifts to 3.95 m RMSE. The timer and splits count simulated seconds; the simulation ran slightly slower than real time, so the 27.00 s lap takes about 30 s of video.</p>
+                        <p class="small mb-0">On the published gate positions the middle gates run through two chairs, and the same steering law got stuck on the table after 3 of 8 gates. This lap uses adapted gates moved south of the table, with the same start, finish, number of gates and radii. Web video 41.4 s, 1280 x 720, 30 fps.</p>
+                    </div>
+                </div>
+            </div>
+
             <h3 class="ref-subhead" id="ref-ec-3d">Extra credit: 3D reconstruction</h3>
             <div class="row">
-                <div class="col-lg-6 mb-4">
+                <div class="col-12 mb-4">
                     <div class="resource-item h-100">
                         <span class="badge ta-badge mb-2">Reference solution &middot; Extra credit, 3D</span>
-                        <h4>RTAB-Map RGB-D SLAM with loop closures</h4>
-                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="612"
-                               poster="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_rviz_loop_closure_laps.png"
-                               aria-label="Reference solution, extra credit: RViz view of RTAB-Map building a 2D grid while the Husky drives three laps">
-                            <source src="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_rviz_loop_closure_laps.mp4" type="video/mp4">
-                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_rviz_loop_closure_laps.png" width="960" height="612" loading="lazy" alt="Reference solution, extra credit: RViz view of the RTAB-Map grid after three laps">
+                        <h4>3D reconstruction from 200 RGB frames: five models against ground truth</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="1280" height="720"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_v3_3d_all_models_aligned_grid.jpg"
+                               aria-label="Video grid of six point clouds of the Mars Thanksgiving dinner table seen by the same orbiting camera: ground truth and the reconstructions of VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R, each labelled with its F-score and camera error">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_v3_3d_all_models_aligned_grid.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_3d_all_models_aligned_grid.jpg" width="1280" height="720" loading="lazy" alt="Video grid of six point clouds of the Mars Thanksgiving dinner table seen by the same orbiting camera: ground truth and the reconstructions of VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R, each labelled with its F-score and camera error">
                         </video>
-                        <p class="mt-2 mb-1">RViz during the RTAB-Map mapping run: three laps of an 8-point loop (75.16 m driven). Blue: the RTAB-Map pose graph. Red points: RTAB-Map's grid-obstacle cloud. 64 revisit loop closures; trajectory error against Gazebo ground truth 0.271 m RMSE versus 0.725 m for wheel odometry. Video at 8x speed (first 250 s of the session).</p>
-                        <p class="small mb-0">This run uses a textured copy of the Mars world (same rocks and gravity, with regolith textures): the assignment worlds are almost textureless, which starves visual features.</p>
+                        <p class="mt-2 mb-1">Static recording of world v3 (both turkeys parked, one above and one under the table): 200 RGB frames of 640 x 480 on one closed camera loop of radius 2.5 m around the table (15.76 m path). Each model received only the RGB frames, with no depth, poses, intrinsics or labels. Each reconstruction is then moved into the ground-truth frame with its own Sim(3), a Umeyama fit on its 200 camera centres, and compared with a ground-truth cloud built from the simulator's depth and poses (2 cm voxels; scores on a scene crop of 5 m radius around the table centre). The video films all six clouds with one orbiting virtual camera, with the same crop, voxel size and point size.</p>
+                        <p class="small mb-0">CUT3R's camera track drifts (ATE 48.4 cm), so its cloud visibly does not line up with ground truth. MUSt3R, CUT3R and TTT3R place parts of the sign and the background too close, which shows as floating sheets in their tiles. Black patches at the seat ends of the ground-truth tile are ground that no camera saw. Video 20 s, 1280 x 720, 30 fps; the render crop is 3.75 m around the table centre.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-6 mb-4">
                     <div class="resource-item h-100">
                         <span class="badge ta-badge mb-2">Reference solution &middot; Extra credit, 3D</span>
-                        <h4>RTAB-Map 3D point cloud</h4>
-                        <a href="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_cloud_orbit.gif"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ec_rtabmap_cloud_orbit.gif" width="512" height="384" loading="lazy" alt="Orbit around the RTAB-Map RGB point cloud of the textured Mars world, a ring of terrain around the driven loop with rocks along it"></a>
-                        <p class="mt-2 mb-0">Orbit around the RGB point cloud exported from the same RTAB-Map run (425,593 points, 3 cm voxels).</p>
+                        <h4>Best 3D model up close: VGGT-Omega in the ground-truth frame</h4>
+                        <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="540"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_v3_3d_best_model_orbit.jpg"
+                               aria-label="Orbit around the VGGT-Omega point cloud of the Thanksgiving table, with the true camera loop as a white line and the predicted camera positions as orange dots on it">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_v3_3d_best_model_orbit.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_3d_best_model_orbit.jpg" width="960" height="540" loading="lazy" alt="Orbit around the VGGT-Omega point cloud of the Thanksgiving table, with the true camera loop as a white line and the predicted camera positions as orange dots on it">
+                        </video>
+                        <p class="mt-2 mb-1">The VGGT-Omega cloud (1 cm voxels) after its Sim(3) alignment, with the ground-truth camera path as a white line and VGGT-Omega's own 200 predicted camera centres as orange dots, which follow the loop: camera ATE 2.4 cm RMSE (median 1.3 cm, max 6.9 cm).</p>
+                        <p class="small mb-0">Scene-crop scores: F-score 0.800 at 5 cm and 0.906 at 10 cm, median accuracy 2.8 cm, median completeness 1.0 cm (the accuracy and completeness in the video label are these medians). Video 20 s, 960 x 540, 30 fps.</p>
                     </div>
                 </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Extra credit, 3D</span>
+                        <h4>Ground truth on top of the VGGT-Omega cloud</h4>
+                        <a href="../../images/cs498gc/a4_ta_demos/a4_v3_3d_alignment_overlay.jpg"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_3d_alignment_overlay.jpg" width="1600" height="900" loading="lazy" alt="Still image with the ground-truth points in light grey sitting on the orange reconstruction, in a 3/4 view and a top view"></a>
+                        <p class="mt-2 mb-1">Ground truth drawn as light-grey dots on top of the VGGT-Omega cloud (orange, shaded by its own brightness) with the ground below 15 cm removed, in a 3/4 view of the dinner and a top view with a 1 m scale bar; where the grey dots sit on orange surfaces, the reconstruction matches the true geometry.</p>
+                        <p class="small mb-0">The still draws the model in one orange hue instead of its own colours, because the grey rovers could not be told apart from the grey ground-truth dots. Still 1600 x 900.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Extra credit, 3D</span>
+                        <h4>Per-model scores against ground truth</h4>
+                        <div class="table-responsive">
+                            <table class="table table-mars table-sm ref-metrics mb-2">
+                                <thead>
+                                    <tr><th>Model</th><th>Camera ATE (RMSE)</th><th>Median accuracy</th><th>Median completeness</th><th>F-score at 5 cm</th><th>F-score at 10 cm</th><th>F-score at 5 cm, objects only</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>VGGT-Omega</strong> (best)</td><td>2.4 cm</td><td>2.8 cm</td><td>1.0 cm</td><td><strong>0.800</strong></td><td>0.906</td><td>0.60</td></tr>
+                                    <tr><td>VGGT</td><td>3.3 cm</td><td>7.8 cm</td><td>1.7 cm</td><td>0.524</td><td>0.710</td><td>0.32</td></tr>
+                                    <tr><td>TTT3R</td><td>7.8 cm</td><td>32.5 cm</td><td>3.1 cm</td><td>0.342</td><td>0.530</td><td>0.20</td></tr>
+                                    <tr><td>MUSt3R</td><td>5.9 cm</td><td>11.7 cm</td><td>3.7 cm</td><td>0.301</td><td>0.576</td><td>0.25</td></tr>
+                                    <tr><td>CUT3R</td><td>48.4 cm</td><td>31.7 cm</td><td>6.7 cm</td><td>0.206</td><td>0.346</td><td>0.12</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mb-0">Best model by a rule fixed before the results (highest scene-crop F-score at 5 cm, ties broken by the lower camera ATE): VGGT-Omega. Accuracy is the median distance from the prediction to ground truth, completeness the median distance from ground truth to the prediction. 69 % of the scored ground-truth points lie on flat ground (at most 15 cm high), which makes the 5 cm F-score lenient to sideways errors. The last column scores only the objects (points more than 15 cm high in both clouds): VGGT-Omega and VGGT keep the first two places and CUT3R the last, while MUSt3R and TTT3R swap, so read the middle of the table as a tie.</p>
+                    </div>
+                </div>
+
                 <!-- REF-3D-LEARNED -->
             </div>
 
@@ -752,7 +869,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Part B: waypoint mission</td>
+                            <td>Part B: waypoint mission (Mars Thanksgiving v3)</td>
+                            <td>World v3 with both turkeys moving; EKF sensor fusion, SLAM Toolbox, custom A* + DWA planner</td>
+                            <td>11 of 11 waypoints reached; ground-truth distance to the goal at arrival 0.307 m mean (max 0.354 m); 68.5 m driven in 212.9 s of simulation time</td>
+                        </tr>
+                        <tr>
+                            <td>Part B: waypoint mission (Mars world)</td>
                             <td>Mars world; EKF sensor fusion, SLAM Toolbox, custom A* + DWA planner</td>
                             <td>15 of 15 waypoints reached; ground-truth distance to the goal at arrival 0.256 m mean (max 0.395 m); 387.3 s rosbag</td>
                         </tr>
@@ -767,9 +889,14 @@
                             <td>Trajectory error 0.060 m RMSE (clear) versus 0.636 m (storm); 0 versus 8.37 m&sup2; of phantom obstacles</td>
                         </tr>
                         <tr>
-                            <td>Extra credit, 3D: RTAB-Map</td>
-                            <td>Textured Mars world; RTAB-Map RGB-D SLAM, three laps of an 8-point loop</td>
-                            <td>64 loop closures; 0.271 m RMSE versus 0.725 m for wheel odometry; 425,593-point RGB cloud</td>
+                            <td>Part B bonus: race lap</td>
+                            <td>8-gate course around the Thanksgiving table (adapted gates); steering on the SLAM Toolbox pose</td>
+                            <td>27.00 s lap in simulated time; 8 of 8 gates; 0 contacts; minimum clearance 0.374 m</td>
+                        </tr>
+                        <tr>
+                            <td>Extra credit: 3D reconstruction (world v3)</td>
+                            <td>VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R on 200 RGB frames only; each cloud aligned to ground truth with its own Sim(3)</td>
+                            <td>Best by the pre-registered rule: VGGT-Omega, F-score 0.800 at 5 cm (0.906 at 10 cm), camera ATE 2.4 cm RMSE</td>
                         </tr>
                         <!-- REF-RESULTS-ROWS -->
                     </tbody>
@@ -792,10 +919,32 @@ ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true \
 ros2 run nav2_map_server map_saver_cli -f ~/assignment4_ws/maps/mars_slam_map \
   --ros-args -p save_map_timeout:=10.0 -p use_sim_time:=true</code>
             </div>
+            <p class="mb-2 mt-3">Mars Thanksgiving world v3 with its turkey driver, and the reconstruction runner used for the 3D cards (each model runs in its own Python environment; the RGB frames are the only model input, and ground truth is read only by the two scoring scripts):</p>
+            <div class="code-block">
+                <code># Mars Thanksgiving world v3 and its turkey driver (Gazebo Harmonic); --headless runs the server only
+bash ~/assignment4_ws/scripts/mars_thanksgiving_v3/run_mars_thanksgiving_v3_world.sh
+bash ~/assignment4_ws/scripts/mars_thanksgiving_v3/run_mars_thanksgiving_v3_world.sh --headless
+
+# The same world with the Husky + UR3 (spawned at x 0, y 0); start the turkey driver in a second terminal
+export GZ_SIM_RESOURCE_PATH=~/assignment4_ws/models:~/assignment4_ws/worlds:$GZ_SIM_RESOURCE_PATH
+ros2 launch husky_ur3_gazebo simulation.launch.py world:=$HOME/assignment4_ws/worlds/mars_thanksgiving_v3.world
+python3 ~/assignment4_ws/scripts/mars_thanksgiving_v3/mars_thanksgiving_v3_turkey_driver.py \
+  --world mars_thanksgiving_v3 --rate 50
+
+# 3D reconstruction from the RGB frames only, then camera ATE (Sim(3)) and geometry against ground truth
+R=~/assignment4_ws/recon
+F=~/assignment4_ws/captures/thanksgiving_v3/static_S
+python3 $R/runners/run_vggt_omega_on_frames_20261016T0245Z.py --model omega --frames $F/rgb --out $R/out/vggt_omega
+python3 $R/eval/eval_camera_ate_sim3_20261016T0300Z.py --pred $R/out/vggt_omega --gt $F/camera_poses_gt.csv
+python3 $R/eval/eval_cloud_vs_gt_depth_fscore_20261016T0540Z.py --pred_dir $R/out/vggt_omega \
+  --ate_json $R/out/vggt_omega/ate_sim3_vs_gt.json --capture $F
+# other models: --model vggt (same runner); run_cut3r_ttt3r_on_frames_20261016T0245Z.py --mode cut3r or --mode ttt3r;
+# run_must3r_on_frames_20261016T0245Z.py</code>
+            </div>
             <!-- REF-COMMANDS-EXTRA -->
 
             <div class="alert-info-mars mb-0 mt-4">
-                <strong>Where the ROS 2 packages come from:</strong> <code>husky_ur3_gazebo</code>, <code>husky_ur3_description</code>, the <code>mars.sdf</code> world and the custom <code>ekf_sensor_fusion</code> and <code>path_planner</code> nodes (package <code>husky_ur3_manipulation</code>) come from the course staff's ROS 2 Jazzy port of the course simulator. The public course fork, <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator" target="_blank">kulbir-ahluwalia/husky_ur3_simulator</a>, is the ROS 1 Noetic version (branch <code>noetic-devel</code>): its packages are catkin packages with ROS 1 launch files, so the ROS 2 commands above do not run from it.
+                <strong>Where the ROS 2 packages come from:</strong> <code>husky_ur3_gazebo</code>, <code>husky_ur3_description</code>, the <code>mars.sdf</code> world and the custom <code>ekf_sensor_fusion</code> and <code>path_planner</code> nodes (package <code>husky_ur3_manipulation</code>) come from the course staff's ROS 2 Jazzy port of the course simulator. The public course fork, <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator" target="_blank">kulbir-ahluwalia/husky_ur3_simulator</a>, is the ROS 1 Noetic version (branch <code>noetic-devel</code>): its packages are catkin packages with ROS 1 launch files, so the ROS 2 commands above do not run from it. The Mars Thanksgiving world v3 (world file, models and turkey driver) and the reconstruction and scoring scripts used for the 3D extra credit belong to the same course-staff setup; the commands above show them under <code>~/assignment4_ws</code>.
             </div>
         </section>
 
@@ -1336,9 +1485,11 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                             <h3>Reference Solution Videos</h3>
                             <p class="small">Recorded by the course staff, not student submissions. They are at the top of this page.</p>
                             <ul>
+                                <li><a href="#ref-thanksgiving">Mars Thanksgiving world v3: the base, the dinner and two moving turkeys</a></li>
                                 <li><a href="#ref-part-a">Part A: Husky + UR3 drive, arm and gripper</a></li>
-                                <li><a href="#ref-part-b">Part B: waypoint mission with live SLAM, map growing and the saved map</a></li>
-                                <li><a href="#ref-ec-3d">Extra credit: 3D reconstruction</a></li>
+                                <li><a href="#ref-part-b">Part B: waypoint missions with live SLAM (Mars Thanksgiving world in RViz and Gazebo, and the Mars world), map growing and the saved map</a></li>
+                                <li><a href="#ref-part-b-bonus">Part B bonus: SLAM in a dust storm and a timed race lap</a></li>
+                                <li><a href="#ref-ec-3d">Extra credit: 3D reconstruction from RGB frames, five models against ground truth</a></li>
                             </ul>
                         </div>
                     </div>

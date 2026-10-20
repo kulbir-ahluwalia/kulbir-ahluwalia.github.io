@@ -645,6 +645,7 @@
                 <a href="#ref-part-b">Part B: SLAM</a>
                 <a href="#ref-part-b-bonus">Part B bonus</a>
                 <a href="#ref-ec-3d">Extra credit: 3D</a>
+                <a href="#ref-ec-4d">Extra credit: 4D</a>
                 <a href="#ref-results">Key results</a>
                 <a href="#ref-commands">Commands</a>
             </nav>
@@ -862,7 +863,62 @@
                 <!-- REF-3D-LEARNED -->
             </div>
 
-            <!-- REF-4D -->
+            <h3 class="ref-subhead" id="ref-ec-4d">Extra credit: 4D dynamic reconstruction</h3>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Extra credit, 4D</span>
+                        <h4>CUT3R: the 4D reconstruction picked by the pre-registered rule</h4>
+                        <video class="ta-video ta-hud" controls muted loop playsinline preload="none" width="1920" height="1080"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_v3_4d_cut3r.jpg"
+                               aria-label="Side-by-side video. Left: camera frames of the Mars Thanksgiving table with orange, cyan and magenta moving points. Right: a slowly turning 3D point cloud of the scene with dashed white true turkey paths, solid coloured matched tracks, the true and estimated camera paths, and a legend. The cyan track sits mostly on the empty chair beside the table, not on the running turkey.">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_v3_4d_cut3r.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_4d_cut3r.jpg" width="1920" height="1080" loading="lazy" alt="Side-by-side video. Left: camera frames of the Mars Thanksgiving table with orange, cyan and magenta moving points. Right: a slowly turning 3D point cloud of the scene with dashed white true turkey paths, solid coloured matched tracks, the true and estimated camera paths, and a legend. The cyan track sits mostly on the empty chair beside the table, not on the running turkey.">
+                        </video>
+                        <p class="mt-2 mb-1">4D reconstruction of the Mars Thanksgiving world from the 200 RGB frames of one camera loop around the dinner table. Left: each input frame with the moving points CUT3R found without ground truth, coloured by the turkey each track was matched to (magenta: a track that matched no turkey). Right: the same points in 3D after aligning the reconstructed camera path to the true one (camera error 0.404 m RMSE). Solid lines are the matched tracks, dashed white lines the true body-centre paths (one lap), white rings the true body centres and the grey disc, when in view, the true camera position of the current frame.</p>
+                        <p class="mb-1">CUT3R is <strong>picked by the pre-registered rule</strong>. No model reached 50 % coverage of both turkeys, so the rule takes the highest mean coverage. CUT3R's matches cover 42.4 % of the visible frames of each turkey, and it wins only because the rule's 1.0 m gates count the empty chair as the running turkey: all 76 of its running-turkey matches lie mostly on the empty chair, not on the turkey. With 0.5 m or 0.6 m gates the same rule would pick VGGT-Omega (checked after the fact, not used for the pick).</p>
+                        <p class="mb-1">Its flying-turkey track is not evidence of motion either: in the static twin recording, where both turkeys are parked, CUT3R still keeps a 68-frame track on the parked flying turkey. In this recording its flying-turkey matches lie mostly on the turkey in 37.5 % of the visible frames (post-hoc label check); in 16 of its 85 flying-turkey matches the points come mostly from a rocket model in the background of the image, which CUT3R places next to the turkey's path. Uni4D is not part of this comparison.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Extra credit, 4D</span>
+                        <h4>VGGT-Omega: 4D reconstruction</h4>
+                        <video class="ta-video ta-hud" controls muted loop playsinline preload="none" width="1920" height="1080"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_v3_4d_vggt_omega.jpg"
+                               aria-label="Side-by-side video. Left: camera frames of the Mars Thanksgiving table with orange moving points on the flying turkey and, early on, on a bottle on the table. Right: a slowly turning 3D point cloud with the orange points near the dashed white true path of the flying turkey; no points are matched to the running turkey under the table.">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_v3_4d_vggt_omega.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_4d_vggt_omega.jpg" width="1920" height="1080" loading="lazy" alt="Side-by-side video. Left: camera frames of the Mars Thanksgiving table with orange moving points on the flying turkey and, early on, on a bottle on the table. Right: a slowly turning 3D point cloud with the orange points near the dashed white true path of the flying turkey; no points are matched to the running turkey under the table.">
+                        </video>
+                        <p class="mt-2 mb-1">Same scene, inputs and layout as the CUT3R video. VGGT-Omega has the most accurate camera path of the three models (0.025 m RMSE). Over all sampled turkey pixels it marks 73 % of the flying turkey's pixels and 82 % of the running turkey's pixels as moving.</p>
+                        <p class="mb-1">Its tracks matched to the flying turkey cover 62.5 % of the visible frames, and in 46.2 % of the visible frames the matched points lie mostly on the turkey itself (post-hoc label check). Its other 33 matches, all in the first 48 frames, lie at a bottle on the table (31 of them nearest the bottle, 2 nearest the table top). The flying turkey's points are placed about 0.45 m too far from the camera. No track is matched to the running turkey (0 % coverage): its running-turkey tracks are shorter than the 60 of 200 frames that the track filter, frozen on the static twin recording, requires.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Extra credit, 4D</span>
+                        <h4>TTT3R: 4D reconstruction</h4>
+                        <video class="ta-video ta-hud" controls muted loop playsinline preload="none" width="1920" height="1080"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_v3_4d_ttt3r.jpg"
+                               aria-label="Side-by-side video. Left: camera frames of the Mars Thanksgiving table; the only coloured points are a magenta false track on a rock seat for part of the video, and neither turkey is marked. Right: a slowly turning 3D point cloud with the dashed white true paths of both turkeys and the camera paths.">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_v3_4d_ttt3r.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_4d_ttt3r.jpg" width="1920" height="1080" loading="lazy" alt="Side-by-side video. Left: camera frames of the Mars Thanksgiving table; the only coloured points are a magenta false track on a rock seat for part of the video, and neither turkey is marked. Right: a slowly turning 3D point cloud with the dashed white true paths of both turkeys and the camera paths.">
+                        </video>
+                        <p class="mt-2 mb-1">Same scene, inputs and layout as the CUT3R video. TTT3R recovers the camera path well (0.080 m RMSE) but tracks neither turkey: its coverage is 0 % for both. The track filter frozen on the static twin recording keeps one track, 43 frames long, and it is a false track on a rock seat (shown in magenta), not on either turkey.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4">
+                    <div class="resource-item h-100">
+                        <span class="badge ta-badge mb-2">Reference solution &middot; Extra credit, 4D</span>
+                        <h4>Top-down view: every model's matched tracks against the true turkey paths</h4>
+                        <a href="../../images/cs498gc/a4_ta_demos/a4_v3_4d_topdown_tracks.jpg"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_v3_4d_topdown_tracks.jpg" width="1920" height="1080" loading="lazy" alt="Two top-down plots side by side, flying turkey on the left and running turkey on the right, each with the table top, the empty chair, the bottle and the dashed black true path of the turkey. Left: green VGGT-Omega and red CUT3R dots along the path, green crosses at the bottle and red crosses along the lower right part of the path. Right: only red CUT3R crosses, all at the empty chair, on it or just next to it. TTT3R, blue in the legend, has no match."></a>
+                        <p class="mt-2 mb-1">Seen from above in the ground-truth frame: the moving-point tracks that the scoring matched to each turkey (1.0 m gate), for all three models, against the true body-centre paths (dashed, one lap) of the turkey flying above the table (left) and the turkey running under it (right). Colours mark the model, not the turkey. A dot is a match whose points lie mostly on that turkey; an x is a match inside the gate whose points come mostly from another object in the image: the empty chair (all 76 CUT3R running-turkey matches), a rocket model in the background (16 CUT3R flying-turkey matches) and tableware at a bottle on the table (33 VGGT-Omega flying-turkey matches: 31 nearest the bottle, 2 nearest the table top). TTT3R has no matched frame. Uni4D is not part of this comparison.</p>
+                    </div>
+                </div>
+            </div>
 
             <h3 class="ref-subhead" id="ref-results">Key results</h3>
             <div class="table-responsive">
@@ -904,6 +960,11 @@
                             <td>Extra credit: 3D reconstruction (world v3)</td>
                             <td>VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R on 200 RGB frames only; each cloud aligned to ground truth with its own Sim(3)</td>
                             <td>Best by the pre-registered rule: VGGT-Omega, F-score 0.800 at 5 cm (0.906 at 10 cm), camera ATE 2.4 cm RMSE</td>
+                        </tr>
+                        <tr>
+                            <td>Extra credit: 4D dynamic reconstruction (world v3)</td>
+                            <td>CUT3R, VGGT-Omega and TTT3R on the 200 RGB frames of one camera loop, both turkeys moving; moving points found without ground truth, then matched to the true turkey positions</td>
+                            <td>Picked by the pre-registered rule: CUT3R, 42.4 % coverage of the visible frames of each turkey, only because the rule's 1.0 m gates count the empty chair as the running turkey (with 0.5 m or 0.6 m gates, checked after the fact, it would pick VGGT-Omega); no model reached 50 % coverage of both turkeys. Camera error 0.025 m (VGGT-Omega), 0.080 m (TTT3R), 0.404 m (CUT3R) RMSE</td>
                         </tr>
                         <!-- REF-RESULTS-ROWS -->
                     </tbody>

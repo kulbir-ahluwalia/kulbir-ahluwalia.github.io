@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # ubuntu-latest moved to 26.04 (Oct 2026), which has no Ruby 3.1 build
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

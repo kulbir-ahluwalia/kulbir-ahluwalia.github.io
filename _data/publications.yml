@@ -63,12 +63,13 @@
 # 2026-10-10: paper statuses confirmed by Kulbir: the T-RO manuscript is in preparation and the workshop
 # paper is listed without a review status.
 # 2026-10-17: per Kulbir the workshop paper is now submitted and under review (non-archival; decisions
-# due Oct 19, 2026). Do not call either paper accepted/published until a decision is public. Thumbnails come from the WaypointGen line itself.
+# due Oct 19, 2026). 2026-10-23: per Kulbir, TaP is listed as under review too.
+# Do not call either paper accepted/published until a decision is public. Thumbnails come from the WaypointGen line itself.
 
 - id2: tap_TRO2026
   title: "TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions & Grounded Constraint Phrases for Mobile Manipulator Navigation"
-  venue: "IEEE Transactions on Robotics (T-RO), manuscript in preparation"
-  awards: "Journal Paper (Manuscript in Preparation)"
+  venue: "IEEE Transactions on Robotics (T-RO), under review"
+  awards: "Journal Paper (Under Review)"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
   description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth. On a 200-pair citrus benchmark: 99.0% structural pass and 37.5% geometric fidelity (waypoints inside the ground-truth region)."
   topics:

@@ -13,6 +13,11 @@ Rules
   R3  warning  Award-type words (best paper, award, oral, spotlight, finalist, invited, keynote) in the
                content files, listed so a human confirms each one is real.
   R4  warning  A news item says "accepted" or "presented" but links to nothing.
+  R5  error    News or the announcement bar is not a finished, public result: it states a plan or
+               work in progress (started writing, began, in preparation, submitted, under review,
+               next step, ...) or internal detail (which machine or day something ran, TA reference
+               runs, points or extra credit, tool names).
+  R6  error    Placeholder text in a publication entry ("to be finalized", TBD, TODO, xx).
   Y1  error    _config.yml or a _data/*.yml file does not parse.
 
 Put the marker  claims-ok  on a line (YAML comment or HTML comment) to accept a deliberate finding.
@@ -68,6 +73,14 @@ AWARD_RE = re.compile(r"\b(?:best[ -](?:paper|poster|student paper|demo|presenta
 AWARD_HEADING_RE = re.compile(r"(?:(?:honou?rs|achievements?)\s*(?:and|&)\s*)?awards?(?:\s*(?:and|&)\s*(?:honou?rs|achievements?))?\s*:?", re.I)
 STATUS_WORD_RE = re.compile(r"\b(?:accepted|presented)\b", re.I)
 OFFER_RE = re.compile(r"(?:\s+[\w.&-]+){0,8}?\s+(?:offer|position|role|job|internship|invitation)s?\b", re.I)
+NEWS_PLAN_RE = re.compile(
+    r"\b(?:started (?:writing|working|drafting)|began|beginning|begin (?:work|writing)|working on|drafting|"
+    r"in preparation|in progress|under review|submitted|under submission|plan(?:s|ned)? to|will (?:submit|release|start|publish|present)|"
+    r"next steps?|upcoming|coming soon|stay tuned|to be finalized|author list)\b", re.I)
+NEWS_INTERNAL_RE = re.compile(
+    r"\b(?:reference runs?|recorded (?:on|in)|laptop|MSI|DGX|Spark|GB10|RTX ?\d{4}|MacBook|Jetson|Thor|IQ9|"
+    r"Tailscale|ollama|Claude|Copilot|pts|points|extra credit|grading|regrades?|Gradescope)\b", re.I)
+PLACEHOLDER_RE = re.compile(r"\b(?:to be finalized|to be decided|TBD|TBA|TODO|FIXME|placeholder|lorem|xx)\b", re.I)
 LINK_RE = re.compile(r"<a\s[^>]*\bhref\s*=|\]\([^)]+\)|https?://", re.I)
 
 _COMMENT = re.compile(r"<!--.*?-->", re.S)
@@ -433,6 +446,33 @@ def check(src: Path, report: Report, all_data: bool) -> None:
                         report.add("WARNING", "R4", "_data/news.yml", content.line,
                                    f'news item says "{m.group(0)}" but links to nothing', clip(vis))
                     break
+
+    # ---- R5: news and the announcement bar carry finished, public results only
+    r5 = []
+    if isinstance(news, list):
+        r5 += [("_data/news.yml", it.get("content")) for it in news if isinstance(it, dict)]
+    ann = data.get("_data/announcement.yml")
+    if isinstance(ann, dict) and str(ann.get("enabled", "")).lower() == "true":
+        r5 += [("_data/announcement.yml", ann.get(k)) for k in ("text", "link_text")]
+    for rel, value in r5:
+        if not isinstance(value, LStr):
+            continue
+        vis = visible(value)
+        for regex, why in ((NEWS_PLAN_RE, "a plan or work in progress"), (NEWS_INTERNAL_RE, "internal detail")):
+            m = regex.search(vis)
+            if m:
+                report.add("ERROR", "R5", rel, value.line,
+                           f'"{m.group(0)}" is {why}; news lists finished, public results only', clip(vis))
+
+    # ---- R6: placeholder text in a publication entry
+    for p in pubs:
+        for keys, s in walk_strings(p.entry):
+            if keys and keys[0] in NON_PROSE_FIELDS:
+                continue
+            m = PLACEHOLDER_RE.search(visible(s))
+            if m:
+                report.add("ERROR", "R6", "_data/publications.yml", s.line,
+                           f'{p.label}: placeholder text "{m.group(0)}" in {keys[0]}', clip(visible(s)))
 
     for rel, obj in data.items():
         if rel in ("_data/publications.yml", "_data/news.yml") or obj is None:

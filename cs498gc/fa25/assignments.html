@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- BEGIN site-analytics placeholder: dead Universal Analytics tag removed 2026-06-12.
-         Paste the GA4 snippet here once a G- measurement ID exists
-         (canonical copy: _includes/head-extras.html). -->
+    <!-- BEGIN site-analytics placeholder (canonical copy: _includes/head-extras.html) -->
     <!-- END site-analytics placeholder -->
 
     <meta charset="utf-8">
@@ -344,7 +342,7 @@
                 <p><strong>Weight:</strong> 100 points (required for both 3 and 4 credit sections)</p>
                 
                 <h5>Project Overview:</h5>
-                <p>All students will implement what they learn in CS498GC Mobile Robotics using Ubuntu 22.04, ROS 2 Humble, and Gazebo Simulation (the TA reference runs posted later used Ubuntu 24.04 + ROS 2 Jazzy + Gazebo Harmonic). This semester-long project allows you to apply course concepts in a practical simulation environment.</p>
+                <p>All students will implement what they learn in CS498GC Mobile Robotics using Ubuntu 22.04, ROS 2 Humble, and Gazebo Simulation. This semester-long project allows you to apply course concepts in a practical simulation environment.</p>
                 
                 <div class="row">
                   <div class="col-md-6">
@@ -390,10 +388,9 @@
                         <div class="bg-light p-3 rounded">
                           <code>
 # Install packages<br>
-sudo apt install ros-${ROS_DISTRO}-ros-gz ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup<br><br>
-# Test Husky+UR3<br>
-# (TA reference setup, not public: husky_ur3_gazebo comes from the TA&#39;s ROS 2 Jazzy workspace; the public husky_ur3_simulator is ROS 1 Noetic)<br>
-ros2 launch husky_ur3_gazebo simulation.launch.py world:=empty.sdf<br><br>
+sudo apt install ros-humble-husky-* ros-humble-ur*<br><br>
+# Test Husky<br>
+ros2 launch husky_gazebo husky_playpen.launch.py<br><br>
 # Test UR3<br>
 ros2 launch ur_description view_ur.launch.py ur_type:=ur3<br><br>
 # Diagnostics<br>
@@ -413,20 +410,6 @@ ros2 doctor --report
                         
                         <p class="mt-3"><strong>Reference Implementation:</strong> <a href="https://github.com/QualiaT/husky_ur3_simulator/tree/noetic-devel">ROS1 to ROS2 adaptation</a></p>
                         <p><strong>Husky+UR3 Repository:</strong> <a href="https://github.com/QualiaT/husky_ur3_simulator/tree/noetic-devel">Husky + UR3 Mobile Manipulator Simulator</a></p>
-
-                        <h6 class="mt-3">TA Reference Runs (DGX Spark, ROS 2 Jazzy + Gazebo Harmonic, recorded July 2026):</h6>
-                        <p class="mb-2"><span class="badge badge-warning">TA reference runs, not student submissions</span></p>
-                        <div class="row">
-                          <div class="col-6">
-                            <a href="../../images/cs498gc/a4_ta_demos/a4_part1_husky_ur3_teleop_gripper.mp4"><img src="../../images/cs498gc/a4_ta_demos/a4_part1_husky_ur3_teleop_gripper.gif" alt="TA reference run, Part A: the Husky and UR3 drive forward, then turn in place, in Gazebo Harmonic" loading="lazy" style="max-width:100%; border-radius:6px;"></a>
-                            <small class="d-block text-muted">Part A: Husky + UR3 scripted base drive, forward then an in-place turn (sped up)</small>
-                          </div>
-                          <div class="col-6">
-                            <a href="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.mp4"><img src="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.gif" alt="TA reference run, Part B: the SLAM Toolbox occupancy grid grows from the first scan to the final map" loading="lazy" style="max-width:100%; border-radius:6px;"></a>
-                            <small class="d-block text-muted">Part B: SLAM Toolbox occupancy map growing (rendered from the run's rosbag)</small>
-                          </div>
-                        </div>
-                        <p class="small mt-2 mb-0">All TA reference runs, with captions and key numbers: <a href="slaming_mars.html#ta-demos">SLAM-ing Mars page</a>.</p>
                       </div>
                     </div>
                   </div>
@@ -476,7 +459,7 @@ ros2 doctor --report
                 
                 <h5>Key Technologies:</h5>
                 <ul>
-                  <li><strong>Software Stack:</strong> Ubuntu 22.04 + ROS 2 Humble + Gazebo Simulation (TA reference runs used Ubuntu 24.04 + ROS 2 Jazzy + Gazebo Harmonic)</li>
+                  <li><strong>Software Stack:</strong> Ubuntu 22.04 + ROS 2 Humble + Gazebo Simulation</li>
                   <li><strong>Programming:</strong> Python or C++</li>
                   <li><strong>Visualization:</strong> RViz2, PlotJuggler</li>
                 </ul>

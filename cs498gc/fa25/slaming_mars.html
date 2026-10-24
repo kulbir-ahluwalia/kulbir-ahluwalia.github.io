@@ -635,7 +635,7 @@
         <section class="ta-runs" id="ta-demos" aria-labelledby="ta-demos-title">
             <h2 class="section-header mt-0" id="ta-demos-title">Reference Solution</h2>
             <p>Reference runs recorded by the course staff to show what complete Assignment 4 solutions look like. They are not student submissions, and no individual student results are published on this page.</p>
-            <p class="mb-4 small"><strong>Software:</strong> ROS 2 Jazzy, Gazebo Harmonic (<code>gz sim</code>), SLAM Toolbox; for the 3D extra credit, VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R. All runs are scripted, recorded without a desktop session, and sped up where the caption says so.</p>
+            <p class="mb-4 small"><strong>Software:</strong> ROS 2 Jazzy, Gazebo Harmonic, SLAM Toolbox; for the 3D extra credit, VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R. All runs are scripted, recorded without a desktop session, and sped up where the caption says so.</p>
 
             <nav class="ref-jump mb-4" aria-label="Reference solution sections">
                 <a href="#ref-thanksgiving">Mars Thanksgiving</a>
@@ -645,7 +645,6 @@
                 <a href="#ref-ec-3d">Extra credit: 3D</a>
                 <a href="#ref-ec-4d">Extra credit: 4D</a>
                 <a href="#ref-results">Key results</a>
-                <a href="#ref-commands">Commands</a>
             </nav>
 
             <h3 class="ref-subhead" id="ref-thanksgiving">Mars Thanksgiving world</h3>
@@ -729,7 +728,7 @@
                             <source src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.mp4" type="video/mp4">
                             <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.gif" width="640" height="360" loading="lazy" alt="Reference solution, Part B: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
                         </video>
-                        <p class="mt-2 mb-1">The Husky + UR3 explores <code>mars.sdf</code> on a scripted loop: six legs of 40 s forward at 0.35 m/s, each followed by a 10.5 s turn at 0.5 rad/s (about 5 min in total, video at 10x speed). EKF sensor fusion and SLAM Toolbox (online async) build the occupancy grid shown in the next two panels.</p>
+                        <p class="mt-2 mb-1">The Husky + UR3 explores the Mars world on a scripted loop: six legs of 40 s forward at 0.35 m/s, each followed by a 10.5 s turn at 0.5 rad/s (about 5 min in total, video at 10x speed). EKF sensor fusion and SLAM Toolbox (online async) build the occupancy grid shown in the next two panels.</p>
                         <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.gif">GIF version (first 90 s)</a></p>
                     </div>
                 </div>
@@ -754,7 +753,7 @@
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>Saved occupancy map</h4>
                         <a href="../../images/cs498gc/a4_ta_demos/a4_ref_part2_saved_occupancy_map.png"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_saved_occupancy_map.png" width="978" height="950" loading="lazy" alt="Final 2D occupancy map of the Mars world from the Part B reference solution"></a>
-                        <p class="mt-2 mb-0">Final SLAM Toolbox map, saved with the Nav2 map saver (<code>map_saver_cli</code>) at the end of the exploration loop: 978 x 950 cells at 0.05 m per cell, about 48.9 m x 47.5 m (white: free, black: obstacles, gray: unknown).</p>
+                        <p class="mt-2 mb-0">Final SLAM Toolbox map, saved with the Nav2 map saver at the end of the exploration loop: 978 x 950 cells at 0.05 m per cell, about 48.9 m x 47.5 m (white: free, black: obstacles, gray: unknown).</p>
                     </div>
                 </div>
             </div>
@@ -941,7 +940,7 @@
                         </tr>
                         <tr>
                             <td>Part B: exploration loop</td>
-                            <td><code>mars.sdf</code>; EKF sensor fusion, SLAM Toolbox (online async), scripted six-leg loop</td>
+                            <td>Mars world; EKF sensor fusion, SLAM Toolbox (online async), scripted six-leg loop</td>
                             <td>978 x 950 cell map at 0.05 m per cell; 179 <code>/map</code> updates; 354.3 s rosbag</td>
                         </tr>
                         <tr>
@@ -969,41 +968,6 @@
                 </table>
             </div>
 
-            <h3 class="ref-subhead" id="ref-commands">Commands</h3>
-            <p class="mb-2">Launch commands used for these runs, from a ROS 2 Jazzy workspace at <code>~/assignment4_ws</code>. Before the Part B launch, add the workspace <code>models/</code> and <code>worlds/</code> folders to <code>GZ_SIM_RESOURCE_PATH</code>.</p>
-            <div class="code-block">
-                <code># Part A: Husky + UR3 + gripper simulation, headless server
-ros2 launch husky_ur3_gazebo simulation.launch.py world:=empty.sdf \
-  rviz:=false headless:=true
-
-# Part B: Mars world, SLAM Toolbox, map saver
-export GZ_SIM_RESOURCE_PATH=~/assignment4_ws/models:~/assignment4_ws/worlds:$GZ_SIM_RESOURCE_PATH
-ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf \
-  rviz:=false headless:=true
-ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true \
-  slam_params_file:=$HOME/assignment4_ws/src/husky_ur3_manipulation/config/slam_params.yaml
-ros2 run nav2_map_server map_saver_cli -f ~/assignment4_ws/maps/mars_slam_map \
-  --ros-args -p save_map_timeout:=10.0 -p use_sim_time:=true</code>
-            </div>
-            <p class="mb-2 mt-3"><span class="handout-label">Reference scripts (course staff, not distributed)</span></p>
-            <p class="small mb-2">The Mars Thanksgiving world v3, its turkey driver and the 3D reconstruction and scoring scripts were made by the course staff for this reference solution and were not given to students, so the commands in this block do not run in a student workspace. They show how the runs above were made.</p>
-            <div class="code-block">
-                <code># Mars Thanksgiving world v3 and its turkey driver (Gazebo Harmonic); --headless runs the server only
-bash ~/assignment4_ws/scripts/mars_thanksgiving_v3/run_mars_thanksgiving_v3_world.sh
-bash ~/assignment4_ws/scripts/mars_thanksgiving_v3/run_mars_thanksgiving_v3_world.sh --headless
-
-# The same world with the Husky + UR3 (spawned at x 0, y 0); start the turkey driver in a second terminal
-export GZ_SIM_RESOURCE_PATH=~/assignment4_ws/models:~/assignment4_ws/worlds:$GZ_SIM_RESOURCE_PATH
-ros2 launch husky_ur3_gazebo simulation.launch.py world:=$HOME/assignment4_ws/worlds/mars_thanksgiving_v3.world
-python3 ~/assignment4_ws/scripts/mars_thanksgiving_v3/mars_thanksgiving_v3_turkey_driver.py \
-  --world mars_thanksgiving_v3 --rate 50</code>
-            </div>
-            <p class="small mb-0">3D extra credit, in outline: each model (VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R) runs in its own Python environment and receives only the 200 RGB frames. One scoring script fits a Sim(3) (Umeyama) to the 200 predicted camera centres and reports the camera ATE; the other compares the aligned cloud with a ground-truth cloud built from the simulator's depth and poses (F-score at 5 cm and 10 cm, median accuracy and completeness). Ground truth is read only by the two scoring scripts.</p>
-            <!-- REF-COMMANDS-EXTRA -->
-
-            <div class="alert-info-mars mb-0 mt-4">
-                <strong>Where the ROS 2 packages come from:</strong> <code>husky_ur3_gazebo</code>, <code>husky_ur3_description</code>, the <code>mars.sdf</code> world and the custom <code>ekf_sensor_fusion</code> and <code>path_planner</code> nodes (package <code>husky_ur3_manipulation</code>) come from the course staff's ROS 2 Jazzy port of the course simulator. The public course fork, <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator" target="_blank">kulbir-ahluwalia/husky_ur3_simulator</a>, is the ROS 1 Noetic version (branch <code>noetic-devel</code>): its packages are catkin packages with ROS 1 launch files, so the ROS 2 commands above do not run from it. The Mars Thanksgiving world v3 (world file, models and turkey driver) and the reconstruction and scoring scripts used for the 3D extra credit belong to the same course-staff setup and are not distributed; the world v3 commands above use that setup's layout under <code>~/assignment4_ws</code>.
-            </div>
         </section>
 
         <!-- Quick Start Section -->

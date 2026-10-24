@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Fast content checks before every commit (no Jekyll build, about a second).
+# Enable once per clone:   git config core.hooksPath .githooks
+# Skip once (deliberately): git commit --no-verify
+set -u
+root="$(git rev-parse --show-toplevel)" || exit 0
+cd "$root" || exit 0
+
+if ! command -v python3 >/dev/null 2>&1; then
+  echo "pre-commit: python3 not found; content checks skipped" >&2
+  exit 0
+fi
+if ! python3 -c 'import yaml' >/dev/null 2>&1; then
+  echo "pre-commit: PyYAML missing (pip install pyyaml); content checks skipped" >&2
+  exit 0
+fi
+
+status=0
+python3 scripts/check_site.py --yaml-only --src . >/tmp/pre-commit-yaml.$$ 2>&1 || { cat /tmp/pre-commit-yaml.$$; status=1; }
+rm -f /tmp/pre-commit-yaml.$$
+python3 scripts/check_claims.py --quiet || status=1
+
+if [ "$status" -ne 0 ]; then
+  echo "pre-commit: fix the findings above (or mark a deliberate line with 'claims-ok')." >&2
+fi
+exit "$status"

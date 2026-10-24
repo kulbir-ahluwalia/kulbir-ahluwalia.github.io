@@ -8,7 +8,7 @@ layout: null
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <title>Kulbir Singh Ahluwalia - CV</title>
-  <meta name="description" content="CV of Kulbir Singh Ahluwalia, Ph.D. candidate in Computer Science at UIUC advised by Prof. Girish Chowdhary and Prof. Julia Hockenmaier: education, employment, publications, teaching, and awards.">
+  <meta name="description" content="CV of Kulbir Singh Ahluwalia, Ph.D. student in Computer Science at UIUC advised by Prof. Girish Chowdhary and Prof. Julia Hockenmaier: education, employment, publications, teaching, and awards.">
   <link rel="canonical" href="https://kulbir-singh-ahluwalia.com/cv.html">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
@@ -28,7 +28,7 @@ layout: null
       <div class="columns is-vcentered">
         <div class="column">
           <h1 class="title is-2">Kulbir Singh Ahluwalia</h1>
-          <h1 class="subtitle is-5">Ph.D. Candidate in Computer Science at UIUC</h1>
+          <h1 class="subtitle is-5">Ph.D. student in Computer Science at UIUC</h1>
         </div>
         <div class="column is-narrow portrait-column">
           <img class="portrait-image" src="images/portrait_1740471515.jpg" alt="Kulbir Singh Ahluwalia" />
@@ -150,7 +150,7 @@ layout: null
           <div class="column is-four-fifths">
             <b>Earthsense Inc.</b><br />
             AI Intern (Supervisor: Michael McGuire, Lead CV Engineer). Developed a natural-language-conditioned waypoint generation pipeline
-            for outdoor robot navigation, built a Grounded SAM2 auto-labeling pipeline for large outdoor navigation datasets, and deployed and benchmarked
+            for outdoor robot navigation, built a Grounded SAM2 auto-labeling pipeline for large outdoor navigation datasets, and deployed and integrated
             six open-source Vision-Language Models (3B - 72B params) for image-space reasoning and natural-language-conditioned question
             answering on 4-wheeled skid-steer robots.
           </div>
@@ -167,6 +167,7 @@ layout: null
           <li>Python</li>
           <li>C++</li>
           <li>PyTorch</li>
+          <li>JAX</li>
           <li>MATLAB</li>
           <li>CUDA</li>
           <li>Docker</li>
@@ -180,11 +181,11 @@ layout: null
           <li>LaTeX</li>
         </ul>
         <p class="section-note">
-          <b>Methods:</b> EKF, GMM/EM, MPPI, SLIC superpixels, VLMs, Diffusion Models (Stable Diffusion fine-tuning)
+          <b>Methods:</b> EKF, GMM/EM, Bayesian State Estimation, MPPI, SLIC superpixels, VLMs/VLAs, Diffusion Models (DiT, DDPM, Stable Diffusion fine-tuning), U-Nets
         </p>
 
-        <!-- Publications -->
-        <h2>Publications</h2>
+        <!-- Papers under review (kept apart from published work) -->
+        <h2>Papers Under Review</h2>
 
         <div class="columns">
           <div class="column is-four-fifths">
@@ -201,7 +202,7 @@ layout: null
             Map-free, language-conditioned planner that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth.
           </div>
           <div class="column is-one-fifths has-text-right">
-            IEEE T-RO (manuscript in preparation)
+            IEEE T-RO (under review)
           </div>
         </div>
 
@@ -210,14 +211,17 @@ layout: null
             <b>WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation</b>
             <div class="publication-authors">
               <span class="author-block author-me">K. Ahluwalia,</span>
-              <span class="author-block">et al. (author list to be finalized)</span>
+              <span class="author-block">et al.</span>
             </div>
             Modular pipeline in which a vision-language model picks among MPPI trajectory candidates after open-vocabulary grounding of target and avoidance regions in a local bird's-eye view.
           </div>
           <div class="column is-one-fifths has-text-right">
-            <a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop</a>
+            <a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop</a> (under review, non&#8209;archival)
           </div>
         </div>
+
+        <!-- Publications -->
+        <h2>Publications</h2>
 
         <div class="columns">
           <div class="column is-four-fifths">
@@ -231,8 +235,9 @@ layout: null
               <span class="author-block">A. Sivakumar,</span>
               <span class="author-block"><a href="https://hmr-lab.github.io">J. Hockenmaier</a>,</span>
               <span class="author-block"><a href="http://daslab.illinois.edu">G. Chowdhary</a></span>
+              <span class="author-block">(* equal contribution)</span>
             </div>
-            A 14-step pipeline grounding natural language commands to 2D navigation waypoints using Qwen-3-VL filtering, SLIC superpixel decomposition in BEV, and MPPI trajectory selection.
+            Map-free, language-conditioned 2D path planner: open-vocabulary grounding (DINO-X, SAM3, DAM) of regions of interest, then a Qwen3-MoE-30B-A3B VLM picks the target and one of the MPPI trajectory candidates in bird's-eye view.
           </div>
           <div class="column is-one-fifths has-text-right">
             CSL SC, 2026
@@ -249,7 +254,9 @@ layout: null
               <span class="author-block">N. Uppalapati,</span>
               <span class="author-block"><a href="http://daslab.illinois.edu">G. Chowdhary</a></span>
             </div>
-            Efficient active semantic mapping using probabilistic semantic octomaps, next-best-view planning, and ray-casting for target-focused exploration.
+            Efficient active semantic mapping using probabilistic semantic octomaps, next-best-view planning, and ray-casting for target-focused exploration.<br />
+            2025 IEEE International Conference on Robotics and Automation (ICRA), pp. 12716–12722,
+            <a href="https://doi.org/10.1109/ICRA55743.2025.11127547">doi:10.1109/ICRA55743.2025.11127547</a>.
           </div>
           <div class="column is-one-fifths has-text-right">
             ICRA, 2025
@@ -375,17 +382,6 @@ layout: null
 
         <div class="columns">
           <div class="column is-four-fifths">
-            <b>CS444: Deep Learning for Computer Vision</b> - Teaching Assistant (Prof. Svetlana Lazebnik)<br />
-            Updated assignment starter code, assessed student submissions, held office hours, answered questions on Campuswire,
-            and designed multimodal quiz questions.
-          </div>
-          <div class="column is-one-fifths has-text-right">
-            Spring 2026, 2025, 2024
-          </div>
-        </div>
-
-        <div class="columns">
-          <div class="column is-four-fifths">
             <b>CS498GC: Mobile Robotics for Computer Scientists</b> - Teaching Assistant and curriculum co-developer (Prof. Girish Chowdhary)<br />
             Co-developed the graduate course curriculum (ROS 2, sensor fusion, SLAM, mobile manipulation); authored the public
             course website and assignments (now an archive). Course website:
@@ -403,6 +399,17 @@ layout: null
           </div>
           <div class="column is-one-fifths has-text-right">
             Summer 2025
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <b>CS444: Deep Learning for Computer Vision</b> - Teaching Assistant (Prof. Svetlana Lazebnik)<br />
+            Updated assignment starter code, assessed student submissions, held office hours, answered questions on Campuswire,
+            and designed multimodal quiz questions.
+          </div>
+          <div class="column is-one-fifths has-text-right">
+            Spring 2026, 2025, 2024
           </div>
         </div>
 

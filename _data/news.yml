@@ -1,43 +1,34 @@
 # News items (newest first). Each entry: `date` (display string) and `content` (HTML allowed).
 # To add a new item, prepend it to the top of this list.
 # Preview locally: cd kulbir-ahluwalia.github.io && bundle exec jekyll serve --trace
-# 2026-10-10: paper statuses confirmed by Kulbir (see _data/publications.yml).
-
-- date: "Oct 2026"
-  content: 'Posted TA reference runs for the CS498GC <a href="/cs498gc/fa25/slaming_mars.html#ta-demos"><strong>SLAM-ing Mars</strong></a> assignment: a Husky + UR3 driving through the Mars Gazebo world and the SLAM Toolbox occupancy map it builds.'
-
-- date: "Oct 2026"
-  content: 'Wrote our workshop paper <strong>WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation</strong> for the <a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop on Compositional Generalization for Real-World Robot Learning</a> (non-archival).'
+#
+# RULE (Kulbir, 2026-10-22): News lists finished, public results only: an accepted or published
+# paper, a talk or poster given, a role started or completed. Never post plans, work in progress,
+# submissions still under review, internal process, grading details, or which machine or day
+# something ran on. scripts/check_claims.py rule R5 enforces this.
+# When a paper is accepted, update its status in _data/publications.yml in the same commit as the
+# news item (rule R1).
 
 - date: "Aug 2026"
   content: 'Joined the course staff of <a href="https://courses.grainger.illinois.edu/cs440/fa2026/"><strong>CS 440/ECE 448: Artificial Intelligence</strong></a> as a Teaching Assistant with Prof. Margaret Fleck.'
 
-- date: "Aug 2026"
-  content: "Completed my summer internship as a <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong> in San Diego, California (June 8 - Aug 21, 2026)."
-
 - date: "Jun 2026"
-  content: 'Started writing our journal paper <strong>TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions &amp; Grounded Constraint Phrases for Mobile Manipulator Navigation</strong> for the <strong>IEEE Transactions on Robotics (T-RO)</strong> (manuscript in preparation).'
+  content: "Joined <strong>Qualcomm</strong> (San Diego, CA) as a <strong>Compute Chipset Product Management Intern</strong>, summer 2026."
 
-- date: "May 2026"
-  content: "Accepted a Summer 2026 internship offer as a <strong>Compute Chipset Product Management Intern</strong> at <strong>Qualcomm</strong> in San Diego, California."
-
-- date: "Apr 2026"
+- date: "Feb 2026"
   content: 'Our poster <strong>WaypointGen: Learning Grounded Waypoint based Navigation for Mobile Manipulators</strong> was accepted at the <strong>CSL Student Conference (CSL SC 2026)</strong> at UIUC. <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf">[poster PDF]</a>'
 
-- date: "Mar 2026"
-  content: "Began <strong>WaypointGen++</strong>, the extended journal version of WaypointGen for outdoor mobile manipulators (now our T-RO manuscript <strong>TaP</strong>)."
-
 - date: "Oct 2025"
-  content: 'Released <strong><a href="/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a two-part Mobile Manipulator Exploration &amp; SLAM assignment for CS498GC Fall 2025 in which students operated a Husky + UR3 + Robotis gripper in a Mars Gazebo world. <strong>Part 1</strong> (25 pts) covered robot setup and navigation; <strong>Part 2</strong> (75 pts as announced, made optional extra credit on Dec 7, 2025) covered SLAM on Mars, with an optional Mars dust-storm bonus.'
+  content: 'Co-developed <strong><a href="/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a mobile manipulator exploration and SLAM assignment for CS498GC: Mobile Robotics (Fall 2025), with Prof. Girish Chowdhary.'
 
 - date: "May 2025"
-  content: 'Our paper <strong>Active Semantic Mapping with Mobile Manipulator in Horticultural Environments</strong> was presented at <a href="https://2025.ieee-icra.org/"><strong>ICRA 2025</strong></a>. <a href="https://arxiv.org/abs/2412.10515">arXiv:2412.10515</a> &middot; <a href="https://kendallkoe.com/Active_Semantic_Mapping/">project page</a>'
+  content: 'Our paper <strong>Active Semantic Mapping with Mobile Manipulator in Horticultural Environments</strong> was presented at <a href="https://2025.ieee-icra.org/"><strong>ICRA 2025</strong></a>. <a href="https://doi.org/10.1109/ICRA55743.2025.11127547">IEEE</a> &middot; <a href="https://arxiv.org/abs/2412.10515">arXiv:2412.10515</a> &middot; <a href="https://kendallkoe.com/Active_Semantic_Mapping/">project page</a>'
 
 - date: "May 2025"
-  content: "Joined <strong>Earthsense Inc.</strong> as an <strong>AI Intern</strong> for Summer 2025 in Urbana, IL, deploying VLMs (Molmo-7B, Gemma-3-27B, Qwen-2.5-VL-72B, Llama4-Scout, SpatialVLM) for natural-language-conditioned navigation on outdoor agricultural robots."
+  content: "Joined <strong>Earthsense Inc.</strong> (Urbana, IL) as an <strong>AI Intern</strong>, summer 2025."
 
 - date: "Fall 2023"
   content: 'Presented the poster <strong>Plant Placement using Natural Language Grounding</strong> at the <strong>AIFARMS Annual Conference</strong>. <a href="files/V3_AIFARMS-KSA_Poster-2023.pdf">[poster PDF]</a>'
 
 - date: "Jun 2022"
-  content: 'Started my <strong>Ph.D. in Computer Science at UIUC</strong>, advised by <a href="http://daslab.illinois.edu">Prof. Girish Chowdhary</a> (DASLAB) and <a href="https://hmr-lab.github.io">Prof. Julia Hockenmaier</a> (HMR Lab).'
+  content: 'Started my <strong>Ph.D. in Computer Science at UIUC</strong>, advised by <a href="http://daslab.illinois.edu">Prof. Girish Chowdhary</a> (DASLAB) and <a href="https://hmr-lab.github.io">Prof. Julia Hockenmaier</a> (Hockenmaier Lab).'

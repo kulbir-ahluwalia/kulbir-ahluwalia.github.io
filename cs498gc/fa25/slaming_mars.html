@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- BEGIN site-analytics placeholder: dead Universal Analytics tag removed 2026-06-12.
-         Paste the GA4 snippet here once a G- measurement ID exists
-         (canonical copy: _includes/head-extras.html). -->
+    <!-- BEGIN site-analytics placeholder (canonical copy: _includes/head-extras.html) -->
     <!-- END site-analytics placeholder -->
 
     <meta charset="UTF-8">
@@ -726,13 +724,13 @@
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>Exploration loop in the Mars world</h4>
                         <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="540"
-                               poster="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.jpg"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.jpg"
                                aria-label="Reference solution, Part B: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
-                            <source src="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.mp4" type="video/mp4">
-                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.gif" width="640" height="360" loading="lazy" alt="Reference solution, Part B: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.gif" width="640" height="360" loading="lazy" alt="Reference solution, Part B: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
                         </video>
                         <p class="mt-2 mb-1">The Husky + UR3 explores <code>mars.sdf</code> on a scripted loop: six legs of 40 s forward at 0.35 m/s, each followed by a 10.5 s turn at 0.5 rad/s (about 5 min in total, video at 10x speed). EKF sensor fusion and SLAM Toolbox (online async) build the occupancy grid shown in the next two panels.</p>
-                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.gif">GIF version (first 90 s)</a></p>
+                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.gif">GIF version (first 90 s)</a></p>
                     </div>
                 </div>
 
@@ -741,13 +739,13 @@
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>SLAM Toolbox map growing</h4>
                         <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="928"
-                               poster="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.jpg"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_ref_part2_slam_map_growth.jpg"
                                aria-label="Reference solution, Part B: the SLAM Toolbox occupancy grid grows from the first scan to the final map">
-                            <source src="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.mp4" type="video/mp4">
-                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.gif" width="600" height="580" loading="lazy" alt="Reference solution, Part B: the SLAM Toolbox occupancy grid grows from the first scan to the final map">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_slam_map_growth.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_slam_map_growth.gif" width="600" height="580" loading="lazy" alt="Reference solution, Part B: the SLAM Toolbox occupancy grid grows from the first scan to the final map">
                         </video>
                         <p class="mt-2 mb-1">Occupancy grid of the exploration loop, rendered from the <code>/map</code> messages in its rosbag (179 map updates): it grows from the first scan patch to the final map (white: free space, black: obstacle edges, gray: unknown). The final map is held for 2 s at the end.</p>
-                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.gif">GIF version (2x speed)</a></p>
+                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_ref_part2_slam_map_growth.gif">GIF version (2x speed)</a></p>
                     </div>
                 </div>
 
@@ -755,7 +753,7 @@
                     <div class="resource-item h-100">
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>Saved occupancy map</h4>
-                        <a href="../../images/cs498gc/a4_ta_demos/a4_part2_slam_map_mars.png"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_slam_map_mars.png" width="978" height="950" loading="lazy" alt="Final 2D occupancy map of the Mars world from the Part B reference solution"></a>
+                        <a href="../../images/cs498gc/a4_ta_demos/a4_ref_part2_saved_occupancy_map.png"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_saved_occupancy_map.png" width="978" height="950" loading="lazy" alt="Final 2D occupancy map of the Mars world from the Part B reference solution"></a>
                         <p class="mt-2 mb-0">Final SLAM Toolbox map, saved with the Nav2 map saver (<code>map_saver_cli</code>) at the end of the exploration loop: 978 x 950 cells at 0.05 m per cell, about 48.9 m x 47.5 m (white: free, black: obstacles, gray: unknown).</p>
                     </div>
                 </div>
@@ -1092,8 +1090,8 @@ python3 ~/assignment4_ws/scripts/mars_thanksgiving_v3/mars_thanksgiving_v3_turke
                             <i class="fas fa-globe feature-icon"></i>
                             <h3>Mars Environment Features</h3>
                             <ul>
-                                <li><strong>Mars gravity:</strong> about 38% of Earth's (3.71 m/s&sup2; in the repo world)</li>
-                                <li><strong>Obstacles:</strong> rock-like blocks for navigation and SLAM</li>
+                                <li><strong>Mars gravity:</strong> about 38% of Earth's (3.711 m/s&sup2; in <code>mars_robots/worlds/mars.world</code> of the linked dual-robot SLAM explorer repo)</li>
+                                <li><strong>Obstacles:</strong> one box-shaped hill and one crater model in that world</li>
                             </ul>
                             <span class="handout-label">Fall 2025 handout text</span>
                             <p class="small mb-0">The Fall 2025 handout also listed dust storms, uneven terrain and NASA rover data. None of these are in the linked worlds.</p>
@@ -1144,12 +1142,11 @@ python3 ~/assignment4_ws/scripts/mars_thanksgiving_v3/mars_thanksgiving_v3_turke
 
                     <div class="resource-grid">
                         <div class="resource-item">
-                            <h4>Mars Terrain (Husky + UR3)</h4>
-                            <p>Mars-themed Gazebo Harmonic world (flat ground with rock-like obstacles) for the Husky+UR3 mobile manipulator.</p>
-                            <span class="handout-label">Reference setup (not public)</span>
-                            <p class="small mb-2"><code>husky_ur3_gazebo</code> and <code>mars.sdf</code> come from the course staff&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version.</p>
+                            <h4>🏔️ Jezero Crater</h4>
+                            <p>Ancient river delta with diverse geological features. Perfect for navigation challenges.</p>
+                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
                             <div class="code-block">
-                                <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code>
+                                <code>ros2 launch mars_worlds jezero_crater.launch.py</code>
                             </div>
                         </div>
                         <div class="resource-item">
@@ -1258,7 +1255,7 @@ git clone https://github.com/kulbir-ahluwalia/husky_ur3_simulator.git
 # optional, not recommended in rubric v11 (missing meshes; fork of itsyashk/ros2-dual-robot-slam-explorer)
 git clone https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer.git</code>
                             </div>
-                            <p class="small mb-0"><code>husky_ur3_simulator</code> is the ROS 1 Noetic reference (branch <code>noetic-devel</code>): it holds catkin packages with ROS 1 launch files, not ROS 2 packages. The ROS 2 Jazzy setup used for the reference solution, including the launch commands in Step 5, is described in the <a href="#ta-demos">reference solution</a> section.</p>
+                            <p class="small mb-0"><code>husky_ur3_simulator</code> is the ROS 1 Noetic reference (branch <code>noetic-devel</code>): it holds catkin packages with ROS 1 launch files, not ROS 2 packages.</p>
                         </div>
                     </div>
 
@@ -1291,14 +1288,13 @@ source install/setup.bash</code>
                         <div class="timeline-content">
                             <h4>Step 5: Launch Mars Environment</h4>
                             <p>Start the complete simulation</p>
-                            <span class="handout-label">Reference setup (not public)</span>
-                            <p class="small mb-2"><code>husky_ur3_gazebo</code> and <code>mars.sdf</code> come from the course staff&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version.</p>
+                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
                             <div class="code-block">
                                 <code># Launch Mars world with Husky robot
-ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf
+ros2 launch mars_gazebo_worlds mars_husky_slam.launch.py
 
 # In a new terminal, launch SLAM
-ros2 launch slam_toolbox online_async_launch.py use_sim_time:=true
+ros2 launch mars_gazebo_worlds mars_slam.launch.py
 
 # Start teleoperation (optional)
 ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
@@ -1445,10 +1441,11 @@ ros2 param set /mars_environment dust_density 0.7</code>
                             <div class="accordion-body">
                                 <strong>Problem:</strong> Gazebo crashes with OpenGL errors<br>
                                 <strong>Solution:</strong> Set software rendering mode
-                                <div class="code-block mt-3">
+                                <div class="mt-3"><span class="handout-label">Fall 2025 handout text (not a runnable command)</span></div>
+                                <div class="code-block mt-1">
                                     <code>export LIBGL_ALWAYS_SOFTWARE=1
 export MESA_GL_VERSION_OVERRIDE=3.3
-ros2 launch husky_ur3_gazebo simulation.launch.py</code>
+ros2 launch husky_ur3_simulation gazebo_sim.launch.py</code>
                                 </div>
                             </div>
                         </div>
@@ -1503,13 +1500,13 @@ ros2 param set /ur3_controller pid_p 0.6</code>
                         <div id="issue5" class="accordion-collapse collapse" data-bs-parent="#troubleshootAccordion">
                             <div class="accordion-body">
                                 <strong>Problem:</strong> Feature detection difficult in monochrome Mars environment<br>
-                                <strong>Solution:</strong> Tune visual feature detectors for Mars. We did not verify whether RTAB-Map picks up <code>Vis/*</code> changes made at runtime with <code>ros2 param set</code>, so the safe route is to pass them as launch arguments and restart the node:
-                                <div class="code-block mt-3">
-                                    <code># Pass RTAB-Map Vis/* parameters at launch (args is the rtabmap_launch argument for RTAB-Map parameters):
-# fewer inliers needed (default 20), GFTT/BRIEF features (type 6), up to 2000 features (default 1000).
-# Append your camera remaps (rgb_topic:=, depth_topic:=, camera_info_topic:=) and use_sim_time:=true,
-# and restart the node after any change.
-ros2 launch rtabmap_launch rtabmap.launch.py args:="--Vis/MinInliers 10 --Vis/FeatureType 6 --Vis/MaxFeatures 2000"</code>
+                                <strong>Solution:</strong> Tune visual feature detectors for Mars
+                                <div class="mt-3"><span class="handout-label">Fall 2025 handout text (not a runnable command)</span></div>
+                                <div class="code-block mt-1">
+                                    <code># Adjust RTAB-Map parameters for Mars
+ros2 param set /rtabmap Vis/FeatureType 6  # ORB features
+ros2 param set /rtabmap Vis/MaxFeatures 2000
+ros2 param set /rtabmap RGBD/OptimizeMaxError 0.5</code>
                                 </div>
                             </div>
                         </div>
@@ -1567,19 +1564,19 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
 
                 <div class="feature-card mt-4">
                     <h3>Gripper Control Commands</h3>
+                    <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Open Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.0]}"</code>
+                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 0.0}'</code>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <h4>Close Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [1.0]}"</code>
+                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 1.05}'</code>
                             </div>
-                            <p class="small mt-2 mb-0">Values used in the reference solution (RH-P12-RN gripper): 0.0 open, 1.0 closed.</p>
                         </div>
                     </div>
                 </div>

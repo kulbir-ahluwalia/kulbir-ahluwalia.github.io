@@ -20,14 +20,14 @@
 
 title: Kulbir Singh Ahluwalia
 name: Kulbir Singh Ahluwalia
-position: PhD Candidate
+position: PhD Student
 email: ksa5@illinois.edu
 # Plain-text summary: jekyll-feed prints it as the Atom <subtitle>, so no Markdown here.
 description: >-
-  Ph.D. candidate in Computer Science at UIUC working on language-grounded navigation for agricultural and outdoor robots and edge AI.
+  Ph.D. student in Computer Science at UIUC working on language-grounded navigation for agricultural and outdoor robots and edge AI.
 # Markdown bio rendered in the About section of index.html ({{ site.bio | markdownify }}).
 bio: >-
-  I'm Kulbir Singh Ahluwalia, a Ph.D. candidate in Computer Science at the University of Illinois Urbana-Champaign ([UIUC](https://illinois.edu/)),
+  I'm Kulbir Singh Ahluwalia, a Ph.D. student in Computer Science at the University of Illinois Urbana-Champaign ([UIUC](https://illinois.edu/)),
   advised by [Prof. Girish Chowdhary](http://daslab.illinois.edu) and [Prof. Julia Hockenmaier](https://hmr-lab.github.io).
   My research is on language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen),
   and on running these models efficiently on edge AI hardware.
@@ -43,7 +43,7 @@ bio: >-
 
 
 # description: >- # this means to ignore newlines until "baseurl:"
-#     I'm Kulbir Singh Ahluwalia, a Ph.D. candidate at the University of Illinois, Urbana-Champaign ([UIUC](https://illinois.edu/)). I am working with Professor Girish Chowdhary and Professor Julia Hockenmaier. My research involves natural language grounding for mobile robots. I graduated with my Master's in Robotics from the University of Maryland where I worked with Professor Pratap Tokekar and Professor Ryan Williams on "Pasture Monitoring in Simulated Environments". 
+#     I'm Kulbir Singh Ahluwalia, a Ph.D. student at the University of Illinois, Urbana-Champaign ([UIUC](https://illinois.edu/)). I am working with Professor Girish Chowdhary and Professor Julia Hockenmaier. My research involves natural language grounding for mobile robots. I graduated with my Master's in Robotics from the University of Maryland where I worked with Professor Pratap Tokekar and Professor Ryan Williams on "Pasture Monitoring in Simulated Environments". 
 
     
 baseurl: ""
@@ -123,6 +123,8 @@ exclude:
   - rebuild_trigger_1740541993.txt
   - spec/
   - .rspec
+  # 2026-10-17: content-check tooling (claims linter, link checker, screenshots); not site content
+  - scripts/
   # 2026-10-10: unlinked folders with student names (FERPA) or private-course screenshots
   - files/cs498gc/fa25/PDFs_assignments_demo_slides/
   - files/pinned-campuswire-posts/

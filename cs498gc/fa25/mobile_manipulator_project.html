@@ -292,7 +292,7 @@
             <i class="fas fa-rocket mars-icon"></i>
             <h1 class="hero-title">Mobile Manipulator Mars Exploration Project</h1>
             <p class="hero-subtitle">CS498GC Fall 2025 | Assignment 4 Extra Credit</p>
-            <p class="lead mt-4"><strong>Fall 2025 archive.</strong> This page is kept as a record of the Assignment 4 mobile manipulator project from CS498GC Fall 2025, together with <a href="slaming_mars.html#ta-demos" style="color: #FFA500;">TA reference runs</a>.</p>
+            <p class="lead mt-4"><strong>Fall 2025 archive.</strong> This page is kept as a record of the Assignment 4 mobile manipulator project from CS498GC Fall 2025.</p>
             <div class="mt-4">
                 <a href="/files/cs498gc/fa25/assignments/assignment4_extra_credit_guide.pdf" class="btn-mars" target="_blank" download>
                     <i class="fas fa-file-pdf"></i> Extra Credit Guide
@@ -350,7 +350,7 @@
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="demos-tab" data-bs-toggle="pill" data-bs-target="#demos" type="button">
-                    <i class="fas fa-video"></i> Demo Videos
+                    <i class="fas fa-book"></i> Resources
                 </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -385,7 +385,7 @@
                         <div class="feature-card">
                             <i class="fas fa-globe feature-icon"></i>
                             <h3>Mars Environment</h3>
-                            <p>Mars-themed Gazebo worlds with rock obstacles; the TA reference runs used a flat Mars-themed Gazebo Harmonic world with rock-like obstacles (see the Mars Gazebo tab).</p>
+                            <p>Mars-themed Gazebo worlds with rock obstacles (see the Mars Gazebo tab).</p>
                             <ul>
                                 <li>Mars-themed Gazebo world</li>
                                 <li>Rock-like obstacles for navigation and SLAM</li>
@@ -436,13 +436,6 @@
 
                     <div class="resource-grid">
                         <div class="resource-item">
-                            <h4>🏔️ Mars Terrain (Husky + UR3)</h4>
-                            <p>Mars-themed Gazebo Harmonic world (flat ground with rock-like obstacles) for the Husky+UR3 mobile manipulator.</p>
-                            <span class="handout-label">TA reference setup (not public)</span>
-                            <p class="small mb-2"><code>husky_ur3_gazebo</code> and <code>mars.sdf</code> come from the TA&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version.</p>
-                            <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code>
-                        </div>
-                        <div class="resource-item">
                             <h4>🏜️ Dual-Robot Mapping</h4>
                             <p>Mapping launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
                             <code>ros2 launch mars_robots mapping.launch.py</code>
@@ -458,7 +451,7 @@
                 <div class="feature-card mt-4">
                     <h3>Installing Mars Terrain Packages</h3>
                     <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                    <p class="small mb-2">GazeboMarsRover2 is a ROS 1 (catkin) Mars rover package for Gazebo Classic (package <code>mars_rover_2</code>), last updated May 2021, with a simple Mars terrain world (<code>urdf/MarsTerrain.world</code>). It has no <code>mars_gazebo_terrains</code> package and no <code>download_textures.sh</code> script. Its README links a HiRISE-derived terrain mesh that is hosted outside the repository, so the ROS 2 steps after the clone fail. The Mars world used in the TA reference runs is described on the <a href="slaming_mars.html#ta-demos">SLAM-ing Mars page</a>.</p>
+                    <p class="small mb-2">GazeboMarsRover2 is a ROS 1 (catkin) Mars rover package for Gazebo Classic (package <code>mars_rover_2</code>), last updated May 2021, with a simple Mars terrain world (<code>urdf/MarsTerrain.world</code>). It has no <code>mars_gazebo_terrains</code> package and no <code>download_textures.sh</code> script. Its README links a HiRISE-derived terrain mesh that is hosted outside the repository, so the ROS 2 steps after the clone fail.</p>
                     <div class="code-block">
                         <code>
 # Clone the Mars worlds repository<br>
@@ -468,7 +461,8 @@ git clone https://github.com/LRCJ/GazeboMarsRover2.git<br>
 <br>
 # Install dependencies<br>
 sudo apt-get update<br>
-sudo apt install ros-${ROS_DISTRO}-ros-gz<br>
+sudo apt-get install ros-${ROS_DISTRO}-gazebo-ros-pkgs<br>
+sudo apt-get install ros-${ROS_DISTRO}-gazebo-msgs<br>
 <br>
 # Download Mars texture packs (2GB)<br>
 cd mars_gazebo_terrains<br>
@@ -523,13 +517,13 @@ source install/setup.bash
                         <div class="timeline-content">
                             <h4>Step 1: Environment Setup</h4>
                             <p>Configure ROS2 Jazzy/Humble with Gazebo Harmonic</p>
-                            <span class="handout-label">TA reference setup (not public)</span>
-                            <p class="small mb-2"><code>husky_ur3_gazebo</code> and <code>mars.sdf</code> come from the TA&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version.</p>
+                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
+                            <p class="small mb-0">There is no <code>husky_ur3_simulation</code> package in the repositories linked from these pages.</p>
                             <div class="code-block">
                                 <code>
 source /opt/ros/jazzy/setup.bash<br>
 cd ~/ros2_ws<br>
-colcon build --packages-select husky_ur3_gazebo husky_ur3_description
+colcon build --packages-select husky_ur3_simulation
                                 </code>
                             </div>
                         </div>
@@ -540,7 +534,7 @@ colcon build --packages-select husky_ur3_gazebo husky_ur3_description
                             <h4>Step 2: Launch Simulation</h4>
                             <p>Start the complete Mars exploration environment</p>
                             <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                            <p class="small mb-0">There is no <code>husky_ur3_mars</code> package in the repositories linked from these pages. The TA reference runs used <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code> (see the <a href="slaming_mars.html#ta-demos">TA reference runs</a>).</p>
+                            <p class="small mb-0">There is no <code>husky_ur3_mars</code> package in the repositories linked from these pages.</p>
                             <div class="code-block">
                                 <code>
 ros2 launch husky_ur3_mars mars_exploration.launch.py
@@ -553,11 +547,11 @@ ros2 launch husky_ur3_mars mars_exploration.launch.py
                         <div class="timeline-content">
                             <h4>Step 3: Controllers</h4>
                             <p>Initialize robot controllers and teleoperation</p>
-                            <span class="handout-label">TA reference setup (not public)</span>
-                            <p class="small mb-2"><code>husky_ur3_gazebo</code> and <code>mars.sdf</code> come from the TA&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version.</p>
+                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
+                            <p class="small mb-0">There is no <code>husky_ur3_simulation</code> package in the repositories linked from these pages.</p>
                             <div class="code-block">
                                 <code>
-ros2 launch husky_ur3_gazebo simulation.launch.py<br>
+ros2 launch husky_ur3_simulation controllers.launch.py<br>
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
                                 </code>
                             </div>
@@ -624,7 +618,7 @@ ros2 launch mars_mission mission_control.launch.py
 
             <!-- Demo Videos Tab -->
             <div class="tab-pane fade" id="demos" role="tabpanel">
-                <h2 class="text-center mb-4">🎥 Demo Videos & Resources</h2>
+                <h2 class="text-center mb-4">📚 Resources</h2>
 
                 <div class="row">
                     <div class="col-md-6">
@@ -686,19 +680,19 @@ ros2 launch mars_mission mission_control.launch.py
 
                 <div class="feature-card mt-4">
                     <h3>🎮 Gripper Control Commands</h3>
+                    <span class="handout-label">Fall 2025 handout text</span>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Open Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.0]}"</code>
+                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 0.0}'</code>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <h4>Close Gripper</h4>
                             <div class="code-block">
-                                <code>ros2 topic pub --once /gripper_controller/commands std_msgs/msg/Float64MultiArray "{data: [1.0]}"</code>
+                                <code>ros2 topic pub -1 /rh_p12_rn_position/command std_msgs/msg/Float64 '{data: 1.05}'</code>
                             </div>
-                            <p class="small mt-2 mb-0">Values used in the TA reference runs (RH-P12-RN gripper): 0.0 open, 1.0 closed.</p>
                         </div>
                     </div>
                 </div>
@@ -711,7 +705,7 @@ ros2 launch mars_mission mission_control.launch.py
                 <div class="alert-mars">
                     <h4>Fall 2025 showcase (archive)</h4>
                     <p>During Fall 2025, students were invited to record a 2-minute highlight video of their best Mars navigation, including the autonomous sample collection sequence, and to submit it through Gradescope with the hashtag #MarsCS498GC.</p>
-                    <p class="mb-0">Individual student submissions and results are not published on this page. To see what complete runs look like, watch the <a href="slaming_mars.html#ta-demos">TA reference runs</a> on the SLAM-ing Mars page (TA reference runs, not student submissions).</p>
+                    <p class="mb-0">Individual student submissions and results are not published on this page.</p>
                 </div>
 
 

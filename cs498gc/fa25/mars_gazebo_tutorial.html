@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- BEGIN site-analytics placeholder: dead Universal Analytics tag removed 2026-06-12.
-         Paste the GA4 snippet here once a G- measurement ID exists
-         (canonical copy: _includes/head-extras.html). -->
-    <!-- END site-analytics placeholder -->
-
     <meta charset="UTF-8">
     <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,SLAM,Mars,Gazebo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -494,7 +489,7 @@
             <h5>Prerequisites</h5>
             <ul class="mb-0">
                 <li>ROS2 Jazzy or Humble installed</li>
-                <li>Gazebo Classic 11 (ROS 2 Humble) for the dual-robot repo; the TA reference runs used Gazebo Harmonic on ROS 2 Jazzy</li>
+                <li>Gazebo Classic 11 (ROS 2 Humble) for the dual-robot repo</li>
                 <li>NVIDIA GPU recommended (GTX 1060 or better)</li>
                 <li>16GB RAM minimum</li>
             </ul>
@@ -529,7 +524,7 @@ ros2 launch mars_robots mapping.launch.py
 # Start teleoperation (optional)
 ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
         </div>
-        <p class="small">These steps do not run from the linked repository: its <code>mars_simulation</code> folder is not a ROS 2 package (no <code>package.xml</code>), the launch file refers to a <code>mars_robot.urdf</code> the repository does not contain (it ships only <code>mars_robot.urdf.xacro</code>), and it uses Gazebo Classic (<code>gazebo_ros</code>), which has no ROS 2 Jazzy release. Rubric v11 recommended the Mars Thanksgiving World, which was shared with enrolled students and is not public. <span class="handout-label">TA reference setup</span> The TA reference runs used <code>ros2 launch husky_ur3_gazebo simulation.launch.py world:=mars.sdf</code> from the TA&#39;s ROS 2 Jazzy workspace, which is not public; the public <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">husky_ur3_simulator</a> is the ROS 1 Noetic version. See the <a href="slaming_mars.html#ta-demos">SLAM-ing Mars page</a>.</p>
+        <p class="small">These steps do not run from the linked repository: its <code>mars_simulation</code> folder is not a ROS 2 package (no <code>package.xml</code>), the launch file refers to a <code>mars_robot.urdf</code> the repository does not contain (it ships only <code>mars_robot.urdf.xacro</code>), and it uses Gazebo Classic (<code>gazebo_ros</code>), which has no ROS 2 Jazzy release. Rubric v11 recommended the Mars Thanksgiving World, which was shared with enrolled students and is not public.</p>
 
         <!-- SLAM Tasks -->
         <h2 class="section-header">🎯 SLAM Tasks on Mars</h2>

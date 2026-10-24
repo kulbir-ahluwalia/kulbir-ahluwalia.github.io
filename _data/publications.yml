@@ -61,14 +61,17 @@
 
 # The first 3 entries are the "show selected" set (js/index.js shows the first 3 publications).
 # 2026-10-10: paper statuses confirmed by Kulbir: the T-RO manuscript is in preparation and the workshop
-# paper is listed without a review status. Thumbnails come from the WaypointGen line itself.
+# paper is listed without a review status.
+# 2026-10-17: per Kulbir the workshop paper is now submitted and under review (non-archival; decisions
+# due Oct 19, 2026). 2026-10-23: per Kulbir, TaP is listed as under review too.
+# Do not call either paper accepted/published until a decision is public. Thumbnails come from the WaypointGen line itself.
 
 - id2: tap_TRO2026
   title: "TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions & Grounded Constraint Phrases for Mobile Manipulator Navigation"
-  venue: "IEEE Transactions on Robotics (T-RO), manuscript in preparation"
-  awards: "Journal Paper (Manuscript in Preparation)"
+  venue: "IEEE Transactions on Robotics (T-RO), under review"
+  awards: "Journal Paper (Under Review)"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
-  description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth. On a 200-pair citrus benchmark: 99.0% structural pass, 37.5% geometric fidelity, and 59.2% LLM-judged constraint satisfaction (422/713)."
+  description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth. On a 200-pair citrus benchmark: 99.0% structural pass and 37.5% geometric fidelity (waypoints inside the ground-truth region)."
   topics:
     - mobile_robotics
     - nlp
@@ -84,11 +87,11 @@
     - Girish
     - Julia
 
-# Workshop paper: only Kulbir is listed, plus an 'et al.' note, until the author list is final.
+# Workshop paper: only Kulbir is listed, plus an 'et al.' note, until the full author list is confirmed.
 - id2: waypointGen_CoRL2026_CompositionalWorkshop
   title: "WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation"
   venue: '<a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop on Compositional Generalization for Real-World Robot Learning</a>'
-  awards: "Workshop Paper (Non-Archival Venue)"
+  awards: "Workshop Paper (Under Review, Non-Archival)"
   # No thumbnail yet: the CSL SC 2026 poster entry below already shows the WaypointGen figure.
   description: "Modular pipeline for language-commanded navigation of agricultural mobile manipulators: a local bird's-eye view from RGB-D, open-vocabulary target and avoidance masks, code-based command checks, and a vision-language model that picks among MPPI trajectory candidates. Offline studies on 349 palm-plantation targets score the candidates, not the model's choice."
   topics:
@@ -99,7 +102,7 @@
     - computer_vision
   authors:
     - Kulbir
-  authors_note: "et al. (author list to be finalized)"
+  authors_note: "et al."
 
 - id2: waypointGen_CSLSC2026
   title: "WaypointGen: Learning Grounded Waypoint based Navigation for Mobile Manipulators"
@@ -131,6 +134,7 @@
   venue: <a href="https://2025.ieee-icra.org/">International Conference on Robotics and Automation (ICRA 2025)</a>
   awards: "Conference paper"
   arxiv: "2412.10515"
+  paper: "https://doi.org/10.1109/ICRA55743.2025.11127547"
   image: publications/active_semantic_mapping/supplementary_video_mobile_manipulator_robot_screenshot_aruco_marker_2024-08-29_02-30.png
   image_border: false
   description: "We introduce an efficient active semantic mapping approach for horticultural robotics, using a mobile manipulator with an RGB-D camera. Probabilistic semantic octomaps are used to detect target regions of interest such as fruits, generate candidate viewpoints, and compute information gain for next-best-view planning. An efficient ray-casting strategy and a novel information gain function accounting for semantics and occlusions is introduced for efficient target-focused map exploration."

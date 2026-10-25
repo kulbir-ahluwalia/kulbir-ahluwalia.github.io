@@ -771,8 +771,8 @@
                             <source src="../../images/cs498gc/a4_ta_demos/a4_bonus_dust_storm.mp4" type="video/mp4">
                             <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_bonus_dust_storm.jpg" width="1280" height="720" loading="lazy" alt="Side-by-side recording of the same robot route in clear air (left) and in a Mars dust storm (right): robot camera views on top, live SLAM maps below, and a strip of metrics along the bottom">
                         </video>
-                        <p class="mt-2 mb-1">The same scripted two-lap route around a rock (69.2 m) driven twice in the Part B Mars world: clear on the left, dust storm on the right. Top row: the robot camera as seen; bottom row: the live SLAM Toolbox map with the ground-truth path (green), the SLAM pose estimate (blue, dashed) and the lidar returns that SLAM used (orange). Video 37.0 s, about 4x simulation time.</p>
-                        <p class="mb-1">SLAM pose error grows from 0.060 m RMSE when clear to 0.636 m in the storm (maximum 1.47 m). The storm map holds 8.37 m&sup2; of phantom obstacles (occupied cells more than 0.25 m from any rock); only 37.3 % of its occupied cells lie within 0.25 m of a real rock (100 % when clear), and SLAM makes 58 map-to-odom corrections larger than 10 cm or 2&deg;, against 28 when clear. The camera's RMS contrast drops from 0.112 to 0.047.</p>
+                        <p class="mt-2 mb-1">The same scripted two-lap route around a rock (69.2 m) driven twice in the separate dust-storm test world (a flat Mars plane with rocks, not the Mars Thanksgiving world of the Part 2 mission): clear on the left, dust storm on the right. Top row: the robot camera as seen; bottom row: the live SLAM Toolbox map with the ground-truth path (green), the SLAM pose estimate (blue, dashed) and the lidar returns that SLAM used (orange). Video 37.0 s, about 4x simulation time.</p>
+                        <p class="mb-1">SLAM pose error grows from 0.060 m RMSE when clear to 0.636 m in the storm (maximum 1.47 m). Inside the fixed 23 x 19 m evaluation window that the map panels show, the storm map holds 8.37 m&sup2; of phantom obstacles (occupied cells more than 0.25 m from any rock), and only 37.3 % of its occupied cells there lie within 0.25 m of a real rock (100 % when clear). SLAM makes 58 map-to-odom corrections larger than 10 cm or 2&deg;, against 28 when clear. The camera's RMS contrast drops from 0.112 to 0.047.</p>
                         <p class="small mb-0">Storm model: Gazebo particle emitters upwind; lidar extinction of 0.06 per metre in both directions (visibility 65 m), dust backscatter returns and range noise; camera haze computed from the depth image, plus sensor noise. Gazebo Harmonic does not render the world's fog, so the visible haze comes from this camera model. The route is driven on the simulator's ground-truth pose, so SLAM only estimates the pose and never steers; one storm strength and one random seed. Web video 1280 x 720, 24 fps.</p>
                     </div>
                 </div>
@@ -947,7 +947,7 @@
                         <tr>
                             <td>Part B bonus: dust storm</td>
                             <td>The same route in a clear and a dust-storm Mars world (particle emitters, degraded lidar and camera); SLAM Toolbox</td>
-                            <td>Trajectory error 0.060 m RMSE (clear) versus 0.636 m (storm); 0 versus 8.37 m&sup2; of phantom obstacles</td>
+                            <td>Trajectory error 0.060 m RMSE (clear) versus 0.636 m (storm); 0 versus 8.37 m&sup2; of phantom obstacles inside the 23 x 19 m evaluation window</td>
                         </tr>
                         <tr>
                             <td>Part B bonus: race lap</td>
@@ -1303,7 +1303,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
 ros2 param set /mars_environment enable_dust_storm true
 ros2 param set /mars_environment dust_density 0.7</code>
                     </div>
-                    <p class="small mb-0">Fall 2025 handout command (no <code>/mars_environment</code> node exists in the linked repositories). Reference solution: the same route driven in a clear and a dust-storm Mars world (particle emitters plus simulated lidar and camera degradation) gave a SLAM Toolbox trajectory error of 0.060 m RMSE (clear) versus 0.636 m (storm), with 0 versus 8.37 m&sup2; of phantom obstacles.</p>
+                    <p class="small mb-0">Fall 2025 handout command (no <code>/mars_environment</code> node exists in the linked repositories). Reference solution: the same route driven in a clear and a dust-storm Mars world (particle emitters plus simulated lidar and camera degradation) gave a SLAM Toolbox trajectory error of 0.060 m RMSE (clear) versus 0.636 m (storm), with 0 versus 8.37 m&sup2; of phantom obstacles inside a fixed 23 x 19 m evaluation window.</p>
                 </div>
 
                 <div class="feature-card mt-4">

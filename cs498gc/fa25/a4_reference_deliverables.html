@@ -56,6 +56,9 @@
         .dlv-fig { margin: 0; }
         .dlv-video, .dlv-img { display: block; width: 100%; height: auto; border-radius: 8px; background: #000; }
         .dlv-meta { font-size: 0.78rem; color: rgba(255, 255, 255, 0.65); margin-top: 3px; }
+        .dlv-download { margin: 2px 0 0; }
+        .dlv-download a { display: inline-block; border: 1px solid rgba(255, 165, 0, 0.6); border-radius: 8px; padding: 6px 12px; text-decoration: none; font-weight: 600; }
+        .dlv-download a:hover, .dlv-download a:focus { background: rgba(255, 165, 0, 0.18); }
         .dlv-hidden { display: none !important; }
         footer { background: rgba(11, 14, 23, 0.95); padding: 20px 0; margin-top: 60px; }
         @media (max-width: 576px) { h1.dlv-title { font-size: 1.6rem; } .dlv-card { padding: 12px; } }
@@ -108,13 +111,13 @@
         <h1 class="dlv-title">Assignment 4 reference deliverables</h1>
         <div class="dlv-intro"><p class="mb-2">Fall 2025 archive. This page shows every deliverable of Assignment 4, one card each: Part 1, Part 2, the Part 2 bonus, both extra-credit options, the early-submission bonus and the cross-cutting items, 154 rows in all. Each card shows the TA reference solution for the Husky A200 + UR3 mobile manipulator in the Mars worlds, built with ROS 2 Jazzy and Gazebo Harmonic, with an honest status, its display and a caption whose numbers come from the verified result files. No student work, name or grade appears on this page.</p>
             <ul class="dlv-legend"><li><span class="dlv-status st-verified">Verified</span> an independent verifier passed it.</li><li><span class="dlv-status st-notes">Verified with notes</span> an independent verifier passed it with notes.</li><li><span class="dlv-status st-fallback">Fallback</span> an earlier or partial artifact is shown, with its stated reason.</li><li><span class="dlv-status st-notdone">Not done</span> not done, with the reason.</li><li><span class="dlv-status st-human">Human step</span> a step left for the course staff, such as the Gradescope upload.</li></ul><p class="small mt-2 mb-0">How to read the points: a value can differ between handout versions, so a card may list several. v11 and v3-6 are versions of the Part 2 handout, HA and HB are the handouts of extra-credit options A and B, and codes such as P2-T07, EA-T01 or EB-T17 are autograder test ids.</p></div>
-        <div class="dlv-note" role="note"><strong>Draft for review.</strong> Publication rule: the reference solution code is never public, and the finished result is shown only once every Assignment 4 deliverable is recorded. This page stays a draft until then, and code-type deliverables appear only as status cards. Still open: <a href="#row-a3">A3</a>, <a href="#row-a4">A4</a>, <a href="#row-a5">A5</a>, <a href="#row-a6">A6</a>, <a href="#row-a7">A7</a>, <a href="#row-a8">A8</a>, <a href="#row-a10">A10</a>, <a href="#row-a11">A11</a>, <a href="#row-a13">A13</a>, <a href="#row-a16">A16</a>, <a href="#row-a24">A24</a>, <a href="#row-a32">A32</a>, <a href="#row-b30">B30</a>, <a href="#row-b31">B31</a>, <a href="#row-b32">B32</a>, <a href="#row-b33">B33</a>, <a href="#row-b34">B34</a>, <a href="#row-b38">B38</a>, <a href="#row-b40">B40</a>, <a href="#row-b41">B41</a>, <a href="#row-ecb12">ECB12</a>, <a href="#row-ecb13">ECB13</a>, <a href="#row-ecb22">ECB22</a>, <a href="#row-ecb25">ECB25</a>, <a href="#row-xc2">XC2</a>.</div>
-        <p class="small mb-1">Status of the 154 rows: 0 Verified, 129 Verified with notes, 20 Fallback, 4 Not done, 1 Human step.</p>
+        <div class="dlv-note" role="note"><strong>Draft for review.</strong> Publication rule: the reference solution code is never public, and the finished result is shown only once every Assignment 4 deliverable is recorded. This page stays a draft until then, and code-type deliverables appear only as status cards. Still open: <a href="#row-b34">B34</a>, <a href="#row-ecb13">ECB13</a>, <a href="#row-xc2">XC2</a>.</div>
+        <p class="small mb-1">Status of the 154 rows: 0 Verified, 151 Verified with notes, 2 Fallback, 0 Not done, 1 Human step.</p>
         <nav class="ref-jump" aria-label="Sections of this page"><a href="#part1">Part 1 (Part A)</a><a href="#part2">Part 2 (Part B)</a><a href="#part2-bonus">Part 2 bonus</a><a href="#ec-rtabmap">Extra credit option A: RTAB-Map</a><a href="#ec-samwise">Extra credit option B: SAMWISE</a><a href="#early-bonus">Early-submission bonus</a><a href="#policies">Policies and cross-cutting</a></nav>
         <div class="dlv-chips" role="group" aria-label="Filter the cards"><button type="button" class="dlv-chip" data-filter="all" aria-pressed="true">All</button><button type="button" class="dlv-chip" data-filter="part1" aria-pressed="false">Part 1</button><button type="button" class="dlv-chip" data-filter="part2" aria-pressed="false">Part 2</button><button type="button" class="dlv-chip" data-filter="bonus" aria-pressed="false">Bonus</button><button type="button" class="dlv-chip" data-filter="rtabmap" aria-pressed="false">RTAB-Map</button><button type="button" class="dlv-chip" data-filter="samwise" aria-pressed="false">SAMWISE</button><button type="button" class="dlv-chip" data-filter="early" aria-pressed="false">Early</button><button type="button" class="dlv-chip" data-filter="notdone" aria-pressed="false">Not done</button><span class="small align-self-center" id="dlv-count" aria-live="polite">Showing 154 of 154 rows.</span></div>
         <section class="dlv-section" aria-labelledby="part1">
         <h2 class="section-header" id="part1">Part 1 (Part A): Husky + UR3 mobile manipulator</h2>
-        <p class="small">A1 to A33: the rosbag, the screen recording, the autograder tests, the required topics, the components and the package of Part A. 33 rows: 21 Verified with notes, 12 Fallback.</p>
+        <p class="small">A1 to A33: the rosbag, the screen recording, the autograder tests, the required topics, the components and the package of Part A. 33 rows: 33 Verified with notes.</p>
         <div class="row">
 <div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a1" aria-labelledby="row-a1-name">
@@ -134,65 +137,59 @@
 <p class="dlv-caption">The 30 s reference screen recording places RViz 2 on the left and Gazebo on the right. It also has a keyboard teleop pane with a neutral prompt, the chapter labels 0-10 s, 10-20 s and 20-30 s, live /cmd_vel and gripper command values, and a gripper close-up in 10-20 s. Submission copy: H.264 High, yuv420p, 1280x720, 30 fps, 900 frames, 30.000 s, moov before mdat; it has 0 black segments and 0 freezes of 3 s or more. Video and bag clocks, measured: video frame 0 shows the RViz capture frame grabbed 0.015 s and the Gazebo capture frame grabbed 0.014 s before the bag's first message, both under one 30 fps frame (0.033 s); the 3D views first move at video t = 0.43 s, 0.13 s after the first non-zero /cmd_vel at t = 0.30 s, and again at 20.43 to 20.47 s after the command at 20.30 s (controller and rendering delay, no drift). On this page the launch line and a parameter label at the top of the teleop pane are covered.</p>
 <p class="dlv-check"><strong>How it was checked:</strong> Independent verifiers recomputed the numbers from the bag and the video and checked the media; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a3" aria-labelledby="row-a3-name">
-<div class="dlv-head"><span class="dlv-id">A3</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A3</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a3-name">Autograder 1.1: rosbag and screen recording present</h3>
 <p class="dlv-points"><strong>Points:</strong> 5</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Covered by the Fall 2025 Part A autograder run on the reference package, which scores 23.5 of 23.5 points once its test runner's import is fixed (<a href="#row-a1">A1</a>, <a href="#row-a30">A30</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">The Fall 2025 Part A autograder, run on the reference package with its test runner's import fixed, passes test 1.1 (5 of 5 points): it finds the rosbag (a sqlite3 bag folder with its metadata file) and the screen recording. The whole autograder scores 23.5 of 23.5 points (<a href="#row-a1">A1</a>, <a href="#row-a30">A30</a>). On a copy without the screen recording, test 1.1 scores 0 of 5 and the total falls to 8.5 points. Run as shipped, only test 2.3 loads (the other three test files fail to import), so it scores 4 points.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a4" aria-labelledby="row-a4-name">
-<div class="dlv-head"><span class="dlv-id">A4</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A4</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a4-name">Autograder 1.2: bag duration of at least 30 s</h3>
 <p class="dlv-points"><strong>Points:</strong> 2</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Covered by the Fall 2025 Part A autograder run on the reference package, which scores 23.5 of 23.5 points once its test runner's import is fixed; the graded bag lasts 44.66 s (<a href="#row-a1">A1</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">The graded bag lasts 44.66 s, both by its metadata and by its first and last messages, which meets the 30 s requirement (the grader's floor is 29.5 s); the autograder, run with its import fixed, passes test 1.2 for 2 of 2 points (<a href="#row-a1">A1</a>).</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a5" aria-labelledby="row-a5-name">
-<div class="dlv-head"><span class="dlv-id">A5</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A5</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a5-name">Autograder 1.3: required topics, types and minimum rates</h3>
 <p class="dlv-points"><strong>Points:</strong> 5.5</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Covered by the Fall 2025 Part A autograder run on the reference package, which scores 23.5 of 23.5 points once its test runner's import is fixed. Header-stamp rates of the graded bag in simulation time: /odom 50.0 Hz, /imu 100 Hz, /joint_states 100 Hz, /scan 15.15 Hz (<a href="#row-a1">A1</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">All six graded topics are in the bag with the expected types: /cmd_vel (Twist), /odom (Odometry), /joint_states (JointState), /imu (Imu), /scan (LaserScan) and the gripper command (Float64). Test 1.3 divides each topic's message count by the 44.66 s bag duration and compares the result with a floor: /cmd_vel 9.0 per second (floor 0.04), /odom 48.4 (floor 4), /joint_states 96.6 (floor 4), /imu 96.4 (floor 8), /scan 14.6 (floor 0.8) and the gripper command 0.36 (floor 0.024), so the autograder, run with its import fixed, passes test 1.3 for 5.5 of 5.5 points (<a href="#row-a1">A1</a>). Header-stamp rates in simulation time for the four periodic topics: /odom 50.0 Hz, /imu 100 Hz, /joint_states 100 Hz and /scan 15.15 Hz. The handout's spec rates are /odom 50 Hz, /imu 100 Hz and /scan 10 Hz; it gives none for /cmd_vel, /joint_states or the gripper command. /odom and /imu match their spec, while /scan publishes at 15.15 Hz against its 10 Hz spec (<a href="#row-a14">A14</a>); test 1.3 checks only minimum rates.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a6" aria-labelledby="row-a6-name">
-<div class="dlv-head"><span class="dlv-id">A6</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A6</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a6-name">Autograder 1.4: bag integrity</h3>
 <p class="dlv-points"><strong>Points:</strong> 1</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Covered by the Fall 2025 Part A autograder run on the reference package, which scores 23.5 of 23.5 points once its test runner's import is fixed (<a href="#row-a1">A1</a>, <a href="#row-a30">A30</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">The bag's single sqlite3 file opens read-only, passes SQLite's integrity check and holds 57,878 message rows, the same count as its metadata; the autograder, run with its import fixed, passes test 1.4 for 1 of 1 point (<a href="#row-a1">A1</a>, <a href="#row-a30">A30</a>).</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a7" aria-labelledby="row-a7-name">
-<div class="dlv-head"><span class="dlv-id">A7</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A7</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a7-name">Autograder 2.1: video stream present and at least 30 s</h3>
 <p class="dlv-points"><strong>Points:</strong> 4</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Covered by the Fall 2025 Part A autograder run on the reference package, which scores 23.5 of 23.5 points once its test runner's import is fixed; the recording lasts 30.000 s (<a href="#row-a2">A2</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">The screen recording holds one H.264 video stream and no audio and lasts 30.000 s (900 decoded frames at 30 fps), meeting the 30 s requirement (the grader accepts 28 s or more); the autograder, run with its import fixed, passes test 2.1 for 4 of 4 points (<a href="#row-a2">A2</a>).</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a8" aria-labelledby="row-a8-name">
-<div class="dlv-head"><span class="dlv-id">A8</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A8</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a8-name">Autograder 2.2: video at least 720p</h3>
 <p class="dlv-points"><strong>Points:</strong> 2</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Covered by the Fall 2025 Part A autograder run on the reference package, which scores 23.5 of 23.5 points once its test runner's import is fixed; the recording is 1280x720 (<a href="#row-a2">A2</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">The screen recording is 1280 x 720, so its short edge meets the 720 px minimum; the autograder, run with its import fixed, passes test 2.2 for 2 of 2 points (<a href="#row-a2">A2</a>).</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a9" aria-labelledby="row-a9-name">
@@ -203,25 +200,23 @@
 <p class="dlv-caption">Test 2.3 of the Fall 2025 Part A autograder, replayed on the reference bag (44.66 s). The grader places every message on the bag clock (receive time minus the bag start time) and cuts it into 10 s windows. From 0 to 10 s, 190 of 191 /cmd_vel messages are non-zero (base only). From 10 to 20 s the gripper command takes 2 distinct values (0.0 and 1.05) in 5 messages (gripper only). From 20 to 30 s, 210 of 211 /cmd_vel messages are non-zero and the gripper again takes 2 distinct values in 5 messages (both). All three windows pass, so the test gives 4 of 4 points. The screen recording starts at the bag's first message, so the dashed chapter lines at 10, 20 and 30 s mark the same instants in the video; the last 14.66 s of the bag are not graded by this test.</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed every number from the bag and checked the images; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a10" aria-labelledby="row-a10-name">
-<div class="dlv-head"><span class="dlv-id">A10</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A10</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a10-name">Required topic /cmd_vel (geometry_msgs/msg/Twist)</h3>
 <p class="dlv-points"><strong>Points:</strong> Within A1; checked by 1.3 and 2.3</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">/cmd_vel (geometry_msgs/msg/Twist) is in the graded bag: 190 of the 191 messages in 0 to 10 s and 210 of the 211 messages in 20 to 30 s are non-zero (<a href="#row-a9">A9</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">/cmd_vel is recorded as geometry_msgs/msg/Twist (unstamped), the type the live topic showed during the take, with 402 messages in all. On the bag clock that test 2.3 uses, 190 of the 191 messages in 0 to 10 s and 210 of the 211 messages in 20 to 30 s are non-zero, and none fall in 10 to 20 s (<a href="#row-a9">A9</a>).</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a11" aria-labelledby="row-a11-name">
-<div class="dlv-head"><span class="dlv-id">A11</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A11</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a11-name">Required topic /odom (nav_msgs/msg/Odometry, 50 Hz)</h3>
 <p class="dlv-points"><strong>Points:</strong> Within A1</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">/odom is in the graded bag with a header-stamp rate of 50.0 Hz in simulation time (<a href="#row-a1">A1</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">/odom (nav_msgs/msg/Odometry) holds 2,161 messages with a median header-stamp step of 0.020 s, 50.0 Hz in simulation time (48.4 Hz by receive time over the 44.66 s bag); the odom to base_link transform appears 2,151 times on /tf (<a href="#row-a1">A1</a>).</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a12" aria-labelledby="row-a12-name">
@@ -232,15 +227,14 @@
 <p class="dlv-caption">Joint positions from /joint_states over the whole bag (4314 messages in 44.66 s, 100 Hz in simulation time). The UR3 arm moves to a first pose at 10 s (a 2.5 s move) and to a second pose at 20 s (a 3.0 s move); 4 of its 6 joints change in each move. The RH-P12-RN fingers close and open with every gripper command from t = 10.15 s; rh_r1 is driven and rh_r2, rh_l1 and rh_l2 mimic it. The span table (maximum minus minimum over the bag) equals the FA26 grader's own printout to 3 decimals for the 6 arm joints and the 4 finger joints, for example shoulder_lift 1.570 rad and rh_r1 0.934 rad. The wheel angles add up while the base drives, so their spans are large (16.025 rad on the left wheels, 42.516 rad on the right).</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed every number from the bag and checked the images; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a13" aria-labelledby="row-a13-name">
-<div class="dlv-head"><span class="dlv-id">A13</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A13</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a13-name">Required topic /imu (sensor_msgs/msg/Imu, 100 Hz)</h3>
 <p class="dlv-points"><strong>Points:</strong> Within A1</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">/imu is in the graded bag with a header-stamp rate of 100 Hz in simulation time (<a href="#row-a1">A1</a>).</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">/imu (sensor_msgs/msg/Imu) holds 4,304 messages with a median header-stamp step of 0.010 s, 100 Hz in simulation time (<a href="#row-a1">A1</a>).</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a14" aria-labelledby="row-a14-name">
@@ -260,15 +254,14 @@
 <p class="dlv-caption">The gripper is commanded on /rh_p12_rn_position/command (std_msgs/Float64, 1.05 closed, 0.0 open): 16 commands, one every 2.20 s from t = 10.15 s, each relayed to /gripper_controller/commands for ros2_control (median delay 0.1 ms). Test 2.3 sees 5 commands with 2 distinct values in the 10 to 20 s window and again in the 20 to 30 s window. The lower plot is the driven finger joint rh_r1: it closes to 0.908 to 0.934 rad and, with only 2.2 s between commands, reopens only to 0.113 to 0.128 rad rather than all the way to 0. The close-up clip covers bag time 10 to 20 s (chapter 2 of the video): 146 simulated camera frames at about 14.7 Hz, each held until the next one arrives, with the command in force and rh_r1 printed on the frame. The handout gripper is the Robotis RH-P12-RN; a UR arm with a Robotiq gripper (the "Q" option) is also accepted with full marks (lecture slides 3, 4 and 23).</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed every number from the bag and checked the images; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a16" aria-labelledby="row-a16-name">
-<div class="dlv-head"><span class="dlv-id">A16</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A16</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a16-name">Topic /clock (simulation time)</h3>
 <p class="dlv-points"><strong>Points:</strong> Within A1 (12.5) as an active topic; not checked by the Fall 2025 autograder</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">The simulation runs on /clock (simulation time), recorded with all active topics in the full bag; the Fall 2025 autograder does not check this topic.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">The simulation clock /clock is recorded with 45,562 messages in the full all-topics bag (<a href="#row-a1">A1</a>) and with 43,039 messages in the graded bag, covering 43.04 s of simulation time in 44.66 s (a real-time factor of 0.96); robot_state_publisher ran on simulation time. The Fall 2025 autograder never checks this topic.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a17" aria-labelledby="row-a17-name">
@@ -333,15 +326,14 @@
 <p class="dlv-caption">The simulated robot in Gazebo after the reference take, with its 13 degrees of freedom labelled: 6 for the pose of the mobile base in SE(3) (/cmd_vel drives two of them, forward speed and yaw rate), 6 revolute UR3 joints (markers 1 to 6) and 1 gripper joint (marker 7, rh_r1, which the other three finger joints mimic). The joint markers are projected into the camera image from the recorded link poses; marker 1 is drawn 0.10 m down the vertical pan axis so that it does not cover marker 2. The mount card is read from the graded bag (/tf_static for the mounts, the wheel joint transforms on /tf for the wheelbase and track): the UR3 base sits 0.150 m ahead of and 0.230 m above base_link (0.362 m above the ground), the gripper is bolted to the tool flange with zero offsets, the lidar is 0.321 m ahead and 0.252 m up, and the base has a 0.512 m wheelbase and a 0.555 m track. A UR arm with a Robotiq gripper (the "Q" option) is also accepted with full marks (lecture slides 3, 4 and 23).</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed every number from the bag and checked the images; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a24" aria-labelledby="row-a24-name">
-<div class="dlv-head"><span class="dlv-id">A24</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A24</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a24-name">Component: robot_state_publisher, Gazebo plugins or ros2_control controllers, and ros_gz_bridge (one design, captioned)</h3>
 <p class="dlv-points"><strong>Points:</strong> 0 separate</p>
 <p class="dlv-kind">Status card: the evidence for this row is shown in the cards it links to.</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">The reference simulation runs robot_state_publisher, the Gazebo plugins with the ros2_control controllers of the Clearpath A200 design (wheel velocity command interfaces) and the ros_gz_bridge; A31 describes the two Part 1 designs.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">The reference simulation uses the ros2_control design, the TA's alternative to the handout's Gazebo-plugin design (a differential-drive plugin and joint-position controller plugins): robot_state_publisher on simulation time; the Gazebo ros2_control plugin with the Clearpath A200 base, whose four wheel joints take velocity commands; four active controllers (a joint state broadcaster, a differential-drive base controller, an arm controller and a gripper controller); and a ros_gz_bridge that carries the clock, the laser scan, the IMU, the RGB-D camera's image, depth image, camera info and point cloud, and a second camera's left image, all from Gazebo to ROS. Both Part 1 designs are described in the configuration card (<a href="#row-a31">A31</a>).</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a25" aria-labelledby="row-a25-name">
@@ -406,15 +398,14 @@
 <p class="dlv-caption">Configuration of the two Part 1 designs: the ros2_control design that runs in the reference (robot description, the Clearpath A200 wheel velocity command interfaces, the controller configuration and the simulation bridge) and the handout design, kept as a reference package and not run (wheel and arm-mount joints, one joint-position controller per joint, a six-topic bridge without a gripper topic).</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier checked every number against its cited source and the grader runs; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a32" aria-labelledby="row-a32-name">
-<div class="dlv-head"><span class="dlv-id">A32</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">A32</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-a32-name">Part A late-submission policy (course rule)</h3>
 <p class="dlv-points"><strong>Points:</strong> -20% per day after the one free 2-day late submission; nothing accepted after 5 days</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Course rule for every assignment in Fall 2025: one late deliverable per semester may be up to 2 days late without penalty, otherwise 20 % per day, and nothing is accepted more than 5 days late. The rule is on the course policies page.</p>
+<p class="dlv-caption">Course late policy for assignments and projects (course policies page): one deliverable in the whole semester may be up to 2 days late without penalty; every other late deliverable, and that one past its 2 days, loses 20 % per day; submissions more than five days late are not accepted; and the parts of an assignment may not be submitted at different times to take the late penalty on only one part. Extension requests are considered only in extraordinary circumstances. The Part 2 rubric states its own late rule (<a href="#row-b35">B35</a>).</p>
 <p class="dlv-link"><a href="policies.html">Course policies page</a></p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="part1" data-status="verified_with_notes">
 <article class="dlv-card" id="row-a33" aria-labelledby="row-a33-name">
@@ -429,7 +420,7 @@
         </section>
         <section class="dlv-section" aria-labelledby="part2">
         <h2 class="section-header" id="part2">Part 2 (Part B): SLAM on Mars</h2>
-        <p class="small">B1 to B41: MUSt3R, point clouds, navigation and MoveIt 2, the recordings, the report, the code, the maps, the metrics and the challenges of Part B. 41 rows: 33 Verified with notes, 4 Fallback, 4 Not done.</p>
+        <p class="small">B1 to B41: MUSt3R, point clouds, navigation and MoveIt 2, the recordings, the report, the code, the maps, the metrics and the challenges of Part B. 41 rows: 40 Verified with notes, 1 Fallback.</p>
         <div class="row">
 <div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b1" aria-labelledby="row-b1-name">
@@ -692,52 +683,51 @@
 <p class="dlv-caption">Localization error against Gazebo ground truth over the mission (simulation seconds 49.5 to 304.8), measured as planar distance with no alignment. SLAM Toolbox (/slam_pose): mean 0.05 m, RMSE 0.06 m, maximum 0.26 m, under 0.20 m for 99.6 % of samples. EKF: mean 0.28 m, RMSE 0.33 m, maximum 0.69 m, inside the handout's 0.5 m RMSE limit but above the 0.20 m Mars target. Wheel odometry: RMSE 3.23 m. Dashed lines mark 0.20 m and 0.5 m.</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the mission bag and the raw data with its own code; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b30" aria-labelledby="row-b30-name">
-<div class="dlv-head"><span class="dlv-id">B30</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">B30</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-b30-name">Mars world: sensor plugins, Mars gravity, and stating which world was used ('SLAMing on Mars')</h3>
 <p class="dlv-points"><strong>Points:</strong> No points of its own</p>
 <div class="dlv-media"><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_b30_world_v3_table_and_turkeys.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Mars Thanksgiving world v3: the dinner table with both turkeys and the three rover guests"></figure><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_b30_world_v3_rockets_and_ships.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Mars Thanksgiving world v3: rockets and ships of the Mars base"></figure></div>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">The reference solution uses the Mars Thanksgiving world v3 (rubric Option 4). Mars gravity (3.711 m/s^2) is set in the world file, and the IMU measured a mean of 3.711 m/s^2 over 33,428 samples during the Part 2 mission (<a href="#row-b14">B14</a>). The two stills show the dinner table with both turkeys and the three rover guests, and the rockets and ships of the Mars base.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">The Part 2 reference mission ran in a copy of the Mars Thanksgiving world v3 (rubric Option 4, the Mars Thanksgiving World) that adds a start line, a checkered finish line and the pick-and-place props: a sample bench, five small rock samples, a red cube, a sample bin and an orange ball on a tee. Its world file loads the Physics, Sensors, IMU, Contact, User Commands, Scene Broadcaster and Particle Emitter systems, with the Sensors system rendering through OGRE 2 as the rubric's sensor-plugin fix asks, steps ODE physics every 1 ms and sets Mars gravity to 3.711 m/s^2; during the mission the IMU's vertical acceleration averaged 3.711 m/s^2 (standard deviation 0.020 m/s^2) over 33,428 samples (<a href="#row-b14">B14</a>). The two stills show world v3 itself, without those additions: the dinner table with both turkeys (one flying above it, one running under it) and the three rover guests, and the rockets and ships of the Mars base. The rovers in them carry no real logos, flags or lettering.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b31" aria-labelledby="row-b31-name">
-<div class="dlv-head"><span class="dlv-id">B31</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">B31</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-b31-name">Not an A4 deliverable: graduate SOTA-SLAM paper presentation (4-credit students; Nov 21 and Dec 3, 5 and 10, 2025)</h3>
 <p class="dlv-points"><strong>Points:</strong> Separate graduate presentation component, not part of the A4 points; rubric: Technical Understanding 40%, Clarity &amp; Organization 30%, Critical Analysis 20%, Q&amp;A 10%</p>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Not an Assignment 4 deliverable: the graduate SOTA-SLAM paper presentation for 4-credit students (Nov 21 and Dec 3, 5 and 10, 2025) is a separate course component, graded on technical understanding 40 %, clarity and organization 30 %, critical analysis 20 % and Q&amp;A 10 %. The presentations are on the course presentations page.</p>
+<p class="dlv-caption">Not an Assignment 4 deliverable: the graduate SOTA-SLAM paper presentation for 4-credit students, held on Nov 21 and Dec 3, 5 and 10, 2025. Each student gave a 15-minute talk plus 5 minutes of Q&amp;A on an assigned state-of-the-art SLAM paper (14 papers in all); slides were due exactly one week before the talk, and TA office hours one week before the talk, for feedback on the slides, were mandatory. Grading: technical understanding 40 %, clarity and organization 30 %, critical analysis 20 %, Q&amp;A 10 %. Details are on the course presentations page.</p>
 <p class="dlv-link"><a href="presentations.html">Course presentations page</a></p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="not_done">
+<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b32" aria-labelledby="row-b32-name">
-<div class="dlv-head"><span class="dlv-id">B32</span><span class="dlv-status st-notdone">Not done</span></div>
+<div class="dlv-head"><span class="dlv-id">B32</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-b32-name">Mars Mission showcase: 2-minute highlight video (#MarsCS498GC)</h3>
 <p class="dlv-points"><strong>Points:</strong> None (invitation)</p>
-<p class="dlv-reason"><strong>Reason:</strong> The reel is produced but has not yet passed its independent re-verification, so it is not shown.</p>
-<p class="dlv-caption">A two-minute highlight reel (#MarsCS498GC) of the reference solution: the Mars Thanksgiving world, the 12-waypoint Nav2 run, MoveIt 2 picks, the best 3D reconstruction, the 4D playback and the dust storm.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Awaiting independent re-verification.</p>
+<div class="dlv-media"><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_b32_highlight_reel_poster.jpg" aria-label="Two-minute highlight reel of the reference solution with a #MarsCS498GC end card"><source src="../../images/cs498gc/a4_deliverables/a4_b32_highlight_reel.mp4" type="video/mp4">Two-minute highlight reel of the reference solution with a #MarsCS498GC end card</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 120.0 s, 3.0 MB.</figcaption></figure></div>
+<p class="dlv-caption">Two-minute highlight reel: the Mars Thanksgiving world, the 12-waypoint Nav2 run, MoveIt 2 picks, the best 3D reconstruction orbit, the VGGT-Omega 4D playback and the dust storm, with a #MarsCS498GC end card. The Nav2 run uses the 12 official waypoints as adapted to this world (7 moved 0.10 m to 1.40 m for clearance). In the pick segment rock samples b and c go into the collection bin with friction grasps; picks try a friction grasp first, and the fallback, a Gazebo DetachableJoint attached when the gripper closes, was not used.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> Independent verifiers checked the clips, cards and numbers against their sources with their own code; a third re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="not_done">
+<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b33" aria-labelledby="row-b33-name">
-<div class="dlv-head"><span class="dlv-id">B33</span><span class="dlv-status st-notdone">Not done</span></div>
+<div class="dlv-head"><span class="dlv-id">B33</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-b33-name">Challenge Yourself: beginner challenges (3 waypoints, single rock pick-and-place, 2D crater map, teleop course)</h3>
 <p class="dlv-points"><strong>Points:</strong> 0 (ungraded)</p>
-<p class="dlv-reason"><strong>Reason:</strong> The beginner challenge cards are produced but have not yet passed their independent re-verification, so they are not shown.</p>
-<p class="dlv-caption">Cards for the four beginner challenges: drive to the first three waypoints, pick one rock sample, read a crater from the 2D map, and teleoperate the base for ten seconds.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Awaiting independent re-verification.</p>
+<div class="dlv-media"><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_b33_beginner_challenge_cards.jpg" width="1600" height="1377" loading="lazy" decoding="async" alt="Four beginner challenge cards, each with a still and its text: drive to the first three waypoints, pick one rock sample, read a crater from the 2D map, and teleoperate the base for ten seconds"></figure><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_b33_first_three_waypoints_poster.jpg" aria-label="Nav2 drives to the first three of the 12 waypoints: RViz on the left, Gazebo on the right"><source src="../../images/cs498gc/a4_deliverables/a4_b33_first_three_waypoints.mp4" type="video/mp4">Nav2 drives to the first three of the 12 waypoints: RViz on the left, Gazebo on the right</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 31.8 s, 4.0 MB.</figcaption></figure><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_b33_single_rock_pick_poster.jpg" aria-label="MoveIt 2 picks rock sample b and drops it into the collection bin: RViz MotionPlanning on the left, Gazebo on the right"><source src="../../images/cs498gc/a4_deliverables/a4_b33_single_rock_pick.mp4" type="video/mp4">MoveIt 2 picks rock sample b and drops it into the collection bin: RViz MotionPlanning on the left, Gazebo on the right</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 7.8 s, 0.1 MB.</figcaption></figure><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_b25_crater_crop.png" width="1204" height="1148" loading="lazy" decoding="async" alt="Crater arc cut from the SLAM map with the crater model outline"></figure><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="320" poster="../../images/cs498gc/a4_deliverables/a4_b33_teleop_first_ten_seconds_poster.jpg" aria-label="First ten seconds of the Part 1 recording: keyboard teleop of the base seen in RViz 2 and Gazebo"><source src="../../images/cs498gc/a4_deliverables/a4_b33_teleop_first_ten_seconds.mp4" type="video/mp4">First ten seconds of the Part 1 recording: keyboard teleop of the base seen in RViz 2 and Gazebo</video><figcaption class="dlv-meta">Web copy: 960 x 320, 30 fps, 10.0 s, 0.2 MB.</figcaption></figure></div>
+<p class="dlv-caption">Drive to the first three waypoints: After a mapping spin at its spawn point, 2.0 m from the start line, Nav2 drives the Husky A200 + UR3 to the first three of the 12 official waypoints (Start Line, Approach Table, Table Left), with RViz on the left and Gazebo on the right. In the full reference run all 12 waypoints were reached within 1.0 m by Gazebo ground truth (final error mean 0.18 m, max 0.27 m). Two of the three were adapted to this world for clearance: Approach Table moved 0.90 m and Table Left 0.10 m. | Pick one rock sample: MoveIt 2 plans each arm motion with OMPL RRTConnect: a friction grasp lifts rock sample b, drops it into the collection bin and the arm heads back home. In the five-trial reference mission, 4 of 5 samples ended in the bin by simulator ground truth (80 %). Picks try a friction grasp first; the fallback, a Gazebo DetachableJoint attached when the gripper closes, was not used in any of the five trials. | Read a crater from the 2D map: Beginner 2D crater map: the crater arc near (-10, -10) cut from the SLAM Toolbox map of the earlier navigation demo in the same world, with the crater model outline. | Teleop the base for ten seconds: The first chapter (0 to 10 s) of the 30 s Part 1 reference recording: keyboard teleop drives the Husky A200 + UR3 forward, backward and through a turn, seen in RViz 2 (robot model, TF, laser scan, odometry) and in Gazebo.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> Independent verifiers checked the clips, cards and numbers against their sources with their own code; a third re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="not_done">
+<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="fallback">
 <article class="dlv-card" id="row-b34" aria-labelledby="row-b34-name">
-<div class="dlv-head"><span class="dlv-id">B34</span><span class="dlv-status st-notdone">Not done</span></div>
+<div class="dlv-head"><span class="dlv-id">B34</span><span class="dlv-status st-fallback">Fallback</span></div>
 <h3 class="dlv-name" id="row-b34-name">Challenge Yourself: advanced challenges (visual SLAM with loop closure, sorting samples by size, multi-robot, dust-storm navigation)</h3>
 <p class="dlv-points"><strong>Points:</strong> 0 (ungraded)</p>
-<p class="dlv-reason"><strong>Reason:</strong> Two of the four advanced challenges (sorting samples by size, several robots) were not done, and the cards for the other two await independent re-verification.</p>
-<p class="dlv-caption">Cards for the four advanced challenges: close a loop with RTAB-Map, sort rock samples by size, explore with several robots, and map in a dust storm.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Awaiting independent re-verification.</p>
+<div class="dlv-media"><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_b34_advanced_challenge_cards.jpg" width="1600" height="1300" loading="lazy" decoding="async" alt="Four advanced challenge cards: close a loop with RTAB-Map and map in a dust storm, each with a still and its text, and two cards marked NOT DONE for sorting rock samples by size and exploring with several robots"></figure><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_b34_loop_closure_poster.jpg" aria-label="RTAB-Map links node 160 of lap 2 to node 27 of lap 1 at the start corner: RViz on the left, Gazebo on the right"><source src="../../images/cs498gc/a4_deliverables/a4_b34_loop_closure.mp4" type="video/mp4">RTAB-Map links node 160 of lap 2 to node 27 of lap 1 at the start corner: RViz on the left, Gazebo on the right</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 16.0 s, 0.3 MB.</figcaption></figure><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_b34_dust_storm_slam_poster.jpg" aria-label="The same route clear and in a dust storm: camera views and live SLAM maps"><source src="../../images/cs498gc/a4_deliverables/a4_b34_dust_storm_slam.mp4" type="video/mp4">The same route clear and in a dust storm: camera views and live SLAM maps</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 12.0 s, 0.3 MB.</figcaption></figure></div>
+<p class="dlv-reason"><strong>Reason:</strong> Two of the four advanced challenges were done (visual SLAM with loop closure, and navigation in a dust storm); sorting samples by size and several robots were not attempted.</p>
+<p class="dlv-caption">Close a loop with RTAB-Map: On lap 2 the robot returns to the start corner: 6 s into the clip RTAB-Map links node 160 to node 27 from lap 1, 42 m of driving later, with the two ground-truth positions 72 cm apart. The whole mapping session made 418 revisit loop closures. | Sort rock samples by size: Not done in the reference solution. No run sorted rock samples by size, so there is no clip or number to show for this challenge. | Explore with several robots: Not done in the reference solution. No multi-robot run was made, so there is no clip or number to show for this challenge. | Map in a dust storm: The same scripted two-lap route driven twice in the Part B Mars world, clear on the left and in a dust storm on the right: SLAM pose error grows from 0.060 m RMSE when clear to 0.636 m in the storm (maximum 1.47 m), and the storm map holds 8.37 m² of phantom obstacles.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> Independent verifiers checked the clips, cards and numbers against their sources with their own code; a third re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b35" aria-labelledby="row-b35-name">
@@ -766,15 +756,14 @@
 <p class="dlv-caption">Waypoint file: the 12 official Part 2 waypoints adapted to world v3 (7 moved for clearance). The plot shows them over the trajectory the grader reads (/slam_pose in the upload-size bag, 501 poses, 52.6 m) with 1.0 m circles and the closest approach to each. The local FA26 grader gives P2-T07 0.5 / 0.5 (12 waypoints parsed, 11 distinct at least 0.5 m apart, bounding-box diagonal 10.79 m) and P2-T08 2.0 / 2.0 (11 of 11 distinct waypoints reached within 1.0 m, closest approaches 0.01 to 0.20 m); waypoint 12 (Home) repeats the Start Line position.</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the mission bag and the raw data with its own code; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b38" aria-labelledby="row-b38-name">
-<div class="dlv-head"><span class="dlv-id">B38</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">B38</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-b38-name">Decimated MUSt3R reconstruction file (PLY or PCD, coloured, at most 500k points and about 10 MB)</h3>
 <p class="dlv-points"><strong>Points:</strong> FA26 75-scale: P2-T03 1.5; v11-as-is: 3.5</p>
-<p class="dlv-kind">Status card: the reconstruction file is not published, because it is not a verified world-frame reconstruction.</p>
-<p class="dlv-reason"><strong>Reason:</strong> The file meets the grader's format checks, but one placement check deviates from its pre-registered form and the reprojection test fails, so it is shown only with this note.</p>
-<p class="dlv-caption">Decimated MUSt3R reconstruction, placed by the Sim(3) of MUSt3R's camera path. It meets the grader's P2-T03 format checks (count, non-degenerate, colour). Global-frame audit (tests fixed before the run, except that the world-anchor fit searched a different grid on a subsample of points, which changes no conclusion): reprojected into 20 true depth frames, 9.7 % of its visible points lie within 10 cm of the true depth, and a camera pitched 0.24 rad scores higher (13.3 %), so the reprojection test fails; a later diagnostic finds 69 % of the visible points floating more than 10 cm in front of the true surfaces. World anchors place it to about a decimetre (ground layer +8.5 cm, median object offset about 10 cm). It is therefore not shown as a world-frame reconstruction.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the camera and geometry errors from the reconstructions with its own code; a re-verification confirmed the fixes.</p>
+<div class="dlv-media"><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_b38_p2t03_sanity_card.png" width="1600" height="900" loading="lazy" decoding="async" alt="Card of the reconstruction file: top-down and oblique previews of the cloud, the grader&#x27;s P2-T03 checks with values and thresholds, the score 1.5 of 1.5, how it was made and the world-frame audit"></figure><figure class="dlv-fig"><p class="dlv-download"><a href="../../images/cs498gc/a4_deliverables/a4_b38_must3r_reconstruction_confident_pixels.ply" download type="application/octet-stream"><i class="fas fa-download" aria-hidden="true"></i> Download the decimated MUSt3R reconstruction (PLY, 2.7 MB)</a></p><figcaption class="dlv-meta">Binary little-endian PLY with x, y, z and red, green, blue per point.</figcaption></figure></div>
+<p class="dlv-caption">Download: the decimated MUSt3R reconstruction of the static capture as a binary PLY with colour (179,288 points, 2.69 MB). MUSt3R's 512 model ran on the 200 RGB frames with its own camera poses; only its most confident 10.3 % of pixels are kept, placed in the simulator world by the Sim(3) of its camera path and voxel-averaged at 1.25 cm. The grader's own reader scores P2-T03 1.5 of 1.5. A world-frame audit with tests fixed before the run: reprojected into 20 true depth images that were not used to build or align it, 47.7 % of the visible points lie within 10 cm of the true depth, against at most 16.8 % for deliberately wrong poses; ground at +4.5 cm; median object offset 6.4 cm over the 5 objects with at least 100 points (largest 18.3 cm). The median distance to the modelled scene of the points away from the two turkeys, which the scene model does not include, is 3.2 cm. Coverage: the most confident pixels hold fewer than 100 points on the three boulders, so those objects are not scored.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the export, the grader's P2-T03 check and the world-frame audit with its own code; a re-verification confirmed the caption fix.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b39" aria-labelledby="row-b39-name">
@@ -785,24 +774,23 @@
 <p class="dlv-caption">Code quality of the must3r_nav package: flake8 7.1.1 over 16 Python files reports 34 findings with the package's own 120-character line limit (E702 15, E501 14, F401 3, E731 2) and 265 at a 100-character limit. The repository is local: branch submission, tag v1.0, 0 remotes, never pushed.</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers and checked the package build and test logs and the media; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="not_done">
+<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b40" aria-labelledby="row-b40-name">
-<div class="dlv-head"><span class="dlv-id">B40</span><span class="dlv-status st-notdone">Not done</span></div>
+<div class="dlv-head"><span class="dlv-id">B40</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-b40-name">Learning objective: visual servoing (Manipulation Skills)</h3>
 <p class="dlv-points"><strong>Points:</strong> 0 (learning objective, not graded)</p>
-<p class="dlv-reason"><strong>Reason:</strong> Visual servoing was attempted once after Task 1 and the arm did not move, so this learning objective is not done.</p>
-<p class="dlv-caption">Attempted once after Task 1 with the query 'Point at the red cube': robot_controller sent moveit_servo twist commands to move the tool toward a point 12 cm above the SAMWISE centroid. Over 40.8 s of simulation time the UR3 moved 0.0 rad and the pixel error stayed at 104.5 px. The arm had stayed where the place ended: MoveIt refused all 6 later plans from that start state (upper arm touching the camera link in its collision model), and the servo controller kept slowing the arm because the pose was close to a singularity.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the task bags and logs and checked the videos; a re-verification confirmed the fixes.</p>
+<div class="dlv-media"><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_b40_visual_servo_poster.jpg" aria-label="Visual servoing: the UR3 tool moves toward the SAMWISE target until the servo converges, camera view on the left, Gazebo on the right"><source src="../../images/cs498gc/a4_deliverables/a4_b40_visual_servo.mp4" type="video/mp4">Visual servoing: the UR3 tool moves toward the SAMWISE target until the servo converges, camera view on the left, Gazebo on the right</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 25.3 s, 0.4 MB.</figcaption></figure><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_b40_pixel_error.png" width="1600" height="900" loading="lazy" decoding="async" alt="Pixel error between the projected tool and the hover point over the servo run, falling from 148.5 px to 11.1 px below the 25 px pass line, with the end state converged"></figure></div>
+<p class="dlv-caption">From the UR3 home pose (valid in the planning scene, Jacobian condition number 14.415, below the servo threshold 17), the query 'Point at the red cube' drove the tool with moveit_servo toward a hover point 18 cm above the SAMWISE target and 8 cm toward the robot. The largest joint change was 0.3769 rad and the image distance between the projected tool and the projected hover point went from 148.5 px to 11.1 px (pre-registered pass: joint change above 0.1 rad, last value below 25 px and below half of the first); the servo ended 'converged' after 21.14 s of simulated time.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the raw run outputs with its own code, against the tests registered before the runs, and checked the videos; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="part2" data-status="verified_with_notes">
 <article class="dlv-card" id="row-b41" aria-labelledby="row-b41-name">
-<div class="dlv-head"><span class="dlv-id">B41</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">B41</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-b41-name">Legacy performance metric: mapping quality (clear obstacle boundaries)</h3>
 <p class="dlv-points"><strong>Points:</strong> No points stated (legacy evaluation criterion)</p>
 <div class="dlv-media"><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_b41_maps_clear_vs_dust.png" width="1540" height="715" loading="lazy" decoding="async" alt="Two SLAM Toolbox maps of the same route, clear and in a dust storm, with the true rock footprints in red"></figure></div>
-<p class="dlv-reason"><strong>Reason:</strong> An earlier artifact stands in for this row, and no independent verifier checked it in this production.</p>
-<p class="dlv-caption">Legacy mapping-quality criterion (clear obstacle boundaries): SLAM Toolbox maps of the same scripted route, clear (left) and in a dust storm (right), with the true rock footprints in red. This earlier comparison is shown as found; it was not re-verified in this production.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Not independently verified in this production.</p>
+<p class="dlv-caption">Legacy mapping-quality criterion (clear obstacle boundaries), shown on the separate dust-storm test world, not the Part 2 world: a flat Mars plane with seven rocks, a crater rim and a pillar. SLAM Toolbox maps of the same scripted 19-waypoint route, clear (left) and in a dust storm (right), with the true footprints from the world file in red; the 23 x 19 m window holds six of the rocks and the pillar. In the clear map all 761 occupied cells inside the window lie within 0.25 m of a true footprint (the farthest is 0.165 m away), so it shows no phantom obstacles, and 81 % of the footprint outlines inside the window have an occupied cell within 0.25 m. In the dust-storm map only 39 % of the occupied cells inside the window lie that close, leaving about 7.8 m^2 of phantom obstacles. The panel titles were recomputed: 40.5 % and 82.4 % of the window known, ATE 0.062 m and 0.505 m, and one loop-closure event in each run.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers with its own code from the bag, the screen recording, a re-run of the autograder, the maps and the course pages; a re-verification confirmed the fixes.</p>
 </article></div>
         </div>
         </section>
@@ -1180,7 +1168,7 @@
         </section>
         <section class="dlv-section" aria-labelledby="ec-samwise">
         <h2 class="section-header" id="ec-samwise">Extra credit option B: SAMWISE</h2>
-        <p class="small">ECB0 to ECB30: SAMWISE text-driven segmentation on the robot, from installation to the advanced options. 31 rows: 27 Verified with notes, 4 Fallback.</p>
+        <p class="small">ECB0 to ECB30: SAMWISE text-driven segmentation on the robot, from installation to the advanced options. 31 rows: 30 Verified with notes, 1 Fallback.</p>
         <div class="row">
 <div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="verified_with_notes">
 <article class="dlv-card" id="row-ecb0" aria-labelledby="row-ecb0-name">
@@ -1290,25 +1278,24 @@
 <p class="dlv-caption">SAMWISE (YT-VOS checkpoint with the CME head, bf16, clips of 4 frames) against the simulator's own semantic labels on three camera paths of the Mars Thanksgiving world: the moving set (dynamic_D, 200 frames at 10 Hz, both turkeys moving), the parked set (static_S, same camera loop, turkeys parked) and the 900-frame orbit (hero_table, 30 fps). 11 object queries and one spatial query were registered before any inference. This strip: the moving set (dynamic_D). Cyan = SAMWISE mask, yellow outline = ground truth; each tile is the frame whose IoU is closest to that query's median (chosen by rule). Only 4 of 36 query and path pairs clear the handout's bar of mean IoU above 0.6: 'the turkey above the table' on all three paths (0.939, 0.878 and 0.800) and 'the big billboard sign' on the orbit (0.894). The Curiosity rover (0.432 to 0.551) and the spatial query 'the leftmost rover at the table' (0.580 on the parked set) come closest; 'the turkey under the table' peaks at a mean IoU of 0.081 and the three rocket queries at 0.006. For 'the small rover at the side of the table' and 'the rocket booster on landing legs', 59 % to 97 % of the masked pixels lie on the flying turkey (post hoc count), so these failures pick the wrong object rather than draw loose outlines.</p>
 <p class="dlv-check"><strong>How it was checked:</strong> Independent verifiers recomputed the numbers from the raw masks and labels with their own code; the last re-verification left one internal item, since closed.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="verified_with_notes">
 <article class="dlv-card" id="row-ecb12" aria-labelledby="row-ecb12-name">
-<div class="dlv-head"><span class="dlv-id">ECB12</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">ECB12</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-ecb12-name">B: real-time processing above 5 FPS</h3>
 <p class="dlv-points"><strong>Points:</strong> 3 (EB-T11 automated 3)</p>
-<div class="dlv-media"><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_ecb5_output_rates.png" width="1500" height="557" loading="lazy" decoding="async" alt="Card of the SAMWISE output topic rates in the 2-minute bag"></figure></div>
-<p class="dlv-reason"><strong>Reason:</strong> Partial: the outputs meet the grader's rate rule in the bag's simulation clock (9.60 Hz), but ran at 3.21 Hz in wall-clock time, below the 5 frames per second the handout asks for.</p>
-<p class="dlv-caption">Output rate by the autograder rule (messages over the first-to-last span): 9.60 Hz for /samwise/object_centroid in the bag's clock, which is the simulation clock (EB-T11: 3 of 3). The simulation ran at 0.336 of real time, so the outputs ran at 3.21 Hz in wall-clock time, set by the camera of the slowed simulation. The model's forward pass ran at a median 6.4 frames per second live; offline, with the GPU to itself, the model reached 8.81 frames per second end to end at 1024 x 1024.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the bag, the logs and the autograder output; a re-verification confirmed the fixes.</p>
+<div class="dlv-media"><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_ecb12_output_rate.png" width="1600" height="900" loading="lazy" decoding="async" alt="Bar chart of SAMWISE masks received in each of 30 two-second windows, median 8.0 Hz, above the 5 Hz pass line"></figure></div>
+<p class="dlv-caption">Measurement-only session (no RViz, no Gazebo GUI, no screen recording, no MoveIt), query 'the orange ball': SAMWISE published masks at a median of 8.0 Hz over 30 two-second windows of wall-clock time (472 masks in 60 s; camera frames arrived at a median 8.0 Hz; real-time factor 0.782). Pre-registered pass: median at least 5.0 Hz.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the raw run outputs with its own code, against the tests registered before the runs, and checked the videos; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="fallback">
 <article class="dlv-card" id="row-ecb13" aria-labelledby="row-ecb13-name">
 <div class="dlv-head"><span class="dlv-id">ECB13</span><span class="dlv-status st-fallback">Fallback</span></div>
 <h3 class="dlv-name" id="row-ecb13-name">B: temporal consistency</h3>
 <p class="dlv-points"><strong>Points:</strong> 3 (EB-M4.3 manual 3)</p>
-<div class="dlv-media"><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_ecb13_occlusion_poster.jpg" aria-label="Occlusion window under the table"><source src="../../images/cs498gc/a4_deliverables/a4_ecb13_occlusion.mp4" type="video/mp4">Occlusion window under the table</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 6.0 s, 0.3 MB.</figcaption></figure><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_ecb13_occlusion_strip.jpg" width="1600" height="1237" loading="lazy" decoding="async" alt="Strip of frames through the occlusion windows, zoomed on the region under the table"></figure></div>
-<p class="dlv-reason"><strong>Reason:</strong> Partial: SAMWISE never segmented the registered target, the running turkey, in the occlusion windows; consistency through an occlusion is shown only for the Curiosity rover.</p>
-<p class="dlv-caption">Temporal consistency through an occlusion, registered on 'the turkey under the table' while the running turkey passes behind the table legs and the empty chair: orbit frames 650-700 (30 fps, shown at 17 fps) and moving-set frames 180-199 (10 Hz). Red frames are occluded, with under 25 % of the turkey's median visible pixels: orbit frames 664-677 and moving-set frames 192-197. Negative result: SAMWISE never segmented the running turkey in these windows. The IoU is 0 on all 51 valid frames of the orbit window and all 18 of the moving-set window, so no mask could be kept through the occlusion (0 of 14 and 0 of 4 occluded frames) and there is nothing to re-acquire. The flying turkey, which SAMWISE does track, never drops below 25 % of its median visible pixels in these captures (0 frames on all three sets). The Curiosity rover, which SAMWISE also tracks (IoU 0.86 on the moving set and 0.84 on the parked set just before), is occluded by the same 25 % rule, hidden mostly by the table and partly by the Perseverance rover, on moving-set frames 47-80 and parked-set frames 46-80, at a nearly constant distance of 3.6 to 3.7 m (post hoc check, not the registered target). SAMWISE keeps it at an IoU of 0.5 or more on the first 8 occluded frames of the moving set (47-54) and on 13 of the first 14 occluded frames of the parked set (46-59, with a one-frame dip to 0.27 at frame 57), then loses it (IoU below 0.5 from frames 55 and 60) and is back at 0.5 or more only at frames 143 and 122. Strip: ten frames per window, zoomed on the region under the table.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> Independent verifiers recomputed the numbers from the raw masks and labels with their own code; the last re-verification left one internal item, since closed.</p>
+<div class="dlv-media"><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_ecb13_occlusion_poster.jpg" aria-label="The orange ball rolls behind a thin post: SAMWISE keeps its mask on the ball before the post and loses it after"><source src="../../images/cs498gc/a4_deliverables/a4_ecb13_occlusion.mp4" type="video/mp4">The orange ball rolls behind a thin post: SAMWISE keeps its mask on the ball before the post and loses it after</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 17.0 s, 0.2 MB.</figcaption></figure><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_ecb13_occlusion_strip.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Twelve frames around the occlusion: the mask box is on the orange ball until it passes behind the post, then stays on another object after the ball comes out"></figure></div>
+<p class="dlv-reason"><strong>Reason:</strong> The pre-registered acceptance did not pass: the mask was lost after the occlusion (after the ball came out from behind the post, SAMWISE was on it in 0.0 % of the next 30 outputs; the pre-registered pass needed at least 80 % within 5 frames).</p>
+<p class="dlv-caption">With the query 'the orange ball' and the robot still, the ball rolled at 0.25 m/s behind a 16 cm post 0.8 m in front of the camera and was fully hidden for 0.755 s of simulated time (8 SAMWISE outputs). Before the occlusion the mask box was on the ball in 100 % of 30 outputs; after the ball came out, SAMWISE did not settle back on the ball and was on it in 0.0 % of the next 30 outputs (pre-registered pass: within 5 frames and at least 80 %). While the ball was hidden: 0 outputs without a mask, 0 with the box on the hidden ball's position, 8 elsewhere. Ground truth is the ball's scripted path and an exact ray test against the post.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the raw run outputs with its own code, against the tests registered before the runs, and checked the videos; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="verified_with_notes">
 <article class="dlv-card" id="row-ecb14" aria-labelledby="row-ecb14-name">
@@ -1382,15 +1369,14 @@
 <p class="dlv-caption">The ball is released first and the query follows 1.1 s later, so the base does not start before the ball moves. The centroid's bearing sets the yaw rate and the median mask depth sets the forward speed that holds 1.0 m; the base stops while the ball is hidden behind the boulder and resumes when SAMWISE finds it again. Ground truth from the ball's release to 3 s after it stopped (37.2 to 79.1 s of simulation time): with the ball in view and a fresh detection, the centroid was on the ball in 190 of 198 samples of 0.1 s (96 %; 51 of 51 SAMWISE clips of 4 frames, judged on the newest centroid of each clip), and the camera to ball surface distance was inside 1.0 +/- 0.3 m in 62 % of the samples (median 0.93 m); over the 39.0 s ball path alone the share is 59 % (median 0.91 m). When the ball sits at the bottom edge of the image the HUD check reads 'ball out of view' because its centre projects below the frame. An earlier run that sent 'Follow the moving ball' while the ball was still at rest locked onto the rocket stand and is not shown.</p>
 <p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the task bags and logs and checked the videos; a re-verification confirmed the fixes.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="verified_with_notes">
 <article class="dlv-card" id="row-ecb22" aria-labelledby="row-ecb22-name">
-<div class="dlv-head"><span class="dlv-id">ECB22</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">ECB22</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-ecb22-name">B Task 3: custom query</h3>
 <p class="dlv-points"><strong>Points:</strong> Website 5; one third of EB-T17; HB: part of 'Task 3: Demonstration Scenarios (10 points)'</p>
-<div class="dlv-media"><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="1280" height="720" poster="../../images/cs498gc/a4_deliverables/a4_ecb19_task3_turkey_queries_poster.jpg" aria-label="Task 3: custom turkey queries"><source src="../../images/cs498gc/a4_deliverables/a4_ecb19_task3_turkey_queries.mp4" type="video/mp4">Task 3: custom turkey queries</video><figcaption class="dlv-meta">Web copy: 1280 x 720, 30 fps, 33.0 s, 0.8 MB.</figcaption></figure></div>
-<p class="dlv-reason"><strong>Reason:</strong> Partial: the custom query for the running turkey failed (0 of 44 detections on it); only the flying-turkey query succeeded.</p>
-<p class="dlv-caption">Husky parked about 2.5 m from the table, segmentation only. Query 1 'the turkey running under the table': the centroid landed on the running turkey in 0 of 44 detections; 42 landed on the flying turkey above the table, the larger and less hidden bird (the running turkey fits inside about 54 x 62 px of the 640 x 360 image and is partly hidden by a table leg and the bench in front of it). Query 2 'the turkey flying above the table': 81 of 81 detections on the flying turkey. The HUD check uses the projected ground-truth box of each bird with a 6 px margin.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the task bags and logs and checked the videos; a re-verification confirmed the fixes.</p>
+<div class="dlv-media"><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_ecb22_word_contrast_poster.jpg" aria-label="The query &#x27;the turkey above the table&#x27;, then &#x27;the Curiosity rover&#x27;: the mask moves from the flying turkey to the rover"><source src="../../images/cs498gc/a4_deliverables/a4_ecb22_word_contrast.mp4" type="video/mp4">The query 'the turkey above the table', then 'the Curiosity rover': the mask moves from the flying turkey to the rover</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 43.0 s, 0.6 MB.</figcaption></figure><figure class="dlv-fig"><img class="dlv-img" src="../../images/cs498gc/a4_deliverables/a4_ecb22_prescreen_pairs.png" width="1600" height="900" loading="lazy" decoding="async" alt="Table of the four registered query pairs scored offline on the Mars Thanksgiving captures; only the pair &#x27;the turkey above the table&#x27; and &#x27;the Curiosity rover&#x27; is eligible and is chosen for the live run"></figure></div>
+<p class="dlv-caption">A registered rule picked the query pair 'the turkey above the table' / 'the Curiosity rover' from a pre-screen on the Mars Thanksgiving captures (1 of 4 registered pairs eligible). Live in Gazebo, with the robot still, 'the turkey above the table' put the SAMWISE centroid on the flying turkey in 100 % of 48 detections (0.0 % on the Curiosity rover); 'the Curiosity rover' put it on the Curiosity rover in 98.0 % of 51 detections (2.0 % on the flying turkey). Pre-registered pass: at least 10 detections, at least 60 % on the target and at most 20 % on the other object, for each query.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the raw run outputs with its own code, against the tests registered before the runs, and checked the videos; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="verified_with_notes">
 <article class="dlv-card" id="row-ecb23" aria-labelledby="row-ecb23-name">
@@ -1410,15 +1396,14 @@
 <p class="dlv-caption">Action queries on the moving set (top, both turkeys moving) and on the parked control with the same camera loop (bottom), 10 Hz, one video per query from frame 0. 'the turkey flying in circles above the table' is resolved on all 200 moving frames in a row (IoU of 0.5 or more; mean 0.946) and 'the turkey that is flying' for 83 frames in a row (mean 0.758), but the parked control scores as high or higher (0.950 and 0.927), so the queries were resolved by appearance and place, not by motion. 'the turkey running under the table' and 'the turkey that is running' score 0.000 on both sets: 65 % and 96 % of their masked pixels on the moving set (87 % and 87 % on the parked set) lie on the flying turkey (post hoc count). Deviation from the pre-registration: the registered queries asked for a side-by-side clip (moving set left, parked set right); the clip stacks the two sets instead (moving top, parked bottom), with the four queries as the columns of one 1920 x 1080 frame. Only the layout differs: the four queries, the two sets and the IoU computation are the registered ones.</p>
 <p class="dlv-check"><strong>How it was checked:</strong> Independent verifiers recomputed the numbers from the raw masks and labels with their own code; the last re-verification left one internal item, since closed.</p>
 </article></div>
-<div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="fallback">
+<div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="verified_with_notes">
 <article class="dlv-card" id="row-ecb25" aria-labelledby="row-ecb25-name">
-<div class="dlv-head"><span class="dlv-id">ECB25</span><span class="dlv-status st-fallback">Fallback</span></div>
+<div class="dlv-head"><span class="dlv-id">ECB25</span><span class="dlv-status st-notes">Verified with notes</span></div>
 <h3 class="dlv-name" id="row-ecb25-name">B advanced: MoveIt2 autonomous pick-and-place</h3>
 <p class="dlv-points"><strong>Points:</strong> +25 (website)</p>
-<div class="dlv-media"><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="1280" height="720" poster="../../images/cs498gc/a4_deliverables/a4_ecb19_task1_red_cube_poster.jpg" aria-label="Task 1: pick up the red cube"><source src="../../images/cs498gc/a4_deliverables/a4_ecb19_task1_red_cube.mp4" type="video/mp4">Task 1: pick up the red cube</video><figcaption class="dlv-meta">Web copy: 1280 x 720, 30 fps, 23.3 s, 0.6 MB.</figcaption></figure></div>
-<p class="dlv-reason"><strong>Reason:</strong> Partial: the pick and place ran end to end from the query, but the cube went to a fallback spot because the marked ring had no IK solution.</p>
-<p class="dlv-caption">End to end from the query: SAMWISE mask, 3D grasp box from the mask pixels with depth (2.6 mm from the true cube centre), MoveIt 2 plans (sampling-based planner plus straight-line paths), friction grasp, place on a fallback spot (1.8 cm from its centre; the marked ring had no IK solution) and gripper open. Same run as Task 1.</p>
-<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the task bags and logs and checked the videos; a re-verification confirmed the fixes.</p>
+<div class="dlv-media"><figure class="dlv-fig"><video class="dlv-video" controls muted playsinline preload="none" width="960" height="540" poster="../../images/cs498gc/a4_deliverables/a4_ecb25_ring_pick_place_poster.jpg" aria-label="SAMWISE finds the red cube, and MoveIt 2 picks it and places it on the marked ring"><source src="../../images/cs498gc/a4_deliverables/a4_ecb25_ring_pick_place.mp4" type="video/mp4">SAMWISE finds the red cube, and MoveIt 2 picks it and places it on the marked ring</video><figcaption class="dlv-meta">Web copy: 960 x 540, 30 fps, 36.4 s, 0.5 MB.</figcaption></figure></div>
+<p class="dlv-caption">SAMWISE segmented the red cube from the query 'Pick up the red cube' and its mask gave the grasp box (box centre 0.3 cm from the ground-truth cube centre). MoveIt 2 ran 11 arm motions and plan checks, all with collision checking on. The cube was lifted 7.8 cm, carried with the tool turned 30 degrees about the vertical axis and released on the marked ring: its centre ended 1.4 cm from the ring centre (ring radius 4.5 cm), the fingers opened to 0.106 rad and the cube moved 0.0 mm in the last second. The ring centre was registered before the run; the place did not use the mask. Up to the lift the mask stayed on the cube (median mask depth 0.319 m); at 87.8 s of simulated time, while the cube was carried to the ring, it moved to a distant object (median depth 3.337 m) and stayed there to the end of the clip.</p>
+<p class="dlv-check"><strong>How it was checked:</strong> An independent verifier recomputed the numbers from the raw run outputs with its own code, against the tests registered before the runs, and checked the videos; a re-verification confirmed the fixes.</p>
 </article></div>
 <div class="col-12 col-lg-6 dlv-col" data-section="samwise" data-status="verified_with_notes">
 <article class="dlv-card" id="row-ecb26" aria-labelledby="row-ecb26-name">

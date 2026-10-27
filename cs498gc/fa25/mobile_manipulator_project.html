@@ -618,7 +618,38 @@ ros2 launch mars_mission mission_control.launch.py
 
             <!-- Demo Videos Tab -->
             <div class="tab-pane fade" id="demos" role="tabpanel">
-                <h2 class="text-center mb-4">📚 Resources</h2>
+                <h2 class="text-center mb-4">🎥 Demo Videos & Resources</h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-card">
+                            <h3>Reference Solution</h3>
+                            <p>Reference runs of Assignment 4 in Gazebo Harmonic (ROS 2 Jazzy), recorded by the course staff, not student submissions.</p>
+                            <a href="slaming_mars.html#ta-demos" class="btn-mars w-100 text-center">
+                                <i class="fas fa-play"></i> Watch the Reference Solution
+                            </a>
+                            <ul class="mt-3">
+                                <li>Part A: Husky + UR3 drive, arm and gripper</li>
+                                <li>Part B: waypoint mission and exploration loop in the Mars world with EKF sensor fusion and SLAM Toolbox</li>
+                                <li>Part B: SLAM Toolbox map growing and the saved occupancy map</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-card">
+                            <h3>🤖 Husky Robot Features</h3>
+                            <p>The Husky + UR3 + gripper robot used in the reference solution</p>
+                            <a href="slaming_mars.html#ta-demos" class="btn-mars w-100 text-center">
+                                <i class="fas fa-play"></i> Reference Solution (Husky + UR3)
+                            </a>
+                            <ul class="mt-3">
+                                <li>Clearpath Husky A200 base + UR3 arm + RH-P12-RN gripper</li>
+                                <li>Sensors in the TA model: ZED-2 stereo pair + depth camera, Hokuyo-class <code>gpu_lidar</code> (810 rays, 270 deg field of view, 25 m range)</li>
+                                <li>Gripper commands: see Gripper Control Commands below</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="feature-card mt-4">
                     <h3>📚 Assignment Resources</h3>

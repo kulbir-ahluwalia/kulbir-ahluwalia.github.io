@@ -55,7 +55,7 @@
               </li>
               
               <li class="nav-item">
-                        <a class="nav-link" href="slaming_mars.html">🚀 SLAM-ing Mars 🔴</a>
+                        <a class="nav-link" href="slaming_mars.html">SLAM-ing Mars</a>
                     </li>
               <li class="nav-item active">
                 <a class="nav-link" href="setup.html">Setup</a>
@@ -410,6 +410,20 @@ ros2 doctor --report
                         
                         <p class="mt-3"><strong>Reference Implementation:</strong> <a href="https://github.com/QualiaT/husky_ur3_simulator/tree/noetic-devel">ROS1 to ROS2 adaptation</a></p>
                         <p><strong>Husky+UR3 Repository:</strong> <a href="https://github.com/QualiaT/husky_ur3_simulator/tree/noetic-devel">Husky + UR3 Mobile Manipulator Simulator</a></p>
+
+                        <h6 class="mt-3">Reference solution (ROS 2 Jazzy + Gazebo Harmonic):</h6>
+                        <p class="mb-2"><span class="badge badge-warning">Recorded by the course staff, not student submissions</span> <a href="slaming_mars.html#ta-demos">More on the SLAM-ing Mars page</a></p>
+                        <div class="row">
+                          <div class="col-6">
+                            <a href="../../images/cs498gc/a4_ta_demos/a4_part1_husky_ur3_teleop_gripper.mp4"><img src="../../images/cs498gc/a4_ta_demos/a4_part1_husky_ur3_teleop_gripper.gif" alt="Reference solution, Part A: the Husky and UR3 drive forward, then turn in place, in Gazebo Harmonic" loading="lazy" style="max-width:100%; border-radius:6px;"></a>
+                            <small class="d-block text-muted">Part A: Husky + UR3 scripted base drive, forward then an in-place turn (sped up)</small>
+                          </div>
+                          <div class="col-6">
+                            <a href="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.mp4"><img src="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.gif" alt="Reference solution, Part B: the SLAM Toolbox occupancy grid grows from the first scan to the final map" loading="lazy" style="max-width:100%; border-radius:6px;"></a>
+                            <small class="d-block text-muted">Part B: SLAM Toolbox occupancy map growing (rendered from the run's rosbag)</small>
+                          </div>
+                        </div>
+                        <p class="small mt-2 mb-0">All TA reference runs, with captions and key numbers: <a href="slaming_mars.html#ta-demos">SLAM-ing Mars page</a>.</p>
                       </div>
                     </div>
                   </div>

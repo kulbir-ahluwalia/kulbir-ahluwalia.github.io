@@ -39,13 +39,13 @@ def update_navigation(file_path):
         content = re.sub(pattern1, '', content)
 
         # Replace the Mars SLAM link with the new SLAM-ing Mars link
-        replacement = '<li class="nav-item">\n                        <a class="nav-link" href="slaming_mars.html">🚀 SLAM-ing Mars 🔴</a>\n                    </li>'
+        replacement = '<li class="nav-item">\n                        <a class="nav-link" href="slaming_mars.html">SLAM-ing Mars</a>\n                    </li>'
         content = re.sub(pattern2, replacement, content)
 
         # If only Mars Project exists but not Mars SLAM, add the new link after presentations
         if has_mars_project and not has_mars_slam:
             presentations_pattern = r'(<li class="nav-item[^"]*">\s*<a class="nav-link[^"]*" href="presentations.html">[^<]*</a>\s*</li>)'
-            content = re.sub(presentations_pattern, r'\1\n                    <li class="nav-item">\n                        <a class="nav-link" href="slaming_mars.html">🚀 SLAM-ing Mars 🔴</a>\n                    </li>', content)
+            content = re.sub(presentations_pattern, r'\1\n                    <li class="nav-item">\n                        <a class="nav-link" href="slaming_mars.html">SLAM-ing Mars</a>\n                    </li>', content)
 
     # Save the updated content
     with open(file_path, 'w', encoding='utf-8') as f:

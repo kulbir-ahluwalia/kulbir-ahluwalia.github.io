@@ -289,13 +289,12 @@
               <h4>For Coding Exercise 1 (ARM64 Users)</h4>
               <ul>
                 <li>Option 1: Use pre-recorded bag files provided on course website</li>
-                <li>Option 2: Create mock joint state publishers (sample code in Piazza)</li>
+                <li>Option 2: Create mock joint state publishers (sample code on Campuswire)</li>
                 <li>Option 3: Use campus lab computers (x86_64) remotely via SSH</li>
-                <li>Option 4: Pair program with students who have x86_64 hardware</li>
               </ul>
 
               <div class="alert alert-success">
-                <strong>Instructor Note:</strong> For easiest setup, use a 2-year-old Windows laptop with NVIDIA GPU. Alternative evaluation methods available for ARM64 users - contact TAs during office hours.
+                <strong>Note:</strong> The simplest setup is an x86_64 computer with an NVIDIA GPU. ARM64 users can ask the TA in office hours about alternative evaluation methods.
               </div>
             </div>
           </div>
@@ -329,18 +328,18 @@ ros2 doctor --report
           <h2 class="text-danger mb-4">⚠️ Critical Debugging Guide for Coding Exercise 1</h2>
 
           <div class="alert alert-danger">
-            <h4>📍 The Three Fatal Errors (95% of Student Failures)</h4>
+            <h4>📍 The Three Most Common Errors</h4>
             <p>Before submitting your code, check for these common mistakes that cause immediate failure:</p>
           </div>
 
           <div class="card mb-4 border-danger">
             <div class="card-header bg-danger text-white">
-              <h4>Fatal Error #1: Using math.radians() on Gyro Data</h4>
+              <h4>Common Error #1: Using math.radians() on Gyro Data</h4>
             </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
-                  <h5 class="text-danger">❌ WRONG (Instant Failure)</h5>
+                  <h5 class="text-danger">❌ WRONG</h5>
                   <pre class="bg-dark text-light p-2 rounded"><code class="python">def callback_Gy(self, msg):
     self.gyro_yaw = msg.data
 
@@ -366,7 +365,7 @@ def timer_callback(self):
 
           <div class="card mb-4 border-danger">
             <div class="card-header bg-danger text-white">
-              <h4>Fatal Error #2: Wrong Update Order</h4>
+              <h4>Common Error #2: Wrong Update Order</h4>
             </div>
             <div class="card-body">
               <div class="row">
@@ -393,7 +392,7 @@ self.y += dt * v * math.sin(self.theta)</code></pre>
 
           <div class="card mb-4 border-danger">
             <div class="card-header bg-danger text-white">
-              <h4>Fatal Error #3: GPS Addition Instead of Replacement (Part 2)</h4>
+              <h4>Common Error #3: GPS Addition Instead of Replacement (Part 2)</h4>
             </div>
             <div class="card-body">
               <div class="row">
@@ -485,8 +484,8 @@ echo "Launched all terminals for Coding Exercise 1!"</code></pre>
           <div class="alert alert-info">
             <h4>Assignment 4 Overview</h4>
             <ul>
-              <li><strong>Part A (25 points):</strong> Released Sept 5, Due Nov 21 - Deploy and teleoperate Husky + UR3 in Gazebo</li>
-              <li><strong>Part B (75 points):</strong> Released Nov 24, Due Dec 4 - Implement SLAM, sensor fusion, and path planning</li>
+              <li><strong>Part A (25 points):</strong> Released Sept 3, Due Nov 21 - Deploy and teleoperate Husky + UR3 in Gazebo</li>
+              <li><strong>Part B (75 points):</strong> Opened Oct 29, Due Dec 9 - Implement SLAM, sensor fusion, and path planning</li>
               <li><strong>System:</strong> 13-DOF mobile manipulator (Husky base + UR3 arm + parallel gripper)</li>
             </ul>
           </div>
@@ -562,7 +561,7 @@ echo "Launched all terminals for Coding Exercise 1!"</code></pre>
           <h2 class="text-primary mb-4" id="ros2-control">🎮 ROS2 Control Tutorial - Essential for Assignment 4</h2>
 
           <div class="alert alert-success">
-            <strong>Credit:</strong> This excellent resource was found by a Fall 2025 student.
+            <strong>Credit:</strong> suggested by a Fall 2025 student.
           </div>
 
           <div class="card mb-4">
@@ -646,7 +645,7 @@ ros2 topic pub /gripper_controller/command std_msgs/msg/Float64 "{data: 0.7}" --
 
     base_controller:
       type: diff_drive_controller/DiffDriveController
-      command_interface: "velocity"  # CRITICAL LINE often missing!
+      command_interface: "velocity"  # required by the diff drive controller
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -688,10 +687,10 @@ arm_controller:
             </div>
             <div class="card-body">
               <ul>
-                <li>Realistic Mars terrain with NASA/JPL resources</li>
+                <li>Mars-themed terrain with rock obstacles</li>
                 <li>Custom Mars world for Husky+UR3 navigation</li>
                 <li>SLAM challenges with Martian obstacles</li>
-                <li>Optional: Fun race track on Mars surface!</li>
+                <li>Optional: a race-track challenge on the Mars surface</li>
                 <li>Inspired by MASt3R-SLAM (CVPR 2025)</li>
               </ul>
 
@@ -743,7 +742,7 @@ arm_controller:
           <h2 class="text-primary mb-4">📚 Git & GitHub Reference Guide</h2>
 
           <div class="alert alert-info">
-            <strong>Essential for CS498GC:</strong> All assignments require GitHub submission. Master these commands for efficient version control!
+            <strong>Git in CS498GC:</strong> Git is used throughout the course for version control; assignments are submitted on Gradescope.
           </div>
 
           <div class="card mb-4">
@@ -818,7 +817,7 @@ git push origin v1.0
               <li><strong>Don't commit build artifacts</strong> (build/, install/, log/ folders)</li>
               <li><strong>Always use .gitignore</strong> for ROS2 projects</li>
               <li><strong>Never force push</strong> to main/master branch unless absolutely necessary</li>
-              <li><strong>Write clear commit messages</strong> - future you will thank present you!</li>
+              <li><strong>Write clear commit messages</strong></li>
             </ul>
           </div>
 

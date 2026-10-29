@@ -224,7 +224,3 @@ global_costmap:
 - **Campuswire**: Post with tag `#assignment4-part2`
 - **Email**: ksa5@illinois.edu
 - **Office Hours**: See schedule above
-
----
-
-*Good luck with your SLAM implementation! Remember: Start early, test often, and don't hesitate to ask for help.*

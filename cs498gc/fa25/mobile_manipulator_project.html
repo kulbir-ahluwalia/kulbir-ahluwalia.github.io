@@ -315,8 +315,8 @@
             <h4><i class="fas fa-exclamation-triangle"></i> Important Deadlines (Fall 2025)</h4>
             <ul class="mb-0">
                 <li><strong>Part 1:</strong> November 21, 2025 @ 11:00 PM (25 points)</li>
-                <li><strong>Part 2:</strong> December 9, 2025 @ 11:00 PM (75 points). <em>Made optional extra credit on December 7, 2025.</em> <em>(original Fall 2025 figures, superseded by rubric v11 of December 8, 2025: optional extra credit with up to +35 bonus points; the two v11 builds list 175 points due Dec 15 and 75 points due Dec 10)</em></li>
-                <li><strong>Early Submission Bonus (Part 1):</strong> +20 points if Part 1 is submitted before November 9, 2025; +10 points if Part 1 is submitted before November 14, 2025 <em>(as posted in the November 2025 extra-credit guide; the first rubric v11 build (175 points) listed early-submission tiers of Gold +25 before November 7 and Silver +20 before November 9)</em></li>
+                <li><strong>Part 2:</strong> December 9, 2025 @ 11:00 PM (75 points). <em>Made optional extra credit on December 7, 2025; rubric v11 offers up to +35 bonus points.</em></li>
+                <li><strong>Early Submission Bonus (Part 1):</strong> +20 points if Part 1 is submitted before November 9, 2025; +10 points if Part 1 is submitted before November 14, 2025 (November 2025 extra-credit guide)</li>
             </ul>
         </div>
 
@@ -390,8 +390,6 @@
                                 <li>Mars-themed Gazebo world</li>
                                 <li>Rock-like obstacles for navigation and SLAM</li>
                             </ul>
-                            <span class="handout-label">Fall 2025 handout text</span>
-                            <p class="small mb-0">The Fall 2025 handout also described Jezero Crater terrain from NASA/JPL elevation data and a day/night cycle with dust effects. Those terrain models are not in any repository linked from these pages.</p>
                         </div>
                     </div>
                 </div>
@@ -437,121 +435,41 @@
                     <div class="resource-grid">
                         <div class="resource-item">
                             <h4>🏜️ Dual-Robot Mapping</h4>
-                            <p>Mapping launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
+                            <p>Mapping launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros), a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>. <em>The final rubric (v11) recommends the Mars Thanksgiving World instead.</em></p>
                             <code>ros2 launch mars_robots mapping.launch.py</code>
                         </div>
                         <div class="resource-item">
                             <h4>🏕️ Dual-Robot Navigation</h4>
-                            <p>Navigation launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
+                            <p>Navigation launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros), a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>. <em>The final rubric (v11) recommends the Mars Thanksgiving World instead.</em></p>
                             <code>ros2 launch mars_robots navigation.launch.py</code>
                         </div>
                     </div>
                 </div>
 
                 <div class="feature-card mt-4">
-                    <h3>Installing Mars Terrain Packages</h3>
-                    <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                    <p class="small mb-2">GazeboMarsRover2 is a ROS 1 (catkin) Mars rover package for Gazebo Classic (package <code>mars_rover_2</code>), last updated May 2021, with a simple Mars terrain world (<code>urdf/MarsTerrain.world</code>). It has no <code>mars_gazebo_terrains</code> package and no <code>download_textures.sh</code> script. Its README links a HiRISE-derived terrain mesh that is hosted outside the repository, so the ROS 2 steps after the clone fail.</p>
-                    <div class="code-block">
-                        <code>
-# Clone the Mars worlds repository<br>
-cd ~/ros2_ws/src<br>
-git clone https://github.com/LRCJ/GazeboMarsRover2.git<br>
-# (its README links a HiRISE-derived terrain mesh hosted outside the repository)<br>
-<br>
-# Install dependencies<br>
-sudo apt-get update<br>
-sudo apt-get install ros-${ROS_DISTRO}-gazebo-ros-pkgs<br>
-sudo apt-get install ros-${ROS_DISTRO}-gazebo-msgs<br>
-<br>
-# Download Mars texture packs (2GB)<br>
-cd mars_gazebo_terrains<br>
-./scripts/download_textures.sh<br>
-<br>
-# Build the workspace<br>
-cd ~/ros2_ws<br>
-colcon build --packages-select mars_gazebo_terrains<br>
-source install/setup.bash
-                        </code>
-                    </div>
-                </div>
-
-                <div class="feature-card mt-4">
-                    <h3>Custom World Configuration</h3>
-                    <p>Create your own Mars exploration scenario by modifying world files:</p>
-                    <span class="handout-label">Fall 2025 handout text (not a runnable example)</span>
-                    <p class="small mb-0">The models this world includes (<code>mars_sky</code>, <code>jezero_crater_terrain</code>, <code>mars_rock_sample</code>) are not in any of the repositories linked from these pages.</p>
-                    <div class="code-block">
-                        <code style="white-space: pre-wrap; display: block;">&lt;?xml version="1.0"?&gt;
-&lt;sdf version="1.6"&gt;
-  &lt;world name="mars_exploration"&gt;
-    &lt;!-- Mars sky and lighting --&gt;
-    &lt;include&gt;
-      &lt;uri&gt;model://mars_sky&lt;/uri&gt;
-    &lt;/include&gt;
-    
-    &lt;!-- Jezero Crater terrain --&gt;
-    &lt;include&gt;
-      &lt;uri&gt;model://jezero_crater_terrain&lt;/uri&gt;
-      &lt;pose&gt;0 0 0 0 0 0&lt;/pose&gt;
-    &lt;/include&gt;
-    
-    &lt;!-- Add rock samples for collection --&gt;
-    &lt;include&gt;
-      &lt;uri&gt;model://mars_rock_sample&lt;/uri&gt;
-      &lt;pose&gt;5 5 0.5 0 0 0&lt;/pose&gt;
-      &lt;name&gt;sample_01&lt;/name&gt;
-    &lt;/include&gt;
-  &lt;/world&gt;
-&lt;/sdf&gt;</code>
-                    </div>
+                    <h3>Installing the Mars Worlds</h3>
+                    <p class="mb-0">Setup instructions for the Mars worlds are linked from the Mars World Setup section of the <a href="setup.html" style="color: var(--mars-orange);">Setup page</a>.</p>
                 </div>
             </div>
 
             <!-- Setup Guide Tab -->
             <div class="tab-pane fade" id="setup" role="tabpanel">
-                <h2 class="text-center mb-4">⚙️ Complete Setup Guide</h2>
+                <h2 class="text-center mb-4">⚙️ Setup Guide</h2>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h4>Step 1: Environment Setup</h4>
-                            <p>Configure ROS2 Jazzy/Humble with Gazebo Harmonic</p>
-                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                            <p class="small mb-0">There is no <code>husky_ur3_simulation</code> package in the repositories linked from these pages.</p>
-                            <div class="code-block">
-                                <code>
-source /opt/ros/jazzy/setup.bash<br>
-cd ~/ros2_ws<br>
-colcon build --packages-select husky_ur3_simulation
-                                </code>
-                            </div>
+                            <p class="mb-0">Set up ROS 2 and Gazebo by following the <a href="setup.html">Setup page</a>, then clone the <a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator" target="_blank">Husky + UR3 simulator repository</a>.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4>Step 2: Launch Simulation</h4>
-                            <p>Start the complete Mars exploration environment</p>
-                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                            <p class="small mb-0">There is no <code>husky_ur3_mars</code> package in the repositories linked from these pages.</p>
+                            <h4>Step 2: Teleoperation</h4>
+                            <p>Teleoperate the robot from the keyboard</p>
                             <div class="code-block">
                                 <code>
-ros2 launch husky_ur3_mars mars_exploration.launch.py
-                                </code>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h4>Step 3: Controllers</h4>
-                            <p>Initialize robot controllers and teleoperation</p>
-                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                            <p class="small mb-0">There is no <code>husky_ur3_simulation</code> package in the repositories linked from these pages.</p>
-                            <div class="code-block">
-                                <code>
-ros2 launch husky_ur3_simulation controllers.launch.py<br>
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
                                 </code>
                             </div>
@@ -560,15 +478,8 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4>Step 4: Mission Control</h4>
-                            <p>Start autonomous navigation and manipulation</p>
-                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                            <p class="small mb-0">There is no <code>mars_mission</code> package in the repositories linked from these pages.</p>
-                            <div class="code-block">
-                                <code>
-ros2 launch mars_mission mission_control.launch.py
-                                </code>
-                            </div>
+                            <h4>Step 3: Reference Solution</h4>
+                            <p class="mb-0">Recordings of the complete reference runs, including the Part B waypoint mission in the Mars world, are on the <a href="slaming_mars.html#ta-demos">reference solution</a> page.</p>
                         </div>
                     </div>
                 </div>
@@ -663,7 +574,7 @@ ros2 launch mars_mission mission_control.launch.py
                         </div>
                         <div class="resource-item">
                             <h4>🔧 Bash Scripts</h4>
-                            <p>Automated launch scripts for 8 terminal setup</p>
+                            <p>Example launch script for an 8-terminal setup</p>
                             <a href="/files/cs498gc/fa25/assignments/bash_scripts/example_bash_script_for_consistent_ros_launch.sh" class="btn-mars btn-sm">
                                 Download Script
                             </a>
@@ -680,7 +591,6 @@ ros2 launch mars_mission mission_control.launch.py
 
                 <div class="feature-card mt-4">
                     <h3>🎮 Gripper Control Commands</h3>
-                    <span class="handout-label">Fall 2025 handout text</span>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Open Gripper</h4>
@@ -710,14 +620,14 @@ ros2 launch mars_mission mission_control.launch.py
 
 
                 <div class="feature-card mt-4">
-                    <h3>🚀 Challenge Yourself!</h3>
+                    <h3>🚀 Challenge Yourself</h3>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Beginner Challenges</h4>
                             <ul>
                                 <li>Navigate to 3 waypoints autonomously</li>
                                 <li>Pick up and place a single rock sample</li>
-                                <li>Create a 2D map of the crater</li>
+                                <li>Create a 2D map of the Mars world</li>
                             </ul>
                         </div>
                         <div class="col-md-6">

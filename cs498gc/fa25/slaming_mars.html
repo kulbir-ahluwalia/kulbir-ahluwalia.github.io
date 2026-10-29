@@ -596,7 +596,7 @@
             <h1 class="hero-title">SLAM-ing Mars</h1>
             <p class="hero-subtitle">Mobile Manipulator Exploration &amp; SLAM Challenge | CS 498 GC Fall 2025</p>
             <div class="alert-info-mars" id="fall-2025-archive">
-                <strong>Fall 2025 archive.</strong> This page is the record of CS 498 GC Assignment 4 (Fall 2025). Part B became optional extra credit on December 7, 2025; rubric v11 (December 8, 2025) offers up to +35 bonus points and recommends the Mars Thanksgiving world. The instructions below are kept as they were announced, together with the <a href="#ta-demos">reference solution</a>.
+                <strong>Fall 2025 archive.</strong> This page is the record of CS 498 GC Assignment 4 (Fall 2025). Part B became optional extra credit on December 7, 2025; rubric v11 (December 8, 2025) offers up to +35 bonus points and recommends the Mars Thanksgiving world. The Fall 2025 instructions follow, together with the <a href="#ta-demos">reference solution</a>.
             </div>
             <div class="alert-warning-mars">
                 <strong>Assignment 4 guide (Fall 2025).</strong> Husky + UR3 + Robotis gripper on Mars
@@ -973,9 +973,9 @@
             <h4><i class="fas fa-rocket"></i> Quick Start</h4>
             <p class="mb-2">Fall 2025 quick start in 3 steps:</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <span class="badge bg-primary fs-6 p-2">1️⃣ Clone Husky UR3</span>
-                <span class="badge bg-primary fs-6 p-2">2️⃣ Install Mars Worlds</span>
-                <span class="badge bg-primary fs-6 p-2">3️⃣ Launch Simulation</span>
+                <span class="badge bg-primary fs-6 p-2">1. Clone Husky UR3</span>
+                <span class="badge bg-primary fs-6 p-2">2. Install Mars Worlds</span>
+                <span class="badge bg-primary fs-6 p-2">3. Launch Simulation</span>
             </div>
         </div>
 
@@ -1055,8 +1055,6 @@
                                 <li><strong>Mars gravity:</strong> about 38% of Earth's (3.711 m/s&sup2; in <code>mars_robots/worlds/mars.world</code> of the linked dual-robot SLAM explorer repo)</li>
                                 <li><strong>Obstacles:</strong> one box-shaped hill and one crater model in that world</li>
                             </ul>
-                            <span class="handout-label">Fall 2025 handout text</span>
-                            <p class="small mb-0">The Fall 2025 handout also listed dust storms, uneven terrain and NASA rover data. None of these are in the linked worlds.</p>
                         </div>
                     </div>
                 </div>
@@ -1104,23 +1102,15 @@
 
                     <div class="resource-grid">
                         <div class="resource-item">
-                            <h4>🏔️ Jezero Crater</h4>
-                            <p>Ancient river delta with diverse geological features. Perfect for navigation challenges.</p>
-                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                            <div class="code-block">
-                                <code>ros2 launch mars_worlds jezero_crater.launch.py</code>
-                            </div>
-                        </div>
-                        <div class="resource-item">
                             <h4>Dual-Robot Mapping</h4>
-                            <p>Mapping launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
+                            <p>Mapping launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>The final rubric (v11) recommends the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
                             <div class="code-block">
                                 <code>ros2 launch mars_robots mapping.launch.py</code>
                             </div>
                         </div>
                         <div class="resource-item">
                             <h4>Dual-Robot Navigation</h4>
-                            <p>Navigation launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>Not recommended in the final rubric (v11): reported missing mesh paths; use the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
+                            <p>Navigation launch from the Mars worlds + dual-robot SLAM explorer repo (Gazebo Classic via gazebo_ros). <em>The final rubric (v11) recommends the Mars Thanksgiving World instead. The repo is a fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>.</em></p>
                             <div class="code-block">
                                 <code>ros2 launch mars_robots navigation.launch.py</code>
                             </div>
@@ -1129,15 +1119,12 @@
                 </div>
 
                 <div class="feature-card mt-4">
-                    <h3>Installing Mars Terrain Packages</h3>
+                    <h3>Installing the Mars Worlds</h3>
                     <div class="code-block">
                         <code># Clone the Mars worlds + dual-robot SLAM explorer repository
-# (fork of itsyashk/ros2-dual-robot-slam-explorer; rubric v11 marks it not recommended
-#  because of missing mesh paths - use the Mars Thanksgiving World instead)
+# (fork of itsyashk/ros2-dual-robot-slam-explorer; rubric v11 recommends the Mars Thanksgiving World instead)
 cd ~/ros2_ws/src
 git clone https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer.git
-# GazeboMarsRover2 is a ROS 1 (catkin) package: colcon under ROS 2 does not build it
-git clone https://github.com/LRCJ/GazeboMarsRover2.git
 
 # Install dependencies
 sudo apt-get update
@@ -1147,37 +1134,6 @@ sudo apt install ros-${ROS_DISTRO}-ros-gz
 cd ~/ros2_ws
 colcon build
 source install/setup.bash</code>
-                    </div>
-                </div>
-
-                <div class="feature-card mt-4">
-                    <h3>Custom World Configuration</h3>
-                    <p>Create your own Mars exploration scenario by modifying world files:</p>
-                    <span class="handout-label">Fall 2025 handout text (not a runnable example)</span>
-                    <p class="small mb-0">The models this world includes (<code>mars_sky</code>, <code>jezero_crater_terrain</code>, <code>mars_rock_sample</code>) are not in any of the repositories linked on this page.</p>
-                    <div class="code-block">
-                        <code>&lt;?xml version="1.0"?&gt;
-&lt;sdf version="1.6"&gt;
-  &lt;world name="mars_exploration"&gt;
-    &lt;!-- Mars sky and lighting --&gt;
-    &lt;include&gt;
-      &lt;uri&gt;model://mars_sky&lt;/uri&gt;
-    &lt;/include&gt;
-
-    &lt;!-- Jezero Crater terrain --&gt;
-    &lt;include&gt;
-      &lt;uri&gt;model://jezero_crater_terrain&lt;/uri&gt;
-      &lt;pose&gt;0 0 0 0 0 0&lt;/pose&gt;
-    &lt;/include&gt;
-
-    &lt;!-- Add rock samples for collection --&gt;
-    &lt;include&gt;
-      &lt;uri&gt;model://mars_rock_sample&lt;/uri&gt;
-      &lt;pose&gt;5 5 0.5 0 0 0&lt;/pose&gt;
-      &lt;name&gt;sample_01&lt;/name&gt;
-    &lt;/include&gt;
-  &lt;/world&gt;
-&lt;/sdf&gt;</code>
                     </div>
                 </div>
             </div>
@@ -1214,10 +1170,11 @@ mkdir -p ~/assignment4_ws/src && cd ~/assignment4_ws</code>
                             <div class="code-block">
                                 <code>cd ~/assignment4_ws/src
 git clone https://github.com/kulbir-ahluwalia/husky_ur3_simulator.git
-# optional, not recommended in rubric v11 (missing meshes; fork of itsyashk/ros2-dual-robot-slam-explorer)
+# optional: Mars worlds + dual-robot SLAM explorer (fork of itsyashk/ros2-dual-robot-slam-explorer);
+# rubric v11 recommends the Mars Thanksgiving World instead
 git clone https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer.git</code>
                             </div>
-                            <p class="small mb-0"><code>husky_ur3_simulator</code> is the ROS 1 Noetic reference (branch <code>noetic-devel</code>): it holds catkin packages with ROS 1 launch files, not ROS 2 packages.</p>
+                            <p class="small mb-0"><code>husky_ur3_simulator</code> is the ROS 1 Noetic course reference (branch <code>noetic-devel</code>).</p>
                         </div>
                     </div>
 
@@ -1248,18 +1205,10 @@ source install/setup.bash</code>
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4>Step 5: Launch Mars Environment</h4>
-                            <p>Start the complete simulation</p>
-                            <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
+                            <h4>Step 5: Launch and Drive</h4>
+                            <p>Launch a Mars world (see the Mars Environments tab), then drive the robot from the keyboard (optional).</p>
                             <div class="code-block">
-                                <code># Launch Mars world with Husky robot
-ros2 launch mars_gazebo_worlds mars_husky_slam.launch.py
-
-# In a new terminal, launch SLAM
-ros2 launch mars_gazebo_worlds mars_slam.launch.py
-
-# Start teleoperation (optional)
-ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
+                                <code>ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
                             </div>
                         </div>
                     </div>
@@ -1272,7 +1221,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
                         <code>base_controller:
   ros__parameters:
     type: diff_drive_controller/DiffDriveController
-    command_interface: "velocity"  # Critical for movement!
+    command_interface: "velocity"  # needed for velocity commands
     left_wheel_names: ["front_left_wheel", "rear_left_wheel"]
     right_wheel_names: ["front_right_wheel", "rear_right_wheel"]</code>
                     </div>
@@ -1286,21 +1235,15 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard</code>
                 <div class="feature-card" id="part-b-rubric">
                     <i class="fas fa-tasks feature-icon"></i>
                     <h3>Assignment 4 Part B: Mars SLAM Challenge (75 points)</h3>
-                    <p>Part B covered sensor fusion (EKF), path planning with obstacle avoidance, 2D SLAM, full-system integration, and a technical report. The Fall 2025 pages listed two different per-item point splits for this part and no rubric file from that time survives, so only the Gradescope total is given here.</p>
+                    <p>Part B covered sensor fusion (EKF), path planning with obstacle avoidance, 2D SLAM, full-system integration, and a technical report.</p>
                     <p class="mb-0"><strong>Total: 75 points</strong> (Gradescope), plus the Mars Challenge bonus (+10 points) below. Part B became optional extra credit on December 7, 2025; rubric v11 (December 8, 2025) offers up to +35 bonus points.</p>
                 </div>
 
                 <div class="feature-card mt-4">
                     <i class="fas fa-star feature-icon"></i>
                     <h3>Bonus Challenge: Mars Dust Storm (10 extra points)</h3>
-                    <p>Complete SLAM during a simulated Mars dust storm with reduced visibility!</p>
-                    <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
-                    <div class="code-block">
-                        <code># Enable dust storm mode
-ros2 param set /mars_environment enable_dust_storm true
-ros2 param set /mars_environment dust_density 0.7</code>
-                    </div>
-                    <p class="small mb-0">Fall 2025 handout command (no <code>/mars_environment</code> node exists in the linked repositories).</p>
+                    <p>Complete SLAM during a simulated Mars dust storm with reduced visibility.</p>
+                    <p class="small mb-0">The <a href="#ref-part-b-bonus">reference solution</a> includes a dust-storm run.</p>
                 </div>
 
                 <div class="feature-card mt-4">
@@ -1324,8 +1267,8 @@ ros2 param set /mars_environment dust_density 0.7</code>
                                 </tr>
                                 <tr>
                                     <td>Localization Error</td>
-                                    <td><10cm</td>
-                                    <td><20cm with reduced traction</td>
+                                    <td>&lt;10cm</td>
+                                    <td>&lt;20cm with reduced traction</td>
                                     <td>10</td>
                                 </tr>
                                 <tr>
@@ -1343,7 +1286,7 @@ ros2 param set /mars_environment dust_density 0.7</code>
                             </tbody>
                         </table>
                     </div>
-                    <p class="mb-0"><small>Part B is graded out of 75 points (rubric above); the Points column in this table is not additional to that total.</small></p>
+                    <p class="mb-0"><small>These points are part of the 75-point Part B total, not in addition to it.</small></p>
                 </div>
 
                 <div class="alert-mars mt-4">
@@ -1387,7 +1330,7 @@ ros2 param set /mars_environment dust_density 0.7</code>
                                 <div class="code-block mt-3">
                                     <code>base_controller:
   ros__parameters:
-    command_interface: "velocity"  # Add this line!</code>
+    command_interface: "velocity"  # add this line</code>
                                 </div>
                             </div>
                         </div>
@@ -1402,12 +1345,10 @@ ros2 param set /mars_environment dust_density 0.7</code>
                         <div id="issue2" class="accordion-collapse collapse" data-bs-parent="#troubleshootAccordion">
                             <div class="accordion-body">
                                 <strong>Problem:</strong> Gazebo crashes with OpenGL errors<br>
-                                <strong>Solution:</strong> Set software rendering mode
-                                <div class="mt-3"><span class="handout-label">Fall 2025 handout text (not a runnable command)</span></div>
-                                <div class="code-block mt-1">
+                                <strong>Solution:</strong> Set software rendering in the terminal before launching Gazebo
+                                <div class="code-block mt-3">
                                     <code>export LIBGL_ALWAYS_SOFTWARE=1
-export MESA_GL_VERSION_OVERRIDE=3.3
-ros2 launch husky_ur3_simulation gazebo_sim.launch.py</code>
+export MESA_GL_VERSION_OVERRIDE=3.3</code>
                                 </div>
                             </div>
                         </div>
@@ -1423,12 +1364,6 @@ ros2 launch husky_ur3_simulation gazebo_sim.launch.py</code>
                             <div class="accordion-body">
                                 <strong>Problem:</strong> Reduced traction on sandy Mars surface<br>
                                 <strong>Solution:</strong> Adjust wheel odometry covariance and use IMU fusion
-                                <div class="mt-3"><span class="handout-label">Fall 2025 handout text (not a runnable command)</span></div>
-                                <div class="code-block mt-1">
-                                    <code># Increase odometry uncertainty
-ros2 param set /husky_controller odom_covariance_xy 0.1
-ros2 param set /ekf_filter imu_weight 0.8</code>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1443,12 +1378,6 @@ ros2 param set /ekf_filter imu_weight 0.8</code>
                             <div class="accordion-body">
                                 <strong>Problem:</strong> UR3 arm overshoots in 38% gravity<br>
                                 <strong>Solution:</strong> Adjust PID gains for Mars gravity
-                                <div class="mt-3"><span class="handout-label">Fall 2025 handout text (not a runnable command)</span></div>
-                                <div class="code-block mt-1">
-                                    <code># Mars gravity compensation
-ros2 param set /ur3_controller gravity_compensation 3.71
-ros2 param set /ur3_controller pid_p 0.6</code>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1463,13 +1392,6 @@ ros2 param set /ur3_controller pid_p 0.6</code>
                             <div class="accordion-body">
                                 <strong>Problem:</strong> Feature detection difficult in monochrome Mars environment<br>
                                 <strong>Solution:</strong> Tune visual feature detectors for Mars
-                                <div class="mt-3"><span class="handout-label">Fall 2025 handout text (not a runnable command)</span></div>
-                                <div class="code-block mt-1">
-                                    <code># Adjust RTAB-Map parameters for Mars
-ros2 param set /rtabmap Vis/FeatureType 6  # ORB features
-ros2 param set /rtabmap Vis/MaxFeatures 2000
-ros2 param set /rtabmap RGBD/OptimizeMaxError 0.5</code>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1509,6 +1431,7 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                                 <li><a href="#ref-part-b">Part B: waypoint missions with live SLAM (Mars Thanksgiving world in RViz and Gazebo, and the Mars world), map growing and the saved map</a></li>
                                 <li><a href="#ref-part-b-bonus">Part B bonus: SLAM in a dust storm and a timed race lap</a></li>
                                 <li><a href="#ref-ec-3d">Extra credit: 3D reconstruction from RGB frames, five models against ground truth</a></li>
+                                <li><a href="#ref-ec-4d">Extra credit: 4D dynamic reconstruction</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1516,7 +1439,7 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                         <div class="feature-card">
                             <h3>Documentation</h3>
                             <ul>
-                                <li><a href="#part-b-rubric">Mars SLAM Grading Rubric (see the Part B rubric card in the SLAM Tasks tab)</a></li>
+                                <li><a href="#part-b-rubric">Part B: Mars SLAM Challenge points (SLAM Tasks tab)</a></li>
                                 <li><a href="/files/cs498gc/fa25/assignments/assignment4_extra_credit_guide.pdf">Extra Credit Guide (9 pages)</a></li>
                                 <li><a href="/files/cs498gc/fa25/presentations/assignment4_part1_demo_main_VER1.16_PDF_ASSIGNMENT4.pdf">Assignment 4 Slides</a></li>
                             </ul>
@@ -1525,8 +1448,7 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                 </div>
 
                 <div class="feature-card mt-4">
-                    <h3>🎮 Gripper Control Commands</h3>
-                    <span class="handout-label">Fall 2025 handout text (not a runnable command)</span>
+                    <h3>Gripper Control Commands</h3>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Open Gripper</h4>
@@ -1583,7 +1505,7 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                         <h4>GitHub Repositories</h4>
                         <ul>
                             <li><a href="https://github.com/kulbir-ahluwalia/husky_ur3_simulator">Husky UR3 Simulator (course fork, ROS 1 Noetic)</a></li>
-                            <li><a href="https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer">Mars worlds + dual-robot SLAM explorer</a> (fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>; not recommended in rubric v11, missing meshes)</li>
+                            <li><a href="https://github.com/kulbir-ahluwalia/ros2-dual-robot-slam-explorer">Mars worlds + dual-robot SLAM explorer</a> (fork of <a href="https://github.com/itsyashk/ros2-dual-robot-slam-explorer">itsyashk/ros2-dual-robot-slam-explorer</a>; rubric v11 recommends the Mars Thanksgiving World instead)</li>
                             <li><a href="https://github.com/LRCJ/GazeboMarsRover2">Mars Rover Models</a></li>
                         </ul>
                     </div>
@@ -1602,7 +1524,7 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
 
 
                 <div class="feature-card mt-4">
-                    <h3>Challenge Yourself!</h3>
+                    <h3>Challenge Yourself</h3>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Beginner Challenges</h4>
@@ -1623,12 +1545,6 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                             </ul>
                         </div>
                     </div>
-                </div>
-
-                <div class="alert-warning-mars mt-4">
-                    <h5>Student Testimonial</h5>
-                    <p><em>"I couldn't sleep last night because I was so excited SLAMing on MARS!!"</em> - a CS498GC student</p>
-                    <p class="mb-0">Fall 2025 archive.</p>
                 </div>
             </div>
         </div>

@@ -56,12 +56,8 @@ sudo apt-get install htop nvidia-smi
 # Navigate to your ROS2 workspace
 cd ~/ros2_ws/src
 
-# Clone the Mars terrain packages
-# (repository not found; Fall 2025 handout text) git clone https://github.com/nasa-jpl/mars_gazebo_terrains.git
+# Clone the Gazebo ROS demos
 git clone https://github.com/ros-simulation/gazebo_ros_demos.git
-
-# Clone NASA Mars assets
-# (repository not found; Fall 2025 handout text) git clone https://github.com/nasa/mars-rover-simulation.git
 ```
 
 ### Step 2: Download High-Resolution Terrain Data

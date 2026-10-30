@@ -635,7 +635,8 @@
         <section class="ta-runs" id="ta-demos" aria-labelledby="ta-demos-title">
             <h2 class="section-header mt-0" id="ta-demos-title">Reference Solution</h2>
             <p>Reference runs recorded by the course staff to show what complete Assignment 4 solutions look like. They are not student submissions, and no individual student results are published on this page.</p>
-            <p class="mb-4 small"><strong>Software:</strong> ROS 2 Jazzy, Gazebo Harmonic (<code>gz sim</code>), SLAM Toolbox; for the 3D extra credit, VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R. All runs are scripted, recorded without a desktop session, and sped up where the caption says so.</p>
+            <p class="mb-3"><!-- a4-deliverables-link --><a class="btn-mars ms-0" href="a4_reference_deliverables.html"><i class="fas fa-list-check"></i> Every Assignment 4 deliverable, one card each with its status</a></p>
+            <p class="mb-4 small"><strong>Software:</strong> ROS 2 Jazzy, Gazebo Harmonic, SLAM Toolbox; for the 3D extra credit, VGGT-Omega, VGGT, MUSt3R, CUT3R and TTT3R. All runs are scripted, recorded without a desktop session, and sped up where the caption says so.</p>
 
             <nav class="ref-jump mb-4" aria-label="Reference solution sections">
                 <a href="#ref-thanksgiving">Mars Thanksgiving</a>
@@ -723,13 +724,13 @@
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>Exploration loop in the Mars world</h4>
                         <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="540"
-                               poster="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.jpg"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.jpg"
                                aria-label="Reference solution, Part B: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
-                            <source src="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.mp4" type="video/mp4">
-                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.gif" width="640" height="360" loading="lazy" alt="Reference solution, Part B: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.gif" width="640" height="360" loading="lazy" alt="Reference solution, Part B: the Husky and UR3 drive a loop among the rocks of the Mars world in Gazebo Harmonic">
                         </video>
-                        <p class="mt-2 mb-1">The Husky + UR3 explores <code>mars.sdf</code> on a scripted loop: six legs of 40 s forward at 0.35 m/s, each followed by a 10.5 s turn at 0.5 rad/s (about 5 min in total, video at 10x speed). EKF sensor fusion and SLAM Toolbox (online async) build the occupancy grid shown in the next two panels.</p>
-                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_part2_mars_gazebo_slam_drive.gif">GIF version (first 90 s)</a></p>
+                        <p class="mt-2 mb-1">The Husky + UR3 explores the Mars world on a scripted loop: six legs of 40 s forward at 0.35 m/s, each followed by a 10.5 s turn at 0.5 rad/s (about 5 min in total, video at 10x speed). EKF sensor fusion and SLAM Toolbox (online async) build the occupancy grid shown in the next two panels.</p>
+                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_ref_part2_exploration_loop.gif">GIF version (first 90 s)</a></p>
                     </div>
                 </div>
 
@@ -738,13 +739,13 @@
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>SLAM Toolbox map growing</h4>
                         <video class="ta-video" controls muted loop playsinline preload="none" width="960" height="928"
-                               poster="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.jpg"
+                               poster="../../images/cs498gc/a4_ta_demos/a4_ref_part2_slam_map_growth.jpg"
                                aria-label="Reference solution, Part B: the SLAM Toolbox occupancy grid grows from the first scan to the final map">
-                            <source src="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.mp4" type="video/mp4">
-                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.gif" width="600" height="580" loading="lazy" alt="Reference solution, Part B: the SLAM Toolbox occupancy grid grows from the first scan to the final map">
+                            <source src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_slam_map_growth.mp4" type="video/mp4">
+                            <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_slam_map_growth.gif" width="600" height="580" loading="lazy" alt="Reference solution, Part B: the SLAM Toolbox occupancy grid grows from the first scan to the final map">
                         </video>
                         <p class="mt-2 mb-1">Occupancy grid of the exploration loop, rendered from the <code>/map</code> messages in its rosbag (179 map updates): it grows from the first scan patch to the final map (white: free space, black: obstacle edges, gray: unknown). The final map is held for 2 s at the end.</p>
-                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_part2_map_growth.gif">GIF version (2x speed)</a></p>
+                        <p class="small mb-0"><a href="../../images/cs498gc/a4_ta_demos/a4_ref_part2_slam_map_growth.gif">GIF version (2x speed)</a></p>
                     </div>
                 </div>
 
@@ -752,8 +753,8 @@
                     <div class="resource-item h-100">
                         <span class="badge ta-badge mb-2">Reference solution &middot; Part B</span>
                         <h4>Saved occupancy map</h4>
-                        <a href="../../images/cs498gc/a4_ta_demos/a4_part2_slam_map_mars.png"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_part2_slam_map_mars.png" width="978" height="950" loading="lazy" alt="Final 2D occupancy map of the Mars world from the Part B reference solution"></a>
-                        <p class="mt-2 mb-0">Final SLAM Toolbox map, saved with the Nav2 map saver (<code>map_saver_cli</code>) at the end of the exploration loop: 978 x 950 cells at 0.05 m per cell, about 48.9 m x 47.5 m (white: free, black: obstacles, gray: unknown).</p>
+                        <a href="../../images/cs498gc/a4_ta_demos/a4_ref_part2_saved_occupancy_map.png"><img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_ref_part2_saved_occupancy_map.png" width="978" height="950" loading="lazy" alt="Final 2D occupancy map of the Mars world from the Part B reference solution"></a>
+                        <p class="mt-2 mb-0">Final SLAM Toolbox map, saved with the Nav2 map saver at the end of the exploration loop: 978 x 950 cells at 0.05 m per cell, about 48.9 m x 47.5 m (white: free, black: obstacles, gray: unknown).</p>
                     </div>
                 </div>
             </div>
@@ -770,8 +771,8 @@
                             <source src="../../images/cs498gc/a4_ta_demos/a4_bonus_dust_storm.mp4" type="video/mp4">
                             <img class="ta-still" src="../../images/cs498gc/a4_ta_demos/a4_bonus_dust_storm.jpg" width="1280" height="720" loading="lazy" alt="Side-by-side recording of the same robot route in clear air (left) and in a Mars dust storm (right): robot camera views on top, live SLAM maps below, and a strip of metrics along the bottom">
                         </video>
-                        <p class="mt-2 mb-1">The same scripted two-lap route around a rock (69.2 m) driven twice in the Part B Mars world: clear on the left, dust storm on the right. Top row: the robot camera as seen; bottom row: the live SLAM Toolbox map with the ground-truth path (green), the SLAM pose estimate (blue, dashed) and the lidar returns that SLAM used (orange). Video 37.0 s, about 4x simulation time.</p>
-                        <p class="mb-1">SLAM pose error grows from 0.060 m RMSE when clear to 0.636 m in the storm (maximum 1.47 m). The storm map holds 8.37 m&sup2; of phantom obstacles (occupied cells more than 0.25 m from any rock); only 37.3 % of its occupied cells lie within 0.25 m of a real rock (100 % when clear), and SLAM makes 58 map-to-odom corrections larger than 10 cm or 2&deg;, against 28 when clear. The camera's RMS contrast drops from 0.112 to 0.047.</p>
+                        <p class="mt-2 mb-1">The same scripted two-lap route around a rock (69.2 m) driven twice in the Mars world of the waypoint mission with live SLAM above (a flat Mars plane with rocks, not the Mars Thanksgiving world), the storm run in a dust-storm copy of that world: clear on the left, dust storm on the right. Top row: the robot camera as seen; bottom row: the live SLAM Toolbox map with the ground-truth path (green), the SLAM pose estimate (blue, dashed) and the lidar returns that SLAM used (orange). Video 37.0 s, about 4x simulation time.</p>
+                        <p class="mb-1">SLAM pose error grows from 0.060 m RMSE when clear to 0.636 m in the storm (maximum 1.47 m). Inside the fixed 23 x 19 m evaluation window that the map panels show, the storm map holds 8.37 m&sup2; of phantom obstacles (occupied cells more than 0.25 m from any rock), and only 37.3 % of its occupied cells there lie within 0.25 m of a real rock (100 % when clear). SLAM makes 58 map-to-odom corrections larger than 10 cm or 2&deg;, against 28 when clear. The camera's RMS contrast drops from 0.112 to 0.047.</p>
                         <p class="small mb-0">Storm model: Gazebo particle emitters upwind; lidar extinction of 0.06 per metre in both directions (visibility 65 m), dust backscatter returns and range noise; camera haze computed from the depth image, plus sensor noise. Gazebo Harmonic does not render the world's fog, so the visible haze comes from this camera model. The route is driven on the simulator's ground-truth pose, so SLAM only estimates the pose and never steers; one storm strength and one random seed. Web video 1280 x 720, 24 fps.</p>
                     </div>
                 </div>
@@ -939,13 +940,13 @@
                         </tr>
                         <tr>
                             <td>Part B: exploration loop</td>
-                            <td><code>mars.sdf</code>; EKF sensor fusion, SLAM Toolbox (online async), scripted six-leg loop</td>
+                            <td>Mars world; EKF sensor fusion, SLAM Toolbox (online async), scripted six-leg loop</td>
                             <td>978 x 950 cell map at 0.05 m per cell; 179 <code>/map</code> updates; 354.3 s rosbag</td>
                         </tr>
                         <tr>
                             <td>Part B bonus: dust storm</td>
                             <td>The same route in a clear and a dust-storm Mars world (particle emitters, degraded lidar and camera); SLAM Toolbox</td>
-                            <td>Trajectory error 0.060 m RMSE (clear) versus 0.636 m (storm); 0 versus 8.37 m&sup2; of phantom obstacles</td>
+                            <td>Trajectory error 0.060 m RMSE (clear) versus 0.636 m (storm); 0 versus 8.37 m&sup2; of phantom obstacles inside the 23 x 19 m evaluation window</td>
                         </tr>
                         <tr>
                             <td>Part B bonus: race lap</td>
@@ -1145,7 +1146,7 @@ source install/setup.bash</code>
                 <div class="alert-info-mars">
                     <h5>Prerequisites</h5>
                     <ul class="mb-0">
-                        <li>Ubuntu 22.04 + ROS 2 Humble + Gazebo Fortress, or Ubuntu 24.04 + ROS 2 Jazzy + Gazebo Harmonic</li>
+                        <li>Ubuntu 22.04 + ROS 2 Humble + Gazebo Fortress, or Ubuntu 24.04 + ROS 2 Jazzy + Gazebo Harmonic (reference solution)</li>
                         <li>NVIDIA GPU recommended (GTX 1060 or better)</li>
                         <li>16GB RAM minimum</li>
                     </ul>
@@ -1519,7 +1520,7 @@ transform_timeout = 5.0  # Increase from default 1.0</code>
                 <div class="alert-mars">
                     <h4>Fall 2025 showcase (archive)</h4>
                     <p>During Fall 2025, students were invited to record a 2-minute highlight video of their best Mars navigation, including the autonomous sample collection sequence, and to submit it through Gradescope with the hashtag #MarsCS498GC.</p>
-                    <p class="mb-0">Individual student submissions and results are not published on this page.</p>
+                    <p class="mb-0">Individual student submissions and results are not published on this page. To see what complete runs look like, watch the <a href="#ta-demos">reference solution</a> at the top of this page.</p>
                 </div>
 
 

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#16A085"/>
+  <!-- Plant/pot -->
+  <!-- Pot -->
+  <path d="M 115 210 L 125 250 L 195 250 L 205 210 Z" fill="none" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="110" y1="210" x2="210" y2="210" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <!-- Stem -->
+  <line x1="160" y1="210" x2="160" y2="130" stroke="white" stroke-width="3"/>
+  <!-- Leaves -->
+  <path d="M 160 165 Q 125 150 130 125 Q 145 130 160 155" fill="none" stroke="white" stroke-width="2.5"/>
+  <path d="M 160 145 Q 195 130 192 105 Q 177 108 160 135" fill="none" stroke="white" stroke-width="2.5"/>
+  <path d="M 160 130 Q 135 110 140 90 Q 152 95 160 120" fill="none" stroke="white" stroke-width="2.5"/>
+  <!-- Sensor/WiFi waves -->
+  <path d="M 220 155 Q 230 145 225 135" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <path d="M 225 160 Q 240 145 233 130" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <path d="M 230 165 Q 250 145 242 125" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <!-- Water drop -->
+  <path d="M 90 160 Q 90 150 85 145 Q 80 150 80 160 Q 80 168 85 170 Q 90 168 90 160" fill="rgba(255,255,255,0.6)"/>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="16">Smart Garden IoT</text>
+</svg>

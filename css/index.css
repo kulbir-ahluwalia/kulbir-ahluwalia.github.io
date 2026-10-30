@@ -1,0 +1,76 @@
+body { font-family: "Noto Sans", sans-serif; }
+
+/* --- Announcement bar (config: _data/announcement.yml, logic: js/index.js) --- */
+#announcement-bar { display: none; /* shown by JS when not dismissed */ align-items: center; justify-content: center; gap: 0.5rem; position: relative; padding: 0.5rem 2.75rem 0.5rem 1rem; font-size: 0.95rem; text-align: center; }
+
+#announcement-bar a { font-weight: 600; }
+
+#announcement-close { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.25rem; line-height: 1; cursor: pointer; }
+
+/* --- Mobile sticky info bar (markup in index.html) --- */
+#mobile-info-bar { display: none; }
+
+@media (max-width: 768px) { #mobile-info-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; justify-content: center; gap: 0.75rem; padding: 0.5rem; background: #fff; border-top: 1px solid #dbdbdb; z-index: 30; }
+  body { padding-bottom: 3.25rem; } }
+/* Promo corner card (non-blocking replacement for the old full-screen modal) */
+.promo-corner-card { display: none; position: fixed; right: 1rem; bottom: 1rem; z-index: 30; max-width: 20rem; padding: 1rem 2rem 1rem 1rem; box-shadow: 0 4px 16px rgba(10, 10, 10, 0.2); }
+
+.promo-corner-card.is-active { display: block; }
+
+.promo-corner-card .promo-corner-close { position: absolute; top: 0.5rem; right: 0.5rem; }
+
+.promo-corner-card .promo-corner-title { font-weight: 700; margin-bottom: 0.25rem; }
+
+.promo-corner-card .promo-corner-body { font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+@media (max-width: 768px) { .promo-corner-card { left: 1rem; right: 1rem; bottom: 4rem; max-width: none; } }
+/* Announcement bar: keep the link on one line; on phones put the text on its own row. */
+#announcement-bar a { flex: 0 0 auto; white-space: nowrap; }
+
+@media (max-width: 768px) { #announcement-bar { flex-wrap: wrap; font-size: 0.875rem; padding-left: 0.75rem; }
+  #announcement-bar span { flex: 1 1 100%; } }
+.title { font-family: 'Google Sans'; font-weight: 700; }
+
+.anchor { scroll-margin-top: 80px; }
+
+.portrait { border-radius: 2%; overflow: hidden; }
+.portrait img { transform: scale(1.2); }
+
+.conference_analyzed { position: relative; max-width: 100%; left: -7em; }
+
+@media screen and (max-width: 750px) { .conference_analyzed { max-width: 100%; left: 0em; } }
+.footer .footer-links a { font-size: 25px; color: #000; margin: 0 0.4rem; }
+
+@media screen and (min-width: 1024px) { .navbar-end { float: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } }
+.disable-link { text-decoration: none !important; cursor: default !important; pointer-events: none; }
+
+.publication-block .publication-title { width: fit-content; margin: 0 !important; font-weight: 600; font-size: 110% !important; text-align: justify; }
+.publication-block .publication-title a { color: #000; }
+.publication-block .publication-title-with-link { width: fit-content; margin: 0 !important; font-weight: 600; font-size: 110% !important; }
+.publication-block .publication-venue { color: #555; width: fit-content; margin-top: 0; }
+.publication-block .publication-venue-emph { font-style: normal; font-size: 80%; font-weight: 500; color: firebrick; padding-left: 0.25em; }
+.publication-block .publication-awards { color: firebrick; width: fit-content; font-weight: bolder; }
+.publication-block .publication-authors { text-align: justify; }
+.publication-block .publication-authors .author-me { color: #000; font-weight: 600; }
+.publication-block .publication-authors a { color: #000 !important; }
+.publication-block .publication-authors a:hover { text-decoration: underline; }
+.publication-block .publication-image { border-radius: 2%; width: 100%; height: 100%; overflow: hidden; font-size: 0; }
+.publication-block .publication-image img { width: 100%; }
+.publication-block .publication-image .image-border { border: 1px solid #707070; border-radius: 2%; }
+.publication-block .publication-mousecell { position: relative; font-size: 0; }
+.publication-block .publication-mousecell { width: 100%; height: 100%; display: inline-block; overflow: hidden; }
+.publication-block .publication-mousecell video { display: none; }
+.publication-block .publication-description { color: #333; margin: 0.5em 0; text-align: justify; }
+.publication-block .publication-links { margin: 0 !important; margin-top: 0.5em !important; }
+
+@media screen and (min-width: 1024px) { .blogpost { max-width: 900px !important; } }
+.publication-filters, .project-filters { padding: 1rem 0; border-bottom: 1px solid #eee; margin-bottom: 1.5rem; }
+.publication-filters .filter-link, .publication-filters .topic-link, .publication-filters .project-filter-link, .publication-filters .project-topic-link, .project-filters .filter-link, .project-filters .topic-link, .project-filters .project-filter-link, .project-filters .project-topic-link { color: #4a4a4a; text-decoration: none; transition: color 0.2s ease; }
+.publication-filters .filter-link:hover, .publication-filters .topic-link:hover, .publication-filters .project-filter-link:hover, .publication-filters .project-topic-link:hover, .project-filters .filter-link:hover, .project-filters .topic-link:hover, .project-filters .project-filter-link:hover, .project-filters .project-topic-link:hover { color: #3273dc; text-decoration: underline; }
+.publication-filters .filter-link.is-active, .publication-filters .topic-link.is-active, .publication-filters .project-filter-link.is-active, .publication-filters .project-topic-link.is-active, .project-filters .filter-link.is-active, .project-filters .topic-link.is-active, .project-filters .project-filter-link.is-active, .project-filters .project-topic-link.is-active { color: #3273dc; font-weight: 600; }
+.publication-filters .research-topics, .publication-filters .project-topics, .project-filters .research-topics, .project-filters .project-topics { margin-top: 0.5rem; line-height: 1.8; }
+
+.publication-item { transition: opacity 0.3s ease; }
+
+@media screen and (max-width: 768px) { .has-text-justified, .publication-block .publication-title, .publication-block .publication-authors, .publication-block .publication-description { text-align: left !important; }
+  .publication-block .column.is-2 .publication-image { max-width: 180px; height: auto; } }

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization,extra credit,SLAM,RTAB-Map,SAMWISE">
+    <meta name="keywords" content="uiuc,course,mobile robotics,ROS2,sensor fusion,localization,extra credit,SLAM,RTAB-Map,SAMWISE,Mars helicopter,Ingenuity,aerial scouting,orbital bird's-eye view,path planning,Gazebo Harmonic">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
@@ -14,8 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>CS498GC: Mobile Robotics - Extra Credit (Fall 2025 archive)</title>
-    <meta name="description" content="Archive of the CS 498 GC Mobile Robotics (Fall 2025) Assignment 4 extra credit options (RTAB-Map and SAMWISE) at the University of Illinois Urbana-Champaign.">
+    <title>CS498GC: Mobile Robotics - Extra Credit (Fall 2025 archive, plus Option C: Mars Helicopter Scout)</title>
+    <meta name="description" content="Archive of the CS 498 GC Mobile Robotics (Fall 2025) Assignment 4 extra credit options (RTAB-Map and SAMWISE) at the University of Illinois Urbana-Champaign, plus Option C, Mars Helicopter Scout (orbital bird's-eye-view planning and aerial scouting for a rover), added in November 2026 for future offerings.">
     <link rel="icon"  href="/images/favicon.ico" />
     <link rel="shortcut icon"  href="/images/favicon.ico" />
 
@@ -74,6 +74,7 @@
     <main role="main" class="container">
       <div class="jumbotron header-plain">
         <h1>⭐ Extra Credit Opportunities</h1>
+        <p class="lead mb-0">Fall 2025 archive: Option A (RTAB-Map) and Option B (SAMWISE). Added November 2026 for future offerings: <a href="#option-c">Option C, Mars Helicopter Scout</a>.</p>
       </div>
       <div class="alert alert-secondary mt-3" role="note"><strong>Fall 2025 archive.</strong> CS498GC Mobile Robotics ran in Fall 2025 (Prof. Girish Chowdhary; TA Kulbir Singh Ahluwalia). Deadlines, office hours and course links on this page are from that semester and are kept as a reference.</div>
 
@@ -88,14 +89,18 @@
             <li><strong>Late Policy:</strong> No late submissions accepted for extra credit</li>
             <li><strong>Both Options Allowed:</strong> You may complete both options for up to 100 extra credit points</li>
           </ul>
+          <hr>
+          <!-- Option C note: added November 2026; the Fall 2025 bullets above are unchanged. Points and cap follow the course staff's Option C policy notes. -->
+          <p class="mb-0"><strong>Option C (added November 2026, for future offerings):</strong> the Mars Helicopter Scout is worth 50 points, the same as Options A and B, plus a 5-point bonus (Option C is capped at 55). It is individual work and was not offered in Fall 2025. The syllabus of the semester that offers it sets how the options combine and the overall extra-credit cap.</p>
         </div>
 
         <p class="mb-4"><!-- a4-deliverables-link --><strong>Reference solution:</strong> every Assignment 4 deliverable, both extra-credit options included, is shown with its status on the <a href="a4_reference_deliverables.html">Assignment 4 reference deliverables</a> page.</p>
+        <p class="mb-4">Option C was added in November 2026, so it is not one of that page's Fall 2025 rows; the page has one <a href="a4_reference_deliverables.html#ec-option-c">summary card for Option C</a>, and its reference results are in <a href="#option-c-reference-results">Option C: Reference Results</a> below.</p>
 
         <!-- Option Comparison -->
         <h2 class="text-primary mb-4">📊 Choose Your Challenge</h2>
         <div class="row mb-5">
-          <div class="col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="card border-primary">
               <div class="card-header bg-primary text-white">
                 <h3 class="mb-0">Option A: RTAB-Map 3D SLAM</h3>
@@ -115,7 +120,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="card border-success">
               <div class="card-header bg-success text-white">
                 <h3 class="mb-0">Option B: SAMWISE Vision-Language</h3>
@@ -132,6 +137,29 @@
                 </ul>
                 <p><strong>Best For:</strong> Students interested in AI/ML and vision-language models</p>
                 <a href="#option-b" class="btn btn-success">View Details ↓</a>
+              </div>
+            </div>
+          </div>
+          <!-- Option C card: added November 2026, not part of Fall 2025 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-danger">
+              <div class="card-header bg-danger text-white">
+                <h3 class="mb-0">Option C: Mars Helicopter Scout</h3>
+              </div>
+              <div class="card-body">
+                <h5 class="text-danger">50 Points (+5 bonus)</h5>
+                <p><span class="badge badge-secondary">Added November 2026, for future offerings</span></p>
+                <p><strong>Focus:</strong> Orbital bird's-eye-view planning and aerial scouting for a rover</p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                  <li>Pixel-to-world mapping with camera intrinsics</li>
+                  <li>A* planning, costmaps and replanning</li>
+                  <li>Coverage flight under a time budget</li>
+                  <li>Image mosaicking and map fusion</li>
+                  <li>Paired experiment design</li>
+                </ul>
+                <p><strong>Best For:</strong> Students interested in field robotics, aerial-ground teams and planetary exploration</p>
+                <a href="#option-c" class="btn btn-danger">View Details ↓</a>
               </div>
             </div>
           </div>
@@ -569,6 +597,625 @@ pip install xformers
 
         <hr class="my-5">
 
+        <!-- Option C: Mars Helicopter Scout. Added November 2026 for future offerings; NOT part of the Fall 2025 course.
+             Every NASA / orbital number carries a fact id from the course staff's sourced fact sheet (ING-xx Ingenuity, Fxx orbital and planning).
+             Design values and policy defaults come from the course staff's Option C specification. -->
+        <div id="option-c">
+          <h2 class="text-danger">Option C: Mars Helicopter Scout</h2>
+          <div class="alert alert-secondary" role="note"><strong>Added November 2026, for future offerings.</strong> Option C was not part of the Fall 2025 course; it is due with Assignment 4 Part B in the semester that offers it.</div>
+          <p class="lead">Plan from orbit, scout from the air, drive on the ground. Plan a rover route on an orbital bird's-eye view, fly an Ingenuity-style helicopter stand-in over the rocks that the orbital map cannot resolve, turn its downward images into a high-resolution map, fuse the two maps and replan. Then compare against a rover that had only the orbital plan and its own hazard camera, and decide with numbers whether the flight time paid off.</p>
+
+          <!-- Why scout from the air -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4 class="mb-0">Why Scout from the Air</h4>
+            </div>
+            <div class="card-body">
+              <h5>Ingenuity as an aerial scout</h5>
+              <p>NASA's Ingenuity Mars Helicopter has a mass of 1.8 kg <!-- ING-01 --> and flies on two counter-rotating rotors, 1.2 m tip to tip <!-- ING-03 -->, steered by swashplates that set the cyclic and collective blade pitch of both rotors <!-- ING-05 -->. It made 72 flights between April 19, 2021 and January 18, 2024 <!-- ING-30 ING-31 -->, 128.8 minutes in the air and 17.0 km in total <!-- ING-32 -->. Most flights peaked at 10 or 12 m (51 of 72, counted from NASA's flight log) <!-- ING-38 -->, and the highest reached 24 m <!-- ING-36 -->.</p>
+              <p>After its technology demonstration, NASA flew it as an operations demonstration whose goals included aerial observations of potential rover routes <!-- ING-45 -->. On Flight 9 (July 5, 2021) it flew 625 m in 166.4 s over the S&eacute;&iacute;tah dune field, terrain too risky for the rover <!-- ING-47 -->. Mobility planners used its images to judge which areas Perseverance could traverse; the rover's detour around S&eacute;&iacute;tah had already been planned <!-- ING-48 -->. In the words of Deputy Project Scientist Ken Williford, <em>"With Ingenuity, we now have this intermediate-scale imagery that nicely fills the gap in resolution"</em> between orbit and the rover <!-- F33 -->. On Flight 12 its images confirmed that the planned strategic route into southern S&eacute;&iacute;tah was traversable <!-- F34 -->, and in 2022 it helped decide which of two dry river channels Perseverance should take up the Jezero delta <!-- F35 -->.</p>
+              <p>Its last flight carries a lesson for this option. On Flight 72 (January 18, 2024), about 20 s after takeoff, its vision navigation could not find enough surface features over steep, relatively featureless sand ripples <!-- ING-39 -->. NASA's investigation found that the most likely result was a high horizontal velocity at touchdown, which snapped all four rotor blades <!-- ING-40 ING-41 -->. NASA declared the mission complete on January 25, 2024 <!-- ING-31 -->. Option C's touchdown-speed limit and its no-landing sand patch come from that flight.</p>
+
+              <h5 class="mt-3">What orbit can and cannot see</h5>
+              <p>HiRISE, on the Mars Reconnaissance Orbiter, takes pixels about 30 cm across from 300 km <!-- F01 -->, but pixel size is not object size: HiRISE resolves the rock population that lander images show only from about 1.5 m across <!-- F04 -->, and JPL's automated rock detector needs shadows about 5 pixels long (1.5 m at 0.3 m per pixel) <!-- F05 -->. HiRISE has also imaged only about 4 percent of Mars (2 to 3 percent unique, as of 2022) <!-- F09 -->. Perseverance's robotic operations chief engineer put it this way: <em>"Images from Mars orbiters are valuable for strategic route planning, but not all rover hazards can be identified in them."</em> <!-- F16 --> In the Snowdrift Peak boulder field in 2023, the straight-line route was 520 m but Perseverance logged 759 m, much of the extra distance from its onboard AutoNav steering around rocks that were not visible in the orbiter images used to plan the route <!-- F17 -->.</p>
+              <p>Planning from orbital images is still where routes start: on December 8 and 10, 2025, Perseverance drove 210 m and 246 m on waypoints that vision-language models generated from HiRISE images and slope data, after the commands were checked in JPL's digital twin <!-- F22 -->.</p>
+
+              <h5 class="mt-3">What you do in Option C</h5>
+              <p class="mb-0">You are the ground team for a 160 m x 160 m Mars test site, with three worlds seeded from your NetID. The orbital view (0.5 m per pixel) shows the boulders, 2.5 to 4 m across, and a sand patch, but not the fields of 0.4 to 0.9 m rocks that lie across the route; from 10 m the scout's camera sees each of those rocks across 9 to 21 pixels. You plan an A* route from orbit and drive it once with only the rover's hazard camera (condition O). Then, on a fresh copy of the same world, you fly up to three helicopter sorties of 90 s each, mosaic the images on the ground between sorties, fuse the maps, replan and drive again with the same rover software (condition S). Finally you compare the two runs, seed by seed.</p>
+            </div>
+          </div>
+
+          <!-- Honesty: what the simulation models and what it does not -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4 class="mb-0">What the Simulation Models and What It Does Not</h4>
+            </div>
+            <div class="card-body">
+              <ul class="mb-0">
+                <li><strong>Matched to Ingenuity:</strong> the scout has Ingenuity's mass, 1.8 kg <!-- ING-01 -->, and flies in Mars gravity, about 3.71 m/s<sup>2</sup> <!-- ING-50 -->, at cruise altitudes near Ingenuity's typical 10 to 12 m <!-- ING-38 -->, on sorties of at most 90 s, the flight length Ingenuity was designed for <!-- ING-09 ING-12 -->.</li>
+                <li><strong>Four rotors, not two coaxial rotors:</strong> the scout is a four-rotor stand-in. Ingenuity uses two coaxial counter-rotating rotors with swashplate cyclic and collective control <!-- ING-03 ING-05 -->, which the Gazebo Harmonic multicopter plugins cannot model. The scout tilts and responds like a quadrotor, not like Ingenuity.</li>
+                <li><strong>No thin air:</strong> Mars air is about 0.016 kg/m<sup>3</sup> <!-- ING-51 -->, and the simulator does not model air density or rotor aerodynamics. Thrust is one coefficient, tuned so the scout hovers in Mars gravity at about 2,544 rpm, close to the 2,537 rpm Ingenuity flew on its first 13 flights <!-- ING-07 -->.</li>
+                <li><strong>Orbital view:</strong> a narrow-angle perspective camera at 6000 m that gives 0.5 m per pixel over the whole site, close to orthographic. Gazebo Harmonic has no orthographic camera. The image has no orbital blur, noise or haze, and its pixel is about 1.6 to 2 times coarser than HiRISE's 25 to 32 cm <!-- F01 F02 -->.</li>
+                <li><strong>Helicopter camera:</strong> 320 x 240 color at 2 Hz, looking straight down. Ingenuity navigated with a 640 x 480 grayscale camera at 30 Hz <!-- ING-13 ING-14 -->.</li>
+                <li><strong>Navigation and hazard sensing:</strong> the core task gives you true odometry for the scout and the rover, and the rover's hazard camera is idealized (exact rock positions within 3 m, small noise). Ingenuity had no GPS: it estimated its motion from an IMU, the downward camera and a laser altimeter, with a filter that assumed flat ground <!-- ING-20 ING-22 ING-24 -->. The bonus adds a designed drift, not Ingenuity's measured error.</li>
+                <li><strong>Ground processing:</strong> your nodes process the images between sorties, playing the ground team. Ingenuity built no map onboard <!-- ING-23 F37 -->; its images reached the rover team only after downlink to Earth, where they helped judge which areas the rover could traverse and which science targets to visit <!-- ING-47 ING-48 -->.</li>
+                <li><strong>Flat ground:</strong> the site is a plane, so projecting images onto the ground is exact here. Ingenuity's flat-ground assumption caused heading errors over uneven terrain <!-- ING-24 ING-25 -->, and your report discusses where yours would break.</li>
+                <li><strong>Design values:</strong> the 90 s sortie budget, the 8 to 15 m cruise band, the 3 m/s speed cap, the touchdown rule, the rock sizes, the rover's 10 s hazard stop and the energy proxy (airborne seconds x 350 W, Ingenuity's in-flight power <!-- ING-09 -->) are course choices motivated by the facts above, not measurements.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Point Breakdown (from points_table in the spec) -->
+          <div class="card mb-4">
+            <div class="card-header bg-danger text-white">
+              <h4 class="mb-0">Point Breakdown (50 Points Total)</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Component</th>
+                    <th>Points</th>
+                    <th>Grading</th>
+                    <th>What earns it</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>C1 Bring-up and evidence integrity</strong></td>
+                    <td>4</td>
+                    <td>Auto</td>
+                    <td>Six readable bags (3 seeds x 2 conditions), each at most 25 MB, with every required topic; the seed, world hash and code hash in each bag match your NetID and your submitted code</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C2 Orbital BEV costmap and global A*</strong></td>
+                    <td>8</td>
+                    <td>6 auto + 2 manual</td>
+                    <td>Map orbital pixels to world coordinates from camera_info, mark boulders and the sand patch in an inflated 0.50 m costmap, and publish an A* path from S to G no longer than 1.15 times the grader's reference; BEV figure and pixel-to-world derivation</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C3 Orbit-only baseline (condition O)</strong></td>
+                    <td>5</td>
+                    <td>Auto</td>
+                    <td>No sorties: the rover follows the orbital path, replans with your A* around hazard-camera detections, and reaches G within 900 s with zero intrusions</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C4 Sortie planning and flight</strong></td>
+                    <td>7</td>
+                    <td>Auto</td>
+                    <td>Up to 3 sorties, each at most 90 s airborne, cruising at 8 to 15 m; each plan published before takeoff and tracked within 1.5 m RMS; no geofence or ceiling events; touchdown below 0.5 m/s on a safe site</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C5 Nadir BEV mosaic and scout hazard detection</strong></td>
+                    <td>8</td>
+                    <td>6 auto + 2 manual</td>
+                    <td>Project every frame with K and the full 6-DoF camera pose into a 0.10 m/px north-up mosaic that covers the flown footprint (IoU at least 0.80); small-rock recall and precision at least 0.70; mosaic figure, projection method and flat-ground discussion</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C6 Map fusion, replanning and rover hand-off (condition S)</strong></td>
+                    <td>8</td>
+                    <td>Auto</td>
+                    <td>Fuse orbital and scout hazards into a 0.25 m costmap, replan, and drive with the same rover software: arrival within 900 s, zero intrusions, at most 1 hazard stop, at least 90% of the executed path over scouted ground</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C7 Paired comparison, ablation and analysis</strong></td>
+                    <td>8</td>
+                    <td>2 auto + 6 manual</td>
+                    <td>A 3 seeds x 2 conditions table that the grader reproduces, with the same rover parameters in both conditions; a prediction written before seeds 1 and 2, per-seed paired differences, an overlay figure, the discussion answers, one ablation and the limitations checklist</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C8 Demo video, README and code provenance</strong></td>
+                    <td>2</td>
+                    <td>Manual</td>
+                    <td>A video of at most 4 minutes, a README that reproduces one run in at most 5 commands with a node/topic graph, and PROVENANCE.md; the global planner must be your own search code</td>
+                  </tr>
+                  <tr class="table-info">
+                    <td colspan="4"><strong>Optional bonus (Option C capped at 55 points)</strong></td>
+                  </tr>
+                  <tr>
+                    <td>B1 Drift mode and map-relative registration</td>
+                    <td>+5</td>
+                    <td>3 auto + 2 manual</td>
+                    <td>Fly seed s0 with drifting scout odometry, register the scout images to the orbital map, and build the mosaic and fused map from the corrected poses: median detection error at most 0.6 m and a safe rover arrival; method write-up with a before/after error figure</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <div class="alert alert-warning mb-0">
+                <strong>Note:</strong> 38 of the 50 points are autograded from your bags and results files, and checks C2 to C6 run per seed (one third each). Points bank in milestone order, so a partial submission still earns credit. Your results are graded on the quality of your reasoning, not on whether scouting won.
+              </div>
+            </div>
+          </div>
+
+          <!-- Milestones (numbers from the spec scenarios) -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4 class="mb-0">Milestones</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Milestone</th>
+                    <th>What you do</th>
+                    <th>Passes when</th>
+                    <th>Points banked</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>M0</strong> Bring-up (practice seed 7)</td>
+                    <td>Take off from the helipad, hover at 10 m for 20 s, fly 20 m, land, drive the rover 10 m, save the first orbital frame</td>
+                    <td>The scout holds 9 to 11 m for at least 15 s; touchdown below 0.5 m/s; first orbital frame within 15 s; rover odometry and hazard camera publishing; no geofence or ceiling events</td>
+                    <td>Not graded</td>
+                  </tr>
+                  <tr>
+                    <td><strong>M0b</strong> Projection unit test (calibration tile)</td>
+                    <td>Hover and fly over four 1.0 m fiducial squares and project their centers with your pixel-to-ground function</td>
+                    <td>Projected centers within 0.15 m of truth while hovering and 0.30 m while translating at 1 m/s</td>
+                    <td>Not graded (evidence for C5)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>M1</strong> Orbital map, A* and orbit-only drive</td>
+                    <td>Build the orbital costmap, plan with A*, drive condition O with hazard-camera replanning</td>
+                    <td>At least 90% of boulders and 80% of the sand patch marked lethal; path within 1.15 times the reference length; rover reaches G within 900 s with zero intrusions</td>
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td><strong>M2</strong> Scout sorties</td>
+                    <td>Plan and fly up to 3 coverage sorties over the uncertain corridor</td>
+                    <td>Each sortie at most 90 s airborne at 8 to 15 m; tracking within 1.5 m RMS; touchdown below 0.5 m/s, at least 1.5 m from every hazard and off the sand</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td><strong>M3</strong> Mosaic and scout detections</td>
+                    <td>Project the nadir frames into a 0.10 m/px mosaic and detect the rocks</td>
+                    <td>Mosaic IoU with the flown footprint at least 0.80; small-rock recall and precision at least 0.70</td>
+                    <td>32</td>
+                  </tr>
+                  <tr>
+                    <td><strong>M4</strong> Fusion and hand-off</td>
+                    <td>Fuse the maps, replan, and drive condition S with the same rover software</td>
+                    <td>Fused map keeps at least 90% of boulders and 70% of scouted rocks; rover reaches G within 900 s with zero intrusions and at most 1 hazard stop, with at least 90% of its path over scouted ground</td>
+                    <td>40</td>
+                  </tr>
+                  <tr>
+                    <td><strong>M5</strong> Paired experiment and report</td>
+                    <td>Run 3 seeds x 2 conditions, one ablation, the report and the video</td>
+                    <td>The grader reproduces your comparison table within tolerance; identical rover parameters in both conditions of each seed</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td><strong>B1</strong> Bonus: drift and registration</td>
+                    <td>Seed s0, condition S, with drifting scout odometry; register images to the orbital map</td>
+                    <td>Median detection error at most 0.6 m; rover reaches G with zero intrusions</td>
+                    <td>+5 (cap 55)</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <p class="mb-0">Suggested pace, about two weeks: days 1 to 3 for M1, 4 to 6 for M2, 7 to 9 for M3, 10 and 11 for M4, 12 to 14 for M5.</p>
+            </div>
+          </div>
+
+          <!-- What you build vs what the starter provides -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4 class="mb-0">What You Build vs What the Starter Provides</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-danger">You build (package <code>option_c_scout</code>)</h5>
+                  <ul>
+                    <li><strong>orbital_mapper:</strong> orbital pixels to world, boulder and sand-patch detection, inflated 0.50 m costmap</li>
+                    <li><strong>global_planner:</strong> your own A*, Dijkstra or D* search (your Part B A* may be reused; no Nav2 planner server or library planner)</li>
+                    <li><strong>sortie_planner:</strong> coverage under the 90 s budget, adapted between sorties</li>
+                    <li><strong>scout_flight_controller:</strong> waypoint following, takeoff, landing-site check and touchdown</li>
+                    <li><strong>nadir_mosaicker:</strong> ray-ground projection with the full 6-DoF pose into a 0.10 m/px mosaic</li>
+                    <li><strong>scout_hazard_detector:</strong> rocks and boulders from the mosaic</li>
+                    <li><strong>map_fuser:</strong> 0.25 m fused costmap with your unknown-cell policy and the landed scout</li>
+                    <li><strong>rover_executive:</strong> path following with hazard-camera replanning, one parameter set for both conditions</li>
+                    <li><strong>mission_manager:</strong> scout enable and mission phase events</li>
+                    <li><strong>registration_node:</strong> bonus only</li>
+                    <li>Analysis code, report and video</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>The starter provides (<code>cs498gc_a4_option_c_starter</code>)</h5>
+                  <ul>
+                    <li>Seeded world generator: three worlds from your NetID, byte-identical for the grader</li>
+                    <li>Orbital camera, the helicopter scout with its nadir camera, and a starter rover</li>
+                    <li>ros_gz bridge configuration and launch files</li>
+                    <li>Flight watchdog: command timeout, speed clamps, geofence, ceiling and a forced descent at 120 s</li>
+                    <li>Rover hazard guard and idealized hazard camera</li>
+                    <li>Grading support: odometry relay, 20 Hz clock, run info with world and code hashes</li>
+                    <li>Bonus drift model</li>
+                    <li>Bag recorder, projection checker, local checker and submission builder</li>
+                    <li><code>hello_sortie</code> example flight and keyboard teleop</li>
+                    <li>Docs: HANDOUT, TOPICS, FRAMES, INGENUITY_FACTS, KNOWN_LIMITS, CREDITS</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="alert alert-warning mb-0">
+                <strong>Rules:</strong> never publish the command topics the watchdog and guard own, never subscribe to anything under <code>/option_c/grader/</code>, never read the generated world file or the ground-truth file in your code, and record graded bags only with <code>record_option_c_bag</code>. Flagged cases go to a TA for review.
+              </div>
+            </div>
+          </div>
+
+          <!-- Topics the student package must publish (student-published topics from the spec's required list) -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4 class="mb-0">Topics Your Nodes Must Publish</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Topic</th>
+                    <th>Type</th>
+                    <th>What</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>/option_c/orbital_costmap</code></td>
+                    <td>nav_msgs/msg/OccupancyGrid</td>
+                    <td>Inflated orbital costmap: 0.50 m cells, 320 x 320, origin (-80, -80), frame <code>map</code>; 99 to 100 lethal, -1 unknown</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/orbital_path</code></td>
+                    <td>nav_msgs/msg/Path</td>
+                    <td>Your A* path from S to G on the orbital costmap, poses at most 1.0 m apart</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/sortie_plan</code></td>
+                    <td>nav_msgs/msg/Path</td>
+                    <td>One per sortie, published before takeoff: xy waypoints with the planned altitude in z</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/scout/cmd_vel</code></td>
+                    <td>geometry_msgs/msg/Twist</td>
+                    <td>World-frame velocity command (east, north, up, yaw rate) to the watchdog, at least 10 Hz while airborne</td>
+                  </tr>
+                  <tr>
+                    <td><code>/ingenuity/enable</code></td>
+                    <td>std_msgs/msg/Bool</td>
+                    <td>True before each takeoff, false after touchdown</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/fused_costmap</code></td>
+                    <td>nav_msgs/msg/OccupancyGrid</td>
+                    <td>Fused costmap: 0.25 m cells, 640 x 640, origin (-80, -80), published after the last touchdown, including the landed scout</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/fused_path</code></td>
+                    <td>nav_msgs/msg/Path</td>
+                    <td>Replanned path from S to G on the fused costmap</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/rover/cmd_vel_request</code></td>
+                    <td>geometry_msgs/msg/Twist</td>
+                    <td>Rover body-frame command to the hazard guard, streamed while driving</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/rover/active_path</code></td>
+                    <td>nav_msgs/msg/Path</td>
+                    <td>The path the rover follows: first the orbital path (O) or fused path (S), then one per hazard-camera replan (at most 200)</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/mission_phase</code></td>
+                    <td>std_msgs/msg/String</td>
+                    <td>JSON events with sim time: orbital_plan_ready, sortie_start, sortie_end, fused_plan_ready, rover_start, rover_goal_reached or rover_aborted</td>
+                  </tr>
+                  <tr>
+                    <td><code>/option_c/scout/registration_offset</code></td>
+                    <td>geometry_msgs/msg/PoseStamped</td>
+                    <td>Bonus only: correction from the drifting odometry to your registered scout pose</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <p>Publish <code>/option_c/mission_phase</code> (history depth at least 100), <code>/option_c/rover/active_path</code> (at least 20) and <code>/option_c/sortie_plan</code> (at least 5) as reliable and transient_local, like the costmaps and paths: the bag recorder needs 1 to 3 s to discover a new node and would otherwise miss your first events.</p>
+              <p class="mb-0">Every topic, including the ones the starter publishes for you, with rates, frames, durability and message details: <code>docs/TOPICS.md</code> inside the <a href="/files/cs498gc/fa25/extra_credit/mars_helicopter_scout/cs498gc_a4_option_c_starter_v1.0.3.zip">starter zip</a>.</p>
+            </div>
+          </div>
+
+          <!-- Simulation setup (design values from the spec's simulation_parameters) -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4 class="mb-0">Simulation Setup</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+              <table class="table table-striped mb-0">
+                <tbody>
+                  <tr>
+                    <td><strong>Site</strong></td>
+                    <td>160 m x 160 m of flat Mars ground, x east and y north; the ROS frame <code>map</code> is the Gazebo world frame. Gravity about 3.71 m/s<sup>2</sup> <!-- ING-50 --></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Orbital view</strong></td>
+                    <td>Narrow-angle perspective camera at 6000 m, 320 x 320 pixels, 0.5 m per pixel, north-up, 0.5 Hz</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Helicopter scout</strong></td>
+                    <td>Four-rotor stand-in with Ingenuity's 1.8 kg mass <!-- ING-01 -->; downward (nadir) camera, 320 x 240 color at 2 Hz, 4.28 cm per pixel from 10 m</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Flight rules</strong></td>
+                    <td>Up to 3 sorties of at most 90 s airborne each; cruise altitude band 8 to 15 m (graded ceiling 15.5 m); speed at most 3 m/s; touchdown below 0.5 m/s</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Boulders</strong></td>
+                    <td>25 to 40 per world, 2.5 to 4.0 m across: visible from orbit</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Small rocks</strong></td>
+                    <td>3 to 5 fields of 12 to 20 rocks, 0.4 to 0.9 m across: visible only from the helicopter; at least two fields lie across the orbit-only route</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sand patch</strong></td>
+                    <td>One per world, about 15 to 25 m by 8 to 12 m, bright and nearly featureless: a rover keep-out and a no-landing zone</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Rover</strong></td>
+                    <td>Starter differential-drive rover (footprint radius 0.45 m, at most 1.0 m/s) or your Part B Husky (<code>rover:=custom</code>, not tested by the course staff); idealized hazard camera, 3 m range, &plusmn;60&deg;; the guard stops and holds the rover for 10 s when a hazard is 0.6 to 0.9 m ahead, depending on speed; 900 s per drive</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Seeds</strong></td>
+                    <td>Three graded worlds from your NetID; seed 7 is free practice and never graded</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fallback</strong></td>
+                    <td>If the multicopter plugins misbehave on your machine, launch with <code>scout_dynamics:=kinematic</code> and declare it in <code>option_c.yaml</code>; there is no penalty</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Installation -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4 class="mb-0">Installation Requirements</h4>
+            </div>
+            <div class="card-body">
+              <h5>System Requirements</h5>
+              <ul>
+                <li>Ubuntu 24.04 with ROS 2 Jazzy and Gazebo Harmonic (gz-sim 8)</li>
+                <!-- Tested statement as of 2026-11-05: starter v1.0.3 docs/KNOWN_LIMITS.md (amd64 RTX 5080 laptop; earlier build on DGX Spark arm64) and the v1.0.3 reference runs (6 graded runs + bonus drift run, amd64 RTX 5080 laptop, headless). Keep it in step with the starter README and docs/KNOWN_LIMITS.md. -->
+                <li>Tested by the course staff with ROS 2 Jazzy and Gazebo Harmonic on Ubuntu 24.04, headless rendering, one simulation at a time, on an amd64 laptop with an NVIDIA RTX 5080 Laptop GPU: the starter v1.0.3 tests listed in <code>docs/KNOWN_LIMITS.md</code> (build and package tests, world loads, M0, M0b, the flight watchdog, the rover guard, the kinematic fallback and the bonus drift mode, each on the latest version of the code it covers) and the TA reference solution's six graded runs plus its bonus drift run on starter v1.0.3. An earlier build of the starter also passed its live tests on an NVIDIA DGX Spark (arm64); later changes were re-tested only on the laptop. ROS 2 Humble with Gazebo Harmonic, laptops with only an Intel or AMD GPU, software rendering (llvmpipe), the Gazebo GUI, the custom-rover path with a Part B Husky (<code>rover:=custom</code>), two simulations at the same time on one machine, macOS, Windows/WSL2 and Docker were not tested; if the cameras are slow or black, try <code>shadows:=false</code> first.</li>
+                <li>ROS 2 Humble with Gazebo Harmonic: <a href="https://gazebosim.org/docs/harmonic/ros_installation" target="_blank">gazebosim.org</a> lists this pairing as "possible, but use with caution" (it uses the <code>ros-humble-ros-gzharmonic</code> packages, which conflict with <code>ros-humble-ros-gz*</code>). The course staff did not test Option C on it; use Jazzy if you can.</li>
+              </ul>
+
+              <h5 class="mt-3" id="option-c-download">Download</h5>
+              <!-- Starter v1.0.3, frozen 2026-11-05 (version matches package.xml and setup.py). When a new version ships: replace the zip and its .sha256 file in /files/cs498gc/fa25/extra_credit/mars_helicopter_scout/, then update this block, the unzip line below, the "starter zip" link in the Topics card and the Option C block on assignments.html. -->
+              <p class="mb-2"><a href="/files/cs498gc/fa25/extra_credit/mars_helicopter_scout/cs498gc_a4_option_c_starter_v1.0.3.zip" class="btn btn-danger">Download the starter package (v1.0.3, zip, 0.33 MB)</a></p>
+              <p class="small mb-0"><code>cs498gc_a4_option_c_starter_v1.0.3.zip</code>, 332,640 bytes, SHA-256 <code style="word-break: break-all;">57b9e2d872235c50987fb49bacffa448972a3cada28da32733aa8af065b238e4</code>. To check your download, save the <a href="/files/cs498gc/fa25/extra_credit/mars_helicopter_scout/cs498gc_a4_option_c_starter_v1.0.3.zip.sha256">checksum file</a> next to the zip and run <code>sha256sum -c cs498gc_a4_option_c_starter_v1.0.3.zip.sha256</code> (it prints <code>OK</code>).</p>
+
+              <h5 class="mt-3">Installation Commands</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># ROS 2 Jazzy on Ubuntu 24.04 first (docs.ros.org), then Gazebo Harmonic + the ros_gz bridge
+sudo apt update
+sudo apt install ros-jazzy-ros-gz ros-dev-tools python3-numpy python3-yaml python3-pil
+
+# Unzip the starter into a workspace and build it
+mkdir -p ~/option_c_ws/src &amp;&amp; cd ~/option_c_ws/src
+unzip ~/Downloads/cs498gc_a4_option_c_starter_v1.0.3.zip
+source /opt/ros/jazzy/setup.bash
+cd ~/option_c_ws &amp;&amp; colcon build --symlink-install
+source ~/option_c_ws/install/setup.bash
+
+# Your three graded seeds (seed 7 is free practice)
+ros2 run cs498gc_a4_option_c_starter option_c_seed --netid yournetid
+
+# M0 smoke test on practice seed 7: three terminals, each starting with
+#   source /opt/ros/jazzy/setup.bash &amp;&amp; source ~/option_c_ws/install/setup.bash
+# terminal 1: world + TA nodes
+ros2 launch cs498gc_a4_option_c_starter option_c_world.launch.py \
+    seed:=7 condition:=orbit_scout headless:=true
+# terminal 2: record the graded topics; wait for the line that starts with
+#   "[record_option_c_bag] READY after" (about 4 to 10 s), and Ctrl-C after hello_sortie ends
+ros2 run cs498gc_a4_option_c_starter record_option_c_bag 7 orbit_scout
+# terminal 3, after READY: take off, hover at 10 m, fly 20 m, land, drive the rover 10 m
+ros2 run cs498gc_a4_option_c_starter hello_sortie --save-orbital seed7_orbital_bev.png
+# then, from the folder terminal 2 recorded in: PASS or FAIL for each M0 criterion
+ros2 run cs498gc_a4_option_c_starter local_check --stage M0 --bag bags/seed7_orbit_scout --seed 7</code></pre>
+            </div>
+          </div>
+
+          <!-- Deliverables (deliverables tree from the spec) -->
+          <div class="card mb-4" id="option-c-deliverables">
+            <div class="card-header">
+              <h4 class="mb-0">Deliverables</h4>
+            </div>
+            <div class="card-body">
+              <h5>Required Submission Structure</h5>
+              <pre class="bg-light p-3">&lt;netid&gt;_a4_option_c.zip              (individual submission, at most 150 MB)
+└── option_c/
+    ├── README.md                    build + run one seed in at most 5 commands; node/topic graph
+    ├── PROVENANCE.md                external code, libraries and AI assistance, and what each was used for
+    ├── report.pdf                   at most 8 pages + appendix
+    ├── video_link.txt               one URL viewable by course staff, video at most 4 minutes
+    ├── config/
+    │   └── option_c.yaml            netid, seeds, rover, unknown_cell_policy, inflation_margin_m, ablation_id, ...
+    ├── src/
+    │   └── option_c_scout/          your ROS 2 package (its hash goes into every bag)
+    ├── bags/                        sqlite3 rosbag2 folders, each at most 25 MB, no images
+    │   ├── seed&lt;s0&gt;_orbit_only/
+    │   ├── seed&lt;s0&gt;_orbit_scout/
+    │   ├── seed&lt;s1&gt;_orbit_only/
+    │   ├── seed&lt;s1&gt;_orbit_scout/
+    │   ├── seed&lt;s2&gt;_orbit_only/
+    │   └── seed&lt;s2&gt;_orbit_scout/
+    ├── results/
+    │   ├── seed&lt;s0&gt;/                orbital_bev.png, orbital_hazards.csv, orbital_sand_polygon.json,
+    │   │                            scout_mosaic.png, scout_mosaic.json, scout_hazards.csv,
+    │   │                            figures/path_overlay_O_vs_S.png, figures/mosaic_with_tracks.png
+    │   ├── seed&lt;s1&gt;/                (same files)
+    │   ├── seed&lt;s2&gt;/                (same files)
+    │   ├── comparison_table.csv     6 rows: 3 seeds x 2 conditions
+    │   ├── ablation.csv
+    │   └── analysis/                scripts or notebook that made the tables and figures
+    └── bonus_drift/                 optional: bags/seed&lt;s0&gt;_orbit_scout_drift/ and results/</pre>
+
+              <h5 class="mt-3">Recording and Packaging</h5>
+              <pre class="bg-dark text-light p-3 rounded"><code># Keep your package in $HOME/option_c/src/option_c_scout; link it into the workspace once, then rebuild
+ln -s $HOME/option_c/src/option_c_scout ~/option_c_ws/src/
+cd ~/option_c_ws &amp;&amp; colcon build --symlink-install &amp;&amp; source install/setup.bash
+
+# Graded runs: pass your package path so every bag carries the hash of the code you submit
+ros2 launch cs498gc_a4_option_c_starter option_c_world.launch.py \
+    seed:=&lt;s0&gt; condition:=orbit_only headless:=true \
+    student_pkg_src:=$HOME/option_c/src/option_c_scout
+
+# Record the graded topic list into $HOME/option_c/bags/seed&lt;s0&gt;_orbit_only (Ctrl-C after the rover finishes)
+ros2 run cs498gc_a4_option_c_starter record_option_c_bag &lt;s0&gt; orbit_only $HOME/option_c/bags
+
+# Only after the recorder prints its READY line: start your own mission nodes in a third terminal
+
+# Check the tree, sizes, seeds and hashes, then build &lt;netid&gt;_a4_option_c.zip
+ros2 run cs498gc_a4_option_c_starter make_submission $HOME/option_c</code></pre>
+              <ul class="mb-0">
+                <li>Order matters: start the world, then the recorder, wait for its READY line, and only then launch your mission, so the bag holds your first mission events.</li>
+                <li>Rerun the bags after any code change: a bag whose code hash does not match the submitted package loses its auto points.</li>
+                <li>Gradescope accepts direct uploads up to 100 MB. If your zip is larger, run <code>make_submission</code> for its checks, push the <code>option_c/</code> folder to a private GitHub or Bitbucket repository (as the repository itself or as its top-level folder), and submit that repository with Gradescope's GitHub or Bitbucket option.</li>
+                <li>Individual work. The course academic-integrity policy applies; disclose any AI coding assistance in PROVENANCE.md where the semester policy allows it.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Reference results: media and numbers from the TA reference solution on starter v1.0.3 (6 graded runs + one media-only run with a chase camera), recorded 2026-11-05.
+               Captions follow the staff's media notes for that run; the table is that run's comparison table. Media files live in /images/cs498gc/mars_helicopter/. -->
+          <div class="card mb-4" id="option-c-reference-results">
+            <div class="card-header">
+              <h4 class="mb-0">Reference Results</h4>
+            </div>
+            <div class="card-body">
+              <p>Everything below comes from the course staff's reference solution (ROS 2 Jazzy and Gazebo Harmonic on an amd64 laptop with an NVIDIA RTX 5080 GPU, headless, starter v1.0.3), shown for one of its three seeds where a single seed is shown. It is not student work, and the reference code is not published. Your report needs figures like the three stills below (orbital plan, mosaic, rover traces) for one of your seeds, and <code>results/</code> holds the per-seed files listed under <a href="#option-c-deliverables">Deliverables</a>. Your video needs one sortie with the mosaic growing, seen from any viewpoint. The chase camera was added only to a staff media copy of the scout model: do not edit the starter models to reproduce that view.</p>
+              <h5>Orbital plan and fused plan</h5>
+              <p>The orbital bird's-eye view with the orbital A* path and the fused path after scouting (your own figure also marks the detected boulders and the sand patch).</p>
+              <figure class="mb-4">
+                <a href="../../images/cs498gc/mars_helicopter/orbital_bev_astar_paths.png"><img class="img-fluid rounded d-block mx-auto" src="../../images/cs498gc/mars_helicopter/orbital_bev_astar_paths.png" width="800" height="800" loading="lazy" style="width: 100%; max-width: 560px;" alt="Orbital bird's-eye view of a reddish Mars test site with dark boulders and a pale sand patch; a yellow orbit-only A* route runs from S on the right to G on the left through the scattered small rocks, and a blue dashed fused route after scouting bends south of them"></a>
+                <figcaption class="small mt-2"><span class="badge badge-warning">Recorded by the course staff, not student submissions</span> Seed 2823361542, orbital bird's-eye view: 320 x 320 px at 0.5 m/px, rendered by a narrow-angle camera 6000 m above the ground. Yellow: A* route planned on the orbital costmap (118.9 m). Blue dashed: A* route replanned on the fused orbital + scout costmap after one helicopter sortie (120.8 m). White circle = start S, star = goal G, bar = 20 m. The small rocks that change the route are 0.8 to 1.8 orbital pixels wide: at most faint specks here, far smaller than the roughly 5-pixel shadows that JPL's HiRISE rock detector needs <!-- F05 -->, and the orbital costmap does not contain them.</figcaption>
+              </figure>
+              <h5 class="mt-3">A scouting sortie</h5>
+              <p>The scout flying its sortie plan over the uncertain corridor at cruise altitude.</p>
+              <figure class="mb-4">
+                <video class="d-block mx-auto rounded" controls muted loop playsinline preload="none" width="640" height="360" style="width: 100%; max-width: 640px; height: auto; background: #000;"
+                       poster="../../images/cs498gc/mars_helicopter/scout_sortie_chase_poster.jpg"
+                       aria-label="Chase-camera view of the four-rotor helicopter scout taking off from its helipad and cruising about 14 m above a reddish Mars plain with boulders, a field of small rocks and a pale sand patch, then landing">
+                  <source src="../../images/cs498gc/mars_helicopter/scout_sortie_chase.mp4" type="video/mp4">
+                  <img class="img-fluid" src="../../images/cs498gc/mars_helicopter/scout_sortie_chase.gif" width="360" height="202" loading="lazy" alt="Chase-camera view of the four-rotor helicopter scout cruising over a reddish Mars plain with boulders and a field of small rocks">
+                </video>
+                <figcaption class="small mt-2"><span class="badge badge-warning">Recorded by the course staff, not student submissions</span> Seed 2823361542, helicopter sortie 1 seen by a chase camera mounted 6.5 m behind and 2.4 m above the scout and tilted 20 degrees down (it moves and tilts with the scout; it was added only to a media copy of the scout model, and the graded worlds are unchanged). 81 s of simulated flight shown in 18 s, so 4.4x sim time. The four-rotor stand-in (1.8 kg, Mars gravity 3.711 m/s<sup>2</sup>) takes off from the helipad, cruises along the orbital route at a median 13.7 m altitude and 2.8 m/s, flies 139 m and lands. Headless Gazebo Harmonic render. Media-only run: same seed, same reference flight logic and same starter as the graded run, plus the chase camera; airborne 80.4 s here vs 80.5 s in the graded run; this run is not graded. H.264, 640 x 360, 22 fps, 1.03 MB. <a href="../../images/cs498gc/mars_helicopter/scout_sortie_chase.gif">GIF version</a> (360 px wide, 6 fps, 3.66 MB).</figcaption>
+              </figure>
+              <h5 class="mt-3">The mosaic growing</h5>
+              <p>Nadir frames projected onto the ground and blended into the mosaic.</p>
+              <figure class="mb-4">
+                <img class="img-fluid rounded d-block mx-auto" src="../../images/cs498gc/mars_helicopter/mosaic_growth.gif" width="800" height="326" loading="lazy" alt="Animation: a bird's-eye mosaic of reddish ground grows strip by strip along the helicopter's flight path over a black, not yet observed background">
+                <figcaption class="small mt-2"><span class="badge badge-warning">Recorded by the course staff, not student submissions</span> Seed 2823361542: the bird's-eye mosaic growing during ground processing after the sortie, 23 snapshots (each adds the next batch of projected downward-camera frames), shown as a 0.4 m/px preview of the 0.10 m/px mosaic; dark = not yet observed. Snapshots are not evenly spaced in time. From the media-only run of the same seed (same reference code and starter as the graded run; not graded). 0.19 MB, 800 px wide, 4 frames per second.</figcaption>
+              </figure>
+              <h5 class="mt-3">The finished scout mosaic</h5>
+              <p>The 0.10 m per pixel north-up mosaic with the detected rocks (your own figure also draws the sortie tracks).</p>
+              <figure class="mb-4">
+                <a href="../../images/cs498gc/mars_helicopter/scout_mosaic_rocks.png"><img class="img-fluid rounded d-block mx-auto" src="../../images/cs498gc/mars_helicopter/scout_mosaic_rocks.png" width="1200" height="482" loading="lazy" alt="Finished scout mosaic of the flown corridor between S and G on a black background, with 28 small rocks circled in yellow in two rock fields, a few boulders, and the scout landing site marked by a triangle near G"></a>
+                <figcaption class="small mt-2"><span class="badge badge-warning">Recorded by the course staff, not student submissions</span> Seed 2823361542: bird's-eye mosaic built on the ground from the helicopter's downward camera (135 frames taken above 6 m during the sortie; the scout peaked at 13.8 m; about 3591 m<sup>2</sup> of ground), each frame projected onto the ground with the camera intrinsics and the full 6-DoF scout pose and blended at 0.10 m/px. Yellow circles: the 28 rocks found by the reference detector (recall 1.00, precision 1.00 against the world generator's ground truth). Black = not observed; triangle = landing site; bar = 10 m.</figcaption>
+              </figure>
+              <h5 class="mt-3">Rover traces</h5>
+              <p>Both executed rover tracks, orbit-only (O) and scouted (S), with hazard stops and hazard-camera replans marked.</p>
+              <figure class="mb-4">
+                <a href="../../images/cs498gc/mars_helicopter/rover_traces_O_vs_S.png"><img class="img-fluid rounded d-block mx-auto" src="../../images/cs498gc/mars_helicopter/rover_traces_O_vs_S.png" width="1093" height="756" loading="lazy" alt="Two map panels of the same world. Top, orbit only: the rover track follows the orbital route, swerves at two rock fields and shows 17 replan markers. Bottom, scouted: the rover follows the fused route south of both rock fields with no replans"></a>
+                <figcaption class="small mt-2"><span class="badge badge-warning">Recorded by the course staff, not student submissions</span> Seed 2823361542, same world and same rover software. Top (orbit only): the rover starts on the orbital route and its hazard camera finds 18 rocks the orbital map did not show; it replans 17 times and drives 139.0 m in 219 s. Bottom (scouted): after one 80 s helicopter sortie (energy proxy 7.8 Wh at 350 W) the fused route avoids the rocks; 0 replans, 119.6 m in 174 s. Hazard stops: 0 and 0. Total mission time from the orbital plan to the goal: 219 s orbit only vs 260 s scouted, so scouting saved 45 s of driving but added 41 s overall.</figcaption>
+              </figure>
+              <h5 class="mt-3">Comparison table</h5>
+              <p>One row per seed and condition. Compare the paired differences (S minus O) for each seed, such as hazard stops, executed length, drive time, total mission time and airborne seconds, and report their mean; three seeds do not support significance claims.</p>
+              <p class="mb-2"><span class="badge badge-warning">Recorded by the course staff, not student submissions</span> TA reference solution, the three seeds of the staff's reference NetID, ROS 2 Jazzy + Gazebo Harmonic on an amd64 laptop with an NVIDIA RTX 5080 GPU, starter v1.0.3. The same rover software and parameters drove both conditions. Not student results.</p>
+              <div class="table-responsive">
+              <table class="table table-sm table-striped table-bordered mb-2">
+                <caption class="small">TA reference comparison table (reference solution, not student results). O = orbit only, S = scouted. Hazcam surprises = rocks the hazard camera reported that the costmap the drive started with did not mark lethal; driven = executed rover path length; drive time runs from rover start to the goal; total mission time runs from the orbital plan to the goal and includes the sorties and the ground time around them.</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Seed</th>
+                    <th scope="col">Condition</th>
+                    <th scope="col">Reached goal</th>
+                    <th scope="col">Hazard stops</th>
+                    <th scope="col">Hazcam surprises</th>
+                    <th scope="col">Replans</th>
+                    <th scope="col">Driven (m)</th>
+                    <th scope="col">Drive time (s)</th>
+                    <th scope="col">Min clearance (m)</th>
+                    <th scope="col">Airborne (s)</th>
+                    <th scope="col">Total mission (s)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>2823361542</td><td>O</td><td>yes</td><td>0</td><td>18</td><td>17</td><td>139.0</td><td>218.8</td><td>0.31</td><td>0</td><td>218.9</td></tr>
+                  <tr><td>2823361542</td><td>S (1 sortie)</td><td>yes</td><td>0</td><td>0</td><td>0</td><td>119.6</td><td>173.9</td><td>0.92</td><td>80.5</td><td>260.2</td></tr>
+                  <tr><td>2666837378</td><td>O</td><td>yes</td><td>0</td><td>15</td><td>10</td><td>130.4</td><td>210.4</td><td>0.51</td><td>0</td><td>210.5</td></tr>
+                  <tr><td>2666837378</td><td>S (2 sorties)</td><td>yes</td><td>0</td><td>0</td><td>0</td><td>113.3</td><td>162.4</td><td>1.03</td><td>121.5</td><td>295.0</td></tr>
+                  <tr><td>242666850</td><td>O</td><td>yes</td><td>0</td><td>17</td><td>15</td><td>138.7</td><td>223.0</td><td>0.41</td><td>0</td><td>223.1</td></tr>
+                  <tr><td>242666850</td><td>S (2 sorties)</td><td>yes</td><td>0</td><td>0</td><td>0</td><td>115.5</td><td>165.5</td><td>1.21</td><td>129.7</td><td>306.5</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr class="font-weight-bold"><td colspan="2">Mean of S minus O (3 seeds)</td><td>no change</td><td>0</td><td>-16.7</td><td>-14.0</td><td>-19.9</td><td>-50.1</td><td>+0.65</td><td>+110.6</td><td>+69.7</td></tr>
+                </tfoot>
+              </table>
+              </div>
+              <p class="mb-2"><strong>Reading the reference numbers.</strong> All six drives reached the goal with zero intrusions and zero hazard stops, so on these worlds the reference rover's hazard camera and replanning kept it safe without scouting, and this table cannot show scouting preventing hazard stops. What the fused map changed was the drive itself: with scouting, the hazard camera reported no rock that was missing from the map the drive started with (15 to 18 such surprises orbit only), the rover never replanned (10 to 17 replans orbit only), and it drove 17.1 to 23.3 m less, finished its drive 44.9 to 57.5 s sooner and kept 0.53 to 0.80 m more clearance. Scouting still cost time overall: one or two sorties (80.5 to 129.7 s airborne) plus the ground time around them made the total mission 41.3 to 84.5 s longer (mean +69.7 s). Whether that trade pays off depends on what a hazard stop or a replan costs and how fast the rover drives; three seeds from one NetID support no significance claim, and your own numbers may come out either way.</p>
+              <p class="small text-muted mb-0">The staged Option C autograder, run in an emulation of the Gradescope image, recomputed every row of this table from the reference run's bags; all six rows matched.</p>
+            </div>
+          </div>
+
+          <!-- Resources and References -->
+          <div class="card mb-4">
+            <div class="card-header">
+              <h4 class="mb-0">Resources and References</h4>
+            </div>
+            <div class="card-body">
+              <h5>Ingenuity and Perseverance</h5>
+              <ul>
+                <li><a href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" target="_blank">NASA Science: Ingenuity Mars Helicopter mission page</a></li>
+                <li><a href="https://www.jpl.nasa.gov/news/press_kits/mars_2020/download/ingenuity_landing_press_kit.pdf" target="_blank">NASA/JPL: Mars Helicopter Ingenuity Landing Press Kit (2021, PDF)</a></li>
+                <li><a href="https://rotorcraft.arc.nasa.gov/Publications/files/Balaram_AIAA2018_0023.pdf" target="_blank">Balaram et al., "Mars Helicopter Technology Demonstrator", AIAA SciTech 2018 (PDF)</a></li>
+                <li><a href="https://science.nasa.gov/wp-content/uploads/2024/06/ingenuity-helicopter-flight-log.pdf" target="_blank">NASA: Ingenuity flight log (PDF)</a></li>
+                <li><a href="https://www.jpl.nasa.gov/news/nasas-mars-helicopter-reveals-intriguing-terrain-for-rover-team/" target="_blank">JPL: NASA's Mars Helicopter Reveals Intriguing Terrain for Rover Team (Flight 9, 2021)</a></li>
+                <li><a href="https://science.nasa.gov/blogs/driving-farther-and-faster-with-autonomous-navigation-and-helicopter-scouting" target="_blank">NASA blog: Driving Farther and Faster with Autonomous Navigation and Helicopter Scouting (2021)</a></li>
+                <li><a href="https://www.jpl.nasa.gov/news/nasa-performs-first-aircraft-accident-investigation-on-another-world/" target="_blank">JPL: NASA Performs First Aircraft Accident Investigation on Another World (Flight 72, 2024)</a></li>
+                <li><a href="https://www.jpl.nasa.gov/news/autonomous-systems-help-nasas-perseverance-do-more-science-on-mars/" target="_blank">JPL: Autonomous Systems Help NASA's Perseverance Do More Science on Mars (Snowdrift Peak, 2023)</a></li>
+                <li><a href="https://www.jpl.nasa.gov/news/nasas-perseverance-rover-completes-first-ai-planned-drive-on-mars" target="_blank">JPL: NASA's Perseverance Rover Completes First AI-Planned Drive on Mars (2026)</a></li>
+              </ul>
+              <h5 class="mt-3">Orbital imaging</h5>
+              <ul>
+                <li><a href="https://uahirise.org/specs/" target="_blank">HiRISE camera specifications (University of Arizona)</a></li>
+                <li><a href="https://experts.arizona.edu/en/publications/size-frequency-distributions-of-rocks-on-the-northern-plains-of-m-2/" target="_blank">Golombek et al., size-frequency distributions of rocks on the northern plains of Mars, JGR Planets 114</a></li>
+                <li><a href="https://www-robotics.jpl.nasa.gov/media/documents/Data-driven%20surface%20traversability%20analysis%20for%20Mars%202020%20landing%20site%20selection.pdf" target="_blank">Ono et al., Data-Driven Surface Traversability Analysis for Mars 2020 Landing Site Selection, IEEE Aerospace 2016 (PDF)</a></li>
+              </ul>
+              <h5 class="mt-3">Algorithms</h5>
+              <ul>
+                <li><a href="https://doi.org/10.1109/TSSC.1968.300136" target="_blank">Hart, Nilsson and Raphael, A Formal Basis for the Heuristic Determination of Minimum Cost Paths (A*), 1968</a></li>
+                <li><a href="https://doi.org/10.1109/ROBOT.1994.351061" target="_blank">Stentz, Optimal and Efficient Path Planning for Partially-Known Environments (D*), ICRA 1994</a></li>
+                <li><a href="https://doi.org/10.1002/rob.20109" target="_blank">Ferguson and Stentz, Using Interpolation to Improve Path Planning: The Field D* Algorithm, Journal of Field Robotics 2006</a>, and its use on the Mars Exploration Rovers: <a href="https://www-robotics.jpl.nasa.gov/media/documents/IEEEAC-Carsten-1125.pdf" target="_blank">Carsten et al., Global Path Planning on Board the Mars Exploration Rovers, IEEE Aerospace 2007 (PDF)</a></li>
+                <li><a href="https://doi.org/10.1007/BF00201978" target="_blank">Mallot et al., Inverse Perspective Mapping Simplifies Optical Flow Computation and Obstacle Detection, Biological Cybernetics 1991</a></li>
+                <li>Registration for the bonus: <a href="https://robotics.jpl.nasa.gov/what-we-do/applications/landing/" target="_blank">JPL Robotics: Mars 2020 Lander Vision System map-relative localization</a> and <a href="https://www.hou.usra.edu/meetings/lpsc2025/pdf/1302.pdf" target="_blank">Zubarev et al., The Complete Orthophotomosaic of Ingenuity Navcam Images, LPSC 2025 (PDF)</a></li>
+              </ul>
+              <h5 class="mt-3">Simulation</h5>
+              <ul>
+                <li><a href="https://gazebosim.org/docs/harmonic/install_ubuntu" target="_blank">Gazebo Harmonic: installing on Ubuntu</a></li>
+                <li><a href="https://gazebosim.org/docs/harmonic/ros_installation" target="_blank">Gazebo Harmonic: installing with ROS 2, and which ROS and Gazebo versions pair</a></li>
+                <li><a href="https://github.com/gazebosim/ros_gz" target="_blank">ros_gz: the ROS 2 and Gazebo bridge</a></li>
+              </ul>
+              <p class="small text-muted mb-0"><strong>Credits:</strong> facts about Ingenuity, Perseverance and HiRISE come from NASA, JPL-Caltech and the University of Arizona, linked above (NASA/JPL images are credited "Courtesy NASA/JPL-Caltech" and HiRISE images "NASA/JPL/University of Arizona"). The simulation models were built by the course staff from simple shapes; the starter contains no NASA images, models or logos, and Option C is not endorsed by NASA or JPL.</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5">
+
         <!-- Submission Guidelines -->
         <div class="alert alert-danger">
           <h3>⚠️ Important Submission Guidelines</h3>
@@ -578,9 +1225,14 @@ pip install xformers
               <ul>
                 <li>"Extra Credit - RTAB-Map" for Option A</li>
                 <li>"Extra Credit - SAMWISE" for Option B</li>
+                <li>"Extra Credit - Mars Helicopter Scout" for Option C (future offerings; not part of Fall 2025)</li>
               </ul>
             </li>
-            <li><strong>File Size Limits:</strong> 500MB per submission</li>
+            <li><strong>File Size Limits:</strong> 500MB per submission
+              <ul>
+                <li>Option C (future offerings): the zip is at most 150 MB, and Gradescope's direct upload stops at 100 MB; see the Option C Deliverables section</li>
+              </ul>
+            </li>
             <li><strong>Academic Integrity:</strong> Individual work only - collaboration on extra credit will result in zero points</li>
           </ul>
         </div>
@@ -597,6 +1249,7 @@ pip install xformers
                 <ul>
                   <li>Use <code>#extra-credit-rtabmap</code> for RTAB-Map questions</li>
                   <li>Use <code>#extra-credit-samwise</code> for SAMWISE questions</li>
+                  <li>Use <code>#extra-credit-mars-helicopter</code> for Mars Helicopter Scout (Option C) questions (future offerings; that semester's staff set up the tag)</li>
                 </ul>
               </li>
               <li><strong>TA Email:</strong> ksa5@illinois.edu (use only for submission issues)</li>

@@ -9,6 +9,9 @@
 # When a paper is accepted, update its status in _data/publications.yml in the same commit as the
 # news item (rule R1).
 
+- date: "Nov 2026"
+  content: 'Joined the <a href="https://thehcalab.web.illinois.edu/"><strong>Human-Centered Autonomy Lab</strong></a> at UIUC, advised by Prof. Katherine Driggs-Campbell.'
+
 - date: "Aug 2026"
   content: 'Joined the course staff of <a href="https://courses.grainger.illinois.edu/cs440/fa2026/"><strong>CS 440/ECE 448: Artificial Intelligence</strong></a> as a Teaching Assistant with Prof. Margaret Fleck.'
 

@@ -28,7 +28,8 @@ description: >-
 # Markdown bio rendered in the About section of index.html ({{ site.bio | markdownify }}).
 bio: >-
   I'm Kulbir Singh Ahluwalia, a Ph.D. student in Computer Science at the University of Illinois Urbana-Champaign ([UIUC](https://illinois.edu/)),
-  advised by [Prof. Girish Chowdhary](http://daslab.illinois.edu) and [Prof. Julia Hockenmaier](https://hmr-lab.github.io).
+  advised by Prof. Katherine Driggs-Campbell in the [Human-Centered Autonomy Lab](https://thehcalab.web.illinois.edu/) since November 2026.
+  Previously, I was advised by [Prof. Girish Chowdhary](http://daslab.illinois.edu) (2022–2026), and I continue to collaborate with [Prof. Julia Hockenmaier](https://hmr-lab.github.io).
   My research is on language-grounded waypoint generation and navigation for agricultural and outdoor robots (WaypointGen),
   and on running these models efficiently on edge AI hardware.
   From June to August 2026 I was a Compute Chipset Product Management Intern at Qualcomm in San Diego, and in Summer 2025 I was an AI Intern at EarthSense, Inc.,
@@ -76,6 +77,11 @@ defaults:
       sitemap: false
   - scope:
       path: "files/CV_Resume_July2026"
+    values:
+      sitemap: false
+
+  - scope:
+      path: "files/CV_Resume_Oct2026"
     values:
       sitemap: false
 

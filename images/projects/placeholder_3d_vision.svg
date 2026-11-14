@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" rx="8" fill="#1a202c"/>
+  <rect x="20" y="20" width="360" height="260" rx="6" fill="#1a3a4a" opacity="0.5"/>
+  <!-- 3D Cube wireframe -->
+  <!-- Front face -->
+  <polygon points="150,90 250,90 250,190 150,190" fill="#4299e1" opacity="0.2" stroke="#63b3ed" stroke-width="2"/>
+  <!-- Top face -->
+  <polygon points="150,90 200,55 300,55 250,90" fill="#4299e1" opacity="0.15" stroke="#63b3ed" stroke-width="2"/>
+  <!-- Right face -->
+  <polygon points="250,90 300,55 300,155 250,190" fill="#4299e1" opacity="0.1" stroke="#63b3ed" stroke-width="2"/>
+  <!-- Depth points -->
+  <circle cx="175" cy="120" r="3" fill="#f6e05e" opacity="0.6"/>
+  <circle cx="210" cy="140" r="3" fill="#48bb78" opacity="0.6"/>
+  <circle cx="230" cy="105" r="3" fill="#fc8181" opacity="0.6"/>
+  <circle cx="270" cy="90" r="3" fill="#f6e05e" opacity="0.6"/>
+  <circle cx="195" cy="165" r="3" fill="#48bb78" opacity="0.6"/>
+  <circle cx="260" cy="135" r="3" fill="#fc8181" opacity="0.6"/>
+  <!-- Depth arrow -->
+  <line x1="130" y1="220" x2="300" y2="220" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="300,216 310,220 300,224" fill="#a0aec0"/>
+  <text x="215" y="238" text-anchor="middle" fill="#718096" font-family="sans-serif" font-size="11">depth</text>
+  <!-- Label -->
+  <text x="200" y="268" text-anchor="middle" fill="#a0aec0" font-family="sans-serif" font-size="16" font-weight="600">3D Vision</text>
+</svg>

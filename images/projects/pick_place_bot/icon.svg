@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#8E44AD"/>
+  <!-- Gripper -->
+  <!-- Left jaw -->
+  <rect x="110" y="80" width="16" height="70" rx="4" fill="none" stroke="white" stroke-width="3"/>
+  <!-- Right jaw -->
+  <rect x="194" y="80" width="16" height="70" rx="4" fill="none" stroke="white" stroke-width="3"/>
+  <!-- Top connecting bar -->
+  <rect x="110" y="65" width="100" height="20" rx="5" fill="none" stroke="white" stroke-width="3"/>
+  <!-- Actuator arm above -->
+  <line x1="160" y1="65" x2="160" y2="45" stroke="white" stroke-width="4"/>
+  <rect x="140" y="35" width="40" height="14" rx="4" fill="none" stroke="white" stroke-width="3"/>
+  <!-- Object being gripped -->
+  <rect x="130" y="135" width="60" height="40" rx="6" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <!-- Arrows showing pick action -->
+  <line x1="118" y1="110" x2="130" y2="145" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+  <line x1="202" y1="110" x2="190" y2="145" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+  <text x="160" y="215" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Pick</text>
+  <text x="160" y="245" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Place</text>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="16">Pick n Place Bot</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#C0392B"/>
+  <!-- Graph nodes and edges -->
+  <circle cx="100" cy="100" r="18" fill="none" stroke="white" stroke-width="3"/>
+  <circle cx="220" cy="85" r="18" fill="none" stroke="white" stroke-width="3"/>
+  <circle cx="80" cy="200" r="18" fill="none" stroke="white" stroke-width="3"/>
+  <circle cx="180" cy="180" r="18" fill="none" stroke="white" stroke-width="3"/>
+  <circle cx="250" cy="200" r="18" fill="none" stroke="white" stroke-width="3"/>
+  <!-- Edges -->
+  <line x1="116" y1="106" x2="164" y2="174" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <line x1="118" y1="100" x2="202" y2="88" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <line x1="94" y1="116" x2="85" y2="182" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <line x1="196" y1="186" x2="232" y2="196" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <line x1="220" y1="103" x2="196" y2="165" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <line x1="96" y1="200" x2="162" y2="186" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <!-- Highlighted shortest path -->
+  <line x1="116" y1="106" x2="164" y2="174" stroke="white" stroke-width="3.5"/>
+  <line x1="196" y1="186" x2="232" y2="196" stroke="white" stroke-width="3.5"/>
+  <circle cx="100" cy="100" r="18" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+  <circle cx="180" cy="180" r="18" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+  <circle cx="250" cy="200" r="18" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="3"/>
+  <text x="160" y="255" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Dijkstra</text>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="16">Shortest Path</text>
+</svg>

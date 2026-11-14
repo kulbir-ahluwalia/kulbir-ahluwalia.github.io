@@ -1,7 +1,6 @@
 # Dismissible announcement bar (rendered in index.html, logic in js/index.js).
 # Bump `id` to re-show the bar to visitors who dismissed an older one.
-# 2026-10-10: paper statuses confirmed by Kulbir (see _data/publications.yml).
-# 2026-10-17: workshop paper submitted, under review; T-RO manuscript in preparation.
+# Current work is listed as unpublished manuscripts in _data/publications.yml.
 # 2026-10-22 (Kulbir): turned off. The bar announced work in progress and internal TA runs; use it only
 # for a finished, public result (rule R5 in scripts/check_claims.py checks it whenever enabled is true).
 enabled: false

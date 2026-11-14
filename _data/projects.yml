@@ -38,7 +38,7 @@
 - title: "Enhancing Stereo Depth Maps through RGBD-Conditioned Generative Models"
   venue: "Aug-Dec 2024"
   image: projects/depth_maps_diffusion/icon.svg
-  description: "Fine-tuned Stable Diffusion V2 for RGB+D-conditioned monocular depth estimation. Achieves up to 46% Abs Rel improvement over Marigold and Depth-Anything-V2 on IRS, VKITTI, and NYUv2 benchmarks. (CS598SHW / 3D vision project)"
+  description: "Fine-tuned Stable Diffusion V2 for RGB-D-conditioned depth-map refinement. (CS598SHW / 3D vision project)"
   topics:
     - deep_learning
     - computer_vision
@@ -161,7 +161,7 @@
   webpage: "https://drive.google.com/file/d/1AweCTHWJ8q-QFP4Damkxzy-qiaBunwBh/view?usp=sharing"
   venue: "Dec 2020"
   image: projects/gesturegan/icon.svg
-  description: "Used MobileNet to optimize cross-view image generation with a 5.7X reduction in parameters."
+  description: "Used MobileNet to reduce the parameter count for cross-view image generation."
   topics:
     - deep_learning
     - computer_vision

@@ -18,6 +18,8 @@ Rules
                next step, ...) or internal detail (which machine or day something ran, TA reference
                runs, points or extra credit, tool names).
   R6  error    Placeholder text in a publication entry ("to be finalized", TBD, TODO, xx).
+  R7  error    Explicit publication categories; accepted posters and unpublished manuscripts stay
+               separate from peer-reviewed papers in the data and HTML CV.
   Y1  error    _config.yml or a _data/*.yml file does not parse.
 
 Put the marker  claims-ok  on a line (YAML comment or HTML comment) to accept a deliberate finding.
@@ -65,7 +67,7 @@ TEXT_EXT = {".html", ".htm", ".md", ".markdown", ".yml", ".yaml", ".json", ".xml
 SKIP_TOP = {".git", "_site", ".jekyll-cache", ".sass-cache", "vendor", "node_modules", "scripts"}
 SUPPRESS = "claims-ok"
 
-PENDING_RE = re.compile(r"\b(?:manuscript\s+)?(?:in preparation|under review|submitted|under submission|in submission)\b", re.I)
+PENDING_RE = re.compile(r"\b(?:manuscript\s+)?(?:unpublished|in preparation|under review|submitted|under submission|in submission)\b", re.I)
 FORBIDDEN_RE = re.compile(r"\b(?:accepted|published|to appear|in (?:the )?proceedings(?: of)?|proceedings of|presented (?:at|in))\b", re.I)
 NEGATED_RE = re.compile(r"\b(?:not|never|n't|yet to be|pending|awaiting|until|before|once|if|when|unless)\b[^.;:!?]*$", re.I)
 CANDIDATE_RE = re.compile(r"\b(?:ph\.?\s?d\.?|doctoral)\s+candidates?\b", re.I)
@@ -396,6 +398,45 @@ def r1_chunk(report: Report, pending: list[Pub], rel: str, line: int, raw: str, 
                            clip(vis))
 
 
+def check_publication_categories(src: Path, pubs: list[Pub], report: Report) -> None:
+    """R7: keep the confirmed poster/manuscript types distinct from published papers."""
+    categories = {"Peer-reviewed Papers", "Posters, Abstracts, and Presentations",
+                  "Other Articles", "Unpublished Manuscripts"}
+    confirmed_manuscripts = {"tap_TRO2026", "waypointGen_CoRL2026_CompositionalWorkshop"}
+    required_cv_sections = {}
+    for p in pubs:
+        entry = p.entry
+        category = str(entry.get("category", ""))
+        status = visible(" ".join(as_text(entry.get(k)) for k in ("venue", "awards", "status")))
+        problems = []
+        if category not in categories:
+            problems.append("every record needs an explicit supported category")
+        if category == "Peer-reviewed Papers" and (p.pending or re.search(r"\b(?:poster|abstract|presentation)\b", status, re.I)):
+            problems.append("posters, abstracts, presentations and manuscripts are not peer-reviewed papers")
+        if entry.get("id2") == "waypointGen_CSLSC2026":
+            required_cv_sections[p.title] = "Posters, Abstracts, and Presentations"
+            if category != required_cv_sections[p.title] or visible(as_text(entry.get("awards"))).lower() != "accepted poster":
+                problems.append("CSL SC 2026 must remain an Accepted poster in the poster category")
+        if entry.get("id2") in confirmed_manuscripts:
+            required_cv_sections[p.title] = "Unpublished Manuscripts"
+            if category != "Unpublished Manuscripts" or status.lower() != "unpublished manuscript":
+                problems.append("this work is an Unpublished manuscript, with no submission/review/publication venue claim")
+        for problem in problems:
+            report.add("ERROR", "R7", "_data/publications.yml", p.line, f"{p.label}: {problem}")
+
+    cv_path = src / "cv.html"
+    if cv_path.is_file():
+        source = html_source(cv_path)
+        headings = list(re.finditer(r"<h2(?:\s[^>]*)?>(.*?)</h2>", source, re.S))
+        sections = {}
+        for i, match in enumerate(headings):
+            end = headings[i + 1].start() if i + 1 < len(headings) else len(source)
+            sections[visible(match.group(1))] = visible(source[match.end():end])
+        for title, category in required_cv_sections.items():
+            if title not in sections.get(category, ""):
+                report.add("ERROR", "R7", "cv.html", 1, f"{clip(title, 50)} must appear under {category}")
+
+
 def check(src: Path, report: Report, all_data: bool) -> None:
     data: dict[str, object] = {}
     yaml_files = ["_config.yml"] + sorted(p.relative_to(src).as_posix() for p in (src / "_data").glob("*.y*ml"))
@@ -414,6 +455,7 @@ def check(src: Path, report: Report, all_data: bool) -> None:
     # ---- R1: publications and every place that talks about them
     pubs_raw = data.get("_data/publications.yml")
     pubs = [Pub(e) for e in pubs_raw if isinstance(e, dict)] if isinstance(pubs_raw, list) else []
+    check_publication_categories(src, pubs, report)
     build_refs(pubs)
     pending = [p for p in pubs if p.pending]
     for p in pubs:

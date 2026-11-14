@@ -71,7 +71,7 @@
         {% if publication.paper %}
         <a class="external-link button is-small is-ghost" href="{{ publication.paper }}">
           <span class="icon"><i class="fa-regular fa-newspaper"></i></span>
-          <span>{% if publication.paper contains "ieee" %}IEEE{% else %}Paper{% endif %}</span>
+          <span>{% if publication.category == "Posters, Abstracts, and Presentations" %}Presentation{% elsif publication.id2 == "smartphoneOpticalSensors" %}Article{% elsif publication.paper contains "ieee" %}IEEE{% else %}Paper{% endif %}</span>
         </a>
         {% endif %}
         {% if publication.video %}
@@ -84,7 +84,7 @@
         <a class="external-link button is-small is-ghost"
           href="{{ publication.pdf }}">
           <span class="icon"><i class="fas fa-file-pdf"></i></span>
-          <span>{% if publication.id2 == "smartphoneOpticalSensors" %}Article PDF{% elsif publication.id2 == "plantPlacement_AIFARMS2023" %}Poster PDF{% else %}PDF{% endif %}</span>
+          <span>{% if publication.id2 == "smartphoneOpticalSensors" %}Article PDF{% elsif publication.id2 == "waypointGen_CSLSC2026" or publication.id2 == "plantPlacement_AIFARMS2023" %}Poster PDF{% elsif publication.id2 == "activeSemanticMapping_ICRA40" %}Abstract PDF{% elsif publication.category == "Unpublished Manuscripts" %}Manuscript PDF{% else %}PDF{% endif %}</span>
         </a>
         {% endif %}
         {% if publication.arxiv %}

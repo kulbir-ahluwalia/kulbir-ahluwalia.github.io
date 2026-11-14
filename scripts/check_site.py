@@ -7,7 +7,7 @@ For every *.html under SITE_DIR it checks that
   * #fragments exist as id= (or <a name=>) in the target page, same-page and cross-page;
   * no unrendered Liquid leaked into a URL (error) or into visible text (warning);
   * repo tooling and notes (CLAUDE.md, README.md, *.py, *.tex, ...) were not published (warning).
-With --src it also parses _config.yml and every _data/*.yml|yaml (a parse error is an error).
+With --src it also parses YAML and verifies rendered publication categories and PDF artifact labels.
 With --external it probes external URLs as well (HEAD, then GET; slow, needs network access).
 
 Usage
@@ -53,10 +53,17 @@ class Page(HTMLParser):
         self.refs: list[tuple[int, str, str]] = []  # (line, where, url)
         self.liquid_text: list[tuple[int, str]] = []
         self._raw = 0
+        self.anchors: list[tuple[int, str, str]] = []
+        self.publications: list[tuple[str, str]] = []
+        self._anchor = None
 
     def handle_starttag(self, tag, attrs):
         a = {k: (v if v is not None else "") for k, v in attrs}
         line = self.getpos()[0]
+        if tag == "a":
+            self._anchor = [line, a.get("href", ""), []]
+        if "publication-item" in a.get("class", "").split():
+            self.publications.append((a.get("data-publication-id", ""), a.get("data-category", "")))
         if a.get("id"):
             self.ids.add(a["id"])
         if tag == "a" and a.get("name"):
@@ -83,10 +90,16 @@ class Page(HTMLParser):
                 self.refs.append((line, f"{tag} {attr}", value))
 
     def handle_endtag(self, tag):
+        if tag == "a" and self._anchor is not None:
+            line, href, parts = self._anchor
+            self.anchors.append((line, href, " ".join(" ".join(parts).split())))
+            self._anchor = None
         if tag in RAW_TEXT_TAGS and self._raw:
             self._raw -= 1
 
     def handle_data(self, data):
+        if self._anchor is not None and not self._raw:
+            self._anchor[2].append(data)
         if not self._raw and ("{{" in data or "{%" in data):
             self.liquid_text.append((self.getpos()[0], " ".join(data.split())[:80]))
 
@@ -150,6 +163,25 @@ class Site:
         if path.endswith("/") and target:
             target += "/"
         return "internal", target, frag
+
+
+def check_publication_rendering(src: Path, page: Page, errors: list) -> int:
+    import yaml
+    records = yaml.safe_load((src / "_data/publications.yml").read_text()) or []
+    expected = [(record["id2"], record.get("category", "")) for record in records]
+    if sorted(page.publications) != sorted(expected):
+        errors.append(("publication categories", "index.html", "rendered records/categories differ from source data"))
+    labels = {"waypointGen_CSLSC2026": "Poster PDF", "plantPlacement_AIFARMS2023": "Poster PDF",
+              "activeSemanticMapping_ICRA40": "Abstract PDF", "smartphoneOpticalSensors": "Article PDF"}
+    for record in records:
+        if not record.get("pdf"):
+            continue
+        expected_label = labels.get(record["id2"], "Manuscript PDF" if record.get("category") == "Unpublished Manuscripts" else "PDF")
+        actual = [text for _, href, text in page.anchors
+                  if href.lstrip("/") == record["pdf"].lstrip("/") and text.endswith("PDF")]
+        if not actual or any(text != expected_label for text in actual):
+            errors.append(("publication artifact label", "index.html", f'{record["id2"]}: expected {expected_label}, got {actual}'))
+    return len(records)
 
 
 def own_hosts_for(site_dir: Path, src: Path | None) -> set[str]:
@@ -238,6 +270,9 @@ def main() -> int:
             ap.error("site_dir must be a built site directory (run: bundle exec jekyll build)")
         root = args.site_dir.resolve()
         site = Site(root, own_hosts_for(root, args.src))
+        if args.src and not errors and (root / "index.html").is_file():
+            n = check_publication_rendering(args.src, site.page("index.html"), errors)
+            summary.append(f"{n} publication categories/artifact labels checked")
         pages = sorted(p.relative_to(root).as_posix() for p in root.rglob("*.html"))
         pages = [p for p in pages if not any(fnmatch.fnmatch(p, g) for g in args.skip)]
         external: dict[str, list[str]] = {}

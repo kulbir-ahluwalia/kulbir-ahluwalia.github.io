@@ -40,6 +40,9 @@ jobs:
         if: success() || failure()
         run: bundle exec jekyll build
 
+      - name: Publication filters on the built homepage
+        run: node scripts/check_publication_filters.js _site/index.html
+
       - name: Internal links, assets, anchors and YAML
         if: success() || failure()
         run: python scripts/check_site.py _site --src .

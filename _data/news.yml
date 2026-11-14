@@ -19,7 +19,7 @@
   content: "Joined <strong>Qualcomm</strong> (San Diego, CA) as a <strong>Compute Chipset Product Management Intern</strong>, summer 2026."
 
 - date: "Feb 2026"
-  content: 'Our poster <strong>WaypointGen: Learning Grounded Waypoint based Navigation for Mobile Manipulators</strong> was accepted at the <strong>CSL Student Conference (CSL SC 2026)</strong> at UIUC. <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf">[poster PDF]</a>'
+  content: 'Our poster <strong>WaypointGen: Learning Language-Grounded Waypoint Navigation</strong> was accepted at the <strong>CSL Student Conference (CSL SC 2026)</strong> at UIUC. <a href="files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf">[poster PDF]</a>'
 
 - date: "Oct 2025"
   content: 'Co-developed <strong><a href="/cs498gc/fa25/slaming_mars.html">SLAM-ing Mars</a></strong>, a mobile manipulator exploration and SLAM assignment for CS498GC: Mobile Robotics (Fall 2025), with Prof. Girish Chowdhary.'

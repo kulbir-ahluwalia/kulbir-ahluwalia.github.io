@@ -19,14 +19,14 @@ function filterPublications(mode) {
         if (mode === 'all') {
             item.style.setProperty('display', 'block', 'important');
         } else if (mode === 'selected') {
-            // Show only featured/selected publications (first 3)
-            const index = Array.from(items).indexOf(item);
-            item.style.setProperty('display', index < 3 ? 'block' : 'none', 'important');
+            // Keep the featured set independent of the displayed category order.
+            item.style.setProperty('display', item.dataset.selected === 'true' ? 'block' : 'none', 'important');
         } else if (mode === 'topic') {
             item.style.setProperty('display', 'block', 'important');
         }
     });
 
+    updatePublicationGroups();
     console.log(`Filter mode: ${mode}`);
 }
 
@@ -65,6 +65,7 @@ function filterByTopic(topic) {
         }
     });
 
+    updatePublicationGroups();
     console.log(`Filtered by ${topic}: ${visibleCount} publications visible`);
 
     // Smooth scroll to publications section
@@ -72,6 +73,14 @@ function filterByTopic(topic) {
     if (pubSection) {
         pubSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+}
+
+// Hide category headings when their entries are filtered out.
+function updatePublicationGroups() {
+    document.querySelectorAll('.publication-group').forEach(group => {
+        group.hidden = !Array.from(group.querySelectorAll('.publication-item'))
+            .some(item => item.style.display !== 'none');
+    });
 }
 
 // Project filtering functions

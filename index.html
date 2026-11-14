@@ -196,7 +196,7 @@ layout: null
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 anchor" id="publications">Publications</h2>
+      <h2 class="title is-3 anchor" id="publications">Publications and Presentations</h2>
 
       <!-- Research Topic Filter Controls -->
       <div class="publication-filters mb-5">
@@ -219,9 +219,16 @@ layout: null
         </p>
       </div>
 
-      {% for publication in site.data.publications %}
-        <div class="publication-item" data-topics="{% for topic in publication.topics %}{{ topic }} {% endfor %}">
-        {% include section.html %}
+      {% assign publication_categories = "Peer-reviewed Papers|Posters, Abstracts, and Presentations|Other Articles|Unpublished Manuscripts" | split: "|" %}
+      {% for category in publication_categories %}
+        <div class="publication-group">
+          <h3 class="title is-4">{{ category }}</h3>
+          {% assign category_publications = site.data.publications | where: "category", category %}
+          {% for publication in category_publications %}
+            <div class="publication-item" data-publication-id="{{ publication.id2 }}" data-category="{{ category }}" data-selected="{{ publication.selected | default: false }}" data-topics="{% for topic in publication.topics %}{{ topic }} {% endfor %}">
+            {% include section.html %}
+            </div>
+          {% endfor %}
         </div>
       {% endfor %}
     </div>
@@ -378,7 +385,7 @@ layout: null
               <strong>Supervisor:</strong> Michael McGuire, Lead Computer Vision Engineer<br>
               • Contributed to developing a natural language-conditioned waypoint generation pipeline for agricultural robot navigation.<br>
               • Created an automatic labeling pipeline for large outdoor robot navigation datasets using Grounded SAM2, streamlining data processing.<br>
-              • Deployed and integrated open-source Visual Language Models (Molmo-7B-D, Gemma-3-27B, Qwen-2.5-VL-72B, Qwen3-30B-A3B, Llama4-Scout, Spatial-VLM; 3B-72B params) for robot reasoning in image space and open-world natural language instruction conditioned question answering for 4 wheeled skid steer outdoor robots.
+              • Deployed and integrated open-source language and vision-language models for robot reasoning in image space and open-world natural language instruction conditioned question answering for 4 wheeled skid steer outdoor robots.
             </p>
             <div class="publication-links buttons field has-addons">
               <a class="external-link button is-small is-ghost" style="padding-left: .4em; " href="https://www.earthsense.co/">

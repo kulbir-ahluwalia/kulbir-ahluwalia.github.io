@@ -59,19 +59,16 @@
 
 
 
-# The first 3 entries are the "show selected" set (js/index.js shows the first 3 publications).
-# 2026-10-10: paper statuses confirmed by Kulbir: the T-RO manuscript is in preparation and the workshop
-# paper is listed without a review status.
-# 2026-10-17: per Kulbir the workshop paper is now submitted and under review (non-archival; decisions
-# due Oct 19, 2026). 2026-10-23: per Kulbir, TaP is listed as under review too.
-# Do not call either paper accepted/published until a decision is public. Thumbnails come from the WaypointGen line itself.
+# Explicit selected flags preserve the featured set when entries are grouped by publication type.
+# Current manuscript entries are unpublished work, with no journal or workshop publication claim.
 
 - id2: tap_TRO2026
+  category: "Unpublished Manuscripts"
+  selected: true
   title: "TaP: Trajectory as Policies for Spatial Reasoning using Hierarchical Abstractions & Grounded Constraint Phrases for Mobile Manipulator Navigation"
-  venue: "IEEE Transactions on Robotics (T-RO), under review"
-  awards: "Journal Paper (Under Review)"
+  venue: "Unpublished manuscript"
   image: "publications/waypointgen_plusplus/waypointgen_plusplus_crop_rows.jpg"
-  description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth. On a 200-pair citrus benchmark: 99.0% structural pass and 37.5% geometric fidelity (waypoints inside the ground-truth region)."
+  description: "Map-free, language-conditioned planner for agricultural mobile manipulators that writes constraint-aware waypoints in 2D bird's-eye-view image coordinates and back-projects them to 3D with depth."
   topics:
     - mobile_robotics
     - nlp
@@ -87,11 +84,12 @@
     - Girish
     - Julia
 
-# Workshop paper: only Kulbir is listed, plus an 'et al.' note, until the full author list is confirmed.
+# Manuscript: only Kulbir is listed, plus an 'et al.' note, until the full author list is confirmed.
 - id2: waypointGen_CoRL2026_CompositionalWorkshop
+  category: "Unpublished Manuscripts"
+  selected: true
   title: "WaypointGen: Compositional Trajectory Generation by Grounding Hierarchical Language Abstractions and Constraint Phrases for Outdoor Navigation"
-  venue: '<a href="https://compogen-robotics.github.io/corl2026/">CoRL 2026 Workshop on Compositional Generalization for Real-World Robot Learning</a>'
-  awards: "Workshop Paper (Under Review, Non-Archival)"
+  venue: "Unpublished manuscript"
   # No thumbnail yet: the CSL SC 2026 poster entry below already shows the WaypointGen figure.
   description: "Modular pipeline for language-commanded navigation of agricultural mobile manipulators: a local bird's-eye view from RGB-D, open-vocabulary target and avoidance masks, code-based command checks, and a vision-language model that picks among MPPI trajectory candidates. Offline studies on 349 palm-plantation targets score the candidates, not the model's choice."
   topics:
@@ -105,12 +103,14 @@
   authors_note: "et al."
 
 - id2: waypointGen_CSLSC2026
-  title: "WaypointGen: Learning Grounded Waypoint based Navigation for Mobile Manipulators"
+  category: "Posters, Abstracts, and Presentations"
+  selected: true
+  title: "WaypointGen: Learning Language-Grounded Waypoint Navigation"
   venue: "Coordinated Science Laboratory Student Conference (CSL SC 2026)"
-  awards: "Conference Poster"
+  awards: "Accepted poster"
   image: "publications/waypointgen_cslsc2026/image.jpeg"
   pdf: "files/publications/CSL_SC_WaypointGen_Accepted_Poster.pdf"
-  description: "We present WaypointGen, a map-free, language-conditioned 2D path planner that grounds natural language navigation commands to bird's-eye-view (BEV) waypoints. It parses region-of-interest constraints from NL commands via open-vocabulary grounding (DINO-X detection, SAM3 instance masks, and Describe Anything Model captions), then uses a Qwen3-MoE-30B-A3B VLM to select target ROIs and choose among Model Predictive Path Integral (MPPI) trajectory candidates in BEV space, with a Qwen3-235B VLM as an LLM judge for weak supervision. A semi-supervised labeling pipeline seeded with a small set of human annotations and in-context learning generates the dataset across agricultural environments (palm, solar, greenhouse, corn/soybean, citrus, and TreeScope)."
+  description: "We present WaypointGen, a map-free, language-conditioned 2D path planner that grounds natural language navigation commands to bird's-eye-view (BEV) waypoints. It parses region-of-interest constraints from NL commands via open-vocabulary grounding (DINO-X detection, SAM3 instance masks, and Describe Anything Model captions), then uses a vision-language model to select target ROIs and choose among Model Predictive Path Integral (MPPI) trajectory candidates in BEV space, with a language-model judge for weak supervision. A semi-supervised labeling pipeline seeded with a small set of human annotations and in-context learning generates the dataset across agricultural environments (palm, solar, greenhouse, corn/soybean, citrus, and TreeScope)."
   shared_first_authors:
     - Kulbir
     - Chahit
@@ -130,6 +130,7 @@
     - Girish
 
 - id2: activeSemanticMapping_ICRA2025
+  category: "Peer-reviewed Papers"
   title: "Active Semantic Mapping with Mobile Manipulator in Horticultural Environments"
   venue: <a href="https://2025.ieee-icra.org/">International Conference on Robotics and Automation (ICRA 2025)</a>
   awards: "Conference paper"
@@ -157,6 +158,7 @@
 
 
 - id2: plantPlacement_AIFARMS2023
+  category: "Posters, Abstracts, and Presentations"
   title: "Plant Placement using Natural Language Grounding"
   venue: "AIFARMS Conference (Fall 2023)"
   awards: "Conference Poster"
@@ -195,6 +197,7 @@
 
 
 - id2: deeppaSTL
+  category: "Peer-reviewed Papers"
   title: "DeepPaSTL: Spatio-Temporal Deep Learning Methods for Predicting Long-Term Pasture Terrains Using Synthetic Datasets"
   description: "DeepPaSTL aims to accurately forecast long-term pasture growth, tackling the challenge of estimating pasture biomass without relying on extensive site-specific data or frequent field measurements. This approach enables predicting pasture evolution without monitoring fields regularly, using past observed pasture heights as input. DeepPaSTL introduces a bi-directional ConvLSTM encoder–decoder to learn the spatio-temporal pasture growth dynamics purely from spatial height measurements."
   venue: "Published in Agronomy 2021 (Special Issue AI and Agricultural Robots)"
@@ -217,6 +220,7 @@
     - Ryan
 
 - id2: intermittentDeployment
+  category: "Peer-reviewed Papers"
   title: "Intermittent Deployment for Large-Scale Multi-Robot Forage Perception: Data Synthesis, Prediction, and Planning"
   description: "Targets large-scale pasture monitoring for precision agriculture, deploying a team of robots to track grassland growth for optimal rotational grazing and land productivity, addressing the lack of timely growth data in current practice. Proposes an integrated pipeline combining synthetic data generation, deep neural network-based spatiotemporal prediction, and an intermittent multi-robot deployment strategy to periodically survey evolving pastureland at low cost.​"
   venue: "IEEE Transactions on Automation Science and Engineering, vol. 21, no. 1, pp. 27-47, 2024"
@@ -245,6 +249,7 @@
 
 
 - id2: activeSemanticMapping_ICRA40
+  category: "Posters, Abstracts, and Presentations"
   title: "Active Semantic Mapping with Mobile Manipulator in Horticultural Environments"
   description: "An abstract accepted at the 40th Anniversary of the IEEE Conference on Robotics and Automation (ICRA@40), 2024."
   venue: "ICRA@40, 2024"
@@ -261,6 +266,7 @@
     - Girish
 
 - id2: smartphoneOpticalSensors
+  category: "Other Articles"
   title: "Smartphone Optical Sensors"
   description: "An article featuring the multispectral Fundus Eye camera prototype, as presented in Optics and Photonics News."
   venue: "Optics and Photonics News, 2019"
@@ -276,6 +282,7 @@
     - Kulbir
 
 - id2: rlForFruitNDT
+  category: "Posters, Abstracts, and Presentations"
   title: "Reinforcement Learning Integrated with Supervised Learning for Training of Near Infrared Spectrum Data for Non-Destructive Testing of Fruits"
   description: "A conference presentation on combining reinforcement and supervised learning for non-destructive testing of fruits using near infrared spectrum data."
   venue: "Sensing for Agriculture and Food Quality and Safety XII, 2020"

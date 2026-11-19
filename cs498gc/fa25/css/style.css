@@ -1,0 +1,345 @@
+/* CS498GC Mobile Robotics - Custom Styles */
+
+:root {
+  --primary-color: #13294B;  /* UIUC Navy Blue */
+  --secondary-color: #FF5F05; /* UIUC Orange */
+  --dark-bg: #1a1a1a;
+  --light-bg: #f8f9fa;
+  --text-dark: #333;
+  --text-light: #666;
+}
+
+body {
+  padding-top: 70px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255,.9);
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--secondary-color);
+}
+
+/* Headers */
+.jumbotron {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e3c72 100%);
+  color: white;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0;
+}
+
+.jumbotron.header-plain {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #2a5298 100%);
+}
+
+.jumbotron h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.jumbotron h3 {
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+/* Cards */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.card-header {
+  font-weight: 600;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.card-header.bg-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.card-header.bg-success {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+.card-header.bg-dark {
+  background-color: var(--dark-bg) !important;
+  color: white !important;
+}
+
+/* Typography */
+h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+h3, h4, h5 {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Tables */
+.table {
+  margin-top: 1rem;
+}
+
+.table thead th {
+  border-bottom: 2px solid var(--primary-color);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(19, 41, 75, 0.03);
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.alert-info {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.alert-warning {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+/* Badges */
+.badge {
+  padding: 0.4em 0.8em;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.badge-primary {
+  background-color: var(--primary-color);
+}
+
+.badge-danger {
+  background-color: #dc3545;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-warning {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-secondary {
+  color: var(--text-dark);
+  border-color: var(--text-dark);
+}
+
+.btn-outline-info {
+  color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-outline-success {
+  color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-outline-dark {
+  color: var(--dark-bg);
+  border-color: var(--dark-bg);
+}
+
+/* Lists */
+ul, ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.3rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--light-bg);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.footer .text-muted {
+  color: var(--text-light) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  .jumbotron h1 {
+    font-size: 2rem;
+  }
+  
+  .jumbotron {
+    padding: 2rem 1rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Staff photos */
+.rounded-circle {
+  border: 3px solid var(--primary-color);
+  object-fit: cover;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Code blocks */
+code {
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #e83e8c;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+/* Custom utilities */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+.bg-light-blue {
+  background-color: rgba(19, 41, 75, 0.05);
+}
+
+/* Table of contents style */
+.toc {
+  background-color: var(--light-bg);
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.toc li {
+  margin-bottom: 0.5rem;
+}
+
+/* Disabled button style */
+.btn.disabled, .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Schedule table specific */
+.table-warning {
+  background-color: #fff3cd !important;
+}
+
+.table-info {
+  background-color: #d1ecf1 !important;
+}
+
+/* Print styles */
+@media print {
+  .navbar, .footer {
+    display: none;
+  }
+  
+  body {
+    padding-top: 0;
+  }
+  
+  .jumbotron {
+    background: none;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--primary-color);
+  }
+}

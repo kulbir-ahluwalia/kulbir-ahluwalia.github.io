@@ -1,0 +1,33 @@
+body { margin-top: 1em; font-family: "Noto Sans", sans-serif; }
+
+.portrait-column { padding: 0; }
+
+.portrait-image { border-radius: 50%; width: 7em; height: 7em; max-width: none; object-fit: cover; object-position: 50% 20%; }
+
+.author-me { font-weight: 600; }
+
+h2 { margin-top: 0.5em !important; margin-bottom: 0.3em !important; }
+
+.columns { margin-bottom: 0 !important; }
+
+/* Bulma's .content ul (disc markers, 2em indent) and .content li + li (top margin) out-rank a bare
+   .skills-list selector, which left a stray bullet beside every pill and staggered the rows. */
+.content ul.skills-list { display: flex; flex-wrap: wrap; gap: 0.4em; list-style: none; padding: 0; margin: 0.3em 0 0.8em 0; }
+
+.content ul.skills-list li { list-style: none; margin: 0; background: #f0f0f0; color: #363636; padding: 0.2em 0.6em; border-radius: 4px; font-size: 90%; }
+
+.content ul.skills-list li::marker { content: none; }
+
+.cv-pdf-links { white-space: nowrap; }
+
+/* Phone: stack the header and the date column under each entry instead of squeezing them. */
+@media screen and (max-width: 768px) {
+  body { padding: 0 1em; }
+  .column.has-text-right { text-align: left !important; }
+  .content .columns .column.is-four-fifths { padding-bottom: 0.15em; }
+  .content .columns .column.is-one-fifths { padding-top: 0; padding-bottom: 0.9em; color: #4a4a4a; font-size: 90%; }
+}
+
+.section-note { font-size: 85%; color: #666; margin-top: -0.2em; margin-bottom: 0.5em; }
+
+@media print { html, body { height: auto; font-size: 9pt; } }

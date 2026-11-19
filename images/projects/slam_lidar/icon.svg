@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#8E44AD"/>
+  <text x="160" y="130" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial, sans-serif" font-size="80" font-weight="bold">SLAM</text>
+  <!-- LiDAR scan lines -->
+  <path d="M 160 200 L 120 175" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <path d="M 160 200 L 140 170" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <path d="M 160 200 L 160 165" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <path d="M 160 200 L 180 170" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <path d="M 160 200 L 200 175" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <circle cx="160" cy="200" r="5" fill="white"/>
+  <circle cx="120" cy="175" r="3" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="140" cy="170" r="3" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="160" cy="165" r="3" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="180" cy="170" r="3" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="200" cy="175" r="3" fill="rgba(255,255,255,0.7)"/>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="16">2D LiDAR</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#E67E22"/>
+  <!-- Road with lane lines in perspective -->
+  <!-- Left lane line -->
+  <line x1="60" y1="240" x2="140" y2="90" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <!-- Right lane line -->
+  <line x1="260" y1="240" x2="180" y2="90" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <!-- Center dashed line -->
+  <line x1="160" y1="240" x2="160" y2="200" stroke="white" stroke-width="3" stroke-dasharray="12,8"/>
+  <line x1="160" y1="190" x2="160" y2="150" stroke="white" stroke-width="2.5" stroke-dasharray="10,7"/>
+  <line x1="160" y1="140" x2="160" y2="100" stroke="white" stroke-width="2" stroke-dasharray="8,6"/>
+  <!-- Detection highlights -->
+  <line x1="62" y1="238" x2="142" y2="92" stroke="rgba(255,255,100,0.6)" stroke-width="8" stroke-linecap="round"/>
+  <line x1="258" y1="238" x2="178" y2="92" stroke="rgba(255,255,100,0.6)" stroke-width="8" stroke-linecap="round"/>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="16">Lane Detection</text>
+</svg>

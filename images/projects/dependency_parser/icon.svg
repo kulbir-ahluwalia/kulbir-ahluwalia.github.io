@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" rx="20" fill="#27AE60"/>
+  <!-- Tree structure -->
+  <circle cx="160" cy="80" r="18" fill="none" stroke="white" stroke-width="3"/>
+  <text x="160" y="80" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">S</text>
+  <line x1="148" y1="96" x2="100" y2="135" stroke="white" stroke-width="2.5"/>
+  <line x1="172" y1="96" x2="220" y2="135" stroke="white" stroke-width="2.5"/>
+  <circle cx="100" cy="150" r="16" fill="none" stroke="white" stroke-width="3"/>
+  <text x="100" y="150" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">NP</text>
+  <circle cx="220" cy="150" r="16" fill="none" stroke="white" stroke-width="3"/>
+  <text x="220" y="150" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">VP</text>
+  <line x1="90" y1="164" x2="65" y2="195" stroke="white" stroke-width="2"/>
+  <line x1="110" y1="164" x2="135" y2="195" stroke="white" stroke-width="2"/>
+  <line x1="210" y1="164" x2="190" y2="195" stroke="white" stroke-width="2"/>
+  <line x1="230" y1="164" x2="255" y2="195" stroke="white" stroke-width="2"/>
+  <circle cx="65" cy="208" r="13" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="135" cy="208" r="13" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="190" cy="208" r="13" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="255" cy="208" r="13" fill="none" stroke="white" stroke-width="2"/>
+  <text x="160" y="285" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="16">Neural Parser</text>
+</svg>
